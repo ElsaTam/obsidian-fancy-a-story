@@ -80,9 +80,11 @@ body {
     --tab-text-color-focused-active-current: var(--text-normal);
 
     /* table */
-    --table-header-background: rgba(var(--mono-rgb-0), 0.3);
+    --table-header-background: transparent;
     --table-line-height: 1.8;
     --table-border-color: var(--color-base-10);
+    --table-column-first-border-width: 0;
+    --table-column-last-border-width: 0;
 
     /* titlebar */
     --titlebar-background: none;

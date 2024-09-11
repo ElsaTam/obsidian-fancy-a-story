@@ -3,6 +3,10 @@
         display: none;
     }
 
+    table thead th {
+        border-bottom-width: calc(var(--table-border-width) + 2px);
+    }
+
     table tbody tr:not(:has(:is(td, th):not(:empty))) {
         height: calc(var(--table-text-size) * var(--table-line-height) + var(--size-2-2) * 2);
     }
@@ -34,5 +38,9 @@
 
     :is(.cm-html-embed, .markdown-rendered) :is(th, td) {
         border-inline-width: var(--table-border-width);
+    }
+
+    table thead th {
+        border-bottom-width: var(--table-border-width);
     }
 }
