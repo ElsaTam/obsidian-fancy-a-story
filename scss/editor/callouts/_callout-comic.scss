@@ -1,0 +1,150 @@
+.callout[data-callout="comic"] {
+    --p-spacing: 0;
+    --gutter: 20px;
+    --strip-height: 200px;
+
+    --callout-radius: 0;
+    --callout-padding: 20px;
+    --callout-content-padding: 0px;
+    --callout-blend-mode: normal;
+    --callout-color: var(--comic-color);
+    --callout-border-width: 1px;
+
+    background: rgb(var(--comic-background));
+    font-family: "VTC Letterer Pro", "Comic Sans", "Arial", sans-serif;
+}
+
+.callout[data-callout="comic"] .callout-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--gutter);
+}
+
+.callout[data-callout="comic-panel"] {
+    --callout-color: var(--comic-color);
+    --callout-padding: 0;
+    background: rgb(var(--comic-background));
+    margin: 0;
+    position: relative;
+    border: none;
+    max-height: var(--strip-height);
+    
+    > .callout-title {
+        display: none;
+    }
+    > .callout-content {
+        padding: 0;
+    }
+    > .callout-content > *:not(:has(img)) {
+        position: absolute;
+        color: rgb(var(--comic-color));
+        background-color: rgb(var(--comic-background));
+        border-top: 1px solid rgb(var(--comic-color));
+        left: 0; right: 0;
+        bottom: 0;
+        text-align: center;
+    }
+    p:has(img) {
+        font-size: 0;
+    }
+    .image-embed {
+        max-height: var(--strip-height);
+    }
+    img {
+        height: var(--strip-height);
+        object-fit: contain;
+        border-radius: 0;
+    }
+    p {
+        margin: 0;
+    }
+}
+
+.callout[data-callout="comic-panel"][data-callout-metadata~="bubble"] {
+    > .callout-content > *:not(:has(img)) {
+        border-radius: 17px;
+        --g: 4px; /* gap with the boundaries */
+        --s: 1px; /* hard shadow size */
+        padding: 3px;
+        width: 100px;
+        margin: auto;
+        height: fit-content;
+        max-width: calc(100% - var(--g) * 2 - var(--s));
+        right: calc(var(--g) + var(--s));
+        top: var(--g);
+        bottom: calc(var(--g) + var(--s));
+        left: var(--g);
+        border: 1px solid rgb(var(--comic-color));
+        box-shadow: 1px 1px 0px 1px #000000;
+    }
+
+    &[data-callout-metadata~="top"] > .callout-content > *:not(:has(img)) { bottom: unset; }
+    &[data-callout-metadata~="bottom"] > .callout-content > *:not(:has(img)) { top: unset; }
+    &[data-callout-metadata~="left"] > .callout-content > *:not(:has(img)) { right: unset; }
+    &[data-callout-metadata~="right"] > .callout-content > *:not(:has(img)) { left: unset; }
+}
+
+.callout[data-callout="comic-panel"][data-callout-metadata~="overflow"] {
+    --g: 3px; /* small gap to avoid touching other panels */
+    --b: 5px; /* border-width */
+    &, .callout-content {
+        overflow: visible;
+    }
+    .callout-content {
+        max-height: calc(var(--strip-height) - var(--b));
+    }
+    p:has(img) {
+        transform: translateY(calc(var(--g) - var(--gutter) - var(--b)));
+    }
+    img {
+        height: calc(var(--strip-height) + var(--gutter) - var(--g) - var(--b));
+        object-fit: contain;
+    }
+}
+
+.callout[data-callout="comic"]:not([data-callout-metadata="straight"]) > .callout-content {
+    > * {
+        border-image-slice: 27 27 27 27;
+        border-image-width: 20px 20px 20px 20px;
+        border-image-outset: 2px;
+        border-image-repeat: stretch stretch;
+        border-style: solid;
+    }
+    > *:nth-child(6n  ) { border-image-source: var(--border-pannel-0-source); }
+    > *:nth-child(6n+1) { border-image-source: var(--border-pannel-1-source); }
+    > *:nth-child(6n+2) { border-image-source: var(--border-pannel-2-source); }
+    > *:nth-child(6n+3) { border-image-source: var(--border-pannel-3-source); }
+    > *:nth-child(6n+4) { border-image-source: var(--border-pannel-4-source); }
+    > *:nth-child(6n+5) { border-image-source: var(--border-pannel-5-source); }
+
+    > .callout[data-callout-metadata~="overflow"] {
+        border-image: none;
+        border: var(--b) solid rgb(var(--comic-color));
+    }
+    > .callout[data-callout-metadata~="overflow"]:nth-child(4n  ) { border-radius: var(--border-radius-0); }
+    > .callout[data-callout-metadata~="overflow"]:nth-child(4n+1) { border-radius: var(--border-radius-1); }
+    > .callout[data-callout-metadata~="overflow"]:nth-child(4n+2) { border-radius: var(--border-radius-2); }
+    > .callout[data-callout-metadata~="overflow"]:nth-child(4n+3) { border-radius: var(--border-radius-3); }
+}
+
+.callout[data-callout="comic"][data-callout-metadata="straight"] > .callout-content > * {
+    border: 5px solid rgb(var(--comic-color));
+}
+
+.callout[data-callout="comic"][data-callout-metadata="straight"] {
+    --comic-color: var(--mono-rgb-100); /* Color of the lines, text, etc. (black/white) */
+    --comic-background: var(--mono-rgb-0);  /* background of the whole comic (white/black) */
+}
+
+.callout[data-callout="comic"]:not([data-callout-metadata="straight"]) {
+    --comic-color: 0, 0, 0; /* Color of the lines, text, etc. (black/white) */
+    --comic-background: 255, 255, 255;  /* background of the whole comic (white/black) */
+}
+.theme-dark .callout[data-callout="comic"]:not([data-callout-metadata="straight"]) {
+    &, img { filter: invert(1); }
+}
+
+.callout[data-callout="comic"][data-callout-metadata~="no-color"] img {
+    filter: grayscale(100);
+}
