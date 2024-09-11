@@ -78,3 +78,10 @@ The dynamic color palette is created only for the available pre-computed schemes
 ### Invisible embeds
 
 ![](screenshots/faded%20embeds.png)
+
+### Tables
+
+![](screenshots/table.png)
+
+You can enable an other style in the Style settings plugin:
+![](screenshots/table%20plain.png)
