@@ -7,6 +7,7 @@ settings:
         id: colors
         title: Colors
         type: heading
+        collapsed: true
         level: 1
     - 
         id: theme-variant-light
@@ -136,6 +137,7 @@ settings:
         id: accessibility
         title: Accessibility
         type: heading
+        collapsed: true
         level: 1
     - 
         id: kpr-accessibility
@@ -172,6 +174,7 @@ settings:
         id: editor
         title: Editor
         type: heading
+        collapsed: true
         level: 1
     - 
         id: kpr-plain-tables
@@ -185,6 +188,7 @@ settings:
         id: features
         title: Features
         type: heading
+        collapsed: true
         level: 1
     - 
         id: kpr-rainbow-folders
