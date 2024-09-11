@@ -73,7 +73,13 @@ body {
     --custom-color-space: srgb-linear;
 }
 
-:is(.theme-dark, .theme-light).kpr-custom {
+.theme-light.kpr-custom-light {
+    --color-base-00: var(--custom-color-base-00);
+    --color-base-100: var(--custom-color-base-100);
+    --color-space: var(--custom-color-space);
+}
+
+.theme-dark.kpr-custom-dark {
     --color-base-00: var(--custom-color-base-00);
     --color-base-100: var(--custom-color-base-100);
     --color-space: var(--custom-color-space);

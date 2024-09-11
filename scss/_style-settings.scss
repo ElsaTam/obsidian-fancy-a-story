@@ -14,14 +14,14 @@ settings:
         description: Select from a list of existing themes, or create your own by choosing custom
         type: class-select
         allowEmpty: false
-        default: kpr-coffee
+        default: kpr-silver-light
         options:
             - 
                 label: Automn
                 value: kpr-automn
             - 
                 label: Coffee
-                value: kpr-coffee
+                value: kpr-coffee-light
             - 
                 label: Candy
                 value: kpr-candy
@@ -36,17 +36,17 @@ settings:
                 value: kpr-meadow
             - 
                 label: Silver
-                value: kpr-silver
+                value: kpr-silver-light
             - 
                 label: Custom
-                value: kpr-custom
+                value: kpr-custom-light
     - 
         id: theme-variant-dark
         title: Dark color scheme
         description: Select from a list of existing themes, or create your own by choosing custom
         type: class-select
         allowEmpty: false
-        default: kpr-coffee
+        default: kpr-silver-dark
         options:
             - 
                 label: Artic
@@ -56,7 +56,7 @@ settings:
                 value: kpr-chocolate
             - 
                 label: Coffee
-                value: kpr-coffee
+                value: kpr-coffee-dark
             - 
                 label: Forest
                 value: kpr-forest
@@ -68,7 +68,7 @@ settings:
                 value: kpr-navy
             - 
                 label: Silver
-                value: kpr-silver
+                value: kpr-silver-dark
             - 
                 label: Swamp
                 value: kpr-swamp
@@ -80,7 +80,7 @@ settings:
                 value: kpr-volcano
             - 
                 label: Custom
-                value: kpr-custom
+                value: kpr-custom-dark
     - 
         id: kpr-opposite-bg
         title: Opposite background
