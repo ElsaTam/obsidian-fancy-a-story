@@ -47,6 +47,14 @@ Install this theme using [BRAT](https://github.com/TfTHacker/obsidian42-brat) by
 Some screenshots in random order
 --------------------------------
 
+### Overview
+
+![](screenshots/example1.png)
+
+![](screenshots/example2.png)
+
+![](screenshots/example3.png)
+
 ### File explorer
 
 ![](screenshots/file-explorer.png) ![](screenshots/file-explorer%20no%20textures.png)
