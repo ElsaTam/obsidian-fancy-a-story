@@ -67,7 +67,7 @@ $keep: 87%;
 
 // Create the block for default theme (no mixing)
 @each $tone in ("light", "dark") {
-    .theme-#{$tone}.kpr-custom {
+    .theme-#{$tone}.kpr-custom-#{$tone} {
         @if $tone == "light" {
             --custom-color-base-00: #ffffff;
             --custom-color-base-100: #222222;
