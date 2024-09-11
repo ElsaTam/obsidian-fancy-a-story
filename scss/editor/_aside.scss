@@ -1,0 +1,35 @@
+
+.markdown-preview-view aside,
+.is-readable-line-width.markdown-preview-view s:is(.aside-left, .aside-right) {
+    --aside-margin: 15px;
+    --aside-border-thickness: 4px;
+    text-decoration: none;
+
+    position: absolute;
+    display: block;
+    width: calc(50% - var(--file-line-width) * 0.5 - var(--aside-margin) * 2);
+    border-radius: var(--radius-l);
+    padding: 10px 0;
+}
+
+.is-readable-line-width.markdown-preview-view s.aside-left {
+    left: var(--aside-margin);
+    border-right: var(--aside-border-thickness) var(--color-accent) groove;
+    padding-right: 15px;
+    text-align: right;
+
+    &::after {
+        right: 0;
+    }
+}
+
+.markdown-preview-view aside,
+.is-readable-line-width.markdown-preview-view s.aside-right {
+    right: var(--aside-margin);
+    border-left: var(--aside-border-thickness) var(--color-accent) ridge;
+    padding-left: 15px;
+
+    &::after {
+        left: 0;
+    }
+}

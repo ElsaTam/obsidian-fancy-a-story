@@ -1,0 +1,27 @@
+/* ----------- App background color ----------- */
+body,
+.workspace {
+    background-color: var(--background-secondary);
+}
+
+/* ----------- Workspace ----------- */
+.workspace.is-right-sidedock-open {
+    padding-right: var(--size-2-2);
+}
+
+/* ----------- Gap between panes ----------- */
+.workspace,
+.workspace-split {
+    gap: 10px;
+}
+
+/* ----------- Mod root ----------- */
+.workspace-split.mod-root {
+    background: none;
+}
+
+/* ----------- Top bar (toggle button + tabs) ----------- */
+.sidebar-toggle-button,
+.workspace-tabs.mod-top {
+    --tab-container-background: transparent;
+}

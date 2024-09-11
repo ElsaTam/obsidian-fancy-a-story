@@ -1,0 +1,74 @@
+.callout[data-callout="letter"] {
+    --callout-color: var(--color-yellow-rgb);
+    --callout-title-size: 2em;
+    --line-height-normal: 2.5;
+    --font-text-size: 1.2em;
+    --callout-icon-size: 1.2em;
+    line-height: var(--line-height-normal);
+    font-size: var(--font-text-size);
+
+
+    .callout-title {
+        font-family: "Tangerine", cursive;
+        gap: 1rem;
+    }
+    .callout-icon {
+        align-self: center;
+    }
+    .callout-icon svg {
+        display: none;
+    }
+    .callout-icon::after {
+        content: "";
+        width: 1em;
+        height: 1em;
+        background-color: rgb(var(--callout-color));
+        -webkit-mask-position: 50% 50%;
+        -webkit-mask-size: 100% 100%;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-image: var(--feather-mask);
+    }
+    .callout-fold {
+        align-items: baseline;
+    }
+    .callout-fold svg {
+        display: none;
+    }
+    .callout-fold::after {
+        content: "";
+        width: 1em;
+        height: 1em;
+        background-color: rgb(var(--callout-color));
+        -webkit-mask-position: 50% 50%;
+        -webkit-mask-size: 100% 100%;
+        -webkit-mask-repeat: no-repeat;
+    }
+    &.is-collapsed .callout-fold::after {
+        -webkit-mask-image: var(--lucide-mail);
+    }
+    &:not(.is-collapsed) .callout-fold::after {
+        -webkit-mask-image: var(--lucide-mail-open);
+    }
+
+    .callout-content {
+        font-family: "Homemade Apple", cursive;
+        background-image: var(--paper-texture);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5) inset, 0 0 7px rgba(0, 0, 0, 0.5) inset;
+    }
+    p {
+        --calc-line-height: calc(1em * var(--line-height-normal));
+        --line-start: calc(0.5 * var(--calc-line-height) + 0.5 * var(--font-text-size));
+        --line-end: calc(var(--line-start) + 1px);
+
+        background-image: linear-gradient(to bottom,
+            transparent,
+            transparent var(--line-start),
+            rgba(var(--callout-color), 0.5) var(--line-start),
+            rgba(var(--callout-color), 0.5) var(--line-end),
+            transparent var(--line-end),
+            transparent);
+        background-size: 100% var(--calc-line-height);
+
+        mix-blend-mode: color;
+    }
+}

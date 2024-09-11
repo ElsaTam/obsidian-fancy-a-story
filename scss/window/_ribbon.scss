@@ -1,0 +1,7 @@
+.workspace-ribbon {
+    --icon-opacity: var(--icon-opacity-inactive);
+}
+
+.workspace-ribbon:hover {
+    --icon-opacity: 1;
+}

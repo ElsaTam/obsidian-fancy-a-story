@@ -1,0 +1,201 @@
+/* @settings
+
+name: Fancy-a-Story
+id: fancy-a-story
+settings:
+    - 
+        id: colors
+        title: Colors
+        type: heading
+        level: 1
+    - 
+        id: theme-variant-light
+        title: Light color scheme
+        description: Select from a list of existing themes, or create your own by choosing custom
+        type: class-select
+        allowEmpty: false
+        default: kpr-coffee
+        options:
+            - 
+                label: Automn
+                value: kpr-automn
+            - 
+                label: Coffee
+                value: kpr-coffee
+            - 
+                label: Candy
+                value: kpr-candy
+            - 
+                label: Canyon
+                value: kpr-canyon
+            - 
+                label: Ice
+                value: kpr-ice
+            - 
+                label: Meadow
+                value: kpr-meadow
+            - 
+                label: Silver
+                value: kpr-silver
+            - 
+                label: Custom
+                value: kpr-custom
+    - 
+        id: theme-variant-dark
+        title: Dark color scheme
+        description: Select from a list of existing themes, or create your own by choosing custom
+        type: class-select
+        allowEmpty: false
+        default: kpr-coffee
+        options:
+            - 
+                label: Artic
+                value: kpr-artic
+            - 
+                label: Chocolate
+                value: kpr-chocolate
+            - 
+                label: Coffee
+                value: kpr-coffee
+            - 
+                label: Forest
+                value: kpr-forest
+            - 
+                label: Mystic
+                value: kpr-mystic
+            - 
+                label: Navy
+                value: kpr-navy
+            - 
+                label: Silver
+                value: kpr-silver
+            - 
+                label: Swamp
+                value: kpr-swamp
+            - 
+                label: Underwater
+                value: kpr-unwerwater
+            - 
+                label: Volcano
+                value: kpr-volcano
+            - 
+                label: Custom
+                value: kpr-custom
+    - 
+        id: kpr-opposite-bg
+        title: Opposite background
+        description: Enable to use a light (resp. dark) app background in dark (resp. light) mode.
+        type: class-toggle
+        default: false
+    - 
+        id: custom-color-base-00
+        title: Custom - Primary
+        description: Color of the primary background (--color-base-00)
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-light: '#ffffff'
+        default-dark: '#1e1e1e'
+    - 
+        id: custom-color-base-100
+        title: Custom - Text
+        description: Color of the text (--color-base-100)
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-light: '#222222'
+        default-dark: '#dadada'
+    -
+        id: custom-color-space
+        title: Custom - Gradient color space
+        description: Color space used in the color-mix() function creating the palette. They all give different effects for the colors between the primary background and the text foreground.
+        type: variable-select
+        default: srgb-linear
+        options:
+            - srgb-linear
+            - srgb
+            - lab
+            - hsl
+            - hwb
+    - 
+        id: header-color
+        title: Color for the headings
+        type: class-select
+        allowEmpty: true
+        default: kpr-hue
+        options:
+            - 
+                label: Hue
+                value: kpr-headings-hue
+            - 
+                label: Complementary hue
+                value: kpr-headings-complement
+
+            
+    - 
+        id: accessibility
+        title: Accessibility
+        type: heading
+        level: 1
+    - 
+        id: kpr-accessibility
+        title: Enable Accessibility variant
+        description: Use sans serif fonts, increase default font size and weight, remove doodle icons, etc.
+        type: class-toggle
+        default: false
+    - 
+        id: kpr-sans-serif
+        title: Use sans serif fonts
+        type: class-toggle
+        default: false
+    - 
+        id: kpr-bigger-font
+        title: Increase default font size and weight
+        type: class-toggle
+        default: false
+    - 
+        id: kpr-doodle-icons
+        title: Doodle task icons
+        description: The set of icons for the tasks lists can be doodle icons to create a more handrwitten effect (very slight). Turning this off will use Lucide icons instead.
+        type: class-toggle
+        default: true
+    - 
+        id: kpr-bg-textures
+        title: Background textures
+        description: Some panes can use background texture for style effect.
+        type: class-toggle
+        default: true
+
+
+
+    - 
+        id: editor
+        title: Editor
+        type: heading
+        level: 1
+    - 
+        id: kpr-plain-tables
+        title: Use plain table style
+        type: class-toggle
+        default: true
+
+
+
+    - 
+        id: features
+        title: Features
+        type: heading
+        level: 1
+    - 
+        id: kpr-rainbow-folders
+        title: Rainbow folders
+        type: class-toggle
+        default: true
+
+
+*/
+
+
+.themed-color-wrapper > div {
+    --background-primary: var(--color-base-00);
+}

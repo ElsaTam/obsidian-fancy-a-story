@@ -1,0 +1,80 @@
+
+
+.theme-light, .theme-dark {
+    --color-base-05: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 05%);
+    --color-base-10: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 10%);
+    --color-base-20: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 15%);
+    --color-base-25: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 25%);
+    --color-base-30: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 20%);
+    --color-base-35: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 35%);
+    --color-base-40: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 40%);
+    --color-base-50: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 50%);
+    --color-base-60: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 60%);
+    --color-base-70: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 70%);
+
+    --color-grey-hover  : color-mix(in srgb, var(--color-red),    rgb(var(--mono-rgb-0)) 20%);
+    --color-brown-hover : color-mix(in srgb, var(--color-red),    rgb(var(--mono-rgb-0)) 20%);
+    --color-red-hover   : color-mix(in srgb, var(--color-red),    rgb(var(--mono-rgb-0)) 20%);
+    --color-orange-hover: color-mix(in srgb, var(--color-orange), rgb(var(--mono-rgb-0)) 20%);
+    --color-yellow-hover: color-mix(in srgb, var(--color-yellow), rgb(var(--mono-rgb-0)) 20%);
+    --color-green-hover : color-mix(in srgb, var(--color-green),  rgb(var(--mono-rgb-0)) 20%);
+    --color-cyan-hover  : color-mix(in srgb, var(--color-cyan),   rgb(var(--mono-rgb-0)) 20%);
+    --color-blue-hover  : color-mix(in srgb, var(--color-blue),   rgb(var(--mono-rgb-0)) 20%);
+    --color-purple-hover: color-mix(in srgb, var(--color-purple), rgb(var(--mono-rgb-0)) 20%);
+    --color-pink-hover  : color-mix(in srgb, var(--color-pink),   rgb(var(--mono-rgb-0)) 20%);
+}
+
+.theme-dark {
+    --middle-color: color-mix(
+        in srgb-linear,
+        hsl(from var(--color-base-00) h 100% 55%),
+        hsl(from var(--color-base-100) h 100% 55%) 50%
+    );
+    --middle-color-complement: color-mix(
+        in srgb-linear,
+        hsl(from var(--color-base-00)  calc(h - 90) 100% 55%),
+        hsl(from var(--color-base-100) calc(h + 90) 100% 55%) 50%
+    );
+
+    --workleaf-background-blend-mode: overlay;
+}
+
+.theme-light {
+    /* Green */
+    --color-base-00: #ebe1d2;
+    --color-base-100: #102222;
+
+
+    /* Color 2 *//*
+    --color-base-00: #f5efd7;
+    --color-base-100: #0f0500;
+
+    /* Color 2 *//*
+    --color-base-00: #e6e6f8;
+    --color-base-100: #01041b;
+
+    /**/
+
+    --middle-color: color-mix(
+        in srgb-linear,
+        hsl(from var(--color-base-00) h 100% 40%),
+        hsl(from var(--color-base-100) h 100% 40%) 50%
+    );
+    --middle-color-complement: color-mix(
+        in srgb-linear,
+        hsl(from var(--color-base-00)  calc(h - 90) 100% 40%),
+        hsl(from var(--color-base-100) calc(h + 90) 100% 40%) 50%
+    );
+
+    --workleaf-background-blend-mode: overlay;
+}
+
+body {
+    --custom-color-space: srgb-linear;
+}
+
+:is(.theme-dark, .theme-light).kpr-custom {
+    --color-base-00: var(--custom-color-base-00);
+    --color-base-100: var(--custom-color-base-100);
+    --color-space: var(--custom-color-space);
+}

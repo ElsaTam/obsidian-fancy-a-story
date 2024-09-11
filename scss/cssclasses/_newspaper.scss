@@ -1,0 +1,83 @@
+.theme-dark .view-content:has(.newspaper) {
+    background-image: var(--black-paper);
+    background-size: 500px;
+    background-blend-mode: luminosity;
+}
+.theme-light .view-content:has(.newspaper) {
+    background-image: var(--white-paper);
+    background-size: 500px;
+    background-blend-mode: luminosity;
+}
+
+.newspaper {
+    --metadata-display-reading: block;
+    --inline-title-font: "Playfair Display";
+    --inline-title-padding-top: var(--inline-title-margin-bottom);
+    --bold-modifier: 500;
+    --font-text: Spectral, serif;
+    --h1-font: "Times New Roman";
+    --h1-color: var(--text-normal);
+    --h1-background: transparent;
+    --h1-style: italic;
+    --h1-weight: var(--font-semibold);
+    --h1-variant: small-caps;
+    container: newspaper-view / size;
+}
+
+.newspaper .inline-title {
+    text-align: center;
+}
+
+.newspaper .inline-title::after {
+    content: "";
+    display: block;
+    padding-top: var(--inline-title-padding-top);
+    border-bottom: 2px solid var(--text-normal);
+    width: calc(100cqw + 2 * var(--file-margins));
+    margin-left: calc(50% - 50cqw - var(--file-margins));
+}
+
+@container newspaper-view style(--metadata-display-reading: block) {
+    .markdown-preview-view .mod-header::after {
+        content: "";
+        display: block;
+        border-bottom: 2px solid var(--text-normal);
+        width: calc(100cqw + 2 * var(--file-margins));
+        margin-left: calc(50% - 50cqw - var(--file-margins));
+    }
+}
+
+@container newspaper-view style(--metadata-display-editing: block) {
+    .markdown-source-view .cm-contentContainer::before {
+        content: "";
+        position: absolute;
+        border-bottom: 2px solid var(--text-normal);
+        left: 0;
+        right: 0;
+    }
+}
+
+.newspaper div:has(> .frontmatter)+div~div>h1,
+.newspaper .cm-content>.cm-line~.HyperMD-header-1 {
+    border-top: 1px solid var(--text-normal);
+}
+
+.newspaper.markdown-preview-view h1 {
+    width: fit-content;
+    min-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.newspaper img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+.newspaper p {
+    text-align: justify;
+}

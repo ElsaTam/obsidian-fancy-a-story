@@ -1,0 +1,4 @@
+body:not(.native-scrollbars) ::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+    height: var(--scrollbar-width);
+}

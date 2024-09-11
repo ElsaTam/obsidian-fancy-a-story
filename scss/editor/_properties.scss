@@ -1,0 +1,24 @@
+@container metadata (width > 600px) {
+    .metadata-content {
+        column-count: 2;
+        column-rule: 1px dashed var(--metadata-border-color);
+    }
+}
+
+.metadata-container {
+    outline: 1px solid color-mix(in srgb, var(--metadata-border-color), transparent 50%);
+    outline-offset: -5px;
+}
+
+.metadata-properties-heading {
+    --heading-padding-inline: var(--size-4-6);
+    position: absolute;
+    top: 0;
+    transform: translateY(calc(-50% + 0.05em));
+    background: linear-gradient(to right,
+        transparent,
+        var(--background-primary) var(--heading-padding-inline),
+        var(--background-primary) calc(100% - var(--heading-padding-inline)),
+        transparent 100%);
+    padding-inline: var(--heading-padding-inline);
+}

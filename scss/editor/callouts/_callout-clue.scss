@@ -1,0 +1,79 @@
+/* Tape variants */
+.callout[data-callout="clue"][data-callout-metadata~="tape-a"] { --clue-tape-variant: var(--clue-tape-a); }
+.callout[data-callout="clue"][data-callout-metadata~="tape-b"] { --clue-tape-variant: var(--clue-tape-b); }
+.callout[data-callout="clue"][data-callout-metadata~="tape-c"] { --clue-tape-variant: var(--clue-tape-c); }
+.callout[data-callout="clue"][data-callout-metadata~="tape-d"] { --clue-tape-variant: var(--clue-tape-d); }
+
+/* Paper variants */
+.callout[data-callout="clue"][data-callout-metadata~="paper-a"] { --clue-paper-variant: var(--clue-paper-a); }
+.callout[data-callout="clue"][data-callout-metadata~="paper-b"] { --clue-paper-variant: var(--clue-paper-b); }
+.callout[data-callout="clue"][data-callout-metadata~="paper-c"] { --clue-paper-variant: var(--clue-paper-c); }
+.callout[data-callout="clue"][data-callout-metadata~="paper-d"] { --clue-paper-variant: var(--clue-paper-d); }
+
+.callout[data-callout="clue"] {
+    --callout-color: 0, 0, 0; /* Border and text color */
+    --callout-border-width: 2px;
+    --callout-header-height: 50px;
+    --callout-icon: lucide-search;
+    --callout-title-padding: 0;
+    --clue-tape-variant: var(--clue-tape-a); /* default */
+    --clue-paper-variant: var(--clue-paper-a); /* default */
+
+    background: none;
+    border: none;
+    margin-top: calc(0.5 * var(--callout-header-height));
+    mix-blend-mode: normal;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    --padding-top: calc(0.5 * var(--callout-header-height));
+    padding-top: var(--padding-top);
+
+    .callout-title {
+        justify-content: center;
+        position: absolute;
+        top: calc(var(--padding-top) - 0.5em);
+        width: 100%;
+        background: none;
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: calc(0.5em - 0.5 * var(--callout-header-height));
+            height: var(--callout-header-height);
+            width: 100%;
+            background-image: var(--clue-tape-variant);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;
+        }
+    }
+    
+    .callout-icon, .callout-title-inner, .callout-fold { z-index: 1; }
+
+    .callout-content {
+        padding: var(--callout-padding);
+        color: rgb(var(--callout-color));
+        text-align: center;
+        border: var(--callout-border-width) rgb(var(--callout-color)) solid;
+        padding-top: calc(var(--callout-header-height) / 2);
+        background-image: var(--clue-paper-variant);
+        background-size: 300px 300px;
+    }
+    .callout-content:hover {
+        font-weight: 600;
+        box-shadow: var(--shadow-s);
+    }
+
+    &.is-collapsed {
+        background: none;
+        padding-bottom: calc(var(--callout-header-height) / 2);
+
+        .callout-icon {  opacity: 0.5; }
+    }
+    .callout-title:hover .callout-icon { opacity: 1; }
+
+    /* Other theme compatibility */
+    .callout-title-inner { flex-grow: unset; }
+}

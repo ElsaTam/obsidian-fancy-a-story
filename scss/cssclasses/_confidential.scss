@@ -1,0 +1,16 @@
+.confidential.markdown-rendered mark,
+.confidential.cm-s-obsidian span.cm-highlight:not(.cm-formatting-highlight):not(.cm-formatting-highlight + .cm-highlight) {
+    --text-highlight-bg: transparent;
+    background-size: 100% calc(1em * var(--line-height-normal));
+    color: black;
+
+    &:nth-child(3n) {
+        background-image: var(--redaction-spoil-1);
+    }
+    &:nth-child(3n+1){
+        background-image: var(--redaction-spoil-2);
+    }
+    &:nth-child(3n+2) {
+        background-image: var(--redaction-spoil-3);
+    }
+}

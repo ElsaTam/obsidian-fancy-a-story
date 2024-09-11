@@ -1,0 +1,182 @@
+ul:has(.tag[href='#family-tree']) {
+    --list-spacing: 0;
+    --list-indent: 0;
+
+    overflow-x: scroll;
+
+    li:has(> .tag[href='#family-tree']) {
+        display: none;
+    }
+
+    .list-bullet {
+        display: none;
+    }
+
+    /* Collapse-indicator */
+    .list-collapse-indicator {
+        position: absolute;
+        opacity: 1;
+        top: 10px;
+        left: 50%;
+        margin: 0;
+        padding: 0;
+        transform: translateX(-50%);
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--background-primary);
+        border: 1px solid var(--color-accent);
+        z-index: 1;
+    }
+    .list-collapse-indicator.is-collapsed {
+        background: var(--color-accent);
+    }
+    .list-collapse-indicator:hover {
+        background: color-mix(in srgb, var(--color-accent), var(--background-primary) 70%);
+    }
+    .list-collapse-indicator.is-collapsed:hover {
+        background: color-mix(in srgb, var(--color-accent), var(--background-primary) 30%);
+    }
+    .list-collapse-indicator svg {
+        display: none;
+    }
+
+    /* When collapsed */
+    li.is-collapsed {
+        text-wrap: nowrap;
+    }
+    li.is-collapsed > ul > *  {
+        display: none;
+    }
+
+    /* Spouse info tooltip */
+    .tag[href='#wed'] { display: none; }
+    li:has(> .tag[href='#wed']) {
+        display: none;
+        position: absolute;
+        box-shadow: 0 2px 8px var(--background-modifier-box-shadow);
+        background-color: rgba(0, 0, 0, 0.9);
+        color: #ccc;
+        font-size: var(--font-ui-small);
+        padding: 5px 12px;
+        text-align: center;
+        z-index: var(--layer-tooltip);
+        top: 0;
+    }
+    li:has(> .tag[href='#wed'])::before {
+        content: "Wed to ";
+        display: unset;
+        position: unset;
+        color: #727272;
+    }
+
+    /* Spouse ring icon */
+    li:has(> ul > li > .tag[href='#wed']) > .list-bullet {
+        display: inline-block;
+        float: none;
+        margin-inline-start: 0;
+        margin-inline-end: 0.1em;
+        transform: translateY(-0.2em);
+    }
+    li:has(> ul > li > .tag[href='#wed']) > .list-bullet::after {
+        content: "💍";
+        position: static;
+        margin: 0;
+        padding: 0;
+        font-size: 10px;
+        mask-image: none;
+        background: none;
+        box-shadow: none;
+    }
+    li:has(> ul > li > .tag[href='#wed']):has(> .list-bullet:hover) > ul > li:has(> .tag[href='#wed']) {
+        display: block;
+    }
+
+    /* element with no child, or only a spouse (#wed) */
+    li:not(:has(ul)),
+    li:has(> ul > li:only-child > .tag[href='#wed']) {
+        text-wrap: nowrap;
+        .list-collapse-indicator { display: none; }
+    }
+
+
+    &, ul {
+        display: flex;
+        justify-content: center;
+        padding-top: 10px;
+        margin-top: 0px;
+        position: relative;
+        background-color: var(--background-primary);
+    }
+
+    li {
+        float: left;
+        text-align: center;
+        list-style-type: none;
+        position: relative;
+        padding: 20px 5px 0 5px;
+    }
+
+    li::before,
+    li::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 50%;
+        border-top: 1px solid var(--background-secondary);
+        width: 50%;
+        height: 10px;
+    }
+
+    li:has(> .tag[href='#wed'])::after {
+        content: none;
+    }
+
+    li::after {
+        right: auto;
+        left: 50%;
+        border-left: 1px solid var(--background-secondary);
+    }
+
+    /* Remove left-right connectors from elements without any siblings */
+    li:only-child::after,
+    li:only-child::before {
+        display: none;
+    }
+
+    /* Remove left connector from first child and connector from last child */
+    li:first-child:has(> .tag[href='#wed']) + li::before,
+    li:first-child:has(> .tag[href='#family-tree']) + li::before,
+    li:has(+ li:last-child > .tag[href='#wed'])::after,
+    li:has(+ li:last-child > .tag[href='#family-tree'])::after,
+    li:first-child::before,
+    li:last-child::after {
+        border-top: none;
+    }
+
+    /* Remove space from the top of single children */
+    li:only-child {
+        padding-top: 0;
+    }
+
+    /* Adding back the vertical connector to the last nodes */
+    li:last-child::before {
+        border-right: 1px solid var(--bs-dark);
+    }
+    
+    /* Add downward connectors from parents */
+    ul::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        border-left: 1px solid var(--bs-dark);
+        width: 0;
+        height: 20px;
+
+        inset-inline-start: unset;
+        bottom: unset;
+        border-inline-end: unset;
+    }
+}

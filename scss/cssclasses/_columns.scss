@@ -1,0 +1,24 @@
+.columns-2.markdown-preview-view .markdown-preview-section {
+    column-count: 2;
+}
+
+.columns-3.markdown-preview-view .markdown-preview-section {
+    column-count: 3;
+}
+
+.columns-4.markdown-preview-view .markdown-preview-section {
+    column-count: 4;
+}
+
+:is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section {
+    column-rule: 1px solid var(--color-base-50);
+    column-gap: 50px;
+}
+
+:is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section .markdown-preview-pusher,
+:is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section .mod-header,
+:is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section div:has(.frontmatter),
+:is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section :is(h1),
+:is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section *:has(> [alt~="span"]) {
+    column-span: all;
+}

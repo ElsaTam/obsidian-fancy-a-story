@@ -1,0 +1,40 @@
+/* Minimum padding with window bottom border */
+.mod-sidedock {
+    padding-bottom: var(--size-2-2);
+}
+
+/* Sidedocks workleaves */
+.mod-sidedock .workspace-leaf {
+    background-color: var(--background-primary);
+    box-shadow: inset 0 0 20px 3px rgba(0, 0, 0, 0.5);
+    -webkit-mask: radial-gradient(var(--cutout-corner-radius) at var(--cutout-corner-radius) var(--cutout-corner-radius), transparent 100%, black)
+        calc(-1 * var(--cutout-corner-radius)) calc(-1 * var(--cutout-corner-radius));
+}
+
+/* Padding needed because of the cropped circle corners */
+.mod-sidedock .workspace-leaf-content {
+    padding: var(--cutout-corner-radius);
+}
+
+/* Thin inside outline effect */
+.mod-sidedock .workspace-leaf::before {
+    content: "";
+    position: absolute;
+    inset: var(--cutout-outline-inset);
+    background: var(--background-secondary);
+    -webkit-mask: radial-gradient(
+        var(--cutout-corner-radius) at var(--cutout-corner-radius) var(--cutout-corner-radius),
+        transparent calc(100% - 1px),
+        black calc(100% - 1px) 100%,
+        transparent) calc(-1 * var(--cutout-corner-radius)) calc(-1 * var(--cutout-corner-radius)),
+    linear-gradient(90deg, black 2px, transparent 0) -1px 50% / 100% calc(100% - var(--cutout-corner-radius) * 2 + 1px) repeat-x,
+    linear-gradient(       black 2px, transparent 0) 50% -1px / calc(100% - var(--cutout-corner-radius) * 2 + 1px) 100% repeat-y;
+}
+
+/* Resize the handle to not expand in the cropped circle corners */
+.workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle {
+    width: calc(100% - (var(--cutout-corner-radius) + var(--cutout-outline-inset)) * 2);
+    align-self: center;
+    left: calc(var(--cutout-corner-radius) + var(--cutout-outline-inset));
+}
+

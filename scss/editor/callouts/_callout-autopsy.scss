@@ -1,0 +1,271 @@
+.callout[data-callout="autopsy"] {
+    --callout-icon: lucide-skull;
+    --callout-color: var(--mono-rgb-0);
+    --callout-color-nested: var(--color-blue-rgb);
+    --callout-title-color: rgb(var(--mono-rgb-100));
+    --callout-title-padding: 0 0 var(--size-4-6);
+    --callout-border-width: 1px;
+    --callout-blend-mode: normal;
+
+
+    /* TITLE: centered and bigger */
+    > .callout-title {
+        --callout-title-size: 1.5em;
+        justify-content: center;
+    }
+
+    /* TITLE: color to the icons */
+    > .callout-title svg {
+        color: var(--callout-title-color);
+    }
+
+    /* CONTENT: grid layout */
+    > .callout-content {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas:
+            "decedent decedent species species gender age"
+            "residence residence residence occupation occupation occupation"
+            "circumstances circumstances circumstances circumstances circumstances circumstances"
+            "remarks remarks remarks remarks remarks remarks"
+            "description description description description description description"
+            "marks-wounds marks-wounds marks-wounds body body body"
+            "cause cause time time recommendations recommendations"
+            ". footnote footnote footnote footnote ."
+            "date date city city signature signature";
+    }
+    .callout[data-callout="decedent"]        { grid-area: decedent; }
+    .callout[data-callout="species"]         { grid-area: species; }
+    .callout[data-callout="gender"]          { grid-area: gender; }
+    .callout[data-callout="age"]             { grid-area: age; }
+    .callout[data-callout="residence"]       { grid-area: residence; }
+    .callout[data-callout="occupation"]      { grid-area: occupation; }
+    .callout[data-callout="circumstances"]   { grid-area: circumstances; }
+    .callout[data-callout="remarks"]         { grid-area: remarks; }
+    .callout[data-callout="description"]     { grid-area: description; }
+    .callout[data-callout="marks-wounds"]    { grid-area: marks-wounds; }
+    .callout[data-callout="body"]            { grid-area: body; }
+    .callout[data-callout="cause"]           { grid-area: cause; }
+    .callout[data-callout="time"]          { grid-area: time; }
+    .callout[data-callout="recommendations"] { grid-area: recommendations; }
+    .callout[data-callout="footnote"]        { grid-area: footnote; }
+    .callout[data-callout="date"]            { grid-area: date; }
+    .callout[data-callout="city"]            { grid-area: city; }
+    .callout[data-callout="signature"]       { grid-area: signature; }
+
+    /* NESTED CALLOUTS */
+    .callout {
+        --callout-border-width: 0;
+        --callout-radius: 0;
+        --callout-color: var(--callout-color-nested);
+        --callout-title-color: var(--callout-color-nested);
+        --callout-padding: var(--size-4-5) var(--size-4-3);
+        --callout-blend-mode: normal;
+        --checkbox-color: rgb(var(--callout-color));
+        background: none;
+        margin: 0;
+    }
+    .callout > .callout-title {
+        text-transform: uppercase;
+        background: none;
+        .callout-icon { display: none; }
+    }
+    .callout > .callout-content {
+        margin: 0;
+        padding: var(--size-4-2) 0 0 0;
+        height: 100%;
+        
+        /* Needed to force the last paragraph to grow, usefull to see the dots all the way down to the bottom of the space */
+        display: flex;
+        flex-direction: column;
+        gap: var(--p-spacing);
+    }
+
+    /* Remove every paddings and margins of any element inside */
+    .callout * {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Inline callouts (optional) */
+    .callout[data-callout-metadata~="inline"] {
+        .callout-title {
+            float: left;
+            margin-right: 10px;
+            line-height: var(--line-height-normal);
+        }
+        .callout-content {
+            padding: 0;
+            display: inline;
+        }
+    }
+
+    /* Inline tasks lists */
+    ul.contains-task-list {
+        --checklist-done-decoration: none;
+        --checklist-done-color: var(--text-normal);
+        color: var(--text-faint);
+        display: flex;
+        justify-content: space-between;
+        gap: 5px 10px;
+        flex-wrap: wrap;
+    }
+    .task-list-item-checkbox {
+        margin-right: 3px;
+    }
+
+    /* Tables */
+    table {
+        --table-header-color: var(--text-normal);
+        --table-header-background: rgb(var(--callout-color), 0.03);
+        --table-header-background-hover: var(--table-header-background);
+        --table-row-background: transparent;
+        --table-row-alt-background: transparent;
+        width: 100%;
+    }
+    th { font-variant: small-caps; }
+    th, td { text-align: center; }
+    table:not(:first-child) { margin-top: 10px; }
+    table:not(:last-child) { margin-bottom: 10px; }
+    
+    /* Dotted lines as background (optional) */
+    .callout:not([data-callout-metadata~="no-dots"]) {
+        p {
+            --dot-size: 1px; /* Can't go too high, probably 2 or 3 max, or you need to increase line height */
+            --dot-gap: 10px;
+            --offset-y: 2px;
+            --calc-line-height: calc(1em * var(--line-height-normal));
+            --line-start: calc(0.5 * var(--calc-line-height) + 0.5 * var(--font-text-size) + calc(var(--offset-y)));
+            --line-end: calc(var(--line-start) + var(--dot-size));
+
+            background-image: radial-gradient(circle at var(--dot-size) var(--line-start), rgba(var(--callout-color), 0.2) var(--dot-size), transparent 0);
+            background-size: calc(var(--dot-size) + var(--dot-gap)) calc(var(--calc-line-height));
+        }
+        p:last-child {
+           flex: 1 0 0;
+        }
+    }
+
+    /* Add an horitonzal rule (optional) */
+    .callout[data-callout-metadata~="hr"] {
+        border-bottom: rgb(var(--callout-color)) 5px double;
+        .callout-content *:last-child {
+            flex-grow: 0;
+        }
+    }
+
+    /* Body image with checkable list */
+    .callout[data-callout="body"] {
+        --body-opacity: 0.8;
+        --checkbox-radius: 50%;
+        --checkbox-color: var(--color-red);
+        --checkbox-color-hover: color-mix(in srgb, var(--checkbox-color), rgb(var(--mono-rgb-100)) 40%);
+        --checkbox-color-unchecked: rgb(var(--callout-color-nested));
+        --checkbox-opacity-unchecked: 0.2;
+        --checkbox-border-color: var(--checkbox-color-unchecked);
+        --checkbox-border-color-hover: color-mix(in srgb, var(--checkbox-color-unchecked), rgb(var(--mono-rgb-100)) 60%);
+        overflow: visible;
+
+        z-index: 1;
+
+        > .callout-content {
+            padding: 0;
+            container: autopsy-body / inline-size;
+            overflow: visible;
+        }
+        
+        ul.contains-task-list {
+            --cqh: calc(1cqw * var(--body-img-base-height) / var(--body-img-base-width));
+            width: 100cqw; /* Wuery the width of the container, defined by the column span of the grid layout */
+            height:  calc(100 * var(--cqh)); /* Compute 100% of the container width, times the ratio of the image */
+            position: relative;
+            color: unset;
+        }
+        /* Make the background extend to its whole container */
+        ul.contains-task-list::before {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0; top: 0; right: 0; bottom: 0;
+            background-image: var(--body-img);
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: -1;
+            opacity: var(--body-opacity);
+        }
+        /* Set a background for unchecked checkboxes */
+        .task-list-item-checkbox:not(:checked) {
+            background-color: rgb(from var(--checkbox-color-unchecked) r g b / var(--checkbox-opacity-unchecked));
+        }
+        /* Positioning of the checkboxes */
+        .task-list-item {
+            /* Dont use unit, values are between 0 and 100 */
+            &:nth-child(1)  { --left-cqw: 25; --top-cqh:  3; } /* front head */
+            &:nth-child(2)  { --left-cqw: 15; --top-cqh: 33; } /* front left arm */
+            &:nth-child(3)  { --left-cqw: 35; --top-cqh: 33; } /* front right arm */
+            &:nth-child(4)  { --left-cqw:  9; --top-cqh: 50; } /* front left hand */
+            &:nth-child(5)  { --left-cqw: 40; --top-cqh: 50; } /* front right hand */
+            &:nth-child(6)  { --left-cqw: 25; --top-cqh: 39; } /* belly */
+            &:nth-child(7)  { --left-cqw: 25; --top-cqh: 48; } /* pelvis */
+            &:nth-child(8)  { --left-cqw: 19; --top-cqh: 69; } /* front left leg */
+            &:nth-child(9)  { --left-cqw: 31; --top-cqh: 69; } /* front right leg */
+            &:nth-child(10) { --left-cqw: 17; --top-cqh: 91; } /* over left foot */
+            &:nth-child(11) { --left-cqw: 33; --top-cqh: 91; } /* over right foot */
+
+            &:nth-child(12) { --left-cqw: 82; --top-cqh:  3; } /* back head */
+            &:nth-child(13) { --left-cqw: 71; --top-cqh: 33; } /* back left arm */
+            &:nth-child(14) { --left-cqw: 93; --top-cqh: 33; } /* back right arm */
+            &:nth-child(15) { --left-cqw: 66; --top-cqh: 50; } /* back left hand */
+            &:nth-child(16) { --left-cqw: 97; --top-cqh: 50; } /* back right hand */
+            &:nth-child(17) { --left-cqw: 82; --top-cqh: 39; } /* back */
+            &:nth-child(18) { --left-cqw: 82; --top-cqh: 49; } /* bottom */
+            &:nth-child(19) { --left-cqw: 76; --top-cqh: 69; } /* back left leg */
+            &:nth-child(20) { --left-cqw: 88; --top-cqh: 69; } /* back right leg */
+            &:nth-child(21) { --left-cqw: 76; --top-cqh: 92; } /* under left foot */
+            &:nth-child(22) { --left-cqw: 88; --top-cqh: 92; } /* under right foot */
+        }
+
+        .task-list-item {
+            --padding-x: 0px;
+            --padding-y: 0px;
+            --left: calc(1cqw * var(--left-cqw) + var(--padding-x));
+            --top: calc(var(--cqh) * var(--top-cqh) - var(--padding-y));
+            position: absolute;
+            /* Hide the label */
+            font-size: 0;
+            /* Layout for the tooltip on hover */
+            padding: var(--padding-y) var(--padding-x);
+            display: flex;
+            flex-direction: row-reverse; /* must use row reverse to avoid overflowing out of the main callout on the right */
+            gap: 10px;
+            align-items: baseline;
+            line-height: 1;
+            text-wrap: nowrap;
+        }
+        
+        .task-list-item {
+            right: calc(100cqw - var(--left)); /* must compute from the right because we use row-reverse */
+            top: var(--top);
+        }
+
+        .task-list-item:hover {
+            --padding-x: 5px;
+            --padding-y: 5px;
+            font-size: unset; /* Show the label */
+            background: rgba(var(--mono-rgb-0), 1); /* Show the background */
+            border-radius: var(--radius-m);
+            z-index: 1;
+        }
+    }
+
+    /* Footnote */
+    .callout[data-callout="footnote"] {
+        .callout-title { justify-content: center; }
+        .callout-content { text-align: center; }
+    }
+}
+
+/* Because SVG images in black, in case we are in the dark theme, we need to invert it and make it white */
+.theme-dark .callout[data-callout="autopsy"] .callout[data-callout="body"] ul.contains-task-list::before {
+    filter: invert(1);
+}

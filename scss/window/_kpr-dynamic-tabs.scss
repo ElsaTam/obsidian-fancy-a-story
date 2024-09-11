@@ -1,0 +1,14 @@
+.kpr-dynamic-tabs .mod-root .workspace-tabs:not(.mod-stacked) .workspace-leaf.mod-active {
+    animation: open-tab 0.5s;
+}
+
+
+@keyframes open-tab {
+    from {
+        clip-path: rect(0 50% 0% 50%);
+    }
+
+    to {
+        clip-path: rect(0 100% 100% 0);
+    }
+}

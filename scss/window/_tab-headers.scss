@@ -1,0 +1,40 @@
+/* Remove gap between header and content */
+.mod-sidedock .workspace-tab-header-container-inner {
+    padding-bottom: 0;
+}
+
+/* Ensure gap between header and top border windows */
+.mod-top .workspace-tab-header-container-inner {
+    margin-top: 6px;
+}
+
+/* default icon opacity */
+.workspace-tab-header-container {
+    --icon-opacity: var(--icon-opacity-inactive);
+}
+
+/* Full opacity when the header container is hovered */
+.workspace-tab-header-container:hover,
+.workspace-tab-header-container:has(*:hover) {
+    --icon-opacity: 1;
+}
+
+/* Dotted bottom border */
+.nav-header {
+    border-bottom: var(--file-header-border);
+}
+
+/* Ensure sufficient padding for cropped circle corners */
+.is-hidden-frameless:not(.is-fullscreen) .mod-sidedock .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
+    padding-left: calc(var(--cutout-corner-radius) + var(--size-4-2) + var(--frame-left-space));
+}
+.mod-sidedock .workspace-tab-header-container {
+    padding-left: calc(var(--cutout-corner-radius) + var(--size-4-2));
+    padding-right: calc(var(--cutout-corner-radius) + var(--size-4-2));
+}
+
+/* Match the background for the active tab header */
+.mod-sidedock .workspace-tab-header.is-active,
+.mod-sidedock .workspace-tab-header.is-active:hover {
+    background-color: var(--background-primary);
+}
