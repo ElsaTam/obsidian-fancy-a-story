@@ -1,0 +1,33 @@
+.callout[data-callout="screen"] {
+    --callout-color: var(--color-green-rgb);
+    --callout-icon: lucide-monitor;
+    --callout-title-size: 1.3em;
+
+    --list-marker-color: rgb(var(--callout-color));
+    --list-marker-color-collapsed: color-mix(in srgb, rgb(var(--callout-color)), rgb(var(--mono-rgb-0)) 40%);
+    --collapse-icon-color: rgb(var(--callout-color));
+    --collapse-icon-color-collapsed: var(--list-marker-color-collapsed);
+    --background-modifier-active-hover: color-mix(in srgb, var(--list-marker-color-collapsed), transparent 95%);
+    --indentation-guide-color: rgba(var(--callout-color), 0.2);
+
+    color: rgb(var(--callout-color));
+    font-family: 'ProFont', 'Courier New', Courier, monospace;
+
+    &, .callout-title {
+        background: none;
+    }
+    .callout-fold {
+        padding-inline-end: 0;
+    }
+
+    .callout-title {
+        display: grid;
+        width: 100%;
+        grid-template-columns: var(--icon-size) 1fr var(--icon-size);
+        text-align: center;
+    }
+
+    &:not(.is-collapsed):has(.callout-content) {
+        filter: drop-shadow(0 0 3px rgba(var(--callout-color), 0.5));
+    }
+}

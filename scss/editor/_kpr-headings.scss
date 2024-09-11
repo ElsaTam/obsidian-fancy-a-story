@@ -1,0 +1,15 @@
+.kpr-headings-hue {
+    --h2-color: var(--middle-color);
+}
+
+.kpr-headings-complement {
+    --h2-color: var(--middle-color-complement);
+}
+
+.kpr-headings-hue,
+.kpr-headings-complement {
+    --h3-color: color-mix(in srgb, var(--h2-color), var(--text-normal) 20%);
+    --h4-color: color-mix(in srgb, var(--h2-color), var(--text-normal) 40%);
+    --h5-color: color-mix(in srgb, var(--h2-color), var(--text-normal) 60%);
+    --h6-color: color-mix(in srgb, var(--h2-color), var(--text-normal) 80%);
+}

@@ -1,0 +1,210 @@
+.callout[data-callout="cards-deck"] {
+    --callout-icon: lucide-layers;
+    --callout-content-padding: 0;
+    --deck-border-width: 1px;
+    --callout-border-width: var(--deck-border-width);
+    --p-spacing: 0;
+}
+
+.callout[data-callout="cards-deck"] .callout-content {
+    overflow: visible;
+}
+
+.dataview-cards-deck > .dataview-result-list-root-ul {
+    --list-indent: 0;
+    --list-spacing: 0;
+    --link-decoration: none;
+    --link-decoration-hover: none;
+    --deck-border-width: 0;
+    list-style-type: none;
+    border: var(--deck-border-width) solid var(--background-secondary);
+}
+
+.callout[data-callout="cards-deck"] .callout-content:has(p:nth-of-type(2)) > p {
+    border: var(--callout-border-width) solid rgba(var(--callout-color), var(--callout-border-opacity));
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+    background-color: rgba(var(--callout-color), 0.1);
+    margin: var(--size-4-3) var(--size-4-4);
+}
+
+.dataview-cards-deck > .dataview-result-list-root-ul,
+.callout[data-callout="cards-deck"] .callout-content > p {
+    --card-gap: 30px;
+    --card-width: 70px;
+    --card-height: 100px;
+    --card-note-gap: 50px;
+    --card-note-width: 150px;
+    --card-note-height: 300px;
+    --card-scale-hover: 1.1;
+    --card-shadow-offset-y: 2px;
+    --card-shadow-offset-x: -2px;
+    --card-shadow-blur: 3px;
+    --card-shadow-opacity: 0.2;
+    --card-base-translation: calc(-0.5 * (var(--card-width) - var(--card-gap)));
+    --deck-scrollbar-width: 10px;
+    --padding-scale-factor: (var(--card-scale-hover) - 1) * var(--card-height);
+
+    color: var(--text-muted);
+    height: calc((var(--card-height) + var(--card-shadow-offset-y) * 2 + var(--card-shadow-blur) * 2) * var(--card-scale-hover) + var(--padding-bottom) + 2 * var(--deck-border-width));
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    overflow-x: auto;
+
+    --padding-bottom: max(0px, var(--card-shadow-blur) + var(--card-shadow-offset-y) + var(--padding-scale-factor));
+    --padding-top: max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-y) + var(--padding-scale-factor));
+    --padding-left: calc(-1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-x)));
+    --padding-right: calc(-1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) + var(--card-shadow-offset-x)));
+
+    padding-bottom: var(--padding-bottom);
+    padding-top: var(--padding-top);
+    padding-left: var(--padding-left);
+    padding-right: var(--padding-right);
+
+    &:has(.markdown-embed) {
+        --card-gap: var(--card-note-gap);
+        --card-width: var(--card-note-width);
+        --card-height: var(--card-note-height);
+        --padding-scale-factor: (var(--card-scale-hover) - 1) * var(--card-note-height);
+        --card-base-translation: calc(-0.5 * (var(--card-note-width) - var(--card-note-gap)));
+    }
+
+    &::-webkit-scrollbar{
+        width: var(--deck-scrollbar-width);
+        height: var(--deck-scrollbar-width);
+    }
+    
+    &.dataview-result-list-root-ul {
+        padding-bottom: var(--padding-bottom) !important;
+        padding-top: var(--padding-top) !important;
+        padding-left: var(--padding-left) !important;
+        padding-right: var(--padding-right) !important;
+    }
+
+    > * {
+        width: var(--card-gap);
+        transition: transform 0.5s ease-in-out;
+        transform: translateX(var(--card-base-translation));
+        transform-origin: right;
+    }
+
+    > :hover {
+        transform: translateX(var(--card-base-translation)) scale(var(--card-scale-hover));
+    }
+
+    > :hover ~ * {
+        transform: translateX(var(--card-base-translation)) translateX(calc(var(--card-width) - var(--card-gap)));
+    }
+
+    > a:has(> .image-embed) { font-size: 0; }
+
+    > .dataview-result-list-li,
+    > span:has(> img),
+    > a > span:has(> img) {
+        transition: transform 0.5s ease-in-out, filter 0.2s linear;
+        height: var(--card-height);
+        vertical-align: middle;
+    }
+
+    > span > img,
+    > a > span > img {
+        border-radius: var(--radius-l);
+        border: 1px solid currentColor;
+        box-shadow: var(--card-shadow-offset-x) var(--card-shadow-offset-y) var(--card-shadow-blur) rgba(0, 0, 0, var(--card-shadow-opacity));
+        max-width: var(--card-width);
+        height: var(--card-height);
+        object-fit: cover;
+        object-position: center center;
+    }
+    
+    > .dataview-result-list-li > span > .markdown-embed,
+    > .dataview-result-list-li > span > a > .markdown-embed,
+    > .markdown-embed {
+        --embed-border-start: 0px;
+        --embed-border-end: 0px;
+        --embed-max-height: var(--card-height);
+        --embed-padding: 0px;
+        
+        > .markdown-embed-title {
+            position: absolute;
+            z-index: 1;
+            writing-mode: vertical-rl;
+            background-color: var(--background-primary);
+            box-shadow: 1px 1px 4px black;
+            border-top-left-radius: var(--radius-l);
+            padding: var(--size-4-2) 0;
+            top: 1px;
+            left: 1px;
+        }
+        &:hover > .markdown-embed-title {
+            opacity: 0;
+        }
+        
+        > .markdown-preview-view,
+        > .markdown-embed-content {
+            --font-text-size: xx-small;
+            width: var(--card-width);
+            background: var(--background-primary);
+            contain: strict;
+            content-visibility: auto;
+            overflow: hidden;
+            padding: var(--size-2-2);
+            border-radius: var(--radius-l);
+            border: 1px solid currentColor;
+            outline: 4px solid var(--background-primary);
+            height: var(--embed-max-height);
+        }
+        > .markdown-embed-content > .markdown-preview-view {
+            overflow: hidden;
+        }
+        > .markdown-embed-link {
+            right: calc(var(--card-gap) - var(--card-width) + 4px);
+            width: fit-content;
+        }
+
+        img {
+            max-height: 150px;
+            max-width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+}
+
+
+.markdown-reading-view:has(.dataview-wide) {
+    container: reading-view / inline-size;
+}
+.markdown-preview-sizer:has(.dataview-wide) > div > div {
+    overflow: visible !important;
+}
+.markdown-reading-view .dataview-wide {
+    position: relative;
+    --w: 95cqw;
+    width: var(--w);
+    left: calc(50% - var(--w) * 0.5);
+}
+
+
+/* Remove code bellow in case of performance issues */
+
+.dataview-cards-deck > .dataview-result-list-root-ul,
+.callout[data-callout="cards-deck"] .callout-content > p {
+    > span > img:hover,
+    > a > span > img:hover {
+        color: rgb(var(--callout-color));
+    }
+
+    > .markdown-embed > .markdown-preview-view:hover,
+    > .markdown-embed > .markdown-embed-content:hover {
+        outline: none;
+        color: rgb(var(--callout-color));
+    }
+
+    &:has(> :hover) > :not(:hover) {
+        filter: saturate(0.2);
+        &, & .markdown-preview-view {
+            color: var(--text-faint);
+        }
+    }
+}

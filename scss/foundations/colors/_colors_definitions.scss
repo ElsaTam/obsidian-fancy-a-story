@@ -1,0 +1,74 @@
+$themes: (
+    "light" "coffee"     #ece0d1 #38220f "lab",
+    "light" "sand"       #e6e4cc #2c2517 "srgb-linear",
+    "light" "automn"     #f1f1dc #4b220b "hsl",
+    "light" "ice"        #e1f0f3 #083a3f "srgb",
+    "light" "canyon"     #f8efda #884823 "srgb-linear",
+    "light" "silver"     #ffffff #000000 "srgb-linear",
+    "light" "candy"      #f7e5ef #6b3c63 "lab",
+    "light" "meadow"     #e9f5dd #192903 "srgb-linear",
+    "dark"  "coffee"     #201918 #d6cbc0 "lab",
+    "dark"  "forest"     #09180c #d6b498 "lab",
+    "dark"  "volcano"    #080300 #ee8e78 "lab",
+    "dark"  "artic"      #021e22 #caf0f7 "lab",
+    "dark"  "silver"     #1f1f1f #d9d9d9 "lab",
+    "dark"  "chocolate"  #231e1a #d7c0a3 "lab",
+    "dark"  "unwerwater" #0a0a29 #b3e5ff "lab",
+    "dark"  "mystic"     #0d0514 #f3d0ff "lab",
+    "dark"  "swamp"      #1b2329 #e2d0b6 "lab",
+    "dark"  "navy"       #000016 #fff5bb "oklab",
+);
+
+$extended-colors: (
+    "light": (
+        'grey':   #4d4d4d,
+        'brown':  #632006,
+        'red':    #b13030,
+        'orange': #be6900,
+        'yellow': #d4b815,
+        'green':  #0d610d,
+        'cyan':   #319191,
+        'blue':   #323296,
+        'purple': #641c7a,
+        'pink':   #e43eba
+    ),
+    "dark": (
+        'grey':   #bdbdbd,
+        'brown':  #8d6540,
+        'red':    #f06565,
+        'orange': #eea444,
+        'yellow': yellow,
+        'green':  #60db60,
+        'cyan':   #7be2e2,
+        'blue':   #6795e9,
+        'purple': #c48bf3,
+        'pink':   #f7bdf8
+    )
+);
+
+$rainbow-colors: (
+    "light": (
+        'rainbow-1':  hsl(18, 60%, 40%),
+        'rainbow-2':  hsl(54, 60%, 40%),
+        'rainbow-3':  hsl(90, 60%, 40%),
+        'rainbow-4':  hsl(126, 60%, 40%),
+        'rainbow-5':  hsl(162, 60%, 40%),
+        'rainbow-6':  hsl(198, 60%, 40%),
+        'rainbow-7':  hsl(234, 60%, 40%),
+        'rainbow-8':  hsl(270, 60%, 40%),
+        'rainbow-9':  hsl(306, 60%, 40%),
+        'rainbow-10': hsl(342, 60%, 40%),
+    ),
+    "dark": (
+        'rainbow-1':  hsl(0, 100%, 84%),
+        'rainbow-2':  hsl(33, 100%, 82%),
+        'rainbow-3':  hsl(62, 100%, 86%),
+        'rainbow-4':  hsl(110, 100%, 87%),
+        'rainbow-5':  hsl(193, 100%, 79%),
+        'rainbow-6':  hsl(217, 100%, 81%),
+        'rainbow-7':  hsl(249, 100%, 85%),
+        'rainbow-8':  hsl(270, 100%, 87%),
+        'rainbow-9':  hsl(300, 100%, 89%),
+        'rainbow-10': hsl(324, 100%, 83%),
+    )
+);

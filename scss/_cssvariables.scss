@@ -1,0 +1,114 @@
+
+
+body {
+    /* buttons */
+    --button-radius: var(--radius-s);
+
+    /* callouts */
+    --callout-quote: var(--color-grey-rgb);
+    --callout-radius: 0;
+    --callout-border-width: 1px;
+    --callout-border-opacity: 0.25;
+    --callout-padding: 0;
+    --callout-content-padding: var(--size-4-3) var(--size-4-3) var(--size-4-3) var(--size-4-6);
+    --callout-title-padding: var(--size-4-3);
+
+    /* dividers */
+    --divider-color: transparent;
+    --divider-color-hover: var(--color-base-50);
+
+    /* file */
+    --file-header-border: 1px dashed var(--background-secondary);
+
+    /* font */
+    --font-interface-theme: "Roboto";
+    --font-text-theme: "Noto Serif";
+
+    /* font weight */
+    --font-weight: var(--font-light);
+    --font-thin: 100;
+    --font-extralight: 200;
+    --font-light: 300;
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+    --font-black: 900;
+
+    /* headings */
+    --h1-font: var(--font-typewriter), var(--font-text);
+    --h1-line-height: 1.2em;
+    --h1-size: 3em;
+
+    /* icons */
+    --icon-opacity-inactive: 0.3;
+
+    /* inline title */
+    --inline-title-color: var(--text-normal);
+
+    /* metadata */
+    --metadata-border-width: 1px;
+    --metadata-padding: var(--size-4-6) var(--size-4-2) var(--size-4-2) var(--size-4-2);
+
+    /* modal */
+    --modal-radius: var(--radius-s);
+
+    /* radiuses */
+    --radius-s: 0;
+
+    /* ribbon */
+    --ribbon-background: none;
+    --ribbon-background-collapsed: none;
+
+    /*scrollbars */
+    --scrollbar-thumb-bg: var(--color-base-20);
+    --scrollbar-width: 10px;
+
+    /* tabs */
+    --tab-container-background: none;
+    --tab-curve: 0;
+    --tab-outline-color: var(--color-base-30);
+    --tab-outline-width: 0;
+    --tab-radius: 0;
+    --tab-radius-active: 0;
+    --tab-text-color: var(--color-base-40);
+    --tab-text-color-active: var(--text-muted);
+    --tab-text-color-focused: var(--text-faint);
+    --tab-text-color-focused-active: var(--text-muted);
+    --tab-text-color-focused-highlighted: var(--text-accent);
+    --tab-text-color-focused-active-current: var(--text-normal);
+
+    /* table */
+    --table-header-background: rgba(var(--mono-rgb-0), 0.3);
+    --table-line-height: 1.8;
+    --table-border-color: var(--color-base-10);
+
+    /* titlebar */
+    --titlebar-background: none;
+    --titlebar-background-focused: none;
+
+
+
+    /* ----------------- CUSTOM ----------------- */
+
+    /* circle cutouts */
+    --cutout-corner-radius: 13px;
+    --cutout-corner-angle: 0.25em;
+    --cutout-outline-inset: 3px;
+    --cutout-outline-thickness: 1px;
+
+    /* file explorer */
+    --active-file-bullet-size: 6px;
+
+    /* font */
+    --font-typewriter: "TT2020StyleE", "Courier", monospace;
+
+    /* images */
+    --image-shadow-offset: var(--size-4-3);
+    --image-shadow-stripe-thickness: 2px;
+    --image-shadow-stripe-gap: 4px;
+
+    /* table */
+    --table-header-line-height: 1.8;
+}

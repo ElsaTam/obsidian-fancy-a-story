@@ -1,0 +1,34 @@
+blockquote:has(.caption) {
+    padding: 0;
+    width: fit-content;
+    max-width: 100%;
+
+    .image-embed {
+        display: block;
+        font-size: 0;
+    }
+}
+
+
+blockquote .caption {
+    /*direction: rtl;*/
+    font-size: 0.8em;
+    display: block;
+    width: fit-content;
+    margin-inline-end: auto;
+    font-style: italic;
+    border-bottom: 1px dashed var(--color-accent);
+    background-color: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.2);
+    padding-inline-start: 4px;
+    padding-inline-end: 16px;
+    margin-top: 0;
+}
+
+blockquote p:has(.image-embed):has(+ p .caption),
+blockquote p:has(.image-embed) + p:has(.caption) {
+    margin-block: 0;
+}
+
+blockquote .image-embed + br:has(+ .caption) {
+    display: none;
+}

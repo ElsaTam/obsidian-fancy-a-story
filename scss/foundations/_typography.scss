@@ -1,0 +1,20 @@
+/* ----------- FONT ----------- */
+
+.markdown-source-view,
+.markdown-source-view.mod-cm6 .cm-scroller,
+.markdown-preview-view,
+.community-modal-readme,
+.sync-history-preview {
+    font-weight: var(--font-weight);
+}
+
+.cm-s-obsidian span.cm-formatting-quote {
+    font-weight: var(--font-extralight);
+}
+
+
+/* ----------- TEXT CONTENT ----------- */
+
+p, li {
+    text-wrap: pretty;
+}

@@ -1,0 +1,18 @@
+.kpr-doodle-icons {
+    .list-bullet::after {
+        --list-bullet-size: 0.8em;
+        border-radius: 0;
+        mask-size: 100%;
+    }
+    
+    
+    @for $i from 1 through 6 {
+        :where(ul:nth-child(6n + #{$i})){
+            @for $j from 1 through 6 {
+                :where(li:nth-child(6n + #{mod($i + $j, 6)}) .list-bullet)::after {mask-image: var(--bullet-#{$j});}
+            }
+        }
+
+        .HyperMD-list-line:nth-child(6n + #{$i}) .list-bullet::after {mask-image: var(--bullet-#{$i});}
+    }
+}

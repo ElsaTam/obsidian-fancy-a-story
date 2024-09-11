@@ -1,0 +1,27 @@
+.markdown-rendered blockquote:has(cite) {
+    font-style: italic;
+    position: relative;
+    padding-inline-start: 55px;
+}
+
+blockquote:has(cite)::after {
+    content: '\201C';
+    position: absolute;
+    font-size: 100px;
+    line-height: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    color: var(--color-accent);
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+}
+
+blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    color: var(--text-muted);
+    text-align: right;
+}

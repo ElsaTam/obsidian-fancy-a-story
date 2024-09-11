@@ -1,0 +1,64 @@
+
+.markdown-preview-view p:has(.markdown-embed[alt~="faded"]) {
+    position: relative;
+}
+
+@scope (:is(.markdown-source-view, .markdown-preview-view) .markdown-embed[alt~="faded"]) to (.markdown-embed) {
+    :scope {
+        border-inline-start: none;
+        border-inline-end: none;
+        border-block-start: none;
+        border-block-end: none;
+        padding: 0;
+        --embed-opacity-loss: 0.3;
+    }
+
+    .embed-title {
+        display: none;
+    }
+
+
+    /* Making embeds inline when possible */
+    :scope:where(:not(:has(.mod-header + div + div)):not(:has(.mod-header + div br))):has(.mod-header + div > p),
+    :scope:where(:has(.mod-header + div > pre.frontmatter):not(:has(.mod-header + div + div + div)):not(:has(.mod-header + div + div br))):has(.mod-header + div + div > p) {
+        
+        position: unset;
+
+        .markdown-embed-content .markdown-rendered p {
+            margin-bottom: 0;
+        }
+
+        /* Inline cascading */
+        &,
+        & :where(.markdown-embed-content), 
+        & :where(.markdown-embed-content .markdown-rendered), 
+        & :where(.markdown-embed-content .markdown-rendered .markdown-preview-sizer), 
+        & :where(.markdown-embed-content .markdown-rendered .markdown-preview-sizer .mod-header ~ div), 
+        & :where(.markdown-embed-content .markdown-rendered .markdown-preview-sizer .mod-header ~ div p) {
+            display: inline;
+        }
+
+        & :where(.markdown-embed-content .markdown-rendered .markdown-preview-sizer .mod-header) {
+            display: none;
+        }
+
+        & :where(.markdown-embed-content .markdown-rendered .markdown-preview-sizer .markdown-preview-pusher) {
+            display: inline-block;
+        }
+    }
+
+    /* block embeds */
+    .markdown-embed-link {
+        position: absolute;
+        right: calc(-1 * var(--file-margins));
+        top: 0;
+    }
+
+    :scope .markdown-embed-content {
+        max-height: unset;
+    }
+
+    :is(:scope, .markdown-embed):has(> .markdown-embed-link:hover) {
+        background-color: var(--background-modifier-hover);
+    }
+}

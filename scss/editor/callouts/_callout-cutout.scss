@@ -1,0 +1,40 @@
+.callout[data-callout="cutout"] {
+    --callout-title-size: 3em;
+    --callout-border-width: 5px;
+    --callout-blend-mode: normal;
+    --callout-color: var(--color-red-rgb);
+    --callout-title-padding: 0 var(--size-4-3);
+
+    background: none;
+    border: none;
+    border-left: var(--callout-border-width) solid rgba(var(--callout-color), var(--callout-border-opacity));
+
+    &:not(.is-collapsed):has(.callout-content) .callout-title {
+        border: none;
+    }
+
+    .callout-title {
+        background: none;
+    }
+
+    .callout-title-inner {
+        font-family: "Magazine Cutouts";
+        color: rgba(var(--mono-rgb-100), 1);
+    }
+
+    .callout-icon {
+        display: none;
+    }
+
+    .callout-content {
+        color: var(--text-faint);
+        padding-left: var(--size-4-6);
+        font-size: smaller;
+        border-top: none;
+    }
+
+    p {
+        margin: 0;
+    }
+
+}

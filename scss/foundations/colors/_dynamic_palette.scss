@@ -1,0 +1,174 @@
+@function map-deep-get($map, $keys...) {
+    $value: $map;
+
+    @each $key in $keys {
+        $value: map-get($value, $key);
+    }
+
+    @return $value;
+}
+
+@function map-deep-set($map, $keys...) {
+    $map-list: ($map,);
+    $result: null;
+
+    @if length($keys) == 2 {
+        @return map-merge($map, (nth($keys, 1): nth($keys, -1)));
+    }
+
+    @for $i from 1 through length($keys) - 2 {
+        $map-list: append($map-list, map-get(nth($map-list, -1), nth($keys, $i)));
+    }
+
+    @for $i from length($map-list) through 1 {
+        $result: map-merge(nth($map-list, $i), (nth($keys, $i): if($i ==length($map-list), nth($keys, -1), $result)));
+    }
+
+    @return $result;
+}
+
+@function darken-till-contrast($color, $primary) {
+    @while(contrast-checker($color, $primary) == "false") {
+        $color: darken($color, 1%);
+        @if(contrast-checker($color, $primary) == "true") {
+            @return $color;
+        }
+    }
+    @return $color;
+}
+
+@function lighten-till-contrast($color, $primary) {
+    @while(contrast-checker($color, $primary) == "false") {
+        $color: lighten($color, 1%);
+        @if(contrast-checker($color, $primary) == "true") {
+            @return $color;
+        }
+    }
+    @return $color;
+}
+
+@import 'colors_definitions';
+
+$keep: 87%;
+
+@function contrast-checker($color, $primary) {
+    $r: (max(red($color),   red($primary)))   - (min(red($color),   red($primary)));
+    $g: (max(green($color), green($primary))) - (min(green($color), green($primary)));
+    $b: (max(blue($color),  blue($primary)))  - (min(blue($color),  blue($primary)));
+    $sum-rgb: $r + $g + $b;
+    
+    @if $sum-rgb < 300 {
+        @return "false";
+    }
+    @else {
+        @return "true";
+    }
+}
+
+// Create the block for default theme (no mixing)
+@each $tone in ("light", "dark") {
+    .theme-#{$tone}.kpr-custom {
+        @if $tone == "light" {
+            --custom-color-base-00: #ffffff;
+            --custom-color-base-100: #222222;
+        }
+        @else {
+            --custom-color-base-00: #1e1e1e;
+            --custom-color-base-100: #dadada;
+        }
+
+        @each $color in map-keys(map-get($extended-colors, $tone)) {
+            $c: map-deep-get($extended-colors, $tone, $color);
+            --color-#{$color}: #{$c};
+            --color-#{$color}-rgb: #{red($c), green($c), blue($c)};
+        }
+        @each $color in map-keys(map-get($rainbow-colors, $tone)) {
+            $c: map-deep-get($rainbow-colors, $tone, $color);
+            --color-#{$color}: #{$c};
+            --color-#{$color}-rgb: #{red($c), green($c), blue($c)};
+        }
+    }
+}
+
+@each $tone, $theme, $primary, $text, $space in $themes {
+
+    // Compute middle color between primary and text, used to mix the palette
+    $hue-primary: hue($primary);
+    $hue-text: hue($text);
+    $mix-with: hsl(hue(mix($primary, $text)), 100%, 50%);
+    @if saturation($primary) < 1 and saturation($text) < 1 {
+        $mix-with: hsl(0, 0%, calc((lightness($primary) + lightness($text)) / 2));
+    }
+
+    // Create the class CSS block
+    .theme-#{$tone}.kpr-#{$theme} {
+
+        // Set the base variables for the gradient
+        --color-space: #{$space};
+        --color-base-00: #{$primary};
+        --color-base-100: #{$text};
+
+        // Compute the middle color (for headings)
+        $tone-modif: ("dark": 10, "light": -10);
+        @if saturation($primary) < 1 and saturation($text) < 1 {
+            --middle-color: #{$text};
+            --middle-color-complement: #{$text};
+        }
+        @else {
+            $middle-color: hsl(
+                hue(mix($primary, $text, 50%)),
+                70%,
+                50% + map-deep-get($tone-modif, $tone));
+            --middle-color: #{$middle-color};
+            --middle-color-complement: #{complement($middle-color)};
+        }
+
+        // For each extended color
+        @each $color in map-keys(map-get($extended-colors, $tone)) {
+            $c: map-deep-get($extended-colors, $tone, $color);
+            $is_grey: saturation($c) == 0%;
+            $c: mix($c, $mix-with, $keep); // Keep n% of the color
+            @if $is_grey {
+                $c: change-color($c, $saturation: 0%);
+            }
+
+            @if $tone == "light" {
+                $c: darken-till-contrast($c, $primary);
+                --color-#{$color}: #{$c};
+
+                $c: red($c), green($c), blue($c);
+                --color-#{$color}-rgb: #{$c};
+            }
+
+            @else {
+                $c: lighten-till-contrast($c, $primary);
+                --color-#{$color}: #{$c};
+
+                $c: red($c), green($c), blue($c);
+                --color-#{$color}-rgb: #{$c};
+            }
+        }
+
+        // For each rainbow color
+        @each $color in map-keys(map-get($rainbow-colors, $tone)) {
+            $c: map-deep-get($rainbow-colors, $tone, $color);
+            $c: mix($c, $mix-with, $keep); // Keep n% of the color
+
+            @if $tone == "light" {
+                $c: darken-till-contrast($c, $primary);
+                --color-#{$color}: #{$c};
+
+                $c: red($c), green($c), blue($c);
+                --color-#{$color}-rgb: #{$c};
+            }
+
+            @else {
+                $c: lighten-till-contrast($c, $primary);
+                --color-#{$color}: #{$c};
+
+                $c: red($c), green($c), blue($c);
+                --color-#{$color}-rgb: #{$c};
+            }
+        }
+    }
+}
