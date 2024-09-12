@@ -1,0 +1,24 @@
+title: Fancy A Story
+description: Documentation for the Obsidian theme "Fancy A Story"
+theme: just-the-docs
+
+url: https://elsatam.github.io/obsidian-fancy-a-story/
+
+aux_links:
+  GitHub: https://github.com/elsatam/obsidian-fancy-a-story
+
+callouts:
+  warning:
+    title: Warning
+    color: red
+  new:
+    title: New
+    color: green
+  important:
+    title: Important
+    color: purple
+  note:
+    title: Note
+    color: blue
+  highlight:
+    color: yellow
