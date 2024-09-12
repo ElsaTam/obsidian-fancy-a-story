@@ -51,7 +51,8 @@
 
 body.is-hidden-frameless:not(.is-fullscreen) .mod-root .workspace-tab-header-container,
 body:not(.is-frameless) .mod-root .workspace-tab-header-container {
-    margin-top: 6px;
+    border-top: 6px solid var(--background-secondary);
+    box-sizing: content-box;
 }
 body.is-hidden-frameless:not(.is-fullscreen) .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner,
 body:not(.is-frameless) .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
