@@ -1,15 +1,151 @@
-.kpr-headings-hue {
-    --h2-color: var(--middle-color);
-}
-
-.kpr-headings-complement {
-    --h2-color: var(--middle-color-complement);
-}
+.kpr-headings-hue        { --h1-color: var(--middle-color); }
+.kpr-headings-complement { --h1-color: var(--middle-color-complement); }
+.kpr-headings-accent     { --h1-color: var(--color-accent); }
 
 .kpr-headings-hue,
-.kpr-headings-complement {
+.kpr-headings-complement,
+.kpr-headings-accent {
+    --h2-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 10%);
+    --h3-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 20%);
+    --h4-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 40%);
+    --h5-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 60%);
+    --h6-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 80%);
+}
+
+.kpr-headings-hue.kpr-h1-display,
+.kpr-headings-hue .h1-display {
+    --h2-color: var(--middle-color);
+}
+.kpr-headings-complement.kpr-h1-display,
+.kpr-headings-complement .h1-display {
+    --h2-color: var(--middle-color-complement);
+}
+.kpr-headings-accent.kpr-h1-display,
+.kpr-headings-accent .h1-display {
+    --h2-color: var(--color-accent);
+}
+
+:is(.kpr-headings-hue, .kpr-headings-complement, .kpr-headings-accent).kpr-h1-display,
+:is(.kpr-headings-hue, .kpr-headings-complement, .kpr-headings-accent) .h1-display {
     --h3-color: color-mix(in srgb, var(--h2-color), var(--text-normal) 20%);
     --h4-color: color-mix(in srgb, var(--h2-color), var(--text-normal) 40%);
     --h5-color: color-mix(in srgb, var(--h2-color), var(--text-normal) 60%);
     --h6-color: color-mix(in srgb, var(--h2-color), var(--text-normal) 80%);
+}
+
+
+
+
+
+
+
+
+
+
+.kpr-h1-display .markdown-preview-view:not(:is(.newspaper, .h1-stroke)) h1,
+.markdown-preview-view.h1-display h1 {
+    --caret-color: var(--h1-color);
+    --h1-line-height: 1.2em;
+    --h1-size: 3em;
+    --h1-font: var(--font-typewriter), var(--font-text);
+    --h1-color: var(--background-primary);
+    --h1-background: var(--color-base-100);
+
+    background-color: var(--h1-background);
+    text-align: center;
+    caret-color: var(--caret-color);
+    position: relative;
+    padding: var(--cutout-outline-inset);
+    clip-path: polygon(
+        0 var(--cutout-corner-angle),
+        var(--cutout-corner-angle) 0,
+        calc(100% - var(--cutout-corner-angle)) 0,
+        100% var(--cutout-corner-angle),
+        100% calc(100% - var(--cutout-corner-angle)),
+        calc(100% - var(--cutout-corner-angle)) 100%,
+        var(--cutout-corner-angle) 100%,
+        0 calc(100% - var(--cutout-corner-angle)));
+    
+    &::before {
+        content: "";
+        position: absolute;
+        inset: var(--cutout-outline-inset);
+        background: var(--background-primary);
+        clip-path: polygon(
+            0 var(--cutout-corner-angle),
+            var(--cutout-corner-angle) 0,
+            calc(100% - var(--cutout-corner-angle)) 0,
+            100% var(--cutout-corner-angle),
+            100% calc(100% - var(--cutout-corner-angle)),
+            calc(100% - var(--cutout-corner-angle)) 100%,
+            var(--cutout-corner-angle) 100%,
+            0 calc(100% - var(--cutout-corner-angle)),
+            0 var(--cutout-corner-angle),
+            1px  calc(var(--cutout-corner-angle) + 0.5px),
+            1px calc(100% - var(--cutout-corner-angle) - 0.5px),
+            calc(var(--cutout-corner-angle) + 0.5px) calc(100% - 1px),
+            calc(100% - var(--cutout-corner-angle) - 0.5px) calc(100% - 1px),
+            calc(100% - 1px) calc(100% - var(--cutout-corner-angle) - 0.5px),
+            calc(100% - 1px) calc(var(--cutout-corner-angle) + 0.5px),
+            calc(100% - var(--cutout-corner-angle) - 0.5px) 1px,
+            calc(var(--cutout-corner-angle) + 0.5px) 1px,
+            1px calc(var(--cutout-corner-angle) + 0.5px));
+    }
+
+    &:is(.is-collapsed > h1)::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: var(--collapse-icon-color-collapsed);
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 100%,
+            0 100%,
+            0 0,
+            var(--cutout-outline-inset)  calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px),
+            var(--cutout-outline-inset) calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px),
+            calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px) calc(100% - var(--cutout-outline-inset)),
+            calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px) calc(100% - var(--cutout-outline-inset)),
+            calc(100% - var(--cutout-outline-inset)) calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px),
+            calc(100% - var(--cutout-outline-inset)) calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px),
+            calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px) var(--cutout-outline-inset),
+            calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px) var(--cutout-outline-inset),
+            var(--cutout-outline-inset) calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px));
+    }
+
+    .heading-collapse-indicator {
+        margin-inline-start: 0;
+    }
+}
+
+
+.kpr-h1-stroke .markdown-preview-view:not(:is(.newspaper, .h1-display)) h1,
+.markdown-preview-view.h1-stroke h1 {
+    --h1-weight: var(--font-extralight);
+    --h1-size: 2em;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    &::before {
+        content: "";
+        display: block;
+        flex-grow: 1;
+        background-color: currentColor;
+        height: 1px;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        flex-grow: 1;
+        background-color: currentColor;
+        height: 1px;
+    }
+
+    &:is(.is-collapsed > h1)::before,
+    &:is(.is-collapsed > h1)::after {
+        background-color: var(--collapse-icon-color-collapsed);
+    }
 }
