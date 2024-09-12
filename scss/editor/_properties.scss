@@ -29,3 +29,14 @@
         padding-inline: var(--heading-padding-inline);
     }
 }
+
+
+
+.workspace > .workspace-split:not(.mod-root) [data-type="markdown"] .metadata-container {
+    --metadata-padding: 0.5em 0 0 0;
+    outline: none;
+}
+
+.workspace > .workspace-split:not(.mod-root) [data-type="markdown"] .metadata-properties-heading {
+    transform: translateY(-50%);
+}
