@@ -18,7 +18,7 @@
 }
 
 /* Ensure gap between header and top border windows */
-.mod-sidedock.mod-top .workspace-tab-header-container-inner {
+.is-hidden-frameless .mod-sidedock.mod-top .workspace-tab-header-container-inner {
     margin-top: 6px;
 }
 
@@ -41,15 +41,20 @@
 
 .mod-root .workspace-tab-header-container {
     --tab-container-background: var(--background-primary);
-    margin-top: 6px;
 }
+
 
 .mod-root .workspace-tab-header-container-inner,
 .workspace .mod-root .workspace-tab-header {
     padding-top: 0;
 }
 
-.mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
+body.is-hidden-frameless:not(.is-fullscreen) .mod-root .workspace-tab-header-container,
+body:not(.is-frameless) .mod-root .workspace-tab-header-container {
+    margin-top: 6px;
+}
+body.is-hidden-frameless:not(.is-fullscreen) .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner,
+body:not(.is-frameless) .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
     padding-top: 6px;
 }
 
@@ -90,6 +95,9 @@
         8px 100%,
         0 calc(100% - 8px)
     );
+}
+.mod-root .is-active:first-child:last-child .workspace-tab-header-inner {
+    clip-path: none;
 }
 
 /* Remove separator before and after active file */

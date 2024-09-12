@@ -23,10 +23,10 @@
         width: 1em;
         height: 1em;
         background-color: rgb(var(--callout-color));
-        -webkit-mask-position: 50% 50%;
-        -webkit-mask-size: 100% 100%;
-        -webkit-mask-repeat: no-repeat;
-        -webkit-mask-image: var(--feather-mask);
+        mask-position: 50% 50%;
+        mask-size: 100% 100%;
+        mask-repeat: no-repeat;
+        mask-image: var(--feather-mask);
     }
     .callout-fold {
         align-items: baseline;
@@ -39,15 +39,15 @@
         width: 1em;
         height: 1em;
         background-color: rgb(var(--callout-color));
-        -webkit-mask-position: 50% 50%;
-        -webkit-mask-size: 100% 100%;
-        -webkit-mask-repeat: no-repeat;
+        mask-position: 50% 50%;
+        mask-size: 100% 100%;
+        mask-repeat: no-repeat;
     }
     &.is-collapsed .callout-fold::after {
-        -webkit-mask-image: var(--lucide-mail);
+        mask-image: var(--lucide-mail);
     }
     &:not(.is-collapsed) .callout-fold::after {
-        -webkit-mask-image: var(--lucide-mail-open);
+        mask-image: var(--lucide-mail-open);
     }
 
     .callout-content {

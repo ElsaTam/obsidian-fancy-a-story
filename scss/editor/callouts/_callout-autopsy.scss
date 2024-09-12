@@ -3,7 +3,6 @@
     --callout-color: var(--mono-rgb-0);
     --callout-color-nested: var(--color-blue-rgb);
     --callout-title-color: rgb(var(--mono-rgb-100));
-    --callout-title-padding: 0 0 var(--size-4-6);
     --callout-border-width: 1px;
     --callout-blend-mode: normal;
 
@@ -46,7 +45,7 @@
     .callout[data-callout="marks-wounds"]    { grid-area: marks-wounds; }
     .callout[data-callout="body"]            { grid-area: body; }
     .callout[data-callout="cause"]           { grid-area: cause; }
-    .callout[data-callout="time"]          { grid-area: time; }
+    .callout[data-callout="time"]            { grid-area: time; }
     .callout[data-callout="recommendations"] { grid-area: recommendations; }
     .callout[data-callout="footnote"]        { grid-area: footnote; }
     .callout[data-callout="date"]            { grid-area: date; }
@@ -60,6 +59,7 @@
         --callout-color: var(--callout-color-nested);
         --callout-title-color: var(--callout-color-nested);
         --callout-padding: var(--size-4-5) var(--size-4-3);
+        --callout-title-padding: 0 0 var(--size-4-6);
         --callout-blend-mode: normal;
         --checkbox-color: rgb(var(--callout-color));
         background: none;
