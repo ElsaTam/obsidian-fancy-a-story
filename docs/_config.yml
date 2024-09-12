@@ -7,6 +7,9 @@ url: https://elsatam.github.io/obsidian-fancy-a-story/
 aux_links:
   GitHub: https://github.com/elsatam/obsidian-fancy-a-story
 
+plugins:
+  - jekyll-default-layout
+
 callouts:
   warning:
     title: Warning

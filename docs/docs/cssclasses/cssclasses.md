@@ -1,6 +1,5 @@
 ---
 title: CSS Classes
-layout: default
 nav_order: 2
 ---
 
@@ -18,8 +17,8 @@ nav_order: 2
 
 | Class                 | Description                                  | More info                                                                  |
 |:----------------------|:---------------------------------------------|:--------------------------------------------------------------------------:|
-| `h1-display`          | H1 headings style                            | ![]({% link images/cssclasses/h1-display.webp %}){: width="200" }          |
-| `h1-stroke`           | H1 headings style                            | ![]({% link images/cssclasses/h1-stroke.webp %}){: width="200" }           |
-| `headings-hue`        | Use a middle hue between background and text | ![]({% link images/cssclasses/headings-hue.webp %}){: width="100" }        |
-| `headings-complement` | Use the complementary of the middle hue      | ![]({% link images/cssclasses/headings-complement.webp %}){: width="100" } |
-| `headings-accent`     | Use the accent color                         | ![]({% link images/cssclasses/headings-accent.webp %}){: width="100" }     |
+| `h1-display`          | H1 headings style                            | [![]({% link images/cssclasses/h1-display.webp %}){: width="200" }]({% link images/cssclasses/h1-display.webp %})         |
+| `h1-stroke`           | H1 headings style                            | [![]({% link images/cssclasses/h1-stroke.webp %}){: width="200" }]({% link images/cssclasses/h1-stroke.webp %}) |
+| `headings-hue`        | Use a middle hue between background and text | [![]({% link images/cssclasses/headings-hue.webp %}){: width="100" }]({% link images/cssclasses/headings-hue.webp %}) |
+| `headings-complement` | Use the complementary of the middle hue      | [![]({% link images/cssclasses/headings-complement.webp %}){: width="100" }]({% link images/cssclasses/headings-complement.webp %}) |
+| `headings-accent`     | Use the accent color                         | [![]({% link images/cssclasses/headings-accent.webp %}){: width="100" }]({% link images/cssclasses/headings-accent.webp %}) |
