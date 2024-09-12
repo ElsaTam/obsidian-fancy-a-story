@@ -118,19 +118,6 @@ settings:
             - lab
             - hsl
             - hwb
-    - 
-        id: header-color
-        title: Color for the headings
-        type: class-select
-        allowEmpty: true
-        default: kpr-hue
-        options:
-            - 
-                label: Hue
-                value: kpr-headings-hue
-            - 
-                label: Complementary hue
-                value: kpr-headings-complement
 
             
     - 
@@ -181,6 +168,35 @@ settings:
         title: Use plain table style
         type: class-toggle
         default: false
+    - 
+        id: header-color
+        title: Color for the headings
+        type: class-select
+        allowEmpty: true
+        default: kpr-hue
+        options:
+            - 
+                label: Hue
+                value: kpr-headings-hue
+            - 
+                label: Complementary hue
+                value: kpr-headings-complement
+            - 
+                label: Accent color
+                value: kpr-headings-accent
+    - 
+        id: header-style-h1
+        title: Style for the first level heading (h1)
+        type: class-select
+        allowEmpty: true
+        default: kpr-h1-display
+        options:
+            - 
+                label: Display
+                value: kpr-h1-display
+            - 
+                label: Stroke
+                value: kpr-h1-stroke
 
 
 
