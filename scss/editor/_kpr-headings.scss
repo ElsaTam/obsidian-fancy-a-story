@@ -1,10 +1,10 @@
-.kpr-headings-hue        { --h1-color: var(--middle-color); }
-.kpr-headings-complement { --h1-color: var(--middle-color-complement); }
-.kpr-headings-accent     { --h1-color: var(--color-accent); }
+.kpr-headings-hue, .headings-hue        { --h1-color: var(--middle-color); }
+.kpr-headings-complement, .headings-complement { --h1-color: var(--middle-color-complement); }
+.kpr-headings-accent, .headings-accent     { --h1-color: var(--color-accent); }
 
-.kpr-headings-hue,
-.kpr-headings-complement,
-.kpr-headings-accent {
+.kpr-headings-hue, .headings-hue,
+.kpr-headings-complement, .headings-complement,
+.kpr-headings-accent, .headings-accent {
     --h2-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 10%);
     --h3-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 20%);
     --h4-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 40%);
@@ -13,20 +13,28 @@
 }
 
 .kpr-headings-hue.kpr-h1-display,
-.kpr-headings-hue .h1-display {
+.kpr-headings-hue .h1-display,
+.kpr-h1-display .headings-hue,
+.h1-display.headings-hue {
     --h2-color: var(--middle-color);
 }
 .kpr-headings-complement.kpr-h1-display,
-.kpr-headings-complement .h1-display {
+.kpr-headings-complement .h1-display,
+.kpr-h1-display .headings-complement,
+.h1-display.headings-complement {
     --h2-color: var(--middle-color-complement);
 }
 .kpr-headings-accent.kpr-h1-display,
-.kpr-headings-accent .h1-display {
+.kpr-headings-accent .h1-display,
+.kpr-h1-display .headings-accent,
+.h1-display.headings-accent {
     --h2-color: var(--color-accent);
 }
 
 :is(.kpr-headings-hue, .kpr-headings-complement, .kpr-headings-accent).kpr-h1-display,
-:is(.kpr-headings-hue, .kpr-headings-complement, .kpr-headings-accent) .h1-display {
+:is(.kpr-headings-hue, .kpr-headings-complement, .kpr-headings-accent) .h1-display,
+.kpr-h1-display :is(.headings-hue, .headings-complement, .headings-accent),
+.h1-display:is(.headings-hue, .headings-complement, .headings-accent) {
     --h3-color: color-mix(in srgb, var(--h2-color), var(--text-normal) 20%);
     --h4-color: color-mix(in srgb, var(--h2-color), var(--text-normal) 40%);
     --h5-color: color-mix(in srgb, var(--h2-color), var(--text-normal) 60%);
@@ -42,7 +50,7 @@
 
 
 
-.kpr-h1-display .markdown-preview-view:not(:is(.newspaper, .h1-stroke)) h1,
+.kpr-h1-display .markdown-preview-view:not(:is(.newspaper, .h1-stroke, .h1-normal)) h1,
 .markdown-preview-view.h1-display h1 {
     --caret-color: var(--h1-color);
     --h1-line-height: 1.2em;

@@ -1,3 +1,8 @@
+.image-embed {
+    z-index: 1;
+    width: fit-content;
+}
+
 .markdown-source-view .image-embed,
 .markdown-preview-view .image-embed {
     padding-right: var(--image-shadow-offset);
