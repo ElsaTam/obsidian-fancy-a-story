@@ -12,7 +12,7 @@
     --color-base-60: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 60%);
     --color-base-70: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 70%);
 
-    --color-grey-hover  : color-mix(in srgb, var(--color-red),    rgb(var(--mono-rgb-0)) 20%);
+    --color-gray-hover  : color-mix(in srgb, var(--color-red),    rgb(var(--mono-rgb-0)) 20%);
     --color-brown-hover : color-mix(in srgb, var(--color-red),    rgb(var(--mono-rgb-0)) 20%);
     --color-red-hover   : color-mix(in srgb, var(--color-red),    rgb(var(--mono-rgb-0)) 20%);
     --color-orange-hover: color-mix(in srgb, var(--color-orange), rgb(var(--mono-rgb-0)) 20%);

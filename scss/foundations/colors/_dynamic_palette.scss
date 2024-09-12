@@ -126,9 +126,9 @@ $keep: 87%;
         // For each extended color
         @each $color in map-keys(map-get($extended-colors, $tone)) {
             $c: map-deep-get($extended-colors, $tone, $color);
-            $is_grey: saturation($c) == 0%;
+            $is_gray: saturation($c) == 0%;
             $c: mix($c, $mix-with, $keep); // Keep n% of the color
-            @if $is_grey {
+            @if $is_gray {
                 $c: change-color($c, $saturation: 0%);
             }
 
