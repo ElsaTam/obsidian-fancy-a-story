@@ -3,12 +3,12 @@
 @use 'cssvariables';
 
 
-@use 'cssclasses/cssclasses';
 @use 'components/components';
 @use 'editor/editor';
 @use 'plugins/plugins';
 @use 'window/window';
 
+@use 'cssclasses/cssclasses';
 
 @use 'style-settings';
 
