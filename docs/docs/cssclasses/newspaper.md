@@ -1,6 +1,5 @@
 ---
 title: Newspaper
-layout: default
 parent: CSS Classes
 ---
 
@@ -12,8 +11,8 @@ CSS classes used in these screenshots:
 
 ## Light mode
 
-![]({% link images/cssclasses/newspaper-light.webp %})
+[![]({% link images/cssclasses/newspaper-light.webp %})]({% link images/cssclasses/newspaper-light.webp %})
 
 ## Dark mode
 
-![]({% link images/cssclasses/newspaper-dark.webp %})
+[![]({% link images/cssclasses/newspaper-dark.webp %})]({% link images/cssclasses/newspaper-dark.webp %})
