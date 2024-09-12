@@ -1,0 +1,20 @@
+.titlebar-button-container {
+    --titlebar-background: var(--background-primary);
+    --titlebar-background-focused: var(--background-primary);
+}
+
+body.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -6px;
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-color: var(--titlebar-background);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+body.is-hidden-frameless:not(.is-fullscreen).is-focused .titlebar-button-container.mod-right::after {
+    background-color: var(--titlebar-background-focused);
+}

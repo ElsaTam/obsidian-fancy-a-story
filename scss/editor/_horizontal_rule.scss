@@ -9,7 +9,7 @@
     background-color: var(--hr-color);
     height: calc(var(--hr-height) + var(--hr-thickness));
     
-    -webkit-mask-image:
+    mask-image:
         linear-gradient(to right,
             transparent,
             black 100px,
@@ -19,7 +19,7 @@
             black calc(100% - var(--ornament-right) + var(--ornament-size) + var(--ornament-padding) + 10px),
             black),
         var(--fleuron);
-    -webkit-mask-size: 100% var(--hr-thickness), var(--ornament-size);
-    -webkit-mask-position: center, calc(100% - var(--ornament-right) + var(--ornament-size)) center;
-    -webkit-mask-repeat: no-repeat;
+    mask-size: 100% var(--hr-thickness), var(--ornament-size);
+    mask-position: center, calc(100% - var(--ornament-right) + var(--ornament-size)) center;
+    mask-repeat: no-repeat;
 }

@@ -1,0 +1,146 @@
+@mixin icon-after {
+    content: "";
+    display: block;
+    width: var(--checkbox-size);
+    height: var(--checkbox-size);
+    position: absolute;
+    top: -1px;
+    inset-inline-start: -1px;
+    mask-size: 100% 100%;
+    mask-position: center;
+    mask-repeat: no-repeat;
+}
+
+$supported-icon-labels:
+    '>' 'forwarded'  'base-50',
+    '<' 'scheduling' 'base-50',
+    '?' 'question'   'yellow',
+    '!' 'important'  'orange',
+    '$' 'dollar'     'green',
+    'a' 'anchor'     'blue',
+    'b' 'blood'      'red',
+    'B' 'Bookmark'   'orange',
+    'c' 'cons'       'red',
+    'd' 'down'       'red',
+    'e' 'error'      'red',
+    'f' 'fire'       'red',
+    'g' 'goal'       'blue',
+    'h' 'health'     'green',
+    'H' 'Heart'      'pink',
+    'i' 'idea'       'yellow',
+    'l' 'link'       'accent',
+    'L' 'Location'   'red',
+    'm' 'mail'       'blue',
+    'M' 'Music'      'green',
+    'n' 'note'       'blue',
+    'p' 'pros'       'green',
+    's' 'star'       'yellow',
+    't' 'trash'      'red',
+    'T' 'Travel'     'cyan',
+    'u' 'up'         'green',
+    'U' 'User'       'base-50',
+    'w' 'win'        'yellow',
+    'W' 'Write'      'cyan',
+    'z' 'zap'        'yellow';
+
+
+$supported-doodle-boxes: (
+    ' ' 'box'            'checkbox-border-color' 'checkbox-border-color-hover',
+    ''  'box'            'checkbox-border-color' 'checkbox-border-color-hover',
+    'x' 'box-checked'    'interactive-accent'    'interactive-accent-hover',
+    'X' 'box-checked'    'interactive-accent'    'interactive-accent-hover',
+    '-' 'box-failed'     'color-red'             'color-red-hover',
+    '/' 'box-incomplete' 'interactive-accent'    'interactive-accent-hover'
+);
+
+$supported-normal-boxes: (
+    '-' 'icon-failed' 'color-red' 'color-red-hover',
+    '/' 'icon-incomplete' 'interactive-accent' 'interactive-accent-hover'
+);
+
+/* Custom icons */
+@each $label, $icon, $color in $supported-icon-labels {
+    :is(.HyperMD-task-line, .task-list-item)[data-task='#{$label}'],
+    .kpr-doodle-icons:not(.kpr-accessibility) :is(.HyperMD-task-line, .task-list-item)[data-task='#{$label}'] {
+        --checkbox-color: var(--color-#{$color});
+
+        input[type=checkbox] {
+            pointer-events: none;
+        }
+
+        input[type=checkbox],
+        input[type=checkbox]:checked {
+            background: none;
+            border: none;
+        }
+    
+        input[type=checkbox]::after,
+        input[type=checkbox]:checked::after {
+            @include icon-after;
+            background-color: var(--checkbox-color);
+            mask-image: var(--icon-#{$icon});
+        }
+    }
+}
+
+/* Standard boxes (non doodle) */
+    @each $label, $icon, $color, $color-hover in $supported-normal-boxes {
+        :is(.HyperMD-task-line, .task-list-item)[data-task='#{$label}'] {
+            
+            --checkbox-color: var(--#{$color});
+            --checkbox-color-hover: var(--#{$color-hover});
+
+            input[type=checkbox]::after {
+                @include icon-after;
+                mask-image: var(--#{$icon});
+            }
+        }
+    }
+
+@scope (.kpr-doodle-icons:not(.kpr-accessibility)) to (:is(.callout[data-callout="autopsy"], .callout[data-callout="screen"], .callout[data-callout="email"])) {
+    /* Default checkbox for doodle icons */
+    @for $i from 1 through 6 {
+        :is(.HyperMD-task-line, .task-list-item):nth-child(6n + #{$i}) {
+            input[type=checkbox] {
+                background: none;
+                border: none;
+            }
+
+            input[type=checkbox]::after {
+                @include icon-after;
+                background-color: var(--checkbox-color);
+                mask-image: var(--box-checked-#{$i});
+            }
+
+            input[type=checkbox]:hover::after {
+                background-color: var(--checkbox-color-hover);
+            }
+        }
+    }
+
+    /* Standard boxes with doodle icons */
+    @each $label, $icon, $color, $color-hover in $supported-doodle-boxes {
+        @for $i from 1 through 6 {
+            :is(.HyperMD-task-line, .task-list-item)[data-task='#{$label}']:nth-child(6n + #{$i}) {
+            
+                --checkbox-color-hover: var(--#{$color-hover});
+                --checkbox-color: var(--#{$color});
+        
+                input[type=checkbox] {
+                    background: none;
+                    border: none;
+                }
+
+                input[type=checkbox]::after {
+                    @include icon-after;
+                    background-color: var(--checkbox-color);
+                    mask-image: var(--#{$icon}-#{$i});
+                }
+
+                input[type=checkbox]:hover::after {
+                    background-color: var(--checkbox-color-hover);
+                }
+            }
+        }
+    }
+}
