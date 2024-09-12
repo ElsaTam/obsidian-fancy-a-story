@@ -3,6 +3,8 @@ title: Columns
 parent: CSS Classes
 ---
 
+Source: [`_columns.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_columns.scss) 
+
 You can choose between a 2 (`columns-2`), 3 (`columns-3`) or 4 (`columns-4`) columns layout.
 
 [![]({% link images/cssclasses/columns.webp %})]({% link images/cssclasses/columns.webp %})
