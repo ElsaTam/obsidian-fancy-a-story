@@ -4,7 +4,7 @@ layout: default
 parent: CSS Classes
 ---
 
-CSS classes used in this screenshot:
+CSS classes used in these screenshots:
 - `newspaper`
 - `columns-3`
 - `wide-page`
@@ -12,8 +12,8 @@ CSS classes used in this screenshot:
 
 ## Light mode
 
-![]({% link images/newspaper-light.webp %})
+![]({% link images/cssclasses/newspaper-light.webp %})
 
 ## Dark mode
 
-![]({% link images/newspaper-dark.webp %})
+![]({% link images/cssclasses/newspaper-dark.webp %})
