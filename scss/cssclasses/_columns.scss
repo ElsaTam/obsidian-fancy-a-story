@@ -22,3 +22,13 @@
 :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section *:has(> [alt~="span"]) {
     column-span: all;
 }
+
+:is(.columns-2, .columns-3, .columns-4).markdown-preview-view :is(h2, h3, h4, h5, h6) {
+    break-after: avoid-column;
+}
+
+:is(.columns-2, .columns-3, .columns-4).markdown-preview-view [alt~="span"] {
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+}
