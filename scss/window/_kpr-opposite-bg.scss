@@ -1,12 +1,8 @@
-.kpr-opposite-bg,
-.kpr-opposite-bg .workspace {
-    background-color: var(--color-base-100);
-}
-
 .kpr-opposite-bg {
-    --titlebar-text-color: var(--background-secondary);
-    --titlebar-text-color-focused: var(--background-primary);
-    --vault-profile-color: var(--background-secondary);
+    --workspace-foreground: var(--color-base-00);
+    --workspace-foreground-muted: var(--color-base-30);
+    --workspace-foreground-faint: var(--color-base-50);
+    --workspace-background: var(--color-base-100);
 }
 
 .kpr-opposite-bg .titlebar {
@@ -16,22 +12,10 @@
 .kpr-opposite-bg .workspace-ribbon,
 .kpr-opposite-bg .workspace-tab-header-container,
 .kpr-opposite-bg .workspace-sidedock-vault-profile {
-    --icon-color: var(--background-secondary);
-    --icon-color-hover: var(--background-secondary);
-    --icon-color-focused: var(--background-primary);
-    --icon-opacity: 0.4;
     --background-modifier-hover: rgba(var(--mono-rgb-0), 0.075);
 }
 
 .kpr-opposite-bg .workspace-tab-header.is-active {
-    --icon-color-focused: var(--text-normal);
-}
-
-.kpr-opposite-bg:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher-icon {
-    color: var(--background-secondary);
-}
-@media (hover: hover) {
-    .kpr-opposite-bg:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher:hover .workspace-drawer-vault-switcher-icon {
-        color: var(--background-primary);
-    }   
+    --icon-color: var(--workleaves-foreground);
+    --icon-color-focused: var(--workleaves-foreground);
 }

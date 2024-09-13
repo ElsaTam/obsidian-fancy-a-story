@@ -51,7 +51,7 @@ ul:has(.tag[href='#tree-view']) {
         width: var(--list-bullet-size);
         height: var(--list-bullet-size);
         border-radius: 50%;
-        background: var(--background-primary);
+        background: var(--workleaves-background);
         border: 1px solid var(--color-accent);
         z-index: 2;
     }
@@ -59,10 +59,10 @@ ul:has(.tag[href='#tree-view']) {
         background: var(--color-accent);
     }
     .list-collapse-indicator:hover {
-        background: color-mix(in srgb, var(--color-accent), var(--background-primary) 70%);
+        background: color-mix(in srgb, var(--color-accent), var(--workleaves-background) 70%);
     }
     .list-collapse-indicator.is-collapsed:hover {
-        background: color-mix(in srgb, var(--color-accent), var(--background-primary) 30%);
+        background: color-mix(in srgb, var(--color-accent), var(--workleaves-background) 30%);
     }
     .list-collapse-indicator svg {
         display: none;

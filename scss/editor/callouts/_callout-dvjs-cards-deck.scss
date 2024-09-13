@@ -129,7 +129,7 @@
             position: absolute;
             z-index: 1;
             writing-mode: vertical-rl;
-            background-color: var(--background-primary);
+            background-color: var(--workleaves-background);
             box-shadow: 1px 1px 4px black;
             border-top-left-radius: var(--radius-l);
             padding: var(--size-4-2) 0;
@@ -144,14 +144,14 @@
         > .markdown-embed-content {
             --font-text-size: xx-small;
             width: var(--card-width);
-            background: var(--background-primary);
+            background: var(--workleaves-background);
             contain: strict;
             content-visibility: auto;
             overflow: hidden;
             padding: var(--size-2-2);
             border-radius: var(--radius-l);
             border: 1px solid currentColor;
-            outline: 4px solid var(--background-primary);
+            outline: 4px solid var(--workleaves-background);
             height: var(--embed-max-height);
         }
         > .markdown-embed-content > .markdown-preview-view {

@@ -1,7 +1,10 @@
 .workspace-ribbon {
+    --icon-color: var(--workspace-foreground-muted);
+    --icon-color-hover: var(--workspace-foreground);
     --icon-opacity: var(--icon-opacity-inactive);
+    --icon-opacity-hover: 1;
 }
 
 .workspace-ribbon:hover {
-    --icon-opacity: 1;
+    --icon-opacity: var(--icon-opacity-hover);
 }
