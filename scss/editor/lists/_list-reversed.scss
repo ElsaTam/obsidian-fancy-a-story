@@ -1,0 +1,11 @@
+:is(ul, ol):has(.tag[href='#list-reversed']) {
+    transform: scaleY(-1);
+
+    > li {
+        transform: scaleY(-1);
+    }
+
+    .tag[href='#list-reversed'] {
+        display: none;
+    }
+}
