@@ -32,3 +32,8 @@
     width: fit-content;
     margin-inline: auto;
 }
+
+:is(.columns-2, .columns-3, .columns-4).markdown-preview-view .list-bullet {
+    float: unset;
+    margin-inline-end: 0.8em;
+}
