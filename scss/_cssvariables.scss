@@ -13,6 +13,9 @@ body {
     --callout-content-padding: var(--size-4-3) var(--size-4-3) var(--size-4-3) var(--size-4-6);
     --callout-title-padding: var(--size-4-3);
 
+    /* caret */
+    --caret-color: currentColor;
+
     /* dividers */
     --divider-color: transparent;
     --divider-color-hover: var(--color-base-50);
@@ -101,6 +104,10 @@ body {
 
     /* font */
     --font-typewriter: "TT2020StyleE", "Courier", monospace;
+
+    /* headings */
+    --h1-border-color: currentColor;
+    --h1-border-color-collapsed: var(--collapse-icon-color-collapsed);
 
     /* images */
     --image-shadow-offset: var(--size-4-3);
