@@ -1,3 +1,20 @@
+.workspace-sidedock-vault-profile {
+    --icon-color: var(--workspace-foreground-muted);
+    --icon-color-hover: var(--workspace-foreground);
+    --icon-opacity: var(--icon-opacity-inactive);
+    --icon-opacity-hover: 1;
+}
+
 body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
     background: none;
+}
+
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher-icon {
+    color: var(--workspace-foreground-faint);
+}
+
+@media (hover: hover) {
+    body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher:hover .workspace-drawer-vault-switcher-icon {
+        color: var(--workspace-foreground-muted);
+    }
 }

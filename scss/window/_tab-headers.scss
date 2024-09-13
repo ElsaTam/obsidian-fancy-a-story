@@ -1,12 +1,13 @@
 /* default icon opacity */
 .workspace-tab-header-container {
     --icon-opacity: var(--icon-opacity-inactive);
+    --icon-opacity-hover: 1;
 }
 
 /* Full opacity when the header container is hovered */
 .workspace-tab-header-container:hover,
 .workspace-tab-header-container:has(*:hover) {
-    --icon-opacity: 1;
+    --icon-opacity: var(--icon-opacity-hover);
 }
 
 
@@ -34,13 +35,17 @@
 /* Match the background for the active tab header */
 .mod-sidedock .workspace-tab-header.is-active,
 .mod-sidedock .workspace-tab-header.is-active:hover {
-    background-color: var(--background-primary);
+    background-color: var(--workleaves-background);
 }
 
 /* ---------- FILE TABS ---------- */
 
 .mod-root .workspace-tab-header-container {
-    --tab-container-background: var(--background-primary);
+    --tab-container-background: var(--workleaves-background);
+    --tab-text-color-active: var(--workspace-foreground-faint);
+    --tab-text-color-focused: var(--workspace-foreground-faint);
+    --tab-text-color-focused-active: var(--workspace-foreground-muted);
+    --tab-text-color-focused-active-current: var(--workspace-foreground);
 }
 
 
@@ -51,7 +56,7 @@
 
 body.is-hidden-frameless:not(.is-fullscreen) .mod-root .workspace-tab-header-container,
 body:not(.is-frameless) .mod-root .workspace-tab-header-container {
-    border-top: 6px solid var(--background-secondary);
+    border-top: 6px solid var(--workspace-background);
     box-sizing: content-box;
 }
 body.is-hidden-frameless:not(.is-fullscreen) .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner,
@@ -63,11 +68,11 @@ body:not(.is-frameless) .mod-root .workspace-tab-header:not(.is-active) .workspa
 
 .mod-root .is-active {
     background: none;
-    filter: drop-shadow(4px 2px 2px rgba(0, 0, 0, 0.3)) drop-shadow(-4px 2px 2px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(4px 2px 2px rgba(0, 0, 0, 0.2)) drop-shadow(-4px 2px 2px rgba(0, 0, 0, 0.2));
 }
 
 .mod-root .is-active .workspace-tab-header-inner {
-    background-color: var(--background-secondary);
+    background-color: var(--workspace-background);
     clip-path: polygon(
         0 0,
         100% 0,

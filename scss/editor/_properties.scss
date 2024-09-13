@@ -23,8 +23,8 @@
         transform: translateY(calc(-50% + 0.05em));
         background: linear-gradient(to right,
             transparent,
-            var(--background-primary) var(--heading-padding-inline),
-            var(--background-primary) calc(100% - var(--heading-padding-inline)),
+            var(--workleaves-background) var(--heading-padding-inline),
+            var(--workleaves-background) calc(100% - var(--heading-padding-inline)),
             transparent 100%);
         padding-inline: var(--heading-padding-inline);
     }

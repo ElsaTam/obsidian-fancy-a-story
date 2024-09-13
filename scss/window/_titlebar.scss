@@ -2,8 +2,8 @@
 body:not(:has(.is-right-sidedock-open)) {
 
     .titlebar-button-container {
-        --titlebar-background: var(--background-primary);
-        --titlebar-background-focused: var(--background-primary);
+        --titlebar-background: var(--workleaves-background);
+        --titlebar-background-focused: var(--workleaves-background);
     }
     
     &.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right::after {

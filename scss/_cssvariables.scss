@@ -67,11 +67,11 @@ body {
     --tab-radius: 0;
     --tab-radius-active: 0;
     --tab-text-color: var(--color-base-40);
-    --tab-text-color-active: var(--text-muted);
+    --tab-text-color-active: var(--text-faint);
     --tab-text-color-focused: var(--text-faint);
     --tab-text-color-focused-active: var(--text-muted);
-    --tab-text-color-focused-highlighted: var(--text-accent);
     --tab-text-color-focused-active-current: var(--text-normal);
+    --tab-text-color-focused-highlighted: var(--text-accent);
 
     /* table */
     --table-header-background: transparent;
@@ -84,7 +84,9 @@ body {
     --titlebar-background: none;
     --titlebar-background-focused: none;
 
-
+    /* vault profile */
+    --vault-profile-color: var(--workspace-foreground-faint);
+    --vault-profile-color-hover: var(--workspace-foreground-muted);
 
     /* ----------------- CUSTOM ----------------- */
 
@@ -107,4 +109,13 @@ body {
 
     /* table */
     --table-header-line-height: 1.8;
+
+    /* Workspace */
+    --workspace-foreground: var(--text-normal);
+    --workspace-foreground-muted: var(--text-muted);
+    --workspace-foreground-faint: var(--text-faint);
+    --workspace-background: var(--background-secondary);
+
+    --workleaves-background: var(--background-primary);
+    --workleaves-foreground: var(--text-normal);
 }
