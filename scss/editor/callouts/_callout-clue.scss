@@ -29,12 +29,13 @@
     --padding-top: calc(0.5 * var(--callout-header-height));
     padding-top: var(--padding-top);
 
-    .callout-title {
+    > .callout-title {
         justify-content: center;
         position: absolute;
         top: calc(var(--padding-top) - 0.5em);
         width: 100%;
         background: none;
+        z-index: 1;
 
         &::before {
             content: "";
@@ -48,11 +49,11 @@
             background-size: contain;
             background-position: center center;
         }
+
+        .callout-icon, .callout-title-inner, .callout-fold { z-index: 1; }
     }
     
-    .callout-icon, .callout-title-inner, .callout-fold { z-index: 1; }
-
-    .callout-content {
+    > .callout-content {
         padding: var(--callout-padding);
         color: rgb(var(--callout-color));
         text-align: center;
@@ -61,7 +62,7 @@
         background-image: var(--clue-paper-variant);
         background-size: 300px 300px;
     }
-    .callout-content:hover {
+    > .callout-content:hover {
         font-weight: 600;
         box-shadow: var(--shadow-s);
     }
@@ -70,10 +71,10 @@
         background: none;
         padding-bottom: calc(var(--callout-header-height) / 2);
 
-        .callout-icon {  opacity: 0.5; }
+        > * > .callout-icon {  opacity: 0.5; }
     }
-    .callout-title:hover .callout-icon { opacity: 1; }
+    > .callout-title:hover .callout-icon { opacity: 1; }
 
     /* Other theme compatibility */
-    .callout-title-inner { flex-grow: unset; }
+    > .callout-title-inner { flex-grow: unset; }
 }
