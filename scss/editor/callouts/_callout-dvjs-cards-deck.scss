@@ -1,6 +1,5 @@
 .callout[data-callout="cards-deck"] {
     --callout-icon: lucide-layers;
-    --callout-content-padding: 0;
     --deck-border-width: 1px;
     --callout-border-width: var(--deck-border-width);
     --p-spacing: 0;
@@ -18,13 +17,6 @@
     --deck-border-width: 0;
     list-style-type: none;
     border: var(--deck-border-width) solid var(--background-secondary);
-}
-
-.callout[data-callout="cards-deck"] .callout-content:has(p:nth-of-type(2)) > p {
-    border: var(--callout-border-width) solid rgba(var(--callout-color), var(--callout-border-opacity));
-    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
-    background-color: rgba(var(--callout-color), 0.1);
-    margin: var(--size-4-3) var(--size-4-4);
 }
 
 .dataview-cards-deck > .dataview-result-list-root-ul,
@@ -206,5 +198,9 @@
         &, & .markdown-preview-view {
             color: var(--text-faint);
         }
+    }
+
+    > :hover ~ * {
+        z-index: 0
     }
 }

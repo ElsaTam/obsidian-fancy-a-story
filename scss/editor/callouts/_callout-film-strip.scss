@@ -1,0 +1,118 @@
+.callout[data-callout="film-strip"] {
+    --callout-icon: lucide-film;
+    --callout-padding: 0;
+    --callout-content-padding: 0;
+    --callout-color: var(--mono-rgb-100);
+    --image-shadow-offset: 0;
+
+    background: none;
+    
+    --frame-height: 140px; /* height of the picture */
+    --n-holes: 8;          /* number of holes, used to compute the width of the image */
+    --hole-width: 15px;    /* width of each hole, used to compute the width of the image */
+    --hole-height: 10px;   /* height of each hole */
+    --gap: 5px;            /* gap between each holes */
+    --img-fading: 2px;     /* bluring the edges of the images. Set to 0 for sharp edges */
+    --hole-fading: 1px;    /* bluring the edges of the holes. Set to 0 for sharp edges */
+
+    /* computed values */
+    --frame-width: calc(var(--n-holes) * var(--hole-width) + (var(--n-holes) - 1) * var(--gap));
+    --padding-y: calc(var(--hole-height) + 3 * var(--gap));
+    --padding-x: calc(var(--gap) * 0.5);
+
+    
+    .callout-content > p {
+        counter-reset: frames;
+        display: flex;
+        flex-wrap: nowrap;
+        font-size: 0;
+        margin: 0;
+    }
+
+    .callout-content > p > br {
+        display: none;
+    }
+
+    .callout-content > p > span {
+        margin-inline: -0.5px;
+        position: relative;
+        height: calc(var(--frame-height) + var(--padding-y) * 2);
+        width: calc(var(--frame-width) + var(--padding-x) * 2);
+        counter-increment: frames;
+        min-width: calc(var(--frame-width) + var(--padding-x) * 2);
+        background-color: rgb(var(--mono-rgb-100));
+        padding: var(--padding-y) var(--padding-x);
+        -webkit-mask-image: linear-gradient(
+                to right,
+                transparent 0px,
+                transparent calc(var(--hole-width) * 0.5 - var(--hole-fading) * 0.5),
+                black calc(var(--hole-width) * 0.5 + var(--hole-fading) * 0.5),
+                black calc(var(--hole-width) * 0.5 + var(--gap) - var(--hole-fading) * 0.5),
+                transparent calc(var(--hole-width) * 0.5 + var(--gap) + var(--hole-fading) * 0.5),
+                transparent calc(var(--hole-width) + var(--gap))
+            ),
+            linear-gradient(
+                to bottom,
+                black,
+                black calc(2 * var(--gap) - var(--hole-fading) * 0.5),
+                transparent calc(2 * var(--gap) + var(--hole-fading) * 0.5),
+                transparent calc(2 * var(--gap) + var(--hole-height) - var(--hole-fading) * 0.5),
+                black calc(2 * var(--gap) + var(--hole-height) + var(--hole-fading) * 0.5),
+                black calc(var(--padding-y) + var(--frame-height) + var(--gap) - var(--hole-fading) * 0.5),
+                transparent calc(var(--padding-y) + var(--frame-height) + var(--gap) + var(--hole-fading) * 0.5),
+                transparent calc(var(--padding-y) + var(--frame-height) + var(--gap) + var(--hole-height) - var(--hole-fading) * 0.5),
+                black calc(var(--padding-y) + var(--frame-height) + var(--gap) + var(--hole-height) + var(--hole-fading) * 0.5),
+                black 100%
+            );
+        -webkit-mask-size: calc(var(--hole-width) + var(--gap)) 100%, 100%;
+        -webkit-mask-position: left, center;
+        -webkit-mask-repeat: repeat-x, no-repeat;
+    }
+
+    img {
+        width: 1000%;
+        height: 100%;
+        object-fit: cover;
+        filter: sepia(0.5);
+
+        -webkit-mask-image: linear-gradient(
+            to right,
+            transparent 0px,
+            black var(--img-fading),
+            black calc(100% - var(--img-fading)),
+            transparent 100%
+        ),
+        linear-gradient(
+            to bottom,
+            transparent 0px,
+            black var(--img-fading),
+            black calc(100% - var(--img-fading)),
+            transparent 100%
+        );
+        -webkit-mask-size: 100%;
+        -webkit-mask-position: center;
+        mask-composite: intersect;
+    }
+
+    .callout-content > p > span::after {
+        content: "← " counter(frames) " →";
+        font-size: calc(var(--gap) * 2 - 2px);
+        line-height: 1;
+        color: rgb(var(--mono-rgb-0));
+        opacity: 0.7;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 1px;
+        text-align: center;
+        z-index: 1;
+    }
+    .callout-content > p > span:first-of-type::after {
+        content: counter(frames) " →";
+    }
+    .callout-content > p > span:last-of-type::after {
+        content: "← " counter(frames);
+    }
+
+}
+

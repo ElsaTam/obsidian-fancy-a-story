@@ -1,28 +1,3 @@
-.callout[data-callout="email"][data-callout-metadata~="red"] {
-    --callout-email-color: var(--color-red-rgb);
-}
-.callout[data-callout="email"][data-callout-metadata~="orange"] {
-    --callout-email-color: var(--color-orange-rgb);
-}
-.callout[data-callout="email"][data-callout-metadata~="yellow"] {
-    --callout-email-color: var(--color-yellow-rgb);
-}
-.callout[data-callout="email"][data-callout-metadata~="green"] {
-    --callout-email-color: var(--color-green-rgb);
-}
-.callout[data-callout="email"][data-callout-metadata~="cyan"] {
-    --callout-email-color: var(--color-cyan-rgb);
-}
-.callout[data-callout="email"][data-callout-metadata~="blue"] {
-    --callout-email-color: var(--color-blue-rgb);
-}
-.callout[data-callout="email"][data-callout-metadata~="purple"] {
-    --callout-email-color: var(--color-purple-rgb);
-}
-.callout[data-callout="email"][data-callout-metadata~="pink"] {
-    --callout-email-color: var(--color-pink-rgb);
-}
-
 .callout[data-callout="email"] {
     --callout-icon: lucide-send-horizontal;
     --callout-blend-mode: normal;
@@ -73,7 +48,7 @@
     }
 
 
-    .callout[data-callout-metadata~="last"] {
+    .callout[data-callout-metadata~="sep"] {
         padding-bottom: var(--size-4-6);
         border-bottom: var(--callout-border-width) solid rgba(var(--callout-color), var(--callout-border-opacity));;
     }

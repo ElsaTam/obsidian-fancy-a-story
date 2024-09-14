@@ -2,8 +2,10 @@
 
 @use 'callout-autopsy';
 @use 'callout-clue';
+@use 'callout-comic';
 @use 'callout-cutout';
 @use 'callout-email';
+@use 'callout-film-strip';
 @use 'callout-grid';
 @use 'callout-letter';
 @use 'callout-paper-fold';
@@ -14,4 +16,4 @@
 
 @use 'callout-dvjs-cards-deck';
 
-@use 'callout-colors';
+@use 'callouts-metadata';

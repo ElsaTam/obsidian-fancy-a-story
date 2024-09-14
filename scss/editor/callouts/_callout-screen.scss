@@ -9,6 +9,7 @@
     --collapse-icon-color-collapsed: var(--list-marker-color-collapsed);
     --background-modifier-active-hover: color-mix(in srgb, var(--list-marker-color-collapsed), transparent 95%);
     --indentation-guide-color: rgba(var(--callout-color), 0.2);
+    --image-shadow-offset: 0;
 
     color: rgb(var(--callout-color));
     font-family: 'ProFont', 'Courier New', Courier, monospace;
@@ -29,5 +30,9 @@
 
     &:not(.is-collapsed):has(.callout-content) {
         filter: drop-shadow(0 0 3px rgba(var(--callout-color), 0.5));
+    }
+
+    .image-embed {
+        border: var(--callout-border-width) solid rgb(var(--callout-color));
     }
 }

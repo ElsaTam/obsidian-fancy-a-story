@@ -2,13 +2,21 @@
     --p-spacing: 0;
     --gutter: 20px;
     --strip-height: 200px;
+    --image-shadow-offset: 0;
+    
+    --comic-color: 0, 0, 0; /* Color of the lines, text, etc. (black/white) */
+    --comic-background: 255, 255, 255;  /* background of the whole comic (white/black) */
 
     --callout-radius: 0;
-    --callout-padding: 20px;
-    --callout-content-padding: 0px;
+    --callout-content-padding: var(--size-4-4);
     --callout-blend-mode: normal;
     --callout-color: var(--comic-color);
     --callout-border-width: 1px;
+    
+    --border-radius-0: 81% 3% 0px 0px / 3% 94% 0px 0px;
+    --border-radius-1: 100% 4% 0px 0px / 6% 82% 0px 0px;
+    --border-radius-2: 100% 3% 0px 0px / 3% 49% 0px 0px;
+    --border-radius-3: 4% 30% 0px 0px / 51% 3% 0px 0px;
 
     background: rgb(var(--comic-background));
     font-family: "VTC Letterer Pro", "Comic Sans", "Arial", sans-serif;
@@ -34,6 +42,7 @@
         display: none;
     }
     > .callout-content {
+        border: none;
         padding: 0;
     }
     > .callout-content > *:not(:has(img)) {
@@ -130,21 +139,4 @@
 
 .callout[data-callout="comic"][data-callout-metadata="straight"] > .callout-content > * {
     border: 5px solid rgb(var(--comic-color));
-}
-
-.callout[data-callout="comic"][data-callout-metadata="straight"] {
-    --comic-color: var(--mono-rgb-100); /* Color of the lines, text, etc. (black/white) */
-    --comic-background: var(--mono-rgb-0);  /* background of the whole comic (white/black) */
-}
-
-.callout[data-callout="comic"]:not([data-callout-metadata="straight"]) {
-    --comic-color: 0, 0, 0; /* Color of the lines, text, etc. (black/white) */
-    --comic-background: 255, 255, 255;  /* background of the whole comic (white/black) */
-}
-.theme-dark .callout[data-callout="comic"]:not([data-callout-metadata="straight"]) {
-    &, img { filter: invert(1); }
-}
-
-.callout[data-callout="comic"][data-callout-metadata~="no-color"] img {
-    filter: grayscale(100);
 }
