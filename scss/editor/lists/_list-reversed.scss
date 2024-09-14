@@ -1,11 +1,22 @@
-:is(ul, ol):has(.tag[href='#list-reversed']) {
+:is(ul, ol):has(> li > .tag[href='#list-reversed']) {
     transform: scaleY(-1);
 
     > li {
         transform: scaleY(-1);
     }
 
-    .tag[href='#list-reversed'] {
+    > li > .tag[href='#list-reversed'] {
+        display: none;
+    }
+}
+
+
+:is(ul, ol):has(.tag[href='#list-reversed-all']) {
+    &, ul, ol, li {
+        transform: scaleY(-1);
+    }
+
+    .tag[href='#list-reversed-all'] {
         display: none;
     }
 }
