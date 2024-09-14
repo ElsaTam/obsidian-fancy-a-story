@@ -1,30 +1,46 @@
-.image-embed {
-    z-index: 1;
-    width: fit-content;
-}
+@use '../foundations/colors/colors_definitions';
 
-.markdown-source-view .image-embed,
-.markdown-preview-view .image-embed {
-    padding-right: var(--image-shadow-offset);
-    padding-bottom: var(--image-shadow-offset);
-    position: relative;
-    font-size: 0;
-
-    &::before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        top: var(--image-shadow-offset);
-        left: var(--image-shadow-offset);
-        right: 0;
-        bottom: 0;
-        border-radius: inherit;
-        background: repeating-linear-gradient(
-            45deg,
-            var(--background-primary-alt),
-            var(--background-primary-alt) var(--image-shadow-stripe-thickness),
-            transparent var(--image-shadow-stripe-thickness),
-            transparent calc(var(--image-shadow-stripe-thickness) + var(--image-shadow-stripe-gap))
-        );
+@container not style(--image-shadow-offset: 0) {
+    .image-embed {
+        z-index: 1;
+        width: fit-content;
+    }
+    
+    .markdown-source-view .image-embed,
+    .markdown-rendered .image-embed {
+        padding-right: var(--image-shadow-offset);
+        padding-bottom: var(--image-shadow-offset);
+        display: inline-block;
+        height: fit-content;
+        width: fit-content;
+        position: relative;
+        font-size: 0;
+    
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: var(--image-shadow-offset);
+            left: var(--image-shadow-offset);
+            right: 0;
+            bottom: 0;
+            border-radius: inherit;
+            background: repeating-linear-gradient(
+                -45deg,
+                var(--image-shadow-color),
+                var(--image-shadow-color) var(--image-shadow-stripe-thickness),
+                transparent var(--image-shadow-stripe-thickness),
+                transparent calc(var(--image-shadow-stripe-thickness) + var(--image-shadow-stripe-gap))
+            );
+        }
+    }
+    
+    .markdown-rendered .image-embed[alt~="float-right"] {
+        float: right;
+        margin: var(--size-4-3) 0 var(--size-4-3) var(--size-4-3);
+    }
+    
+    @each $key, $c in map-get(colors_definitions.$extended-colors, "light") {
+        .image-embed[alt~="#{$key}"] { --image-shadow-color: rgba(var(--color-#{$key}-rgb), 0.2); }
     }
 }

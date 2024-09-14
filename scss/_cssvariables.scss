@@ -110,9 +110,10 @@ body {
     --h1-border-color-collapsed: var(--collapse-icon-color-collapsed);
 
     /* images */
-    --image-shadow-offset: var(--size-4-3);
+    --image-shadow-offset: var(--size-4-2);
     --image-shadow-stripe-thickness: 2px;
     --image-shadow-stripe-gap: 4px;
+    --image-shadow-color: var(--background-primary-alt);
 
     /* table */
     --table-header-line-height: 1.8;
