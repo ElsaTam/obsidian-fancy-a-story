@@ -1,19 +1,21 @@
 .callout[data-callout="grid"] {
-    --callout-color: 181, 118, 83;
-    --callout-icon: lucide-layout-grid;
-    --callout-title-size: 1.5em;
-    --callout-border-width: 1px;
-    --line-height-tight: 1;
+    --callout-color: var(--color-gray-rgb);
+    --callout-padding: 0;
+    --callout-content-padding: 0;
     background: none;
+    border: none;
+
+    > .callout-title {
+        display: none;
+    }
 
     > .callout-content {
+        border: none;
         display: grid;
         gap: 10px;
     }
 
     > .callout-content > * {
-        border: var(--callout-border-width) solid rgba(var(--callout-color), var(--callout-border-opacity));
-        background-color: rgba(var(--callout-color), 0.1);
         margin: 0;
     }
 

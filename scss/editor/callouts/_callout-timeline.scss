@@ -26,22 +26,15 @@
     --bullet-radius: 50%;
     --bullet-color: var(--workleaves-background);
     --bullet-border-width: 1px;
-    --bullet-border-color: var(--line-color);
+    --bullet-border-color: rgb(var(--callout-color));
     --bullet-outline-width: 3px;
 
     /* segment */
-    --segment-border-color: var(--line-color);
+    --segment-border-color: rgb(var(--callout-color));
     --segment-thickness: 1px;
-
-    /* for nested elements */
-    .callout {
-        --bullet-border-color: rgb(var(--callout-color));
-        --segment-border-color: rgb(var(--callout-color));
-    }
 }
 .callout[data-callout="timeline"][data-callout-metadata~="horizontal"] {
     --cards-width: 300px;
-    --cards-height: 200px;
 }
 
 /* General styling */
@@ -56,11 +49,13 @@
         
         /* for any child */
         > * {
+            --image-shadow-offset: 0;
             --s: var(--card-border-width);
             border: calc(2 * var(--s)) solid transparent;
             outline: 1px dashed rgba(var(--callout-color), 0.2);
             outline-offset: calc(-1*var(--s));
             background: conic-gradient(from 90deg at 1px 1px, transparent 25%, rgba(var(--callout-color), 0.4) 0);
+            padding: var(--card-padding);
 
             &:hover {
                 outline: 1px dashed rgba(var(--callout-color), 0.4);
@@ -70,8 +65,8 @@
         }
 
         /* Stylise first letter */
-        > *:not(:is(.callout, code, pre))::first-letter,
-        > *.callout .callout-content::first-letter {
+        > *:not(:is(.callout, code, pre, ul, ol))::first-letter,
+        > *.callout .callout-content > *:not(:is(.callout, code, pre, ul, ol))::first-letter {
             color: color-mix(in srgb, rgb(var(--callout-color)), var(--text-normal) 40%);
             font-weight: var(--font-bold);
             font-size: 1.5em;
@@ -83,6 +78,7 @@
             --callout-content-padding: var(--card-padding);
             --callout-title-padding: var(--size-2-2);
             --callout-title-size: 0.8em;
+            padding: 0;
             .callout-title {
                 justify-content: flex-end;
             }
@@ -92,7 +88,7 @@
 
         }
 
-        /* for paragraphs (indirect */
+        /* for paragraphs (indirect) */
         p:first-child { margin-top: 0; }
         p:last-child  { margin-bottom: 0; }
     }
@@ -158,6 +154,10 @@
         position: relative;
         overflow: visible; /* needed for the bullets and segments */
         z-index: 1;
+
+        > * {
+            max-height: 100%;
+        }
     }
 
     /* Left column blocks */
@@ -202,8 +202,7 @@
 
 /* Horizontal timeline */
 .callout[data-callout="timeline"][data-callout-metadata~="horizontal"] > .callout-content {
-    grid-template-rows: 1fr var(--line-thickness) 1fr;
-    grid-auto-rows: max-content;
+    grid-template-rows: max-content var(--line-thickness) max-content;
     grid-auto-columns: minmax(auto, 1fr);
     overflow-x: auto;
     row-gap: var(--row-gap);
@@ -241,13 +240,13 @@
         overflow: visible;
         margin-right: var(--col-gap);
         width: var(--cards-width);
-        max-height: var(--cards-height);
         z-index: 1;
     }
 
     /* Top row blocks */
     > *:nth-child(odd) {
         grid-row: 1;
+        align-self: flex-end;
 
         &::after  { bottom: var(--shift-bullet);  }
         &::before { bottom: var(--shift-segment); }
@@ -256,7 +255,6 @@
         &.callout {
             display: flex;
             flex-direction: column-reverse;
-            align-self: flex-end;
             .callout-fold { transform: scaleY(-1); }
         }
         &.callout.is-collapsed { align-self: flex-end; } /* Prevent stretching when collapsed */
@@ -304,10 +302,6 @@
         ));
     }
 }
-
-/* No icon */
-.callout[data-callout="timeline"] [data-callout-metadata~="no-icon"] .callout-icon { display: none; }
-.callout[data-callout="timeline"][data-callout-metadata~="no-icon"] .callout-icon { display: none; }
 
 /* Numbered timelines */
 .callout[data-callout="timeline"][data-callout-metadata~="numbered"] > .callout-content  {
