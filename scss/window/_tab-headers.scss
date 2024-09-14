@@ -64,52 +64,83 @@ body:not(.is-frameless) .mod-root .workspace-tab-header:not(.is-active) .workspa
     padding-top: 6px;
 }
 
-/* Style active tab */
+/* Style active tab in non-stack mode */
 
-.mod-root .is-active {
-    background: none;
-    filter: drop-shadow(4px 2px 2px rgba(0, 0, 0, 0.2)) drop-shadow(-4px 2px 2px rgba(0, 0, 0, 0.2));
+@scope (.mod-root .workspace-tabs:not(.mod-stacked)) {
+
+    .workspace-tab-header.is-active {
+        background: none;
+        filter: drop-shadow(4px 2px 2px rgba(0, 0, 0, 0.2)) drop-shadow(-4px 2px 2px rgba(0, 0, 0, 0.2));
+    }
+
+    .is-active .workspace-tab-header-inner {
+        background-color: var(--workspace-background);
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% calc(100% - 8px),
+            calc(100% - 8px) 100%,
+            8px 100%,
+            0 calc(100% - 8px)
+        );
+    }
+
+    /* Remove cutout corner for first and last tabs */
+    .is-active:first-child .workspace-tab-header-inner {
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% calc(100% - 8px),
+            calc(100% - 8px) 100%,
+            0 100%
+        );
+    }
+    .is-active:last-child .workspace-tab-header-inner {
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 100%,
+            8px 100%,
+            0 calc(100% - 8px)
+        );
+    }
+    .is-active:first-child:last-child .workspace-tab-header-inner {
+        clip-path: none;
+    }
+
+    /* Remove separator before and after active file */
+    .workspace-tab-header:has(+ .is-active) .workspace-tab-header-inner::after,
+    .is-active + .workspace-tab-header .workspace-tab-header-inner::before {
+        content: none;
+    }
 }
 
-.mod-root .is-active .workspace-tab-header-inner {
-    background-color: var(--workspace-background);
-    clip-path: polygon(
-        0 0,
-        100% 0,
-        100% calc(100% - 8px),
-        calc(100% - 8px) 100%,
-        8px 100%,
-        0 calc(100% - 8px)
-    );
+/* ---------- FILE TABS - STACK MODE ---------- */
+
+.theme-dark .workspace-tabs.mod-stacked {
+    --tab-stacked-shadow: -10px 0 10px rgba(0, 0, 0, 0.2);
+    --tab-outline-color: var(--color-base-05);
+    --tab-color: var(--color-base-05);
+    --tab-color-hover: var(--color-base-10);
 }
 
-/* Remove cutout corner for first and last tabs */
-.mod-root .is-active:first-child .workspace-tab-header-inner {
-    clip-path: polygon(
-        0 0,
-        100% 0,
-        100% calc(100% - 8px),
-        calc(100% - 8px) 100%,
-        0 100%
-    );
-}
-.mod-root .is-active:last-child .workspace-tab-header-inner {
-    clip-path: polygon(
-        0 0,
-        100% 0,
-        100% 100%,
-        8px 100%,
-        0 calc(100% - 8px)
-    );
-}
-.mod-root .is-active:first-child:last-child .workspace-tab-header-inner {
-    clip-path: none;
+.theme-light .workspace-tabs.mod-stacked {
+    --tab-stacked-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    --tab-outline-color: var(--color-base-10);
+    --tab-color: var(--color-base-10);
+    --tab-color-hover: var(--color-base-20);
 }
 
-/* Remove separator before and after active file */
-.mod-root .workspace-tab-header:has(+ .is-active) .workspace-tab-header-inner::after,
-.mod-root .is-active + .workspace-tab-header .workspace-tab-header-inner::before {
-    content: none;
+.workspace-tabs.mod-stacked {
+    --tab-outline-width: 1px;
+}
+
+.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header {
+    background-color: var(--tab-color);
+}
+
+.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header:hover {
+    background-color: var(--tab-color-hover);
 }
 
 /* ---------- NAV HEADER ---------- */
