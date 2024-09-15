@@ -47,9 +47,6 @@
 
 
 
-.markdown-reading-view:has(.callout[data-callout-metadata~="wide"]) {
-    container: reading-view / inline-size;
-}
 .markdown-preview-sizer:has(.callout[data-callout-metadata~="wide"]) > div > div {
     overflow: visible !important;
 }

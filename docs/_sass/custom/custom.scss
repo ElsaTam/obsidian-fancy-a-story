@@ -1,0 +1,48 @@
+body {
+    font-weight: 300;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    background-color: #{$grey-dk-300};
+}
+th {
+    background-color: #{$grey-dk-200};
+}
+th:first-of-type, td:first-of-type,
+tbody tr:last-of-type td,
+thead th, td {
+    border: 1px solid #{$grey-dk-200};
+}
+
+:not(pre, figure) > code {
+    border: none;
+    background-color: #{$grey-dk-200};
+    padding: 0.2em 0.5em;
+    font-size: #{$font-size-4};
+}
+
+:not(pre, figure) > code,
+h4 {
+    color: #{$red-000};
+}
+
+
+a:not(pre, figure) > code {
+    color: #{$link-color};
+}
+
+@media (min-width: 31.25rem) {
+    th, td {
+      font-size: #{$font-size-5} !important;
+    }
+    h4 {
+        font-size: #{$font-size-4} !important;
+    }
+    .nav-list .nav-list-item {
+        font-size: #{$font-size-5} !important;
+    }
+}

@@ -40,7 +40,16 @@
         margin: var(--size-4-3) 0 var(--size-4-3) var(--size-4-3);
     }
     
+    .markdown-rendered .image-embed[alt~="float-left"] {
+        float: left;
+        margin: var(--size-4-3) var(--size-4-3) var(--size-4-3) 0;
+    }
+    
     @each $key, $c in map-get(colors_definitions.$extended-colors, "light") {
         .image-embed[alt~="#{$key}"] { --image-shadow-color: rgba(var(--color-#{$key}-rgb), 0.2); }
+    }
+    
+    .markdown-rendered .image-embed[alt~="no-shadow"] {
+        --image-shadow-offset: 0;
     }
 }

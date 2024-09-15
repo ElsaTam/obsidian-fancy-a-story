@@ -3,6 +3,8 @@ title: Tree view
 parent: Lists
 ---
 
+Source: [`_tree-view.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/lists/_tree-view.scss)
+
 [![]({% link images/lists/tree-view.webp %})]({% link images/lists/tree-view.webp %})
 
 Add the tag `#tree-view` on any item of your list. It will be used by the CSS as a flag to turn the whole list into a tree view.

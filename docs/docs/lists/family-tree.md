@@ -3,6 +3,8 @@ title: Family tree
 parent: Lists
 ---
 
+Source: [`_family-tree.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/lists/_family-tree.scss)
+
 [![]({% link images/lists/family-tree.webp %})]({% link images/lists/family-tree.webp %})
 
 Start a list with the first item being the tag `#family-tree`. This will let know the CSS that the whole list must be turned into a family tree in preview mode.

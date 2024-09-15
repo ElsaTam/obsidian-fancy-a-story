@@ -52,9 +52,12 @@
 
     .callout-content {
         font-family: "Homemade Apple", cursive;
-        background-image: var(--paper-texture);
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.5) inset, 0 0 7px rgba(0, 0, 0, 0.5) inset;
     }
+    :is(.kpr-bg-textures .callout-content) {
+        background-image: var(--paper-texture);
+    }
+    
     p {
         --calc-line-height: calc(1em * var(--line-height-normal));
         --line-start: calc(0.5 * var(--calc-line-height) + 0.5 * var(--font-text-size));

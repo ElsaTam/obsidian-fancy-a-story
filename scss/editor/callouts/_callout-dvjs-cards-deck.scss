@@ -163,10 +163,6 @@
     }
 }
 
-
-.markdown-reading-view:has(.dataview-wide) {
-    container: reading-view / inline-size;
-}
 .markdown-preview-sizer:has(.dataview-wide) > div > div {
     overflow: visible !important;
 }
