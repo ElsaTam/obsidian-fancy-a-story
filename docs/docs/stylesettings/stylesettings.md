@@ -48,6 +48,13 @@ Use doodle (handwritten style) icons in some places, such as tasks icons and bul
 #### Background textures
 Disable all background textures
 
+## Minor tweaks making big differences
+
+#### Gap between the selected tab and the content in the sidebars
+
+[![]({% link images/stylesettings/tab-header-gap.webp %}){: width="400" }]({% link images/stylesettings/tab-header-gap.webp %})
+
+
 # Editor
 
 #### File line width
