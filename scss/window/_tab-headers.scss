@@ -15,7 +15,7 @@
 
 /* Remove gap between header and content */
 .mod-sidedock .workspace-tab-header-container-inner {
-    padding-bottom: 0;
+    padding-bottom: var(--sidedock-tab-header-padding-bottom);
 }
 
 /* Ensure gap between header and top border windows */

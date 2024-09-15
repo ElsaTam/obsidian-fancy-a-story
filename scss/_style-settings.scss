@@ -157,7 +157,23 @@ settings:
         description: Some panes can use background texture for style effect.
         type: class-toggle
         default: true
-
+    
+    - 
+        id: accessibility-tweaks
+        title: Minor tweaks making big differences
+        type: heading
+        collapsed: true
+        level: 2
+    - 
+        id: sidedock-tab-header-padding-bottom
+        title: Gap between the selected tab and the content in the sidebars
+        description: If you're annoyed by the fact that they touch each other, increase this value
+        type: variable-number-slider
+        format: px
+        default: 0
+        min: 0
+        max: 6
+        
 
 
     - 
