@@ -10,6 +10,8 @@ aux_links:
 plugins:
   - jekyll-default-layout
 
+color_scheme: dark-silver
+
 callouts:
   warning:
     title: Warning

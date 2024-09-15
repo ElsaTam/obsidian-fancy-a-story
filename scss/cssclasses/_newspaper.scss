@@ -1,9 +1,9 @@
-.theme-dark .view-content:has(.newspaper) {
+.kpr-bg-textures.theme-dark .view-content:has(.newspaper) {
     background-image: var(--black-paper);
     background-size: 500px;
     background-blend-mode: luminosity;
 }
-.theme-light .view-content:has(.newspaper) {
+.kpr-bg-textures.theme-light .view-content:has(.newspaper) {
     background-image: var(--white-paper);
     background-size: 500px;
     background-blend-mode: luminosity;
@@ -21,7 +21,6 @@
     --h1-weight: var(--font-semibold);
     --h1-variant: small-caps;
     --metadata-border-width: 0;
-    container: newspaper-view / size;
 }
 
 .newspaper .metadata-container {
@@ -48,8 +47,8 @@
     margin-left: calc(50% - 50cqw - var(--file-margins));
 }
 
-@container newspaper-view style(--metadata-display-reading: block) {
-    .show-properties.markdown-preview-view .mod-header::after {
+@container markdown-view style(--metadata-display-reading: block) {
+    :is(.newspaper.show-properties.markdown-preview-view .mod-header)::after {
         content: "";
         display: block;
         border-bottom: 2px solid var(--text-normal);
@@ -58,8 +57,8 @@
     }
 }
 
-@container newspaper-view style(--metadata-display-editing: block) {
-    .show-properties.markdown-source-view .cm-contentContainer::before {
+@container markdown-view style(--metadata-display-editing: block) {
+    :is(.newspaper.show-properties.markdown-source-view .cm-contentContainer)::before {
         content: "";
         position: absolute;
         border-bottom: 2px solid var(--text-normal);

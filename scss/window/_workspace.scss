@@ -20,6 +20,16 @@ body,
     background: none;
 }
 
+.mod-root .workspace-tabs .workspace-leaf,
+.mod-root .workspace-tabs .view-header,
+.workspace-split.mod-root .view-content {
+    background-color: var(--workleaves-background);
+}
+
+.mod-fade:not(.mod-at-end):after {
+    background: linear-gradient(to right, transparent, var(--workleaves-background))
+}
+
 /* ----------- Top bar (toggle button + tabs) ----------- */
 .sidebar-toggle-button,
 .workspace-tabs.mod-top {
