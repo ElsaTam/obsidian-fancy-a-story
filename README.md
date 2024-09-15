@@ -14,6 +14,7 @@ I am not expecting this theme to be for everyone, it is not the lightest one and
 > Still not tested on tablet or mobile
 
 **Documentation**: https://elsatam.github.io/obsidian-fancy-a-story/
+
 **Backlog**: https://github.com/users/ElsaTam/projects/1/views/1
 
 
