@@ -56,7 +56,13 @@ Source: [`_cssvariables.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story
 
 [![]({% link images/cssvariables/workspace-workleaves.webp %}){: width="300" }]({% link images/cssvariables/workspace-workleaves.webp %})
 
-## Circle cutouts
+## Sidedocks
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--sidedock-tab-header-padding-bottom` | Gap between the selected tab and the content in the sidebars | `0px` |
+
+## Corner cutouts
 
 | Variable | Description | Default value |
 |:---------|:------------|:--------------|

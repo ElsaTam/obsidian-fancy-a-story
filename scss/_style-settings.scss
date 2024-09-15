@@ -173,7 +173,14 @@ settings:
         default: 0
         min: 0
         max: 6
-        
+    - 
+        id: image-shadow-offset
+        title: Offset of images stripped shadows
+        description: Make it 0 to make the shadow disappear
+        type: variable-number
+        format: px
+        default: 8
+
 
 
     - 
