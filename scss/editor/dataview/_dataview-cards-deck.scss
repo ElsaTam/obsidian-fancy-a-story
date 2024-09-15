@@ -4,7 +4,7 @@
 @scope (.dataview-cards-deck) to (.markdown-embed .markdown-embed) {
     
     .dataview-result-list-root-ul {
-        --border-color: var(--color-accent);
+        --border-color-hover: var(--color-accent);
         --card-gap: 50px;
         --card-width: 150px;
         --card-height: 300px;
@@ -29,6 +29,10 @@
         @include cards-deck.card;
     }
 
+    .dataview-result-list-li:hover {
+        @include cards-deck.card-hover;
+    }
+
     .markdown-embed {
         --embed-border-start: 0px;
         --embed-border-end: 0px;
@@ -37,7 +41,7 @@
     }
 
     .markdown-embed-title {
-        @include cards-deck.card-shadow;border-top-left-radius: var(--card-radius);
+        border-top-left-radius: var(--card-radius);
         position: absolute;
         z-index: 1;
         writing-mode: vertical-rl;
@@ -45,16 +49,19 @@
         padding: var(--size-4-2) 0;
         top: 1px;
         left: 1px;
+        box-shadow: 1px 1px 5px black;
     }
 
-    .markdown-embed:hover > .markdown-embed-title {
+    .dataview-result-list-li:hover .markdown-embed-title {
         opacity: 0;
     }
     
     :scope .markdown-embed .markdown-preview-view,
     .markdown-embed-content {
+        @include cards-deck.card-shadow;
         @include cards-deck.card-radius;
         @include cards-deck.card-border;
+        outline: 4px solid var(--workleaves-background);
         --font-text-size: xx-small;
         width: var(--card-width);
         background: var(--workleaves-background);
@@ -62,7 +69,6 @@
         content-visibility: auto;
         overflow: hidden;
         padding: var(--size-2-2);
-        outline: 4px solid var(--workleaves-background);
         height: var(--embed-max-height);
     }
 
@@ -89,7 +95,6 @@
 @scope (.dataview-cards-deck) to (.markdown-embed .markdown-embed) {
     .dataview-result-list-root-ul .markdown-preview-view:hover,
     .dataview-result-list-root-ul .markdown-embed-content:hover {
-        @include cards-deck.card-hover;
         outline: none;
     }
 
