@@ -64,8 +64,6 @@
     }
 }
 
-
-
 .nav-folder:has(.nav-file-title.is-active) > .nav-folder-title::after,
 .nav-file-title.is-active::after,
 .nav-folder-title.is-active::after {
@@ -77,4 +75,9 @@
     height: var(--active-file-bullet-size);
     border-radius: 50%;
     background-color: currentColor;
+}
+
+/* Override Folder Note plugin styling */
+div.has-folder-note {
+	color: var(--nav-item-color);
 }
