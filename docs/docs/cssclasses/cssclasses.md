@@ -21,3 +21,7 @@ Source: [`_kpr-headings.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story
 | `headings-hue`        | Use a middle hue between background and text | [![]({% link images/cssclasses/headings-hue.webp %}){: width="100" }]({% link images/cssclasses/headings-hue.webp %}) |
 | `headings-complement` | Use the complementary of the middle hue      | [![]({% link images/cssclasses/headings-complement.webp %}){: width="100" }]({% link images/cssclasses/headings-complement.webp %}) |
 | `headings-accent`     | Use the accent color                         | [![]({% link images/cssclasses/headings-accent.webp %}){: width="100" }]({% link images/cssclasses/headings-accent.webp %}) |
+
+{: .note }
+- If both of your primary and text color are shades of grey (0% saturation), the middle hue and its complement will also be shades of grey.
+- If one of your primary or text color is a shade of grey with the Custom color scheme, it will be considered as red hue to compute the middle hue, hence giving a mix between red and the other primary/text color.

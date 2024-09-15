@@ -59,24 +59,31 @@ $supported-normal-boxes: (
 );
 
 /* Custom icons */
+$sel: ":is(";
 @each $label, $icon, $color in $supported-icon-labels {
-    :is(.HyperMD-task-line, .task-list-item)[data-task='#{$label}'],
-    .kpr-doodle-icons:not(.kpr-accessibility) :is(.HyperMD-task-line, .task-list-item)[data-task='#{$label}'] {
+    @if ($sel != ":is(") { $sel: $sel + ", "; }
+    $sel: $sel + "[data-task='#{$label}']";
+}
+$sel: $sel + ")";
+:is(.HyperMD-task-line, .task-list-item)#{$sel} input[type=checkbox] {
+    pointer-events: none;
+
+    &, &:checked {
+        background: none;
+        border: none;
+    }
+
+    &::after,
+    &:checked::after {
+        @include icon-after;
+    }
+}
+@each $label, $icon, $color in $supported-icon-labels {
+    :is(.HyperMD-task-line, .task-list-item)[data-task='#{$label}'] {
         --checkbox-color: var(--color-#{$color});
 
-        input[type=checkbox] {
-            pointer-events: none;
-        }
-
-        input[type=checkbox],
-        input[type=checkbox]:checked {
-            background: none;
-            border: none;
-        }
-    
         input[type=checkbox]::after,
         input[type=checkbox]:checked::after {
-            @include icon-after;
             background-color: var(--checkbox-color);
             mask-image: var(--icon-#{$icon});
         }
@@ -84,61 +91,49 @@ $supported-normal-boxes: (
 }
 
 /* Standard boxes (non doodle) */
-    @each $label, $icon, $color, $color-hover in $supported-normal-boxes {
-        :is(.HyperMD-task-line, .task-list-item)[data-task='#{$label}'] {
-            
-            --checkbox-color: var(--#{$color});
-            --checkbox-color-hover: var(--#{$color-hover});
+@each $label, $icon, $color, $color-hover in $supported-normal-boxes {
+    :is(.HyperMD-task-line, .task-list-item)[data-task='#{$label}'] {
+        --checkbox-color: var(--#{$color});
+        --checkbox-color-hover: var(--#{$color-hover});
 
-            input[type=checkbox]::after {
-                @include icon-after;
-                mask-image: var(--#{$icon});
-            }
+        input[type=checkbox]::after {
+            @include icon-after;
+            mask-image: var(--#{$icon});
         }
     }
+}
 
+/* Doodle icons */
 @scope (.kpr-doodle-icons:not(.kpr-accessibility)) to (:is(.callout[data-callout="autopsy"], .callout[data-callout="screen"], .callout[data-callout="email"])) {
     /* Default checkbox for doodle icons */
+    :is(.HyperMD-task-line, .task-list-item) input[type=checkbox] {
+        &, &:hover {
+            background: none;
+            border: none;
+        }
+        &::after {
+            @include icon-after;
+            background-color: var(--checkbox-color);
+        }
+        &:hover::after {
+            background-color: var(--checkbox-color-hover);
+        }
+    }
     @for $i from 1 through 6 {
-        :is(.HyperMD-task-line, .task-list-item):nth-child(6n + #{$i}) {
-            input[type=checkbox] {
-                background: none;
-                border: none;
-            }
-
-            input[type=checkbox]::after {
-                @include icon-after;
-                background-color: var(--checkbox-color);
-                mask-image: var(--box-checked-#{$i});
-            }
-
-            input[type=checkbox]:hover::after {
-                background-color: var(--checkbox-color-hover);
-            }
+        :is(.HyperMD-task-line, .task-list-item):nth-child(6n + #{$i}) input[type=checkbox]::after {
+            mask-image: var(--box-checked-#{$i});
         }
     }
 
-    /* Standard boxes with doodle icons */
+    /* Standard boxes with doodle effect */
     @each $label, $icon, $color, $color-hover in $supported-doodle-boxes {
         @for $i from 1 through 6 {
             :is(.HyperMD-task-line, .task-list-item)[data-task='#{$label}']:nth-child(6n + #{$i}) {
-            
                 --checkbox-color-hover: var(--#{$color-hover});
                 --checkbox-color: var(--#{$color});
-        
-                input[type=checkbox] {
-                    background: none;
-                    border: none;
-                }
 
                 input[type=checkbox]::after {
-                    @include icon-after;
-                    background-color: var(--checkbox-color);
                     mask-image: var(--#{$icon}-#{$i});
-                }
-
-                input[type=checkbox]:hover::after {
-                    background-color: var(--checkbox-color-hover);
                 }
             }
         }
