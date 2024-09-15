@@ -21,7 +21,7 @@ thead th, td {
 :not(pre, figure) > code {
     border: none;
     background-color: #{$grey-dk-200};
-    padding: 0.2em 0.5em;
+    padding: 0.1em 0.5em;
     font-size: #{$font-size-4};
 }
 
@@ -33,6 +33,13 @@ h4 {
 
 a:not(pre, figure) > code {
     color: #{$link-color};
+}
+
+img {
+    border: 1px solid #{$grey-dk-200};
+}
+img:hover {
+    border-color: transparent;
 }
 
 @media (min-width: 31.25rem) {

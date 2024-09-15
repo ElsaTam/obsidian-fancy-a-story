@@ -24,6 +24,4 @@ callouts:
     color: purple
   note:
     title: Note
-    color: blue
-  highlight:
     color: yellow
