@@ -13,25 +13,10 @@ I am not expecting this theme to be for everyone, it is not the lightest one and
 > [!WARNING]
 > Still not tested on tablet or mobile
 
-Features
---------
+**Documentation**: https://elsatam.github.io/obsidian-fancy-a-story/
+**Backlog**: https://github.com/users/ElsaTam/projects/1/views/1
 
-I still need to create a doc because I created several new layouts/effects with Obsidian elements. But here is a quick list for now, in case you want to explore by yourself (and if you have any question about how to use one of the feature, don't heasitate to reach):
 
-- Accessibility option. You can turn it on in the Style Settings and it will disable Serif fonts, make the font a little bit bigger, etc.
-- Rainbow folders
-- Task list icons
-- Multiple new callouts, you can find them as standalones [here](https://github.com/ElsaTam/Obsidian-Stuff/tree/main/snippets/callouts)
-- New css classes for your notes
-  - `newspaper` ([see here](https://github.com/ElsaTam/Obsidian-Stuff/tree/main/snippets/newspaper))
-  - Multi columns (`columns-2`, `columns-3`, `columns-4`)
-  - `black-and-white`
-  - `wide-page`
-  - `confidential` (change the `==highlights==` to black marker hiding text)
-- New lists using tags
-  - `#family-tree`
-  - `#tree-view`
-- Invisible embeds with `![[your note|faded]]`
 
 Installation
 ------------
