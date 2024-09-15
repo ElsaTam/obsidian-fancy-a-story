@@ -1,0 +1,82 @@
+@mixin cards-deck {
+    --card-radius: var(--radius-l);
+    --card-scale-hover: 1.1;
+    --card-shadow-offset-y: 2px;
+    --card-shadow-offset-x: -2px;
+    --card-shadow-blur: 3px;
+    --card-shadow-opacity: 0.2;
+    --card-base-translation: calc(-0.5 * (var(--card-width) - var(--card-gap)));
+    --deck-scrollbar-width: 10px;
+    --padding-scale-factor: (var(--card-scale-hover) - 1) * var(--card-height);
+
+    color: var(--text-muted);
+    height: calc((var(--card-height) + var(--card-shadow-offset-y) * 2 + var(--card-shadow-blur) * 2) * var(--card-scale-hover) + var(--padding-bottom) + 2 * var(--deck-border-width));
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    overflow-x: auto;
+
+    --padding-bottom: max(0px, var(--card-shadow-blur) + var(--card-shadow-offset-y) + var(--padding-scale-factor));
+    --padding-top: max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-y) + var(--padding-scale-factor));
+    --padding-left: calc(-1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-x)));
+    --padding-right: calc(-1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) + var(--card-shadow-offset-x)));
+    
+    &::-webkit-scrollbar{
+        width: var(--deck-scrollbar-width);
+        height: var(--deck-scrollbar-width);
+    }
+
+    > * {
+        width: var(--card-gap);
+        transition: transform 0.5s ease-in-out;
+        transform: translateX(var(--card-base-translation));
+        transform-origin: right;
+    }
+
+    > :hover {
+        transform: translateX(var(--card-base-translation)) scale(var(--card-scale-hover));
+    }
+
+    > :hover ~ * {
+        transform: translateX(var(--card-base-translation)) translateX(calc(var(--card-width) - var(--card-gap)));
+    }
+}
+
+@mixin card {
+    transition: transform 0.5s ease-in-out, filter 0.2s linear;
+    height: var(--card-height);
+    vertical-align: middle;
+}
+
+@mixin card-shadow {
+    box-shadow: var(--card-shadow-offset-x) var(--card-shadow-offset-y) var(--card-shadow-blur) rgba(0, 0, 0, var(--card-shadow-opacity));
+}
+
+@mixin card-border {
+    border: 1px solid currentColor;
+}
+
+@mixin card-radius {
+    border-radius: var(--card-radius);
+}
+
+@mixin card-hover {
+    color: var(--border-color);
+}
+
+@mixin card-not-hover {
+    &:has(> :hover) > :not(:hover) {
+        filter: saturate(0.2);
+        &, & .markdown-preview-view {
+            color: var(--text-faint);
+        }
+    }
+
+    > :hover ~ * {
+        z-index: 0
+    }
+    
+    &:hover {
+        z-index: 1;
+    }
+}

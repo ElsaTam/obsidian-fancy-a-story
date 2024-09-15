@@ -1,5 +1,5 @@
 ---
-title: Cards deck
+title: Cards deck (Callout)
 parent: Callouts
 ---
 

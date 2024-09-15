@@ -1,0 +1,56 @@
+@use '../../mixins/cards-deck';
+
+.callout[data-callout="cards-deck"] {
+    --callout-icon: lucide-layers;
+    --deck-border-width: 1px;
+    --callout-border-width: var(--deck-border-width);
+    --border-color: rgb(var(--callout-color));
+    --p-spacing: 0;
+}
+
+.callout[data-callout="cards-deck"] .callout-content {
+    overflow: visible;
+}
+
+.callout[data-callout="cards-deck"] .callout-content > p {
+    --card-gap: 30px;
+    --card-width: 70px;
+    --card-height: 100px;
+
+    @include cards-deck.cards-deck;
+    
+    padding-bottom: var(--padding-bottom);
+    padding-top: var(--padding-top);
+    padding-left: var(--padding-left);
+    padding-right: var(--padding-right);
+
+    > a:has(> .image-embed) { font-size: 0; }
+
+    > span:has(> img),
+    > a > span:has(> img) {
+        @include cards-deck.card;
+    }
+
+    > span > img,
+    > a > span > img {
+        @include cards-deck.card-radius;
+        @include cards-deck.card-border;
+        @include cards-deck.card-shadow;
+        max-width: var(--card-width);
+        height: var(--card-height);
+        object-fit: cover;
+        object-position: center center;
+    }
+}
+
+
+/* Remove code bellow in case of performance issues */
+
+.callout[data-callout="cards-deck"] .callout-content > p {
+    > span > img:hover,
+    > a > span > img:hover {
+        @include cards-deck.card-hover;
+    }
+
+    @include cards-deck.card-not-hover;
+}
