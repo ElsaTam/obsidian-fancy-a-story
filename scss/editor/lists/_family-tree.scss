@@ -1,4 +1,4 @@
-ul:has(.tag[href='#family-tree']) {
+ul:has(> li > .tag[href='#family-tree']) {
     --list-spacing: 0;
     --list-indent: 0;
 

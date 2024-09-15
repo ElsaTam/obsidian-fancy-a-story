@@ -11,7 +11,7 @@
 }
 
 
-:is(ul, ol):has(.tag[href='#list-reversed-all']) {
+:is(ul, ol):has(> li > .tag[href='#list-reversed-all']) {
     &, ul, ol, li {
         transform: scaleY(-1);
     }

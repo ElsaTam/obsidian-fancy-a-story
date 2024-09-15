@@ -1,6 +1,6 @@
 @use '../../animations/animations';
 
-ul:has(.tag[href='#tree-view']) {
+ul:has(> li > .tag[href='#tree-view']) {
     --indentation-guide-reading-indent: -0.8em;
     --indentation-guide-width: 2px;
     --indentation-guide-color: var(--background-secondary);
