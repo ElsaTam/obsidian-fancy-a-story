@@ -62,10 +62,6 @@
         background-image: var(--clue-paper-variant);
         background-size: 300px 300px;
     }
-    > .callout-content:hover {
-        font-weight: 600;
-        box-shadow: var(--shadow-s);
-    }
 
     &.is-collapsed {
         background: none;
@@ -74,6 +70,7 @@
         > * > .callout-icon {  opacity: 0.5; }
     }
     > .callout-title:hover .callout-icon { opacity: 1; }
+    &:hover .callout-title-inner { font-weight: var(--font-bold); }
 
     /* Other theme compatibility */
     > .callout-title-inner { flex-grow: unset; }
