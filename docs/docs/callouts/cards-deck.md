@@ -3,7 +3,9 @@ title: Cards deck (Callout)
 parent: Callouts
 ---
 
-Source: [`_callout-dvjs-cards-deck.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-dvjs-cards-deck.scss)
+Source: [`_callout-cards-deck.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-dvjs-cards-deck.scss)
+
+See the [`dataview-cards-deck` class]({% link docs/dataview/cards-deck.md %}) to create this effect with embed notes.
 
 [![]({% link images/callouts/cards-deck.webp %})]({% link images/callouts/cards-deck.webp %})
 

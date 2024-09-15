@@ -7,7 +7,7 @@ title: Callouts
 | Name | Description | Source |
 |:-----|:------------|:-------|
 | [`autopsy`]({% link docs/callouts/autopsy.md %}) | A strict layout for an auotpsy report | [`_callout-autopsy.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-autopsy.scss) |
-| [`cards-deck`]({% link docs/callouts/cards-deck.md %}) | Display a list of images as a deck | [`_callout-dvjs-cards-deck.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-dvjs-cards-deck.scss) |
+| [`cards-deck`]({% link docs/callouts/cards-deck.md %}) | Display a list of images as a deck | [`_callout-cards-deck.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-cards-deck.scss) |
 | [`clue`]({% link docs/callouts/clue.md %}) | That good ol' clue you pin on the wall with a tape | [`_callout-clue.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-clue.scss) |
 | [`comic`]({% link docs/callouts/comic.md %}) | Comic strip | [`_callout-comic.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-comic.scss) |
 | [`email`]({% link docs/callouts/email.md %}) | Email look | [`_callout-email.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-email.scss) |

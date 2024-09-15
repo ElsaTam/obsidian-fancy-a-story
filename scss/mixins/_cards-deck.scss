@@ -1,4 +1,5 @@
 @mixin cards-deck {
+    --border-color: currentColor;
     --card-radius: var(--radius-l);
     --card-scale-hover: 1.1;
     --card-shadow-offset-y: 2px;
@@ -53,7 +54,7 @@
 }
 
 @mixin card-border {
-    border: 1px solid currentColor;
+    border: 1px solid var(--border-color);
 }
 
 @mixin card-radius {
@@ -61,7 +62,7 @@
 }
 
 @mixin card-hover {
-    color: var(--border-color);
+    --border-color: var(--border-color-hover);
 }
 
 @mixin card-not-hover {
