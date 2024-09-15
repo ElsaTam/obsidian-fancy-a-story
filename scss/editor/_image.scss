@@ -1,6 +1,6 @@
 @use '../foundations/colors/colors_definitions';
 
-@container not style(--image-shadow-offset: 0) {
+@container not (style(--image-shadow-offset: 0) or style(--image-shadow-offset: 0px)) {
     .image-embed {
         z-index: 1;
         width: fit-content;

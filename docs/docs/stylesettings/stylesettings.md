@@ -54,6 +54,11 @@ Disable all background textures
 
 [![]({% link images/stylesettings/tab-header-gap.webp %}){: width="400" }]({% link images/stylesettings/tab-header-gap.webp %})
 
+#### Offset of images stripped shadows
+**Trick 1**: Make it 0 to make the shadow disappear.
+
+**Trick 2**: Make it negative to keep the shadow exactly under the image (like if it was offset 0), but still display it under transparent images.
+
 
 # Editor
 
