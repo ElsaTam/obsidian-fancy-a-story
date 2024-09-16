@@ -39,3 +39,33 @@
         grid-template-columns: repeat(6, 1fr);
     }
 }
+
+@container markdown-view (700px < width < 850px) {
+    .callout[data-callout="grid"][data-callout-metadata~="col-6"] > .callout-content {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@container markdown-view (550px < width < 700px) {
+    .callout[data-callout="grid"][data-callout-metadata~="col-5"] > .callout-content,
+    .callout[data-callout="grid"][data-callout-metadata~="col-6"] > .callout-content {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@container markdown-view (400px < width < 550px) {
+    .callout[data-callout="grid"][data-callout-metadata~="col-4"] > .callout-content,
+    .callout[data-callout="grid"][data-callout-metadata~="col-5"] > .callout-content,
+    .callout[data-callout="grid"][data-callout-metadata~="col-6"] > .callout-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@container markdown-view (width < 400px) {
+    .callout[data-callout="grid"][data-callout-metadata~="col-3"] > .callout-content,
+    .callout[data-callout="grid"][data-callout-metadata~="col-4"] > .callout-content,
+    .callout[data-callout="grid"][data-callout-metadata~="col-5"] > .callout-content,
+    .callout[data-callout="grid"][data-callout-metadata~="col-6"] > .callout-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -149,3 +149,7 @@ body:not(.is-frameless) .mod-root .workspace-tab-header:not(.is-active) .workspa
 .nav-header {
     border-bottom: var(--file-header-border);
 }
+.is-mobile .nav-header {
+    border-top: var(--file-header-border);
+    border-bottom: 0;
+}

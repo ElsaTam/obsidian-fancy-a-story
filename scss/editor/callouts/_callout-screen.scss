@@ -33,6 +33,7 @@
     }
 
     .image-embed {
+        display: inline-block;
         border: var(--callout-border-width) solid rgb(var(--callout-color));
     }
 }

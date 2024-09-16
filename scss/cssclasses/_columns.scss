@@ -1,3 +1,4 @@
+
 .columns-2.markdown-preview-view .markdown-preview-section {
     column-count: 2;
 }
@@ -8,6 +9,18 @@
 
 .columns-4.markdown-preview-view .markdown-preview-section {
     column-count: 4;
+}
+
+@container markdown-view (width < 900px) {
+    .columns-4.markdown-preview-view .markdown-preview-section {
+        column-count: 3;
+    }
+}
+
+@container markdown-view (width < 600px) {
+    :is(.columns-3, .columns-4).markdown-preview-view .markdown-preview-section {
+        column-count: 2;
+    }
 }
 
 :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section {

@@ -16,6 +16,11 @@
     initial-value: 30deg;
 }
 
+.is-mobile .callout[data-callout="paper-fold"] {
+    --corner-diag: 25px;
+    --corner-angle: 70deg;
+}
+
 .callout[data-callout="paper-fold"] {
     --corner-width: calc(var(--corner-diag) / sin(var(--corner-angle)));
     --corner-height: calc(var(--corner-diag) / sin(90deg - var(--corner-angle)));
@@ -25,7 +30,9 @@
 .callout[data-callout="paper-fold"]:hover {
     --corner-diag: 10px;
     --corner-angle: 60deg;
-}/**/
+}
+
+/**/
 
 /* -------------- SET WIDTH AND HEIGHT (no unit) ------------- */
 /*

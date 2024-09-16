@@ -269,3 +269,7 @@
 .theme-dark .callout[data-callout="autopsy"] .callout[data-callout="body"] ul.contains-task-list::before {
     filter: invert(1);
 }
+
+.is-mobile .callout[data-callout="autopsy"] .callout[data-callout="body"] .task-list-item {
+    transform: translateX(4cqw);
+}
