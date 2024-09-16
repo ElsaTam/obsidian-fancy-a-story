@@ -1,0 +1,18 @@
+/*
+    Require the cards snippet for Obsidian, by Kepano
+    https://github.com/kepano/obsidian-minimal/blob/master/src/scss/features/cards.scss
+*/
+
+.cards table.dataview > tbody > tr,
+.list-cards.markdown-preview-view div > ul > li {
+    --cards-border-width: 2px;
+    transition: border-radius 0.3s linear;
+
+    &:not(:hover) {
+        --radius-s: 255px 15px 255px 15px / 15px 255px 15px 255px;
+
+        & > * {
+            --radius-s: 0;
+        }
+    }
+}
