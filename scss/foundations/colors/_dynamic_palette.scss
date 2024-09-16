@@ -67,6 +67,7 @@ $keep: 87%;
 
 // Create the block for default theme (no mixing)
 @each $tone in ("light", "dark") {
+    .is-mobile.theme-#{$tone}.kpr-custom-#{$tone},
     .theme-#{$tone}.kpr-custom-#{$tone} {
         @if $tone == "light" {
             --custom-color-base-00: #ffffff;
@@ -101,6 +102,7 @@ $keep: 87%;
     }
 
     // Create the class CSS block
+    .is-mobile.theme-#{$tone}.kpr-#{$tone},
     .theme-#{$tone}.kpr-#{$theme} {
 
         // Set the base variables for the gradient

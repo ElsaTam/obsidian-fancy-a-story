@@ -15,6 +15,10 @@
         outline: 1px solid color-mix(in srgb, var(--metadata-border-color), transparent 50%);
         outline-offset: -5px;
     }
+
+    .metadata-properties-heading .collapse-indicator {
+        inset-inline-start: 0;
+    }
     
     .metadata-properties-heading {
         --heading-padding-inline: var(--size-4-6);
