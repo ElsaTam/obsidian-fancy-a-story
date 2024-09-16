@@ -12,7 +12,7 @@
     --image-shadow-offset: 0;
 
     color: rgb(var(--callout-color));
-    font-family: 'ProFont', 'Courier New', Courier, monospace;
+    font-family: var(--font-monospace-screen);
 
     &, .callout-title {
         background: none;
