@@ -16,13 +16,13 @@
     --card-gap: 30px;
     --card-width: 70px;
     --card-height: 100px;
-
-    @include cards-deck.cards-deck;
     
     padding-bottom: var(--padding-bottom);
     padding-top: var(--padding-top);
     padding-left: var(--padding-left);
     padding-right: var(--padding-right);
+
+    @include cards-deck.cards-deck;
 
     > a:has(> .image-embed) { font-size: 0; }
 
