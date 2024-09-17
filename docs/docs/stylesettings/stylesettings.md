@@ -64,10 +64,10 @@ Disable all background textures
 # Workspace
 
 #### Status bar position
-- (none): default position
-- Default on hover: default position, show on hover only
-- Top: at the top of the window
-- Ribbon: split the ribbon space in two, the status-bar goes in the bottom part
+- **(none)**: default position
+- **Default on hover**: default position, show on hover only
+- **Top**: at the top of the window
+- **Ribbon**: split the ribbon space in two, the status-bar goes in the bottom part
 
 
 
