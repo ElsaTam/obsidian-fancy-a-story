@@ -1,9 +1,0 @@
-.markdown-preview-sizer:has(.dataview-wide) > div > div {
-    overflow: visible !important;
-}
-.markdown-reading-view .dataview-wide {
-    position: relative;
-    --w: 95cqw;
-    width: var(--w);
-    left: calc(50% - var(--w) * 0.5);
-}

@@ -21,13 +21,8 @@
 
 
 /* ----------- Paper texture ----------- */
-.kpr-bg-textures.theme-dark .mod-sidedock .workspace-leaf {
-    background-image: var(--black-paper);
+.kpr-bg-textures .mod-sidedock .workspace-leaf {
+    background-image: var(--sidebar-paper);
     background-size: 500px;
-    background-blend-mode: luminosity;
-}
-.kpr-bg-textures.theme-light .mod-sidedock .workspace-leaf {
-    background-image: var(--white-paper);
-    background-size: 500px;
-    background-blend-mode: luminosity;
+    background-blend-mode: multiply;
 }

@@ -16,13 +16,13 @@
         --image-shadow-offset: 0;
         list-style-type: none;
         border: var(--deck-border-width) solid var(--background-secondary);
-
-        @include cards-deck.cards-deck;
     
         padding-bottom: var(--padding-bottom) !important;
         padding-top: var(--padding-top) !important;
         padding-left: var(--padding-left) !important;
         padding-right: var(--padding-right) !important;
+
+        @include cards-deck.cards-deck;
     }
 
     .dataview-result-list-li {
