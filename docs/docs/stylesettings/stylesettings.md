@@ -60,6 +60,18 @@ Disable all background textures
 **Trick 2**: Make it negative to keep the shadow exactly under the image (like if it was offset 0), but still display it under transparent images.
 
 
+
+# Workspace
+
+#### Status bar position
+- (none): default position
+- Default on hover: default position, show on hover only
+- Top: at the top of the window
+- Ribbon: split the ribbon space in two, the status-bar goes in the bottom part
+
+
+
+
 # Editor
 
 #### File line width
