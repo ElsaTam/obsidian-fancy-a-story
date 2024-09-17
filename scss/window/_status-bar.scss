@@ -43,11 +43,14 @@
             --transition-duration: 0.5s;
             --transition-timing-function: ease;
             --border-width: max(15px, var(--radius-m));
-            transform: translateX(calc(100% - var(--border-width)));
             transition-duration: var(--transition-duration), max(0s, calc(var(--transition-duration) - 0.2s));
             transition-timing-function: var(--transition-timing-function);
             transition-property: transform, border;
+        }
+        .status-bar:not(:hover) {
+            transform: translateX(calc(100% - var(--border-width)));
             border-left: var(--color-accent) solid var(--border-width);
+            box-shadow: -4px 0px 8px var(--shadow-color);
         }
         .status-bar::before {
             content: "";
@@ -60,11 +63,6 @@
             transition-timing-function: var(--transition-timing-function);
             transition-property: left;
             z-index: -1;
-        }
-        
-        .status-bar:hover {
-            transform: none;
-            border-left-width: 0;
         }
         
         .status-bar:hover::before {
