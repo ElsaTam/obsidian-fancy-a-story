@@ -1,0 +1,35 @@
+.fas-status-bar-top {
+
+    .app-container {
+        flex-direction: column-reverse;
+    }
+
+    .horizontal-main-container {
+        position: relative;
+    }
+    
+    .status-bar {
+        -webkit-app-region: drag;
+        position: static;
+        background: none;
+    }
+    
+    &.is-hidden-frameless:not(.is-fullscreen):not(.mod-macos) .status-bar::after {
+        -webkit-app-region: drag;
+        content: '';
+        height: 100%;
+        width: calc(var(--frame-right-space) + var(--size-4-2) + 6px + var(--header-height) - 1px);
+    }
+    
+    &.is-hidden-frameless:not(.is-fullscreen) .mod-root .workspace-tab-header-container,
+    &:not(.is-frameless) .mod-root .workspace-tab-header-container {
+        border-top: 0 !important;
+        box-sizing: border-box;
+    }
+    
+    &.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right::before {
+        left: calc(-1 * var(--header-height) + 1px) !important;
+        width: calc(var(--header-height) - 1px) !important;
+        height: calc(var(--header-height) - 1px) !important;
+    }
+}
