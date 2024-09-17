@@ -25,6 +25,12 @@ Source: [`_cssvariables.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story
 | `--image-shadow-stripe-gap`       | Stripes gap of the images shadow       | `2px`                           |
 | `--image-shadow-color`            | Color of the images stripe shadow      | `var(--background-primary-alt)` |
 
+## Links
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--link-decoration-thickness-hover` | Link text decoration thickness (hover) | `1px` |
+
 ## Tables
 
 | Variable | Description | Default value |
