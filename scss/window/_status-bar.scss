@@ -33,3 +33,39 @@
         height: calc(var(--header-height) - 1px) !important;
     }
 }
+
+
+
+.fas-status-bar-default-hover {
+    .status-bar {
+        --transition-duration: 0.5s;
+        --transition-timing-function: ease;
+        --border-width: max(15px, var(--radius-m));
+        transform: translateX(calc(100% - var(--border-width)));
+        transition-duration: var(--transition-duration), max(0s, calc(var(--transition-duration) - 0.2s));
+        transition-timing-function: var(--transition-timing-function);
+        transition-property: transform, border;
+        border-left: var(--color-accent) solid var(--border-width);
+    }
+    .status-bar::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        transition-duration: var(--transition-duration);
+        transition-timing-function: var(--transition-timing-function);
+        transition-property: left;
+        z-index: -1;
+    }
+    
+    .status-bar:hover {
+        transform: none;
+        border-left-width: 0;
+    }
+    
+    .status-bar:hover::before {
+        left: 0;
+    }
+}
