@@ -6,7 +6,7 @@ body:not(:has(.is-right-sidedock-open)) {
         --titlebar-background-focused: var(--workleaves-background);
     }
     
-    &.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right::after {
+    &.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right::before {
         content: "";
         position: absolute;
         top: 0;
@@ -18,7 +18,7 @@ body:not(:has(.is-right-sidedock-open)) {
         clip-path: polygon(100% 0, 100% 100%, 0 100%);
     }
     
-    &.is-hidden-frameless:not(.is-fullscreen).is-focused .titlebar-button-container.mod-right::after {
+    &.is-hidden-frameless:not(.is-fullscreen).is-focused .titlebar-button-container.mod-right::before {
         background-color: var(--titlebar-background-focused);
     }
 }

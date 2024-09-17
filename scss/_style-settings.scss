@@ -184,6 +184,25 @@ settings:
 
 
     - 
+        id: workspace
+        title: Workspace
+        type: heading
+        collapsed: true
+        level: 1
+    - 
+        id: status-bar-position
+        title: Status bar position
+        type: class-select
+        allowEmpty: true
+        default: none
+        options:
+            - 
+                label: Top
+                value: fas-status-bar-top
+
+
+
+    - 
         id: editor
         title: Editor
         type: heading
