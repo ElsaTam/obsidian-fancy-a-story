@@ -48,6 +48,11 @@ body {
     /* inputs */
     --input-radius: var(--radius-s);
 
+    /* links */
+    --link-decoration: none;
+    --link-decoration-hover: none;
+    --link-decoration-thickness: 2px;
+
     /* modal */
     --modal-radius: var(--radius-s);
 
@@ -116,6 +121,9 @@ body {
     --image-shadow-stripe-thickness: 2px;
     --image-shadow-stripe-gap: 4px;
     --image-shadow-color: var(--background-primary-alt);
+
+    /* links */
+    --link-decoration-thickness-hover: 1px;
 
     /* sidedocks */
     --sidedock-tab-header-padding-bottom: 0px;

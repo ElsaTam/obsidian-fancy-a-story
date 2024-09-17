@@ -1,11 +1,11 @@
 
 @container style(--link-decoration: none) and style(--link-decoration-hover: none) {
     .cm-hmd-internal-link,
-    .internal-link {
+    .mod-header ~ * .internal-link {
         position: relative;
     }
     .cm-hmd-internal-link:hover::after,
-    .internal-link:hover::after {
+    .mod-header ~ * .internal-link:hover::after {
         content: "";
         position: absolute;
         transition: bottom 0.3s;
@@ -34,7 +34,7 @@
 @container not style(--link-decoration: none) {
     .cm-hmd-internal-link,
     .markdown-rendered .internal-link,
-    .internal-link {
+    .mod-header ~ * .internal-link {
         @include default-underline;
     }
 }
@@ -42,7 +42,7 @@
 @container not style(--link-external-decoration: none) {
     .cm-url,
     .cm-link,
-    .external-link {
+    .mod-header ~ * .external-link {
         @include default-underline;
     }
 }
@@ -51,14 +51,4 @@
     background-position: top right;
     background-size: 10px;
     padding-inline-end: 13px;
-}
-
-
-body {
-    --link-decoration: none;
-    --link-decoration-hover: none;
-    --link-decoration-thickness: 2px;
-
-
-    --link-decoration-thickness-hover: 1px;
 }
