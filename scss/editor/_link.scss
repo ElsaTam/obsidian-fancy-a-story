@@ -1,11 +1,9 @@
-
-@container style(--link-decoration: none) and style(--link-decoration-hover: none) {
-    .cm-hmd-internal-link,
-    .mod-header ~ * .internal-link {
+@mixin doodle-decoration {
+    & {
         position: relative;
     }
-    .cm-hmd-internal-link:hover::after,
-    .mod-header ~ * .internal-link:hover::after {
+
+    &:hover::after {
         content: "";
         position: absolute;
         transition: bottom 0.3s;
@@ -20,7 +18,22 @@
     }
 }
 
-@mixin default-underline {
+@container style(--link-decoration: doodle) {
+    .cm-hmd-internal-link,
+    .internal-link:not(:is(.metadata-container .internal-link)) {
+        @include doodle-decoration;
+    }
+}
+
+@container style(--link-external-decoration: doodle) {
+    .cm-url,
+    .cm-link,
+    .external-link:not(:is(.metadata-container .external-link)) {
+        @include doodle-decoration;
+    }
+}
+
+@mixin default-decoration {
     & {
         text-underline-offset: 0.2em;
         transition: text-underline-offset 0.3s, opacity 0.15s ease-in-out;
@@ -31,19 +44,27 @@
     }
 }
 
-@container not style(--link-decoration: none) {
-    .cm-hmd-internal-link,
-    .markdown-rendered .internal-link,
-    .mod-header ~ * .internal-link {
-        @include default-underline;
+@container not style(--link-decoration: doodle) {
+    .cm-hmd-internal-link .cm-underline,
+    .markdown-rendered .internal-link:not(:is(.metadata-container .internal-link)),
+    .internal-link:not(:is(.metadata-container .internal-link)) {
+        @include default-decoration;
     }
 }
 
 @container not style(--link-external-decoration: none) {
-    .cm-url,
-    .cm-link,
-    .mod-header ~ * .external-link {
-        @include default-underline;
+    .cm-url .cm-underline,
+    .cm-link .cm-underline,
+    .external-link:not(:is(.metadata-container .external-link)) {
+        @include default-decoration;
+    }
+}
+
+.cm-s-obsidian span.cm-url,
+.cm-s-obsidian span.cm-link,
+.cm-s-obsidian span.cm-hmd-internal-link {
+    &, &:hover {
+        text-decoration-line: none;
     }
 }
 

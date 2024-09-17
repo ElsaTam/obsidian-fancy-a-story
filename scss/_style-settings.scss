@@ -254,6 +254,28 @@ settings:
             - 
                 label: Stroke
                 value: kpr-h1-stroke
+    -
+        id: link-decoration
+        title: Internal link decoration
+        type: variable-select
+        default: doodle
+        options:
+            - none
+            - doodle (on hover)
+            - underline
+            - overline
+            - underline overline
+    -
+        id: link-external-decoration
+        title: External link decoration
+        type: variable-select
+        default: underline
+        options:
+            - none
+            - doodle (on hover)
+            - underline
+            - overline
+            - underline overline
 
 
 

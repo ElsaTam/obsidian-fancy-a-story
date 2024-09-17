@@ -49,8 +49,10 @@ body {
     --input-radius: var(--radius-s);
 
     /* links */
-    --link-decoration: none;
-    --link-decoration-hover: none;
+    --link-decoration: doodle;
+    --link-decoration-hover: var(--link-decoration);
+    --link-external-decoration: underline;
+    --link-external-decoration-hover: var(--link-external-decoration);
     --link-decoration-thickness: 2px;
 
     /* modal */
