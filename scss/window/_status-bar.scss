@@ -69,3 +69,38 @@
         left: 0;
     }
 }
+
+
+
+.fas-status-bar-ribbon {
+    --status-bar-radius: 0;
+    --status-bar-text-color: var(--workspace-foreground-muted);
+    .status-bar {
+        right: unset;
+        left: 0;
+        flex-direction: row;
+        height: 50vh;
+        width: var(--ribbon-width);
+
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        background: none;
+        opacity: var(--icon-opacity-inactive);
+    }
+
+    .status-bar-item.mod-clickable:not(:has(svg)) {
+        transform: rotate(180deg);
+    }
+
+    .status-bar:hover {
+        border-top: 1px dashed var(--color-base-40);
+        opacity: 1;
+    }
+
+    .workspace-ribbon {
+        height: calc(50vh - var(--header-height) + 1px);
+    }
+    .workspace-ribbon:hover {
+        border-bottom: 1px dashed var(--color-base-40);
+    }
+}
