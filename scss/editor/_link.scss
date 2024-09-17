@@ -1,5 +1,64 @@
+
+@container style(--link-decoration: none) and style(--link-decoration-hover: none) {
+    .cm-hmd-internal-link,
+    .internal-link {
+        position: relative;
+    }
+    .cm-hmd-internal-link:hover::after,
+    .internal-link:hover::after {
+        content: "";
+        position: absolute;
+        transition: bottom 0.3s;
+        left: 0;
+        right: 0;
+        bottom: -0.3em;
+        height: 0.34em;
+        background-color: var(--link-color-hover);
+        mask-image: url("data:image/svg+xml,<svg width='100' height='64' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M-17 30.5C-1 22 72-4 54 13 37.9 28.2-2.5 57.5 16 55.5s72-29 104-40' stroke='black' stroke-width='14'/></svg>");
+        mask-size: auto 100%;
+        mask-repeat: repeat no-repeat;
+    }
+}
+
+@mixin default-underline {
+    & {
+        text-underline-offset: 0.2em;
+        transition: text-underline-offset 0.3s, opacity 0.15s ease-in-out;
+    }
+    &:hover {
+        text-underline-offset: calc(0.4em + var(--link-decoration-thickness) - var(--link-decoration-thickness-hover));
+        text-decoration-thickness: var(--link-decoration-thickness-hover);
+    }
+}
+
+@container not style(--link-decoration: none) {
+    .cm-hmd-internal-link,
+    .markdown-rendered .internal-link,
+    .internal-link {
+        @include default-underline;
+    }
+}
+
+@container not style(--link-external-decoration: none) {
+    .cm-url,
+    .cm-link,
+    .external-link {
+        @include default-underline;
+    }
+}
+
 .external-link {
     background-position: top right;
     background-size: 10px;
     padding-inline-end: 13px;
+}
+
+
+body {
+    --link-decoration: none;
+    --link-decoration-hover: none;
+    --link-decoration-thickness: 2px;
+
+
+    --link-decoration-thickness-hover: 1px;
 }
