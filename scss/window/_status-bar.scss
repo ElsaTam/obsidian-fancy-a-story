@@ -11,16 +11,19 @@
         }
         
         .status-bar {
-            -webkit-app-region: drag;
-            position: static;
+            position: relative;
             background: none;
         }
         
-        &.is-hidden-frameless:not(.is-fullscreen):not(.mod-macos) .status-bar::after {
+        &.is-hidden-frameless:not(.is-fullscreen):not(.mod-macos) .status-bar {
+            margin-right: calc(var(--frame-right-space) + var(--size-4-2) + 6px + var(--header-height) - 1px);
+        }
+
+        &.is-hidden-frameless:not(.is-fullscreen):not(.mod-macos) .status-bar::before {
             -webkit-app-region: drag;
-            content: '';
+            content: "";
             height: 100%;
-            width: calc(var(--frame-right-space) + var(--size-4-2) + 6px + var(--header-height) - 1px);
+            flex-grow: 1;
         }
         
         &.is-hidden-frameless:not(.is-fullscreen) .mod-root .workspace-tab-header-container,
