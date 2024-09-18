@@ -100,6 +100,13 @@ body {
 
     /* ----------------- CUSTOM ----------------- */
 
+    /* banner */
+    --banner-height: 300px;
+    --banner-title-shadow: 0px 0px 0.1em rgb(var(--mono-rgb-0)), 0px 0px 0.2em rgb(var(--mono-rgb-0)), 0px 0px 0.5em rgb(var(--mono-rgb-0));
+    --banner-slope-angle: 4deg;
+    --banner-slope-border-width: 5px;
+    --banner-slope-border-color: var(--color-accent);
+
 
     /* circle cutouts */
     --cutout-corner-radius: 13px;
