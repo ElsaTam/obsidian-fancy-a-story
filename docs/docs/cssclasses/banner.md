@@ -68,3 +68,15 @@ cssclasses:
 ```
 
 [![]({% link images/cssclasses/banner-gradient.webp %})]({% link images/cssclasses/banner-gradient.webp %})
+
+---
+
+```markdown
+---
+cssclasses:
+    - banner
+    - no-title
+---
+```
+
+[![]({% link images/cssclasses/banner-no-title.webp %})]({% link images/cssclasses/banner-no-title.webp %})
