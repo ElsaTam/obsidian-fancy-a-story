@@ -1,0 +1,103 @@
+$img-embed-sel: '.mod-header ~ div > p > .image-embed:nth-child(1 of .image-embed):not(:is(.mod-header ~ *:has(img) ~ * .image-embed))';
+
+.markdown-preview-view.banner {
+    --metadata-display-reading: none;
+    --inline-title-margin-bottom: 0;
+
+    --banner-width: 100cqw;
+
+
+    #{$img-embed-sel} {
+        --image-shadow-offset: 0;
+        display: block;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+
+        width: var(--banner-width);
+        height: var(--banner-height);
+
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        + br {
+            display: none;
+        }
+    }
+
+    .mod-header {
+        height: calc(var(--banner-height) - var(--file-margins));
+        padding-bottom: var(--file-margins);
+    }
+
+    .inline-title {
+        text-shadow: var(--banner-title-shadow);
+    }
+
+}
+
+.markdown-preview-view.banner.banner-gradient {
+    #{$img-embed-sel} {
+        mask-image: linear-gradient(to bottom, black var(--file-margins), transparent);
+    }
+}
+
+.markdown-preview-view.banner.banner-title {
+    --inline-title-line-height: 3;
+    
+    .mod-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .inline-title {
+        display: block;
+        border: 1px solid var(--color-base-50);
+        min-width: 50%;
+        background-color: rgba(var(--mono-rgb-0), 0.4);
+        backdrop-filter: blur(5px);
+        text-shadow: none;
+    }
+}
+
+.markdown-preview-view.banner.banner-slope {
+    --inline-title-size: 4em;
+    --inline-title-line-height: 1.5;
+
+    --banner-angle-diag: calc(var(--banner-width) * sin(var(--banner-slope-angle)));
+    --banner-angle-height: calc(var(--banner-angle-diag) / sin(90deg - var(--banner-slope-angle)));
+
+    #{$img-embed-sel} {
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--banner-angle-height)), 0 100%);
+        background-color: var(--banner-slope-border-color);
+
+        img {
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--banner-angle-height) - var(--banner-slope-border-width)), 0 calc(100% - var(--banner-slope-border-width)));
+        }
+    }
+
+    .mod-header {
+        position: relative;
+    }
+
+    .inline-title {
+        position: absolute;
+        transform: rotate(calc(-1 * var(--banner-slope-angle)));
+        bottom: calc((50% + 50cqw) * sin(var(--banner-slope-angle)) / sin(90deg - var(--banner-slope-angle)));
+        right: 0;
+    }
+}
+
+.markdown-preview-view.banner.banner-title.banner-slope {
+    .inline-title {
+        bottom: calc((50% + 50cqw) * sin(var(--banner-slope-angle)) / sin(90deg - var(--banner-slope-angle)) + var(--banner-slope-border-width) + 2px);
+    }
+}
