@@ -35,6 +35,10 @@ a:not(pre, figure) > code {
     color: #{$link-color};
 }
 
+pre {
+    text-wrap: auto;
+}
+
 img {
     border: 1px solid #{$grey-dk-200};
 }
