@@ -1,0 +1,48 @@
+@use '../../mixins/poem';
+
+
+pre.language-poem,
+pre.language-poem-frame,
+pre.language-poem-floral {
+    --code-normal: var(--text-normal);
+    --code-background: none;
+    --code-size: 1em;
+    position: relative;
+}
+
+pre.language-poem {
+    @include poem.poem-borders;
+}
+
+pre.language-poem-frame {
+    @include poem.poem-frame-properties;
+    
+    > code {
+        @include poem.poem-frame-top;
+        @include poem.poem-frame-bottom;
+    }
+
+    @include poem.poem-frame-pseudo;
+
+    .copy-code-button {
+        top: 5cqw;
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+
+pre.language-poem-floral {
+    padding: 0;
+    @include poem.poem-floral-properties;
+    
+    > code {
+        @include poem.poem-floral-top;
+        @include poem.poem-floral-bottom;
+    }
+
+    @include poem.poem-floral-pseudo;
+
+    .copy-code-button {
+        right: var(--floral-width);
+    }
+}

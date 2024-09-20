@@ -12,6 +12,7 @@ nav_order: 1
 - [CSS Variables]({% link docs/cssvariables/cssvariables.md %})
 - [Callouts]({% link docs/callouts/callouts.md %})
   - [Callouts metadata]({% link docs/callouts/metadata/metadata.md %})
+- [Code]({% link docs/code/code.md %})
 - [Dataview]({% link docs/dataview/dataview.md %})
 - [Embeds]({% link docs/embeds/embeds.md %})
 - [Lists]({% link docs/lists/lists.md %})

@@ -1,40 +1,16 @@
-/* https://pixabay.com/vectors/flat-flower-art-design-vintage-1721078/
-https://pixabay.com/vectors/leaf-floral-silhouette-line-art-5770999/
-https://pixabay.com/vectors/frame-border-line-design-curve-7705420/
-https://pixabay.com/vectors/white-leaf-branch-monochrome-6200467/
-https://i.pinimg.com/550x/14/8c/46/148c460748cdc07ba6ccb21433f4f75f.jpg
-
-https://pixabay.com/vectors/fingerprint-forensics-finger-160979/
-https://pixabay.com/vectors/compass-instrument-navigation-467256/
-*/
-
-
-@mixin poem-borders {
-    &::before,
-    &::after {
-        content: "";
-        position: absolute;
-        left: 0; right: 0;
-        height: var(--poem-border-width);
-        background: linear-gradient(to right, transparent, rgb(var(--poem-color)) 20%, rgb(var(--poem-color)) 80%, transparent);
-    }
-
-    &::before {
-        top: 0;
-    }
-    &::after {
-        bottom: 0;
-    }
-}
+@use '../../mixins/poem';
 
 .callout[data-callout="poem"] {
     --callout-icon: lucide-align-center;
     --callout-content-padding: 0;
+    --line-height-normal: 1.7;
+    line-height: var(--line-height-normal);
+
     text-align: center;
     border: none;
     background: none;
 
-    @include poem-borders;
+    @include poem.poem-borders;
 
     .callout-title {
         justify-content: center;
@@ -54,94 +30,29 @@ https://pixabay.com/vectors/compass-instrument-navigation-467256/
 }
 
 .callout[data-callout="poem"][data-callout-metadata~="frame"] {
-
-    padding-inline: 20%;
-    container: poem / inline-size;
-
+    @include poem.poem-frame-properties;
+    
     > .callout-title {
-        padding-top: 17cqw;
+        @include poem.poem-frame-top;
     }
 
     > .callout-content {
-        padding-bottom: 5cqw;
+        @include poem.poem-frame-bottom;
     }
 
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0; bottom: 0;
-        left: 0; right: 0;
-        height: unset;
-        background-color: rgb(var(--poem-color));
-        mask-image: var(--top-divider-art);
-        mask-size: 100% auto;
-        mask-repeat: no-repeat;
-        mask-position: top center;
-        z-index: -1;
-    }
-
-    &:not(.is-collapsed)::after {
-        content: "";
-        position: absolute;
-        top: 0; bottom: 0;
-        left: 0; right: 0;
-        height: unset;
-        background-color: rgb(var(--poem-color));
-        mask-image: var(--bottom-divider-art);
-        mask-size: 60% auto;
-        mask-repeat: no-repeat;
-        mask-position: bottom center;
-        z-index: -1;
-    }
+    @include poem.poem-frame-pseudo;
 }
 
-.callout[data-callout="poem"] {
-
-    --callout-border-width: 2px;
-
+.callout[data-callout="poem"][data-callout-metadata~="floral"] {
+    @include poem.poem-floral-properties;
+    
     > .callout-title {
-        margin-left: 150px;
-        border-left: var(--callout-border-width) solid rgb(var(--poem-color));
-        background-color: var(--workleaves-background);
+        @include poem.poem-floral-top;
     }
 
     > .callout-content {
-        margin-left: 150px;
-        border-left: var(--callout-border-width) solid rgb(var(--poem-color));
-        border-bottom: var(--callout-border-width) solid rgb(var(--poem-color));
-        background-color: var(--workleaves-background);
+        @include poem.poem-floral-bottom;
     }
 
-    &:not(.is-collapsed)::before {
-        content: "";
-        position: absolute;
-        top: 0; bottom: 0;
-        left: 0; right: 0;
-        height: unset;
-        background-color: rgba(var(--poem-color), 0.6);
-        mask-image: var(--left-ornament-flourish), linear-gradient(to left, transparent, black 40%);
-        mask-composite: intersect;
-        mask-position: left bottom;
-        mask-repeat: no-repeat;
-        mask-size: 155px 400px;
-        z-index: -1;
-    }
-
-    &.is-collapsed::before,
-    &::after {
-        content: none;
-    }
-}
-
-pre.language-poem {
-    --code-normal: var(--text-normal);
-    --code-background: none;
-    --code-size: 1em;
-    position: relative;
-
-    @include poem-borders;
-}
-
-code.language-poem {
-    text-align: unset;
+    @include poem.poem-floral-pseudo;
 }
