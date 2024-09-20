@@ -55,6 +55,14 @@ cssclasses:
 ---
 ```
 
+```markdown
+---
+cssclasses:
+    - banner
+    - banner-slant
+---
+```
+
 [![]({% link images/cssclasses/banner-slope.webp %})]({% link images/cssclasses/banner-slope.webp %})
 
 ---

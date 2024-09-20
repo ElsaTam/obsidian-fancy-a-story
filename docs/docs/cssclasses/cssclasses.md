@@ -10,6 +10,7 @@ title: CSS Classes
 | `confidential`                                                     | Replace `==highlights==` with unreadable black marks | [`_confidential.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_confidential.scss) |
 | [`movie-script`]({% link docs/cssclasses/movie-script.md %})       | Movie-script styling with specific callouts          | [`_movie-script.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_movie-script.scss) |
 | [`newspaper`]({% link docs/cssclasses/newspaper.md %})             | Transform the page into an old newspaper             | [`_newspaper.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_newspaper.scss) |
+| [`note-accent`]({% link docs/cssclasses/note-accent.md %})         | Change the accent color                              | [`_note-accent.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_note-accent.scss) |
 | `no-title`                                                         | Remove the inline title in reading view              | [`_no-title.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_no-title.scss) |
 | `wide-page`                                                        | Disable the readable line length only for this page  | [`_wide-page.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_wide-page.scss) |
 

@@ -33,6 +33,10 @@ The base color gradient goes from the primary background to the text color. The 
 
 If you don't know what to choose, I would suggest `srgb-linear` for both modes, or `lab` for dark mode.
 
+## Note accent colors
+
+Change the color accent for the cssclasses [`note-accent-i`]({% link docs/cssclasses/note-accent.md %}).
+
 # Accessibility
 
 #### Enable Accessibility variant
