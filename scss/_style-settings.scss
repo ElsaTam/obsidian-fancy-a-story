@@ -349,7 +349,89 @@ settings:
 
 */
 
+.style-settings-container {
 
-.themed-color-wrapper > div {
-    --background-primary: var(--color-base-00);
+    --h1-color: var(--color-accent);
+    --current-h1-color: hsl(from var(--h1-color) h calc(s * 1) l);
+    --pickr-size: 1.3em;
+
+
+    /* Color the headers */
+    > .style-settings-container { --current-h1-color: hsl(from var(--h1-color) h calc(s * 0.5) l); }
+    > .style-settings-container > .style-settings-container { --current-h1-color: hsl(from var(--h1-color) h calc(s * 0.3) l); }
+    .style-settings-heading .setting-item-name {
+        color: var(--current-h1-color);
+    }
+
+    /* Visualise the hiearchical structure */
+    & .style-settings-container {
+        margin-left: 0;
+        padding: var(--size-4-1) var(--size-2-3) 0 var(--size-4-6);
+        border-left: 1px solid var(--current-h1-color);
+    }
+
+
+    /* Disable the settings when not used */
+    [data-id="theme-variant-light"]:not(:has(option[value="kpr-custom-light"]:checked)) ~ [data-id="custom-color-base-00"] .theme-light,
+    [data-id="theme-variant-light"]:not(:has(option[value="kpr-custom-light"]:checked)) ~ [data-id="custom-color-base-100"] .theme-light,
+    [data-id="theme-variant-dark"]:not(:has(option[value="kpr-custom-dark"]:checked)) ~ [data-id="custom-color-base-00"] .theme-dark,
+    [data-id="theme-variant-dark"]:not(:has(option[value="kpr-custom-dark"]:checked)) ~ [data-id="custom-color-base-100"] .theme-dark,
+    [data-id="theme-variant-light"]:not(:has(option[value="kpr-custom-light"]:checked)) ~ [data-id="theme-variant-dark"]:not(:has(option[value="kpr-custom-dark"]:checked)) ~ [data-id="custom-color-base-00"] .setting-item-info,
+    [data-id="theme-variant-light"]:not(:has(option[value="kpr-custom-light"]:checked)) ~ [data-id="theme-variant-dark"]:not(:has(option[value="kpr-custom-dark"]:checked)) ~ [data-id="custom-color-base-100"] .setting-item-info,
+    [data-id="theme-variant-light"]:not(:has(option[value="kpr-custom-light"]:checked)) ~ [data-id="theme-variant-dark"]:not(:has(option[value="kpr-custom-dark"]:checked)) ~ [data-id="custom-color-space"],
+    [data-id="kpr-accessibility"]:has(.is-enabled) ~ [data-id="kpr-sans-serif"],
+    [data-id="kpr-accessibility"]:has(.is-enabled) ~ [data-id="kpr-bigger-font"],
+    [data-id="kpr-accessibility"]:has(.is-enabled) ~ [data-id="kpr-doodle-icons"]
+    {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+
+    /* More compact color pickers */
+    & .pickr button {
+        width: var(--pickr-size);
+        height: var(--pickr-size);
+        &::after,
+        &::before {
+            border-radius: 50%;
+        }
+    }
+    & .pickr-reset button {
+        padding: 4px;
+        margin-left: 8px;
+        height: fit-content;
+        & svg {
+            width: var(--pickr-size);
+            height: var(--pickr-size);
+        }
+    }
+    & .themed-color-wrapper {
+        display: flex;
+        gap: 8px;
+        & > div {
+            margin: 0;
+            padding: calc(var(--pickr-size) * 0.3);
+            background: var(--color-base-00);
+        }
+    }
+    .themed-color-wrapper > div {
+        --background-primary: var(--color-base-00);
+    }
+
+    /* Title and description on the same line */
+    & .setting-item:not(.style-settings-info-text) .setting-item-info:has(.setting-item-description:not(:empty)) {
+        & > div {
+            display: inline;
+        }
+        & .setting-item-name {
+
+            &::after {
+                content: "";
+                border-right: 1px solid var(--color-base-30);
+                margin: 0 5px;
+                vertical-align: middle;
+            }
+        }
+    }
 }
