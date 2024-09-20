@@ -24,5 +24,6 @@ title: Callouts
 | Name | Description | Source |
 |:-----|:------------|:-------|
 | `blank` | Zero styling, no title, no spacing, no border, etc. | [`_callout-blank.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-blank.scss) |
-| [`grid`]({% link docs/callouts/grid.md %}) |  | [`_callout-grid.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-grid.scss) |
+| [`grid`]({% link docs/callouts/grid.md %}) | Grid layout | [`_callout-grid.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-grid.scss) |
+| [`masonry`]({% link docs/callouts/masonry.md %}) | For images, masonry-like layout | [`_callout-masonry.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-masonry.scss) |
 
