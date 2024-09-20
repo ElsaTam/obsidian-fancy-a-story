@@ -1,0 +1,156 @@
+@mixin poem-borders {
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0; right: 0;
+        height: var(--poem-border-width);
+        background: linear-gradient(to right, transparent, rgb(var(--poem-color)) 20%, rgb(var(--poem-color)) 80%, transparent);
+    }
+
+    &::before {
+        top: 0;
+    }
+    &::after {
+        bottom: 0;
+    }
+}
+
+// FRAME
+
+@mixin poem-frame-properties {
+    padding-inline: 22%;
+    container: poem / inline-size;
+}
+
+@mixin poem-frame-top {
+    margin-top: 17cqw;
+}
+
+@mixin poem-frame-bottom {
+    margin-bottom: 5cqw;
+}
+
+@mixin poem-frame-pseudo {
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0; bottom: 0;
+        left: 0; right: 0;
+        height: unset;
+        background-color: rgb(var(--poem-color));
+        mask-image: var(--top-divider-art);
+        mask-size: 100% auto;
+        mask-repeat: no-repeat;
+        mask-position: top center;
+        z-index: -1;
+    }
+
+    &:not(.is-collapsed)::after {
+        content: "";
+        position: absolute;
+        top: 0; bottom: 0;
+        left: 0; right: 0;
+        height: unset;
+        background-color: rgb(var(--poem-color));
+        mask-image: var(--bottom-divider-art);
+        mask-size: 60% auto;
+        mask-repeat: no-repeat;
+        mask-position: bottom center;
+        z-index: -1;
+    }
+}
+
+@mixin poem-frame {
+    @include poem-frame-properties;
+    
+    > code,
+    > .callout-title {
+        @include poem-frame-top;
+    }
+
+    > code,
+    > .callout-content {
+        @include poem-frame-bottom;
+    }
+
+    @include poem-frame-pseudo;
+}
+
+
+// FLORAL
+
+
+@mixin poem-floral-top {
+    margin-inline: var(--floral-width);
+    border-left: var(--poem-border-width) solid rgba(var(--poem-color), 1);
+    background-color: var(--workleaves-background);
+}
+
+@mixin poem-floral-bottom {
+    margin-inline: var(--floral-width);
+    border-left: var(--poem-border-width) solid rgba(var(--poem-color), 1);
+    border-bottom: var(--poem-border-width) solid rgba(var(--poem-color), 1);
+    background-color: var(--workleaves-background);
+    padding: var(--size-4-3);
+}
+
+@mixin poem-floral-pseudo {
+    &:not(.is-collapsed)::before {
+        content: "";
+        position: absolute;
+        top: 0; bottom: 0;
+        left: 0; width: var(--floral-width);
+        height: unset;
+        background-color: rgba(var(--poem-color), 0.6);
+        mask-image: var(--left-ornament-flourish), linear-gradient(to left, transparent, black 40%);
+        mask-composite: intersect;
+        mask-position: left bottom;
+        mask-repeat: no-repeat;
+        mask-size: 100% auto;
+        z-index: -1;
+    }
+
+    &:not(.is-collapsed)::after {
+        content: "";
+        position: absolute;
+        top: 0; bottom: 0;
+        right: 0; width: var(--floral-width);
+        left: unset;
+        height: unset;
+        background-color: rgba(var(--poem-color), 0.6);
+        mask-image: var(--left-ornament-flourish), linear-gradient(to left, transparent, black 100%);
+        opacity: 0.2;
+        mask-composite: intersect;
+        mask-position: right bottom;
+        mask-repeat: no-repeat;
+        mask-size: 100% auto;
+        z-index: -1;
+        transform: scaleX(-1) scaleY(-1);
+    }
+
+    &.is-collapsed::before,
+    &.is-collapsed::after {
+        content: none;
+    }
+}
+
+@mixin poem-floral-properties {
+    --floral-width: 18%;
+}
+
+@mixin poem-floral {
+    @include poem-floral-properties;
+    
+    > code,
+    > .callout-title {
+        @include poem-floral-top;
+    }
+
+    > code,
+    > .callout-content {
+        @include poem-floral-bottom;
+    }
+
+    @include poem-floral-pseudo;
+}
