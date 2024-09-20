@@ -122,6 +122,61 @@ settings:
             - hsl
             - hwb
 
+    - 
+        id: note-accent
+        title: Note accent colors
+        type: heading
+        collapsed: true
+        level: 2
+    -
+        id: note-accent-1
+        title: Note accent Color 1
+        type: variable-themed-color
+        opacity: false
+        format: hsl-split
+        default-light: '#ef476f'
+        default-dark: '#ce3f61'
+    -
+        id: note-accent-2
+        title: Note accent Color 2
+        type: variable-themed-color
+        opacity: false
+        format: hsl-split
+        default-light: '#f78c6b'
+        default-dark: '#d57a5e'
+    -
+        id: note-accent-3
+        title: Note accent Color 3
+        type: variable-themed-color
+        opacity: false
+        format: hsl-split
+        default-light: '#ffba1a'
+        default-dark: '#dca119'
+    -
+        id: note-accent-4
+        title: Note accent Color 4
+        type: variable-themed-color
+        opacity: false
+        format: hsl-split
+        default-light: '#0a916e'
+        default-dark: '#07a47b'
+    -
+        id: note-accent-5
+        title: Note accent Color 5
+        type: variable-themed-color
+        opacity: false
+        format: hsl-split
+        default-light: '#118ab2'
+        default-dark: '#0d76a3'
+    -
+        id: note-accent-6
+        title: Note accent Color 6
+        type: variable-themed-color
+        opacity: false
+        format: hsl-split
+        default-light: '#073b4c'
+        default-dark: '#1f5e6e'
+
             
     - 
         id: accessibility

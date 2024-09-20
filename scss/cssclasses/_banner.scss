@@ -68,6 +68,7 @@ $img-embed-sel: '.mod-header ~ div > p > .image-embed:nth-child(1 of .image-embe
     }
 }
 
+.markdown-preview-view.banner.banner-slant,
 .markdown-preview-view.banner.banner-slope {
     --inline-title-size: 4em;
     --inline-title-line-height: 1.5;
@@ -96,6 +97,7 @@ $img-embed-sel: '.mod-header ~ div > p > .image-embed:nth-child(1 of .image-embe
     }
 }
 
+.markdown-preview-view.banner.banner-title.banner-slant,
 .markdown-preview-view.banner.banner-title.banner-slope {
     .inline-title {
         bottom: calc((50% + 50cqw) * sin(var(--banner-slope-angle)) / sin(90deg - var(--banner-slope-angle)) + var(--banner-slope-border-width) + 2px);
