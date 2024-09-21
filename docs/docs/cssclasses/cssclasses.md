@@ -4,7 +4,7 @@ title: CSS Classes
 
 | Class                                                              | Description                                          | Source                                                           |
 |:-------------------------------------------------------------------|:-----------------------------------------------------|:-----------------------------------------------------------------|
-| [`banner` and variant]({% link docs/cssclasses/banner.md %}) | Adds a banner | [`_banner.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_banner.scss) |
+| [`banner` and variants]({% link docs/cssclasses/banner.md %}) | Adds a banner | [`_banner.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_banner.scss) |
 | [`black-and-white`]({% link docs/cssclasses/black-and-white.md %}) | Turns the page in black and white                    | [`_black-and-white.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_black-and-white.scss) |
 | [`columns-x`]({% link docs/cssclasses/columns.md %})               | Use a 2, 3 or 4 columns layout                       | [`_columns.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_columns.scss) |
 | `confidential`                                                     | Replace `==highlights==` with unreadable black marks | [`_confidential.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_confidential.scss) |
