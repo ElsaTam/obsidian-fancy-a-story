@@ -1,5 +1,5 @@
-.markdown-source-view hr,
-.markdown-preview-view hr {
+.markdown-source-view:not(.minimalist) hr,
+.markdown-preview-view:not(.minimalist) hr {
     --hr-height: calc(1em * var(--line-height-normal));
     --ornament-size: calc(1em * var(--line-height-normal));
     --ornament-right: 60px;

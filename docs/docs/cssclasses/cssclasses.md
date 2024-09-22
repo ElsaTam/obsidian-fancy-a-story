@@ -4,10 +4,11 @@ title: CSS Classes
 
 | Class                                                              | Description                                          | Source                                                           |
 |:-------------------------------------------------------------------|:-----------------------------------------------------|:-----------------------------------------------------------------|
-| [`banner` and variants]({% link docs/cssclasses/banner.md %}) | Adds a banner | [`_banner.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_banner.scss) |
+| [`banner` and variants]({% link docs/cssclasses/banner.md %})      | Adds a banner                                        | [`_banner.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_banner.scss) |
 | [`black-and-white`]({% link docs/cssclasses/black-and-white.md %}) | Turns the page in black and white                    | [`_black-and-white.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_black-and-white.scss) |
 | [`columns-x`]({% link docs/cssclasses/columns.md %})               | Use a 2, 3 or 4 columns layout                       | [`_columns.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_columns.scss) |
 | `confidential`                                                     | Replace `==highlights==` with unreadable black marks | [`_confidential.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_confidential.scss) |
+| `minimalist`                                                       | Simple and minimal styling                           | [`_minimalist.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_minimalist.scss) |
 | [`movie-script`]({% link docs/cssclasses/movie-script.md %})       | Movie-script styling with specific callouts          | [`_movie-script.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_movie-script.scss) |
 | [`newspaper`]({% link docs/cssclasses/newspaper.md %})             | Transform the page into an old newspaper             | [`_newspaper.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_newspaper.scss) |
 | [`note-accent`]({% link docs/cssclasses/note-accent.md %})         | Change the accent color                              | [`_note-accent.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_note-accent.scss) |
