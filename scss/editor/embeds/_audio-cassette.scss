@@ -1,0 +1,46 @@
+.media-embed:has(> audio)[alt*="cassette"] {
+    --cassette-width: 0.8;
+}
+
+.media-embed[alt*="cassette"] > audio {
+    --cassette-color-1: #ffcc00;
+    --cassette-color-2: #c83737;
+    display: block;
+    width: calc(100% * var(--cassette-width));
+    margin-inline: auto;
+    border-radius: var(--radius-l);
+
+    &::-webkit-media-controls-panel {
+        border: none;
+        background: linear-gradient(to right, rgb(from var(--cassette-color-1) r g b / 0.5), rgb(from var(--cassette-color-2) r g b / 0.5));
+    }
+}
+
+.media-embed:has(> audio)[alt*="cassette"]::before {
+    --ratio: calc(45.546 / 72.985);
+
+    content: "";
+    display: block;
+    height: calc(min(var(--cassette-width) * var(--file-line-width), 100cqw - var(--file-margins)) * var(--ratio));
+    width: calc(100% * var(--cassette-width));
+    margin-inline: auto;
+    background-image: var(--cassette);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    margin-bottom: var(--size-4-2);
+}
+
+.markdown-preview-view .media-embed:has(> audio)[alt*="cassette"]::before {
+    filter: drop-shadow(2px 2px 2px var(--shadow-color)) drop-shadow(5px 5px 5px var(--shadow-color)) drop-shadow(12px 12px 12px var(--shadow-color));
+}
+
+.media-embed:has(> audio)[alt~="cassette-gray"]   { filter: saturate(0); }
+.media-embed:has(> audio)[alt~="cassette-red"]    { filter: hue-rotate(-6deg);  }
+.media-embed:has(> audio)[alt~="cassette-orange"] { filter: hue-rotate(5deg);   }
+.media-embed:has(> audio)[alt~="cassette-yellow"] { filter: hue-rotate(15deg);  }
+.media-embed:has(> audio)[alt~="cassette-green"]  { filter: hue-rotate(80deg);  }
+.media-embed:has(> audio)[alt~="cassette-cyan"]   { filter: hue-rotate(145deg); }
+.media-embed:has(> audio)[alt~="cassette-blue"]   { filter: hue-rotate(185deg); }
+.media-embed:has(> audio)[alt~="cassette-purple"] { filter: hue-rotate(260deg); }
+.media-embed:has(> audio)[alt~="cassette-pink"]   { filter: hue-rotate(310deg); }
