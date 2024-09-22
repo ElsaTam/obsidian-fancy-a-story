@@ -1,6 +1,6 @@
 /* ----------- Coffee stain ----------- */
 
-.kpr-bg-textures .workspace-leaf-content[data-type="file-explorer"]::before {
+.fas-bg-textures .workspace-leaf-content[data-type="file-explorer"]::before {
     content: "";
     position: absolute;
     top: 0; bottom: 0;
@@ -15,13 +15,13 @@
     z-index: -1;
 }
 
-.is-mobile.kpr-bg-textures .workspace-leaf-content[data-type="file-explorer"]::before {
+.is-mobile.fas-bg-textures .workspace-leaf-content[data-type="file-explorer"]::before {
     bottom: calc(max(var(--size-4-2), var(--safe-area-inset-bottom)) + var(--icon-size) + var(--size-2-2) + var(--size-2-3));
 }
 
 
 /* ----------- Paper texture ----------- */
-.kpr-bg-textures .mod-sidedock .workspace-leaf {
+.fas-bg-textures .mod-sidedock .workspace-leaf {
     background-image: var(--sidebar-paper);
     background-size: 500px;
     background-blend-mode: multiply;

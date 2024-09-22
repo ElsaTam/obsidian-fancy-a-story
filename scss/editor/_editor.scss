@@ -13,7 +13,7 @@
 @use 'properties';
 @use 'table';
 
-@use 'kpr-headings';
+@use 'fas-headings';
 
 .markdown-source-view, .markdown-reading-view {
     container: markdown-view / inline-size;

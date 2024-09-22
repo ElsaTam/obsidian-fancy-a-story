@@ -1,8 +1,8 @@
 @import '../../animations/animations';
 
-.kpr-rainbow-folders .nav-folder-children > .nav-folder,
-.kpr-rainbow-folders .nav-files-container > div > .nav-folder,
-.kpr-rainbow-folders [data-type="bookmarks"] .tree-item {
+.fas-rainbow-folders .nav-folder-children > .nav-folder,
+.fas-rainbow-folders .nav-files-container > div > .nav-folder,
+.fas-rainbow-folders [data-type="bookmarks"] .tree-item {
 	&:nth-child(10n + 2) {
 		--folder-color: var(--color-rainbow-1);
 	}
@@ -35,13 +35,13 @@
 	}
 }
 
-.kpr-rainbow-folders .nav-files-container .nav-folder.nav-folder .nav-folder,
-.kpr-rainbow-folders [data-type="bookmarks"] .tree-item .tree-item {
+.fas-rainbow-folders .nav-files-container .nav-folder.nav-folder .nav-folder,
+.fas-rainbow-folders [data-type="bookmarks"] .tree-item .tree-item {
     --folder-color: inherit;
 }
 
-.kpr-rainbow-folders .nav-files-container > div > .nav-folder .nav-folder-title,
-.kpr-rainbow-folders [data-type="bookmarks"] .tree-item {
+.fas-rainbow-folders .nav-files-container > div > .nav-folder .nav-folder-title,
+.fas-rainbow-folders [data-type="bookmarks"] .tree-item {
     --nav-item-color: var(--folder-color);
     --nav-item-background-hover: rgb(from var(--folder-color) r g b / 0.2);
 }

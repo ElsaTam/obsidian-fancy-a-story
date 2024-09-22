@@ -104,7 +104,7 @@ $sel: $sel + ")";
 }
 
 /* Doodle icons */
-@scope (.kpr-doodle-icons:not(.kpr-accessibility)) to (:is(.callout[data-callout="autopsy"], .callout[data-callout="screen"], .callout[data-callout="email"])) {
+@scope (.fas-doodle-icons:not(.fas-accessibility)) to (:is(.callout[data-callout="autopsy"], .callout[data-callout="screen"], .callout[data-callout="email"])) {
     /* Default checkbox for doodle icons */
     :is(.HyperMD-task-line, .task-list-item) input[type=checkbox] {
         &, &:hover {
