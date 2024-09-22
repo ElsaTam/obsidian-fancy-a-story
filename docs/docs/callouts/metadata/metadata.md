@@ -12,10 +12,12 @@ Write `> [!callout-name|option-1 option-2 option-3]` to customize your callout.
 |:-------------------------|:----------------------------------------------------|
 | [`{color}`]({% link docs/callouts/metadata/color.md %}) | Set the color of the callout |
 | `black-and-white`, `b-w` | Desaturate everything inside the callout            |
+| `blank`                  | Zero styling, no title, no spacing, no border, etc. |
+| `float-right`            | Floating element on the right                       |
+| `float-left`             | Floating element on the left                        |
 | `no-background`, `no-bg` | No background                                       |
 | `no-icon`                | No icon                                             |
 | `no-title`               | No title                                            |
-| `blank`                  | Zero styling, no title, no spacing, no border, etc. |
 | `wide`                   | Make the element full wide                          |
 
 Source: [`_callouts-metadata.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callouts-metadata.scss)
