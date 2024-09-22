@@ -1,0 +1,63 @@
+.callout[data-callout="polaroid"] {
+    --callout-color: 255, 255, 255;
+    --callout-blend-mode: normal;
+    --callout-border-width: 0;
+    --image-shadow-offset: 0;
+
+    --callout-padding: var(--size-4-3);
+    --callout-title-padding: var(--size-4-3);
+    --callout-content-padding: 0;
+
+    --text-normal: black;
+
+    display: flex;
+    flex-direction: column-reverse;
+    width: fit-content;
+    background: rgb(var(--callout-color));
+    box-shadow: 5px 7px 4px var(--shadow-color);
+    margin-inline: auto;
+
+    .callout-title {
+        color: var(--text-normal);
+        background: none;
+        justify-content: center;
+        font-family: 'Walter Turncoat', cursive;
+    }
+
+    .callout-content {
+        position: relative;
+    }
+
+    .callout-content::before {
+        content: "";
+        position: absolute;
+        top: 0; bottom: 0;
+        left: 0; right: 0;
+    }
+
+    .callout-icon {
+        display: none;
+    }
+
+    img {
+        width: var(--callout-polaroid-img-size);
+        height: var(--callout-polaroid-img-size);
+        object-fit: cover;
+    }
+
+    p:has(img) {
+        margin: 0;
+    }
+}
+
+
+.callout[data-callout="polaroid"][data-callout-metadata="float-right"] {
+    margin-left: var(--size-4-4);
+    transform: rotate(calc(-1 * var(--callout-polaroid-angle)));
+}
+
+
+.callout[data-callout="polaroid"][data-callout-metadata="float-left"] {
+    margin-right: var(--size-4-4);
+    transform: rotate(var(--callout-polaroid-angle));
+}
