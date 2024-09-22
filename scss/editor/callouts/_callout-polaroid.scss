@@ -51,13 +51,13 @@
 }
 
 
-.callout[data-callout="polaroid"][data-callout-metadata="float-right"] {
+.callout[data-callout="polaroid"][data-callout-metadata~="float-right"] {
     margin-left: var(--size-4-4);
     transform: rotate(calc(-1 * var(--callout-polaroid-angle)));
 }
 
 
-.callout[data-callout="polaroid"][data-callout-metadata="float-left"] {
+.callout[data-callout="polaroid"][data-callout-metadata~="float-left"] {
     margin-right: var(--size-4-4);
     transform: rotate(var(--callout-polaroid-angle));
 }

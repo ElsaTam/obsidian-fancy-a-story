@@ -10,14 +10,21 @@
 .callout[data-callout="clue"][data-callout-metadata~="paper-c"] { --clue-paper-variant: var(--clue-paper-c); }
 .callout[data-callout="clue"][data-callout-metadata~="paper-d"] { --clue-paper-variant: var(--clue-paper-d); }
 
+/* Ripped mask variants */
+.callout[data-callout="clue"][data-callout-metadata~="ripped-a"] { --clue-ripped-variant: var(--clue-ripped-a); }
+.callout[data-callout="clue"][data-callout-metadata~="ripped-b"] { --clue-ripped-variant: var(--clue-ripped-b); }
+.callout[data-callout="clue"][data-callout-metadata~="ripped-c"] { --clue-ripped-variant: var(--clue-ripped-c); }
+.callout[data-callout="clue"][data-callout-metadata~="ripped-d"] { --clue-ripped-variant: var(--clue-ripped-d); }
+
 .callout[data-callout="clue"] {
     --callout-color: 0, 0, 0; /* Border and text color */
-    --callout-border-width: 2px;
+    --callout-border-width: 0px;
     --callout-header-height: 50px;
     --callout-icon: lucide-search;
     --callout-title-padding: 0;
     --clue-tape-variant: var(--clue-tape-a); /* default */
     --clue-paper-variant: var(--clue-paper-a); /* default */
+    --clue-ripped-variant: var(--clue-ripped-a); /* default */
 
     background: none;
     border: none;
@@ -74,4 +81,41 @@
 
     /* Other theme compatibility */
     > .callout-title-inner { flex-grow: unset; }
+}
+
+.callout[data-callout="clue"][data-callout-metadata*="ripped"] {
+    .callout-content {
+        mask-image: var(--clue-ripped-variant), linear-gradient(to bottom, black, black);
+        mask-size: 101% auto;
+        mask-position: center calc(100% + 1px), center;
+        mask-repeat: no-repeat;
+        mask-composite: exclude;
+        padding-bottom: 15px;
+    }
+}
+
+@scope (body:not(.is-mobile)) {
+    .callout[data-callout="clue"][data-callout-metadata~="torn"] {
+        .callout-content {
+            clip-path: polygon(
+                0% 0, 2% 2px, 12% 0, 13% 2px, 14% 0, 16% 2px, 29% 0, 32% 2px, 32% 0, 35% 2px, 53% 0, 54% 2px, 54% 0, 62% 2px, 64% 0, 72% 2px, 84% 0, 86% 2px, 94% 0, 99% 2px, 100% 0,
+                100% 5%, calc(100% - 2px) 9%, 100% 28%, calc(100% - 2px) 38%, 100% 61%, 100% 100%,
+                99% 100%, 96% calc(100% - 2px), 95% 100%, 81% calc(100% - 2px), 80% 100%, 79% calc(100% - 2px), 66% 100%, 59% calc(100% - 2px), 56% 100%, 45% calc(100% - 2px), 45% 100%, 44% calc(100% - 2px), 42% 100%, 34% calc(100% - 2px), 33% 100%, 24% calc(100% - 2px), 21% 100%, 16% calc(100% - 2px), 15% 100%, 10% calc(100% - 2px), 0 100%,
+                0 75%, 2px 44%, 0 39%, 2px 19%, 0 18%, 0 0
+            );
+        }
+    }
+}
+
+@scope (body.is-mobile) {
+    .callout[data-callout="clue"][data-callout-metadata~="torn"] {
+        .callout-content {
+            clip-path: polygon(
+                5% 0, 7% 2px, 9% 0, 16% 2px, 36% 0, 60% 2px, 81% 0, 91% 2px, 94% 0, 96% 2px, 100% 0,
+                100% 3%, calc(100% - 2px) 21%, 100% 35%, calc(100% - 2px) 38%, 100% 38%, calc(100% - 2px) 41%, 100% 59%, calc(100% - 2px) 80%, 100% 92%, calc(100% - 2px) 98%, 100% 100%,
+                85% 100%, 80% calc(100% - 2px), 76% 100%, 72% calc(100% - 2px), 65% 100%, 61% calc(100% - 2px), 54% 100%, 34% calc(100% - 2px), 15% 100%, 1% calc(100% - 2px), 0 100%,
+                0 65%, 2px 62%, 0 62%, 2px 54%, 0 43%, 2px 36%, 0 28%, 2px 24%, 0 11%, 2px 8%, 0 0
+            );
+        }
+    }
 }
