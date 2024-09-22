@@ -14,6 +14,8 @@ When folded, only the tape is visible.
 {: .note }
 This snippet doesn't change between light and dark theme.
 
+## Texture variants
+
 ### Tape A, Paper A (default)
 
 [![]({% link images/callouts/clue-a.webp %})]({% link images/callouts/clue-a.webp %})
@@ -54,5 +56,57 @@ or
 
 ```markdown
 > [!clue|tape-d paper-d]+ Clue
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+```
+
+## Ripped effect
+
+### Ripped effect A (default)
+
+[![]({% link images/callouts/clue-ripped-a.webp %})]({% link images/callouts/clue-ripped-a.webp %})
+
+```markdown
+> [!clue|ripped-a]+ Clue
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+```
+
+```markdown
+> [!clue|ripped]+ Clue
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+```
+
+### Ripped effect B
+
+[![]({% link images/callouts/clue-ripped-b.webp %})]({% link images/callouts/clue-ripped-b.webp %})
+
+```markdown
+> [!clue|ripped-b]+ Clue
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+```
+
+### Ripped effect C
+
+[![]({% link images/callouts/clue-ripped-c.webp %})]({% link images/callouts/clue-ripped-c.webp %})
+
+```markdown
+> [!clue|ripped-c]+ Clue
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+```
+
+### Ripped effect D
+
+[![]({% link images/callouts/clue-ripped-d.webp %})]({% link images/callouts/clue-ripped-d.webp %})
+
+```markdown
+> [!clue|ripped-d]+ Clue
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+```
+
+## Torn effect
+
+[![]({% link images/callouts/clue-torn.webp %})]({% link images/callouts/clue-torn.webp %})
+
+```markdown
+> [!clue|torn]+
 > Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 ```
