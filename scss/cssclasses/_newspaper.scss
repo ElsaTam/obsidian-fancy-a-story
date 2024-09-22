@@ -1,9 +1,9 @@
-.kpr-bg-textures.theme-dark .view-content:has(.newspaper) {
+.fas-bg-textures.theme-dark .view-content:has(.newspaper) {
     background-image: var(--black-paper);
     background-size: 500px;
     background-blend-mode: luminosity;
 }
-.kpr-bg-textures.theme-light .view-content:has(.newspaper) {
+.fas-bg-textures.theme-light .view-content:has(.newspaper) {
     background-image: var(--white-paper);
     background-size: 500px;
     background-blend-mode: luminosity;

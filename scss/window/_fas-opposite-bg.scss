@@ -1,21 +1,21 @@
-.kpr-opposite-bg {
+.fas-opposite-bg {
     --workspace-foreground: var(--color-base-00);
     --workspace-foreground-muted: var(--color-base-30);
     --workspace-foreground-faint: var(--color-base-50);
     --workspace-background: var(--color-base-100);
 }
 
-.kpr-opposite-bg .titlebar {
+.fas-opposite-bg .titlebar {
     --background-modifier-hover: rgba(var(--mono-rgb-0), 0.075);
 }
 
-.kpr-opposite-bg .workspace-ribbon,
-.kpr-opposite-bg .workspace-tab-header-container,
-.kpr-opposite-bg .workspace-sidedock-vault-profile {
+.fas-opposite-bg .workspace-ribbon,
+.fas-opposite-bg .workspace-tab-header-container,
+.fas-opposite-bg .workspace-sidedock-vault-profile {
     --background-modifier-hover: rgba(var(--mono-rgb-0), 0.075);
 }
 
-.kpr-opposite-bg .workspace-tab-header.is-active {
+.fas-opposite-bg .workspace-tab-header.is-active {
     --icon-color: var(--workleaves-foreground);
     --icon-color-focused: var(--workleaves-foreground);
 }

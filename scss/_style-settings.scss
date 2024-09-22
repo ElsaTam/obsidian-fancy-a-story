@@ -15,78 +15,78 @@ settings:
         description: Select from a list of existing themes, or create your own by choosing custom
         type: class-select
         allowEmpty: false
-        default: kpr-silver-light
+        default: fas-silver-light
         options:
             - 
                 label: Automn
-                value: kpr-automn
+                value: fas-automn
             - 
                 label: Coffee
-                value: kpr-coffee-light
+                value: fas-coffee-light
             - 
                 label: Candy
-                value: kpr-candy
+                value: fas-candy
             - 
                 label: Canyon
-                value: kpr-canyon
+                value: fas-canyon
             - 
                 label: Ice
-                value: kpr-ice
+                value: fas-ice
             - 
                 label: Meadow
-                value: kpr-meadow
+                value: fas-meadow
             - 
                 label: Silver
-                value: kpr-silver-light
+                value: fas-silver-light
             - 
                 label: Custom
-                value: kpr-custom-light
+                value: fas-custom-light
     - 
         id: theme-variant-dark
         title: Dark color scheme
         description: Select from a list of existing themes, or create your own by choosing custom
         type: class-select
         allowEmpty: false
-        default: kpr-silver-dark
+        default: fas-silver-dark
         options:
             - 
                 label: Artic
-                value: kpr-artic
+                value: fas-artic
             - 
                 label: Atom
-                value: kpr-atom
+                value: fas-atom
             - 
                 label: Chocolate
-                value: kpr-chocolate
+                value: fas-chocolate
             - 
                 label: Coffee
-                value: kpr-coffee-dark
+                value: fas-coffee-dark
             - 
                 label: Forest
-                value: kpr-forest
+                value: fas-forest
             - 
                 label: Mystic
-                value: kpr-mystic
+                value: fas-mystic
             - 
                 label: Navy
-                value: kpr-navy
+                value: fas-navy
             - 
                 label: Silver
-                value: kpr-silver-dark
+                value: fas-silver-dark
             - 
                 label: Swamp
-                value: kpr-swamp
+                value: fas-swamp
             - 
                 label: Underwater
-                value: kpr-unwerwater
+                value: fas-unwerwater
             - 
                 label: Volcano
-                value: kpr-volcano
+                value: fas-volcano
             - 
                 label: Custom
-                value: kpr-custom-dark
+                value: fas-custom-dark
     - 
-        id: kpr-opposite-bg
+        id: fas-opposite-bg
         title: Opposite background
         description: Enable to use a light (resp. dark) app background in dark (resp. light) mode.
         type: class-toggle
@@ -185,29 +185,29 @@ settings:
         collapsed: true
         level: 1
     - 
-        id: kpr-accessibility
+        id: fas-accessibility
         title: Enable Accessibility variant
         description: Use sans serif fonts, increase default font size and weight, remove doodle icons, etc.
         type: class-toggle
         default: false
     - 
-        id: kpr-sans-serif
+        id: fas-sans-serif
         title: Use sans serif fonts
         type: class-toggle
         default: false
     - 
-        id: kpr-bigger-font
+        id: fas-bigger-font
         title: Increase default font size and weight
         type: class-toggle
         default: false
     - 
-        id: kpr-doodle-icons
+        id: fas-doodle-icons
         title: Doodle task icons
         description: The set of icons for the tasks lists can be doodle icons to create a more handrwitten effect (very slight). Turning this off will use Lucide icons instead.
         type: class-toggle
         default: true
     - 
-        id: kpr-bg-textures
+        id: fas-bg-textures
         title: Background textures
         description: Some panes can use background texture for style effect.
         type: class-toggle
@@ -276,7 +276,7 @@ settings:
         format: px
         default: 700
     - 
-        id: kpr-plain-tables
+        id: fas-plain-tables
         title: Use plain table style
         type: class-toggle
         default: false
@@ -285,30 +285,30 @@ settings:
         title: Color for the headings
         type: class-select
         allowEmpty: true
-        default: kpr-hue
+        default: fas-hue
         options:
             - 
                 label: Hue
-                value: kpr-headings-hue
+                value: fas-headings-hue
             - 
                 label: Complementary hue
-                value: kpr-headings-complement
+                value: fas-headings-complement
             - 
                 label: Accent color
-                value: kpr-headings-accent
+                value: fas-headings-accent
     - 
         id: header-style-h1
         title: Style for the first level heading (h1)
         type: class-select
         allowEmpty: true
-        default: kpr-h1-display
+        default: fas-h1-display
         options:
             - 
                 label: Display
-                value: kpr-h1-display
+                value: fas-h1-display
             - 
                 label: Stroke
-                value: kpr-h1-stroke
+                value: fas-h1-stroke
     -
         id: link-decoration
         title: Internal link decoration
@@ -341,7 +341,7 @@ settings:
         collapsed: true
         level: 1
     - 
-        id: kpr-rainbow-folders
+        id: fas-rainbow-folders
         title: Rainbow folders
         type: class-toggle
         default: true
@@ -372,16 +372,16 @@ settings:
 
 
     /* Disable the settings when not used */
-    [data-id="theme-variant-light"]:not(:has(option[value="kpr-custom-light"]:checked)) ~ [data-id="custom-color-base-00"] .theme-light,
-    [data-id="theme-variant-light"]:not(:has(option[value="kpr-custom-light"]:checked)) ~ [data-id="custom-color-base-100"] .theme-light,
-    [data-id="theme-variant-dark"]:not(:has(option[value="kpr-custom-dark"]:checked)) ~ [data-id="custom-color-base-00"] .theme-dark,
-    [data-id="theme-variant-dark"]:not(:has(option[value="kpr-custom-dark"]:checked)) ~ [data-id="custom-color-base-100"] .theme-dark,
-    [data-id="theme-variant-light"]:not(:has(option[value="kpr-custom-light"]:checked)) ~ [data-id="theme-variant-dark"]:not(:has(option[value="kpr-custom-dark"]:checked)) ~ [data-id="custom-color-base-00"] .setting-item-info,
-    [data-id="theme-variant-light"]:not(:has(option[value="kpr-custom-light"]:checked)) ~ [data-id="theme-variant-dark"]:not(:has(option[value="kpr-custom-dark"]:checked)) ~ [data-id="custom-color-base-100"] .setting-item-info,
-    [data-id="theme-variant-light"]:not(:has(option[value="kpr-custom-light"]:checked)) ~ [data-id="theme-variant-dark"]:not(:has(option[value="kpr-custom-dark"]:checked)) ~ [data-id="custom-color-space"],
-    [data-id="kpr-accessibility"]:has(.is-enabled) ~ [data-id="kpr-sans-serif"],
-    [data-id="kpr-accessibility"]:has(.is-enabled) ~ [data-id="kpr-bigger-font"],
-    [data-id="kpr-accessibility"]:has(.is-enabled) ~ [data-id="kpr-doodle-icons"]
+    [data-id="theme-variant-light"]:not(:has(option[value="fas-custom-light"]:checked)) ~ [data-id="custom-color-base-00"] .theme-light,
+    [data-id="theme-variant-light"]:not(:has(option[value="fas-custom-light"]:checked)) ~ [data-id="custom-color-base-100"] .theme-light,
+    [data-id="theme-variant-dark"]:not(:has(option[value="fas-custom-dark"]:checked)) ~ [data-id="custom-color-base-00"] .theme-dark,
+    [data-id="theme-variant-dark"]:not(:has(option[value="fas-custom-dark"]:checked)) ~ [data-id="custom-color-base-100"] .theme-dark,
+    [data-id="theme-variant-light"]:not(:has(option[value="fas-custom-light"]:checked)) ~ [data-id="theme-variant-dark"]:not(:has(option[value="fas-custom-dark"]:checked)) ~ [data-id="custom-color-base-00"] .setting-item-info,
+    [data-id="theme-variant-light"]:not(:has(option[value="fas-custom-light"]:checked)) ~ [data-id="theme-variant-dark"]:not(:has(option[value="fas-custom-dark"]:checked)) ~ [data-id="custom-color-base-100"] .setting-item-info,
+    [data-id="theme-variant-light"]:not(:has(option[value="fas-custom-light"]:checked)) ~ [data-id="theme-variant-dark"]:not(:has(option[value="fas-custom-dark"]:checked)) ~ [data-id="custom-color-space"],
+    [data-id="fas-accessibility"]:has(.is-enabled) ~ [data-id="fas-sans-serif"],
+    [data-id="fas-accessibility"]:has(.is-enabled) ~ [data-id="fas-bigger-font"],
+    [data-id="fas-accessibility"]:has(.is-enabled) ~ [data-id="fas-doodle-icons"]
     {
         opacity: 0.5;
         pointer-events: none;

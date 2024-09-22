@@ -1,4 +1,4 @@
-@scope (.kpr-doodle-icons) to (:is(.callout[data-callout="screen"], .callout[data-callout="email"])) {
+@scope (.fas-doodle-icons) to (:is(.callout[data-callout="screen"], .callout[data-callout="email"])) {
     .list-bullet::after {
         --list-bullet-size: 0.8em;
         border-radius: 0;
