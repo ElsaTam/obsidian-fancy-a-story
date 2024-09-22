@@ -1,11 +1,11 @@
 .callout {
     position: relative;
+}
 
-    .callout-title {
-        background: linear-gradient(to right, rgba(var(--callout-color), 0.1), transparent);
-    }
+.callout-title {
+    background: linear-gradient(to right, rgba(var(--callout-color), 0.1), transparent);
+}
 
-    &:not(.is-collapsed) .callout-content {
-        border-top: var(--callout-border-width) dashed rgba(var(--callout-color), var(--callout-border-opacity));
-    }
+.callout-content {
+    border-top: var(--callout-border-width) dashed rgba(var(--callout-color), var(--callout-border-opacity));
 }

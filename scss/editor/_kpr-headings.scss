@@ -50,7 +50,7 @@
 
 
 
-.kpr-h1-display .markdown-preview-view:not(:is(.newspaper, .movie-script, .h1-stroke, .h1-normal)) h1,
+.kpr-h1-display .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h1-stroke, .h1-normal)) h1,
 .markdown-preview-view.h1-display h1 {
     --h1-line-height: 1.2em;
     --h1-size: 3em;
@@ -130,7 +130,7 @@
 }
 
 
-.kpr-h1-stroke .markdown-preview-view:not(:is(.newspaper, .movie-script, .h1-display)) h1,
+.kpr-h1-stroke .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h1-display)) h1,
 .markdown-preview-view.h1-stroke h1 {
     --h1-weight: var(--font-extralight);
     --h1-size: 2em;

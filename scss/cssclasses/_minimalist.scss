@@ -1,0 +1,83 @@
+.minimalist {
+    --blockquote-border-thickness: 0;
+
+    --callout-border-opacity: 1;
+    --callout-padding: var(--size-4-3);
+    --callout-content-padding: 0;
+    --callout-title-padding: 0;
+
+    --checkbox-color: var(--text-normal);
+    --checkbox-color-hover: var(--text-muted);
+
+    --code-background: none;
+    --code-normal: var(--text-normal);
+
+    --font-text-size: 1.1rem;
+
+    --h2-style: italic;
+    --h2-weight: 400;
+    --h3-style: italic;
+    --h3-weight: 400;
+
+    --image-shadow-offset: 0;
+
+    --line-height-normal: 2;
+
+    --link-color: var(--text-normal);
+    --link-color-hover: var(--text-normal);
+    --link-external-color: var(--text-normal);
+    --link-external-color-hover: var(--text-normal);
+    --link-unresolved-color: var(--text-muted);
+    --link-unresolved-decoration-color: var(--text-muted);
+    --link-decoration: underline;
+    --link-external-decoration: underline;
+    --link-decoration-thickness: 1px;
+    
+    --table-column-first-border-width: 1px;
+    --table-column-last-border-width: 1px;
+    --table-header-border-width: 1px;
+
+    container: tutfe / inline-size;
+}
+
+.minimalist blockquote {
+    padding-inline-start: 40px;
+}
+
+.minimalist .callout {
+    background: none;
+    border: var(--callout-border-width) solid rgb(from var(--text-normal) r g b / var(--callout-border-opacity));
+}
+
+.minimalist .callout-title {
+    background: none;
+    color: inherit;
+}
+
+.minimalist .callout svg {
+    color: inherit;
+}
+
+.minimalist .callout-content {
+    border: none;
+}
+
+.markdown-rendered pre {
+    line-height: 1;
+}
+
+.minimalist.markdown-preview-view aside,
+.minimalist.markdown-preview-view .aside-left,
+.minimalist.markdown-preview-view .aside-right {
+    --aside-border-thickness: 0px;
+}
+
+
+
+.minimalist :is(th, td) {
+    border-inline-width: var(--table-border-width);
+}
+
+.minimalist table thead th {
+    border-bottom-width: var(--table-border-width);
+}
