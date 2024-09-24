@@ -115,11 +115,15 @@ body {
     --callout-polaroid-angle: 2deg;
     --callout-polaroid-img-size: 200px;
 
+    /* canvas */
+    --font-size-node-large: 5em;
+
     /* circle cutouts */
     --cutout-corner-radius: 13px;
     --cutout-corner-angle: 0.25em;
     --cutout-outline-inset: 3px;
     --cutout-outline-thickness: 1px;
+    --cutout-border-background: var(--h1-border-color);
 
     /* file explorer */
     --active-file-bullet-size: 6px;

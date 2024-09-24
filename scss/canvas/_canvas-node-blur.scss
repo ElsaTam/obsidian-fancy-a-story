@@ -1,0 +1,21 @@
+.canvas-node:has(.tag[href="#node-blur"]):not(.is-editing) {
+    backdrop-filter: blur(8px);
+    
+    .canvas-node-container {
+        border-radius: 0;
+        background: none;
+        box-shadow: none;
+    }
+
+    &:not(.is-dragging):not(:hover) .canvas-node-container {
+        border: 1px solid rgba(var(--canvas-color), 0.1);
+    }
+
+    .canvas-node-content {
+        background: none;
+    }
+
+    .tag[href="#node-blur"] {
+        display: none;
+    }
+}

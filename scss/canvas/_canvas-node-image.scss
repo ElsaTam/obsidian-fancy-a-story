@@ -1,0 +1,40 @@
+.canvas-node:has(.tag[href="#node-image"]):not(.is-editing) {
+    --p-spacing: 0;
+    --image-shadow-offset: 0;
+
+    container: node / size;
+    
+    .canvas-node-container {
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .canvas-node-content {
+        background: none;
+    }
+
+    .markdown-preview-view {
+        padding: 0;
+        overflow: visible;
+    }
+
+    .markdown-preview-view::before,
+    .markdown-preview-view::after {
+        content: none;
+    }
+
+    br {
+        display: none;
+    }
+
+    img {
+        width: 100cqw;
+        height: 100cqh;
+        object-fit: cover;
+    }
+
+    .tag[href="#node-image"] {
+        display: none;
+    }
+}

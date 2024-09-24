@@ -1,0 +1,26 @@
+.canvas-node:has(.tag[href="#node-title-neon"]):not(.is-editing) {
+    
+    .canvas-node-container {
+        border: none;
+    }
+    &:not(:is(.is-dragging, :hover)) .canvas-node-container {
+        box-shadow: none;
+    }
+    .canvas-node-content {
+        background: none;
+    }
+    .markdown-preview-view {
+        font-family: "Neon Sans";
+        text-align: center;
+        color: rgb(var(--canvas-color));
+        text-shadow:
+            0 0 0.1em rgba(var(--canvas-color), 0.8),
+            0 0 0.2em rgba(var(--canvas-color), 0.2),
+            0 0 0.3em rgba(var(--canvas-color), 0.3),
+            0 0 0.4em rgba(var(--canvas-color), 0.5),
+            0 0 0.5em rgba(var(--canvas-color), 1);
+    }
+    .tag[href="#node-title-neon"] {
+        display: none;
+    }
+}

@@ -1,0 +1,25 @@
+.canvas-node:has(.tag[href="#node-title-poster"]):not(.is-editing) {
+    .canvas-node-container {
+        border: none;
+    }
+    &:not(:is(.is-dragging, :hover)) .canvas-node-container {
+        box-shadow: none;
+    }
+    .canvas-node-content {
+        background: none;
+    }
+    .markdown-preview-view {
+        --shadow-color: hsl(from rgb(var(--canvas-color)) h calc(s * 0.5) calc(l * 0.5));
+        font-family: "Science Fair";
+        font-weight: var(--font-extrabold);
+        text-shadow:
+            1px 1px 0px var(--shadow-color),
+            2px 2px 0px var(--shadow-color),
+            3px 3px 0px var(--shadow-color);
+        color: rgb(var(--canvas-color));
+        text-align: center;
+    }
+    .tag[href="#node-title-poster"] {
+        display: none;
+    }
+}

@@ -1,3 +1,6 @@
+@use '../mixins/cutout_border';
+
+
 .fas-headings-hue, .headings-hue        { --h1-color: var(--middle-color); }
 .fas-headings-complement, .headings-complement { --h1-color: var(--middle-color-complement); }
 .fas-headings-accent, .headings-accent     { --h1-color: var(--color-accent); }
@@ -72,31 +75,7 @@
         var(--cutout-corner-angle) 100%,
         0 calc(100% - var(--cutout-corner-angle)));
     
-    &::before {
-        content: "";
-        position: absolute;
-        inset: var(--cutout-outline-inset);
-        background: var(--h1-border-color);
-        clip-path: polygon(
-            0 var(--cutout-corner-angle),
-            var(--cutout-corner-angle) 0,
-            calc(100% - var(--cutout-corner-angle)) 0,
-            100% var(--cutout-corner-angle),
-            100% calc(100% - var(--cutout-corner-angle)),
-            calc(100% - var(--cutout-corner-angle)) 100%,
-            var(--cutout-corner-angle) 100%,
-            0 calc(100% - var(--cutout-corner-angle)),
-            0 var(--cutout-corner-angle),
-            1px  calc(var(--cutout-corner-angle) + 0.5px),
-            1px calc(100% - var(--cutout-corner-angle) - 0.5px),
-            calc(var(--cutout-corner-angle) + 0.5px) calc(100% - 1px),
-            calc(100% - var(--cutout-corner-angle) - 0.5px) calc(100% - 1px),
-            calc(100% - 1px) calc(100% - var(--cutout-corner-angle) - 0.5px),
-            calc(100% - 1px) calc(var(--cutout-corner-angle) + 0.5px),
-            calc(100% - var(--cutout-corner-angle) - 0.5px) 1px,
-            calc(var(--cutout-corner-angle) + 0.5px) 1px,
-            1px calc(var(--cutout-corner-angle) + 0.5px));
-    }
+    @include cutout_border.outline;
 
     &:is(.is-collapsed > h1)::before {
         background: var(--h1-border-color-collapsed);
