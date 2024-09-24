@@ -19,8 +19,8 @@
     .canvas-node-content {
         background: none;
     }
+}
 
-    .tag[href="#node-crime-scene-tape"] {
-        display: none;
-    }
+.canvas-node:not(.is-editing) .tag[href="#node-crime-scene-tape"] {
+    display: none;
 }

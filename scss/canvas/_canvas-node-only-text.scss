@@ -1,0 +1,16 @@
+.canvas-node:has(.tag[href="#node-only-text"]):not(.is-editing) {
+    .canvas-node-container {
+        box-shadow: none;
+        background: none;
+    }
+    &:not(:is(.is-dragging, :hover)) .canvas-node-container {
+        border: none;
+    }
+    .canvas-node-content {
+        background: none;
+    }
+}
+
+.canvas-node:not(.is-editing) .tag[href="#node-only-text"] {
+    display: none;
+}

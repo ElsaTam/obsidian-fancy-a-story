@@ -32,11 +32,12 @@
         background-image: linear-gradient(to top, rgba(var(--canvas-color), 0.9), hsl(from rgb(var(--canvas-color)) calc(h - 20) calc(s * 0.5) calc(l * 0.7) / 0.6)), var(--noise);
         color: transparent;
     }
-    .tag[href="#node-title-arcane"] {
-        display: none;
-    }
 
     .canvas-node-container {
         @include cutout_border.outline;
     }
+}
+
+.canvas-node:not(.is-editing) .tag[href="#node-title-arcane"] {
+    display: none;
 }

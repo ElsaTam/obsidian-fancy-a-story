@@ -33,8 +33,8 @@
         height: 100cqh;
         object-fit: cover;
     }
+}
 
-    .tag[href="#node-image"] {
-        display: none;
-    }
+.canvas-node:not(.is-editing) .tag[href="#node-image"] {
+    display: none;
 }

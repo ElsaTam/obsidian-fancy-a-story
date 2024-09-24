@@ -20,7 +20,8 @@
             0 0 0.4em rgba(var(--canvas-color), 0.5),
             0 0 0.5em rgba(var(--canvas-color), 1);
     }
-    .tag[href="#node-title-neon"] {
-        display: none;
-    }
+}
+
+.canvas-node:not(.is-editing) .tag[href="#node-title-neon"] {
+    display: none;
 }

@@ -29,7 +29,8 @@
         text-decoration-thickness: 0.05em;
         text-underline-offset: 0.4em;
     }
-    .tag[href="#node-title-vintage"] {
-        display: none;
-    }
+}
+
+.canvas-node:not(.is-editing) .tag[href="#node-title-vintage"] {
+    display: none;
 }

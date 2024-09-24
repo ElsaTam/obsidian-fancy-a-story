@@ -1,7 +1,7 @@
 .canvas-node:has(.tag[href="#node-background"]):not(.is-focused) {
     z-index: -1 !important;
+}
 
-    .tag[href="#node-background"] {
-        display: none;
-    }
+.canvas-node:not(.is-focused) .tag[href="#node-background"] {
+    display: none;
 }

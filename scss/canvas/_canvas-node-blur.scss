@@ -14,8 +14,8 @@
     .canvas-node-content {
         background: none;
     }
+}
 
-    .tag[href="#node-blur"] {
-        display: none;
-    }
+.canvas-node:not(.is-editing) .tag[href="#node-blur"] {
+    display: none;
 }

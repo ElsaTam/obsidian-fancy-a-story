@@ -2,7 +2,8 @@
     .markdown-preview-view {
         font-size: var(--font-size-node-large);
     }
-    .tag[href="#node-large"] {
-        display: none;
-    }
+}
+
+.canvas-node:not(.is-editing) .tag[href="#node-large"] {
+    display: none;
 }

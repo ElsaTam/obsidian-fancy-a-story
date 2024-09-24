@@ -13,6 +13,8 @@ title: Canvas
 | `#node-blur` | Everything behind the node will be blured | [`_canvas-node-blur.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/canvas/_canvas-node-blur.scss) |
 | `#node-image` | To be used with one image, make the image be displayed as such. Useful to combine with `#node-background` | [`_canvas-node-blur.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/canvas/_canvas-node-blur.scss) |
 | `#node-large` | Make the text very large (5em). Useful with the title tags | [`_canvas-node-large.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/canvas/_canvas-node-large.scss) |
+| `#node-only-text` | Remove border and background | [`_canvas-node-only-text.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/canvas/_canvas-node-only-text.scss) |
+| `#node-text-color-invert` | Text color black in dark mode, white in light mode | [`_canvas-node-text-color-invert.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/canvas/_canvas-node-text-color-invert.scss) |
 
 # Title tags
 
