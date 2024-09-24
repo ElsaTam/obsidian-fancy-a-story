@@ -3,11 +3,29 @@ This theme use several assets (images, svgs, fonts). Below are the names and lic
 Fonts
 =====
 
+Arcane Nine
+-----------
+
+**Source**: https://www.dafont.com/arcane-nine.font
+**License (copy)**: "Free for all use"
+
 Homemade Apple
 --------------
 
 **Source**: https://fonts.google.com/specimen/Homemade+Apple
 **License**: [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+
+Neon Sans
+---------
+
+**Source**: https://www.dafont.com/neon-sans.font
+**License**: [SIL Open Font License](https://openfontlicense.org/#5667e9e4), version 1.1
+
+Noir-et-Blanc
+-------------
+
+**Source**: http://moorstation.org/typoasis/designers/lloyd/
+**License (copy)**: "I make no guarantees as to its suitablility for use with particular software (or its tastefulness!), though I am not aware of any difficulties, nor do I accept any liability for any problems it causes, though I don't expect any. This font is the ultimate freeware. Feel free to use this font at will, to distribute it wherever you please, and to modify it and to convert it to other formats as you find useful. All I ask is that you send me a copy of any modifications or conversions you make (I might include them in my ftp archive unless you particularly don't want me to) and that you let me know of any archives you upload this font to. As I said, this font is freeware, developed to be enjoyed. It is not to be redistributed in any form for profit. The only charges that can be made are those to cover the costs of distribution."
 
 Noto Sans
 ---------
@@ -32,6 +50,12 @@ ProFont
 
 **Source**: https://tobiasjung.name/profont/index.php
 **License**: [MIT license](https://opensource.org/license/mit)
+
+Science Fair
+------------
+
+**Source**: https://www.dafont.com/science-fair.font
+**License (copy)**: "Hi, thanks for downloading my font family Science Fair and I hope you like them. Remember: they are free for personal and commercial use! Hey, like me on Facebook: https://www.facebook.com/Skomii.PauloR to know more about me and what I'm doing."
 
 Spectral
 --------
@@ -87,6 +111,13 @@ Clue tapes
 **Source**: https://www.freeject.net/2020/06/free-download-8-paper-tape-transparent.html
 **License (copy)**: "All project in freejct (included DEMO) are free to use for personal or commercial. Attribution is not required. May not redistribute or sell to other stock websites. Edit first before publication. If any changes will be updated on [the license page](https://www.freeject.net/p/lisen.html)."
 
+Clue ripped masks
+-----------------
+
+**Source**: https://svgsilh.com/image/2038431.html
+**Licence**: Creative Commons [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.en)
+
+
 Coffee Stain
 ------------
 
@@ -100,17 +131,12 @@ Confidential black marker
 **Source**: https://resourceboy.com/textures/redaction-textures/
 **License**: Resource Boy License
 
-Paper texture (black)
----------------------
-
-**Source**: https://resourceboy.com/textures/black-paper-textures/
-**License**: Resource Boy License
-
-Paper texture (white)
----------------------
+Paper texture (sidebar)
+-----------------------
 
 **Source**: https://resourceboy.com/textures/white-paper-textures/
 **License**: Resource Boy License
+**Modified**: yes
 
 Paper background (letter)
 --------------------------
@@ -118,6 +144,17 @@ Paper background (letter)
 **Source**: https://www.freepik.com/free-photo/white-recycle-paper-texture_1035101.htm
 **License**: https://www.freepik.com/legal/terms-of-use
 **Modified**: yes
+
+Poem
+----
+
+**Sources**:
+- https://pixabay.com/vectors/divider-separator-line-art-vintage-5216039/
+- https://pixabay.com/vectors/divider-flourish-line-art-separator-7551966/
+- https://pixabay.com/vectors/divider-flourish-ornamental-7210415/
+**License**: https://pixabay.com/service/license-summary/
+
+
 
 
 

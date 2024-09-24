@@ -1,0 +1,15 @@
+.canvas-node:has(.tag[href="#node-comic"]):not(.is-editing) {
+    
+    .canvas-node-container {
+        box-shadow: none;
+        border-radius: 255px 15px 255px 15px / 15px 255px 15px 255px;
+    }
+
+    .markdown-preview-view {
+        font-family: "VTC Letterer Pro", "Comic Sans", "Arial", sans-serif;
+    }
+
+    .tag[href="#node-comic"] {
+        display: none;
+    }
+}

@@ -1,0 +1,8 @@
+.canvas-node:has(.tag[href="#node-large"]):not(.is-editing) {
+    .markdown-preview-view {
+        font-size: var(--font-size-node-large);
+    }
+    .tag[href="#node-large"] {
+        display: none;
+    }
+}

@@ -1,0 +1,42 @@
+@use '../mixins/cutout_border';
+
+.canvas-node:has(.tag[href="#node-title-arcane"]):not(.is-editing) {
+    --cutout-corner-angle: 1.5em;
+    --cutout-outline-inset: 0;
+    --cutout-outline-thickness: 5px;
+    --cutout-border-background: linear-gradient(to top, rgba(var(--canvas-color), 0.9), hsl(from rgb(var(--canvas-color)) calc(h - 10) calc(s * 0.7) calc(l * 0.9) / 0.9)), var(--noise);
+    
+    .canvas-node-container {
+        border: none;
+    }
+    .canvas-node-container {
+        box-shadow: none;
+    }
+    .canvas-node-content {
+        background: none;
+    }
+    .markdown-preview-view {
+        --relief-color: hsl(from rgb(var(--canvas-color)) h calc(s * 0.5) calc(l * 0.5));
+        font-family: "Arcane Nine";
+        font-weight: var(--font-extrabold);
+        text-align: center;
+        line-height: 1;
+    }
+    .markdown-preview-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    p {
+        background-clip: text;
+        background-image: linear-gradient(to top, rgba(var(--canvas-color), 0.9), hsl(from rgb(var(--canvas-color)) calc(h - 20) calc(s * 0.5) calc(l * 0.7) / 0.6)), var(--noise);
+        color: transparent;
+    }
+    .tag[href="#node-title-arcane"] {
+        display: none;
+    }
+
+    .canvas-node-container {
+        @include cutout_border.outline;
+    }
+}
