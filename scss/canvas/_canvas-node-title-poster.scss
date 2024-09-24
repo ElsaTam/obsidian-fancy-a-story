@@ -19,7 +19,8 @@
         color: rgb(var(--canvas-color));
         text-align: center;
     }
-    .tag[href="#node-title-poster"] {
-        display: none;
-    }
+}
+
+.canvas-node:not(.is-editing) .tag[href="#node-title-poster"] {
+    display: none;
 }

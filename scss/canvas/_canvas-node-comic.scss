@@ -8,8 +8,8 @@
     .markdown-preview-view {
         font-family: "VTC Letterer Pro", "Comic Sans", "Arial", sans-serif;
     }
+}
 
-    .tag[href="#node-comic"] {
-        display: none;
-    }
+.canvas-node:not(.is-editing) .tag[href="#node-comic"] {
+    display: none;
 }
