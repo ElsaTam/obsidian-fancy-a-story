@@ -1,6 +1,7 @@
 ul:has(> li > .tag[href='#family-tree']) {
     --list-spacing: 0;
     --list-indent: 0;
+    --connectors-color: var(--background-secondary);
 
     overflow-x: scroll;
 
@@ -100,6 +101,15 @@ ul:has(> li > .tag[href='#family-tree']) {
         .list-collapse-indicator { display: none; }
     }
 
+    ul:not(:has(ul))::before,
+    ul:has(> li:only-child > .tag[href='#wed'])::before {
+        height: 30px;
+    }    
+
+    li:not(:has(ul))::after,
+    li:has(> ul > li:only-child > .tag[href='#wed'])::after {
+        height: 20px;
+    }
 
     &, ul {
         display: flex;
@@ -124,7 +134,7 @@ ul:has(> li > .tag[href='#family-tree']) {
         position: absolute;
         top: 0;
         right: 50%;
-        border-top: 1px solid var(--background-secondary);
+        border-top: 1px solid var(--connectors-color);
         width: 50%;
         height: 10px;
     }
@@ -136,7 +146,7 @@ ul:has(> li > .tag[href='#family-tree']) {
     li::after {
         right: auto;
         left: 50%;
-        border-left: 1px solid var(--background-secondary);
+        border-left: 1px solid var(--connectors-color);
     }
 
     /* Remove left-right connectors from elements without any siblings */
@@ -159,11 +169,6 @@ ul:has(> li > .tag[href='#family-tree']) {
     li:only-child {
         padding-top: 0;
     }
-
-    /* Adding back the vertical connector to the last nodes */
-    li:last-child::before {
-        border-right: 1px solid var(--bs-dark);
-    }
     
     /* Add downward connectors from parents */
     ul::before {
@@ -171,12 +176,29 @@ ul:has(> li > .tag[href='#family-tree']) {
         position: absolute;
         top: 0;
         left: 50%;
-        border-left: 1px solid var(--bs-dark);
-        width: 0;
+        border-left: 1px solid var(--connectors-color);
+        width: 0px;
         height: 20px;
 
         inset-inline-start: unset;
         bottom: unset;
         border-inline-end: unset;
+    }
+
+    /* Reduce heights for downward connectors if multiple childs */
+    ul:not(:has(> li:first-child > .tag[href='#wed']):has(> li:nth-child(2):last-child))::before {
+        height: 10px;
+    }
+
+    /* Remove downward connectors if no child */
+    ul:not(:has(> li))::before,
+    ul:has(> li:first-child:last-child > .tag[href='#wed'])::before {
+        content: none;
+    }
+
+    /* Remove upwards connectors if only child */
+    li:not(:has(> .tag[href='#wed'])):first-child:last-child,
+    li:has(> .tag[href='#wed']) + li:last-child::after {
+        content: none;
     }
 }
