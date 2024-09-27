@@ -1,0 +1,14 @@
+@media print {
+    body {
+        --workleaves-background: white;
+        --workleaves-foreground: black;
+    }
+
+    .callout {
+        break-inside: avoid;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        break-after: avoid;
+    }
+}

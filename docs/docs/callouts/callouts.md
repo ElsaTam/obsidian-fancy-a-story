@@ -16,7 +16,7 @@ title: Callouts
 | [`letter`]({% link docs/callouts/letter.md %}) | A cursive font and a paper background make a nice letter | [`_callout-letter.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-letter.scss) |
 | [`pinned`]({% link docs/callouts/pinned.md %}) | Small note with a push pin | [`_callout-pinned.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-pinned.scss) |
 | [`poem`]({% link docs/callouts/poem.md %}) | Several options to write nice poems | [`_callout-poem.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-poem.scss) |
-| [`polaroid`]({% link docs/callouts/polaroid.md %}) | Float image on the right | [`_callout-polaroid.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-polaroid.scss) |
+| [`polaroid`]({% link docs/callouts/polaroid.md %}) | Polaroid frame for images | [`_callout-polaroid.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-polaroid.scss) |
 | [`profile`]({% link docs/callouts/profile.md %}) | Float image on the right | [`_callout-profile.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-profile.scss) |
 | [`screen`]({% link docs/callouts/screen.md %}) | Retro green glowing screen | [`_callout-screen.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-screen.scss) |
 | [`timeline`]({% link docs/callouts/timeline.md %}) | Timeline with several options | [`_callout-timeline.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-timeline.scss) |
