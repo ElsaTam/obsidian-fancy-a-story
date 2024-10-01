@@ -9,11 +9,23 @@ Arcane Nine
 **Source**: https://www.dafont.com/arcane-nine.font
 **License (copy)**: "Free for all use"
 
+Chakra Petch
+------------
+
+**Source**: https://fonts.google.com/specimen/Chakra+Petch
+**License**: [Open Font License](https://openfontlicense.org/)
+
 Homemade Apple
 --------------
 
 **Source**: https://fonts.google.com/specimen/Homemade+Apple
 **License**: [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+
+Orbitron
+--------
+
+**Source**: https://fonts.google.com/specimen/Orbitron
+**License**: [Open Font License](https://openfontlicense.org/)
 
 Neon Sans
 ---------
@@ -154,6 +166,12 @@ Poem
 - https://pixabay.com/vectors/divider-flourish-ornamental-7210415/
 **License**: https://pixabay.com/service/license-summary/
 
+Sci-fi H1 decoration
+--------------------
+
+**Source**: https://www.freepik.com/free-vector/art-deco-ornament-collection_43582457.htm
+**License**: https://www.freepik.com/legal/terms-of-use
+**Modified**: yes
 
 
 

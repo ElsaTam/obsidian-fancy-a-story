@@ -4,7 +4,7 @@ title: CSS Classes
 
 | Class                                                              | Description                                          | Source                                                           |
 |:-------------------------------------------------------------------|:-----------------------------------------------------|:-----------------------------------------------------------------|
-| [`banner` and variants]({% link docs/cssclasses/banner.md %})      | Adds a banner                                        | [`_banner.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_banner.scss) |
+| [`banner` and variants]({% link docs/cssclasses/banner.md %})      | Adds a banner with different options                 | [`_banner.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_banner.scss) |
 | [`black-and-white`]({% link docs/cssclasses/black-and-white.md %}) | Turns the page in black and white                    | [`_black-and-white.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_black-and-white.scss) |
 | [`columns-x`]({% link docs/cssclasses/columns.md %})               | Use a 2, 3 or 4 columns layout                       | [`_columns.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_columns.scss) |
 | `confidential`                                                     | Replace `==highlights==` with unreadable black marks | [`_confidential.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_confidential.scss) |
@@ -14,6 +14,8 @@ title: CSS Classes
 | [`note-accent`]({% link docs/cssclasses/note-accent.md %})         | Change the accent color                              | [`_note-accent.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_note-accent.scss) |
 | `no-title`                                                         | Remove the inline title in reading view              | [`_no-title.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_no-title.scss) |
 | `wide-page`                                                        | Disable the readable line length only for this page  | [`_wide-page.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_wide-page.scss) |
+| [`sci-fi`]({% link docs/cssclasses/sci-fi.md %})                   | Gives a sci-fi vibe to the note                      | [`_sci-fi.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_sci-fi.scss) |
+| [`sci-fi-banner`]({% link docs/cssclasses/sci-fi-banner.md %})     | Adds a planet aura to the note inline title          | [`_sci-fi-banner.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_sci-fi-banner.scss) |
 
 # Headings
 

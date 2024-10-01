@@ -1,0 +1,132 @@
+.sci-fi {
+    --metadata-border-color: rgb(var(--sci-fi-color-rgb));
+    --inline-title-font: "Orbitron", Arial, serif;
+    --h1-font: "Orbitron", Arial, serif;
+    --h2-font: "Orbitron", Arial, serif;
+    --h2-font: "Orbitron", Arial, serif;
+    --h4-font: "Orbitron", Arial, serif;
+    --h5-font: "Orbitron", Arial, serif;
+    --h6-font: "Orbitron", Arial, serif;
+    --font-text: "Chakra Petch", Arial, serif;
+    --font-weight: var(--font-normal);
+    --callout-border-opacity: 1;
+    --hr-color: rgb(var(--sci-fi-color-rgb));
+}
+
+// FRAME
+
+.sci-fi .markdown-preview-sizer,
+.sci-fi.markdown-source-view {
+    padding-inline: 3cqh;
+}
+
+.sci-fi::before {
+    content: "";
+    position: fixed;
+    top: 0; bottom: 0;
+    left: 0; right: var(--scrollbar-width);
+    z-index: -1;
+    background: rgba(var(--color-cyan-rgb), 1);
+    mask-image: var(--sci-fi-frame-left), var(--sci-fi-frame-right);
+    mask-size: auto 100%;
+    mask-position: left center, right center;
+    mask-repeat: no-repeat;
+}
+
+// Background
+
+.sci-fi .cm-scroller,
+.sci-fi.markdown-preview-view {
+    background-image: radial-gradient(circle at 1px 1px, rgba(var(--sci-fi-color-rgb), 0.1) 1px, transparent 0);
+    background-size: 40px 40px,;
+}
+
+
+// H1 Display
+
+.fas-h1-display .sci-fi.markdown-preview-view,
+.sci-fi.markdown-preview-view.h1-display {
+    --h1-color: inherit;
+    --h1-background: transparent;
+    --h1-font: var(--inline-title-font);
+
+    h1 {
+        padding: unset;
+        clip-path: unset;
+        text-align: left;
+    }
+
+    h1::before {
+        position: unset;
+        background-image: unset;
+        inset: unset;
+        clip-path: unset;
+
+        display: inline-block;
+        height: 1em;
+        width: 6em;
+        transform: translateY(-15%);
+        background-color: rgba(var(--color-cyan-rgb), 1);
+        mask-image: var(--sci-fi-h1-display);
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: left center;
+        mask-mode: luminance;
+        vertical-align: middle;
+        margin-right: 0.2em;
+    }
+}
+
+// Callouts
+.sci-fi {
+    
+    .callout:is([data-callout="note"], [data-callout="abstract"], [data-callout="summary"], [data-callout="tldr"], [data-callout="info"], [data-callout="todo"], [data-callout="tip"], [data-callout="hint"], [data-callout="important"], [data-callout="success"], [data-callout="check"], [data-callout="done"], [data-callout="question"], [data-callout="help"], [data-callout="faq"], [data-callout="warning"], [data-callout="caution"], [data-callout="attention"], [data-callout="failure"], [data-callout="fail"], [data-callout="missing"], [data-callout="danger"], [data-callout="error"], [data-callout="bug"], [data-callout="example"], [data-callout="quote"], [data-callout="cite"]):not(:is([data-callout="email"], [data-callout="timeline"]) .callout),
+    .callout:is([data-callout="cards-deck"], [data-callout="email"], [data-callout="profile"], [data-callout="autopsy"], [data-callout="screen"], [data-callout="profile"]):not(:is([data-callout="email"], [data-callout="timeline"]) .callout) {
+        clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+        border: none;
+
+        background-image: linear-gradient(135deg, transparent 30%, rgba(255, 255, 255, 0.05) 100%);
+    
+        .callout-title {
+            background: none;
+        }
+    
+        .callout-content {
+            border-top-style: solid;
+        }
+        
+        &::before {
+            content: "";
+            position: absolute;
+            background: rgba(var(--callout-color), var(--callout-border-opacity));
+            inset: 0;
+            clip-path: polygon(
+                0 20px,
+                20px 0,
+                100% 0,
+                100% calc(100% - 20px),
+                calc(100% - 20px) 100%,
+                0 100%,
+                0 20px,
+    
+                var(--callout-border-width) calc(20px + var(--callout-border-width) * 0.5),
+                var(--callout-border-width) calc(100% - var(--callout-border-width)),
+                calc(100% - 20px - var(--callout-border-width) * 0.5) calc(100% - var(--callout-border-width)),
+                calc(100% - var(--callout-border-width)) calc(100% - 20px - var(--callout-border-width) * 0.5),
+                calc(100% - var(--callout-border-width)) var(--callout-border-width),
+                calc(20px + var(--callout-border-width) * 0.5) var(--callout-border-width),
+                var(--callout-border-width) calc(20px + var(--callout-border-width) * 0.5));
+        }
+    }
+}
+
+// HR
+
+.sci-fi:is(.markdown-preview-view, .markdown-source-view) hr {
+    width: 100%;
+    height: 20px;
+    mask-image: var(--sci-fi-hr);
+    mask-size: contain;
+    mask-position: center center;
+    mask-repeat: no-repeat;
+}

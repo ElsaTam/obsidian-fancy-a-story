@@ -1,0 +1,54 @@
+.sci-fi-banner {
+    --arc-size: 400px;
+    --inline-title-size: 3em;
+    --inline-title-font: "Orbitron", Arial, serif;
+}
+
+.sci-fi-banner .inline-title {
+    position: relative;
+    width: var(--arc-size);
+    height: var(--arc-size);
+    display: flex;
+    align-items: center;
+}
+
+.sci-fi-banner .inline-title::before {
+    content: "";
+    position: absolute;
+    right: -25%;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(var(--sci-fi-color-rgb), 0.8);
+    mask-image: var(--eclipse);
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    transition: all 0.5s ease-in-out;
+    z-index: -1;
+}
+
+.sci-fi-banner .inline-title:hover::before {
+    opacity: 0.4;
+}
+
+.sci-fi-banner .inline-title::after {
+    content: "";
+    position: absolute;
+    width: calc(var(--arc-size) * 0.5);
+    height: calc(var(--arc-size) * 0.5);
+    top: -5%;
+    right: -10%;
+    transform: rotate(-20deg);
+    background-color: rgb(var(--sci-fi-color-rgb));
+    mask-image: var(--flare);
+    mask-size: 100%;
+    mask-repeat: no-repeat;
+    transition: all 0.5s ease-in-out;
+    z-index: -1;
+}
+
+.sci-fi-banner .inline-title:hover::after {
+    top: -9%;
+    right: -6%;
+    transform: rotate(0deg) scale(0.5);
+    opacity: 0.5;
+}
