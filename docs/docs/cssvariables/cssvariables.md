@@ -48,6 +48,12 @@ Source: [`_cssvariables.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story
 |:---------|:------------|:--------------|
 | `--table-header-line-height` | Line height for table headers | `1.8` |
 
+## Other CSS Classes
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--sci-fi-color-rgb` | Main color used in the `sci-fi` and `sci-fi-banner` classes | `var(--color-cyan-rgb)` |
+
 
 # Typography
 
