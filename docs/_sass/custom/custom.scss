@@ -66,3 +66,12 @@ img:hover {
     height: 1em;
     vertical-align: middle;
 }
+
+
+
+.site-nav > ul > li:nth-child(2) {
+    border-bottom: 1px solid hsl(0, 0%, 22%);
+}
+.site-nav > ul > li:last-child {
+    border-top: 1px solid hsl(0, 0%, 22%);
+}

@@ -1,5 +1,6 @@
 ---
 title: Canvas
+nav_order: 5
 ---
 
 [![]({% link images/canvas/canvas-showcase-1.webp %}){: width="300" }]({% link images/canvas/canvas-showcase-1.webp %})

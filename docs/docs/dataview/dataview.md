@@ -1,5 +1,6 @@
 ---
 title: Dataview
+nav_order: 8
 ---
 
 # Dataview JS classes

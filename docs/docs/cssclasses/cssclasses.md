@@ -1,5 +1,6 @@
 ---
 title: CSS Classes
+nav_order: 6
 ---
 
 | Class                                                              | Description                                          | Source                                                           |
