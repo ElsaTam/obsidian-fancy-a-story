@@ -1,4 +1,4 @@
-@scope (body:has(.status-bar)) {
+@scope (body:not(.is-popout-window)) {
     
     :scope.fas-status-bar-top {
 
