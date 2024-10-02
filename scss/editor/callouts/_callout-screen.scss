@@ -28,7 +28,7 @@
         text-align: center;
     }
 
-    &:not(.is-collapsed):has(.callout-content) {
+    &:not(.is-collapsed) {
         filter: drop-shadow(0 0 3px rgba(var(--callout-color), 0.5));
     }
 

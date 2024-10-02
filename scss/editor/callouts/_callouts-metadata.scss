@@ -46,16 +46,11 @@
 }
 
 
-
-.markdown-preview-sizer:has(.callout[data-callout-metadata~="wide"]) > div > div {
-    overflow: visible !important;
-}
-
-.callout[data-callout-metadata~="wide"] {
+.markdown-preview-view .callout[data-callout-metadata~="wide"] {
     position: relative;
     --w: 95cqw;
-    max-width: var(--w);
-    width: fit-content;
+    width: var(--w);
+    max-width: 100cqw;
     margin-left: 50%;
     transform: translateX(-50%);
 
@@ -64,14 +59,14 @@
     }
 }
 
-.callout[data-callout-metadata="float-right"] {
+.markdown-preview-view .callout[data-callout-metadata="float-right"] {
     float: right;
     clear: right;
     margin: var(--size-4-3) 0 var(--size-4-3) var(--size-4-3);
 }
 
 
-.callout[data-callout-metadata="float-left"] {
+.markdown-preview-view .callout[data-callout-metadata="float-left"] {
     float: left;
     clear: left;
     margin: var(--size-4-3) var(--size-4-3) var(--size-4-3) 0;

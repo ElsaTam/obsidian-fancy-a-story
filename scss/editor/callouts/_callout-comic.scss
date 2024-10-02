@@ -54,10 +54,8 @@
         bottom: 0;
         text-align: center;
     }
-    p:has(img) {
-        font-size: 0;
-    }
     .image-embed {
+        font-size: 0;
         max-height: var(--strip-height);
     }
     img {
@@ -103,10 +101,8 @@
     .callout-content {
         max-height: calc(var(--strip-height) - var(--b));
     }
-    p:has(img) {
-        transform: translateY(calc(var(--g) - var(--gutter) - var(--b)));
-    }
     img {
+        margin-top: calc(var(--g) - var(--gutter) - var(--b));
         height: calc(var(--strip-height) + var(--gutter) - var(--g) - var(--b));
         object-fit: contain;
     }

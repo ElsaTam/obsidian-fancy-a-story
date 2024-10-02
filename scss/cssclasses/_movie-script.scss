@@ -21,11 +21,6 @@
         text-transform: uppercase;
     }
 
-    .HyperMD-header-1:has(.cm-tag-italic) ~ *:not(.HyperMD-header-1:has(.cm-tag-italic) ~ .HyperMD-header-1 ~ *):not(.HyperMD-header-1),
-    div:has(> h1 .tag[href="#italic"]) ~ *:not(div:has(> h1 .tag[href="#italic"]) ~ div:has(h1) ~ *) {
-        font-style: italic;
-    }
-
     .callout {
         --callout-padding: 0;
         --callout-title-padding: 0;

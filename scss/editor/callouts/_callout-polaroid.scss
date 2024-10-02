@@ -3,6 +3,7 @@
     --callout-blend-mode: normal;
     --callout-border-width: 0;
     --image-shadow-offset: 0;
+    --p-spacing: 0;
 
     --callout-padding: var(--size-4-3);
     --callout-title-padding: var(--size-4-3);
@@ -43,10 +44,6 @@
         width: var(--callout-polaroid-img-size);
         height: var(--callout-polaroid-img-size);
         object-fit: cover;
-    }
-
-    p:has(img) {
-        margin: 0;
     }
 }
 

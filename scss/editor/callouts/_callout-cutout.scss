@@ -9,10 +9,6 @@
     border: none;
     border-left: var(--callout-border-width) solid rgba(var(--callout-color), var(--callout-border-opacity));
 
-    &:not(.is-collapsed):has(.callout-content) .callout-title {
-        border: none;
-    }
-
     .callout-title {
         background: none;
     }

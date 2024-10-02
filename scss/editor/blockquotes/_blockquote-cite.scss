@@ -4,9 +4,11 @@
     padding-inline-start: 55px;
 }
 
-blockquote:has(cite)::after {
+blockquote cite::after {
     content: '\201C';
     position: absolute;
+    font-style: italic;
+    text-align: left;
     font-size: 100px;
     line-height: 1;
     top: 0;

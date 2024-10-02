@@ -5,8 +5,7 @@
 }
 
 /* Full opacity when the header container is hovered */
-.workspace-tab-header-container:hover,
-.workspace-tab-header-container:has(*:hover) {
+.workspace-tab-header-container:hover {
     --icon-opacity: var(--icon-opacity-hover);
 }
 

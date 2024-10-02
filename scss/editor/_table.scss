@@ -1,13 +1,9 @@
 .markdown-preview-view {
-    table thead:not(:has(:is(th, td):not(:empty))) {
-        display: none;
-    }
-
     table thead th {
         border-bottom-width: calc(var(--table-border-width) + 2px);
     }
 
-    table tbody tr:not(:has(:is(td, th):not(:empty))) {
+    table :is(td, th):empty {
         height: calc(var(--table-text-size) * var(--table-line-height) + var(--size-2-2) * 2);
     }
 

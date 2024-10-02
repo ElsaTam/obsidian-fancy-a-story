@@ -24,15 +24,16 @@
 
     @include cards-deck.cards-deck;
 
-    > a:has(> .image-embed) { font-size: 0; }
+    a {
+        font-size: 0;
+    }
 
-    > span:has(> img),
-    > a > span:has(> img) {
+    > span,
+    > a > span {
         @include cards-deck.card;
     }
 
-    > span > img,
-    > a > span > img {
+    img {
         @include cards-deck.card-radius;
         @include cards-deck.card-border;
         @include cards-deck.card-shadow;

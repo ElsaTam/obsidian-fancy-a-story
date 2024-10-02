@@ -1,4 +1,4 @@
-$img-embed-sel: '.mod-header ~ div > p > .image-embed:nth-child(1 of .image-embed):not(:is(.mod-header ~ *:has(img) ~ * .image-embed))';
+$img-embed-sel: '.mod-header + div + div > p > .image-embed:nth-child(1 of .image-embed)';
 
 .markdown-preview-view.banner {
     --metadata-display-reading: none;

@@ -1,6 +1,7 @@
-.markdown-preview-sizer:has(.dataview-wide) > div > div {
+.block-language-dataviewjs:has(.dataview-wide) {
     overflow: visible !important;
 }
+
 .markdown-reading-view .dataview-wide {
     position: relative;
     --w: 95cqw;

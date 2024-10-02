@@ -1,4 +1,3 @@
-.view-content:has(.black-and-white) {
-    background-image: var(--black-and-white-texture);
+.black-and-white {
     filter: saturate(0);
 }
