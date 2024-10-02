@@ -71,6 +71,24 @@
         padding: var(--size-2-2);
         height: var(--embed-max-height);
     }
+    .dataview-result-list-li > span > a > .image-embed,
+    .dataview-result-list-li > span > .image-embed {
+        @include cards-deck.card-shadow;
+        @include cards-deck.card-radius;
+        @include cards-deck.card-border;
+        outline: 4px solid var(--workleaves-background);
+        width: var(--card-width);
+        height: var(--card-height);
+        display: block;
+    
+        > img {
+            @include cards-deck.card-radius;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
 
     .markdown-embed-content > .markdown-preview-view {
         overflow: hidden;
@@ -81,7 +99,7 @@
         width: fit-content;
     }
 
-    img {
+    .markdown-embed img {
         max-height: 150px;
         max-width: 100%;
         object-fit: cover;
