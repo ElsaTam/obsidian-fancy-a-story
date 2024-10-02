@@ -1,4 +1,4 @@
-.media-embed:has(> audio)[alt*="cassette"] {
+.media-embed[alt*="cassette"] {
     --cassette-width: 0.8;
 }
 
@@ -16,7 +16,7 @@
     }
 }
 
-.media-embed:has(> audio)[alt*="cassette"]::before {
+.media-embed[alt*="cassette"]::before {
     --ratio: calc(45.546 / 72.985);
 
     content: "";
@@ -31,16 +31,16 @@
     margin-bottom: var(--size-4-2);
 }
 
-.markdown-preview-view .media-embed:has(> audio)[alt*="cassette"]::before {
+.markdown-preview-view .media-embed[alt*="cassette"]::before {
     filter: drop-shadow(2px 2px 2px var(--shadow-color)) drop-shadow(5px 5px 5px var(--shadow-color)) drop-shadow(12px 12px 12px var(--shadow-color));
 }
 
-.media-embed:has(> audio)[alt~="cassette-gray"]   { filter: saturate(0); }
-.media-embed:has(> audio)[alt~="cassette-red"]    { filter: hue-rotate(-6deg);  }
-.media-embed:has(> audio)[alt~="cassette-orange"] { filter: hue-rotate(5deg);   }
-.media-embed:has(> audio)[alt~="cassette-yellow"] { filter: hue-rotate(15deg);  }
-.media-embed:has(> audio)[alt~="cassette-green"]  { filter: hue-rotate(80deg);  }
-.media-embed:has(> audio)[alt~="cassette-cyan"]   { filter: hue-rotate(145deg); }
-.media-embed:has(> audio)[alt~="cassette-blue"]   { filter: hue-rotate(185deg); }
-.media-embed:has(> audio)[alt~="cassette-purple"] { filter: hue-rotate(260deg); }
-.media-embed:has(> audio)[alt~="cassette-pink"]   { filter: hue-rotate(310deg); }
+.media-embed[alt~="cassette-gray"]   { filter: saturate(0); }
+.media-embed[alt~="cassette-red"]    { filter: hue-rotate(-6deg);  }
+.media-embed[alt~="cassette-orange"] { filter: hue-rotate(5deg);   }
+.media-embed[alt~="cassette-yellow"] { filter: hue-rotate(15deg);  }
+.media-embed[alt~="cassette-green"]  { filter: hue-rotate(80deg);  }
+.media-embed[alt~="cassette-cyan"]   { filter: hue-rotate(145deg); }
+.media-embed[alt~="cassette-blue"]   { filter: hue-rotate(185deg); }
+.media-embed[alt~="cassette-purple"] { filter: hue-rotate(260deg); }
+.media-embed[alt~="cassette-pink"]   { filter: hue-rotate(310deg); }

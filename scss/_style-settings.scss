@@ -349,6 +349,22 @@ settings:
 
 */
 
+/* Disable the settings when not used */
+body:not(.fas-custom-light) .style-settings-container [data-id="custom-color-base-00"] .theme-light,
+body:not(.fas-custom-light) .style-settings-container [data-id="custom-color-base-100"] .theme-light,
+body:not(.fas-custom-dark)  .style-settings-container [data-id="custom-color-base-00"] .theme-dark,
+body:not(.fas-custom-dark)  .style-settings-container [data-id="custom-color-base-100"] .theme-dark,
+body:not(.fas-custom-light):not(.fas-custom-dark) .style-settings-container [data-id="custom-color-base-00"] .setting-item-info,
+body:not(.fas-custom-light):not(.fas-custom-dark) .style-settings-container [data-id="custom-color-base-100"] .setting-item-info,
+body:not(.fas-custom-light):not(.fas-custom-dark) .style-settings-container [data-id="custom-color-space"],
+body.fas-accessibility .style-settings-container [data-id="fas-sans-serif"],
+body.fas-accessibility .style-settings-container [data-id="fas-bigger-font"],
+body.fas-accessibility .style-settings-container [data-id="fas-doodle-icons"]
+{
+    opacity: 0.5;
+    pointer-events: none;
+}
+
 .style-settings-container {
 
     --h1-color: var(--color-accent);
@@ -369,24 +385,6 @@ settings:
         padding: var(--size-4-1) var(--size-2-3) 0 var(--size-4-6);
         border-left: 1px solid var(--current-h1-color);
     }
-
-
-    /* Disable the settings when not used */
-    [data-id="theme-variant-light"]:not(:has(option[value="fas-custom-light"]:checked)) ~ [data-id="custom-color-base-00"] .theme-light,
-    [data-id="theme-variant-light"]:not(:has(option[value="fas-custom-light"]:checked)) ~ [data-id="custom-color-base-100"] .theme-light,
-    [data-id="theme-variant-dark"]:not(:has(option[value="fas-custom-dark"]:checked)) ~ [data-id="custom-color-base-00"] .theme-dark,
-    [data-id="theme-variant-dark"]:not(:has(option[value="fas-custom-dark"]:checked)) ~ [data-id="custom-color-base-100"] .theme-dark,
-    [data-id="theme-variant-light"]:not(:has(option[value="fas-custom-light"]:checked)) ~ [data-id="theme-variant-dark"]:not(:has(option[value="fas-custom-dark"]:checked)) ~ [data-id="custom-color-base-00"] .setting-item-info,
-    [data-id="theme-variant-light"]:not(:has(option[value="fas-custom-light"]:checked)) ~ [data-id="theme-variant-dark"]:not(:has(option[value="fas-custom-dark"]:checked)) ~ [data-id="custom-color-base-100"] .setting-item-info,
-    [data-id="theme-variant-light"]:not(:has(option[value="fas-custom-light"]:checked)) ~ [data-id="theme-variant-dark"]:not(:has(option[value="fas-custom-dark"]:checked)) ~ [data-id="custom-color-space"],
-    [data-id="fas-accessibility"]:has(.is-enabled) ~ [data-id="fas-sans-serif"],
-    [data-id="fas-accessibility"]:has(.is-enabled) ~ [data-id="fas-bigger-font"],
-    [data-id="fas-accessibility"]:has(.is-enabled) ~ [data-id="fas-doodle-icons"]
-    {
-        opacity: 0.5;
-        pointer-events: none;
-    }
-
 
     /* More compact color pickers */
     & .pickr button {
@@ -420,18 +418,15 @@ settings:
     }
 
     /* Title and description on the same line */
-    & .setting-item:not(.style-settings-info-text) .setting-item-info:has(.setting-item-description:not(:empty)) {
-        & > div {
+    & .setting-item:not(.style-settings-info-text) .setting-item-info {
+        > div {
             display: inline;
         }
-        & .setting-item-name {
-
-            &::after {
-                content: "";
-                border-right: 1px solid var(--color-base-30);
-                margin: 0 5px;
-                vertical-align: middle;
-            }
+        .setting-item-description:not(:empty)::before {
+            content: "";
+            border-left: 1px solid var(--color-base-30);
+            margin: 0 5px;
+            vertical-align: middle;
         }
     }
 }
