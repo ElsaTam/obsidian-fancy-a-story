@@ -1,5 +1,6 @@
 ---
 title: Embeds
+nav_order: 9
 ---
 
 # Images

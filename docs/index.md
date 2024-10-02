@@ -18,3 +18,7 @@ nav_order: 1
 - [Embeds]({% link docs/embeds/embeds.md %})
 - [Lists]({% link docs/lists/lists.md %})
 - [Other components]({% link docs/other/other.md %})
+
+# Assets licenses
+
+- [Assets licenses]({% link docs/assets_licenses.md %})

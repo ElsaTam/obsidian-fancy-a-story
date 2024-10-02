@@ -1,5 +1,6 @@
 ---
 title: Callouts
+nav_order: 4
 ---
 
 # Styled callouts
