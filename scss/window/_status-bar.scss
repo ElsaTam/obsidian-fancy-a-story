@@ -37,6 +37,13 @@
             width: calc(var(--header-height) - 1px) !important;
             height: calc(var(--header-height) - 1px) !important;
         }
+
+        &.mod-macos.is-hidden-frameless .sidebar-toggle-button.mod-right {
+            position: static;
+        }
+        &.mod-macos.is-hidden-frameless .workspace .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
+            padding-right: 0;
+        }
     }
 
 
@@ -91,7 +98,7 @@
             opacity: var(--icon-opacity-inactive);
         }
 
-        .status-bar-item.mod-clickable:not(:has(svg)) {
+        .status-bar-item:not(:has(svg)) {
             transform: rotate(180deg);
         }
 
