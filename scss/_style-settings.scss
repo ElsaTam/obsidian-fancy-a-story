@@ -437,7 +437,9 @@ settings:
         default: doodle
         options:
             - none
-            - doodle (on hover)
+            -
+                value: doodle
+                label: doodle (on hover)
             - underline
             - overline
             - underline overline
@@ -448,7 +450,9 @@ settings:
         default: underline
         options:
             - none
-            - doodle (on hover)
+            -
+                value: doodle
+                label: doodle (on hover)
             - underline
             - overline
             - underline overline

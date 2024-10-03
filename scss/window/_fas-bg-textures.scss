@@ -33,7 +33,7 @@ body {
     opacity: var(--file-explorer-decoration-opacity);
     background-repeat: no-repeat;
 }
-.fas-bg-textures:not(.fas-file-explorer-decoration-custom ) {
+.fas-bg-textures:not(.fas-file-explorer-decoration-custom) .workspace-leaf-content[data-type="file-explorer"]::before {
     filter: sepia(1);
 }
 
