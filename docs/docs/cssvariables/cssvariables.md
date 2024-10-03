@@ -3,8 +3,6 @@ title: CSS Variables
 nav_order: 7
 ---
 
-Source: [`_cssvariables.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/_cssvariables.scss)
-
 1. TOC
 {:toc}
 

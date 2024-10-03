@@ -212,29 +212,6 @@ settings:
         description: Some panes can use background texture for style effect.
         type: class-toggle
         default: true
-    
-    - 
-        id: accessibility-tweaks
-        title: Minor tweaks making big differences
-        type: heading
-        collapsed: true
-        level: 2
-    - 
-        id: sidedock-tab-header-padding-bottom
-        title: Gap between the selected tab and the content in the sidebars
-        description: If you're annoyed by the fact that they touch each other, increase this value
-        type: variable-number-slider
-        format: px
-        default: 0
-        min: 0
-        max: 6
-    - 
-        id: image-shadow-offset
-        title: Offset of images stripped shadows
-        description: Make it 0 to make the shadow disappear
-        type: variable-number
-        format: px
-        default: 8
 
 
 
@@ -267,6 +244,15 @@ settings:
         type: heading
         collapsed: true
         level: 2
+    - 
+        id: sidedock-tab-header-padding-bottom
+        title: Gap between the selected tab and the content in the sidebars
+        description: If you're annoyed by the fact that they touch each other, increase this value
+        type: variable-number-slider
+        format: px
+        default: 0
+        min: 0
+        max: 6
     -
         id: sidedock-inset-border-color
         title: Color of the inside border
@@ -510,10 +496,29 @@ body:not(.fas-custom-light):not(.fas-custom-dark) .style-settings-container [dat
 body:not(.fas-custom-light):not(.fas-custom-dark) .style-settings-container [data-id="custom-color-space"],
 body.fas-accessibility .style-settings-container [data-id="fas-sans-serif"],
 body.fas-accessibility .style-settings-container [data-id="fas-bigger-font"],
-body.fas-accessibility .style-settings-container [data-id="fas-doodle-icons"]
+body.fas-accessibility .style-settings-container [data-id="fas-doodle-icons"],
+body:not(.fas-sidebar-texture-custom) .style-settings-container [data-id="sidebar-texture-custom"],
+body:not(.fas-sidebar-texture-custom) .style-settings-container [data-id="sidebar-texture-blend-custom"],
+body:not(.fas-sidebar-texture-custom) .style-settings-container [data-id="sidebar-texture-size-custom"],
+body:not(.fas-sidebar-texture-custom) .style-settings-container [data-id="sidebar-texture-position-custom"],
+body:not(.fas-file-explorer-decoration-custom) .style-settings-container [data-id="file-explorer-decoration-custom"],
+body:not(.fas-file-explorer-decoration-custom) .style-settings-container [data-id="file-explorer-decoration-blend-custom"],
+body:not(.fas-file-explorer-decoration-custom) .style-settings-container [data-id="file-explorer-decoration-size-custom"],
+body:not(.fas-file-explorer-decoration-custom) .style-settings-container [data-id="file-explorer-decoration-position-custom"],
+body:not(.fas-file-explorer-decoration-custom) .style-settings-container [data-id="file-explorer-decoration-opacity-custom"]
 {
     opacity: 0.5;
     pointer-events: none;
+}
+
+// Show color for some text inputs
+.style-settings-container [data-id="sidedock-inset-border-color"] .setting-item-control::before {
+    content: "";
+    display: block;
+    height: 1em;
+    width: 1em;
+    background-color: var(--sidedock-inset-border-color);
+    border-radius: 50%;
 }
 
 .style-settings-container {
