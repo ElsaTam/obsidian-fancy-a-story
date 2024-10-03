@@ -1,0 +1,13 @@
+@import 'helper-functions';
+@import 'colors_definitions';
+
+// Create the block for default theme (no mixing)
+@each $tone in ("light", "dark") {
+    .theme-#{$tone} {
+        @each $color in map-keys(map-get($rainbow-colors, $tone)) {
+            $c: map-deep-get($rainbow-colors, $tone, $color);
+            --color-#{$color}: #{$c};
+            --color-#{$color}-rgb: #{red($c), green($c), blue($c)};
+        }
+    }
+}

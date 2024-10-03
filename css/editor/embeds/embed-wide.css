@@ -1,0 +1,12 @@
+.markdown-preview-view [alt~=wide]:is(img, .image-embed, .markdown-embed, .file-embed) {
+  --w: 95cqw;
+  position: relative;
+  width: var(--w);
+  max-width: 100cqw;
+  float: left;
+  left: calc(-0.5 * (var(--w) - var(--file-line-width)));
+  clear: both;
+}
+.markdown-preview-view [alt~=wide]:is(img, .image-embed, .markdown-embed, .file-embed) .callout-title {
+  justify-content: center;
+}

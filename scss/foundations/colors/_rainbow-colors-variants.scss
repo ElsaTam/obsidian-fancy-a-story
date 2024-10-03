@@ -1,0 +1,49 @@
+@import 'helper-functions';
+@import 'colors_definitions';
+
+// Create the block for custom theme (no mixing)
+@each $tone in ("light", "dark") {
+    .is-mobile.theme-#{$tone}.fas-custom-#{$tone},
+    .theme-#{$tone}.fas-custom-#{$tone} {
+        @each $color in map-keys(map-get($rainbow-colors, $tone)) {
+            $c: map-deep-get($rainbow-colors, $tone, $color);
+            --color-#{$color}: #{$c};
+            --color-#{$color}-rgb: #{red($c), green($c), blue($c)};
+        }
+    }
+}
+
+@each $tone, $theme, $primary, $text, $space in $themes {
+
+    // Compute middle color between primary and text, used to mix the palette
+    $hue-primary: hue($primary);
+    $hue-text: hue($text);
+    $mix-with: hsl(hue(mix($primary, $text)), 100%, 50%);
+    @if saturation($primary) < 1 and saturation($text) < 1 {
+        $mix-with: hsl(0, 0%, calc((lightness($primary) + lightness($text)) / 2));
+    }
+    
+    // Create the class CSS block
+    .is-mobile.theme-#{$tone}.fas-#{$tone},
+    .theme-#{$tone}.fas-#{$theme} {
+        // For each rainbow color
+        @each $color in map-keys(map-get($rainbow-colors, $tone)) {
+            $c: map-deep-get($rainbow-colors, $tone, $color);
+            $c: mix($c, $mix-with, $keep); // Keep n% of the color
+
+            @if $tone == "light" {
+                $c: darken-till-contrast($c, $primary);
+                --color-#{$color}: #{$c};
+
+                $c: red($c), green($c), blue($c);
+                --color-#{$color}-rgb: #{$c};
+            } @else {
+                $c: lighten-till-contrast($c, $primary);
+                --color-#{$color}: #{$c};
+
+                $c: red($c), green($c), blue($c);
+                --color-#{$color}-rgb: #{$c};
+            }
+        }
+    }
+}

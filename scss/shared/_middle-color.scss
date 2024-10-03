@@ -1,0 +1,25 @@
+.theme-dark {
+    --middle-color: color-mix(
+        in srgb-linear,
+        hsl(from var(--color-base-00) h 100% 55%),
+        hsl(from var(--color-base-100) h 100% 55%) 50%
+    );
+    --middle-color-complement: color-mix(
+        in srgb-linear,
+        hsl(from var(--color-base-00)  calc(h - 90) 100% 55%),
+        hsl(from var(--color-base-100) calc(h + 90) 100% 55%) 50%
+    );
+}
+
+.theme-light {
+    --middle-color: color-mix(
+        in srgb-linear,
+        hsl(from var(--color-base-00) h 100% 40%),
+        hsl(from var(--color-base-100) h 100% 40%) 50%
+    );
+    --middle-color-complement: color-mix(
+        in srgb-linear,
+        hsl(from var(--color-base-00)  calc(h - 90) 100% 40%),
+        hsl(from var(--color-base-100) calc(h + 90) 100% 40%) 50%
+    );
+}

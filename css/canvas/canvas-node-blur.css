@@ -1,0 +1,18 @@
+.canvas-node:has(.tag[href="#node-blur"]):not(.is-editing) {
+  backdrop-filter: blur(8px);
+}
+.canvas-node:has(.tag[href="#node-blur"]):not(.is-editing) .canvas-node-container {
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+.canvas-node:has(.tag[href="#node-blur"]):not(.is-editing):not(.is-dragging):not(:hover) .canvas-node-container {
+  border: 1px solid rgba(var(--canvas-color), 0.1);
+}
+.canvas-node:has(.tag[href="#node-blur"]):not(.is-editing) .canvas-node-content {
+  background: none;
+}
+
+.canvas-node:not(.is-editing) .tag[href="#node-blur"] {
+  display: none;
+}
