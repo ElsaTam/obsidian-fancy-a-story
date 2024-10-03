@@ -1,55 +1,5 @@
-@function map-deep-get($map, $keys...) {
-    $value: $map;
-
-    @each $key in $keys {
-        $value: map-get($value, $key);
-    }
-
-    @return $value;
-}
-
-@function map-deep-set($map, $keys...) {
-    $map-list: ($map,);
-    $result: null;
-
-    @if length($keys) == 2 {
-        @return map-merge($map, (nth($keys, 1): nth($keys, -1)));
-    }
-
-    @for $i from 1 through length($keys) - 2 {
-        $map-list: append($map-list, map-get(nth($map-list, -1), nth($keys, $i)));
-    }
-
-    @for $i from length($map-list) through 1 {
-        $result: map-merge(nth($map-list, $i), (nth($keys, $i): if($i ==length($map-list), nth($keys, -1), $result)));
-    }
-
-    @return $result;
-}
-
-@function darken-till-contrast($color, $primary) {
-    @while(contrast-checker($color, $primary) == "false") {
-        $color: darken($color, 1%);
-        @if(contrast-checker($color, $primary) == "true") {
-            @return $color;
-        }
-    }
-    @return $color;
-}
-
-@function lighten-till-contrast($color, $primary) {
-    @while(contrast-checker($color, $primary) == "false") {
-        $color: lighten($color, 1%);
-        @if(contrast-checker($color, $primary) == "true") {
-            @return $color;
-        }
-    }
-    @return $color;
-}
-
+@import 'helper-functions';
 @import 'colors_definitions';
-
-$keep: 87%;
 
 @function contrast-checker($color, $primary) {
     $r: (max(red($color),   red($primary)))   - (min(red($color),   red($primary)));
@@ -81,11 +31,6 @@ $keep: 87%;
 
         @each $color in map-keys(map-get($extended-colors, $tone)) {
             $c: map-deep-get($extended-colors, $tone, $color);
-            --color-#{$color}: #{$c};
-            --color-#{$color}-rgb: #{red($c), green($c), blue($c)};
-        }
-        @each $color in map-keys(map-get($rainbow-colors, $tone)) {
-            $c: map-deep-get($rainbow-colors, $tone, $color);
             --color-#{$color}: #{$c};
             --color-#{$color}-rgb: #{red($c), green($c), blue($c)};
         }
@@ -134,28 +79,6 @@ $keep: 87%;
             @if $is_gray {
                 $c: change-color($c, $saturation: 0%);
             }
-
-            @if $tone == "light" {
-                $c: darken-till-contrast($c, $primary);
-                --color-#{$color}: #{$c};
-
-                $c: red($c), green($c), blue($c);
-                --color-#{$color}-rgb: #{$c};
-            }
-
-            @else {
-                $c: lighten-till-contrast($c, $primary);
-                --color-#{$color}: #{$c};
-
-                $c: red($c), green($c), blue($c);
-                --color-#{$color}-rgb: #{$c};
-            }
-        }
-
-        // For each rainbow color
-        @each $color in map-keys(map-get($rainbow-colors, $tone)) {
-            $c: map-deep-get($rainbow-colors, $tone, $color);
-            $c: mix($c, $mix-with, $keep); // Keep n% of the color
 
             @if $tone == "light" {
                 $c: darken-till-contrast($c, $primary);

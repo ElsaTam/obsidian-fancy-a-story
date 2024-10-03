@@ -1,0 +1,25 @@
+@keyframes bg-slide {
+  from {
+    right: 100%;
+  }
+  to {
+    right: 0;
+  }
+}
+@media (hover: hover) {
+  body:not(.is-grabbing) .tree-item-self.is-clickable:hover {
+    background: none;
+  }
+  body:not(.is-grabbing) .tree-item-self.is-clickable:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: var(--nav-item-background-hover);
+  }
+  body:not(.is-grabbing) .tree-item-self.is-clickable:not(.is-active):hover::before {
+    animation: bg-slide 0.5s ease-in-out;
+  }
+}

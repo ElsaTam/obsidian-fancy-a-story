@@ -1,0 +1,48 @@
+@function map-deep-get($map, $keys...) {
+    $value: $map;
+
+    @each $key in $keys {
+        $value: map-get($value, $key);
+    }
+
+    @return $value;
+}
+
+@function map-deep-set($map, $keys...) {
+    $map-list: ($map,);
+    $result: null;
+
+    @if length($keys) == 2 {
+        @return map-merge($map, (nth($keys, 1): nth($keys, -1)));
+    }
+
+    @for $i from 1 through length($keys) - 2 {
+        $map-list: append($map-list, map-get(nth($map-list, -1), nth($keys, $i)));
+    }
+
+    @for $i from length($map-list) through 1 {
+        $result: map-merge(nth($map-list, $i), (nth($keys, $i): if($i ==length($map-list), nth($keys, -1), $result)));
+    }
+
+    @return $result;
+}
+
+@function darken-till-contrast($color, $primary) {
+    @while(contrast-checker($color, $primary) == "false") {
+        $color: darken($color, 1%);
+        @if(contrast-checker($color, $primary) == "true") {
+            @return $color;
+        }
+    }
+    @return $color;
+}
+
+@function lighten-till-contrast($color, $primary) {
+    @while(contrast-checker($color, $primary) == "false") {
+        $color: lighten($color, 1%);
+        @if(contrast-checker($color, $primary) == "true") {
+            @return $color;
+        }
+    }
+    @return $color;
+}

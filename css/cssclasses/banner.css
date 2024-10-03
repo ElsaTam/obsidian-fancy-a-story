@@ -1,0 +1,93 @@
+body {
+  --banner-height: 300px;
+  --banner-title-shadow: 0px 0px 0.1em rgb(var(--mono-rgb-0)), 0px 0px 0.2em rgb(var(--mono-rgb-0)), 0px 0px 0.5em rgb(var(--mono-rgb-0));
+  --banner-slope-angle: 4deg;
+  --banner-slope-border-width: 5px;
+  --banner-slope-border-color: var(--color-accent);
+  --banner-width: 100cqw;
+}
+
+.markdown-preview-view.banner {
+  --metadata-display-reading: none;
+  --inline-title-margin-bottom: 0;
+}
+.markdown-preview-view.banner .mod-header + div + div > p > .image-embed:nth-child(1 of .image-embed) {
+  --image-shadow-offset: 0;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: var(--banner-width);
+  height: var(--banner-height);
+}
+.markdown-preview-view.banner .mod-header + div + div > p > .image-embed:nth-child(1 of .image-embed) img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.markdown-preview-view.banner .mod-header + div + div > p > .image-embed:nth-child(1 of .image-embed) + br {
+  display: none;
+}
+.markdown-preview-view.banner .mod-header {
+  height: calc(var(--banner-height) - var(--file-margins));
+  padding-bottom: var(--file-margins);
+}
+.markdown-preview-view.banner .inline-title {
+  text-shadow: var(--banner-title-shadow);
+}
+
+.markdown-preview-view.banner.banner-gradient .mod-header + div + div > p > .image-embed:nth-child(1 of .image-embed) {
+  mask-image: linear-gradient(to bottom, black var(--file-margins), transparent);
+}
+
+.markdown-preview-view.banner.banner-title {
+  --inline-title-line-height: 3;
+}
+.markdown-preview-view.banner.banner-title .mod-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.markdown-preview-view.banner.banner-title .inline-title {
+  display: block;
+  border: 1px solid var(--color-base-50);
+  min-width: 50%;
+  background-color: rgba(var(--mono-rgb-0), 0.4);
+  backdrop-filter: blur(5px);
+  text-shadow: none;
+}
+
+.markdown-preview-view.banner.banner-slant,
+.markdown-preview-view.banner.banner-slope {
+  --inline-title-size: 4em;
+  --inline-title-line-height: 1.5;
+  --banner-angle-diag: calc(var(--banner-width) * sin(var(--banner-slope-angle)));
+  --banner-angle-height: calc(var(--banner-angle-diag) / sin(90deg - var(--banner-slope-angle)));
+}
+.markdown-preview-view.banner.banner-slant .mod-header + div + div > p > .image-embed:nth-child(1 of .image-embed),
+.markdown-preview-view.banner.banner-slope .mod-header + div + div > p > .image-embed:nth-child(1 of .image-embed) {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--banner-angle-height)), 0 100%);
+  background-color: var(--banner-slope-border-color);
+}
+.markdown-preview-view.banner.banner-slant .mod-header + div + div > p > .image-embed:nth-child(1 of .image-embed) img,
+.markdown-preview-view.banner.banner-slope .mod-header + div + div > p > .image-embed:nth-child(1 of .image-embed) img {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--banner-angle-height) - var(--banner-slope-border-width)), 0 calc(100% - var(--banner-slope-border-width)));
+}
+.markdown-preview-view.banner.banner-slant .mod-header,
+.markdown-preview-view.banner.banner-slope .mod-header {
+  position: relative;
+}
+.markdown-preview-view.banner.banner-slant .inline-title,
+.markdown-preview-view.banner.banner-slope .inline-title {
+  position: absolute;
+  transform: rotate(calc(-1 * var(--banner-slope-angle)));
+  bottom: calc((50% + 50cqw) * sin(var(--banner-slope-angle)) / sin(90deg - var(--banner-slope-angle)));
+  right: 0;
+}
+
+.markdown-preview-view.banner.banner-title.banner-slant .inline-title,
+.markdown-preview-view.banner.banner-title.banner-slope .inline-title {
+  bottom: calc((50% + 50cqw) * sin(var(--banner-slope-angle)) / sin(90deg - var(--banner-slope-angle)) + var(--banner-slope-border-width) + 2px);
+}

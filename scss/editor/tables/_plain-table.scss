@@ -1,0 +1,19 @@
+.fas-plain-tables {
+    --table-background: rgba(var(--mono-rgb-100), 0.03);
+    --table-border-color: transparent;
+    --table-column-alt-background: none;
+    --table-header-background: rgba(var(--mono-rgb-0), 0.3);
+    --table-header-border-width: 1px;
+    --table-row-alt-background: var(--background-primary-alt);
+    --table-row-alt-background-hover: var(--table-row-alt-background);
+    --table-row-background-hover: var(--table-background);
+    --table-line-height: 1.5;
+
+    :is(.cm-html-embed, .markdown-rendered) :is(th, td) {
+        border-inline-width: var(--table-border-width);
+    }
+
+    table thead th {
+        border-bottom-width: var(--table-border-width);
+    }
+}
