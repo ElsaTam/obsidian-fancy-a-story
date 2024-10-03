@@ -73,6 +73,56 @@ Disable all background textures
 - **Top**: at the top of the window
 - **Ribbon**: split the ribbon space in two, the status-bar goes in the bottom part
 
+## Sidebars
+
+#### Color of the inside border
+
+Change the color of the border of panels inside the sidebars
+
+#### Use custom sidebar texture
+
+Enable to use your own custom texture instead of the default paper one
+
+#### Sidebar texture url
+
+Url to the image for the sidebar texture. Use it as follow: `url("https://path/to/file.png")`
+
+#### Sidebar texture blending mode
+
+[Blending mode](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode) for the background texture
+
+#### Sidebar texture size
+
+[Size](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size) of the background texture
+
+#### Sidebar texture position
+
+[Position](https://developer.mozilla.org/en-US/docs/Web/CSS/background-position) of the background texture
+
+#### Use custom file explorer decoration
+
+Enable to use your own custom texture instead of the default paper one
+
+#### File explorer decoration url
+
+Url to the image for the file explorer decoration. Use it as follow: `url("https://path/to/file.png")`
+
+#### File explorer decoration blending mode
+
+[Blending mode](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode) for the file explorer decoration
+
+#### File explorer decoration size
+
+[Size](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size) of the file explorer decoration
+
+#### File explorer decoration position
+
+[Position](https://developer.mozilla.org/en-US/docs/Web/CSS/background-position) of the file explorer decoration
+
+#### File explorer decoration opacity
+
+Opacity of the file explorer decoration. Should be between 0 and 1.
+
 
 
 

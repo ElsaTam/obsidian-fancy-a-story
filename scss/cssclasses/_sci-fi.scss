@@ -11,7 +11,8 @@ body {
     --h4-font: "Orbitron", Arial, serif;
     --h5-font: "Orbitron", Arial, serif;
     --h6-font: "Orbitron", Arial, serif;
-    --font-text: "Chakra Petch", 'ProFont', Arial, serif;
+    --font-text: 'Chakra Petch', ProFont, Arial, serif;
+    font-family: 'Chakra Petch', ProFont, Arial, serif;
     --font-weight: var(--font-normal);
     --callout-border-opacity: 1;
     --hr-color: rgb(var(--sci-fi-color-rgb));
@@ -129,6 +130,8 @@ body {
 .sci-fi:is(.markdown-preview-view, .markdown-source-view) hr {
     width: 100%;
     height: 20px;
+    border: none;
+    background-color: var(--hr-color);
     mask-image: var(--sci-fi-hr);
     mask-size: contain;
     mask-position: center center;

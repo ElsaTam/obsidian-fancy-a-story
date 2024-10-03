@@ -261,6 +261,107 @@ settings:
                 label: Ribbon
                 value: fas-status-bar-ribbon
 
+    - 
+        id: sidebar
+        title: Sidebars
+        type: heading
+        collapsed: true
+        level: 2
+    -
+        id: sidedock-inset-border-color
+        title: Color of the inside border
+        type: variable-text
+        default: var(--background-secondary)
+    -
+        id: fas-sidebar-texture-custom
+        title: Use custom sidebar texture
+        type: class-toggle
+        default: false
+    - 
+        id: sidebar-texture-custom
+        title: Sidebar texture url
+        type: variable-text
+        default: url("")
+    -
+        id: sidebar-texture-blend-custom
+        title: Sidebar texture blending mode
+        type: variable-select
+        default: multiply
+        options:
+            - normal
+            - color
+            - color-burn
+            - color-dodge
+            - darken
+            - difference
+            - exclusion
+            - hard-light
+            - hue
+            - lighten
+            - luminosity
+            - multiply
+            - overlay
+            - saturation
+            - screen
+            - soft-light
+    -
+        id: sidebar-texture-size-custom
+        title: Sidebar texture size
+        type: variable-text
+        default: 500px
+    -
+        id: sidebar-texture-position-custom
+        title: Sidebar texture position
+        type: variable-text
+        default: center center
+    -
+        id: fas-file-explorer-decoration-custom
+        title: Use custom file explorer decoration
+        type: class-toggle
+        default: false
+    - 
+        id: file-explorer-decoration-custom
+        title: File explorer decoration url
+        type: variable-text
+        default: url("")
+    -
+        id: file-explorer-decoration-blend-custom
+        title: File explorer decoration  blending mode
+        type: variable-select
+        default: normal
+        options:
+            - normal
+            - color
+            - color-burn
+            - color-dodge
+            - darken
+            - difference
+            - exclusion
+            - hard-light
+            - hue
+            - lighten
+            - luminosity
+            - multiply
+            - overlay
+            - saturation
+            - screen
+            - soft-light
+    -
+        id: file-explorer-decoration-size-custom
+        title: File explorer decoration  size
+        type: variable-text
+        default: 150px
+    -
+        id: file-explorer-decoration-position-custom
+        title: File explorer decoration position
+        type: variable-text
+        default: right bottom
+    -
+        id: file-explorer-decoration-opacity-custom
+        title: File explorer decoration  opacity
+        type: variable-number
+        default: 0.1
+
 
 
     - 
@@ -275,11 +376,24 @@ settings:
         type: variable-number
         format: px
         default: 700
+
+    - 
+        id: table
+        title: Tables
+        type: heading
+        collapsed: true
+        level: 2
     - 
         id: fas-plain-tables
         title: Use plain table style
         type: class-toggle
         default: false
+    - 
+        id: headings
+        title: Headings
+        type: heading
+        collapsed: true
+        level: 2
     - 
         id: header-color
         title: Color for the headings
@@ -309,6 +423,13 @@ settings:
             - 
                 label: Stroke
                 value: fas-h1-stroke
+
+    - 
+        id: links
+        title: Links
+        type: heading
+        collapsed: true
+        level: 2
     -
         id: link-decoration
         title: Internal link decoration
@@ -331,6 +452,32 @@ settings:
             - underline
             - overline
             - underline overline
+            
+    - 
+        id: images
+        title: Images
+        type: heading
+        collapsed: true
+        level: 2
+    - 
+        id: image-shadow-offset
+        title: Shadow offset (px)
+        description: Set to 0 for no shadow
+        type: variable-number
+        default: 8
+        format: px
+    - 
+        id: image-shadow-stripe-thickness
+        title: Shadow stripe thickness (px)
+        type: variable-number
+        default: 2
+        format: px
+    - 
+        id: image-shadow-stripe-gap
+        title: Shadow stripe gap (px)
+        type: variable-number
+        default: 4
+        format: px
 
 
 
