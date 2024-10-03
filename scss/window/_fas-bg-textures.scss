@@ -1,20 +1,40 @@
 @forward '../shared/paper-texture';
 
 // ----------- Coffee stain ----------- 
+body {
+    --file-explorer-decoration: var(--coffee-stain);
+    --file-explorer-decoration-size: 150px;
+    --file-explorer-decoration-blend: normal;
+    --file-explorer-decoration-position: calc(100% - 30px) calc(100% - 30px);
+    --file-explorer-decoration-opacity: 0.1;
+
+    --file-explorer-decoration-size-custom: 150px;
+    --file-explorer-decoration-blend-custom: normal;
+    --file-explorer-decoration-position-custom: right bottom;
+    --file-explorer-decoration-opacity-custom: 0.1;
+}
+.fas-file-explorer-decoration-custom {
+    --file-explorer-decoration: var(--file-explorer-decoration-custom);
+    --file-explorer-decoration-size: var(--file-explorer-decoration-size-custom);
+    --file-explorer-decoration-blend: var(--file-explorer-decoration-blend-custom);
+    --file-explorer-decoration-position: var(--file-explorer-decoration-position-custom);
+    --file-explorer-decoration-opacity: var(--file-explorer-decoration-opacity-custom);
+}
 
 .fas-bg-textures .workspace-leaf-content[data-type="file-explorer"]::before {
     content: "";
     position: absolute;
     top: 0; bottom: 0;
     left: 0; right: 0;
-    background-image: var(--coffee-stain);
-    background-size: 150px;
+    background-image: var(--file-explorer-decoration);
+    background-size: var(--file-explorer-decoration-size);
+    background-position: var(--file-explorer-decoration-position);
+    mix-blend-mode: var(--file-explorer-decoration-blend);
+    opacity: var(--file-explorer-decoration-opacity);
     background-repeat: no-repeat;
-    background-position: calc(100% - 30px) calc(100% - 30px);
-    background-blend-mode: normal;
-    opacity: 0.1;
+}
+.fas-bg-textures:not(.fas-file-explorer-decoration-custom ) {
     filter: sepia(1);
-    z-index: -1;
 }
 
 .is-mobile.fas-bg-textures .workspace-leaf-content[data-type="file-explorer"]::before {
@@ -23,10 +43,27 @@
 
 
 // ----------- Paper texture ----------- 
+body {
+    --sidebar-texture: var(--paper-texture);
+    --sidebar-texture-size: 500px;
+    --sidebar-texture-blend: multiply;
+    --sidebar-texture-position: center center;
+
+    --sidebar-texture-size-custom: 500px;
+    --sidebar-texture-blend-custom: multiply;
+    --sidebar-texture-position-custom: center center;
+}
+.fas-sidebar-texture-custom {
+    --sidebar-texture: var(--sidebar-texture-custom);
+    --sidebar-texture-size: var(--sidebar-texture-size-custom);
+    --sidebar-texture-blend: var(--sidebar-texture-blend-custom);
+    --sidebar-texture-position: var(--sidebar-texture-position-custom);
+}
 .fas-bg-textures .mod-sidedock .workspace-leaf {
-    background-image: var(--paper-texture);
-    background-size: 500px;
-    background-blend-mode: multiply;
+    background-image: var(--sidebar-texture);
+    background-size: var(--sidebar-texture-size);
+    background-blend-mode: var(--sidebar-texture-blend);
+    background-position: var(--sidebar-texture-position);
 }
 
 body {
