@@ -1,3 +1,8 @@
+body {
+    --sidedock-tab-header-padding-bottom: 0px;
+    --sidedock-inset-border-color: var(--background-secondary);
+}
+
 /* Minimum padding with window bottom border */
 .mod-sidedock {
     padding-bottom: var(--size-2-2);
@@ -21,7 +26,7 @@
     content: "";
     position: absolute;
     inset: var(--cutout-outline-inset);
-    background: var(--background-secondary);
+    background: var(--sidedock-inset-border-color);
     mask: radial-gradient(
         var(--cutout-corner-radius) at var(--cutout-corner-radius) var(--cutout-corner-radius),
         transparent calc(100% - 1px),

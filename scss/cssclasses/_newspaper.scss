@@ -6,11 +6,11 @@
 }
 
 .newspaper {
-    --inline-title-font: "Playfair Display";
+    --inline-title-font: "Playfair Display", Georgia, 'Times New Roman', Times, serif;
     --inline-title-padding-top: var(--inline-title-margin-bottom);
     --bold-modifier: 500;
-    --font-text: Spectral, serif;
-    --h1-font: "Times New Roman";
+    --font-text: Spectral, 'Times New Roman', Times, serif;
+    --h1-font: 'Times New Roman', Times, serif;
     --h1-color: var(--text-normal);
     --h1-background: transparent;
     --h1-style: italic;

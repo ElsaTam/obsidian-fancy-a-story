@@ -1,3 +1,8 @@
+body {
+    --titlebar-background: none;
+    --titlebar-background-focused: none;
+}
+
 
 body:not(:has(.is-right-sidedock-open)) {
 

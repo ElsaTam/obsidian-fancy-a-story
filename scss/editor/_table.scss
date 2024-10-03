@@ -1,3 +1,14 @@
+body {
+    --table-header-background: transparent;
+    --table-line-height: 1.8;
+    --table-border-color: var(--color-base-10);
+    --table-column-first-border-width: 0;
+    --table-column-last-border-width: 0;
+
+    /* custom */
+    --table-header-line-height: 1.8;
+}
+
 .markdown-preview-view {
     table thead th {
         border-bottom-width: calc(var(--table-border-width) + 2px);

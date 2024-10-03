@@ -10,7 +10,7 @@
     }
     .markdown-preview-view {
         --shadow-color: hsl(from rgb(var(--canvas-color)) h calc(s * 0.5) calc(l * 0.5));
-        font-family: "Science Fair";
+        font-family: "Science Fair", Haettenschweiler, Impact, 'Arial Narrow Bold', sans-serif;
         font-weight: var(--font-extrabold);
         text-shadow:
             1px 1px 0px var(--shadow-color),

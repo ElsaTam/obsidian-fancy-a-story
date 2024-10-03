@@ -42,7 +42,7 @@
         min-width: calc(var(--frame-width) + var(--padding-x) * 2);
         background-color: rgb(var(--mono-rgb-100));
         padding: var(--padding-y) var(--padding-x);
-        -webkit-mask-image: linear-gradient(
+        mask-image: linear-gradient(
                 to right,
                 transparent 0px,
                 transparent calc(var(--hole-width) * 0.5 - var(--hole-fading) * 0.5),
@@ -64,9 +64,9 @@
                 black calc(var(--padding-y) + var(--frame-height) + var(--gap) + var(--hole-height) + var(--hole-fading) * 0.5),
                 black 100%
             );
-        -webkit-mask-size: calc(var(--hole-width) + var(--gap)) 100%, 100%;
-        -webkit-mask-position: left, center;
-        -webkit-mask-repeat: repeat-x, no-repeat;
+        mask-size: calc(var(--hole-width) + var(--gap)) 100%, 100%;
+        mask-position: left, center;
+        mask-repeat: repeat-x, no-repeat;
     }
 
     img {
@@ -75,7 +75,7 @@
         object-fit: cover;
         filter: sepia(0.5);
 
-        -webkit-mask-image: linear-gradient(
+        mask-image: linear-gradient(
             to right,
             transparent 0px,
             black var(--img-fading),
@@ -89,8 +89,8 @@
             black calc(100% - var(--img-fading)),
             transparent 100%
         );
-        -webkit-mask-size: 100%;
-        -webkit-mask-position: center;
+        mask-size: 100%;
+        mask-position: center;
         mask-composite: intersect;
     }
 

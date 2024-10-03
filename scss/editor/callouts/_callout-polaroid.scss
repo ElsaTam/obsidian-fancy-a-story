@@ -1,3 +1,8 @@
+body {
+    --polaroid-angle: 2deg;
+    --polaroid-img-size: 200px;
+}
+
 .callout[data-callout="polaroid"] {
     --callout-color: 255, 255, 255;
     --callout-blend-mode: normal;
@@ -41,8 +46,8 @@
     }
 
     img {
-        width: var(--callout-polaroid-img-size);
-        height: var(--callout-polaroid-img-size);
+        width: var(--polaroid-img-size);
+        height: var(--polaroid-img-size);
         object-fit: cover;
     }
 }
@@ -50,11 +55,11 @@
 
 .callout[data-callout="polaroid"][data-callout-metadata~="float-right"] {
     margin-left: var(--size-4-4);
-    transform: rotate(calc(-1 * var(--callout-polaroid-angle)));
+    transform: rotate(calc(-1 * var(--polaroid-angle)));
 }
 
 
 .callout[data-callout="polaroid"][data-callout-metadata~="float-left"] {
     margin-right: var(--size-4-4);
-    transform: rotate(var(--callout-polaroid-angle));
+    transform: rotate(var(--polaroid-angle));
 }

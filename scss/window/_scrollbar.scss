@@ -1,3 +1,8 @@
+body {
+    --scrollbar-thumb-bg: var(--color-base-20);
+    --scrollbar-width: 10px;
+}
+
 body:not(.native-scrollbars) ::-webkit-scrollbar {
     width: var(--scrollbar-width);
     height: var(--scrollbar-width);

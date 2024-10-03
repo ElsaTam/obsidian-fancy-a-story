@@ -1,5 +1,10 @@
 @import '../../animations/animations';
 
+body {
+	/* custom */
+    --active-file-bullet-size: 6px;
+}
+
 .fas-rainbow-folders .nav-folder-children > .nav-folder,
 .fas-rainbow-folders .nav-files-container > div > .nav-folder,
 .fas-rainbow-folders [data-type="bookmarks"] .tree-item {
