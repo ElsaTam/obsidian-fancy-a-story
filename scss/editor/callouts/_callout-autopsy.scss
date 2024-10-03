@@ -7,19 +7,19 @@
     --callout-blend-mode: normal;
 
 
-    /* TITLE: centered and bigger */
     > .callout-title {
+        /* TITLE: centered and bigger */
         --callout-title-size: 1.5em;
         justify-content: center;
     }
 
-    /* TITLE: color to the icons */
     > .callout-title svg {
+        /* TITLE: color to the icons */
         color: var(--callout-title-color);
     }
 
-    /* CONTENT: grid layout */
     > .callout-content {
+        /* CONTENT: grid layout */
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         grid-template-areas:
@@ -52,8 +52,8 @@
     .callout[data-callout="city"]            { grid-area: city; }
     .callout[data-callout="signature"]       { grid-area: signature; }
 
-    /* NESTED CALLOUTS */
     .callout {
+        /* NESTED CALLOUTS */
         --callout-border-width: 0;
         --callout-radius: 0;
         --callout-color: var(--callout-color-nested);
@@ -81,27 +81,28 @@
         gap: var(--p-spacing);
     }
 
-    /* Remove every paddings and margins of any element inside */
     .callout * {
+        /* Remove every paddings and margins of any element inside */
         margin: 0;
         padding: 0;
     }
 
-    /* Inline callouts (optional) */
     .callout[data-callout-metadata~="inline"] {
         .callout-title {
+            /* Inline callouts (optional) */
             float: left;
             margin-right: 10px;
             line-height: var(--line-height-normal);
         }
         .callout-content {
+            /* Inline callouts (optional) */
             padding: 0;
             display: inline;
         }
     }
 
-    /* Inline tasks lists */
     ul.contains-task-list {
+        /* Inline tasks lists */
         --checklist-done-decoration: none;
         --checklist-done-color: var(--text-normal);
         color: var(--text-faint);
@@ -114,8 +115,8 @@
         margin-right: 3px;
     }
 
-    /* Tables */
     table {
+        // Tables
         --table-header-color: var(--text-normal);
         --table-header-background: rgb(var(--callout-color), 0.03);
         --table-header-background-hover: var(--table-header-background);
@@ -128,8 +129,8 @@
     table:not(:first-child) { margin-top: 10px; }
     table:not(:last-child) { margin-bottom: 10px; }
     
-    /* Dotted lines as background (optional) */
     .callout:not([data-callout-metadata~="no-dots"]) {
+        /* Dotted lines as background (optional) */
         p {
             --dot-size: 1px; /* Can't go too high, probably 2 or 3 max, or you need to increase line height */
             --dot-gap: 10px;
@@ -154,8 +155,8 @@
         }
     }
 
-    /* Body image with checkable list */
     .callout[data-callout="body"] {
+        /* Body image with checkable list */
         --body-opacity: 0.8;
         --checkbox-radius: 50%;
         --checkbox-color: var(--color-red);
@@ -181,8 +182,8 @@
             position: relative;
             color: unset;
         }
-        /* Make the background extend to its whole container */
         ul.contains-task-list::before {
+            /* Make the background extend to its whole container */
             content: "";
             display: block;
             position: absolute;
@@ -193,20 +194,20 @@
             z-index: -1;
             opacity: var(--body-opacity);
         }
-        /* Set a background for unchecked checkboxes */
         .task-list-item-checkbox:not(:checked) {
+            /* Set a background for unchecked checkboxes */
             background-color: rgb(from var(--checkbox-color-unchecked) r g b / var(--checkbox-opacity-unchecked));
         }
-        /* Positioning of the checkboxes */
         .task-list-item {
+            /* Positioning of the checkboxes */
             /* Dont use unit, values are between 0 and 100 */
             &:nth-child(1)  { --left-cqw: 25; --top-cqh:  3; } /* front head */
             &:nth-child(2)  { --left-cqw: 15; --top-cqh: 33; } /* front left arm */
             &:nth-child(3)  { --left-cqw: 35; --top-cqh: 33; } /* front right arm */
             &:nth-child(4)  { --left-cqw:  9; --top-cqh: 50; } /* front left hand */
             &:nth-child(5)  { --left-cqw: 40; --top-cqh: 50; } /* front right hand */
-            &:nth-child(6)  { --left-cqw: 25; --top-cqh: 39; } /* belly */
-            &:nth-child(7)  { --left-cqw: 25; --top-cqh: 48; } /* pelvis */
+            &:nth-child(6)  { --left-cqw: 25; --top-cqh: 39; } // belly
+            &:nth-child(7)  { --left-cqw: 25; --top-cqh: 48; } // pelvis
             &:nth-child(8)  { --left-cqw: 19; --top-cqh: 69; } /* front left leg */
             &:nth-child(9)  { --left-cqw: 31; --top-cqh: 69; } /* front right leg */
             &:nth-child(10) { --left-cqw: 17; --top-cqh: 91; } /* over left foot */
@@ -217,8 +218,8 @@
             &:nth-child(14) { --left-cqw: 93; --top-cqh: 33; } /* back right arm */
             &:nth-child(15) { --left-cqw: 66; --top-cqh: 50; } /* back left hand */
             &:nth-child(16) { --left-cqw: 97; --top-cqh: 50; } /* back right hand */
-            &:nth-child(17) { --left-cqw: 82; --top-cqh: 39; } /* back */
-            &:nth-child(18) { --left-cqw: 82; --top-cqh: 49; } /* bottom */
+            &:nth-child(17) { --left-cqw: 82; --top-cqh: 39; } // back
+            &:nth-child(18) { --left-cqw: 82; --top-cqh: 49; } // bottom
             &:nth-child(19) { --left-cqw: 76; --top-cqh: 69; } /* back left leg */
             &:nth-child(20) { --left-cqw: 88; --top-cqh: 69; } /* back right leg */
             &:nth-child(21) { --left-cqw: 76; --top-cqh: 92; } /* under left foot */
@@ -258,8 +259,8 @@
         }
     }
 
-    /* Footnote */
     .callout[data-callout="footnote"] {
+        // Footnote
         .callout-title { justify-content: center; }
         .callout-content { text-align: center; }
     }

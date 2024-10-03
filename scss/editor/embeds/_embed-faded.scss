@@ -18,7 +18,7 @@
     }
 
 
-    /* Making embeds inline when possible */
+    // Making embeds inline when possible
     :scope:where(:not(:has(.mod-header + div + div)):not(:has(.mod-header + div br))):has(.mod-header + div > p),
     :scope:where(:has(.mod-header + div > pre.frontmatter):not(:has(.mod-header + div + div + div)):not(:has(.mod-header + div + div br))):has(.mod-header + div + div > p) {
         
@@ -28,7 +28,7 @@
             margin-bottom: 0;
         }
 
-        /* Inline cascading */
+        // Inline cascading
         &,
         & :where(.markdown-embed-content), 
         & :where(.markdown-embed-content .markdown-rendered), 
@@ -47,7 +47,7 @@
         }
     }
 
-    /* block embeds */
+    // block embeds
     .markdown-embed-link {
         position: absolute;
         right: calc(-1 * var(--file-margins));

@@ -1,28 +1,28 @@
 @forward '../../shared/workleaves';
 
-/* Variables */
+// Variables
 .callout[data-callout="timeline"] {
-    /* main callout */
+    // main callout
     --callout-icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9.5361595" r="7.7601452" style="stroke-width:1.5"/><polyline points="12 6 12 12 16 14" transform="matrix(0.77601453,0,0,0.77601453,2.6878256,0.22398547)"/><circle cx="12.092106" cy="20.717064" r="1" /><circle cx="19.092106" cy="20.717064" r="1"/><circle cx="5.0921063" cy="20.717064" r="1"/><path style="stroke-width:1.5;" d="M 5.0921062,20.717063 H 19.092106"/></svg>';
     --callout-blend-mode: normal;
     --callout-border-width: 1px;
     --callout-content-padding: var(--size-4-3);
 
-    /* grid */
+    // grid
     --col-gap: 20px;
     --row-gap: 10px;
 
-    /* line */
+    // line
     --line-thickness: 24px;
     --line-color: rgba(var(--callout-color), 0.4);
     --line-fade-width: 50px;
 
-    /* cards */
+    // cards
     --card-border-width: 5px;
     --card-border-opacity: 1;
     --card-padding: var(--size-4-3);
 
-    /* bullet */
+    // bullet
     --bullet-size: 8px;
     --bullet-numbered-size: 20px;
     --bullet-radius: 50%;
@@ -31,7 +31,7 @@
     --bullet-border-color: rgb(var(--callout-color));
     --bullet-outline-width: 3px;
 
-    /* segment */
+    // segment
     --segment-border-color: rgb(var(--callout-color));
     --segment-thickness: 1px;
 }
@@ -39,7 +39,7 @@
     --cards-width: 300px;
 }
 
-/* General styling */
+// General styling
 .callout[data-callout="timeline"] {
     background: none; 
 
@@ -49,7 +49,7 @@
         display: grid;
         position: relative;
         
-        /* for any child */
+        // for any child
         > * {
             --image-shadow-offset: 0;
             --s: var(--card-border-width);
@@ -66,7 +66,7 @@
 
         }
 
-        /* Stylise first letter */
+        // Stylise first letter
         > *:not(:is(.callout, code, pre, ul, ol))::first-letter,
         > *.callout .callout-content > *:not(:is(.callout, code, pre, ul, ol))::first-letter {
             color: color-mix(in srgb, rgb(var(--callout-color)), var(--text-normal) 40%);
@@ -75,7 +75,7 @@
             font-family: "Playfair Display";
         }
         
-        /* for callout children */
+        // for callout children
         > .callout {
             --callout-content-padding: var(--card-padding);
             --callout-title-padding: var(--size-2-2);
@@ -90,13 +90,13 @@
 
         }
 
-        /* for paragraphs (indirect) */
+        // for paragraphs (indirect)
         p:first-child { margin-top: 0; }
         p:last-child  { margin-bottom: 0; }
     }
 }
 
-/* Bullets style */
+// Bullets style
 .callout[data-callout="timeline"] > .callout-content > *::after {
     content: "";
     width: var(--bullet-size);
@@ -108,7 +108,7 @@
     outline: var(--bullet-outline-width) solid var(--bullet-color);
 }
 
-/* Segment style */
+// Segment style
 .callout[data-callout="timeline"] > .callout-content > *::before {
     content: "";
     background-color: var(--segment-border-color);
@@ -116,15 +116,15 @@
 }
 
 
-/* Vertical timeline (default) */
+// Vertical timeline (default)
 .callout[data-callout="timeline"]:not([data-callout-metadata~="horizontal"]) > .callout-content {
     grid-template-columns: 1fr 1fr;
     grid-auto-columns: max-content;
     column-gap: calc(var(--col-gap) * 2);
 
-    align-items: center; /* prevent vertical stretching, and center */
+    align-items: center; // prevent vertical stretching, and center
 
-    /* background vertical line */
+    // background vertical line
     &::after {
         content: "";
         position: absolute;
@@ -145,16 +145,16 @@
         mask-composite: intersect;
     }
 
-    /* Second element, shifted */
+    // Second element, shifted
     > *:nth-child(2) { grid-row: 2/4; }
     
-    /* Any direct child */
+    // Any direct child
     > * {
-        grid-row: span 2; /* span two rows */
+        grid-row: span 2; // span two rows
         margin-right: 0;
         margin-left: 0;
         position: relative;
-        overflow: visible; /* needed for the bullets and segments */
+        overflow: visible; // needed for the bullets and segments
         z-index: 1;
 
         > * {
@@ -162,7 +162,7 @@
         }
     }
 
-    /* Left column blocks */
+    // Left column blocks
     > *:nth-child(odd) {
         grid-column: 1;
 
@@ -170,7 +170,7 @@
         &::before { right: var(--shift-segment); }
     }
 
-    /* Right column blocks */
+    // Right column blocks
     > *:nth-child(even) {
         grid-column: 2;
 
@@ -178,7 +178,7 @@
         &::before { left: var(--shift-segment); }
     }
 
-    /* bullet */
+    // bullet
     > *::after {
         top: calc(50% - var(--bullet-size) * 0.5 - var(--bullet-border-width));
         --shift-bullet: calc(-1 * (
@@ -189,7 +189,7 @@
         ));
     }
 
-    /* segment */
+    // segment
     > *::before {
         height: var(--segment-thickness);
         width: var(--col-gap);
@@ -202,14 +202,14 @@
 }
 
 
-/* Horizontal timeline */
+// Horizontal timeline
 .callout[data-callout="timeline"][data-callout-metadata~="horizontal"] > .callout-content {
     grid-template-rows: max-content var(--line-thickness) max-content;
     grid-auto-columns: minmax(auto, 1fr);
     overflow-x: auto;
     row-gap: var(--row-gap);
 
-    /* background horizontal line */
+    // background horizontal line
     &::after {
         content: "";
         grid-row: 2;
@@ -230,12 +230,12 @@
         z-index: 0;
     }
 
-    /* Second element, shifted */
+    // Second element, shifted
     > *:nth-child(2) { grid-column: 2 / 4; }
     
-    /* Any direct child */
+    // Any direct child
     > * {
-        grid-column: span 2; /* span two columns */
+        grid-column: span 2; // span two columns
         margin-top: 0;
         margin-bottom: 0;
         position: relative;
@@ -245,7 +245,7 @@
         z-index: 1;
     }
 
-    /* Top row blocks */
+    // Top row blocks
     > *:nth-child(odd) {
         grid-row: 1;
         align-self: flex-end;
@@ -253,13 +253,13 @@
         &::after  { bottom: var(--shift-bullet);  }
         &::before { bottom: var(--shift-segment); }
 
-        /* Inverse title/content of callouts */
+        // Inverse title/content of callouts
         &.callout {
             display: flex;
             flex-direction: column-reverse;
             .callout-fold { transform: scaleY(-1); }
         }
-        &.callout.is-collapsed { align-self: flex-end; } /* Prevent stretching when collapsed */
+        &.callout.is-collapsed { align-self: flex-end; } // Prevent stretching when collapsed
         &.callout .callout-content {
             vertical-align: bottom;
         }
@@ -269,7 +269,7 @@
         }
     }
 
-    /* Bottom row blocks */
+    // Bottom row blocks
     > *:nth-child(even) {
         grid-row: 3;
         align-self: flex-start;
@@ -277,10 +277,10 @@
         &::after  { top: var(--shift-bullet);  }
         &::before { top: var(--shift-segment); }
 
-        &.callout.is-collapsed { align-self: flex-start; } /* Prevent stretching when collapsed */
+        &.callout.is-collapsed { align-self: flex-start; } // Prevent stretching when collapsed
     }
 
-    /* bullet */
+    // bullet
     > *::after {
         left: calc(50% - var(--bullet-size) * 0.5 - var(--bullet-border-width));
         --shift-bullet: calc(-1 * (
@@ -292,7 +292,7 @@
         ));
     }
 
-    /* segment */
+    // segment
     > *::before {
         width: var(--segment-thickness);
         height: calc(var(--row-gap) + var(--line-thickness) * 0.5 + var(--card-border-width));
@@ -305,7 +305,7 @@
     }
 }
 
-/* Numbered timelines */
+// Numbered timelines
 .callout[data-callout="timeline"][data-callout-metadata~="numbered"] > .callout-content  {
     counter-reset: bullet;
 }

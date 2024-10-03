@@ -15,7 +15,6 @@
         font-weight: var(--nav-item-weight) !important;
     }
 
-    /* Neue Stile für den Root Ordner */
     .highlighted-parent-folder {
         background-color: transparent !important;
         border-radius: 0 !important;
@@ -30,7 +29,6 @@
         font-weight: var(--nav-item-weight) !important;
     }
 
-    /* Restliche Stile bleiben unverändert */
     .highlighted-folder > .nav-folder-title:hover,
     .highlighted-folder > .nav-folder-title.is-being-dragged,
     .highlighted-parent-folder > .nav-folder-title:hover,
@@ -59,7 +57,6 @@
         color: inherit;
     }
 
-    /* styles.css */
     .input-width-150 {
         width: 150px;
     }

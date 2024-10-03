@@ -1,6 +1,6 @@
 @forward '../shared/paper-texture';
 
-/* ----------- Coffee stain ----------- */
+// ----------- Coffee stain ----------- 
 
 .fas-bg-textures .workspace-leaf-content[data-type="file-explorer"]::before {
     content: "";
@@ -22,7 +22,7 @@
 }
 
 
-/* ----------- Paper texture ----------- */
+// ----------- Paper texture ----------- 
 .fas-bg-textures .mod-sidedock .workspace-leaf {
     background-image: var(--paper-texture);
     background-size: 500px;

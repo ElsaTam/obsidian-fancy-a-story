@@ -349,7 +349,7 @@ settings:
 
 */
 
-/* Disable the settings when not used */
+// Disable the settings when not used 
 body:not(.fas-custom-light) .style-settings-container [data-id="custom-color-base-00"] .theme-light,
 body:not(.fas-custom-light) .style-settings-container [data-id="custom-color-base-100"] .theme-light,
 body:not(.fas-custom-dark)  .style-settings-container [data-id="custom-color-base-00"] .theme-dark,
@@ -372,21 +372,21 @@ body.fas-accessibility .style-settings-container [data-id="fas-doodle-icons"]
     --pickr-size: 1.3em;
 
 
-    /* Color the headers */
+    // Color the headers 
     > .style-settings-container { --current-h1-color: hsl(from var(--h1-color) h calc(s * 0.5) l); }
     > .style-settings-container > .style-settings-container { --current-h1-color: hsl(from var(--h1-color) h calc(s * 0.3) l); }
     .style-settings-heading .setting-item-name {
         color: var(--current-h1-color);
     }
 
-    /* Visualise the hiearchical structure */
+    // Visualise the hiearchical structure 
     & .style-settings-container {
         margin-left: 0;
         padding: var(--size-4-1) var(--size-2-3) 0 var(--size-4-6);
         border-left: 1px solid var(--current-h1-color);
     }
 
-    /* More compact color pickers */
+    // More compact color pickers 
     & .pickr button {
         width: var(--pickr-size);
         height: var(--pickr-size);
@@ -417,7 +417,7 @@ body.fas-accessibility .style-settings-container [data-id="fas-doodle-icons"]
         --background-primary: var(--color-base-00);
     }
 
-    /* Title and description on the same line */
+    // Title and description on the same line 
     & .setting-item:not(.style-settings-info-text) .setting-item-info {
         > div {
             display: inline;

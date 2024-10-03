@@ -1,9 +1,9 @@
 
-/* -------------- SET DIAGONAL AND ANGLE ------------- */
-/* 
-    - width  = diag / sin(angle)
-    - height = diag / sin(90 - angle)
-*/
+// -------------- SET DIAGONAL AND ANGLE -------------
+// 
+//  - width  = diag / sin(angle)
+//  - height = diag / sin(90 - angle)
+
 @property --corner-diag {
     syntax: "<length>";
     inherits: true;
@@ -32,13 +32,13 @@
     --corner-angle: 60deg;
 }
 
-/**/
 
-/* -------------- SET WIDTH AND HEIGHT (no unit) ------------- */
-/*
-    - diag  = width * height / hypot(width, height)
-    - angle = asin(diag / width)
-*//*
+
+// -------------- SET WIDTH AND HEIGHT (no unit) -------------
+//
+//  - diag  = width * height / hypot(width, height)
+//  - angle = asin(diag / width)
+
 @property --corner-width-n {
     syntax: "<number>";
     inherits: true;
@@ -61,7 +61,7 @@
 .callout[data-callout="paper-fold"]:hover {
     --corner-width-n: 80;
     --corner-height-n: 20;
-}/**/
+}
 
 .callout[data-callout="paper-fold"] {
     --callout-color: var(--color-yellow-rgb);
@@ -102,12 +102,10 @@
     transform: matrix(cos(-2 * var(--corner-angle)), sin(-2 * var(--corner-angle)), sin(-2 * var(--corner-angle)), calc(-1 * cos(-2 * var(--corner-angle))), 0, 0);
     background: linear-gradient(
         calc(180deg - var(--corner-angle)),
-        /*var(--postit-border-color) var(--corner-diag),*/
         hsl(from var(--postit-color) h s calc(l * 0.9) / 1) var(--corner-diag),
         hsl(from var(--postit-color) h s calc(l * 1.1) / 1) calc(var(--corner-diag) + 0.3 * min(var(--corner-height), var(--corner-width))),
         hsl(from var(--postit-color) h s calc(l * 0.5) / 1));
-    box-shadow: /*0px 0px 0 1px var(--postit-border-color),*/
-        0 0 calc(min(var(--corner-width), var(--corner-height)) / 5) calc(min(var(--corner-width), var(--corner-height)) / 25) hsl(from var(--postit-color) h 40% 10%);
+    box-shadow: 0 0 calc(min(var(--corner-width), var(--corner-height)) / 5) calc(min(var(--corner-width), var(--corner-height)) / 25) hsl(from var(--postit-color) h 40% 10%);
 }
 
 .callout[data-callout="paper-fold"] .callout-title {

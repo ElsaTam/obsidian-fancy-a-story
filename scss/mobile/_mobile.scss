@@ -6,7 +6,7 @@
     --link-decoration-thickness: 1px;
 }
 
-/* Circle cutouts */
+// Circle cutouts
 .workspace-drawer:is(.mod-left, .mod-right) {
     padding-inline: var(--cutout-outline-inset);
     mask-composite: intersect;
@@ -34,7 +34,7 @@
     linear-gradient(       black 2px, transparent 0) 50% -1px / calc(100% - var(--cutout-corner-radius) * 2 + 1px) 100% repeat-y;
 }
 
-/* Background color */
+// Background color
 .workspace-drawer {
     --mobile-sidebar-background: var(--workleaves-background);
 }
@@ -52,7 +52,7 @@
 }
 
 
-/* Icons */
+// Icons
 .is-mobile{
     --icon-l-stroke-width: 1.2px;
 }

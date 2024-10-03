@@ -16,31 +16,31 @@ body {
     --tab-text-color-focused-highlighted: var(--text-accent);
 }
 
-/* default icon opacity */
+// default icon opacity 
 .workspace-tab-header-container {
     --icon-opacity: var(--icon-opacity-inactive);
     --icon-opacity-hover: 1;
 }
 
-/* Full opacity when the header container is hovered */
+// Full opacity when the header container is hovered 
 .workspace-tab-header-container:hover {
     --icon-opacity: var(--icon-opacity-hover);
 }
 
 
-/* ---------- SIDEDOCK ---------- */
+// ---------- SIDEDOCK ---------- 
 
-/* Remove gap between header and content */
+// Remove gap between header and content 
 .mod-sidedock .workspace-tab-header-container-inner {
     padding-bottom: var(--sidedock-tab-header-padding-bottom);
 }
 
-/* Ensure gap between header and top border windows */
+// Ensure gap between header and top border windows 
 .is-hidden-frameless .mod-sidedock.mod-top .workspace-tab-header-container-inner {
     margin-top: 6px;
 }
 
-/* Ensure sufficient padding for cropped circle corners */
+// Ensure sufficient padding for cropped circle corners 
 .is-hidden-frameless:not(.is-fullscreen) .mod-sidedock .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
     padding-left: calc(12px + var(--size-4-2) + var(--frame-left-space));
 }
@@ -49,13 +49,13 @@ body {
     padding-right: calc(12px + var(--size-4-2));
 }
 
-/* Match the background for the active tab header */
+// Match the background for the active tab header 
 .mod-sidedock .workspace-tab-header.is-active,
 .mod-sidedock .workspace-tab-header.is-active:hover {
     background-color: var(--workleaves-background);
 }
 
-/* ---------- FILE TABS ---------- */
+// ---------- FILE TABS ---------- 
 
 .mod-root .workspace-tab-header-container {
     --tab-container-background: var(--workleaves-background);
@@ -81,7 +81,7 @@ body:not(.is-frameless) .mod-root .workspace-tab-header:not(.is-active) .workspa
     padding-top: 6px;
 }
 
-/* Style active tab in non-stack mode */
+// Style active tab in non-stack mode 
 
 @scope (.mod-root .workspace-tabs:not(.mod-stacked)) {
 
@@ -102,7 +102,7 @@ body:not(.is-frameless) .mod-root .workspace-tab-header:not(.is-active) .workspa
         );
     }
 
-    /* Remove cutout corner for first and last tabs */
+    // Remove cutout corner for first and last tabs 
     .is-active:first-child .workspace-tab-header-inner {
         clip-path: polygon(
             0 0,
@@ -125,14 +125,14 @@ body:not(.is-frameless) .mod-root .workspace-tab-header:not(.is-active) .workspa
         clip-path: none;
     }
 
-    /* Remove separator before and after active file */
+    // Remove separator before and after active file 
     .workspace-tab-header:has(+ .is-active) .workspace-tab-header-inner::after,
     .is-active + .workspace-tab-header .workspace-tab-header-inner::before {
         content: none;
     }
 }
 
-/* ---------- FILE TABS - STACK MODE ---------- */
+// ---------- FILE TABS - STACK MODE ---------- 
 
 .theme-dark .workspace-tabs.mod-stacked {
     --tab-stacked-shadow: -10px 0 10px rgba(0, 0, 0, 0.2);
@@ -160,9 +160,9 @@ body:not(.is-frameless) .mod-root .workspace-tab-header:not(.is-active) .workspa
     background-color: var(--tab-color-hover);
 }
 
-/* ---------- NAV HEADER ---------- */
+// ---------- NAV HEADER ---------- 
 
-/* Dotted bottom border */
+// Dotted bottom border 
 .nav-header {
     border-bottom: var(--file-header-border);
 }

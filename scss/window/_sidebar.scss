@@ -9,12 +9,12 @@ body {
     --sidedock-inset-border-color: var(--background-secondary);
 }
 
-/* Minimum padding with window bottom border */
+// Minimum padding with window bottom border 
 .mod-sidedock {
     padding-bottom: var(--size-2-2);
 }
 
-/* Sidedocks workleaves */
+// Sidedocks workleaves 
 .mod-sidedock .workspace-leaf {
     background-color: var(--workleaves-background);
     box-shadow: inset 0 0 20px 3px var(--shadow-color);
@@ -22,12 +22,12 @@ body {
         calc(-1 * var(--cutout-corner-radius)) calc(-1 * var(--cutout-corner-radius));
 }
 
-/* Padding needed because of the cropped circle corners */
+// Padding needed because of the cropped circle corners 
 .mod-sidedock .workspace-leaf-content {
     padding: var(--cutout-corner-radius);
 }
 
-/* Thin inside outline effect */
+// Thin inside outline effect 
 .mod-sidedock .workspace-leaf::before {
     content: "";
     position: absolute;
@@ -42,7 +42,7 @@ body {
     linear-gradient(       black 2px, transparent 0) 50% -1px / calc(100% - var(--cutout-corner-radius) * 2 + 1px) 100% repeat-y;
 }
 
-/* Resize the handle to not expand in the cropped circle corners */
+// Resize the handle to not expand in the cropped circle corners 
 .workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle {
     width: calc(100% - (var(--cutout-corner-radius) + var(--cutout-outline-inset)) * 2);
     align-self: center;
