@@ -15,7 +15,7 @@ ul:has(> li > .tag[href='#family-tree']) {
         display: none;
     }
 
-    /* Collapse-indicator */
+    // Collapse-indicator
     .list-collapse-indicator {
         position: absolute;
         opacity: 1;
@@ -45,7 +45,7 @@ ul:has(> li > .tag[href='#family-tree']) {
         display: none;
     }
 
-    /* When collapsed */
+    // When collapsed
     li.is-collapsed {
         text-wrap: nowrap;
     }
@@ -53,7 +53,7 @@ ul:has(> li > .tag[href='#family-tree']) {
         display: none;
     }
 
-    /* Spouse info tooltip */
+    // Spouse info tooltip
     .tag[href='#wed'] { display: none; }
     li:has(> .tag[href='#wed']) {
         display: none;
@@ -76,7 +76,7 @@ ul:has(> li > .tag[href='#family-tree']) {
         color: #727272;
     }
 
-    /* Spouse ring icon */
+    // Spouse ring icon
     li:has(> ul > li > .tag[href='#wed']) > .list-bullet {
         display: inline-block;
         float: none;
@@ -98,7 +98,7 @@ ul:has(> li > .tag[href='#family-tree']) {
         display: block;
     }
 
-    /* element with no child, or only a spouse (#wed) */
+    // element with no child, or only a spouse (#wed)
     li:not(:has(ul)),
     li:has(> ul > li:only-child > .tag[href='#wed']) {
         text-wrap: nowrap;
@@ -153,13 +153,13 @@ ul:has(> li > .tag[href='#family-tree']) {
         border-left: 1px solid var(--connectors-color);
     }
 
-    /* Remove left-right connectors from elements without any siblings */
+    // Remove left-right connectors from elements without any siblings
     li:only-child::after,
     li:only-child::before {
         display: none;
     }
 
-    /* Remove left connector from first child and connector from last child */
+    // Remove left connector from first child and connector from last child
     li:first-child:has(> .tag[href='#wed']) + li::before,
     li:first-child:has(> .tag[href='#family-tree']) + li::before,
     li:has(+ li:last-child > .tag[href='#wed'])::after,
@@ -169,12 +169,12 @@ ul:has(> li > .tag[href='#family-tree']) {
         border-top: none;
     }
 
-    /* Remove space from the top of single children */
+    // Remove space from the top of single children
     li:only-child {
         padding-top: 0;
     }
     
-    /* Add downward connectors from parents */
+    // Add downward connectors from parents
     ul::before {
         content: "";
         position: absolute;
@@ -189,18 +189,18 @@ ul:has(> li > .tag[href='#family-tree']) {
         border-inline-end: unset;
     }
 
-    /* Reduce heights for downward connectors if multiple childs */
+    // Reduce heights for downward connectors if multiple childs
     ul:not(:has(> li:first-child > .tag[href='#wed']):has(> li:nth-child(2):last-child))::before {
         height: 10px;
     }
 
-    /* Remove downward connectors if no child */
+    // Remove downward connectors if no child
     ul:not(:has(> li))::before,
     ul:has(> li:first-child:last-child > .tag[href='#wed'])::before {
         content: none;
     }
 
-    /* Remove upwards connectors if only child */
+    // Remove upwards connectors if only child
     li:not(:has(> .tag[href='#wed'])):first-child:last-child,
     li:has(> .tag[href='#wed']) + li:last-child::after {
         content: none;

@@ -1,24 +1,24 @@
 @forward '../shared/workleaves';
 @forward '../shared/workspace';
 
-/* ----------- App background color ----------- */
+// ----------- App background color ----------- 
 body,
 .workspace {
     background-color: var(--workspace-background);
 }
 
-/* ----------- Workspace ----------- */
+// ----------- Workspace ----------- 
 .workspace.is-right-sidedock-open {
     padding-right: var(--size-2-2);
 }
 
-/* ----------- Gap between panes ----------- */
+// ----------- Gap between panes ----------- 
 .workspace,
 .workspace-split {
     gap: 10px;
 }
 
-/* ----------- Mod root ----------- */
+// ----------- Mod root ----------- 
 .workspace-split.mod-root {
     background: none;
 }
@@ -33,7 +33,7 @@ body,
     background: linear-gradient(to right, transparent, var(--workleaves-background))
 }
 
-/* ----------- Top bar (toggle button + tabs) ----------- */
+// ----------- Top bar (toggle button + tabs) -----------
 .sidebar-toggle-button,
 .workspace-tabs.mod-top {
     --tab-container-background: transparent;

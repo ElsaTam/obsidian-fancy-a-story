@@ -4,8 +4,8 @@
     --strip-height: 200px;
     --image-shadow-offset: 0;
     
-    --comic-color: 0, 0, 0; /* Color of the lines, text, etc. (black) */
-    --comic-background: 255, 255, 255;  /* background of the whole comic (white) */
+    --comic-color: 0, 0, 0; // Color of the lines, text, etc. (black)
+    --comic-background: 255, 255, 255;  // background of the whole comic (white)
 
     --callout-radius: 0;
     --callout-content-padding: var(--size-4-4);
@@ -71,8 +71,8 @@
 .callout[data-callout="comic-panel"][data-callout-metadata~="bubble"] {
     > .callout-content > *:not(:has(img)) {
         border-radius: 17px;
-        --g: 4px; /* gap with the boundaries */
-        --s: 1px; /* hard shadow size */
+        --g: 4px; // gap with the boundaries
+        --s: 1px; // hard shadow size
         padding: 3px;
         width: 100px;
         margin: auto;
@@ -93,8 +93,8 @@
 }
 
 .callout[data-callout="comic-panel"][data-callout-metadata~="overflow"] {
-    --g: 3px; /* small gap to avoid touching other panels */
-    --b: 5px; /* border-width */
+    --g: 3px; // small gap to avoid touching other panels
+    --b: 5px; // border-width
     &, .callout-content {
         overflow: visible;
     }

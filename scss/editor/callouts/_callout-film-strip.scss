@@ -7,15 +7,15 @@
 
     background: none;
     
-    --frame-height: 140px; /* height of the picture */
-    --n-holes: 8;          /* number of holes, used to compute the width of the image */
-    --hole-width: 15px;    /* width of each hole, used to compute the width of the image */
-    --hole-height: 10px;   /* height of each hole */
-    --gap: 5px;            /* gap between each holes */
-    --img-fading: 2px;     /* bluring the edges of the images. Set to 0 for sharp edges */
-    --hole-fading: 1px;    /* bluring the edges of the holes. Set to 0 for sharp edges */
+    --frame-height: 140px; // height of the picture
+    --n-holes: 8;          // number of holes, used to compute the width of the image
+    --hole-width: 15px;    // width of each hole, used to compute the width of the image
+    --hole-height: 10px;   // height of each hole
+    --gap: 5px;            // gap between each holes
+    --img-fading: 2px;     // bluring the edges of the images. Set to 0 for sharp edges
+    --hole-fading: 1px;    // bluring the edges of the holes. Set to 0 for sharp edges
 
-    /* computed values */
+    // computed values
     --frame-width: calc(var(--n-holes) * var(--hole-width) + (var(--n-holes) - 1) * var(--gap));
     --padding-y: calc(var(--hole-height) + 3 * var(--gap));
     --padding-x: calc(var(--gap) * 0.5);

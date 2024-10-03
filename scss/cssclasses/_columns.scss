@@ -30,7 +30,7 @@
 
 :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section .markdown-preview-pusher,
 :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section .mod-header,
-:is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section div:has(.frontmatter), /* TODO: replace with .mod-frontmatter on 1.7.3 release */
+:is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section div:has(.frontmatter), // TODO: replace with .mod-frontmatter on 1.7.3 release
 :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section :is(h1),
 :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section [alt~="span"] {
     column-span: all;

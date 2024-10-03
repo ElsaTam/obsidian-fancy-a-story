@@ -1,24 +1,18 @@
 
 
 body {
-    /* buttons */
     --button-radius: var(--radius-s);
 
-    /* caret */
     --caret-color: currentColor;
 
-    /* dividers */
     --divider-color: transparent;
     --divider-color-hover: var(--color-base-50);
 
-    /* file */
     --file-header-border: 1px dashed var(--background-secondary);
 
-    /* font */
     --font-interface-theme: "Poppins";
     --font-text-theme: "Noto Serif";
 
-    /* font weight */
     --font-weight: var(--font-light);
     --font-thin: 100;
     --font-extralight: 200;
@@ -30,18 +24,13 @@ body {
     --font-extrabold: 800;
     --font-black: 900;
 
-    /* icons */
     --icon-opacity-inactive: 0.3;
 
-    /* inline title */
     --inline-title-color: var(--text-normal);
 
-    /* inputs */
     --input-radius: var(--radius-s);
 
-    /* modal */
     --modal-radius: var(--radius-s);
 
-    /* radiuses */
     --radius-s: 0;
 }
