@@ -1,13 +1,5 @@
-body {
-    /* custom */
-    --workspace-foreground: var(--text-normal);
-    --workspace-foreground-muted: var(--text-muted);
-    --workspace-foreground-faint: var(--text-faint);
-    --workspace-background: var(--background-secondary);
-
-    --workleaves-background: var(--background-primary);
-    --workleaves-foreground: var(--text-normal);
-}
+@forward '../shared/workleaves';
+@forward '../shared/workspace';
 
 /* ----------- App background color ----------- */
 body,

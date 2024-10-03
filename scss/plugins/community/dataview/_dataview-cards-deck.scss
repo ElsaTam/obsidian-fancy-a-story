@@ -1,5 +1,5 @@
+@forward '../../../shared/workleaves';
 @use '../../../mixins/cards-deck';
-
 
 @scope (.dataview-cards-deck) to (.markdown-embed .markdown-embed) {
     

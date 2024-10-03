@@ -1,4 +1,5 @@
 @use '../../animations/animations';
+@forward '../../shared/workleaves';
 
 ul:has(> li > .tag[href='#tree-view']) {
     --indentation-guide-reading-indent: -0.8em;

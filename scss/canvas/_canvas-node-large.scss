@@ -1,3 +1,7 @@
+body {
+    --font-size-node-large: 5em;
+}
+
 .canvas-node:has(.tag[href="#node-large"]):not(.is-editing) {
     .markdown-preview-view {
         font-size: var(--font-size-node-large);

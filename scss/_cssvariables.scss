@@ -44,29 +44,4 @@ body {
 
     /* radiuses */
     --radius-s: 0;
-
-    /* ----------------- CUSTOM ----------------- */
-
-    /* canvas */
-    --font-size-node-large: 5em;
-
-    /* circle cutouts */
-    --cutout-corner-radius: 13px;
-    --cutout-corner-angle: 0.25em;
-    --cutout-outline-inset: 3px;
-    --cutout-outline-thickness: 1px;
-    --cutout-border-background: var(--h1-border-color);
-
-    /* font */
-    --font-typewriter: "TT2020StyleE", "Courier", monospace;
-}
-
-.theme-light {
-    /* shadows */
-    --shadow-color: rgba(0, 0, 0, 0.2);
-}
-
-.theme-dark {
-    /* shadows */
-    --shadow-color: rgba(0, 0, 0, 0.3);
 }

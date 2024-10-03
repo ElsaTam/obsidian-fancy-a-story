@@ -1,3 +1,7 @@
+@forward '../shared/cutout-circles';
+@forward '../shared/cutouts';
+@forward '../shared/workleaves';
+
 .is-mobile {
     --link-decoration-thickness: 1px;
 }

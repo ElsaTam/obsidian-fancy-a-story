@@ -1,3 +1,6 @@
+@forward '../../shared/paper-texture';
+@forward '../../shared/workleaves';
+
 .callout[data-callout="letter"] {
     --callout-color: var(--color-yellow-rgb);
     --callout-title-size: 2em;

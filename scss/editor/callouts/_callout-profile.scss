@@ -1,3 +1,5 @@
+@forward '../../shared/font-typewriter';
+
 .callout[data-callout="profile"] {
     --callout-color: var(--color-gray-rgb);
     --callout-icon: lucide-user;
