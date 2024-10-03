@@ -1,5 +1,13 @@
 @use '../foundations/colors/colors_definitions';
 
+body {
+    /* custom */
+    --image-shadow-offset: var(--size-4-2);
+    --image-shadow-stripe-thickness: 2px;
+    --image-shadow-stripe-gap: 4px;
+    --image-shadow-color: var(--background-primary-alt);
+}
+
 .image-embed {
     font-size: 0;
 }

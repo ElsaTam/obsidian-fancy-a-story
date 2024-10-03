@@ -67,6 +67,7 @@ $keep: 87%;
 
 // Create the block for default theme (no mixing)
 @each $tone in ("light", "dark") {
+    .theme-#{$tone},
     .is-mobile.theme-#{$tone}.fas-custom-#{$tone},
     .theme-#{$tone}.fas-custom-#{$tone} {
         @if $tone == "light" {

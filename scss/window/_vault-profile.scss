@@ -1,3 +1,8 @@
+body {
+    --vault-profile-color: var(--workspace-foreground-faint);
+    --vault-profile-color-hover: var(--workspace-foreground-muted);
+}
+
 .workspace-sidedock-vault-profile {
     --icon-color: var(--workspace-foreground-muted);
     --icon-color-hover: var(--workspace-foreground);

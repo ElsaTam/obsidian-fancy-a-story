@@ -18,6 +18,17 @@
     }
 }
 
+body {
+    --link-decoration: doodle;
+    --link-decoration-hover: var(--link-decoration);
+    --link-external-decoration: underline;
+    --link-external-decoration-hover: var(--link-external-decoration);
+    --link-decoration-thickness: 2px;
+
+    /* custom */
+    --link-decoration-thickness-hover: 1px;
+}
+
 @container style(--link-decoration: doodle) {
     .cm-hmd-internal-link,
     .internal-link:not(:is(.metadata-container .internal-link)) {

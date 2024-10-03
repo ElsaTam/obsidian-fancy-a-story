@@ -1,3 +1,18 @@
+body {
+    --tab-container-background: none;
+    --tab-curve: 0;
+    --tab-outline-color: var(--color-base-30);
+    --tab-outline-width: 0;
+    --tab-radius: 0;
+    --tab-radius-active: 0;
+    --tab-text-color: var(--color-base-40);
+    --tab-text-color-active: var(--text-faint);
+    --tab-text-color-focused: var(--text-faint);
+    --tab-text-color-focused-active: var(--text-muted);
+    --tab-text-color-focused-active-current: var(--text-normal);
+    --tab-text-color-focused-highlighted: var(--text-accent);
+}
+
 /* default icon opacity */
 .workspace-tab-header-container {
     --icon-opacity: var(--icon-opacity-inactive);

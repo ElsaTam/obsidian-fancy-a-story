@@ -1,11 +1,17 @@
 $img-embed-sel: '.mod-header + div + div > p > .image-embed:nth-child(1 of .image-embed)';
 
+body {
+    --banner-height: 300px;
+    --banner-title-shadow: 0px 0px 0.1em rgb(var(--mono-rgb-0)), 0px 0px 0.2em rgb(var(--mono-rgb-0)), 0px 0px 0.5em rgb(var(--mono-rgb-0));
+    --banner-slope-angle: 4deg;
+    --banner-slope-border-width: 5px;
+    --banner-slope-border-color: var(--color-accent);
+    --banner-width: 100cqw;
+}
+
 .markdown-preview-view.banner {
     --metadata-display-reading: none;
     --inline-title-margin-bottom: 0;
-
-    --banner-width: 100cqw;
-
 
     #{$img-embed-sel} {
         --image-shadow-offset: 0;

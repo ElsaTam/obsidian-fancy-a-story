@@ -1,9 +1,9 @@
 @use '../mixins/cutout_border';
 
 
-.fas-headings-hue, .headings-hue        { --h1-color: var(--middle-color); }
+.fas-headings-hue, .headings-hue { --h1-color: var(--middle-color); }
 .fas-headings-complement, .headings-complement { --h1-color: var(--middle-color-complement); }
-.fas-headings-accent, .headings-accent     { --h1-color: var(--color-accent); }
+.fas-headings-accent, .headings-accent { --h1-color: var(--color-accent); }
 
 .fas-headings-hue, .headings-hue,
 .fas-headings-complement, .headings-complement,

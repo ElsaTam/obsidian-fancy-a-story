@@ -4,15 +4,6 @@ body {
     /* buttons */
     --button-radius: var(--radius-s);
 
-    /* callouts */
-    --callout-quote: var(--color-gray-rgb);
-    --callout-radius: 0;
-    --callout-border-width: 1px;
-    --callout-border-opacity: 0.25;
-    --callout-padding: 0;
-    --callout-content-padding: var(--size-4-3) var(--size-4-3) var(--size-4-3) var(--size-4-6);
-    --callout-title-padding: var(--size-4-3);
-
     /* caret */
     --caret-color: currentColor;
 
@@ -48,72 +39,13 @@ body {
     /* inputs */
     --input-radius: var(--radius-s);
 
-    /* links */
-    --link-decoration: doodle;
-    --link-decoration-hover: var(--link-decoration);
-    --link-external-decoration: underline;
-    --link-external-decoration-hover: var(--link-external-decoration);
-    --link-decoration-thickness: 2px;
-
     /* modal */
     --modal-radius: var(--radius-s);
-
-    /* poem */
-    --poem-border-width: 1px;
-    --poem-color: var(--color-blue-rgb);
 
     /* radiuses */
     --radius-s: 0;
 
-    /* ribbon */
-    --ribbon-background: none;
-    --ribbon-background-collapsed: none;
-
-    /* scrollbars */
-    --scrollbar-thumb-bg: var(--color-base-20);
-    --scrollbar-width: 10px;
-
-    /* tabs */
-    --tab-container-background: none;
-    --tab-curve: 0;
-    --tab-outline-color: var(--color-base-30);
-    --tab-outline-width: 0;
-    --tab-radius: 0;
-    --tab-radius-active: 0;
-    --tab-text-color: var(--color-base-40);
-    --tab-text-color-active: var(--text-faint);
-    --tab-text-color-focused: var(--text-faint);
-    --tab-text-color-focused-active: var(--text-muted);
-    --tab-text-color-focused-active-current: var(--text-normal);
-    --tab-text-color-focused-highlighted: var(--text-accent);
-
-    /* table */
-    --table-header-background: transparent;
-    --table-line-height: 1.8;
-    --table-border-color: var(--color-base-10);
-    --table-column-first-border-width: 0;
-    --table-column-last-border-width: 0;
-
-    /* titlebar */
-    --titlebar-background: none;
-    --titlebar-background-focused: none;
-
-    /* vault profile */
-    --vault-profile-color: var(--workspace-foreground-faint);
-    --vault-profile-color-hover: var(--workspace-foreground-muted);
-
     /* ----------------- CUSTOM ----------------- */
-
-    /* banner */
-    --banner-height: 300px;
-    --banner-title-shadow: 0px 0px 0.1em rgb(var(--mono-rgb-0)), 0px 0px 0.2em rgb(var(--mono-rgb-0)), 0px 0px 0.5em rgb(var(--mono-rgb-0));
-    --banner-slope-angle: 4deg;
-    --banner-slope-border-width: 5px;
-    --banner-slope-border-color: var(--color-accent);
-
-    /* callouts */
-    --callout-polaroid-angle: 2deg;
-    --callout-polaroid-img-size: 200px;
 
     /* canvas */
     --font-size-node-large: 5em;
@@ -125,43 +57,8 @@ body {
     --cutout-outline-thickness: 1px;
     --cutout-border-background: var(--h1-border-color);
 
-    /* file explorer */
-    --active-file-bullet-size: 6px;
-
     /* font */
     --font-typewriter: "TT2020StyleE", "Courier", monospace;
-    --font-monospace-screen: 'ProFont', 'Courier New', Courier, monospace;
-
-    /* headings */
-    --h1-border-color: currentColor;
-    --h1-border-color-collapsed: var(--collapse-icon-color-collapsed);
-
-    /* images */
-    --image-shadow-offset: var(--size-4-2);
-    --image-shadow-stripe-thickness: 2px;
-    --image-shadow-stripe-gap: 4px;
-    --image-shadow-color: var(--background-primary-alt);
-
-    /* links */
-    --link-decoration-thickness-hover: 1px;
-
-    /* sci fi */
-    --sci-fi-color-rgb: var(--color-cyan-rgb);
-
-    /* sidedocks */
-    --sidedock-tab-header-padding-bottom: 0px;
-
-    /* table */
-    --table-header-line-height: 1.8;
-
-    /* Workspace */
-    --workspace-foreground: var(--text-normal);
-    --workspace-foreground-muted: var(--text-muted);
-    --workspace-foreground-faint: var(--text-faint);
-    --workspace-background: var(--background-secondary);
-
-    --workleaves-background: var(--background-primary);
-    --workleaves-foreground: var(--text-normal);
 }
 
 .theme-light {

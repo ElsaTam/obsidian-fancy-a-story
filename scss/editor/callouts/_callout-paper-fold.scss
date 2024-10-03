@@ -71,7 +71,7 @@
     --postit-color: hsl(from rgb(var(--callout-color)) h s l / 0.7);
     --postit-border-color: var(--text-faint);
 
-    font-family: 'Walter Turncoat', cursive;
+    font-family: 'Walter Turncoat', 'Comic Sans MS', cursive;
     color: black;
 
     background: linear-gradient(
@@ -81,7 +81,6 @@
         var(--postit-color) calc(var(--corner-diag) * 1.5))
         no-repeat;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--corner-height)), calc(100% - var(--corner-width)) 100%, 0 100%);
-    /*border: 1px solid var(--postit-border-color);*/
     overflow: hidden;
 }
 
