@@ -3,6 +3,11 @@ title: Style settings
 nav_order: 2
 ---
 
+Source: [`_style-settings.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/_style-settings.scss)
+
+1. TOC
+{:toc}
+
 # Colors
 
 #### Light color scheme
@@ -52,17 +57,6 @@ Use doodle (handwritten style) icons in some places, such as tasks icons and bul
 #### Background textures
 Disable all background textures
 
-## Minor tweaks making big differences
-
-#### Gap between the selected tab and the content in the sidebars
-
-[![]({% link images/stylesettings/tab-header-gap.webp %}){: width="400" }]({% link images/stylesettings/tab-header-gap.webp %})
-
-#### Offset of images stripped shadows
-**Trick 1**: Make it 0 to make the shadow disappear.
-
-**Trick 2**: Make it negative to keep the shadow exactly under the image (like if it was offset 0), but still display it under transparent images.
-
 
 
 # Workspace
@@ -74,6 +68,10 @@ Disable all background textures
 - **Ribbon**: split the ribbon space in two, the status-bar goes in the bottom part
 
 ## Sidebars
+
+#### Gap between the selected tab and the content in the sidebars
+
+[![]({% link images/stylesettings/tab-header-gap.webp %}){: width="400" }]({% link images/stylesettings/tab-header-gap.webp %})
 
 #### Color of the inside border
 
@@ -132,18 +130,58 @@ Opacity of the file explorer decoration. Should be between 0 and 1.
 Set the file line width (width of notes).
 
 {: .note }
-The [asides]({% link docs/other/aside.md %}) elements might not switch corectly between in-text/in-margins positions.
+If you change this value, the [asides]({% link docs/other/aside.md %}) elements might not switch correctly between in-text/in-margins positions.
+
+## Tables
 
 #### Use plain table style
 Select the plain style for the tables
 
 [![]({% link images/tables/table-default-vs-plain.webp %}){: width="400" }]({% link images/tables/table-default-vs-plain.webp %})
 
+## Headings
+
 #### Color for the headings
 See [Headings CSS Classes]({% link docs/cssclasses/cssclasses.md %})
 
 #### Style for the first level heading (h1)
 See [Headings CSS Classes]({% link docs/cssclasses/cssclasses.md %})
+
+## Links
+
+#### Internal link decoration
+Choose between
+- none
+- doodle (on hover)
+- underline
+- overline
+- underline overline
+
+#### External link decoration
+Choose between
+- none
+- doodle (on hover)
+- underline
+- overline
+- underline overline
+
+## Images
+
+#### Shadow offset (px)
+The theme adds by default a striped shadow to the embed images. You can change the offset of this shadow.
+
+**Trick 1**: Make it 0 to make the shadow disappear.
+
+**Trick 2**: Make it negative to keep the shadow exactly under the image (like if it was offset 0), but still display it under transparent images.
+
+#### Shadow stripe thickness (px)
+Thickness of the stripes of the image shadow
+
+#### Shadow stripe gap (px)
+Gap between the stripes of the image shadow
+
+[![]({% link images/stylesettings/image-shadow.webp %})]({% link images/stylesettings/image-shadow.webp %})
+[![]({% link images/stylesettings/image-shadow-modified.webp %})]({% link images/stylesettings/image-shadow-modified.webp %})
 
 # Features
 
