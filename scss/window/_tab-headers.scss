@@ -1,3 +1,6 @@
+@forward '../shared/workleaves';
+@forward '../shared/workspace';
+
 body {
     --tab-container-background: none;
     --tab-curve: 0;
@@ -39,11 +42,11 @@ body {
 
 /* Ensure sufficient padding for cropped circle corners */
 .is-hidden-frameless:not(.is-fullscreen) .mod-sidedock .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
-    padding-left: calc(var(--cutout-corner-radius) + var(--size-4-2) + var(--frame-left-space));
+    padding-left: calc(12px + var(--size-4-2) + var(--frame-left-space));
 }
 .mod-sidedock .workspace-tab-header-container {
-    padding-left: calc(var(--cutout-corner-radius) + var(--size-4-2));
-    padding-right: calc(var(--cutout-corner-radius) + var(--size-4-2));
+    padding-left: calc(12px + var(--size-4-2));
+    padding-right: calc(12px + var(--size-4-2));
 }
 
 /* Match the background for the active tab header */

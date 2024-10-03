@@ -1,6 +1,9 @@
+@forward '../shared/paper-texture';
+@forward '../shared/workleaves';
+
 .newspaper {
     background-color: var(--workleaves-background);
-    background-image: var(--sidebar-paper);
+    background-image: var(--paper-texture);
     background-size: 500px;
     background-blend-mode: multiply;
 }

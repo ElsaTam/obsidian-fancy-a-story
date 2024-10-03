@@ -1,3 +1,5 @@
+@forward '../../shared/shadow-color';
+
 .media-embed[alt*="cassette"] {
     --cassette-width: 0.8;
 }

@@ -1,3 +1,5 @@
+@forward '../shared/workspace';
+
 body {
     --vault-profile-color: var(--workspace-foreground-faint);
     --vault-profile-color-hover: var(--workspace-foreground-muted);

@@ -1,3 +1,9 @@
+@forward '../shared/cutout-circles';
+@forward '../shared/cutouts';
+@forward '../shared/shadow-color';
+@forward '../shared/workleaves';
+@forward '../shared/workspace';
+
 body {
     --sidedock-tab-header-padding-bottom: 0px;
     --sidedock-inset-border-color: var(--background-secondary);

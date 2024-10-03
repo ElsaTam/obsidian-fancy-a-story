@@ -1,3 +1,6 @@
+@forward '../shared/shadow-color';
+@forward '../shared/workspace';
+
 @scope (body:not(.is-popout-window)) {
     
     :scope.fas-status-bar-top {
