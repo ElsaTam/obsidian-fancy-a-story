@@ -32,6 +32,7 @@ body {
     mix-blend-mode: var(--file-explorer-decoration-blend);
     opacity: var(--file-explorer-decoration-opacity);
     background-repeat: no-repeat;
+    z-index: -1;
 }
 .fas-bg-textures:not(.fas-file-explorer-decoration-custom) .workspace-leaf-content[data-type="file-explorer"]::before {
     filter: sepia(1);
