@@ -1,6 +1,7 @@
 @mixin icon-after {
     content: "";
     display: block;
+    background-color: var(--checkbox-color);
     width: var(--checkbox-size);
     height: var(--checkbox-size);
     position: absolute;
@@ -58,7 +59,7 @@ $supported-normal-boxes: (
     '/' 'icon-incomplete' 'interactive-accent' 'interactive-accent-hover'
 );
 
-// Custom icons
+// Alternative checkboxes
 $sel: ":is(";
 @each $label, $icon, $color in $supported-icon-labels {
     @if ($sel != ":is(") { $sel: $sel + ", "; }
@@ -84,7 +85,6 @@ $sel: $sel + ")";
 
         input[type=checkbox]::after,
         input[type=checkbox]:checked::after {
-            background-color: var(--checkbox-color);
             mask-image: var(--icon-#{$icon});
         }
     }
@@ -103,7 +103,7 @@ $sel: $sel + ")";
     }
 }
 
-// Doodle icons
+// Doodle checkboxes variants (1 to 6)
 @scope (.fas-doodle-icons:not(.fas-accessibility)) to (:is(.callout[data-callout="autopsy"], .callout[data-callout="screen"], .callout[data-callout="email"])) {
     // Default checkbox for doodle icons
     :is(.HyperMD-task-line, .task-list-item) input[type=checkbox] {
