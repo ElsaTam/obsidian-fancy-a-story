@@ -111,11 +111,11 @@ body {
   left: 0;
   right: 0;
   background-color: var(--line-color);
-  mask-image: var(--rope-segment-vertical), linear-gradient(to bottom, transparent, black var(--line-fade-width), black calc(100% - var(--line-fade-width)), transparent);
-  mask-repeat: repeat-y, no-repeat;
-  mask-position: center, center;
-  mask-size: var(--line-thickness), 100%;
-  mask-composite: intersect;
+  -webkit-mask-image: var(--rope-segment-vertical), linear-gradient(to bottom, transparent, black var(--line-fade-width), black calc(100% - var(--line-fade-width)), transparent);
+  -webkit-mask-repeat: repeat-y, no-repeat;
+  -webkit-mask-position: center, center;
+  -webkit-mask-size: var(--line-thickness), 100%;
+  -webkit-mask-composite: intersect;
 }
 .callout[data-callout=timeline]:not([data-callout-metadata~=horizontal]) > .callout-content > *:nth-child(2) {
   grid-row: 2/4;
@@ -179,11 +179,11 @@ body {
   grid-row: 2;
   grid-column: 1/span 100;
   background-color: var(--line-color);
-  mask-image: var(--rope-segment-horizontal), linear-gradient(to right, transparent, black var(--line-fade-width), black calc(100% - var(--line-fade-width)), transparent);
-  mask-repeat: repeat-x, no-repeat;
-  mask-position: center center;
-  mask-size: var(--line-thickness), 100%;
-  mask-composite: intersect;
+  -webkit-mask-image: var(--rope-segment-horizontal), linear-gradient(to right, transparent, black var(--line-fade-width), black calc(100% - var(--line-fade-width)), transparent);
+  -webkit-mask-repeat: repeat-x, no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: var(--line-thickness), 100%;
+  -webkit-mask-composite: intersect;
   z-index: 0;
 }
 .callout[data-callout=timeline][data-callout-metadata~=horizontal] > .callout-content > *:nth-child(2) {

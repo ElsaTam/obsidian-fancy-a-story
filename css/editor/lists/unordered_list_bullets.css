@@ -2,7 +2,7 @@
   .list-bullet::after {
     --list-bullet-size: 0.8em;
     border-radius: 0;
-    mask-size: 100%;
+    -webkit-mask-size: 100%;
   }
   :where(ul:nth-child(6n+1)) :where(li:nth-child(6n+2) .list-bullet)::after {
     mask-image: var(--bullet-1);

@@ -131,7 +131,7 @@
         top: 0; bottom: 0;
         left: 0; right: 0;
         background-color: var(--line-color);
-        mask-image: var(--rope-segment-vertical),
+        -webkit-mask-image: var(--rope-segment-vertical),
         linear-gradient(
             to bottom,
             transparent,
@@ -139,10 +139,10 @@
             black calc(100% - var(--line-fade-width)),
             transparent
         );
-        mask-repeat:repeat-y, no-repeat;
-        mask-position: center, center;
-        mask-size: var(--line-thickness), 100%;
-        mask-composite: intersect;
+        -webkit-mask-repeat:repeat-y, no-repeat;
+        -webkit-mask-position: center, center;
+        -webkit-mask-size: var(--line-thickness), 100%;
+        -webkit-mask-composite: intersect;
     }
 
     // Second element, shifted
@@ -215,7 +215,7 @@
         grid-row: 2;
         grid-column: 1 / span 100;
         background-color: var(--line-color);
-        mask-image: var(--rope-segment-horizontal),
+        -webkit-mask-image: var(--rope-segment-horizontal),
         linear-gradient(
             to right,
             transparent,
@@ -223,10 +223,10 @@
             black calc(100% - var(--line-fade-width)),
             transparent
         );
-        mask-repeat: repeat-x, no-repeat;
-        mask-position: center center;
-        mask-size: var(--line-thickness), 100%;
-        mask-composite: intersect;
+        -webkit-mask-repeat: repeat-x, no-repeat;
+        -webkit-mask-position: center center;
+        -webkit-mask-size: var(--line-thickness), 100%;
+        -webkit-mask-composite: intersect;
         z-index: 0;
     }
 

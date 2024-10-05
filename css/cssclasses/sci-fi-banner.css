@@ -19,9 +19,9 @@
   height: 100%;
   width: 100%;
   background-color: rgba(var(--sci-fi-color-rgb), 0.8);
-  mask-image: var(--eclipse);
-  mask-repeat: no-repeat;
-  mask-size: 100% 100%;
+  -webkit-mask-image: var(--eclipse);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
   transition: all 0.5s ease-in-out;
   z-index: -1;
 }
@@ -39,9 +39,9 @@
   right: -10%;
   transform: rotate(-20deg);
   background-color: rgb(var(--sci-fi-color-rgb));
-  mask-image: var(--flare);
-  mask-size: 100%;
-  mask-repeat: no-repeat;
+  -webkit-mask-image: var(--flare);
+  -webkit-mask-size: 100%;
+  -webkit-mask-repeat: no-repeat;
   transition: all 0.5s ease-in-out;
   z-index: -1;
 }

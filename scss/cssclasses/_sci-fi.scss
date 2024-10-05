@@ -34,10 +34,10 @@ body {
     left: 0; right: var(--scrollbar-width);
     z-index: -1;
     background: rgba(var(--sci-fi-color-rgb), 1);
-    mask-image: var(--sci-fi-frame-left), var(--sci-fi-frame-right);
-    mask-size: auto 100%;
-    mask-position: left center, right center;
-    mask-repeat: no-repeat;
+    -webkit-mask-image: var(--sci-fi-frame-left), var(--sci-fi-frame-right);
+    -webkit-mask-size: auto 100%;
+    -webkit-mask-position: left center, right center;
+    -webkit-mask-repeat: no-repeat;
 }
 
 // Background
@@ -74,10 +74,10 @@ body {
         width: 6em;
         transform: translateY(-15%);
         background-color: rgba(var(--color-cyan-rgb), 1);
-        mask-image: var(--sci-fi-h1-display);
-        mask-size: contain;
-        mask-repeat: no-repeat;
-        mask-position: left center;
+        -webkit-mask-image: var(--sci-fi-h1-display);
+        -webkit-mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: left center;
         mask-mode: luminance;
         vertical-align: middle;
         margin-right: 0.2em;
@@ -134,10 +134,10 @@ body {
     height: 20px;
     border: none;
     background-color: var(--hr-color);
-    mask-image: var(--sci-fi-hr);
-    mask-size: contain;
-    mask-position: center center;
-    mask-repeat: no-repeat;
+    -webkit-mask-image: var(--sci-fi-hr);
+    -webkit-mask-size: contain;
+    -webkit-mask-position: center center;
+    -webkit-mask-repeat: no-repeat;
 }
 
 

@@ -8,10 +8,10 @@
   border: none;
   background-color: var(--hr-color);
   height: calc(var(--hr-height) + var(--hr-thickness));
-  mask-image: linear-gradient(to right, transparent, black 100px, black calc(100% - var(--ornament-right) - var(--ornament-padding) - 10px), transparent calc(100% - var(--ornament-right) - var(--ornament-padding)), transparent calc(100% - var(--ornament-right) + var(--ornament-size) + var(--ornament-padding)), black calc(100% - var(--ornament-right) + var(--ornament-size) + var(--ornament-padding) + 10px), black), var(--fleuron);
-  mask-size: 100% var(--hr-thickness), var(--ornament-size);
-  mask-position: center, calc(100% - var(--ornament-right) + var(--ornament-size)) center;
-  mask-repeat: no-repeat;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 100px, black calc(100% - var(--ornament-right) - var(--ornament-padding) - 10px), transparent calc(100% - var(--ornament-right) - var(--ornament-padding)), transparent calc(100% - var(--ornament-right) + var(--ornament-size) + var(--ornament-padding)), black calc(100% - var(--ornament-right) + var(--ornament-size) + var(--ornament-padding) + 10px), black), var(--fleuron);
+  -webkit-mask-size: 100% var(--hr-thickness), var(--ornament-size);
+  -webkit-mask-position: center, calc(100% - var(--ornament-right) + var(--ornament-size)) center;
+  -webkit-mask-repeat: no-repeat;
 }
 
 body {

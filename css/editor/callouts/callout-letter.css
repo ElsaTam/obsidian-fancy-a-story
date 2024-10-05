@@ -37,10 +37,10 @@ body {
   width: 1em;
   height: 1em;
   background-color: rgb(var(--callout-color));
-  mask-position: 50% 50%;
-  mask-size: 100% 100%;
-  mask-repeat: no-repeat;
-  mask-image: var(--feather-mask);
+  -webkit-mask-position: 50% 50%;
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-image: var(--feather-mask);
 }
 .callout[data-callout=letter] .callout-fold {
   align-items: baseline;
@@ -53,15 +53,15 @@ body {
   width: 1em;
   height: 1em;
   background-color: rgb(var(--callout-color));
-  mask-position: 50% 50%;
-  mask-size: 100% 100%;
-  mask-repeat: no-repeat;
+  -webkit-mask-position: 50% 50%;
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
 }
 .callout[data-callout=letter].is-collapsed .callout-fold::after {
-  mask-image: var(--lucide-mail);
+  -webkit-mask-image: var(--lucide-mail);
 }
 .callout[data-callout=letter]:not(.is-collapsed) .callout-fold::after {
-  mask-image: var(--lucide-mail-open);
+  -webkit-mask-image: var(--lucide-mail-open);
 }
 .callout[data-callout=letter] .callout-content {
   font-family: "Homemade Apple", "Comic Sans MS", cursive;

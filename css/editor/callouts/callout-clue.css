@@ -112,11 +112,11 @@
 }
 
 .callout[data-callout=clue][data-callout-metadata*=ripped] .callout-content {
-  mask-image: var(--clue-ripped-variant), linear-gradient(to bottom, black, black);
-  mask-size: 101% auto;
-  mask-position: center calc(100% + 1px), center;
-  mask-repeat: no-repeat;
-  mask-composite: exclude;
+  -webkit-mask-image: var(--clue-ripped-variant), linear-gradient(to bottom, black, black);
+  -webkit-mask-size: 101% auto;
+  -webkit-mask-position: center calc(100% + 1px), center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-composite: exclude;
   padding-bottom: 15px;
 }
 

@@ -52,7 +52,7 @@ body {
 
 .markdown-preview-view.banner.banner-gradient {
     #{$img-embed-sel} {
-        mask-image: linear-gradient(to bottom, black var(--file-margins), transparent);
+        -webkit-mask-image: linear-gradient(to bottom, black var(--file-margins), transparent);
     }
 }
 
