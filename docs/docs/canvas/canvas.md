@@ -6,6 +6,9 @@ nav_order: 5
 [![]({% link images/canvas/canvas-showcase-1.webp %}){: width="300" }]({% link images/canvas/canvas-showcase-1.webp %})
 [![]({% link images/canvas/canvas-showcase-titles.webp %}){: width="323" }]({% link images/canvas/canvas-showcase-titles.webp %})
 
+{: .note}
+Usage of tags to define specific styling for canvas card can be very powerful. However, it requires a code that can cause performance issues. Also, such styling come as independant snippets. You can add the file [canvas-node-bundle](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/css/canvas/canvas-node-bundle.css) to your [snippets file](https://help.obsidian.md/Extending+Obsidian/CSS+snippets) to download all the effects. Or choose individual ones from [this list](https://github.com/ElsaTam/obsidian-fancy-a-story/tree/main/css/canvas).
+
 # Helper tags
 
 | Tag   | Description | Source |
