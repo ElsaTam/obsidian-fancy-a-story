@@ -2,10 +2,6 @@ body {
   --font-typewriter: "TT2020StyleE", "Courier", monospace;
 }
 
-.fas-accessibility {
-  --font-typewriter: "TT2020Base", "Courier", monospace;
-}
-
 .markdown-source-view .callout[data-callout=pinned] {
   margin-inline: auto;
 }

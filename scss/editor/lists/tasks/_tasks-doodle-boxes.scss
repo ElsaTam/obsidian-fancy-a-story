@@ -1,0 +1,38 @@
+@use 'tasks-definition';
+
+// Doodle checkboxes variants (1 to 6)
+@scope (.fas-doodle-icons:not(.fas-accessibility)) to (:is(.callout[data-callout="autopsy"], .callout[data-callout="screen"], .callout[data-callout="email"])) {
+    // Default checkbox for doodle icons
+    :is(.HyperMD-task-line, .task-list-item) input[type=checkbox] {
+        &, &:hover {
+            background: none;
+            border: none;
+        }
+        &::after {
+            @include tasks-definition.icon-after;
+            background-color: var(--checkbox-color);
+        }
+        &:hover::after {
+            background-color: var(--checkbox-color-hover);
+        }
+    }
+    @for $i from 1 through 6 {
+        :is(.HyperMD-task-line, .task-list-item):nth-child(6n + #{$i}) input[type=checkbox]::after {
+            mask-image: var(--box-checked-#{$i});
+        }
+    }
+
+    // Standard boxes with doodle effect
+    @each $label, $icon, $color, $color-hover in tasks-definition.$supported-doodle-boxes {
+        @for $i from 1 through 6 {
+            :is(.HyperMD-task-line, .task-list-item)[data-task='#{$label}']:nth-child(6n + #{$i}) {
+                --checkbox-color-hover: var(--#{$color-hover});
+                --checkbox-color: var(--#{$color});
+
+                input[type=checkbox]::after {
+                    mask-image: var(--#{$icon}-#{$i});
+                }
+            }
+        }
+    }
+}

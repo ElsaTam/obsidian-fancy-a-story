@@ -1,0 +1,32 @@
+@use 'tasks-definition';
+
+// Alternative checkboxes
+$sel: ":is(";
+@each $label, $icon, $color in tasks-definition.$supported-icon-labels {
+    @if ($sel != ":is(") { $sel: $sel + ", "; }
+    $sel: $sel + "[data-task='#{$label}']";
+}
+$sel: $sel + ")";
+:is(.HyperMD-task-line, .task-list-item)#{$sel} input[type=checkbox] {
+    pointer-events: none;
+
+    &, &:checked {
+        background: none;
+        border: none;
+    }
+
+    &::after,
+    &:checked::after {
+        @include tasks-definition.icon-after;
+    }
+}
+@each $label, $icon, $color in tasks-definition.$supported-icon-labels {
+    :is(.HyperMD-task-line, .task-list-item)[data-task='#{$label}'] {
+        --checkbox-color: var(--color-#{$color});
+
+        input[type=checkbox]::after,
+        input[type=checkbox]:checked::after {
+            mask-image: var(--icon-#{$icon});
+        }
+    }
+}

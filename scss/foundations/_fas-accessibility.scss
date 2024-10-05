@@ -7,6 +7,10 @@
     --font-text-theme: "Noto";
 }
 
+.fas-accessibility {
+    --font-typewriter: "TT2020Base", "Courier", monospace;
+}
+
 .fas-accessibility,
 .fas-bigger-font {
     --font-weight: var(--font-normal);
