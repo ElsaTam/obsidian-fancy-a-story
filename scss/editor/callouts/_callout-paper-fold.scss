@@ -38,7 +38,7 @@
 //
 //  - diag  = width * height / hypot(width, height)
 //  - angle = asin(diag / width)
-
+/*
 @property --corner-width-n {
     syntax: "<number>";
     inherits: true;
@@ -61,10 +61,17 @@
 .callout[data-callout="paper-fold"]:hover {
     --corner-width-n: 80;
     --corner-height-n: 20;
+}*/
+
+.theme-dark {
+    --paper-fold-color: 255, 247, 64;
+}
+.theme-dark {
+    --paper-fold-color: 255, 255, 153;
 }
 
 .callout[data-callout="paper-fold"] {
-    --callout-color: var(--color-yellow-rgb);
+    --callout-color: var(--paper-fold-color);
     --metadata-property-radius: 0;
     --metadata-padding: 0 0 8px 0;
 

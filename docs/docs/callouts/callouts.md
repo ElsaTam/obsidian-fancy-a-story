@@ -15,6 +15,7 @@ nav_order: 4
 | [`email`]({% link docs/callouts/email.md %}) | Email look | [`_callout-email.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-email.scss) |
 | [`film-strip`]({% link docs/callouts/film-strip.md %}) | Create a film strip from several images | [`_callout-film-strip.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-film-strip.scss) |
 | [`letter`]({% link docs/callouts/letter.md %}) | A cursive font and a paper background make a nice letter | [`_callout-letter.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-letter.scss) |
+| [`paper-fold`]({% link docs/callouts/paper-fold.md %}) | Folded post-it with hover effect to unfold | [`_callout-paper-fold.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-paper-fold.scss) |
 | [`pinned`]({% link docs/callouts/pinned.md %}) | Small note with a push pin | [`_callout-pinned.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-pinned.scss) |
 | [`poem`]({% link docs/callouts/poem.md %}) | Several options to write nice poems | [`_callout-poem.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-poem.scss) |
 | [`polaroid`]({% link docs/callouts/polaroid.md %}) | Polaroid frame for images | [`_callout-polaroid.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-polaroid.scss) |

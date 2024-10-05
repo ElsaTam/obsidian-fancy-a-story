@@ -187,3 +187,24 @@ Gap between the stripes of the image shadow
 
 #### Rainbow folders
 Enable rainbow colors in the file explorer, for the top level folder
+
+
+# Additional content
+
+#### Additional fonts
+Multiple elements of this theme can use specific fonts if they are available. To download the required fonts, you can add the file [additional_fonts.css](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/css/additional_fonts.css) to your [snippets file](https://help.obsidian.md/Extending+Obsidian/CSS+snippets). This file can be very heavy. If you don't plan on using all of them, I would recommend deleting the unecessary @font-face from the snippet.
+
+Fonts are used in the following:
+- Chakra Petch: [`sci-fi`]({% link docs/cssclasses/sci-fi.md %}) css class
+- Homemade Apple: [`letter`]({% link docs/callouts/letter.md %}) callout
+- Orbitron: [`sci-fi`]({% link docs/cssclasses/sci-fi.md %}) css class, and [`sci-fi-banner`]({% link docs/cssclasses/sci-fi-banner.md %}) css class
+- Playfair Display: [`newspaper`]({% link docs/cssclasses/newspaper.md %}) css class, and [`timeline`]({% link docs/callouts/timeline.md %}) callout
+- ProFont: [`screen`]({% link docs/callouts/screen.md %}) callout
+- Spectral: [`newspaper`]({% link docs/cssclasses/newspaper.md %}) css class
+- Tangerine: [`letter`]({% link docs/callouts/letter.md %}) callout
+- TT2020: [`pinned`]({% link docs/callouts/pinned.md %}) callout, [`h1-display`]({% link docs/cssclasses/cssclasses.md %}#headings) headings
+- VTC Letterer Pro: [`comic`]({% link docs/callouts/comic.md %}) callout
+- Walter Turncoat: [`paper-fold`]({% link docs/callouts/paper-fold.md %}) callout, and [`polaroid`]({% link docs/callouts/polaroid.md %}) callout
+
+#### Canvas node tags
+See [Canvas]({% link docs/canvas/canvas.md %}).
