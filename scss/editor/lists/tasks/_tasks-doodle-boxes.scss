@@ -18,7 +18,7 @@
     }
     @for $i from 1 through 6 {
         :is(.HyperMD-task-line, .task-list-item):nth-child(6n + #{$i}) input[type=checkbox]::after {
-            mask-image: var(--box-checked-#{$i});
+            -webkit-mask-image: var(--box-checked-#{$i});
         }
     }
 
@@ -30,7 +30,7 @@
                 --checkbox-color: var(--#{$color});
 
                 input[type=checkbox]::after {
-                    mask-image: var(--#{$icon}-#{$i});
+                    -webkit-mask-image: var(--#{$icon}-#{$i});
                 }
             }
         }

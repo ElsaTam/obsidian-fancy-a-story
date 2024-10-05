@@ -32,7 +32,7 @@ $sel: $sel + ")";
     
             input[type=checkbox]::after,
             input[type=checkbox]:checked::after {
-                mask-image: var(--icon-#{$icon});
+                -webkit-mask-image: var(--icon-#{$icon});
             }
         }
     }

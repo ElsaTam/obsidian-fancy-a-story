@@ -7,9 +7,9 @@
     position: absolute;
     top: -1px;
     inset-inline-start: -1px;
-    mask-size: 100% 100%;
-    mask-position: center;
-    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
 }
 
 $supported-icon-labels:

@@ -39,10 +39,10 @@
         left: 0; right: 0;
         height: unset;
         background-color: rgb(var(--poem-color));
-        mask-image: var(--top-divider-art);
-        mask-size: 100% auto;
-        mask-repeat: no-repeat;
-        mask-position: top center;
+        -webkit-mask-image: var(--top-divider-art);
+        -webkit-mask-size: 100% auto;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: top center;
         z-index: -1;
     }
 
@@ -53,10 +53,10 @@
         left: 0; right: 0;
         height: unset;
         background-color: rgb(var(--poem-color));
-        mask-image: var(--bottom-divider-art);
-        mask-size: 60% auto;
-        mask-repeat: no-repeat;
-        mask-position: bottom center;
+        -webkit-mask-image: var(--bottom-divider-art);
+        -webkit-mask-size: 60% auto;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: bottom center;
         z-index: -1;
     }
 }
@@ -103,11 +103,11 @@
         left: 0; width: var(--floral-width);
         height: unset;
         background-color: rgba(var(--poem-color), 0.6);
-        mask-image: var(--left-ornament-flourish), linear-gradient(to left, transparent, black 40%);
-        mask-composite: intersect;
-        mask-position: left bottom;
-        mask-repeat: no-repeat;
-        mask-size: 100% auto;
+        -webkit-mask-image: var(--left-ornament-flourish), linear-gradient(to left, transparent, black 40%);
+        -webkit-mask-composite: intersect;
+        -webkit-mask-position: left bottom;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-size: 100% auto;
         z-index: -1;
     }
 
@@ -119,12 +119,12 @@
         left: unset;
         height: unset;
         background-color: rgba(var(--poem-color), 0.6);
-        mask-image: var(--left-ornament-flourish), linear-gradient(to left, transparent, black 100%);
+        -webkit-mask-image: var(--left-ornament-flourish), linear-gradient(to left, transparent, black 100%);
         opacity: 0.2;
-        mask-composite: intersect;
-        mask-position: right bottom;
-        mask-repeat: no-repeat;
-        mask-size: 100% auto;
+        -webkit-mask-composite: intersect;
+        -webkit-mask-position: right bottom;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-size: 100% auto;
         z-index: -1;
         transform: scaleX(-1) scaleY(-1);
     }

@@ -42,7 +42,7 @@ body {
 }
 
 .markdown-preview-view.banner.banner-gradient .mod-header + div + div > p > .image-embed:nth-child(1 of .image-embed) {
-  mask-image: linear-gradient(to bottom, black var(--file-margins), transparent);
+  -webkit-mask-image: linear-gradient(to bottom, black var(--file-margins), transparent);
 }
 
 .markdown-preview-view.banner.banner-title {
