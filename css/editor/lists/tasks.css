@@ -36,267 +36,242 @@
   mask-image: var(--icon-incomplete);
 }
 
-:is(.HyperMD-task-line, .task-list-item):is([data-task=">"], [data-task="<"], [data-task="?"], [data-task="!"], [data-task="$"], [data-task=a], [data-task=b], [data-task=B], [data-task=c], [data-task=d], [data-task=e], [data-task=f], [data-task=g], [data-task=h], [data-task=H], [data-task=i], [data-task=l], [data-task=L], [data-task=m], [data-task=M], [data-task=n], [data-task=p], [data-task=s], [data-task=t], [data-task=T], [data-task=u], [data-task=U], [data-task=w], [data-task=W], [data-task=z]) input[type=checkbox] {
-  pointer-events: none;
-}
-:is(.HyperMD-task-line, .task-list-item):is([data-task=">"], [data-task="<"], [data-task="?"], [data-task="!"], [data-task="$"], [data-task=a], [data-task=b], [data-task=B], [data-task=c], [data-task=d], [data-task=e], [data-task=f], [data-task=g], [data-task=h], [data-task=H], [data-task=i], [data-task=l], [data-task=L], [data-task=m], [data-task=M], [data-task=n], [data-task=p], [data-task=s], [data-task=t], [data-task=T], [data-task=u], [data-task=U], [data-task=w], [data-task=W], [data-task=z]) input[type=checkbox], :is(.HyperMD-task-line, .task-list-item):is([data-task=">"], [data-task="<"], [data-task="?"], [data-task="!"], [data-task="$"], [data-task=a], [data-task=b], [data-task=B], [data-task=c], [data-task=d], [data-task=e], [data-task=f], [data-task=g], [data-task=h], [data-task=H], [data-task=i], [data-task=l], [data-task=L], [data-task=m], [data-task=M], [data-task=n], [data-task=p], [data-task=s], [data-task=t], [data-task=T], [data-task=u], [data-task=U], [data-task=w], [data-task=W], [data-task=z]) input[type=checkbox]:checked {
-  background: none;
-  border: none;
-}
-:is(.HyperMD-task-line, .task-list-item):is([data-task=">"], [data-task="<"], [data-task="?"], [data-task="!"], [data-task="$"], [data-task=a], [data-task=b], [data-task=B], [data-task=c], [data-task=d], [data-task=e], [data-task=f], [data-task=g], [data-task=h], [data-task=H], [data-task=i], [data-task=l], [data-task=L], [data-task=m], [data-task=M], [data-task=n], [data-task=p], [data-task=s], [data-task=t], [data-task=T], [data-task=u], [data-task=U], [data-task=w], [data-task=W], [data-task=z]) input[type=checkbox]::after, :is(.HyperMD-task-line, .task-list-item):is([data-task=">"], [data-task="<"], [data-task="?"], [data-task="!"], [data-task="$"], [data-task=a], [data-task=b], [data-task=B], [data-task=c], [data-task=d], [data-task=e], [data-task=f], [data-task=g], [data-task=h], [data-task=H], [data-task=i], [data-task=l], [data-task=L], [data-task=m], [data-task=M], [data-task=n], [data-task=p], [data-task=s], [data-task=t], [data-task=T], [data-task=u], [data-task=U], [data-task=w], [data-task=W], [data-task=z]) input[type=checkbox]:checked::after {
-  content: "";
-  display: block;
-  background-color: var(--checkbox-color);
-  width: var(--checkbox-size);
-  height: var(--checkbox-size);
-  position: absolute;
-  top: -1px;
-  inset-inline-start: -1px;
-  mask-size: 100% 100%;
-  mask-position: center;
-  mask-repeat: no-repeat;
+body {
+  --alternative-checkboxes: enable;
 }
 
-:is(.HyperMD-task-line, .task-list-item)[data-task=">"] {
-  --checkbox-color: var(--color-base-50);
+@container style(--alternative-checkboxes: enable) {
+  :is(.HyperMD-task-line, .task-list-item):is([data-task=">"], [data-task="<"], [data-task="?"], [data-task="!"], [data-task="$"], [data-task=a], [data-task=b], [data-task=B], [data-task=c], [data-task=d], [data-task=e], [data-task=f], [data-task=g], [data-task=h], [data-task=H], [data-task=i], [data-task=l], [data-task=L], [data-task=m], [data-task=M], [data-task=n], [data-task=p], [data-task=s], [data-task=t], [data-task=T], [data-task=u], [data-task=U], [data-task=w], [data-task=W], [data-task=z]) input[type=checkbox] {
+    pointer-events: none;
+  }
+  :is(.HyperMD-task-line, .task-list-item):is([data-task=">"], [data-task="<"], [data-task="?"], [data-task="!"], [data-task="$"], [data-task=a], [data-task=b], [data-task=B], [data-task=c], [data-task=d], [data-task=e], [data-task=f], [data-task=g], [data-task=h], [data-task=H], [data-task=i], [data-task=l], [data-task=L], [data-task=m], [data-task=M], [data-task=n], [data-task=p], [data-task=s], [data-task=t], [data-task=T], [data-task=u], [data-task=U], [data-task=w], [data-task=W], [data-task=z]) input[type=checkbox], :is(.HyperMD-task-line, .task-list-item):is([data-task=">"], [data-task="<"], [data-task="?"], [data-task="!"], [data-task="$"], [data-task=a], [data-task=b], [data-task=B], [data-task=c], [data-task=d], [data-task=e], [data-task=f], [data-task=g], [data-task=h], [data-task=H], [data-task=i], [data-task=l], [data-task=L], [data-task=m], [data-task=M], [data-task=n], [data-task=p], [data-task=s], [data-task=t], [data-task=T], [data-task=u], [data-task=U], [data-task=w], [data-task=W], [data-task=z]) input[type=checkbox]:checked {
+    background: none;
+    border: none;
+  }
+  :is(.HyperMD-task-line, .task-list-item):is([data-task=">"], [data-task="<"], [data-task="?"], [data-task="!"], [data-task="$"], [data-task=a], [data-task=b], [data-task=B], [data-task=c], [data-task=d], [data-task=e], [data-task=f], [data-task=g], [data-task=h], [data-task=H], [data-task=i], [data-task=l], [data-task=L], [data-task=m], [data-task=M], [data-task=n], [data-task=p], [data-task=s], [data-task=t], [data-task=T], [data-task=u], [data-task=U], [data-task=w], [data-task=W], [data-task=z]) input[type=checkbox]::after, :is(.HyperMD-task-line, .task-list-item):is([data-task=">"], [data-task="<"], [data-task="?"], [data-task="!"], [data-task="$"], [data-task=a], [data-task=b], [data-task=B], [data-task=c], [data-task=d], [data-task=e], [data-task=f], [data-task=g], [data-task=h], [data-task=H], [data-task=i], [data-task=l], [data-task=L], [data-task=m], [data-task=M], [data-task=n], [data-task=p], [data-task=s], [data-task=t], [data-task=T], [data-task=u], [data-task=U], [data-task=w], [data-task=W], [data-task=z]) input[type=checkbox]:checked::after {
+    content: "";
+    display: block;
+    background-color: var(--checkbox-color);
+    width: var(--checkbox-size);
+    height: var(--checkbox-size);
+    position: absolute;
+    top: -1px;
+    inset-inline-start: -1px;
+    mask-size: 100% 100%;
+    mask-position: center;
+    mask-repeat: no-repeat;
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=">"] {
+    --checkbox-color: var(--color-base-50);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=">"] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task=">"] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-forwarded);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task="<"] {
+    --checkbox-color: var(--color-base-50);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task="<"] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task="<"] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-scheduling);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task="?"] {
+    --checkbox-color: var(--color-yellow);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task="?"] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task="?"] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-question);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task="!"] {
+    --checkbox-color: var(--color-orange);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task="!"] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task="!"] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-important);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task="$"] {
+    --checkbox-color: var(--color-green);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task="$"] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task="$"] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-dollar);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=a] {
+    --checkbox-color: var(--color-blue);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=a] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task=a] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-anchor);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=b] {
+    --checkbox-color: var(--color-red);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=b] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task=b] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-blood);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=B] {
+    --checkbox-color: var(--color-orange);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=B] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task=B] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-Bookmark);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=c] {
+    --checkbox-color: var(--color-red);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=c] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task=c] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-cons);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=d] {
+    --checkbox-color: var(--color-red);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=d] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task=d] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-down);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=e] {
+    --checkbox-color: var(--color-red);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=e] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task=e] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-error);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=f] {
+    --checkbox-color: var(--color-red);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=f] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task=f] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-fire);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=g] {
+    --checkbox-color: var(--color-blue);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=g] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task=g] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-goal);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=h] {
+    --checkbox-color: var(--color-green);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=h] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task=h] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-health);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=H] {
+    --checkbox-color: var(--color-pink);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=H] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task=H] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-Heart);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=i] {
+    --checkbox-color: var(--color-yellow);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=i] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task=i] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-idea);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=l] {
+    --checkbox-color: var(--color-accent);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=l] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task=l] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-link);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=L] {
+    --checkbox-color: var(--color-red);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=L] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task=L] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-Location);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=m] {
+    --checkbox-color: var(--color-blue);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=m] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task=m] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-mail);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=M] {
+    --checkbox-color: var(--color-green);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=M] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task=M] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-Music);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=n] {
+    --checkbox-color: var(--color-blue);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=n] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task=n] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-note);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=p] {
+    --checkbox-color: var(--color-green);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=p] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task=p] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-pros);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=s] {
+    --checkbox-color: var(--color-yellow);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=s] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task=s] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-star);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=t] {
+    --checkbox-color: var(--color-red);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=t] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task=t] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-trash);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=T] {
+    --checkbox-color: var(--color-cyan);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=T] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task=T] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-Travel);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=u] {
+    --checkbox-color: var(--color-green);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=u] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task=u] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-up);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=U] {
+    --checkbox-color: var(--color-base-50);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=U] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task=U] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-User);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=w] {
+    --checkbox-color: var(--color-yellow);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=w] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task=w] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-win);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=W] {
+    --checkbox-color: var(--color-cyan);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=W] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task=W] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-Write);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=z] {
+    --checkbox-color: var(--color-yellow);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task=z] input[type=checkbox]::after,
+  :is(.HyperMD-task-line, .task-list-item)[data-task=z] input[type=checkbox]:checked::after {
+    mask-image: var(--icon-zap);
+  }
 }
-:is(.HyperMD-task-line, .task-list-item)[data-task=">"] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task=">"] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-forwarded);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task="<"] {
-  --checkbox-color: var(--color-base-50);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task="<"] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task="<"] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-scheduling);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task="?"] {
-  --checkbox-color: var(--color-yellow);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task="?"] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task="?"] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-question);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task="!"] {
-  --checkbox-color: var(--color-orange);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task="!"] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task="!"] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-important);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task="$"] {
-  --checkbox-color: var(--color-green);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task="$"] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task="$"] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-dollar);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task=a] {
-  --checkbox-color: var(--color-blue);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task=a] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task=a] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-anchor);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task=b] {
-  --checkbox-color: var(--color-red);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task=b] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task=b] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-blood);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task=B] {
-  --checkbox-color: var(--color-orange);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task=B] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task=B] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-Bookmark);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task=c] {
-  --checkbox-color: var(--color-red);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task=c] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task=c] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-cons);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task=d] {
-  --checkbox-color: var(--color-red);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task=d] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task=d] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-down);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task=e] {
-  --checkbox-color: var(--color-red);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task=e] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task=e] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-error);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task=f] {
-  --checkbox-color: var(--color-red);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task=f] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task=f] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-fire);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task=g] {
-  --checkbox-color: var(--color-blue);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task=g] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task=g] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-goal);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task=h] {
-  --checkbox-color: var(--color-green);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task=h] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task=h] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-health);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task=H] {
-  --checkbox-color: var(--color-pink);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task=H] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task=H] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-Heart);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task=i] {
-  --checkbox-color: var(--color-yellow);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task=i] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task=i] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-idea);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task=l] {
-  --checkbox-color: var(--color-accent);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task=l] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task=l] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-link);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task=L] {
-  --checkbox-color: var(--color-red);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task=L] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task=L] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-Location);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task=m] {
-  --checkbox-color: var(--color-blue);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task=m] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task=m] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-mail);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task=M] {
-  --checkbox-color: var(--color-green);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task=M] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task=M] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-Music);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task=n] {
-  --checkbox-color: var(--color-blue);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task=n] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task=n] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-note);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task=p] {
-  --checkbox-color: var(--color-green);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task=p] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task=p] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-pros);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task=s] {
-  --checkbox-color: var(--color-yellow);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task=s] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task=s] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-star);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task=t] {
-  --checkbox-color: var(--color-red);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task=t] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task=t] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-trash);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task=T] {
-  --checkbox-color: var(--color-cyan);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task=T] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task=T] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-Travel);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task=u] {
-  --checkbox-color: var(--color-green);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task=u] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task=u] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-up);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task=U] {
-  --checkbox-color: var(--color-base-50);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task=U] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task=U] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-User);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task=w] {
-  --checkbox-color: var(--color-yellow);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task=w] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task=w] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-win);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task=W] {
-  --checkbox-color: var(--color-cyan);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task=W] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task=W] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-Write);
-}
-
-:is(.HyperMD-task-line, .task-list-item)[data-task=z] {
-  --checkbox-color: var(--color-yellow);
-}
-:is(.HyperMD-task-line, .task-list-item)[data-task=z] input[type=checkbox]::after,
-:is(.HyperMD-task-line, .task-list-item)[data-task=z] input[type=checkbox]:checked::after {
-  mask-image: var(--icon-zap);
-}
-
 body:not(.fas-doodle-icons),
 body.fas-accessibility {
   --icon-failed: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-slash'%3E%3Cpath d='M18 6 6 18'/%3E%3Cpath d='M6 6 18 18'/%3E%3C/svg%3E");

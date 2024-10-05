@@ -312,7 +312,7 @@ settings:
         default: url("")
     -
         id: file-explorer-decoration-blend-custom
-        title: File explorer decoration  blending mode
+        title: File explorer decoration blending mode
         type: variable-select
         default: normal
         options:
@@ -482,6 +482,14 @@ settings:
         title: Rainbow folders
         type: class-toggle
         default: true
+    - 
+        id: alternative-checkboxes
+        title: File explorer decoration blending mode
+        type: variable-select
+        default: enable
+        options:
+            - enable
+            - disable
 
 
 
