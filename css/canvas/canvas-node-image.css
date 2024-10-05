@@ -1,3 +1,7 @@
+.markdown-source-view, .markdown-reading-view {
+  container: markdown-view/size;
+}
+
 .canvas-node:has(.tag[href="#node-image"]):not(.is-editing) {
   --p-spacing: 0;
   --image-shadow-offset: 0;

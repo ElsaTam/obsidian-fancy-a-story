@@ -1,3 +1,7 @@
+.markdown-source-view, .markdown-reading-view {
+  container: markdown-view/size;
+}
+
 .callout[data-callout=grid] {
   background: none;
   border: none;

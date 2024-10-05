@@ -1,3 +1,5 @@
+@forward '../shared/markdown-container';
+
 $img-embed-sel: '.mod-header + div + div > p > .image-embed:nth-child(1 of .image-embed)';
 
 body {

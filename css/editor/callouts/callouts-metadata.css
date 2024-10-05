@@ -1,3 +1,7 @@
+.markdown-source-view, .markdown-reading-view {
+  container: markdown-view/size;
+}
+
 .callout[data-callout-metadata~=gray] {
   --callout-color: var(--color-gray-rgb);
 }

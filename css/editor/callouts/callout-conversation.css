@@ -1,3 +1,7 @@
+.markdown-source-view, .markdown-reading-view {
+  container: markdown-view/size;
+}
+
 body {
   --workleaves-background: var(--background-primary);
   --workleaves-foreground: var(--text-normal);

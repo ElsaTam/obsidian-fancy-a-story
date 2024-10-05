@@ -1,3 +1,5 @@
+@forward '../../shared/markdown-container';
+
 .markdown-preview-view [alt~="wide"]:is(img, .image-embed, .markdown-embed, .file-embed) {
     --w: 95cqw;
     position: relative;

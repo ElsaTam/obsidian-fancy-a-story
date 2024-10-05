@@ -3,6 +3,10 @@ body {
   --workleaves-foreground: var(--text-normal);
 }
 
+.markdown-source-view, .markdown-reading-view {
+  container: markdown-view/size;
+}
+
 pre.language-poem,
 pre.language-poem-frame,
 pre.language-poem-floral {
