@@ -12,7 +12,3 @@
 @use 'properties';
 @use 'search-highlight';
 @use 'tables/tables';
-
-.markdown-source-view, .markdown-reading-view {
-    container: markdown-view / size;
-}

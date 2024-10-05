@@ -1,3 +1,5 @@
+@forward '../../../shared/markdown-container';
+
 .block-language-dataviewjs:has(.dataview-wide) {
     overflow: visible !important;
 }

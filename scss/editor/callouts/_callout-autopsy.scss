@@ -1,3 +1,5 @@
+@forward '../../shared/markdown-container';
+
 .callout[data-callout="autopsy"] {
     --callout-icon: lucide-skull;
     --callout-color: var(--mono-rgb-0);

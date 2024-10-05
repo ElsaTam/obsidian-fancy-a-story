@@ -13,6 +13,10 @@ body {
   --workleaves-foreground: var(--text-normal);
 }
 
+.markdown-source-view, .markdown-reading-view {
+  container: markdown-view/size;
+}
+
 .newspaper {
   background-color: var(--workleaves-background);
   background-image: var(--paper-texture);

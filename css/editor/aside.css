@@ -1,3 +1,7 @@
+.markdown-source-view, .markdown-reading-view {
+  container: markdown-view/size;
+}
+
 .markdown-preview-view aside,
 .markdown-preview-view .aside-left,
 .markdown-preview-view .aside-right {

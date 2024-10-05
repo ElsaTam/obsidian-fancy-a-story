@@ -1,4 +1,8 @@
 @charset "UTF-8";
+.markdown-source-view, .markdown-reading-view {
+  container: markdown-view/size;
+}
+
 .callout[data-callout=autopsy] {
   --callout-icon: lucide-skull;
   --callout-color: var(--mono-rgb-0);

@@ -6,6 +6,10 @@
   --shadow-color: rgba(0, 0, 0, 0.3);
 }
 
+.markdown-source-view, .markdown-reading-view {
+  container: markdown-view/size;
+}
+
 .media-embed[alt*=cassette] {
   --cassette-width: 0.8;
 }

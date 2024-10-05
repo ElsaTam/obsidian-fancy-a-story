@@ -1,3 +1,7 @@
+.markdown-source-view, .markdown-reading-view {
+  container: markdown-view/size;
+}
+
 body {
   --sci-fi-color-rgb: var(--color-cyan-rgb);
 }
