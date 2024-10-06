@@ -18,6 +18,7 @@
     left: 0;
     bottom: 0;
     background-color: var(--nav-item-background-hover);
+    z-index: -1;
   }
   body:not(.is-grabbing) .tree-item-self.is-clickable:not(.is-active):hover::before {
     animation: bg-slide 0.5s ease-in-out;
