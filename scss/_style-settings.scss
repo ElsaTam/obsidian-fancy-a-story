@@ -490,6 +490,12 @@ settings:
         options:
             - enable
             - disable
+    - 
+        id: fas-highlight-active-note
+        title: Highlight active note
+        description: Inspired by the plugin Limelight, code adapted by @tif
+        type: class-toggle
+        default: false
 
 
 
