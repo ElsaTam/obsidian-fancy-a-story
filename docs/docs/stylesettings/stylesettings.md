@@ -188,6 +188,13 @@ Gap between the stripes of the image shadow
 #### Rainbow folders
 Enable rainbow colors in the file explorer, for the top level folder
 
+#### Highlight active note
+
+{: .note }
+Idea from the plugin [Obsidian Limelight](https://github.com/smikula/obsidian-limelight/tree/master), by smikula, under MIT License.<br>Code adapted and shared by @tif on [Discord](https://discord.com/channels/686053708261228577/1283473301682786305/1292664955270860891). Thanks a lot!
+
+Lower the opacity of non active notes.
+
 
 # Additional content
 
