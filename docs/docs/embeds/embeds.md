@@ -14,8 +14,8 @@ When embeding an image, add an alt option:
 
 | Alt option    | Description                         |
 |:--------------|:------------------------------------|
-| `float-right` | Right floating image (preview mode) |
-| `float-left`  | Left floating image (preview mode)  |
+| `right`       | Right floating image (preview mode) |
+| `left`        | Left floating image (preview mode)  |
 | `{color}`     | Change the striped shadow color     |
 | `no-shadow`   | Remove the striped shadow           |
 

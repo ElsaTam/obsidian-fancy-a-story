@@ -9,13 +9,13 @@ body {
   font-size: 0;
 }
 
-.markdown-rendered .image-embed[alt~=float-right] {
+.markdown-rendered .image-embed[alt~=right] {
   float: right;
   clear: right;
   margin: var(--size-4-3) 0 var(--size-4-3) var(--size-4-3);
 }
 
-.markdown-rendered .image-embed[alt~=float-left] {
+.markdown-rendered .image-embed[alt~=left] {
   float: left;
   clear: left;
   margin: var(--size-4-3) var(--size-4-3) var(--size-4-3) 0;

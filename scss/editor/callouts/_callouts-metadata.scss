@@ -60,14 +60,14 @@
     }
 }
 
-.markdown-preview-view .callout[data-callout-metadata="float-right"] {
+.markdown-preview-view .callout[data-callout-metadata="right"] {
     float: right;
     clear: right;
     margin: var(--size-4-3) 0 var(--size-4-3) var(--size-4-3);
 }
 
 
-.markdown-preview-view .callout[data-callout-metadata="float-left"] {
+.markdown-preview-view .callout[data-callout-metadata="left"] {
     float: left;
     clear: left;
     margin: var(--size-4-3) var(--size-4-3) var(--size-4-3) 0;
