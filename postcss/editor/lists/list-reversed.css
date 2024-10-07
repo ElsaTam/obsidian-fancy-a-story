@@ -1,0 +1,16 @@
+:is(ul, ol):has(> li > .tag[href="#list-reversed"]) {
+  transform: scaleY(-1);
+}
+:is(ul, ol):has(> li > .tag[href="#list-reversed"]) > li {
+  transform: scaleY(-1);
+}
+:is(ul, ol):has(> li > .tag[href="#list-reversed"]) > li > .tag[href="#list-reversed"] {
+  display: none;
+}
+
+:is(ul, ol):has(> li > .tag[href="#list-reversed-all"]), :is(ul, ol):has(> li > .tag[href="#list-reversed-all"]) ul, :is(ul, ol):has(> li > .tag[href="#list-reversed-all"]) ol, :is(ul, ol):has(> li > .tag[href="#list-reversed-all"]) li {
+  transform: scaleY(-1);
+}
+:is(ul, ol):has(> li > .tag[href="#list-reversed-all"]) .tag[href="#list-reversed-all"] {
+  display: none;
+}

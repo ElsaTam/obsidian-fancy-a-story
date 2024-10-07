@@ -1,0 +1,101 @@
+.markdown-source-view, .markdown-reading-view {
+  container: markdown-view/size;
+}
+
+.callout[data-callout-metadata~=gray] {
+  --callout-color: var(--color-gray-rgb);
+}
+
+.callout[data-callout-metadata~=brown] {
+  --callout-color: var(--color-brown-rgb);
+}
+
+.callout[data-callout-metadata~=red] {
+  --callout-color: var(--color-red-rgb);
+}
+
+.callout[data-callout-metadata~=orange] {
+  --callout-color: var(--color-orange-rgb);
+}
+
+.callout[data-callout-metadata~=yellow] {
+  --callout-color: var(--color-yellow-rgb);
+}
+
+.callout[data-callout-metadata~=green] {
+  --callout-color: var(--color-green-rgb);
+}
+
+.callout[data-callout-metadata~=cyan] {
+  --callout-color: var(--color-cyan-rgb);
+}
+
+.callout[data-callout-metadata~=blue] {
+  --callout-color: var(--color-blue-rgb);
+}
+
+.callout[data-callout-metadata~=purple] {
+  --callout-color: var(--color-purple-rgb);
+}
+
+.callout[data-callout-metadata~=pink] {
+  --callout-color: var(--color-pink-rgb);
+}
+
+.callout[data-callout-metadata~=no-bg], .callout[data-callout-metadata~=no-bg] > .callout-content, .callout[data-callout-metadata~=no-bg] > .callout-title, .callout[data-callout-metadata~=no-background], .callout[data-callout-metadata~=no-background] > .callout-content, .callout[data-callout-metadata~=no-background] > .callout-title {
+  background: none;
+}
+
+.callout[data-callout-metadata~=black-and-white] img,
+.callout[data-callout-metadata~=b-w] img {
+  filter: grayscale(100);
+}
+
+.callout[data-callout-metadata~=no-icon] > .callout-title > .callout-icon {
+  display: none;
+}
+
+.callout[data-callout-metadata~=no-title] > .callout-title {
+  display: none;
+}
+
+.callout[data-callout-metadata~=no-title] > .callout-content {
+  border: none;
+}
+
+.callout[data-callout-metadata~=blank] {
+  --callout-padding: 0;
+  --callout-content-padding: 0;
+  margin: 0;
+}
+.callout[data-callout-metadata~=blank], .callout[data-callout-metadata~=blank] > .callout-content {
+  border: none;
+  background: none;
+}
+.callout[data-callout-metadata~=blank] > .callout-title {
+  display: none;
+}
+
+.markdown-preview-view .callout[data-callout-metadata~=wide] {
+  position: relative;
+  --w: 95cqw;
+  width: var(--w);
+  max-width: 100cqw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.markdown-preview-view .callout[data-callout-metadata~=wide] .callout-title {
+  justify-content: center;
+}
+
+.markdown-preview-view .callout[data-callout-metadata=float-right] {
+  float: right;
+  clear: right;
+  margin: var(--size-4-3) 0 var(--size-4-3) var(--size-4-3);
+}
+
+.markdown-preview-view .callout[data-callout-metadata=float-left] {
+  float: left;
+  clear: left;
+  margin: var(--size-4-3) var(--size-4-3) var(--size-4-3) 0;
+}

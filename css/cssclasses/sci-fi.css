@@ -22,8 +22,7 @@ body {
   --hr-color: rgb(var(--sci-fi-color-rgb));
 }
 
-.sci-fi .markdown-preview-sizer,
-.sci-fi.markdown-source-view {
+.sci-fi .markdown-preview-sizer, .sci-fi.markdown-source-view {
   padding-inline: 3cqh;
 }
 
@@ -42,26 +41,22 @@ body {
   -webkit-mask-repeat: no-repeat;
 }
 
-.sci-fi .cm-scroller,
-.sci-fi.markdown-preview-view {
+.sci-fi .cm-scroller, .sci-fi.markdown-preview-view {
   background-image: radial-gradient(circle at 1px 1px, rgba(var(--sci-fi-color-rgb), 0.1) 1px, transparent 0);
   background-size: 40px 40px;
 }
 
-.fas-h1-display .sci-fi.markdown-preview-view,
-.sci-fi.markdown-preview-view.h1-display {
+.fas-h1-display .sci-fi.markdown-preview-view, .sci-fi.markdown-preview-view.h1-display {
   --h1-color: inherit;
   --h1-background: transparent;
   --h1-font: "Orbitron", Arial, serif;
 }
-.fas-h1-display .sci-fi.markdown-preview-view h1,
-.sci-fi.markdown-preview-view.h1-display h1 {
+.fas-h1-display .sci-fi.markdown-preview-view h1, .sci-fi.markdown-preview-view.h1-display h1 {
   padding: unset;
   clip-path: unset;
   text-align: left;
 }
-.fas-h1-display .sci-fi.markdown-preview-view h1::before,
-.sci-fi.markdown-preview-view.h1-display h1::before {
+.fas-h1-display .sci-fi.markdown-preview-view h1::before, .sci-fi.markdown-preview-view.h1-display h1::before {
   position: unset;
   background-image: unset;
   inset: unset;
@@ -80,22 +75,18 @@ body {
   margin-right: 0.2em;
 }
 
-.sci-fi .callout:is([data-callout=note], [data-callout=abstract], [data-callout=summary], [data-callout=tldr], [data-callout=info], [data-callout=todo], [data-callout=tip], [data-callout=hint], [data-callout=important], [data-callout=success], [data-callout=check], [data-callout=done], [data-callout=question], [data-callout=help], [data-callout=faq], [data-callout=warning], [data-callout=caution], [data-callout=attention], [data-callout=failure], [data-callout=fail], [data-callout=missing], [data-callout=danger], [data-callout=error], [data-callout=bug], [data-callout=example], [data-callout=quote], [data-callout=cite]):not(:is([data-callout=email], [data-callout=timeline]) .callout),
-.sci-fi .callout:is([data-callout=cards-deck], [data-callout=email], [data-callout=profile], [data-callout=autopsy], [data-callout=screen], [data-callout=profile]):not(:is([data-callout=email], [data-callout=timeline]) .callout) {
+.sci-fi .callout:is([data-callout=note], [data-callout=abstract], [data-callout=summary], [data-callout=tldr], [data-callout=info], [data-callout=todo], [data-callout=tip], [data-callout=hint], [data-callout=important], [data-callout=success], [data-callout=check], [data-callout=done], [data-callout=question], [data-callout=help], [data-callout=faq], [data-callout=warning], [data-callout=caution], [data-callout=attention], [data-callout=failure], [data-callout=fail], [data-callout=missing], [data-callout=danger], [data-callout=error], [data-callout=bug], [data-callout=example], [data-callout=quote], [data-callout=cite]):not(:is([data-callout=email], [data-callout=timeline]) .callout), .sci-fi .callout:is([data-callout=cards-deck], [data-callout=email], [data-callout=profile], [data-callout=autopsy], [data-callout=screen], [data-callout=profile]):not(:is([data-callout=email], [data-callout=timeline]) .callout) {
   clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
   border: none;
   background-image: linear-gradient(135deg, transparent 30%, rgba(255, 255, 255, 0.05) 100%);
 }
-.sci-fi .callout:is([data-callout=note], [data-callout=abstract], [data-callout=summary], [data-callout=tldr], [data-callout=info], [data-callout=todo], [data-callout=tip], [data-callout=hint], [data-callout=important], [data-callout=success], [data-callout=check], [data-callout=done], [data-callout=question], [data-callout=help], [data-callout=faq], [data-callout=warning], [data-callout=caution], [data-callout=attention], [data-callout=failure], [data-callout=fail], [data-callout=missing], [data-callout=danger], [data-callout=error], [data-callout=bug], [data-callout=example], [data-callout=quote], [data-callout=cite]):not(:is([data-callout=email], [data-callout=timeline]) .callout) .callout-title,
-.sci-fi .callout:is([data-callout=cards-deck], [data-callout=email], [data-callout=profile], [data-callout=autopsy], [data-callout=screen], [data-callout=profile]):not(:is([data-callout=email], [data-callout=timeline]) .callout) .callout-title {
+.sci-fi .callout:is([data-callout=note], [data-callout=abstract], [data-callout=summary], [data-callout=tldr], [data-callout=info], [data-callout=todo], [data-callout=tip], [data-callout=hint], [data-callout=important], [data-callout=success], [data-callout=check], [data-callout=done], [data-callout=question], [data-callout=help], [data-callout=faq], [data-callout=warning], [data-callout=caution], [data-callout=attention], [data-callout=failure], [data-callout=fail], [data-callout=missing], [data-callout=danger], [data-callout=error], [data-callout=bug], [data-callout=example], [data-callout=quote], [data-callout=cite]):not(:is([data-callout=email], [data-callout=timeline]) .callout) .callout-title, .sci-fi .callout:is([data-callout=cards-deck], [data-callout=email], [data-callout=profile], [data-callout=autopsy], [data-callout=screen], [data-callout=profile]):not(:is([data-callout=email], [data-callout=timeline]) .callout) .callout-title {
   background: none;
 }
-.sci-fi .callout:is([data-callout=note], [data-callout=abstract], [data-callout=summary], [data-callout=tldr], [data-callout=info], [data-callout=todo], [data-callout=tip], [data-callout=hint], [data-callout=important], [data-callout=success], [data-callout=check], [data-callout=done], [data-callout=question], [data-callout=help], [data-callout=faq], [data-callout=warning], [data-callout=caution], [data-callout=attention], [data-callout=failure], [data-callout=fail], [data-callout=missing], [data-callout=danger], [data-callout=error], [data-callout=bug], [data-callout=example], [data-callout=quote], [data-callout=cite]):not(:is([data-callout=email], [data-callout=timeline]) .callout) .callout-content,
-.sci-fi .callout:is([data-callout=cards-deck], [data-callout=email], [data-callout=profile], [data-callout=autopsy], [data-callout=screen], [data-callout=profile]):not(:is([data-callout=email], [data-callout=timeline]) .callout) .callout-content {
+.sci-fi .callout:is([data-callout=note], [data-callout=abstract], [data-callout=summary], [data-callout=tldr], [data-callout=info], [data-callout=todo], [data-callout=tip], [data-callout=hint], [data-callout=important], [data-callout=success], [data-callout=check], [data-callout=done], [data-callout=question], [data-callout=help], [data-callout=faq], [data-callout=warning], [data-callout=caution], [data-callout=attention], [data-callout=failure], [data-callout=fail], [data-callout=missing], [data-callout=danger], [data-callout=error], [data-callout=bug], [data-callout=example], [data-callout=quote], [data-callout=cite]):not(:is([data-callout=email], [data-callout=timeline]) .callout) .callout-content, .sci-fi .callout:is([data-callout=cards-deck], [data-callout=email], [data-callout=profile], [data-callout=autopsy], [data-callout=screen], [data-callout=profile]):not(:is([data-callout=email], [data-callout=timeline]) .callout) .callout-content {
   border-top-style: solid;
 }
-.sci-fi .callout:is([data-callout=note], [data-callout=abstract], [data-callout=summary], [data-callout=tldr], [data-callout=info], [data-callout=todo], [data-callout=tip], [data-callout=hint], [data-callout=important], [data-callout=success], [data-callout=check], [data-callout=done], [data-callout=question], [data-callout=help], [data-callout=faq], [data-callout=warning], [data-callout=caution], [data-callout=attention], [data-callout=failure], [data-callout=fail], [data-callout=missing], [data-callout=danger], [data-callout=error], [data-callout=bug], [data-callout=example], [data-callout=quote], [data-callout=cite]):not(:is([data-callout=email], [data-callout=timeline]) .callout)::before,
-.sci-fi .callout:is([data-callout=cards-deck], [data-callout=email], [data-callout=profile], [data-callout=autopsy], [data-callout=screen], [data-callout=profile]):not(:is([data-callout=email], [data-callout=timeline]) .callout)::before {
+.sci-fi .callout:is([data-callout=note], [data-callout=abstract], [data-callout=summary], [data-callout=tldr], [data-callout=info], [data-callout=todo], [data-callout=tip], [data-callout=hint], [data-callout=important], [data-callout=success], [data-callout=check], [data-callout=done], [data-callout=question], [data-callout=help], [data-callout=faq], [data-callout=warning], [data-callout=caution], [data-callout=attention], [data-callout=failure], [data-callout=fail], [data-callout=missing], [data-callout=danger], [data-callout=error], [data-callout=bug], [data-callout=example], [data-callout=quote], [data-callout=cite]):not(:is([data-callout=email], [data-callout=timeline]) .callout)::before, .sci-fi .callout:is([data-callout=cards-deck], [data-callout=email], [data-callout=profile], [data-callout=autopsy], [data-callout=screen], [data-callout=profile]):not(:is([data-callout=email], [data-callout=timeline]) .callout)::before {
   content: "";
   position: absolute;
   background: rgba(var(--callout-color), var(--callout-border-opacity));

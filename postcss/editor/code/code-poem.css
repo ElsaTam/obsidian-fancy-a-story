@@ -1,0 +1,132 @@
+body {
+  --workleaves-background: var(--background-primary);
+  --workleaves-foreground: var(--text-normal);
+}
+
+.markdown-source-view, .markdown-reading-view {
+  container: markdown-view/size;
+}
+
+pre.language-poem,
+pre.language-poem-frame,
+pre.language-poem-floral {
+  --code-normal: var(--text-normal);
+  --code-background: none;
+  --code-size: 1em;
+  position: relative;
+}
+
+pre.language-poem::before, pre.language-poem::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: var(--poem-border-width);
+  background: linear-gradient(to right, transparent, rgb(var(--poem-color)) 20%, rgb(var(--poem-color)) 80%, transparent);
+}
+pre.language-poem::before {
+  top: 0;
+}
+pre.language-poem::after {
+  bottom: 0;
+}
+
+pre.language-poem-frame {
+  padding-inline: 22%;
+  container: poem/inline-size;
+}
+pre.language-poem-frame > code {
+  margin-top: 17cqw;
+  margin-bottom: 5cqw;
+}
+pre.language-poem-frame::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: unset;
+  background-color: rgb(var(--poem-color));
+  -webkit-mask-image: var(--top-divider-art);
+  -webkit-mask-size: 100% auto;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: top center;
+  z-index: -1;
+}
+pre.language-poem-frame:not(.is-collapsed)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: unset;
+  background-color: rgb(var(--poem-color));
+  -webkit-mask-image: var(--bottom-divider-art);
+  -webkit-mask-size: 60% auto;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: bottom center;
+  z-index: -1;
+}
+pre.language-poem-frame .copy-code-button {
+  top: 5cqw;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+pre.language-poem-floral {
+  padding: 0;
+  --floral-width: 18%;
+}
+pre.language-poem-floral > code {
+  margin-inline: var(--floral-width);
+  border-left: var(--poem-border-width) solid rgba(var(--poem-color), 1);
+  background-color: var(--workleaves-background);
+  margin-inline: var(--floral-width);
+  border-left: var(--poem-border-width) solid rgba(var(--poem-color), 1);
+  border-bottom: var(--poem-border-width) solid rgba(var(--poem-color), 1);
+  background-color: var(--workleaves-background);
+  padding: var(--size-4-3);
+}
+pre.language-poem-floral:not(.is-collapsed)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: var(--floral-width);
+  height: unset;
+  background-color: rgba(var(--poem-color), 0.6);
+  -webkit-mask-image: var(--left-ornament-flourish), linear-gradient(to left, transparent, black 40%);
+  -webkit-mask-composite: intersect;
+  -webkit-mask-position: left bottom;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% auto;
+  z-index: -1;
+}
+pre.language-poem-floral:not(.is-collapsed)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: var(--floral-width);
+  left: unset;
+  height: unset;
+  background-color: rgba(var(--poem-color), 0.6);
+  -webkit-mask-image: var(--left-ornament-flourish), linear-gradient(to left, transparent, black 100%);
+  opacity: 0.2;
+  -webkit-mask-composite: intersect;
+  -webkit-mask-position: right bottom;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% auto;
+  z-index: -1;
+  transform: scaleX(-1) scaleY(-1);
+}
+pre.language-poem-floral.is-collapsed::before, pre.language-poem-floral.is-collapsed::after {
+  content: none;
+}
+pre.language-poem-floral .copy-code-button {
+  right: var(--floral-width);
+}

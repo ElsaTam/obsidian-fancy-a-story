@@ -1,0 +1,14 @@
+.markdown-source-view, .markdown-reading-view {
+  container: markdown-view/size;
+}
+
+.block-language-dataviewjs:has(.dataview-wide) {
+  overflow: visible !important;
+}
+
+.markdown-reading-view .dataview-wide {
+  position: relative;
+  --w: 95cqw;
+  width: var(--w);
+  left: calc(50% - var(--w) * 0.5);
+}
