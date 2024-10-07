@@ -1,0 +1,49 @@
+.markdown-source-view, .markdown-reading-view {
+  container: markdown-view/size;
+}
+
+.columns-2.markdown-preview-view .markdown-preview-section {
+  column-count: 2;
+}
+
+.columns-3.markdown-preview-view .markdown-preview-section {
+  column-count: 3;
+}
+
+.columns-4.markdown-preview-view .markdown-preview-section {
+  column-count: 4;
+}
+
+@container markdown-view (width < 900px) {
+  .columns-4.markdown-preview-view .markdown-preview-section {
+    column-count: 3;
+  }
+}
+@container markdown-view (width < 600px) {
+  :is(.columns-3, .columns-4).markdown-preview-view .markdown-preview-section {
+    column-count: 2;
+  }
+}
+:is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section {
+  column-rule: 1px solid var(--color-base-50);
+  column-gap: 50px;
+}
+
+:is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section .markdown-preview-pusher, :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section .mod-header, :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section div:has(.frontmatter), :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section :is(h1), :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section [alt~=span] {
+  column-span: all;
+}
+
+:is(.columns-2, .columns-3, .columns-4).markdown-preview-view :is(h2, h3, h4, h5, h6) {
+  break-after: avoid-column;
+}
+
+:is(.columns-2, .columns-3, .columns-4).markdown-preview-view [alt~=span] {
+  display: block;
+  width: fit-content;
+  margin-inline: auto;
+}
+
+:is(.columns-2, .columns-3, .columns-4).markdown-preview-view .list-bullet {
+  float: unset;
+  margin-inline-end: 0.8em;
+}

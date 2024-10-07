@@ -1,0 +1,84 @@
+.markdown-rendered .search-highlight > div {
+  box-shadow: none;
+  --highlight-color: var(--text-normal);
+}
+
+.cm-s-obsidian span.obsidian-search-match-highlight {
+  position: relative;
+}
+
+.cm-s-obsidian span.obsidian-search-match-highlight,
+.markdown-rendered .search-highlight > div.is-active {
+  box-shadow: none;
+  --highlight-color: var(--text-accent);
+}
+
+.cm-s-obsidian span.obsidian-search-match-highlight::before,
+.markdown-rendered .search-highlight > div::before {
+  content: "";
+  position: absolute;
+  left: -0.2em;
+  bottom: -0.2em;
+  top: -0.2em;
+  right: -0.2em;
+  border: 2px solid var(--highlight-color);
+  border-radius: 0.5em;
+}
+
+.cm-s-obsidian span.obsidian-search-match-highlight::after,
+.markdown-rendered .search-highlight > div::after {
+  content: "";
+  position: absolute;
+  left: -0.2em;
+  bottom: -0.2em;
+  top: -0.2em;
+  right: -0.2em;
+  border: 2px solid var(--highlight-color);
+  border-radius: 0.5em;
+}
+
+.cm-s-obsidian span.obsidian-search-match-highlight::before,
+.markdown-rendered .search-highlight > div:nth-child(4n+1)::before {
+  transform: rotate(2deg);
+  border-right-color: transparent;
+}
+
+.cm-s-obsidian span.obsidian-search-match-highlight::after,
+.markdown-rendered .search-highlight > div:nth-child(4n+1)::after {
+  border-left-color: transparent;
+  border-top-color: transparent;
+  transform: rotate(-1deg);
+}
+
+.markdown-rendered .search-highlight > div:nth-child(4n+2)::before {
+  transform: rotate(-2.5deg);
+  border-left-color: transparent;
+}
+
+.markdown-rendered .search-highlight > div:nth-child(4n+2)::after {
+  border-right-color: transparent;
+  border-top-color: transparent;
+  transform: rotate(1deg);
+}
+
+.markdown-rendered .search-highlight > div:nth-child(4n+3)::before {
+  transform: rotate(1deg);
+  border-top-color: transparent;
+}
+
+.markdown-rendered .search-highlight > div:nth-child(4n+3)::after {
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  transform: rotate(-2.5deg);
+}
+
+.markdown-rendered .search-highlight > div:nth-child(4n+4)::before {
+  transform: rotate(2deg);
+  border-left-color: transparent;
+}
+
+.markdown-rendered .search-highlight > div:nth-child(4n+4)::after {
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  transform: rotate(-1deg);
+}

@@ -1,0 +1,52 @@
+.markdown-source-view, .markdown-reading-view {
+  container: markdown-view/size;
+}
+
+.markdown-preview-view aside,
+.markdown-preview-view .aside-left,
+.markdown-preview-view .aside-right {
+  --aside-width: 250px;
+  --aside-gap: 15px;
+  --aside-border-thickness: 4px;
+  text-decoration: none;
+  display: block;
+  border-radius: var(--radius-l);
+  border: var(--aside-border-thickness) var(--color-accent) groove;
+  padding: 15px;
+  margin: 5px;
+  width: var(--aside-width);
+}
+
+.is-readable-line-width.markdown-preview-view .aside-left {
+  float: left;
+  clear: left;
+}
+
+.markdown-preview-view aside,
+.is-readable-line-width.markdown-preview-view .aside-right {
+  float: right;
+  clear: right;
+}
+
+@container markdown-view (width > 1000px) {
+  .markdown-preview-view aside,
+  .is-readable-line-width.markdown-preview-view .aside-right,
+  .is-readable-line-width.markdown-preview-view .aside-left {
+    --aside-width: calc(50cqw - var(--file-line-width) * 0.5 - var(--aside-gap) * 2);
+    margin-inline: 0;
+    border-block: none;
+    padding-block: 0;
+  }
+  .is-readable-line-width.markdown-preview-view .aside-left {
+    margin-left: calc(-1 * var(--aside-width) - var(--aside-gap));
+    border-left: none;
+    padding-inline: 0 15px;
+    text-align: right;
+  }
+  .markdown-preview-view aside,
+  .is-readable-line-width.markdown-preview-view .aside-right {
+    margin-right: calc(-1 * var(--aside-width) - var(--aside-gap));
+    border-right: none;
+    padding-inline: 15px 0;
+  }
+}
