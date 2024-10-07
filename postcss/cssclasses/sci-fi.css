@@ -22,7 +22,8 @@ body {
   --hr-color: rgb(var(--sci-fi-color-rgb));
 }
 
-.sci-fi .markdown-preview-sizer, .sci-fi.markdown-source-view {
+.sci-fi .markdown-preview-sizer,
+.sci-fi.markdown-source-view {
   padding-inline: 3cqh;
 }
 
@@ -41,22 +42,21 @@ body {
   -webkit-mask-repeat: no-repeat;
 }
 
-.sci-fi .cm-scroller, .sci-fi.markdown-preview-view {
+.sci-fi .cm-scroller,
+.sci-fi.markdown-preview-view {
   background-image: radial-gradient(circle at 1px 1px, rgba(var(--sci-fi-color-rgb), 0.1) 1px, transparent 0);
   background-size: 40px 40px;
 }
 
-.sci-fi.markdown-preview-view.h1-display {
+.sci-fi.markdown-preview-view.h1-display h1:not(.callout h1, ul h1, ol h1) {
   --h1-color: inherit;
   --h1-background: transparent;
   --h1-font: "Orbitron", Arial, serif;
-}
-.sci-fi.markdown-preview-view.h1-display h1 {
   padding: unset;
   clip-path: unset;
   text-align: left;
 }
-.sci-fi.markdown-preview-view.h1-display h1::before {
+.sci-fi.markdown-preview-view.h1-display h1:not(.callout h1, ul h1, ol h1)::before {
   position: unset;
   background-image: unset;
   inset: unset;
