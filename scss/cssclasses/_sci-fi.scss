@@ -53,17 +53,17 @@ body {
 
 .fas-h1-display .sci-fi.markdown-preview-view,
 .sci-fi.markdown-preview-view.h1-display {
-    --h1-color: inherit;
-    --h1-background: transparent;
-    --h1-font: "Orbitron", Arial, serif;
 
-    h1 {
+    h1:not(.callout h1, ul h1, ol h1) {
+        --h1-color: inherit;
+        --h1-background: transparent;
+        --h1-font: "Orbitron", Arial, serif;
         padding: unset;
         clip-path: unset;
         text-align: left;
     }
 
-    h1::before {
+    h1:not(.callout h1, ul h1, ol h1)::before {
         position: unset;
         background-image: unset;
         inset: unset;
