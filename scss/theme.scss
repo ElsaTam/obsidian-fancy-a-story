@@ -17,3 +17,16 @@
 
 @use 'shared/fonts/main_fonts';
 @use 'shared/fonts/additionnal_fonts';
+
+
+.workspace-leaf {
+    background-color: inherit;
+}
+
+.workspace-leaf:not(.mod-active) .workspace-leaf-content[data-type='markdown'] {
+    opacity: 0.5
+}
+
+.workspace-leaf .workspace-leaf-content[data-type='markdown'] {
+    transition: opacity 0.25s ease-out;
+}
