@@ -54,12 +54,12 @@ body {
   object-fit: cover;
 }
 
-.callout[data-callout=polaroid][data-callout-metadata~=right] {
+.callout[data-callout=polaroid]:is([data-callout-metadata~=right], [data-callout-metadata~=float-right]) {
   margin-left: var(--size-4-4);
   transform: rotate(calc(-1 * var(--polaroid-angle)));
 }
 
-.callout[data-callout=polaroid][data-callout-metadata~=left] {
+.callout[data-callout=polaroid]:is([data-callout-metadata~=left], [data-callout-metadata~=float-left]) {
   margin-right: var(--size-4-4);
   transform: rotate(var(--polaroid-angle));
 }
