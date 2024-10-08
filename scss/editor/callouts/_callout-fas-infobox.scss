@@ -1,0 +1,281 @@
+/*
+    Inspired by ITS theme's infobox callouts from SlRvb (https://publish.obsidian.md/slrvb-docs/ITS+Theme/Callouts/Callout+-+Infoboxes)
+*/
+
+.callout[data-callout="fas-infobox"] {
+    --callout-content-padding: 0;
+    --image-shadow-offset: 0;
+    --table-row-alt-background: color-mix(in srgb, rgba(var(--callout-color), 0.2), rgba(var(--mono-rgb-0), 0.2) 50%);
+    --table-border-color: rgba(var(--callout-color), var(--callout-border-opacity));
+    --table-header-border-color: rgba(var(--callout-color), var(--callout-border-opacity));
+    --hr-color: rgba(var(--callout-color), var(--callout-border-opacity));
+
+    max-width: 300px;
+    
+
+    .callout-title {
+        justify-content: center;
+    }
+
+    .callout-icon {
+        display: none;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    table td {
+        white-space: pre-wrap;
+        word-wrap: normal;
+        word-break: normal;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        text-align: center;
+    }
+
+    p:first-child,
+    h1 + p {
+        margin-top: 0;
+    }
+
+    > .callout-content > :not(table, h1, p:has(.image-embed[alt~="cover"]), p:has(img[alt~="cover"])) {
+        padding-inline: var(--size-4-3);
+    }
+
+
+    .callout-content hr:not(.sci-fi hr) {
+        -webkit-mask-image: none;
+        border-top: var(--hr-thickness) solid;
+        border-color: var(--hr-color);
+        height: unset;
+    }
+}
+
+/* images */
+.callout[data-callout="fas-infobox"] {
+
+    /* cover */
+    .image-embed[alt~="cover"] {
+        border-bottom: 4px solid rgb(var(--callout-color));
+        position: relative;
+    }
+    .image-embed[alt~="cover"]::after {
+        --triangle-size: 16px;
+        content: "";
+        position: absolute;
+        bottom: calc(-0.5 * var(--triangle-size) - 4px);
+        left: calc(50% - 0.5 * var(--triangle-size));
+        border-right: calc(0.5 * var(--triangle-size)) solid transparent;
+        border-left: calc(0.5 * var(--triangle-size)) solid transparent;
+        border-top: calc(0.5 * var(--triangle-size)) solid rgb(var(--callout-color));
+        z-index: 1;
+    }
+    img[alt*="cover"]:not(.image-embed img) {
+        border-bottom: 4px solid rgb(var(--callout-color));
+    }
+
+    /* icon */
+    .image-embed[alt~="icon"] {
+        position: absolute;
+        display: block;
+        height: 70px;
+        width: 70px;
+        transform: translate(10px, -35px);
+    }
+    .image-embed[alt~="icon"] img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 20%;
+        border: 2px solid rgb(var(--callout-color));
+    }
+    img[alt*="icon"]:not(.image-embed img) {
+        position: absolute;
+        display: block;
+        height: 70px;
+        width: 70px;
+        border: 2px solid rgb(var(--callout-color));
+        transform: translate(10px, -35px);
+        object-fit: cover;
+        border-radius: 20%;
+    }
+
+    p:has(.image-embed[alt~="icon"]) + :is(h1,h2,h3,h4,h5,h6) {
+        margin-top: 0;
+    }
+
+    /* background */
+    .image-embed[alt~="background"] {
+        position: absolute;
+        top: 0; bottom: 0;
+        left: 0; right: 0;
+        z-index: -1;
+        overflow: hidden;
+    }
+    .image-embed[alt~="background"] img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        filter: blur(1px);
+        opacity: 0.4;
+    }
+    img[alt*="background"]:not(.image-embed img) {
+        position: absolute;
+        top: var(--callout-border-width);
+        left: var(--callout-border-width);
+        height: calc(100% - 2 * var(--callout-border-width));
+        width: calc(100% - 2 * var(--callout-border-width));
+        z-index: -1;
+        object-fit: cover;
+        filter: blur(1px);
+        opacity: 0.4;
+    }
+}
+
+/* h1 ribbon */
+.callout[data-callout="fas-infobox"] {
+    --overflow-width: 10px;
+    --h1-line-height: 1.6;
+
+    &, > .callout-content {
+        overflow: visible;
+    }
+    
+    h1 {
+        color: var(--text-normal);
+        width: calc(100% + 2 * var(--overflow-width));
+        margin-block: 0;
+        margin-inline: calc(-1 * var(--overflow-width));
+        z-index: 1;
+        position: relative;
+        background: color-mix(in srgb, rgb(var(--callout-color)), rgb(var(--mono-rgb-0)) 20%);
+    }
+
+    h1:first-child {
+        margin-top: -1px;
+    }
+
+    h1::before,
+    h1::after {
+        content: "";
+        position: absolute;
+        bottom: calc(-1 * var(--overflow-width) + 1px);
+        border-top: calc(var(--overflow-width) - 1px) solid color-mix(in srgb, rgb(var(--callout-color)), rgb(0 0 0) 60%);
+    }
+
+    h1::before {
+        left: 0;
+        border-left: calc(var(--overflow-width) - 1px) solid transparent;
+    }
+    h1::after {
+        right: 0;
+        border-right: calc(var(--overflow-width) - 1px) solid transparent;
+    }
+
+    .callout-title:has(> .callout-title-inner > h1:only-child) {
+        padding: 0;
+        position: relative;
+
+        .callout-title-inner {
+            flex-grow: 1;
+        }
+
+        h1 {
+            padding-inline: calc(var(--icon-size) + var(--size-4-2));
+        }
+
+        .callout-fold {
+            position: absolute;
+            z-index: 2;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            transform: translateX(var(--overflow-width));
+            svg { color: inherit; }
+        }
+
+        + .callout-content {
+            border: none;
+        }
+    }
+}
+
+/* footer */
+.callout[data-callout="fas-infobox"] [data-callout="footer"] {
+    --callout-blend-mode: normal;
+    background: color-mix(in srgb, rgb(var(--callout-color)), rgb(var(--mono-rgb-0)) 80%);
+    border: none;
+    margin-bottom: 0;
+    overflow: visible;
+
+    padding-top: 14px;
+
+    .callout-title {
+       display: none;
+    }
+    .callout-content {
+        border: none;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0; right: 0;
+        top: 7px;
+        border-top: 2px dashed rgba(var(--callout-color), var(--callout-border-opacity));
+    }
+}
+.callout[data-callout="fas-infobox"][data-callout-metadata~="gray"]   [data-callout="footer"] { --callout-color: var(--color-gray-rgb);}
+.callout[data-callout="fas-infobox"][data-callout-metadata~="brown"]  [data-callout="footer"] { --callout-color: var(--color-brown-rgb);}
+.callout[data-callout="fas-infobox"][data-callout-metadata~="red"]    [data-callout="footer"] { --callout-color: var(--color-red-rgb);}
+.callout[data-callout="fas-infobox"][data-callout-metadata~="orange"] [data-callout="footer"] { --callout-color: var(--color-orange-rgb);}
+.callout[data-callout="fas-infobox"][data-callout-metadata~="yellow"] [data-callout="footer"] { --callout-color: var(--color-yellow-rgb);}
+.callout[data-callout="fas-infobox"][data-callout-metadata~="green"]  [data-callout="footer"] { --callout-color: var(--color-green-rgb);}
+.callout[data-callout="fas-infobox"][data-callout-metadata~="cyan"]   [data-callout="footer"] { --callout-color: var(--color-cyan-rgb);}
+.callout[data-callout="fas-infobox"][data-callout-metadata~="blue"]   [data-callout="footer"] { --callout-color: var(--color-blue-rgb);}
+.callout[data-callout="fas-infobox"][data-callout-metadata~="purple"] [data-callout="footer"] { --callout-color: var(--color-purple-rgb);}
+.callout[data-callout="fas-infobox"][data-callout-metadata~="pink"]   [data-callout="footer"] { --callout-color: var(--color-pink-rgb);}
+
+/* corners */
+.callout[data-callout="fas-infobox"][data-callout-metadata~="corners"] {
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-color: color-mix(in srgb, rgb(var(--callout-color)), rgb(var(--mono-rgb-0)) 20%);
+        z-index: 1;
+    }
+    &::before {
+        right: -3px;
+        top: -3px;
+        clip-path: polygon(0 0, 100% 0, 100% 100%);
+    }
+    &::after {
+        left: -3px;
+        bottom: -3px;
+        clip-path: polygon(0 0, 100% 100%, 0 100%);
+    }
+}
+
+
+.markdown-preview-view .callout[data-callout="fas-infobox"],
+.markdown-preview-view .callout[data-callout="fas-infobox"][data-callout-metadata~="right"] {
+    float: right;
+    margin-left: calc(var(--overflow-width) + var(--size-4-2));
+}
+.markdown-preview-view .callout[data-callout="fas-infobox"][data-callout-metadata~="left"] {
+    float: left;
+    margin-right: calc(var(--overflow-width) + var(--size-4-2));
+}
+.markdown-preview-view .callout[data-callout="fas-infobox"][data-callout-metadata~="center"] {
+    float: unset;
+    margin-inline: auto;
+}
+
+.markdown-source-view .callout[data-callout="fas-infobox"] {
+    margin-inline: auto;
+}

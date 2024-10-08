@@ -2,7 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 $body-font-family: "Noto Serif", serif;
-$purple-000: #af9ff1;
 $link-color: $purple-000;
 $mono-font-family: "Roboto Mono", "DejaVu Sans Mono", "Liberation Mono", Menlo, Monaco, Consolas, "Source Code Pro", monospace;
 $border-radius: 0px;
+
+$purple-000: hsl(252, 75%, 78%);
+$purple-100: hsl(252, 79%, 74%);
+$purple-200: hsl(252, 65%, 66%);
+$purple-300: hsl(252, 59%, 57%);
