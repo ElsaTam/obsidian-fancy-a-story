@@ -201,12 +201,6 @@ settings:
         type: class-toggle
         default: false
     - 
-        id: fas-doodle-icons
-        title: Doodle task icons
-        description: The set of icons for the tasks lists can be doodle icons to create a more handrwitten effect (very slight). Turning this off will use Lucide icons instead.
-        type: class-toggle
-        default: true
-    - 
         id: fas-bg-textures
         title: Background textures
         description: Some panes can use background texture for style effect.
@@ -409,6 +403,32 @@ settings:
             - 
                 label: Stroke
                 value: fas-h1-stroke
+            
+    - 
+        id: images
+        title: Images
+        type: heading
+        collapsed: true
+        level: 2
+    - 
+        id: image-shadow-offset
+        title: Shadow offset (px)
+        description: Set to 0 for no shadow
+        type: variable-number
+        default: 8
+        format: px
+    - 
+        id: image-shadow-stripe-thickness
+        title: Shadow stripe thickness (px)
+        type: variable-number
+        default: 2
+        format: px
+    - 
+        id: image-shadow-stripe-gap
+        title: Shadow stripe gap (px)
+        type: variable-number
+        default: 4
+        format: px
 
     - 
         id: links
@@ -444,30 +464,27 @@ settings:
             - underline overline
             
     - 
-        id: images
-        title: Images
+        id: lists
+        title: Lists
         type: heading
         collapsed: true
         level: 2
-    - 
-        id: image-shadow-offset
-        title: Shadow offset (px)
-        description: Set to 0 for no shadow
-        type: variable-number
-        default: 8
-        format: px
-    - 
-        id: image-shadow-stripe-thickness
-        title: Shadow stripe thickness (px)
-        type: variable-number
-        default: 2
-        format: px
-    - 
-        id: image-shadow-stripe-gap
-        title: Shadow stripe gap (px)
-        type: variable-number
-        default: 4
-        format: px
+    -
+        id: bullet-style
+        title: Bullet style
+        type: variable-select
+        default: doodle
+        options:
+            - normal
+            - doodle
+    -
+        id: checkbox-style
+        title: Checkbox style
+        type: variable-select
+        default: doodle
+        options:
+            - normal
+            - doodle
 
 
 
@@ -478,24 +495,31 @@ settings:
         collapsed: true
         level: 1
     - 
-        id: fas-rainbow-folders
-        title: Rainbow folders
-        type: class-toggle
-        default: true
-    - 
         id: alternative-checkboxes
-        title: File explorer decoration blending mode
+        title: Alternative checkboxes
         type: variable-select
-        default: enable
+        default: doodle
         options:
-            - enable
-            - disable
+            - 
+                value: doodle
+                label: Enable - doodle
+            - 
+                value: normal
+                label: Enable - normal
+            - 
+                value: disable
+                label: Disable
     - 
         id: fas-highlight-active-note
         title: Highlight active note
         description: Inspired by the plugin Limelight, code adapted by @tif
         type: class-toggle
         default: false
+    - 
+        id: fas-rainbow-folders
+        title: Rainbow folders
+        type: class-toggle
+        default: true
 
 
 
@@ -531,7 +555,6 @@ body:not(.fas-custom-light):not(.fas-custom-dark) .style-settings-container [dat
 body:not(.fas-custom-light):not(.fas-custom-dark) .style-settings-container [data-id="custom-color-space"],
 body.fas-accessibility .style-settings-container [data-id="fas-sans-serif"],
 body.fas-accessibility .style-settings-container [data-id="fas-bigger-font"],
-body.fas-accessibility .style-settings-container [data-id="fas-doodle-icons"],
 body:not(.fas-sidebar-texture-custom) .style-settings-container [data-id="sidebar-texture-custom"],
 body:not(.fas-sidebar-texture-custom) .style-settings-container [data-id="sidebar-texture-blend-custom"],
 body:not(.fas-sidebar-texture-custom) .style-settings-container [data-id="sidebar-texture-size-custom"],

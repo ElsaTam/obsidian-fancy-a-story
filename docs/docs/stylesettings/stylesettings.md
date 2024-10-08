@@ -147,24 +147,6 @@ See [Headings CSS Classes]({% link docs/cssclasses/cssclasses.md %})
 #### Style for the first level heading (h1)
 See [Headings CSS Classes]({% link docs/cssclasses/cssclasses.md %})
 
-## Links
-
-#### Internal link decoration
-Choose between
-- none
-- doodle (on hover)
-- underline
-- overline
-- underline overline
-
-#### External link decoration
-Choose between
-- none
-- doodle (on hover)
-- underline
-- overline
-- underline overline
-
 ## Images
 
 #### Shadow offset (px)
@@ -183,10 +165,50 @@ Gap between the stripes of the image shadow
 [![]({% link images/stylesettings/image-shadow.webp %})]({% link images/stylesettings/image-shadow.webp %})
 [![]({% link images/stylesettings/image-shadow-modified.webp %})]({% link images/stylesettings/image-shadow-modified.webp %})
 
+## Links
+
+#### Internal link decoration
+Choose between
+- none
+- doodle (on hover)
+- underline
+- overline
+- underline overline
+
+#### External link decoration
+Choose between
+- none
+- doodle (on hover)
+- underline
+- overline
+- underline overline
+
+## Lists
+
+#### Bullet style
+
+Choose between
+- Doodle style
+- Normal style (no additional styling)
+
+#### Checkbox style
+
+Choose between
+- Doodle style
+- Normal style (no additional styling)
+
+See [tasks]({% link docs/lists/tasks.md %}) for screenshots.
+
 # Features
 
-#### Rainbow folders
-Enable rainbow colors in the file explorer, for the top level folder
+#### Alternative checkboxes
+
+Choose between
+- Doodle style
+- Normal style (mainly Lucide icons)
+- Disabled
+
+See [tasks]({% link docs/lists/tasks.md %}) for screenshots.
 
 #### Highlight active note
 
@@ -194,6 +216,10 @@ Enable rainbow colors in the file explorer, for the top level folder
 Idea from the plugin [Obsidian Limelight](https://github.com/smikula/obsidian-limelight/tree/master), by smikula, under MIT License.<br>Code adapted and shared by @tif on [Discord](https://discord.com/channels/686053708261228577/1283473301682786305/1292664955270860891). Thanks a lot!
 
 Lower the opacity of non active notes.
+
+#### Rainbow folders
+
+Enable rainbow colors in the file explorer, for the top level folder
 
 
 # Additional content

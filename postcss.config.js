@@ -1,7 +1,7 @@
 module.exports = {
     plugins: [
         require('postcss-remove-selectors')({
-            selectors: [/.*\.fas-(?!doodle-icons)/]
+            selectors: [/.*\.fas-/]
         }),
     ],
  };
