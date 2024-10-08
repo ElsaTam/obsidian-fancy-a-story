@@ -1,23 +1,15 @@
 @mixin icon-after {
-    content: "";
-    display: block;
-    background-color: var(--checkbox-color);
-    width: var(--checkbox-size);
-    height: var(--checkbox-size);
-    position: absolute;
-    top: -1px;
-    inset-inline-start: -1px;
     -webkit-mask-size: 100% 100%;
     -webkit-mask-position: center;
-    -webkit-mask-repeat: no-repeat;
 }
 
-$supported-icon-labels:
+$alternative-icons:
     '>' 'forwarded'  'base-50',
     '<' 'scheduling' 'base-50',
     '?' 'question'   'yellow',
     '!' 'important'  'orange',
     '$' 'dollar'     'green',
+    '*' 'star'       'yellow',
     'a' 'anchor'     'blue',
     'b' 'blood'      'red',
     'B' 'Bookmark'   'orange',
@@ -35,7 +27,6 @@ $supported-icon-labels:
     'M' 'Music'      'green',
     'n' 'note'       'blue',
     'p' 'pros'       'green',
-    's' 'star'       'yellow',
     't' 'trash'      'red',
     'T' 'Travel'     'cyan',
     'u' 'up'         'green',
@@ -45,16 +36,31 @@ $supported-icon-labels:
     'z' 'zap'        'yellow';
 
 
-$supported-doodle-boxes: (
-    ' ' 'box'            'checkbox-border-color' 'checkbox-border-color-hover',
-    ''  'box'            'checkbox-border-color' 'checkbox-border-color-hover',
-    'x' 'box-checked'    'interactive-accent'    'interactive-accent-hover',
-    'X' 'box-checked'    'interactive-accent'    'interactive-accent-hover',
-    '-' 'box-failed'     'color-red'             'color-red-hover',
-    '/' 'box-incomplete' 'interactive-accent'    'interactive-accent-hover'
+$default-doodle-boxes: (
+    ' ' 'box-doodle'            'color-base-50' 'checkbox-border-color-hover',
+    ''  'box-doodle'            'color-base-50' 'checkbox-border-color-hover',
+    'x' 'box-doodle-checked'    'interactive-accent'    'interactive-accent-hover',
+    'X' 'box-doodle-checked'    'interactive-accent'    'interactive-accent-hover'
 );
 
-$supported-normal-boxes: (
+
+$alternative-doodle-boxes: (
+    '-' 'box-doodle-failed'     'color-red'             'color-red-hover',
+    '/' 'box-doodle-incomplete' 'interactive-accent'    'interactive-accent-hover'
+);
+
+$alternative-normal-boxes: (
     '-' 'icon-failed' 'color-red' 'color-red-hover',
     '/' 'icon-incomplete' 'interactive-accent' 'interactive-accent-hover'
 );
+
+
+@function getDataList($list) {
+    $sel: ":is(";
+    @each $label, $icon, $color in $list {
+        @if ($sel != ":is(") { $sel: $sel + ", "; }
+        $sel: $sel + "[data-task='#{$label}']";
+    }
+    $sel: $sel + ")";
+    @return $sel;
+}

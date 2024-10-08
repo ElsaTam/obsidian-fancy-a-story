@@ -1,0 +1,63 @@
+@use 'tasks-definition';
+@forward 'tasks-variables';
+
+
+// Define the base styling for alternative boxes
+$sel: tasks-definition.getDataList(tasks-definition.$alternative-normal-boxes);
+@container not style(--alternative-checkboxes: disable) {
+    :is(.HyperMD-task-line, .task-list-item)#{$sel} input[type=checkbox] {
+        &::after {
+            @include tasks-definition.icon-after;
+            -webkit-mask-image: var(--checkbox-icon);
+            background-color: var(--checkbox-marker-color);
+        }
+
+        &:hover {
+            background-color: var(--checkbox-color-hover);
+            border-color: var(--checkbox-color-hover);
+        }
+
+        &:hover::after {
+            background-color: var(--checkbox-marker-color);
+        }
+    }
+
+// Specify the color for alternative checkboxes
+    @each $label, $icon, $color, $color-hover in tasks-definition.$alternative-normal-boxes {
+        :is(.HyperMD-task-line, .task-list-item)[data-task='#{$label}'] {
+            --checkbox-color: var(--#{$color});
+            --checkbox-color-hover: var(--#{$color-hover});
+        }
+    }
+}
+
+// Normal alternative checkboxes [/] and [-] icons
+@container style(--alternative-checkboxes: normal) {
+    :is(.HyperMD-task-line, .task-list-item)#{$sel} input[type=checkbox] {
+        background-color: var(--checkbox-color);
+    }
+    @each $label, $icon, $color, $color-hover in tasks-definition.$alternative-normal-boxes {
+        :is(.HyperMD-task-line, .task-list-item.task-list-item)[data-task='#{$label}'] {
+            --checkbox-icon: var(--#{$icon});
+        }
+    }
+}
+
+// Doodle alternative checkboxes [/] and [-] variants (1 to 6)
+@container style(--alternative-checkboxes: doodle) {
+    :is(.HyperMD-task-line, .task-list-item)#{$sel} input[type=checkbox] {
+        background: none;
+        border: none;
+
+        &::after {
+            background-color: var(--checkbox-color);
+        }
+    }
+    @each $label, $icon, $color, $color-hover in tasks-definition.$alternative-doodle-boxes {
+        @for $i from 1 through 6 {
+            :is(.HyperMD-task-line, .task-list-item)[data-task='#{$label}']:nth-child(6n + #{$i}) {
+                --checkbox-icon: var(--#{$icon}-#{$i});
+            }
+        }
+    }
+}
