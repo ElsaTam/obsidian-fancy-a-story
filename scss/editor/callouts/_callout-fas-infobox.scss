@@ -276,6 +276,22 @@
     margin-inline: auto;
 }
 
+@container markdown-view (width < 500px) {
+    .markdown-preview-view .callout[data-callout="fas-infobox"],
+    .markdown-preview-view .callout[data-callout="fas-infobox"][data-callout-metadata~="right"],
+    .markdown-preview-view .callout[data-callout="fas-infobox"][data-callout-metadata~="left"] {
+        float: unset;
+        margin-inline: 0;
+    }
+    .markdown-preview-view .callout[data-callout="fas-infobox"],
+    .markdown-preview-view .callout[data-callout="fas-infobox"][data-callout-metadata~="right"] {
+        margin-left: auto;
+    }
+    .markdown-preview-view .callout[data-callout="fas-infobox"][data-callout-metadata~="left"] {
+        margin-right: auto;
+    }
+}
+
 .markdown-source-view .callout[data-callout="fas-infobox"] {
     margin-inline: auto;
 }
