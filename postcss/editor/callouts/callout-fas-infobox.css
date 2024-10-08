@@ -280,6 +280,29 @@
   margin-inline: auto;
 }
 
+body.is-mobile:not(.is-tablet) .markdown-preview-view .callout[data-callout=fas-infobox],
+body.is-mobile:not(.is-tablet) .markdown-preview-view .callout[data-callout=fas-infobox][data-callout-metadata~=right],
+body.is-mobile:not(.is-tablet) .markdown-preview-view .callout[data-callout=fas-infobox][data-callout-metadata~=left] {
+  float: unset;
+  margin-inline: 0;
+  max-width: 100%;
+}
+
+@container markdown-view (width < 500px) {
+  .markdown-preview-view .callout[data-callout=fas-infobox],
+  .markdown-preview-view .callout[data-callout=fas-infobox][data-callout-metadata~=right],
+  .markdown-preview-view .callout[data-callout=fas-infobox][data-callout-metadata~=left] {
+    float: unset;
+    margin-inline: 0;
+  }
+  .markdown-preview-view .callout[data-callout=fas-infobox],
+  .markdown-preview-view .callout[data-callout=fas-infobox][data-callout-metadata~=right] {
+    margin-left: auto;
+  }
+  .markdown-preview-view .callout[data-callout=fas-infobox][data-callout-metadata~=left] {
+    margin-right: auto;
+  }
+}
 .markdown-source-view .callout[data-callout=fas-infobox] {
   margin-inline: auto;
 }
