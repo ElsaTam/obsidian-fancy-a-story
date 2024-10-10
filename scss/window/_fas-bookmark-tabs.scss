@@ -19,8 +19,8 @@
 
     .workspace-tab-header {
         background-color: var(--workspace-background);
-        background-image: linear-gradient(to bottom, rgb(255 255 255 / 0.08) 2px, rgb(255 255 255 / 0.03) 8px, transparent 20px);
-        background-size: 100% 100%;
+        /*background-image: linear-gradient(to bottom, rgb(255 255 255 / 0.08) 2px, rgb(255 255 255 / 0.03) 8px, transparent 20px);
+        background-size: 100% 100%;*/
         clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
     }
 
