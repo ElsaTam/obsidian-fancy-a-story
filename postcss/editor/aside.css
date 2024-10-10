@@ -1,5 +1,6 @@
-.markdown-source-view, .markdown-reading-view {
-  container: markdown-view/size;
+/* Compatibility with ITS theme/snippets */
+.markdown-source-view > div, .markdown-preview-view {
+  container: markdown-view/inline-size;
 }
 
 .markdown-preview-view aside,
@@ -28,7 +29,7 @@
   clear: right;
 }
 
-@container markdown-view (width > 1000px) {
+@container markdown-view (width > 1100px) {
   .markdown-preview-view aside,
   .is-readable-line-width.markdown-preview-view .aside-right,
   .is-readable-line-width.markdown-preview-view .aside-left {

@@ -1,16 +1,12 @@
-.markdown-source-view, .markdown-reading-view {
-  container: markdown-view/size;
+/* Compatibility with ITS theme/snippets */
+.markdown-source-view > div, .markdown-preview-view {
+  container: markdown-view/inline-size;
 }
 
-.markdown-preview-view [alt~=wide]:is(img, .image-embed, .markdown-embed, .file-embed) {
-  --w: 95cqw;
+.markdown-preview-view [alt~=wide]:is(img, .markdown-embed, .file-embed) {
   position: relative;
+  --w: calc(0.95 * (100cqw + 2 * var(--file-margins)));
   width: var(--w);
-  max-width: 100cqw;
-  float: left;
-  left: calc(-0.5 * (var(--w) - var(--file-line-width)));
-  clear: both;
-}
-.markdown-preview-view [alt~=wide]:is(img, .image-embed, .markdown-embed, .file-embed) .callout-title {
-  justify-content: center;
+  left: calc(50% - var(--w) * 0.5);
+  max-width: unset;
 }
