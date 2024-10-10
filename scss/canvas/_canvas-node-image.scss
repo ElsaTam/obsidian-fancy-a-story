@@ -1,5 +1,3 @@
-@forward '../shared/markdown-container';
-
 .canvas-node:has(.tag[href="#node-image"]):not(.is-editing) {
     --p-spacing: 0;
     --image-shadow-offset: 0;

@@ -27,12 +27,13 @@ body {
     padding-inline: 3cqh;
 }
 
-.sci-fi::before {
+.markdown-reading-view:has(> .sci-fi)::before,
+.sci-fi.markdown-source-view::before {
     content: "";
     position: fixed;
-    top: 0; bottom: 0;
+    top: var(--header-height); bottom: 0;
     left: 0; right: var(--scrollbar-width);
-    z-index: -1;
+    z-index: 0;
     background: rgba(var(--sci-fi-color-rgb), 1);
     -webkit-mask-image: var(--sci-fi-frame-left), var(--sci-fi-frame-right);
     -webkit-mask-size: auto 100%;

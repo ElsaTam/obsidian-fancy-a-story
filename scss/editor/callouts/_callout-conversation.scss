@@ -1,4 +1,3 @@
-@forward '../../shared/markdown-container';
 @forward '../../shared/workleaves';
 
 .callout[data-callout="conversation-minimalist"],
@@ -41,11 +40,9 @@
 }
 
 .callout[data-callout="conversation-outline"] {
-    container: dialog / inline-size;
-
     > .callout-content > * {
         position: relative;
-        width: 80cqw;
+        width: 80%;
         margin-bottom: 2px;
         margin-top: -1px;
         background: var(--workleaves-background);
@@ -56,7 +53,7 @@
         content: "";
         position: absolute;
         top: -1px; bottom: -1px;
-        width: calc((60cqw + 2px + 2 * var(--callout-content-padding)) * 0.5);
+        width: calc(40% - var(--callout-content-padding));
         z-index: -1;
         background-size: 100% 50%, 100% 50%;
         background-position: center top, center bottom;

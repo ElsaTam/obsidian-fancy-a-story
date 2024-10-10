@@ -3,10 +3,6 @@ body {
   --workleaves-foreground: var(--text-normal);
 }
 
-.markdown-source-view, .markdown-reading-view {
-  container: markdown-view/size;
-}
-
 body {
   --poem-border-width: 1px;
   --poem-color: var(--color-blue-rgb);
@@ -105,39 +101,30 @@ body {
   background-color: var(--workleaves-background);
   padding: var(--size-4-3);
 }
-.callout[data-callout=poem][data-callout-metadata~=floral]:not(.is-collapsed)::before {
+.callout[data-callout=poem][data-callout-metadata~=floral]:not(.is-collapsed)::before, .callout[data-callout=poem][data-callout-metadata~=floral]:not(.is-collapsed)::after {
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0;
-  width: var(--floral-width);
   height: unset;
   background-color: rgba(var(--poem-color), 0.6);
   -webkit-mask-image: var(--left-ornament-flourish), linear-gradient(to left, transparent, black 40%);
-  -webkit-mask-composite: intersect;
-  -webkit-mask-position: left bottom;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 100% auto;
+  mask-composite: intersect;
   z-index: -1;
 }
+.callout[data-callout=poem][data-callout-metadata~=floral]:not(.is-collapsed)::before {
+  left: 0;
+  width: var(--floral-width);
+  -webkit-mask-position: left bottom;
+}
 .callout[data-callout=poem][data-callout-metadata~=floral]:not(.is-collapsed)::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
   right: 0;
   width: var(--floral-width);
   left: unset;
-  height: unset;
-  background-color: rgba(var(--poem-color), 0.6);
-  -webkit-mask-image: var(--left-ornament-flourish), linear-gradient(to left, transparent, black 100%);
   opacity: 0.2;
-  -webkit-mask-composite: intersect;
   -webkit-mask-position: right bottom;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: 100% auto;
-  z-index: -1;
   transform: scaleX(-1) scaleY(-1);
 }
 .callout[data-callout=poem][data-callout-metadata~=floral].is-collapsed::before, .callout[data-callout=poem][data-callout-metadata~=floral].is-collapsed::after {

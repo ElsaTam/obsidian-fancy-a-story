@@ -1,4 +1,5 @@
-.markdown-source-view, .markdown-reading-view {
+/* Compatibility with ITS theme/snippets */
+.markdown-source-view > div, .markdown-preview-view {
   container: markdown-view/size;
 }
 
@@ -8,7 +9,7 @@ body {
   --banner-slope-angle: 4deg;
   --banner-slope-border-width: 5px;
   --banner-slope-border-color: var(--color-accent);
-  --banner-width: 100cqw;
+  --banner-width: calc(100cqw + 2 * var(--file-margins));
 }
 
 .markdown-preview-view.banner {

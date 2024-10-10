@@ -6,7 +6,8 @@
   --shadow-color: rgba(0, 0, 0, 0.3);
 }
 
-.markdown-source-view, .markdown-reading-view {
+/* Compatibility with ITS theme/snippets */
+.markdown-source-view > div, .markdown-preview-view {
   container: markdown-view/size;
 }
 

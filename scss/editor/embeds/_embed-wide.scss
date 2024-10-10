@@ -1,15 +1,8 @@
 @forward '../../shared/markdown-container';
+@use '../../mixins/wide';
 
-.markdown-preview-view [alt~="wide"]:is(img, .image-embed, .markdown-embed, .file-embed) {
-    --w: 95cqw;
-    position: relative;
-    width: var(--w);
-    max-width: 100cqw;
-    float: left;
-    left: calc(-0.5 * (var(--w) - var(--file-line-width)));
-    clear:both;
+.markdown-preview-view [alt~="wide"]:is(img, .markdown-embed, .file-embed) {
+    @include wide.wide(0.95);
 
-    .callout-title {
-        justify-content: center;
-    }
+    max-width: unset;
 }

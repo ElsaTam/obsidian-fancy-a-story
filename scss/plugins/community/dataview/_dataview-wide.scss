@@ -1,12 +1,10 @@
 @forward '../../../shared/markdown-container';
+@use '../../../mixins/wide';
 
 .block-language-dataviewjs:has(.dataview-wide) {
     overflow: visible !important;
 }
 
 .markdown-reading-view .dataview-wide {
-    position: relative;
-    --w: 95cqw;
-    width: var(--w);
-    left: calc(50% - var(--w) * 0.5);
+    @include wide.wide(0.95);
 }
