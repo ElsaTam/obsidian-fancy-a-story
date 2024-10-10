@@ -2,12 +2,15 @@
 
     .workspace-tab-header-container {
         position: absolute;
-        height: calc(var(--header-height) + 0.5 * var(--cutout-corner-radius));
         z-index: 1;
         top: -2px;
+        width: 100%;
+    }
+
+    .workspace-tab-header-container-inner {
+        height: calc(var(--header-height) + 0.5 * var(--cutout-corner-radius));
         filter: drop-shadow(2px 2px 2px var(--shadow-color));
         gap: 6px;
-        width: 100%;
     }
 
     .workspace-tab-header-container:hover {
