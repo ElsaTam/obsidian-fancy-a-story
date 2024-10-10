@@ -40,7 +40,7 @@
 
 // Specify the icon for any boxes, to be overriden by everything else
         @for $i from 1 through 6 {
-            :is(.HyperMD-task-line, .task-list-item):nth-child(6n + #{$i}) {
+            :is(.HyperMD-task-line, .task-list-item):where(:nth-child(6n + #{$i})) {
                 --checkbox-icon: var(--box-doodle-checked-#{$i});
             }
         }
@@ -56,7 +56,7 @@
 // Specify the color for default boxes
         @each $label, $icon, $color, $color-hover in tasks-definition.$default-doodle-boxes {
             @for $i from 1 through 6 {
-                :is(.HyperMD-task-line, .task-list-item)[data-task='#{$label}']:nth-child(6n + #{$i}) {
+                :is(.HyperMD-task-line, .task-list-item)[data-task='#{$label}']:where(:nth-child(6n + #{$i})) {
                     --checkbox-icon: var(--#{$icon}-#{$i});
                 }
             }

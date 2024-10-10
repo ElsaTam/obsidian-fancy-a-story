@@ -45,17 +45,14 @@ Change the color accent for the cssclasses [`note-accent-i`]({% link docs/csscla
 # Accessibility
 
 #### Enable Accessibility variant
-Use a sans serif font, increase default font size and weight, remove doodle icons, etc.
+This option makes the vault easier to read, with sans serif fonts, and increased font size and weight.
 
 #### Use sans serif font
 
 #### Increase default font size and weight
 
-#### Doodle icons
-Use doodle (handwritten style) icons in some places, such as tasks icons and bullet lists.
-
 #### Background textures
-Disable all background textures
+Enable the background texture in the sidebars.
 
 
 
@@ -68,6 +65,10 @@ Disable all background textures
 - **Ribbon**: split the ribbon space in two, the status-bar goes in the bottom part
 
 ## Sidebars
+
+#### Bookmark style for the tabs
+
+[![]({% link images/stylesettings/fas-bookmark-tabs.webp %})]({% link images/stylesettings/fas-bookmark-tabs.webp %})
 
 #### Gap between the selected tab and the content in the sidebars
 

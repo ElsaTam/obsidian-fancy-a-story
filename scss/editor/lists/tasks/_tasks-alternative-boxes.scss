@@ -37,7 +37,7 @@ $sel: tasks-definition.getDataList(tasks-definition.$alternative-normal-boxes);
         background-color: var(--checkbox-color);
     }
     @each $label, $icon, $color, $color-hover in tasks-definition.$alternative-normal-boxes {
-        :is(.HyperMD-task-line, .task-list-item.task-list-item)[data-task='#{$label}'] {
+        :is(.HyperMD-task-line, .task-list-item)[data-task='#{$label}'] {
             --checkbox-icon: var(--#{$icon});
         }
     }
@@ -46,16 +46,22 @@ $sel: tasks-definition.getDataList(tasks-definition.$alternative-normal-boxes);
 // Doodle alternative checkboxes [/] and [-] variants (1 to 6)
 @container style(--alternative-checkboxes: doodle) {
     :is(.HyperMD-task-line, .task-list-item)#{$sel} input[type=checkbox] {
-        background: none;
-        border: none;
+        &, &:hover {
+            background: none;
+            border: none;
+        }
 
         &::after {
             background-color: var(--checkbox-color);
         }
+
+        &:hover::after {
+            background-color: var(--checkbox-color-hover);
+        }
     }
     @each $label, $icon, $color, $color-hover in tasks-definition.$alternative-doodle-boxes {
         @for $i from 1 through 6 {
-            :is(.HyperMD-task-line, .task-list-item)[data-task='#{$label}']:nth-child(6n + #{$i}) {
+            :is(.HyperMD-task-line, .task-list-item)[data-task='#{$label}']:where(:nth-child(6n + #{$i})) {
                 --checkbox-icon: var(--#{$icon}-#{$i});
             }
         }

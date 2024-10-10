@@ -31,22 +31,22 @@ body {
       display: block;
       -webkit-mask-repeat: no-repeat;
     }
-    :is(.HyperMD-task-line, .task-list-item):nth-child(6n+1) {
+    :is(.HyperMD-task-line, .task-list-item):where(:nth-child(6n+1)) {
       --checkbox-icon: var(--box-doodle-checked-1);
     }
-    :is(.HyperMD-task-line, .task-list-item):nth-child(6n+2) {
+    :is(.HyperMD-task-line, .task-list-item):where(:nth-child(6n+2)) {
       --checkbox-icon: var(--box-doodle-checked-2);
     }
-    :is(.HyperMD-task-line, .task-list-item):nth-child(6n+3) {
+    :is(.HyperMD-task-line, .task-list-item):where(:nth-child(6n+3)) {
       --checkbox-icon: var(--box-doodle-checked-3);
     }
-    :is(.HyperMD-task-line, .task-list-item):nth-child(6n+4) {
+    :is(.HyperMD-task-line, .task-list-item):where(:nth-child(6n+4)) {
       --checkbox-icon: var(--box-doodle-checked-4);
     }
-    :is(.HyperMD-task-line, .task-list-item):nth-child(6n+5) {
+    :is(.HyperMD-task-line, .task-list-item):where(:nth-child(6n+5)) {
       --checkbox-icon: var(--box-doodle-checked-5);
     }
-    :is(.HyperMD-task-line, .task-list-item):nth-child(6n+6) {
+    :is(.HyperMD-task-line, .task-list-item):where(:nth-child(6n+6)) {
       --checkbox-icon: var(--box-doodle-checked-6);
     }
     :is(.HyperMD-task-line, .task-list-item)[data-task=" "] {
@@ -65,76 +65,76 @@ body {
       --checkbox-color-hover: var(--interactive-accent-hover);
       --checkbox-color: var(--interactive-accent);
     }
-    :is(.HyperMD-task-line, .task-list-item)[data-task=" "]:nth-child(6n+1) {
+    :is(.HyperMD-task-line, .task-list-item)[data-task=" "]:where(:nth-child(6n+1)) {
       --checkbox-icon: var(--box-doodle-1);
     }
-    :is(.HyperMD-task-line, .task-list-item)[data-task=" "]:nth-child(6n+2) {
+    :is(.HyperMD-task-line, .task-list-item)[data-task=" "]:where(:nth-child(6n+2)) {
       --checkbox-icon: var(--box-doodle-2);
     }
-    :is(.HyperMD-task-line, .task-list-item)[data-task=" "]:nth-child(6n+3) {
+    :is(.HyperMD-task-line, .task-list-item)[data-task=" "]:where(:nth-child(6n+3)) {
       --checkbox-icon: var(--box-doodle-3);
     }
-    :is(.HyperMD-task-line, .task-list-item)[data-task=" "]:nth-child(6n+4) {
+    :is(.HyperMD-task-line, .task-list-item)[data-task=" "]:where(:nth-child(6n+4)) {
       --checkbox-icon: var(--box-doodle-4);
     }
-    :is(.HyperMD-task-line, .task-list-item)[data-task=" "]:nth-child(6n+5) {
+    :is(.HyperMD-task-line, .task-list-item)[data-task=" "]:where(:nth-child(6n+5)) {
       --checkbox-icon: var(--box-doodle-5);
     }
-    :is(.HyperMD-task-line, .task-list-item)[data-task=" "]:nth-child(6n+6) {
+    :is(.HyperMD-task-line, .task-list-item)[data-task=" "]:where(:nth-child(6n+6)) {
       --checkbox-icon: var(--box-doodle-6);
     }
-    :is(.HyperMD-task-line, .task-list-item)[data-task=""]:nth-child(6n+1) {
+    :is(.HyperMD-task-line, .task-list-item)[data-task=""]:where(:nth-child(6n+1)) {
       --checkbox-icon: var(--box-doodle-1);
     }
-    :is(.HyperMD-task-line, .task-list-item)[data-task=""]:nth-child(6n+2) {
+    :is(.HyperMD-task-line, .task-list-item)[data-task=""]:where(:nth-child(6n+2)) {
       --checkbox-icon: var(--box-doodle-2);
     }
-    :is(.HyperMD-task-line, .task-list-item)[data-task=""]:nth-child(6n+3) {
+    :is(.HyperMD-task-line, .task-list-item)[data-task=""]:where(:nth-child(6n+3)) {
       --checkbox-icon: var(--box-doodle-3);
     }
-    :is(.HyperMD-task-line, .task-list-item)[data-task=""]:nth-child(6n+4) {
+    :is(.HyperMD-task-line, .task-list-item)[data-task=""]:where(:nth-child(6n+4)) {
       --checkbox-icon: var(--box-doodle-4);
     }
-    :is(.HyperMD-task-line, .task-list-item)[data-task=""]:nth-child(6n+5) {
+    :is(.HyperMD-task-line, .task-list-item)[data-task=""]:where(:nth-child(6n+5)) {
       --checkbox-icon: var(--box-doodle-5);
     }
-    :is(.HyperMD-task-line, .task-list-item)[data-task=""]:nth-child(6n+6) {
+    :is(.HyperMD-task-line, .task-list-item)[data-task=""]:where(:nth-child(6n+6)) {
       --checkbox-icon: var(--box-doodle-6);
     }
-    :is(.HyperMD-task-line, .task-list-item)[data-task=x]:nth-child(6n+1) {
+    :is(.HyperMD-task-line, .task-list-item)[data-task=x]:where(:nth-child(6n+1)) {
       --checkbox-icon: var(--box-doodle-checked-1);
     }
-    :is(.HyperMD-task-line, .task-list-item)[data-task=x]:nth-child(6n+2) {
+    :is(.HyperMD-task-line, .task-list-item)[data-task=x]:where(:nth-child(6n+2)) {
       --checkbox-icon: var(--box-doodle-checked-2);
     }
-    :is(.HyperMD-task-line, .task-list-item)[data-task=x]:nth-child(6n+3) {
+    :is(.HyperMD-task-line, .task-list-item)[data-task=x]:where(:nth-child(6n+3)) {
       --checkbox-icon: var(--box-doodle-checked-3);
     }
-    :is(.HyperMD-task-line, .task-list-item)[data-task=x]:nth-child(6n+4) {
+    :is(.HyperMD-task-line, .task-list-item)[data-task=x]:where(:nth-child(6n+4)) {
       --checkbox-icon: var(--box-doodle-checked-4);
     }
-    :is(.HyperMD-task-line, .task-list-item)[data-task=x]:nth-child(6n+5) {
+    :is(.HyperMD-task-line, .task-list-item)[data-task=x]:where(:nth-child(6n+5)) {
       --checkbox-icon: var(--box-doodle-checked-5);
     }
-    :is(.HyperMD-task-line, .task-list-item)[data-task=x]:nth-child(6n+6) {
+    :is(.HyperMD-task-line, .task-list-item)[data-task=x]:where(:nth-child(6n+6)) {
       --checkbox-icon: var(--box-doodle-checked-6);
     }
-    :is(.HyperMD-task-line, .task-list-item)[data-task=X]:nth-child(6n+1) {
+    :is(.HyperMD-task-line, .task-list-item)[data-task=X]:where(:nth-child(6n+1)) {
       --checkbox-icon: var(--box-doodle-checked-1);
     }
-    :is(.HyperMD-task-line, .task-list-item)[data-task=X]:nth-child(6n+2) {
+    :is(.HyperMD-task-line, .task-list-item)[data-task=X]:where(:nth-child(6n+2)) {
       --checkbox-icon: var(--box-doodle-checked-2);
     }
-    :is(.HyperMD-task-line, .task-list-item)[data-task=X]:nth-child(6n+3) {
+    :is(.HyperMD-task-line, .task-list-item)[data-task=X]:where(:nth-child(6n+3)) {
       --checkbox-icon: var(--box-doodle-checked-3);
     }
-    :is(.HyperMD-task-line, .task-list-item)[data-task=X]:nth-child(6n+4) {
+    :is(.HyperMD-task-line, .task-list-item)[data-task=X]:where(:nth-child(6n+4)) {
       --checkbox-icon: var(--box-doodle-checked-4);
     }
-    :is(.HyperMD-task-line, .task-list-item)[data-task=X]:nth-child(6n+5) {
+    :is(.HyperMD-task-line, .task-list-item)[data-task=X]:where(:nth-child(6n+5)) {
       --checkbox-icon: var(--box-doodle-checked-5);
     }
-    :is(.HyperMD-task-line, .task-list-item)[data-task=X]:nth-child(6n+6) {
+    :is(.HyperMD-task-line, .task-list-item)[data-task=X]:where(:nth-child(6n+6)) {
       --checkbox-icon: var(--box-doodle-checked-6);
     }
   }
@@ -166,55 +166,58 @@ body {
   :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox] {
     background-color: var(--checkbox-color);
   }
-  :is(.HyperMD-task-line, .task-list-item.task-list-item)[data-task="-"] {
+  :is(.HyperMD-task-line, .task-list-item)[data-task="-"] {
     --checkbox-icon: var(--icon-failed);
   }
-  :is(.HyperMD-task-line, .task-list-item.task-list-item)[data-task="/"] {
+  :is(.HyperMD-task-line, .task-list-item)[data-task="/"] {
     --checkbox-icon: var(--icon-incomplete);
   }
 }
 @container style(--alternative-checkboxes: doodle) {
-  :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox] {
+  :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox], :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox]:hover {
     background: none;
     border: none;
   }
   :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox]::after {
     background-color: var(--checkbox-color);
   }
-  :is(.HyperMD-task-line, .task-list-item)[data-task="-"]:nth-child(6n+1) {
+  :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox]:hover::after {
+    background-color: var(--checkbox-color-hover);
+  }
+  :is(.HyperMD-task-line, .task-list-item)[data-task="-"]:where(:nth-child(6n+1)) {
     --checkbox-icon: var(--box-doodle-failed-1);
   }
-  :is(.HyperMD-task-line, .task-list-item)[data-task="-"]:nth-child(6n+2) {
+  :is(.HyperMD-task-line, .task-list-item)[data-task="-"]:where(:nth-child(6n+2)) {
     --checkbox-icon: var(--box-doodle-failed-2);
   }
-  :is(.HyperMD-task-line, .task-list-item)[data-task="-"]:nth-child(6n+3) {
+  :is(.HyperMD-task-line, .task-list-item)[data-task="-"]:where(:nth-child(6n+3)) {
     --checkbox-icon: var(--box-doodle-failed-3);
   }
-  :is(.HyperMD-task-line, .task-list-item)[data-task="-"]:nth-child(6n+4) {
+  :is(.HyperMD-task-line, .task-list-item)[data-task="-"]:where(:nth-child(6n+4)) {
     --checkbox-icon: var(--box-doodle-failed-4);
   }
-  :is(.HyperMD-task-line, .task-list-item)[data-task="-"]:nth-child(6n+5) {
+  :is(.HyperMD-task-line, .task-list-item)[data-task="-"]:where(:nth-child(6n+5)) {
     --checkbox-icon: var(--box-doodle-failed-5);
   }
-  :is(.HyperMD-task-line, .task-list-item)[data-task="-"]:nth-child(6n+6) {
+  :is(.HyperMD-task-line, .task-list-item)[data-task="-"]:where(:nth-child(6n+6)) {
     --checkbox-icon: var(--box-doodle-failed-6);
   }
-  :is(.HyperMD-task-line, .task-list-item)[data-task="/"]:nth-child(6n+1) {
+  :is(.HyperMD-task-line, .task-list-item)[data-task="/"]:where(:nth-child(6n+1)) {
     --checkbox-icon: var(--box-doodle-incomplete-1);
   }
-  :is(.HyperMD-task-line, .task-list-item)[data-task="/"]:nth-child(6n+2) {
+  :is(.HyperMD-task-line, .task-list-item)[data-task="/"]:where(:nth-child(6n+2)) {
     --checkbox-icon: var(--box-doodle-incomplete-2);
   }
-  :is(.HyperMD-task-line, .task-list-item)[data-task="/"]:nth-child(6n+3) {
+  :is(.HyperMD-task-line, .task-list-item)[data-task="/"]:where(:nth-child(6n+3)) {
     --checkbox-icon: var(--box-doodle-incomplete-3);
   }
-  :is(.HyperMD-task-line, .task-list-item)[data-task="/"]:nth-child(6n+4) {
+  :is(.HyperMD-task-line, .task-list-item)[data-task="/"]:where(:nth-child(6n+4)) {
     --checkbox-icon: var(--box-doodle-incomplete-4);
   }
-  :is(.HyperMD-task-line, .task-list-item)[data-task="/"]:nth-child(6n+5) {
+  :is(.HyperMD-task-line, .task-list-item)[data-task="/"]:where(:nth-child(6n+5)) {
     --checkbox-icon: var(--box-doodle-incomplete-5);
   }
-  :is(.HyperMD-task-line, .task-list-item)[data-task="/"]:nth-child(6n+6) {
+  :is(.HyperMD-task-line, .task-list-item)[data-task="/"]:where(:nth-child(6n+6)) {
     --checkbox-icon: var(--box-doodle-incomplete-6);
   }
 }
