@@ -1,6 +1,7 @@
 @charset "UTF-8";
-.markdown-source-view, .markdown-reading-view {
-  container: markdown-view/size;
+/* Compatibility with ITS theme/snippets */
+.markdown-source-view > div, .markdown-preview-view {
+  container: markdown-view/inline-size;
 }
 
 .callout[data-callout=autopsy] {
