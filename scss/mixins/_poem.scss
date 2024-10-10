@@ -96,36 +96,30 @@
 }
 
 @mixin poem-floral-pseudo {
-    &:not(.is-collapsed)::before {
-        content: "";
-        position: absolute;
-        top: 0; bottom: 0;
-        left: 0; width: var(--floral-width);
-        height: unset;
-        background-color: rgba(var(--poem-color), 0.6);
-        -webkit-mask-image: var(--left-ornament-flourish), linear-gradient(to left, transparent, black 40%);
-        -webkit-mask-composite: intersect;
-        -webkit-mask-position: left bottom;
-        -webkit-mask-repeat: no-repeat;
-        -webkit-mask-size: 100% auto;
-        z-index: -1;
-    }
-
+    &:not(.is-collapsed)::before,
     &:not(.is-collapsed)::after {
         content: "";
         position: absolute;
         top: 0; bottom: 0;
-        right: 0; width: var(--floral-width);
-        left: unset;
         height: unset;
         background-color: rgba(var(--poem-color), 0.6);
-        -webkit-mask-image: var(--left-ornament-flourish), linear-gradient(to left, transparent, black 100%);
-        opacity: 0.2;
-        -webkit-mask-composite: intersect;
-        -webkit-mask-position: right bottom;
+        -webkit-mask-image: var(--left-ornament-flourish), linear-gradient(to left, transparent, black 40%);
         -webkit-mask-repeat: no-repeat;
         -webkit-mask-size: 100% auto;
+        mask-composite: intersect;
         z-index: -1;
+    }
+
+    &:not(.is-collapsed)::before {
+        left: 0; width: var(--floral-width);
+        -webkit-mask-position: left bottom;
+    }
+
+    &:not(.is-collapsed)::after {
+        right: 0; width: var(--floral-width);
+        left: unset;
+        opacity: 0.2;
+        -webkit-mask-position: right bottom;
         transform: scaleX(-1) scaleY(-1);
     }
 

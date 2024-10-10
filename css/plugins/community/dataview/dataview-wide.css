@@ -1,4 +1,5 @@
-.markdown-source-view, .markdown-reading-view {
+/* Compatibility with ITS theme/snippets */
+.markdown-source-view > div, .markdown-preview-view {
   container: markdown-view/size;
 }
 
@@ -8,7 +9,7 @@
 
 .markdown-reading-view .dataview-wide {
   position: relative;
-  --w: 95cqw;
+  --w: calc(0.95 * (100cqw + 2 * var(--file-margins)));
   width: var(--w);
   left: calc(50% - var(--w) * 0.5);
 }

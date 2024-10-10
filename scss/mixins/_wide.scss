@@ -1,0 +1,6 @@
+@mixin wide($proportion) {
+    position: relative;
+    --w: calc(#{$proportion} * (100cqw + 2 * var(--file-margins)));
+    width: var(--w);
+    left: calc(50% - var(--w) * 0.5);
+}

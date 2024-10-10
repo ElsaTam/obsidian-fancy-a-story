@@ -1,4 +1,5 @@
 @forward '../../shared/markdown-container';
+@use '../../mixins/wide';
 
 .callout[data-callout-metadata~="gray"]   { --callout-color: var(--color-gray-rgb);}
 .callout[data-callout-metadata~="brown"]  { --callout-color: var(--color-brown-rgb);}
@@ -48,12 +49,7 @@
 
 
 .markdown-preview-view .callout[data-callout-metadata~="wide"] {
-    position: relative;
-    --w: 95cqw;
-    width: var(--w);
-    max-width: 100cqw;
-    margin-left: 50%;
-    transform: translateX(-50%);
+    @include wide.wide(0.95);
 
     .callout-title {
         justify-content: center;

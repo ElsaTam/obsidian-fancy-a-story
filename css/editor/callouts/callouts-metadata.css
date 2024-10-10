@@ -1,4 +1,5 @@
-.markdown-source-view, .markdown-reading-view {
+/* Compatibility with ITS theme/snippets */
+.markdown-source-view > div, .markdown-preview-view {
   container: markdown-view/size;
 }
 
@@ -81,11 +82,9 @@
 
 .markdown-preview-view .callout[data-callout-metadata~=wide] {
   position: relative;
-  --w: 95cqw;
+  --w: calc(0.95 * (100cqw + 2 * var(--file-margins)));
   width: var(--w);
-  max-width: 100cqw;
-  margin-left: 50%;
-  transform: translateX(-50%);
+  left: calc(50% - var(--w) * 0.5);
 }
 .markdown-preview-view .callout[data-callout-metadata~=wide] .callout-title {
   justify-content: center;

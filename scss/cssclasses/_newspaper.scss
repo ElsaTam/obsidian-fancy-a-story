@@ -51,7 +51,7 @@
     margin-left: calc(50% - 50cqw - var(--file-margins));
 }
 
-@container markdown-view style(--metadata-display-reading: block) {
+@container style(--metadata-display-reading: block) {
     :is(.newspaper.show-properties.markdown-preview-view .mod-header)::after {
         content: "";
         display: block;
@@ -59,9 +59,13 @@
         width: calc(100cqw + 2 * var(--file-margins));
         margin-left: calc(50% - 50cqw - var(--file-margins));
     }
+
+    :is(.newspaper.show-properties.markdown-preview-view .mod-header) {
+        margin-bottom: var(--p-spacing);
+    }
 }
 
-@container markdown-view style(--metadata-display-editing: block) {
+@container style(--metadata-display-editing: block) {
     :is(.newspaper.show-properties.markdown-source-view .cm-contentContainer)::before {
         content: "";
         position: absolute;
