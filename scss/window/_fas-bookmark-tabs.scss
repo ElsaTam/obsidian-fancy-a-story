@@ -1,0 +1,35 @@
+.fas-bookmark-tabs .mod-sidedock {
+    .workspace-leaf {
+        padding-top: calc(var(--header-height) - 6px);
+    }
+
+    .workspace-tab-header-container {
+        height: 6px;
+    }
+
+    .workspace-tab-header-container-inner {
+        position: absolute;
+        height: calc(var(--header-height) + 0.5 * var(--cutout-corner-radius));
+        z-index: 1;
+        top: -2px;
+        filter: drop-shadow(2px 2px 2px var(--shadow-color));
+        gap: 6px;
+    }
+
+    .workspace-tab-header-container:hover {
+        --icon-opacity: var(--icon-opacity-inactive);
+    }
+
+    .workspace-tab-header {
+        background-color: var(--workspace-background);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+    }
+
+    .workspace-tab-header.is-active {
+        background-color: var(--color-accent);
+    }
+
+    .workspace-tab-header.is-active:hover {
+        background-color: var(--color-accent-1);
+    }
+}

@@ -187,7 +187,7 @@ settings:
     - 
         id: fas-accessibility
         title: Enable Accessibility variant
-        description: Use sans serif fonts, increase default font size and weight, remove doodle icons, etc.
+        description: This option makes the vault easier to read, with sans serif fonts, and increased font size and weight.
         type: class-toggle
         default: false
     - 
@@ -203,7 +203,7 @@ settings:
     - 
         id: fas-bg-textures
         title: Background textures
-        description: Some panes can use background texture for style effect.
+        description: Enable the background texture in the sidebars.
         type: class-toggle
         default: true
 
@@ -238,6 +238,11 @@ settings:
         type: heading
         collapsed: true
         level: 2
+    -
+        id: fas-bookmark-tabs
+        title: Bookmark style for the tabs
+        type: class-toggle
+        default: false
     - 
         id: sidedock-tab-header-padding-bottom
         title: Gap between the selected tab and the content in the sidebars
@@ -555,6 +560,7 @@ body:not(.fas-custom-light):not(.fas-custom-dark) .style-settings-container [dat
 body:not(.fas-custom-light):not(.fas-custom-dark) .style-settings-container [data-id="custom-color-space"],
 body.fas-accessibility .style-settings-container [data-id="fas-sans-serif"],
 body.fas-accessibility .style-settings-container [data-id="fas-bigger-font"],
+body.fas-bookmark-tabs .style-settings-container [data-id="sidedock-tab-header-padding-bottom"],
 body:not(.fas-sidebar-texture-custom) .style-settings-container [data-id="sidebar-texture-custom"],
 body:not(.fas-sidebar-texture-custom) .style-settings-container [data-id="sidebar-texture-blend-custom"],
 body:not(.fas-sidebar-texture-custom) .style-settings-container [data-id="sidebar-texture-size-custom"],
