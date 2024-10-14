@@ -40,9 +40,8 @@
   width: 100%;
   object-fit: cover;
 }
-.callout[data-callout=masonry][data-callout-metadata=horizontal] > .callout-content > p > *:last-child img {
-  object-fit: contain;
-  object-position: left center;
+.callout[data-callout=masonry][data-callout-metadata=horizontal] > .callout-content > p > *:last-child {
+  flex-grow: unset;
 }
 .callout[data-callout=masonry][data-callout-metadata=horizontal] br {
   display: none;
