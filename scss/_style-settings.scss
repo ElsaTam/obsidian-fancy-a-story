@@ -239,7 +239,7 @@ settings:
         collapsed: true
         level: 2
     -
-        id: bookmark-tabs
+        id: fas-bookmark-tabs
         title: Bookmark style for the tabs
         type: variable-select
         default: disable
@@ -485,7 +485,7 @@ settings:
         collapsed: true
         level: 2
     -
-        id: bullet-style
+        id: fas-bullet-style
         title: Bullet style
         type: variable-select
         default: doodle
@@ -493,7 +493,7 @@ settings:
             - normal
             - doodle
     -
-        id: checkbox-style
+        id: fas-checkbox-style
         title: Checkbox style
         type: variable-select
         default: doodle
@@ -510,7 +510,7 @@ settings:
         collapsed: true
         level: 1
     - 
-        id: alternative-checkboxes
+        id: fas-alternative-checkboxes
         title: Alternative checkboxes
         type: variable-select
         default: doodle
@@ -577,7 +577,6 @@ body:not(.fas-custom-light):not(.fas-custom-dark) .style-settings-container [dat
 body:not(.fas-custom-light):not(.fas-custom-dark) .style-settings-container [data-id="custom-color-space"],
 body.fas-accessibility .style-settings-container [data-id="fas-sans-serif"],
 body.fas-accessibility .style-settings-container [data-id="fas-bigger-font"],
-body.fas-bookmark-tabs .style-settings-container [data-id="sidedock-tab-header-padding-bottom"],
 body:not(.fas-sidebar-texture-custom) .style-settings-container [data-id="sidebar-texture-custom"],
 body:not(.fas-sidebar-texture-custom) .style-settings-container [data-id="sidebar-texture-blend-custom"],
 body:not(.fas-sidebar-texture-custom) .style-settings-container [data-id="sidebar-texture-size-custom"],
@@ -590,6 +589,12 @@ body:not(.fas-file-explorer-decoration-custom) .style-settings-container [data-i
 {
     opacity: 0.5;
     pointer-events: none;
+}
+@container not style(--fas-bookmark-tabs: disable) {
+    .style-settings-container [data-id="sidedock-tab-header-padding-bottom"] {
+        opacity: 0.5;
+        pointer-events: none;
+    }
 }
 
 // Show color for some text inputs

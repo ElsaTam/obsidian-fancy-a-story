@@ -2,7 +2,7 @@
 @forward 'tasks-variables';
 
 // Define the base styling for default doodle checked boxes
-@container style(--checkbox-style: doodle) {
+@container style(--fas-checkbox-style: doodle) {
     @scope (body) to (:is(.callout[data-callout="autopsy"], .callout[data-callout="screen"], .callout[data-callout="email"])) {
         :is(.HyperMD-task-line, .task-list-item) {
             --checkbox-border-color: transparent;
