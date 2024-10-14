@@ -239,10 +239,20 @@ settings:
         collapsed: true
         level: 2
     -
-        id: fas-bookmark-tabs
+        id: bookmark-tabs
         title: Bookmark style for the tabs
-        type: class-toggle
-        default: false
+        type: variable-select
+        default: disable
+        options:
+            - 
+                label: Disable
+                value: disable
+            - 
+                label: Flat
+                value: flat
+            - 
+                label: Volume
+                value: volume
     - 
         id: sidedock-tab-header-padding-bottom
         title: Gap between the selected tab and the content in the sidebars
@@ -523,8 +533,15 @@ settings:
     - 
         id: fas-rainbow-folders
         title: Rainbow folders
-        type: class-toggle
+        type: variable-select
         default: true
+        options:
+            - 
+                value: true
+                label: Enable
+            - 
+                value: false
+                label: Disable
 
 
 

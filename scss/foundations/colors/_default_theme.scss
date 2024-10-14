@@ -1,6 +1,8 @@
 
 .is-mobile.theme-light, .is-mobile.theme-dark,
 .theme-light, .theme-dark {
+    --color-space: var(--custom-color-space);
+    
     --color-base-05: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 05%);
     --color-base-10: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 10%);
     --color-base-20: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 15%);
