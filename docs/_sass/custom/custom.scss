@@ -75,3 +75,20 @@ img:hover {
 .site-nav > ul > li:last-child {
     border-top: 1px solid hsl(0, 0%, 22%);
 }
+
+
+body:not(:has(> .side-bar)) .main:has(.masonry) {
+    max-width: unset;
+}
+
+.masonry {
+    position: relative;
+}
+.masonry-item {
+    position: absolute;
+}
+.masonry-item img {
+    border: none;
+    margin-inline: auto;
+    display: block;
+}

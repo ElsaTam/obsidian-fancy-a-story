@@ -5,6 +5,8 @@ nav_order: 4
 
 # Styled callouts
 
+[View gallery]({% link docs/callouts/callouts-gallery.md %})
+
 | Name | Description | Source |
 |:-----|:------------|:-------|
 | [`autopsy`]({% link docs/callouts/autopsy.md %}) | A strict layout for an autopsy report | [`_callout-autopsy.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-autopsy.scss) |
@@ -23,6 +25,7 @@ nav_order: 4
 | [`profile`]({% link docs/callouts/profile.md %}) | Float image on the right | [`_callout-profile.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-profile.scss) |
 | [`screen`]({% link docs/callouts/screen.md %}) | Retro green glowing screen | [`_callout-screen.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-screen.scss) |
 | [`timeline`]({% link docs/callouts/timeline.md %}) | Timeline with several options | [`_callout-timeline.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-timeline.scss) |
+
 
 # Utility callouts
 

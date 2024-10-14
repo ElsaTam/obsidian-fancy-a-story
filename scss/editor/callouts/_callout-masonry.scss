@@ -10,7 +10,7 @@
     background: none;
 
     > .callout-content > p {
-        columns: 9rem;
+        column-count: 4;
         column-gap: 0.5rem;
     }
 
@@ -30,10 +30,15 @@
         }
     }
 }
+@for $i from 2 to 10 {
+    .callout[data-callout="masonry"][data-callout-metadata~="col-#{$i}"] > .callout-content > p {
+        column-count: #{$i};
+    }
+}
 
 .callout[data-callout="masonry"][data-callout-metadata="horizontal"] {
     > .callout-content > p {
-        columns: unset;
+        column-count: unset;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
