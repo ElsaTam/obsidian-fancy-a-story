@@ -1,6 +1,8 @@
 
 .is-mobile.theme-light, .is-mobile.theme-dark,
 .theme-light, .theme-dark {
+    --color-base-00: var(--custom-color-base-00);
+    --color-base-100: var(--custom-color-base-100);
     --color-space: var(--custom-color-space);
     
     --color-base-05: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 05%);
@@ -24,20 +26,4 @@
     --color-blue-hover  : color-mix(in srgb, var(--color-blue),   rgb(var(--mono-rgb-0)) 20%);
     --color-purple-hover: color-mix(in srgb, var(--color-purple), rgb(var(--mono-rgb-0)) 20%);
     --color-pink-hover  : color-mix(in srgb, var(--color-pink),   rgb(var(--mono-rgb-0)) 20%);
-}
-
-body {
-    --custom-color-space: srgb-linear;
-}
-
-.theme-light.fas-custom-light {
-    --color-base-00: var(--custom-color-base-00);
-    --color-base-100: var(--custom-color-base-100);
-    --color-space: var(--custom-color-space);
-}
-
-.theme-dark.fas-custom-dark {
-    --color-base-00: var(--custom-color-base-00);
-    --color-base-100: var(--custom-color-base-100);
-    --color-space: var(--custom-color-space);
 }

@@ -78,6 +78,7 @@
   object-fit: cover;
   border-radius: 20%;
   border: 2px solid rgb(var(--callout-color));
+  background-color: var(--workleaves-background, var(--background-primary));
 }
 .callout[data-callout=fas-infobox] img[alt*=icon]:not(.image-embed img) {
   position: absolute;
@@ -121,6 +122,14 @@
 }
 
 /* h1 ribbon */
+:is(.fas-h1-stroke, .h1-stroke) .callout[data-callout=fas-infobox] h1 {
+  display: block;
+}
+:is(.fas-h1-stroke, .h1-stroke) .callout[data-callout=fas-infobox] h1::before, :is(.fas-h1-stroke, .h1-stroke) .callout[data-callout=fas-infobox] h1::after {
+  background: none;
+  height: unset;
+}
+
 .callout[data-callout=fas-infobox] {
   --overflow-width: 10px;
   --h1-line-height: 1.6;

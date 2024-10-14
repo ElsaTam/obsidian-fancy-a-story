@@ -9,7 +9,7 @@
   background: none;
 }
 .callout[data-callout=masonry] > .callout-content > p {
-  columns: 9rem;
+  column-count: 4;
   column-gap: 0.5rem;
 }
 .callout[data-callout=masonry] > .callout-title {
@@ -25,8 +25,40 @@
   filter: saturate(10%) blur(1px);
 }
 
+.callout[data-callout=masonry][data-callout-metadata~=col-2] > .callout-content > p {
+  column-count: 2;
+}
+
+.callout[data-callout=masonry][data-callout-metadata~=col-3] > .callout-content > p {
+  column-count: 3;
+}
+
+.callout[data-callout=masonry][data-callout-metadata~=col-4] > .callout-content > p {
+  column-count: 4;
+}
+
+.callout[data-callout=masonry][data-callout-metadata~=col-5] > .callout-content > p {
+  column-count: 5;
+}
+
+.callout[data-callout=masonry][data-callout-metadata~=col-6] > .callout-content > p {
+  column-count: 6;
+}
+
+.callout[data-callout=masonry][data-callout-metadata~=col-7] > .callout-content > p {
+  column-count: 7;
+}
+
+.callout[data-callout=masonry][data-callout-metadata~=col-8] > .callout-content > p {
+  column-count: 8;
+}
+
+.callout[data-callout=masonry][data-callout-metadata~=col-9] > .callout-content > p {
+  column-count: 9;
+}
+
 .callout[data-callout=masonry][data-callout-metadata=horizontal] > .callout-content > p {
-  columns: unset;
+  column-count: unset;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
