@@ -49,7 +49,7 @@
   -webkit-mask-image: linear-gradient(to right, transparent 0px, black var(--img-fading), black calc(100% - var(--img-fading)), transparent 100%), linear-gradient(to bottom, transparent 0px, black var(--img-fading), black calc(100% - var(--img-fading)), transparent 100%);
   -webkit-mask-size: 100%;
   -webkit-mask-position: center;
-  -webkit-mask-composite: intersect;
+  mask-composite: intersect;
 }
 .callout[data-callout=film-strip] .callout-content > p > span::after {
   content: "← " counter(frames) " →";

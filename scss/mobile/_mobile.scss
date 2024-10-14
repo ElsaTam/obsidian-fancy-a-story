@@ -9,7 +9,7 @@
 // Circle cutouts
 .workspace-drawer:is(.mod-left, .mod-right) {
     padding-inline: var(--cutout-outline-inset);
-    -webkit-mask-composite: intersect;
+    mask-composite: intersect;
 }
 .workspace-drawer.mod-left {
     -webkit-mask-image: radial-gradient(var(--cutout-corner-radius) at 100% 0, transparent 100%, black),

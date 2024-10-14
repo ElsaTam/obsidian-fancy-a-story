@@ -114,7 +114,7 @@ body {
   -webkit-mask-repeat: repeat-y, no-repeat;
   -webkit-mask-position: center, center;
   -webkit-mask-size: var(--line-thickness), 100%;
-  -webkit-mask-composite: intersect;
+  mask-composite: intersect;
 }
 .callout[data-callout=timeline]:not([data-callout-metadata~=horizontal]) > .callout-content > *:nth-child(2) {
   grid-row: 2/4;
@@ -182,7 +182,7 @@ body {
   -webkit-mask-repeat: repeat-x, no-repeat;
   -webkit-mask-position: center center;
   -webkit-mask-size: var(--line-thickness), 100%;
-  -webkit-mask-composite: intersect;
+  mask-composite: intersect;
   z-index: 0;
 }
 .callout[data-callout=timeline][data-callout-metadata~=horizontal] > .callout-content > *:nth-child(2) {

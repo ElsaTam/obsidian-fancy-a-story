@@ -142,7 +142,7 @@
         -webkit-mask-repeat:repeat-y, no-repeat;
         -webkit-mask-position: center, center;
         -webkit-mask-size: var(--line-thickness), 100%;
-        -webkit-mask-composite: intersect;
+        mask-composite: intersect;
     }
 
     // Second element, shifted
@@ -226,7 +226,7 @@
         -webkit-mask-repeat: repeat-x, no-repeat;
         -webkit-mask-position: center center;
         -webkit-mask-size: var(--line-thickness), 100%;
-        -webkit-mask-composite: intersect;
+        mask-composite: intersect;
         z-index: 0;
     }
 

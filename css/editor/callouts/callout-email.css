@@ -48,6 +48,12 @@ body {
   background-color: var(--workleaves-background);
   color: var(--text-normal);
 }
+.callout[data-callout=email] .callout a[aria-label^="mailto:"] {
+  text-decoration: none;
+  color: unset;
+  background-image: none;
+  padding-inline-end: 0;
+}
 .callout[data-callout=email] .callout[data-callout-metadata~=sep] {
   padding-bottom: var(--size-4-6);
   border-bottom: var(--callout-border-width) solid rgba(var(--callout-color), var(--callout-border-opacity));

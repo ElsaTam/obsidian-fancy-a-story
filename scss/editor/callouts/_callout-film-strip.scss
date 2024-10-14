@@ -91,7 +91,7 @@
         );
         -webkit-mask-size: 100%;
         -webkit-mask-position: center;
-        -webkit-mask-composite: intersect;
+        mask-composite: intersect;
     }
 
     .callout-content > p > span::after {

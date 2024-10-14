@@ -47,6 +47,12 @@
             background-color: var(--workleaves-background);
             color: var(--text-normal);
         }
+        a[aria-label^="mailto:"] {
+            text-decoration: none;
+            color: unset;
+            background-image: none;
+            padding-inline-end: 0;
+        }
     }
 
 
