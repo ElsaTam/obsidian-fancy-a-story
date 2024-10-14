@@ -50,9 +50,8 @@
         object-fit: cover;
     }
 
-    > .callout-content > p > *:last-child img {
-        object-fit: contain;
-        object-position: left center;
+    > .callout-content > p > *:last-child {
+        flex-grow: unset;
     }
 
     br {
