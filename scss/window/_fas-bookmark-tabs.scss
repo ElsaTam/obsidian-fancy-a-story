@@ -46,7 +46,7 @@ body {
 }
 
 @container style(--fas-bookmark-tabs: volume) {
-    .workspace-tab-header {
+    .mod-sidedock .workspace-tab-header {
         background-image: linear-gradient(to bottom, rgb(255 255 255 / 0.08) 2px, rgb(255 255 255 / 0.03) 8px, transparent 20px);
         background-size: 100% 100%;
     }
