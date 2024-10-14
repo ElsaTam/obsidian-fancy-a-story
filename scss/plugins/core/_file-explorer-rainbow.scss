@@ -1,45 +1,51 @@
-.fas-rainbow-folders .nav-folder-children > .nav-folder,
-.fas-rainbow-folders .nav-files-container > div > .nav-folder,
-.fas-rainbow-folders [data-type="bookmarks"] .tree-item {
-	&:nth-child(10n + 2) {
-		--folder-color: var(--color-rainbow-1);
-	}
-	&:nth-child(10n + 3) {
-		--folder-color: var(--color-rainbow-2);
-	}
-	&:nth-child(10n + 4) {
-		--folder-color: var(--color-rainbow-3);
-	}
-	&:nth-child(10n + 5) {
-		--folder-color: var(--color-rainbow-4);
-	}
-	&:nth-child(10n + 6) {
-		--folder-color: var(--color-rainbow-5);
-	}
-	&:nth-child(10n + 7) {
-		--folder-color: var(--color-rainbow-6);
-	}
-	&:nth-child(10n + 8) {
-		--folder-color: var(--color-rainbow-7);
-	}
-	&:nth-child(10n + 9) {
-		--folder-color: var(--color-rainbow-8);
-	}
-	&:nth-child(10n + 10) {
-		--folder-color: var(--color-rainbow-9);
-	}
-	&:nth-child(10n + 1) {
-		--folder-color: var(--color-rainbow-10);
-	}
+body {
+	--fas-rainbow-folders: true;
 }
 
-.fas-rainbow-folders .nav-files-container .nav-folder.nav-folder .nav-folder,
-.fas-rainbow-folders [data-type="bookmarks"] .tree-item .tree-item {
-    --folder-color: inherit;
-}
+@container style(--fas-rainbow-folders: true) {
+	.nav-folder-children > .nav-folder,
+	.nav-files-container > div > .nav-folder,
+	[data-type="bookmarks"] .tree-item {
+		&:nth-child(10n + 2) {
+			--folder-color: var(--color-rainbow-1);
+		}
+		&:nth-child(10n + 3) {
+			--folder-color: var(--color-rainbow-2);
+		}
+		&:nth-child(10n + 4) {
+			--folder-color: var(--color-rainbow-3);
+		}
+		&:nth-child(10n + 5) {
+			--folder-color: var(--color-rainbow-4);
+		}
+		&:nth-child(10n + 6) {
+			--folder-color: var(--color-rainbow-5);
+		}
+		&:nth-child(10n + 7) {
+			--folder-color: var(--color-rainbow-6);
+		}
+		&:nth-child(10n + 8) {
+			--folder-color: var(--color-rainbow-7);
+		}
+		&:nth-child(10n + 9) {
+			--folder-color: var(--color-rainbow-8);
+		}
+		&:nth-child(10n + 10) {
+			--folder-color: var(--color-rainbow-9);
+		}
+		&:nth-child(10n + 1) {
+			--folder-color: var(--color-rainbow-10);
+		}
+	}
 
-.fas-rainbow-folders .nav-files-container > div > .nav-folder .nav-folder-title,
-.fas-rainbow-folders [data-type="bookmarks"] .tree-item {
-    --nav-item-color: var(--folder-color);
-    --nav-item-background-hover: rgb(from var(--folder-color) r g b / 0.2);
+	.nav-files-container .nav-folder.nav-folder .nav-folder,
+	[data-type="bookmarks"] .tree-item .tree-item {
+		--folder-color: inherit;
+	}
+
+	.nav-files-container > div > .nav-folder .nav-folder-title,
+	[data-type="bookmarks"] .tree-item {
+		--nav-item-color: var(--folder-color);
+		--nav-item-background-hover: rgb(from var(--folder-color) r g b / 0.2);
+	}
 }
