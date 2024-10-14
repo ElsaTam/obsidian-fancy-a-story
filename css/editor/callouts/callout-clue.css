@@ -116,7 +116,7 @@
   -webkit-mask-size: 101% auto;
   -webkit-mask-position: center calc(100% + 1px), center;
   -webkit-mask-repeat: no-repeat;
-  -webkit-mask-composite: exclude;
+  mask-composite: exclude;
   padding-bottom: 15px;
 }
 

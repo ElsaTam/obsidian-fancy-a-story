@@ -58,6 +58,7 @@
             calc(100% - var(--cutout-corner-angle)) 100%,
             var(--cutout-corner-angle) 100%,
             0 calc(100% - var(--cutout-corner-angle)));
+        overflow: hidden; /* Creates a Block Formatting Context (BFC) to avoid going over the float elements */
         
         @include cutout_border.outline;
 
