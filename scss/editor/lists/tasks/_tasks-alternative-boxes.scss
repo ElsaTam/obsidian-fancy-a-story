@@ -4,7 +4,7 @@
 
 // Define the base styling for alternative boxes
 $sel: tasks-definition.getDataList(tasks-definition.$alternative-normal-boxes);
-@container not style(--alternative-checkboxes: disable) {
+@container not style(--fas-alternative-checkboxes: disable) {
     :is(.HyperMD-task-line, .task-list-item)#{$sel} input[type=checkbox] {
         &::after {
             @include tasks-definition.icon-after;
@@ -32,7 +32,7 @@ $sel: tasks-definition.getDataList(tasks-definition.$alternative-normal-boxes);
 }
 
 // Normal alternative checkboxes [/] and [-] icons
-@container style(--alternative-checkboxes: normal) {
+@container style(--fas-alternative-checkboxes: normal) {
     :is(.HyperMD-task-line, .task-list-item)#{$sel} input[type=checkbox] {
         background-color: var(--checkbox-color);
     }
@@ -44,7 +44,7 @@ $sel: tasks-definition.getDataList(tasks-definition.$alternative-normal-boxes);
 }
 
 // Doodle alternative checkboxes [/] and [-] variants (1 to 6)
-@container style(--alternative-checkboxes: doodle) {
+@container style(--fas-alternative-checkboxes: doodle) {
     :is(.HyperMD-task-line, .task-list-item)#{$sel} input[type=checkbox] {
         &, &:hover {
             background: none;

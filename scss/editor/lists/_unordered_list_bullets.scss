@@ -1,9 +1,9 @@
 body {
-    --bullet-style: doodle;
+    --fas-bullet-style: doodle;
 }
 
 @scope (:is(.markdown-source-view, .markdown-preview-view)) to (:is(.callout[data-callout="screen"], .callout[data-callout="email"])) {
-    @container style(--bullet-style: doodle) {
+    @container style(--fas-bullet-style: doodle) {
         .list-bullet::after {
             --list-bullet-size: 0.8em;
             border-radius: 0;

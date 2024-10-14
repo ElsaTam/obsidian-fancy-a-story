@@ -1,8 +1,8 @@
 body {
-    --bookmark-tabs: flat; /* disable, flat, or volume */
+    --fas-bookmark-tabs: flat; /* disable, flat, or volume */
 }
 
-@container not style(--bookmark-tabs: disable) {
+@container not style(--fas-bookmark-tabs: disable) {
     .mod-sidedock {
 
         .workspace-tab-header-container {
@@ -13,7 +13,7 @@ body {
         }
     
         .workspace-tab-header-container-inner {
-            height: calc(var(--header-height) + 0.5 * var(--cutout-corner-radius));
+            height: calc(var(--header-height) + 0.5 * var(--cutout-corner-radius, 0));
             filter: drop-shadow(2px 2px 2px var(--shadow-color));
             gap: 6px;
         }
@@ -45,7 +45,7 @@ body {
     }
 }
 
-@container style(--bookmark-tabs: volume) {
+@container style(--fas-bookmark-tabs: volume) {
     .workspace-tab-header {
         background-image: linear-gradient(to bottom, rgb(255 255 255 / 0.08) 2px, rgb(255 255 255 / 0.03) 8px, transparent 20px);
         background-size: 100% 100%;
