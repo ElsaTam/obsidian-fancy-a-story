@@ -145,6 +145,7 @@ body {
   z-index: 1;
   position: relative;
   background: color-mix(in srgb, rgb(var(--callout-color)), rgb(var(--mono-rgb-0)) 20%);
+  overflow: visible;
 }
 .callout[data-callout=fas-infobox] h1:first-child {
   margin-top: -1px;
