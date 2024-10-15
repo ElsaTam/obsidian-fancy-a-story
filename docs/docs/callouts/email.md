@@ -3,7 +3,7 @@ title: Email
 parent: Callouts
 ---
 
-Source: [`_callout-email.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-email.scss)
+Source: [`_callout-email.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/postcss/editor/callouts/_callout-email.scss)
 
 Use this callout to create email-like callouts. Any nested callout will be given the visual effect of an input, so best is to keep them at the beginning. To have a separator, add `sep` as an option of your last nested callout, this will give it a bottom border.
 

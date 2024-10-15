@@ -1,26 +1,20 @@
 FANCY A STORY
 =============
 
-**By Kapirklaa**
+![](screenshots/overview.webp)
 
-I started working on this theme because
-- I wanted to have fun with CSS
-- I wanted a theme that would create an inspiring environment when I'm working on my worldbuilding, TTRPG, investigation projects.
-
-It is still a work in progress. If you're interested in new features, feel free to open an issue to request one.
-I am not expecting this theme to be for everyone, it is not the lightest one and can be heavy to look at.
-
-> [!WARNING]
-> Still not tested on tablet or mobile
-
-**Documentation**: https://elsatam.github.io/obsidian-fancy-a-story/
-
-**Backlog**: https://github.com/users/ElsaTam/projects/1/views/1
-
+[Read the **documentation**](https://elsatam.github.io/obsidian-fancy-a-story/) to see how to use all the features and settings of the theme!
 
 
 Installation
 ------------
+
+### From Obsidian community themes
+
+- Go to Settings → Appearance → "Manage" button.
+- Search for "Fancy-a-Story".
+- Click "Install and use".
+
 
 ### Using BRAT
 
@@ -30,52 +24,93 @@ Install this theme using [BRAT](https://github.com/TfTHacker/obsidian42-brat) by
 - Specify `https://github.com/ElsaTam/obsidian-fancy-a-story` into the input field.
 - Clik "Add Theme".
 
-Some screenshots in random order
---------------------------------
+### Style Settings
 
-### Overview
+It is recommended to us the Style Settings plugin to adjust the theme to your liking. See the theme documentation for further details.
 
-![](screenshots/example1.png)
+### Snippets
 
-![](screenshots/example2.png)
+I tried as much as I can do atomized the code in multiple snippets. You can find them in the [postcss/](postcss/) folder.
+I could not test them all. So if you stumble in any bug, please do open an [issue](https://github.com/ElsaTam/obsidian-fancy-a-story/issues) on GitHub and I will fix it as soon as possible.
 
-![](screenshots/example3.png)
+Features
+--------
 
-### File explorer
+- Dark and Light mode
+- Style settings options
+- Alternative checkboxes
+- Handwritten checkboxes and list bullets
+- Various callouts styling (autopsy report, cards deck, clue, comic, conversation, email, infobox, film-strip, letter, paper fold, pinned, poem, polaroid, profile, screen, timeline)
+- Helper callouts (blank, grid, masonry) and metadata (colors, positioning, ...)
+- CSS classes (banners, columns, confidential, minimalist, movie-script, newspaper, no title, wide page, sci-fi, ..)
+- List styling (tree view, family tree, reversed lists)
+- Blockquotes (with citation, to caption an image, to add a tooltip to an image)
+- Asides
+- Cards deck for dataview
+- Faded embeds (blending in the flow of the text)
+- Cassette visual for embed audio
+- Rainbow folder
 
-![](screenshots/file-explorer.png) ![](screenshots/file-explorer%20no%20textures.png)
+Screenshots
+-----------
 
-Every panes in the sidebar use a background texture. The coffee stain is only in the file explorer. These backgrounds can be disabled in the Style Settings plugin, in the Accessibility section.
+![](screenshots/screenshot-timeline.webp)
 
-### Different light schemes
+![](screenshots/screenshot-cards-deck-and-newspaper.webp)
 
-The dynamic color palette is created only for the available pre-computed schemes. If you're using custom primary/text colors (for exampl with the Custom theme variant that let you choose this option), the colot palette won't adapt to your choices.
+![](screenshots/screenshot-4-notes.webp)
 
-![](screenshots/colors-dark.png)
-![](screenshots/colors-light.png)
-
-### Task list icons
+![](screenshots/screenshot-lists.webp)
 
 ![](screenshots/task%20list%20icons.png)
 
-### Family tree
+You can choose from different predefined color schemes, or pick your own because I'm not so good at finding good palettes.
 
-![](screenshots/family_tree.png)
-![](screenshots/family_tree%20source.png)
+![](screenshots/screenshot-light-themes-mini.webp)
 
-### Tree view
+![](screenshots/screenshot-dark-themes-mini.webp)
 
-![](screenshots/tree_view.png)
-![](screenshots/tree_view%20source.png)
+Within the Style Settings plugin, you can also choose your own sidebar textures to adapt the app to your liking.
+
+![](screenshots/screenshot-textures.webp)
+
+Credits and Thanks
+------------------
+
+I would love to thanks all those people for their feedbacks, encouragements, and propositions during the development of the theme. Thank you also to some of you for your patience with the multiple times I broke the theme and the snippets while you were using them!
+- Aanu
+- icy
+- Data
+- Em
+- Gandalf
+- kmfrog
+- Martin Crendraven
+- moss▲FLUX
+- rakudo
+- RavenRaconteur
+- Reynard
+- shetland_pone
+- tif
+- TundraMoonlight
+- … and all the others in the [Discord thread](https://discord.com/channels/686053708261228577/1283473301682786305)
 
 
-### Invisible embeds
+Credit to these projects for some inspiration!
+- [ITS](https://github.com/SlRvb/Obsidian--ITS-Theme) by SlRvb, for the fas-infobox callout and the alternative checkboxes
+- [Minimal](https://github.com/kepano/obsidian-minimal) by kepano, for the alternative checkboxes
+- [Limelight](https://github.com/smikula/obsidian-limelight/tree/master) by smikula, modified code by tif, for the Highlight active note feature
+- [Rainbow folder titles](https://github.com/r-u-s-h-i-k-e-s-h/Obsidian-CSS-Snippets/blob/Collection/Snippets/File%20explorer%20styling%20-%20Rainbow%20folder%20titles.md) by sailKite
 
-![](screenshots/faded%20embeds.png)
+# Contact
 
-### Tables
+If you find any issue with the theme, or want a new addition to it, please open an [issue](https://github.com/ElsaTam/obsidian-fancy-a-story/issues) on GitHub :)
 
-![](screenshots/table.png)
+I can also be pinged on the Obsidian Discord server under the tag @Kapirklaa.
 
-You can enable an other style in the Style settings plugin:
-![](screenshots/table%20plain.png)
+<a href="https://discord.gg/veuWUTm"><img alt="Discord" src="https://img.shields.io/discord/686053708261228577?color=%235865F2&label=Obsidian%20Members%20Group%20%28OMG%29&labelColor=%23252525&logo=discord&style=for-the-badge"></a>
+
+# Licenses
+
+The code is under the MIT license.
+
+It uses different assets (fonts, images, icons) that are embeds in the CSS directly. You can find all the associated licenses in [docs/docs/assets_licenses.md](docs/docs/assets_licenses.md).

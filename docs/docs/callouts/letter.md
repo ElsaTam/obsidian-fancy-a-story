@@ -3,7 +3,7 @@ title: Letter
 parent: Callouts
 ---
 
-Source: [`_callout-letter.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-letter.scss)
+Source: [`_callout-letter.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/postcss/editor/callouts/_callout-letter.scss)
 
 [![]({% link images/callouts/letter.webp %})]({% link images/callouts/letter.webp %})
 

@@ -3,7 +3,7 @@ title: Autopsy report
 parent: Callouts
 ---
 
-Source: [`_callout-autopsy.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-autopsy.scss)
+Source: [`_callout-autopsy.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/postcss/editor/callouts/_callout-autopsy.scss)
 
 This callout is more stric than others. It let you write an autopsy report for your fiction. I took all of my inspiration from this [Reddit resource](https://www.reddit.com/r/Eberron/comments/o8ssdi/template_for_a_crown_necromancers_report_coroner/) that I tried to copy as best as I could.
 
