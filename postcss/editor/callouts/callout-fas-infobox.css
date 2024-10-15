@@ -42,6 +42,12 @@
 }
 
 /* images */
+body {
+  --infobox-icon-size: 70px;
+  --infobox-background-blur: 1px;
+  --infobox-background-opacity: 0.4;
+}
+
 .callout[data-callout=fas-infobox] {
   /* cover */
   /* icon */
@@ -66,11 +72,12 @@
   border-bottom: 4px solid rgb(var(--callout-color));
 }
 .callout[data-callout=fas-infobox] .image-embed[alt~=icon] {
-  position: absolute;
   display: block;
-  height: 70px;
-  width: 70px;
-  transform: translate(10px, -35px);
+  position: relative;
+  height: var(--infobox-icon-size, 70px);
+  width: var(--infobox-icon-size, 70px);
+  margin-top: calc(-0.5 * var(--infobox-icon-size, 70px));
+  margin-left: 10px;
 }
 .callout[data-callout=fas-infobox] .image-embed[alt~=icon] img {
   height: 100%;
@@ -78,18 +85,20 @@
   object-fit: cover;
   border-radius: 20%;
   border: 2px solid rgb(var(--callout-color));
+  background-color: var(--workleaves-background, var(--background-primary));
 }
 .callout[data-callout=fas-infobox] img[alt*=icon]:not(.image-embed img) {
-  position: absolute;
   display: block;
+  position: relative;
   height: 70px;
   width: 70px;
   border: 2px solid rgb(var(--callout-color));
-  transform: translate(10px, -35px);
+  margin-top: calc(-0.5 * var(--infobox-icon-size, 70px));
+  margin-left: 10px;
   object-fit: cover;
   border-radius: 20%;
 }
-.callout[data-callout=fas-infobox] p:has(.image-embed[alt~=icon]) + :is(h1, h2, h3, h4, h5, h6) {
+.callout[data-callout=fas-infobox] p:has(img[alt~=icon]) + :is(h1, h2, h3, h4, h5, h6, p) {
   margin-top: 0;
 }
 .callout[data-callout=fas-infobox] .image-embed[alt~=background] {
@@ -105,8 +114,8 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
-  filter: blur(1px);
-  opacity: 0.4;
+  filter: blur(var(--infobox-background-blur, 1px));
+  opacity: var(--infobox-background-opacity, 0.4);
 }
 .callout[data-callout=fas-infobox] img[alt*=background]:not(.image-embed img) {
   position: absolute;
@@ -116,8 +125,8 @@
   width: calc(100% - 2 * var(--callout-border-width));
   z-index: -1;
   object-fit: cover;
-  filter: blur(1px);
-  opacity: 0.4;
+  filter: blur(var(--infobox-background-blur, 1px));
+  opacity: var(--infobox-background-opacity, 0.4);
 }
 
 /* h1 ribbon */
@@ -136,6 +145,7 @@
   z-index: 1;
   position: relative;
   background: color-mix(in srgb, rgb(var(--callout-color)), rgb(var(--mono-rgb-0)) 20%);
+  overflow: visible;
 }
 .callout[data-callout=fas-infobox] h1:first-child {
   margin-top: -1px;

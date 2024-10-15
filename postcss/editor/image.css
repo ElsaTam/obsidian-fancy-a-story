@@ -61,7 +61,7 @@ body {
   --image-shadow-color: rgba(var(--color-pink-rgb), 0.2);
 }
 
-.markdown-rendered .image-embed[alt~=no-shadow] {
+.image-embed[alt~=no-shadow] {
   --image-shadow-offset: 0;
 }
 
