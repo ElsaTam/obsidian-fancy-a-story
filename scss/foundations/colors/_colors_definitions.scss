@@ -1,10 +1,15 @@
+$default-primary-light: #e7e7e7;
+$default-text-light: #000000;
+$default-text-dark: #1f1f1f;
+$default-primary-dark: #d9d9d9;
+
 $themes: (
     "light" "coffee-light" #ece0d1 #38220f "lab",
     "light" "sand"         #e6e4cc #2c2517 "srgb-linear",
     "light" "automn"       #f1f1dc #4b220b "hsl",
     "light" "ice"          #e1f0f3 #083a3f "srgb",
     "light" "canyon"       #f8efda #884823 "srgb-linear",
-    "light" "silver-light" #ebebeb #000000 "srgb-linear",
+    "light" "silver-light" #e7e7e7 #000000 "srgb-linear",
     "light" "candy"        #f7e5ef #6b3c63 "lab",
     "light" "meadow"       #e9f5dd #192903 "srgb-linear",
     "dark"  "coffee-dark"  #201918 #d6cbc0 "lab",

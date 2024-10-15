@@ -1,29 +1,36 @@
+@import 'helper-functions';
+@import 'colors_definitions';
 
-.is-mobile.theme-light, .is-mobile.theme-dark,
-.theme-light, .theme-dark {
-    --color-base-00: var(--custom-color-base-00);
-    --color-base-100: var(--custom-color-base-100);
-    --color-space: var(--custom-color-space);
+@each $tone in ("light", "dark") {
+    .is-mobile.theme-#{$tone},
+    .theme-#{$tone} {
+        @if $tone == "light" {
+            --color-base-00: #{$default-primary-light};
+            --color-base-100: #{$default-text-light};
+            --color-space: srgb-linear;
+        }
+        @else {
+            --color-base-00: #{$default-text-dark};
+            --color-base-100: #{$default-primary-dark};
+            --color-space: srgb-linear;
+        }
     
-    --color-base-05: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 05%);
-    --color-base-10: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 10%);
-    --color-base-20: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 15%);
-    --color-base-25: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 25%);
-    --color-base-30: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 20%);
-    --color-base-35: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 35%);
-    --color-base-40: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 40%);
-    --color-base-50: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 50%);
-    --color-base-60: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 60%);
-    --color-base-70: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 70%);
+        --color-base-05: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 05%);
+        --color-base-10: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 10%);
+        --color-base-20: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 15%);
+        --color-base-25: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 25%);
+        --color-base-30: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 20%);
+        --color-base-35: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 35%);
+        --color-base-40: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 40%);
+        --color-base-50: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 50%);
+        --color-base-60: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 60%);
+        --color-base-70: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 70%);
 
-    --color-gray-hover  : color-mix(in srgb, var(--color-red),    rgb(var(--mono-rgb-0)) 20%);
-    --color-brown-hover : color-mix(in srgb, var(--color-red),    rgb(var(--mono-rgb-0)) 20%);
-    --color-red-hover   : color-mix(in srgb, var(--color-red),    rgb(var(--mono-rgb-0)) 20%);
-    --color-orange-hover: color-mix(in srgb, var(--color-orange), rgb(var(--mono-rgb-0)) 20%);
-    --color-yellow-hover: color-mix(in srgb, var(--color-yellow), rgb(var(--mono-rgb-0)) 20%);
-    --color-green-hover : color-mix(in srgb, var(--color-green),  rgb(var(--mono-rgb-0)) 20%);
-    --color-cyan-hover  : color-mix(in srgb, var(--color-cyan),   rgb(var(--mono-rgb-0)) 20%);
-    --color-blue-hover  : color-mix(in srgb, var(--color-blue),   rgb(var(--mono-rgb-0)) 20%);
-    --color-purple-hover: color-mix(in srgb, var(--color-purple), rgb(var(--mono-rgb-0)) 20%);
-    --color-pink-hover  : color-mix(in srgb, var(--color-pink),   rgb(var(--mono-rgb-0)) 20%);
+        @each $color in map-keys(map-get($extended-colors, $tone)) {
+            $c: map-deep-get($extended-colors, $tone, $color);
+            --color-#{$color}: #{$c};
+            --color-#{$color}-rgb: #{red($c), green($c), blue($c)};
+            --color-#{$color}-hover  : color-mix(in srgb, var(--color-#{$color}),    rgb(var(--mono-rgb-0)) 20%);
+        }
+    }
 }
