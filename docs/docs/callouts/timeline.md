@@ -3,7 +3,7 @@ title: Timeline
 parent: Callouts
 ---
 
-Source: [`_callout-timeline.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-timeline.scss)
+Source: [`_callout-timeline.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/postcss/editor/callouts/_callout-timeline.scss)
 
 Use this callout to create a timeline. Several options are available.:
 - At the first level timeline callout `> ![timeline|option]`:

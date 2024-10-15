@@ -3,7 +3,7 @@ title: Aside
 parent: Other components
 ---
 
-Source: [`_aside.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/aside.scss)
+Source: [`_aside.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/postcss/editor/aside.scss)
 
 Asides are elements in the margins of the note.
 

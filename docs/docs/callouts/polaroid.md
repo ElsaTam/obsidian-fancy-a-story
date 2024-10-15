@@ -3,7 +3,7 @@ title: Polaroid
 parent: Callouts
 ---
 
-Source: [`_callout-polaroid.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-polaroid.scss)
+Source: [`_callout-polaroid.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/postcss/editor/callouts/_callout-polaroid.scss)
 
 [![]({% link images/callouts/polaroid.webp %})]({% link images/callouts/polaroid.webp %})
 

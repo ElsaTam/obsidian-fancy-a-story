@@ -3,7 +3,7 @@ title: Grid
 parent: Callouts
 ---
 
-Source: [`_callout-grid.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-grid.scss)
+Source: [`_callout-grid.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/postcss/editor/callouts/_callout-grid.scss)
 
 Applies a grid-layout to the content. You can set the callout to display 2 to 6 columns. Replace `{x}` by the desired number in the following: `> [!grid|col-{x}]`.
 

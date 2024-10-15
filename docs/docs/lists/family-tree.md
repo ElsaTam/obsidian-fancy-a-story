@@ -3,7 +3,7 @@ title: Family tree
 parent: Lists
 ---
 
-Source: [`_family-tree.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/lists/_family-tree.scss)
+Source: [`_family-tree.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/postcss/editor/lists/_family-tree.scss)
 
 [![]({% link images/lists/family-tree.webp %})]({% link images/lists/family-tree.webp %})
 

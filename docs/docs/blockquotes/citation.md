@@ -3,7 +3,7 @@ title: Citation
 parent: Blockquotes
 ---
 
-Source: [`_blockquote-cite.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/blockquotes/_blockquote-cite.scss)
+Source: [`_blockquote-cite.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/postcss/editor/blockquotes/_blockquote-cite.scss)
 
 [![]({% link images/blockquotes/citation.webp %}){: width="500" }]({% link images/blockquotes/citation.webp %})
 

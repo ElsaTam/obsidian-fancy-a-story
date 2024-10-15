@@ -3,7 +3,7 @@ title: Comic
 parent: Callouts
 ---
 
-Source: [`_callout-comic.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-comic.scss)
+Source: [`_callout-comic.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/postcss/editor/callouts/_callout-comic.scss)
 
 Options for `comic`:
 - `straight`: use only straight borders

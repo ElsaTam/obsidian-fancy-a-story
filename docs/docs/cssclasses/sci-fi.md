@@ -3,7 +3,7 @@ title: Sci-fi
 parent: CSS Classes
 ---
 
-Source: [`_sci-fi.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/cssclasses/_sci-fi.scss)
+Source: [`_sci-fi.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/postcss/cssclasses/_sci-fi.scss)
 
 CSS classes used in these screenshots:
 - `sci-fi`

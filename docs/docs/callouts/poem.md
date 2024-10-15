@@ -3,7 +3,7 @@ title: Poem
 parent: Callouts
 ---
 
-Source: [`_callout-poem.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/callouts/_callout-poem.scss)
+Source: [`_callout-poem.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/postcss/editor/callouts/_callout-poem.scss)
 
 The callout `poem` centers the content and can be used with a `<cite>...</cite>` HTML tag to cite the author.
 

@@ -3,7 +3,7 @@ title: List reversed
 parent: Lists
 ---
 
-Source: [`_list-reversed.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/scss/editor/lists/_list-reversed.scss)
+Source: [`_list-reversed.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/postcss/editor/lists/_list-reversed.scss)
 
 Use the tag `#list-reversed` in an item of the list to reverse this list order in reading view.
 
