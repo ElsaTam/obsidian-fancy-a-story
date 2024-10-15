@@ -1,6 +1,7 @@
 {
-	"name": "Fancy A Story",
+	"name": "Fancy-a-Story",
 	"version": "1.0.0",
-	"minAppVersion": "1.0.0",
-	"author": "Kapirklaa"
+	"minAppVersion": "1.6.7",
+	"author": "Kapirklaa",
+	"authorUrl": "https://github.com/ElsaTam"
 }
