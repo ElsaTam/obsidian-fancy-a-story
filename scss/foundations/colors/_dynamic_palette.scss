@@ -15,27 +15,26 @@
     }
 }
 
-// Create the block for default theme (no mixing)
-@each $tone in ("light", "dark") {
-    .theme-#{$tone},
-    .is-mobile.theme-#{$tone}.fas-custom-#{$tone},
-    .theme-#{$tone}.fas-custom-#{$tone} {
+// Create the custom block for theme (no mixing)
+@each $tone in ("light", "dark") {    
+    .fas-custom-#{$tone} {
         @if $tone == "light" {
-            --custom-color-base-00: #ebebeb;
-            --custom-color-base-100: #000000;
+            --custom-color-base-00: #{$default-primary-light};
+            --custom-color-base-100: #{$default-text-light};
             --custom-color-space: srgb-linear;
         }
         @else {
-            --custom-color-base-00: #1f1f1f;
-            --custom-color-base-100: #d9d9d9;
-            --custom-color-space: lab;
+            --custom-color-base-00: #{$default-text-dark};
+            --custom-color-base-100: #{$default-primary-dark};
+            --custom-color-space: srgb-linear;
         }
+    }
 
-        @each $color in map-keys(map-get($extended-colors, $tone)) {
-            $c: map-deep-get($extended-colors, $tone, $color);
-            --color-#{$color}: #{$c};
-            --color-#{$color}-rgb: #{red($c), green($c), blue($c)};
-        }
+    .is-mobile.theme-#{$tone}.fas-custom-#{$tone},
+    .theme-#{$tone}.fas-custom-#{$tone} {
+        --color-base-00: var(--custom-color-base-00);
+        --color-base-100: var(--custom-color-base-100);
+        --color-space: var(--custom-color-space);
     }
 }
 
