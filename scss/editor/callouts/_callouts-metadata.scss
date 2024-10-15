@@ -34,14 +34,12 @@
 
 
 .callout[data-callout-metadata~="blank"] {
-    --callout-padding: 0;
-    --callout-content-padding: 0;
-
     margin: 0;
 
     &, > .callout-content {
         border: none;
         background: none;
+        padding: 0;
     }
 
     > .callout-title { display: none; }
