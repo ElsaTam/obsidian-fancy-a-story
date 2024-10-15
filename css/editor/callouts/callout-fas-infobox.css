@@ -130,14 +130,6 @@ body {
 }
 
 /* h1 ribbon */
-:is(.fas-h1-stroke, .h1-stroke) .callout[data-callout=fas-infobox] h1 {
-  display: block;
-}
-:is(.fas-h1-stroke, .h1-stroke) .callout[data-callout=fas-infobox] h1::before, :is(.fas-h1-stroke, .h1-stroke) .callout[data-callout=fas-infobox] h1::after {
-  background: none;
-  height: unset;
-}
-
 .callout[data-callout=fas-infobox] {
   --overflow-width: 10px;
   --h1-line-height: 1.6;
@@ -195,6 +187,14 @@ body {
 }
 .callout[data-callout=fas-infobox] .callout-title:has(> .callout-title-inner > h1:only-child) + .callout-content {
   border: none;
+}
+
+:is(body.fas-h1-stroke, .h1-stroke) .callout[data-callout=fas-infobox] h1 {
+  display: block;
+}
+:is(body.fas-h1-stroke, .h1-stroke) .callout[data-callout=fas-infobox] h1::before, :is(body.fas-h1-stroke, .h1-stroke) .callout[data-callout=fas-infobox] h1::after {
+  background: none;
+  height: unset;
 }
 
 /* footer */
