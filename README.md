@@ -62,7 +62,7 @@ Screenshots
 
 ![](screenshots/screenshot-lists.webp)
 
-![](screenshots/task%20list%20icons.png)
+![](screenshots/alternate-doodle-icons.webp)
 
 You can choose from different predefined color schemes, or pick your own because I'm not so good at finding good palettes.
 

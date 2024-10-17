@@ -27,6 +27,47 @@ The checkboxes style can be chosen in the Style Settings plugin, under `Fancy-a-
 
 [![]({% link images/lists/alternate-doodle-checkboxes.webp %}){: width="250" }]({% link images/lists/alternate-doodle-checkboxes.webp %})
 
+```markdown
+- [ ] Incomplete `- [ ]`
+- [x] Complete / Done `- [x]`
+- [/] complete/done `- [/]`
+- [-] Canceled `- [-]`
+- [<] Scheduled `- [<]`
+- [>] Forwarded `- [>]`
+- [?] Question `- [?]`
+- [!] Important `- [!]`
+- [$] Dollar `- [$]`
+- [*] Star `- [*]`
+- [a] Anchor `- [a]`
+- [b] Bookmark `- [b]`
+- [B] Blood `- [B]`
+- [e] Error `- [e]`
+- [f] Fire `- [f]`
+- [g] Goal `- [g]`
+- [h] Health `- [h]`
+- [H] Heart `- [H]`
+- [I] Idea `- [I]`
+- [l] Location `- [l]`
+- [L] Link `- [L]`
+- [m] Mail `- [m]`
+- [M] Music `- [M]`
+- [n] Note `- [n]`
+- [t] Trash `- [t]`
+- [T] Travel `- [T]`
+- [U] User `- [U]`
+- [w] Win `- [w]`
+- [W] Write `- [W]`
+- [z] Zap `- [z]`
+
+**Pro / Con List:**
+- [p] Pros `- [p]`
+- [c] Cons `- [c]`
+
+**Trend List:**
+- [u] Up `- [u]`
+- [d] Down `- [d]`
+```
+
 {: .note}
 The alternative checkboxes can be disabled/changed in the Style Settings plugin, under `Fancy-a-story > Features > Alternative checkbox`.
 
