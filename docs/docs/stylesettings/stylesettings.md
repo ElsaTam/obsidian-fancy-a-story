@@ -200,6 +200,22 @@ Choose between
 
 See [tasks]({% link docs/lists/tasks.md %}) for screenshots.
 
+## PDFs
+
+#### Blend mode, light mode
+
+[Blending mode](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode) for the PDFs in light mode. Multiply is a often a good choice.
+
+#### Blend mode, dark mode
+
+[Blending mode](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode) for the PDFs in dark mode. Screen or exclusion are often good choices if you have the "Invert in dark mode" enabled.
+
+#### Invert in dark mode
+
+Invert your PDFs in dark mode.
+
+
+
 # Features
 
 #### Alternative checkboxes
