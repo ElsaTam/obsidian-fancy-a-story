@@ -1,0 +1,22 @@
+body {
+    --pdf-blend-mode-light: normal;
+    --pdf-blend-mode-dark: normal;
+    --pdf-invert-dark: disable;
+}
+
+@container style(--pdf-invert-dark: enable){
+    .theme-dark .workspace-leaf-content[data-type="pdf"] .page,
+    .theme-dark .pdf-embed .page {
+        filter: invert(1);
+    }
+}
+
+.theme-light .workspace-leaf-content[data-type="pdf"] .page,
+.theme-light .pdf-embed .page {
+    mix-blend-mode: var(--pdf-blend-mode-light);
+}
+
+.theme-dark .workspace-leaf-content[data-type="pdf"] .page,
+.theme-dark .pdf-embed .page {
+    mix-blend-mode: var(--pdf-blend-mode-dark);
+}

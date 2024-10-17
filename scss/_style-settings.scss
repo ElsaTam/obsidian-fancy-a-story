@@ -503,6 +503,75 @@ settings:
         options:
             - normal
             - doodle
+            
+    - 
+        id: pdfs
+        title: PDFs
+        type: heading
+        collapsed: true
+        level: 2
+    -
+        id: pdf-blend-mode-light
+        title: Blend mode, light mode
+        description: multiply mode suggested
+        type: variable-select
+        default: normal
+        options:
+            - normal
+            - multiply
+            - screen
+            - overlay
+            - darken
+            - lighten
+            - color-dodge
+            - color-burn
+            - hard-light
+            - soft-light
+            - difference
+            - exclusion
+            - hue
+            - saturation
+            - color
+            - luminosity
+            - plus-darker
+            - plus-lighter
+    -
+        id: pdf-blend-mode-dark
+        title: Blend mode, dark mode
+        description: screen mode suggested, with "Invert in dark mode" enabled
+        type: variable-select
+        default: normal
+        options:
+            - normal
+            - multiply
+            - screen
+            - overlay
+            - darken
+            - lighten
+            - color-dodge
+            - color-burn
+            - hard-light
+            - soft-light
+            - difference
+            - exclusion
+            - hue
+            - saturation
+            - color
+            - luminosity
+            - plus-darker
+            - plus-lighter
+    - 
+        id: pdf-invert-dark
+        title: Invert in dark mode
+        type: variable-select
+        default: disable
+        options:
+            - 
+                value: enable
+                label: Enable
+            - 
+                value: disable
+                label: Disable
 
 
 
