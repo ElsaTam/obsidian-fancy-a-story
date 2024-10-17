@@ -11,8 +11,8 @@ $alternative-icons:
     '$' 'dollar'     'green',
     '*' 'star'       'yellow',
     'a' 'anchor'     'blue',
-    'b' 'blood'      'red',
-    'B' 'Bookmark'   'orange',
+    'b' 'bookmark'   'orange',
+    'B' 'Blood'      'red',
     'c' 'cons'       'red',
     'd' 'down'       'red',
     'e' 'error'      'red',
@@ -20,9 +20,9 @@ $alternative-icons:
     'g' 'goal'       'blue',
     'h' 'health'     'green',
     'H' 'Heart'      'pink',
-    'i' 'idea'       'yellow',
-    'l' 'link'       'accent',
-    'L' 'Location'   'red',
+    'I' 'Idea'       'yellow',
+    'l' 'location'   'red',
+    'L' 'Link'       'accent',
     'm' 'mail'       'blue',
     'M' 'Music'      'green',
     'n' 'note'       'blue',
@@ -45,12 +45,12 @@ $default-doodle-boxes: (
 
 
 $alternative-doodle-boxes: (
-    '-' 'box-doodle-failed'     'color-red'             'color-red-hover',
+    '-' 'box-doodle-canceled'     'color-red'             'color-red-hover',
     '/' 'box-doodle-incomplete' 'interactive-accent'    'interactive-accent-hover'
 );
 
 $alternative-normal-boxes: (
-    '-' 'icon-failed' 'color-red' 'color-red-hover',
+    '-' 'icon-canceled' 'color-red' 'color-red-hover',
     '/' 'icon-incomplete' 'interactive-accent' 'interactive-accent-hover'
 );
 
