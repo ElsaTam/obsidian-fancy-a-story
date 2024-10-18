@@ -5,11 +5,13 @@ body {
     --file-explorer-decoration: var(--coffee-stain);
     --file-explorer-decoration-size: 150px;
     --file-explorer-decoration-blend: normal;
+    --file-explorer-decoration-blend-dark: normal;
     --file-explorer-decoration-position: calc(100% - 30px) calc(100% - 30px);
     --file-explorer-decoration-opacity: 0.1;
 
     --file-explorer-decoration-size-custom: 150px;
     --file-explorer-decoration-blend-custom: normal;
+    --file-explorer-decoration-blend-custom-dark: normal;
     --file-explorer-decoration-position-custom: right bottom;
     --file-explorer-decoration-opacity-custom: 0.1;
 }
@@ -17,6 +19,7 @@ body {
     --file-explorer-decoration: var(--file-explorer-decoration-custom);
     --file-explorer-decoration-size: var(--file-explorer-decoration-size-custom);
     --file-explorer-decoration-blend: var(--file-explorer-decoration-blend-custom);
+    --file-explorer-decoration-blend-dark: var(--file-explorer-decoration-blend-custom-dark);
     --file-explorer-decoration-position: var(--file-explorer-decoration-position-custom);
     --file-explorer-decoration-opacity: var(--file-explorer-decoration-opacity-custom);
 }
@@ -34,12 +37,19 @@ body {
     background-repeat: no-repeat;
     z-index: -1;
 }
+.fas-bg-textures.theme-dark .workspace-leaf-content[data-type="file-explorer"]::before {
+    mix-blend-mode: var(--file-explorer-decoration-blend-dark);
+}
 .fas-bg-textures:not(.fas-file-explorer-decoration-custom) .workspace-leaf-content[data-type="file-explorer"]::before {
     filter: sepia(1);
 }
 
+.is-mobile.fas-bg-textures .workspace-leaf-content[data-type="file-explorer"] {
+    background-color: var(--mobile-sidebar-background);
+}
 .is-mobile.fas-bg-textures .workspace-leaf-content[data-type="file-explorer"]::before {
     bottom: calc(max(var(--size-4-2), var(--safe-area-inset-bottom)) + var(--icon-size) + var(--size-2-2) + var(--size-2-3));
+    z-index: unset;
 }
 
 
@@ -48,23 +58,33 @@ body {
     --sidebar-texture: var(--paper-texture);
     --sidebar-texture-size: 500px;
     --sidebar-texture-blend: multiply;
+    --sidebar-texture-blend-dark: multiply;
     --sidebar-texture-position: center center;
+    --sidebar-texture-opacity: 1;
 
     --sidebar-texture-size-custom: 500px;
     --sidebar-texture-blend-custom: multiply;
+    --sidebar-texture-blend-custom-dark: multiply;
     --sidebar-texture-position-custom: center center;
+    --sidebar-texture-opacity-custom: 1;
 }
 .fas-sidebar-texture-custom {
     --sidebar-texture: var(--sidebar-texture-custom);
     --sidebar-texture-size: var(--sidebar-texture-size-custom);
     --sidebar-texture-blend: var(--sidebar-texture-blend-custom);
+    --sidebar-texture-blend-dark: var(--sidebar-texture-blend-custom-dark);
     --sidebar-texture-position: var(--sidebar-texture-position-custom);
+    --sidebar-texture-opacity: var(--sidebar-texture-opacity-custom);
 }
 .fas-bg-textures .mod-sidedock .workspace-leaf {
-    background-image: var(--sidebar-texture);
+    --c: rgb(from var(--workleaves-background) r g b / calc(1 - var(--sidebar-texture-opacity)));
+    background-image: linear-gradient(to right, var(--c), var(--c) 100%), var(--sidebar-texture);
     background-size: var(--sidebar-texture-size);
-    background-blend-mode: var(--sidebar-texture-blend);
+    background-blend-mode: normal, var(--sidebar-texture-blend);
     background-position: var(--sidebar-texture-position);
+}
+.fas-bg-textures.theme-dark .mod-sidedock .workspace-leaf {
+    background-blend-mode: normal, var(--sidebar-texture-blend-dark);
 }
 
 body {
