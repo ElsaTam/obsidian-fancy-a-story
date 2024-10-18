@@ -1,3 +1,5 @@
-.fas-rainbow-folders .has-folder-note {
-	color: var(--nav-item-color);
+@container style(--fas-rainbow-folders: enable) {
+	.has-folder-note {
+		color: var(--nav-item-color);
+	}
 }
