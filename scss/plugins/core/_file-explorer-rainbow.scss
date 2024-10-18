@@ -1,8 +1,8 @@
 body {
-	--fas-rainbow-folders: true;
+	--fas-rainbow-folders: enable;
 }
 
-@container style(--fas-rainbow-folders: true) {
+@container style(--fas-rainbow-folders: enable) {
 	.nav-folder-children > .nav-folder,
 	.nav-files-container > div > .nav-folder,
 	[data-type="bookmarks"] .tree-item {

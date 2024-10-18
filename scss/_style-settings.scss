@@ -606,13 +606,13 @@ settings:
         id: fas-rainbow-folders
         title: Rainbow folders
         type: variable-select
-        default: true
+        default: enable
         options:
             - 
-                value: true
+                value: enable
                 label: Enable
             - 
-                value: false
+                value: disable
                 label: Disable
 
 
