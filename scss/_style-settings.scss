@@ -282,7 +282,29 @@ settings:
         default: url("")
     -
         id: sidebar-texture-blend-custom
-        title: Sidebar texture blending mode
+        title: Sidebar texture blending mode, in light mode
+        type: variable-select
+        default: multiply
+        options:
+            - normal
+            - color
+            - color-burn
+            - color-dodge
+            - darken
+            - difference
+            - exclusion
+            - hard-light
+            - hue
+            - lighten
+            - luminosity
+            - multiply
+            - overlay
+            - saturation
+            - screen
+            - soft-light
+    -
+        id: sidebar-texture-blend-custom-dark
+        title: Sidebar texture blending mode, in dark mode
         type: variable-select
         default: multiply
         options:
@@ -313,6 +335,11 @@ settings:
         type: variable-text
         default: center center
     -
+        id: sidebar-texture-opacity-custom
+        title: Sidebar texture opacity
+        type: variable-number
+        default: 1
+    -
         id: fas-file-explorer-decoration-custom
         title: Use custom file explorer decoration
         type: class-toggle
@@ -324,7 +351,29 @@ settings:
         default: url("")
     -
         id: file-explorer-decoration-blend-custom
-        title: File explorer decoration blending mode
+        title: File explorer decoration blending mode, in light mode
+        type: variable-select
+        default: normal
+        options:
+            - normal
+            - color
+            - color-burn
+            - color-dodge
+            - darken
+            - difference
+            - exclusion
+            - hard-light
+            - hue
+            - lighten
+            - luminosity
+            - multiply
+            - overlay
+            - saturation
+            - screen
+            - soft-light
+    -
+        id: file-explorer-decoration-blend-custom-dark
+        title: File explorer decoration blending mode, in dark mode
         type: variable-select
         default: normal
         options:
@@ -356,7 +405,7 @@ settings:
         default: right bottom
     -
         id: file-explorer-decoration-opacity-custom
-        title: File explorer decoration  opacity
+        title: File explorer decoration opacity
         type: variable-number
         default: 0.1
 
@@ -651,10 +700,13 @@ body.fas-accessibility .style-settings-container [data-id="fas-sans-serif"],
 body.fas-accessibility .style-settings-container [data-id="fas-bigger-font"],
 body:not(.fas-sidebar-texture-custom) .style-settings-container [data-id="sidebar-texture-custom"],
 body:not(.fas-sidebar-texture-custom) .style-settings-container [data-id="sidebar-texture-blend-custom"],
+body:not(.fas-sidebar-texture-custom) .style-settings-container [data-id="sidebar-texture-blend-custom-dark"],
 body:not(.fas-sidebar-texture-custom) .style-settings-container [data-id="sidebar-texture-size-custom"],
 body:not(.fas-sidebar-texture-custom) .style-settings-container [data-id="sidebar-texture-position-custom"],
+body:not(.fas-sidebar-texture-custom) .style-settings-container [data-id="sidebar-texture-opacity-custom"],
 body:not(.fas-file-explorer-decoration-custom) .style-settings-container [data-id="file-explorer-decoration-custom"],
 body:not(.fas-file-explorer-decoration-custom) .style-settings-container [data-id="file-explorer-decoration-blend-custom"],
+body:not(.fas-file-explorer-decoration-custom) .style-settings-container [data-id="file-explorer-decoration-blend-custom-dark"],
 body:not(.fas-file-explorer-decoration-custom) .style-settings-container [data-id="file-explorer-decoration-size-custom"],
 body:not(.fas-file-explorer-decoration-custom) .style-settings-container [data-id="file-explorer-decoration-position-custom"],
 body:not(.fas-file-explorer-decoration-custom) .style-settings-container [data-id="file-explorer-decoration-opacity-custom"]

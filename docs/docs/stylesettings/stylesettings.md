@@ -88,7 +88,7 @@ Url to the image for the sidebar texture. Use it as follow: `url("https://path/t
 
 #### Sidebar texture blending mode
 
-[Blending mode](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode) for the background texture
+[Blending mode](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode) for the background texture (one for each ligh/dark mode)
 
 #### Sidebar texture size
 
@@ -97,6 +97,10 @@ Url to the image for the sidebar texture. Use it as follow: `url("https://path/t
 #### Sidebar texture position
 
 [Position](https://developer.mozilla.org/en-US/docs/Web/CSS/background-position) of the background texture
+
+#### Sidebar texture opacity
+
+Opacity of the background texture. Should be between 0 and 1.
 
 #### Use custom file explorer decoration
 
@@ -108,7 +112,7 @@ Url to the image for the file explorer decoration. Use it as follow: `url("https
 
 #### File explorer decoration blending mode
 
-[Blending mode](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode) for the file explorer decoration
+[Blending mode](https://developer.mozilla.org/en-US/docs/Web/CSS/blend-mode) for the file explorer decoration (one for each ligh/dark mode)
 
 #### File explorer decoration size
 
