@@ -408,6 +408,18 @@ settings:
         title: File explorer decoration opacity
         type: variable-number
         default: 0.1
+    - 
+        id: file-explorer-hover-animation
+        title: Animate the hover effect in the file explorer
+        type: variable-select
+        default: enable
+        options:
+            - 
+                value: enable
+                label: Enable
+            - 
+                value: disable
+                label: Disable
 
 
 

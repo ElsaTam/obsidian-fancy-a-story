@@ -126,6 +126,9 @@ Url to the image for the file explorer decoration. Use it as follow: `url("https
 
 Opacity of the file explorer decoration. Should be between 0 and 1.
 
+#### Animate the hover effect in the file explorer
+
+If enabled, hovering on files and folders in the File Explorer will have an slide-in animated effect.
 
 
 
