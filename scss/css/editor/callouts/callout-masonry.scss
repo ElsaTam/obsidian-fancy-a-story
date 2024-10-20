@@ -1,1 +1,11 @@
 @use '../../../editor/callouts/callout-masonry';
+
+/* Fix for Minimal theme and img-grid cssclass */
+.callout[data-callout=masonry]:not([data-callout-metadata=horizontal]) > .callout-content > p:has(>.image-embed) {
+    display: block;
+    column-gap: 0.5rem;
+}
+  
+.callout[data-callout=masonry] .image-embed {
+    display: initial;
+}
