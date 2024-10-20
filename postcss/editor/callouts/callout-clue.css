@@ -1,3 +1,7 @@
+/* GPLv3 license
+Callout Clue
+Author: ElsaTam (Kapirklaa in Discord)
+*/
 .callout[data-callout=clue][data-callout-metadata~=tape-a] {
   --clue-tape-variant: var(--clue-tape-a);
 }

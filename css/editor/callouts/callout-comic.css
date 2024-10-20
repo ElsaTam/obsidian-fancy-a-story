@@ -1,3 +1,7 @@
+/* GPLv3 license
+Callout Comic
+Author: ElsaTam (Kapirklaa in Discord)
+*/
 .callout[data-callout=comic] {
   --p-spacing: 0;
   --gutter: 20px;

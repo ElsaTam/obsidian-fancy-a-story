@@ -1,3 +1,7 @@
+/* GPLv3 license
+Callout Masonry
+Author: ElsaTam (Kapirklaa in Discord)
+*/
 .callout[data-callout=masonry] {
   --callout-padding: 0;
   --callout-content-padding: 0;
