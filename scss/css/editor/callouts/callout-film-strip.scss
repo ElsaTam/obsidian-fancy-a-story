@@ -1,1 +1,7 @@
 @use '../../../editor/callouts/callout-film-strip';
+
+/* Fix for Minimal theme and img-grid cssclass */
+.callout[data-callout=film-strip] .callout-content > p:has(>.image-embed) {
+    display: flex;
+    gap: 0;
+}

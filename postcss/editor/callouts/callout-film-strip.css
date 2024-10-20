@@ -70,3 +70,9 @@
 .callout[data-callout=film-strip] .callout-content > p > span:last-of-type::after {
   content: "← " counter(frames);
 }
+
+/* Fix for Minimal theme and img-grid cssclass */
+.callout[data-callout=film-strip] .callout-content > p:has(> .image-embed) {
+  display: flex;
+  gap: 0;
+}
