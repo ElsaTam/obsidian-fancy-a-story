@@ -1,0 +1,21 @@
+body {
+  --callout-quote: var(--color-gray-rgb);
+  --callout-radius: 0;
+  --callout-border-width: 1px;
+  --callout-border-opacity: 0.25;
+  --callout-padding: 0;
+  --callout-content-padding: var(--size-4-3) var(--size-4-3) var(--size-4-3) var(--size-4-6);
+  --callout-title-padding: var(--size-4-3);
+}
+
+.callout {
+  position: relative;
+}
+
+.callout-title {
+  background: linear-gradient(to right, rgba(var(--callout-color), 0.1), transparent);
+}
+
+.callout-content {
+  border-top: var(--callout-border-width) dashed rgba(var(--callout-color), var(--callout-border-opacity));
+}
