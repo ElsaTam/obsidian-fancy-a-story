@@ -6,21 +6,27 @@
     right: 0;
   }
 }
+body {
+  --file-explorer-hover-animation: enable;
+}
+
 @media (hover: hover) {
-  body:not(.is-grabbing) .tree-item-self.is-clickable:hover {
-    background: none;
-  }
-  body:not(.is-grabbing) .tree-item-self.is-clickable:not(.is-being-renamed):hover::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background-color: var(--nav-item-background-hover);
-    z-index: -1;
-  }
-  body:not(.is-grabbing) .tree-item-self.is-clickable:not(.is-active):not(.is-being-renamed):hover::before {
-    animation: bg-slide 0.5s ease-in-out;
+  @container style(--file-explorer-hover-animation: enable) {
+    body:not(.is-grabbing) .tree-item-self.is-clickable:hover {
+      background: none;
+    }
+    body:not(.is-grabbing) .tree-item-self.is-clickable:not(.is-being-renamed):hover::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background-color: var(--nav-item-background-hover);
+      z-index: -1;
+    }
+    body:not(.is-grabbing) .tree-item-self.is-clickable:not(.is-active):not(.is-being-renamed):hover::before {
+      animation: bg-slide 0.5s ease-in-out;
+    }
   }
 }
