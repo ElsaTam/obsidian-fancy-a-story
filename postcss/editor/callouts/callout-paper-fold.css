@@ -1,3 +1,7 @@
+/* GPLv3 license
+Callout Paper fold
+Author: ElsaTam (Kapirklaa in Discord)
+*/
 @property --corner-diag {
   syntax: "<length>";
   inherits: true;

@@ -1,4 +1,8 @@
 @charset "UTF-8";
+/* GPLv3 license
+Callout Film strip
+Author: ElsaTam (Kapirklaa in Discord)
+*/
 .callout[data-callout=film-strip] {
   --callout-icon: lucide-film;
   --callout-padding: 0;

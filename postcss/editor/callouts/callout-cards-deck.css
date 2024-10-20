@@ -1,3 +1,7 @@
+/* GPLv3 license
+Callout Cards deck
+Author: ElsaTam (Kapirklaa in Discord)
+*/
 .callout[data-callout=cards-deck] {
   --callout-icon: lucide-layers;
   --deck-border-width: 1px;

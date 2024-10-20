@@ -1,3 +1,7 @@
+/* GPLv3 license
+Callout Screen
+Author: ElsaTam (Kapirklaa in Discord)
+*/
 .callout[data-callout=screen] {
   --callout-color: var(--color-green-rgb);
   --callout-icon: lucide-monitor;
