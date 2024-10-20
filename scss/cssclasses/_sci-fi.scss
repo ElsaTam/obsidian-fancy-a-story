@@ -32,13 +32,26 @@ body {
     content: "";
     position: fixed;
     top: var(--header-height); bottom: 0;
-    left: 0; right: var(--scrollbar-width);
+    left: 0;
     z-index: 0;
     background: rgba(var(--sci-fi-color-rgb), 1);
     -webkit-mask-image: var(--sci-fi-frame-left), var(--sci-fi-frame-right);
     -webkit-mask-size: auto 100%;
     -webkit-mask-position: left center, right center;
     -webkit-mask-repeat: no-repeat;
+}
+
+.is-mobile .markdown-reading-view:has(> .sci-fi)::before,
+.is-mobile .sci-fi.markdown-source-view::before {
+    top: var(--view-header-height);
+}
+
+.markdown-reading-view:has(> .sci-fi)::before {
+    right: var(--scrollbar-width, 12px);
+}
+
+.sci-fi.markdown-source-view::before {
+    right: 0;
 }
 
 // Background
