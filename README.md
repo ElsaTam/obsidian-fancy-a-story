@@ -22,7 +22,7 @@ Install this theme using [BRAT](https://github.com/TfTHacker/obsidian42-brat) by
 - Install and enable the BRAT plugin in your vault.
 - Go to Settings → BRAT → Beta Themes List → Add Beta Theme.
 - Specify `https://github.com/ElsaTam/obsidian-fancy-a-story` into the input field.
-- Clik "Add Theme".
+- Click "Add Theme".
 
 ### Style Settings
 
