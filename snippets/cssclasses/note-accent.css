@@ -1,0 +1,132 @@
+/* GPLv3 license
+FAS - Note Accent
+Author: ElsaTam (Kapirklaa in Discord)
+*/
+body.theme-light {
+  --note-accent-1-h: 345.7;
+  --note-accent-1-s: 84%;
+  --note-accent-1-l: 60.8%;
+  --note-accent-2-h: 14.1;
+  --note-accent-2-s: 89.7%;
+  --note-accent-2-l: 69.4%;
+  --note-accent-3-h: 42;
+  --note-accent-3-s: 82%;
+  --note-accent-3-l: 48%;
+  --note-accent-4-h: 164;
+  --note-accent-4-s: 87%;
+  --note-accent-4-l: 30%;
+  --note-accent-5-h: 194.9;
+  --note-accent-5-s: 82.6%;
+  --note-accent-5-l: 38.2%;
+  --note-accent-6-h: 194.8;
+  --note-accent-6-s: 83.1%;
+  --note-accent-6-l: 16.3%;
+}
+
+body.theme-dark {
+  --note-accent-1-h: 346;
+  --note-accent-1-s: 59%;
+  --note-accent-1-l: 53%;
+  --note-accent-2-h: 14;
+  --note-accent-2-s: 59%;
+  --note-accent-2-l: 60%;
+  --note-accent-3-h: 42;
+  --note-accent-3-s: 80%;
+  --note-accent-3-l: 48%;
+  --note-accent-4-h: 164;
+  --note-accent-4-s: 92%;
+  --note-accent-4-l: 34%;
+  --note-accent-5-h: 198;
+  --note-accent-5-s: 85%;
+  --note-accent-5-l: 35%;
+  --note-accent-6-h: 192;
+  --note-accent-6-s: 56%;
+  --note-accent-6-l: 28%;
+}
+
+.note-accent-1 {
+  --accent-h: var(--note-accent-1-h);
+  --accent-s: var(--note-accent-1-s);
+  --accent-l: var(--note-accent-1-l);
+}
+
+.note-accent-2 {
+  --accent-h: var(--note-accent-2-h);
+  --accent-s: var(--note-accent-2-s);
+  --accent-l: var(--note-accent-2-l);
+}
+
+.note-accent-3 {
+  --accent-h: var(--note-accent-3-h);
+  --accent-s: var(--note-accent-3-s);
+  --accent-l: var(--note-accent-3-l);
+}
+
+.note-accent-4 {
+  --accent-h: var(--note-accent-4-h);
+  --accent-s: var(--note-accent-4-s);
+  --accent-l: var(--note-accent-4-l);
+}
+
+.note-accent-5 {
+  --accent-h: var(--note-accent-5-h);
+  --accent-s: var(--note-accent-5-s);
+  --accent-l: var(--note-accent-5-l);
+}
+
+.note-accent-6 {
+  --accent-h: var(--note-accent-6-h);
+  --accent-s: var(--note-accent-6-s);
+  --accent-l: var(--note-accent-6-l);
+}
+
+.markdown-source-view:is(.note-accent-1, .note-accent-2, .note-accent-3, .note-accent-4, .note-accent-5, .note-accent-6), .markdown-preview-view:is(.note-accent-1, .note-accent-2, .note-accent-3, .note-accent-4, .note-accent-5, .note-accent-6) {
+  --color-accent-hsl: var(--accent-h), var(--accent-s), var(--accent-l);
+  --color-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --color-accent-1: hsl(calc(var(--accent-h) - 3), calc(var(--accent-s) * 1.02), calc(var(--accent-l) * 1.15));
+  --color-accent-2: hsl(calc(var(--accent-h) - 5), calc(var(--accent-s) * 1.05), calc(var(--accent-l) * 1.29));
+  --interactive-accent-hsl: var(--color-accent-hsl);
+  --interactive-accent: var(--color-accent);
+  --interactive-accent-hover: var(--color-accent-1);
+  --text-accent: var(--color-accent-1);
+  --text-accent-hover: var(--color-accent-2);
+  --link-color: var(--text-accent);
+  --link-color-hover: var(--text-accent-hover);
+  --link-external-color: var(--text-accent);
+  --link-external-color-hover: var(--text-accent-hover);
+  --link-unresolved-color: var(--text-accent);
+  --link-unresolved-decoration-color: hsla(var(--interactive-accent-hsl), 0.3);
+  --list-marker-color-collapsed: var(--text-accent);
+  --blockquote-border-color: var(--interactive-accent);
+  --checkbox-color: var(--interactive-accent);
+  --checkbox-color-hover: var(--interactive-accent-hover);
+  --table-selection: hsla(var(--color-accent-hsl), 0.1);
+  --table-selection-border-color: var(--interactive-accent);
+  --table-drag-handle-color-active: var(--text-on-accent);
+  --tag-color: var(--text-accent);
+  --tag-color-hover: var(--text-accent);
+  --tag-background: hsla(var(--interactive-accent-hsl), 0.1);
+  --tag-background-hover: hsla(var(--interactive-accent-hsl), 0.2);
+  --tag-border-color: hsla(var(--interactive-accent-hsl), 0.15);
+  --tag-border-color-hover: hsla(var(--interactive-accent-hsl), 0.15);
+  --text-selection: hsla(var(--interactive-accent-hsl), 0.25);
+  --icon-color-active: var(--text-accent);
+  --collapse-icon-color-collapsed: var(--text-accent);
+  --divider-color-hover: var(--interactive-accent);
+  --embed-border-start: 2px solid var(--interactive-accent);
+  --background-modifier-active-hover: hsla(var(--interactive-accent-hsl), 0.15);
+}
+
+/* Specific to the theme */
+.markdown-source-view:is(.note-accent-1, .note-accent-2, .note-accent-3, .note-accent-4, .note-accent-5, .note-accent-6), .markdown-preview-view:is(.note-accent-1, .note-accent-2, .note-accent-3, .note-accent-4, .note-accent-5, .note-accent-6) {
+  --banner-slope-border-color: var(--color-accent);
+}
+
+.headings-accent:is(.note-accent-1, .note-accent-2, .note-accent-3, .note-accent-4, .note-accent-5, .note-accent-6) {
+  --h1-color: var(--color-accent);
+  --h2-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 10%);
+  --h3-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 20%);
+  --h4-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 40%);
+  --h5-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 60%);
+  --h6-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 80%);
+}

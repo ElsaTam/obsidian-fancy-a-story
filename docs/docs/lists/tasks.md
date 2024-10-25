@@ -4,7 +4,7 @@ parent: Lists
 ---
 
 
-Source: [`_tasks.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/postcss/editor/lists/_tasks.scss)
+Source: [`_tasks.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/lists/_tasks.scss)
 
 **Default normal checkboxes**
 

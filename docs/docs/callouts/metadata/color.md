@@ -3,7 +3,7 @@ title: Colors
 parent: Callouts metadata
 ---
 
-Source: [`_callouts-metadata.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/postcss/editor/callouts/_callouts-metadata.scss)
+Source: [`_callouts-metadata.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callouts-metadata.scss)
 
 Use `> [!calout-name|{color}]` with `{color}` being one of the following available color, to change the color of the callout.
 

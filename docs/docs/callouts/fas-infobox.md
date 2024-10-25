@@ -3,7 +3,7 @@ title: (FAS) Infobox
 parent: Callouts
 ---
 
-Source: [`_callout-fas-infobox.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/postcss/editor/callouts/_callout-fas-infobox.scss)
+Source: [`_callout-fas-infobox.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-fas-infobox.scss)
 
 {: .important}
 The `fas-infobox` callout was inspired by the infobox callout from [ITS theme](https://publish.obsidian.md/slrvb-docs/ITS+Theme/ITS+Theme), by SlRvb, distributed under the [GPL-2.0 License](https://github.com/SlRvb/Obsidian--ITS-Theme/blob/main/LICENSE). Thanks to her to let me keep a similar name. To add the wikipedia style to the theme, [see below](https://elsatam.github.io/obsidian-fancy-a-story/docs/callouts/fas-infobox.html#its-wikipedia-style).

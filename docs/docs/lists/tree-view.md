@@ -3,7 +3,7 @@ title: Tree view
 parent: Lists
 ---
 
-Source: [`_tree-view.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/postcss/editor/lists/_tree-view.scss)
+Source: [`_tree-view.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/lists/_tree-view.scss)
 
 [![]({% link images/lists/tree-view.webp %})]({% link images/lists/tree-view.webp %})
 

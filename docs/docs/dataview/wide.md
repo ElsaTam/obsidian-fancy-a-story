@@ -3,7 +3,7 @@ title: Wide (Dataview JS)
 parent: Dataview
 ---
 
-Source: [`_dataview-wide.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/postcss/plugins/community/dataview/_dataview-wide.scss)
+Source: [`_dataview-wide.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/plugins/community/dataview/_dataview-wide.scss)
 
 Use the class `dataview-wide` in the elements you add directly within your editor with DataviewJS to make them full width.
 

@@ -1,3 +1,7 @@
+/* GPLv3 license
+FAS - Embed Faded
+Author: ElsaTam (Kapirklaa in Discord)
+*/
 .markdown-preview-view p:has(.markdown-embed[alt~=faded]) {
   position: relative;
 }

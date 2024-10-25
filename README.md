@@ -30,7 +30,7 @@ It is recommended to us the Style Settings plugin to adjust the theme to your li
 
 ### Snippets
 
-I tried as much as I can do atomized the code in multiple snippets. You can find them in the [postcss/](postcss/) folder.
+I tried as much as I can do atomized the code in multiple snippets. You can find them in the [snippets/](snippets/) folder.
 I could not test them all. So if you stumble in any bug, please do open an [issue](https://github.com/ElsaTam/obsidian-fancy-a-story/issues) on GitHub and I will fix it as soon as possible.
 
 Features
@@ -111,6 +111,6 @@ I can also be pinged on the Obsidian Discord server under the tag @Kapirklaa.
 
 # Licenses
 
-The code is under the MIT license.
+As of 2024-10-24, the code is available as open source under the [GNU General Public License version 3 (GPLv3) License](LICENSE). It was previously released under the MIT License.
 
 It uses different assets (fonts, images, icons) that are embeds in the CSS directly. You can find all the associated licenses in [docs/docs/assets_licenses.md](docs/docs/assets_licenses.md).

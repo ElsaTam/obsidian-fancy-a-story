@@ -1,7 +1,0 @@
-.canvas-node:has(.tag[href="#node-text-color-invert"]):not(.is-editing) .markdown-preview-view {
-  color: rgb(var(--mono-rgb-0));
-}
-
-.canvas-node:not(.is-editing) .tag[href="#node-text-color-invert"] {
-  display: none;
-}

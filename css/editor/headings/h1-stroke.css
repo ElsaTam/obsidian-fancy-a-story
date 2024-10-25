@@ -1,3 +1,7 @@
+/* GPLv3 license
+FAS - H1 Stroke
+Author: ElsaTam (Kapirklaa in Discord)
+*/
 body {
   --h1-border-color: currentColor;
   --h1-border-color-collapsed: var(--collapse-icon-color-collapsed);

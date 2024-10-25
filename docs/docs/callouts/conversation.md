@@ -3,7 +3,7 @@ title: Conversation
 parent: Callouts
 ---
 
-[`_callout-conversation.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/postcss/editor/callouts/_callout-conversation.scss)
+[`_callout-conversation.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-conversation.scss)
 
 Useful to write a conversation between two people. It comes in three variants: `conversation`, `conversation-outline`, and `conversation-minimalist`.
 

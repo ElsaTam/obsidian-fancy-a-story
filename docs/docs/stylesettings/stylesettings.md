@@ -3,7 +3,7 @@ title: Style settings
 nav_order: 2
 ---
 
-Source: [`_style-settings.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/postcss/_style-settings.scss)
+Source: [`_style-settings.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/_style-settings.scss)
 
 1. TOC
 {:toc}
