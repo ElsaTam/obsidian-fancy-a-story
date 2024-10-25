@@ -3,7 +3,7 @@ title: Profile
 parent: Callouts
 ---
 
-Source: [`_callout-profile.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/postcss/editor/callouts/_callout-profile.scss)
+Source: [`_callout-profile.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-profile.scss)
 
 Automatically set the first image to float right and of fixed max-width of 150px. The image must be the first element, otherwise it will not be affected by the callout.
 

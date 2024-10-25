@@ -1,0 +1,33 @@
+/* GPLv3 license
+FAS - H1 Stroke
+Author: ElsaTam (Kapirklaa in Discord)
+*/
+body {
+  --h1-border-color: currentColor;
+  --h1-border-color-collapsed: var(--collapse-icon-color-collapsed);
+}
+
+.markdown-preview-view.h1-stroke h1 {
+  --h1-weight: var(--font-extralight);
+  --h1-size: 2em;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.markdown-preview-view.h1-stroke h1::before {
+  content: "";
+  display: block;
+  flex-grow: 1;
+  background-color: var(--h1-border-color);
+  height: 1px;
+}
+.markdown-preview-view.h1-stroke h1::after {
+  content: "";
+  display: block;
+  flex-grow: 1;
+  background-color: var(--h1-border-color);
+  height: 1px;
+}
+.markdown-preview-view.h1-stroke h1:is(.is-collapsed > h1)::before, .markdown-preview-view.h1-stroke h1:is(.is-collapsed > h1)::after {
+  background-color: var(--h1-border-color-collapsed);
+}

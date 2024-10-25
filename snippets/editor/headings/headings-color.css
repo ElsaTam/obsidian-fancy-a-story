@@ -1,0 +1,49 @@
+/* GPLv3 license
+FAS - Headings Color
+Author: ElsaTam (Kapirklaa in Discord)
+*/
+.theme-dark {
+  --middle-color: color-mix(
+      in srgb-linear,
+      hsl(from var(--color-base-00) h 100% 55%),
+      hsl(from var(--color-base-100) h 100% 55%) 50%
+  );
+  --middle-color-complement: color-mix(
+      in srgb-linear,
+      hsl(from var(--color-base-00) calc(h - 90) 100% 55%),
+      hsl(from var(--color-base-100) calc(h + 90) 100% 55%) 50%
+  );
+}
+
+.theme-light {
+  --middle-color: color-mix(
+      in srgb-linear,
+      hsl(from var(--color-base-00) h 100% 40%),
+      hsl(from var(--color-base-100) h 100% 40%) 50%
+  );
+  --middle-color-complement: color-mix(
+      in srgb-linear,
+      hsl(from var(--color-base-00) calc(h - 90) 100% 40%),
+      hsl(from var(--color-base-100) calc(h + 90) 100% 40%) 50%
+  );
+}
+
+.headings-hue {
+  --h1-color: var(--middle-color);
+}
+
+.headings-complement {
+  --h1-color: var(--middle-color-complement);
+}
+
+.headings-accent {
+  --h1-color: var(--color-accent);
+}
+
+.headings-hue, .headings-complement, .headings-accent {
+  --h2-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 10%);
+  --h3-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 20%);
+  --h4-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 40%);
+  --h5-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 60%);
+  --h6-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 80%);
+}

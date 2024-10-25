@@ -3,7 +3,7 @@ title: Newspaper
 parent: CSS Classes
 ---
 
-Source: [`_newspaper.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/postcss/cssclasses/_newspaper.scss) 
+Source: [`_newspaper.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/_newspaper.scss) 
 
 CSS classes used in these screenshots:
 - `newspaper`

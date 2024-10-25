@@ -3,7 +3,7 @@ title: Clue
 parent: Callouts
 ---
 
-Source: [`_callout-clue.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/postcss/editor/callouts/_callout-clue.scss)
+Source: [`_callout-clue.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-clue.scss)
 
 The callout comes in several variations, 4 different tape images (a, b, c, d), and 4 different paper images (a, b, c, d). You can mix variants together, like `tape-b` and `paper-d`.
 

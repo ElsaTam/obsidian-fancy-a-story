@@ -1,3 +1,7 @@
+/* GPLv3 license
+FAS - Horizontal Rule
+Author: ElsaTam (Kapirklaa in Discord)
+*/
 .markdown-source-view:not(.minimalist, .sci-fi) hr,
 .markdown-preview-view:not(.minimalist, .sci-fi) hr:not(.footnotes hr) {
   --hr-height: calc(1em * var(--line-height-normal));

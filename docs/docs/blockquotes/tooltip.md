@@ -5,7 +5,7 @@ parent: Blockquotes
 
 Hover on the image to see the tooltip appear in the top right corner.
 
-Source: [`_blockquote-tooltip.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/postcss/editor/blockquotes/_blockquote-tooltip.scss)
+Source: [`_blockquote-tooltip.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/blockquotes/_blockquote-tooltip.scss)
 
 [![]({% link images/blockquotes/tooltip.webp %}){: width="500" }]({% link images/blockquotes/tooltip.webp %})
 

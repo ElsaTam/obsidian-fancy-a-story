@@ -3,7 +3,7 @@ title: Columns
 parent: CSS Classes
 ---
 
-Source: [`_columns.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/postcss/cssclasses/_columns.scss) 
+Source: [`_columns.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/_columns.scss) 
 
 You can choose between a 2 (`columns-2`), 3 (`columns-3`) or 4 (`columns-4`) columns layout.
 

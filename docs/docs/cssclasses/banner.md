@@ -3,7 +3,7 @@ title: Banner
 parent: CSS Classes
 ---
 
-Source: [`_banner.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/postcss/cssclasses/_banner.scss)
+Source: [`_banner.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/_banner.scss)
 
 Add the cssclass `banner` to your note. This will use the first image as a banner in reading mode, hiding the properties.
 
