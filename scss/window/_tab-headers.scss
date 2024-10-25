@@ -28,34 +28,6 @@ body {
     --icon-opacity: var(--icon-opacity-hover);
 }
 
-
-// ---------- SIDEDOCK ---------- 
-
-// Remove gap between header and content 
-.mod-sidedock .workspace-tab-header-container-inner {
-    padding-bottom: var(--sidedock-tab-header-padding-bottom);
-}
-
-// Ensure gap between header and top border windows 
-.is-hidden-frameless .mod-sidedock.mod-top .workspace-tab-header-container-inner {
-    margin-top: 6px;
-}
-
-// Ensure sufficient padding for cropped circle corners 
-.is-hidden-frameless:not(.is-fullscreen) .mod-sidedock .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
-    padding-left: calc(12px + var(--size-4-2) + var(--frame-left-space));
-}
-.mod-sidedock .workspace-tab-header-container {
-    padding-left: calc(12px + var(--size-4-2));
-    padding-right: calc(12px + var(--size-4-2));
-}
-
-// Match the background for the active tab header 
-.mod-sidedock .workspace-tab-header.is-active,
-.mod-sidedock .workspace-tab-header.is-active:hover {
-    background-color: var(--workleaves-background);
-}
-
 // ---------- FILE TABS ---------- 
 
 .mod-root .workspace-tab-header-container {
