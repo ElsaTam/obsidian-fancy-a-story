@@ -55,6 +55,13 @@
         word-wrap: normal;
         word-break: normal;
     }
+    
+    &[data-callout-metadata~="no-thead"],
+    &[data-callout-metadata~="no-th"] {
+        thead {
+            display: none;
+        }
+    }
 }
 
 /* images */
