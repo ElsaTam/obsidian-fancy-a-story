@@ -99,6 +99,7 @@ body {
         height: var(--infobox-icon-size, 70px);
         width: var(--infobox-icon-size, 70px);
         margin-top: calc(-0.5 * var(--infobox-icon-size, 70px));
+        margin-bottom: calc(-0.5 * var(--infobox-icon-size, 70px));
         margin-left: 10px;
     }
     .image-embed[alt~="icon"] img {
@@ -112,10 +113,11 @@ body {
     img[alt*="icon"]:not(.image-embed img) {
         display: block;
         position: relative;
-        height: 70px;
-        width: 70px;
+        height: var(--infobox-icon-size, 70px);
+        width: var(--infobox-icon-size, 70px);
         border: 2px solid rgb(var(--callout-color));
         margin-top: calc(-0.5 * var(--infobox-icon-size, 70px));
+        margin-bottom: calc(-0.5 * var(--infobox-icon-size, 70px));
         margin-left: 10px;
         object-fit: cover;
         border-radius: 20%;
