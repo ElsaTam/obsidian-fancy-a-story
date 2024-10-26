@@ -48,6 +48,9 @@ Author: ElsaTam (Kapirklaa in Discord)
   word-wrap: normal;
   word-break: normal;
 }
+.callout[data-callout=fas-infobox][data-callout-metadata~=no-thead] thead, .callout[data-callout=fas-infobox][data-callout-metadata~=no-th] thead {
+  display: none;
+}
 
 /* images */
 body {
