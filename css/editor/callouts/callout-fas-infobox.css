@@ -8,9 +8,6 @@ Author: ElsaTam (Kapirklaa in Discord)
 .callout[data-callout=fas-infobox] {
   --callout-content-padding: 0;
   --image-shadow-offset: 0;
-  --table-row-alt-background: color-mix(in srgb, rgba(var(--callout-color), 0.2), rgba(var(--mono-rgb-0), 0.2) 50%);
-  --table-border-color: rgba(var(--callout-color), var(--callout-border-opacity));
-  --table-header-border-color: rgba(var(--callout-color), var(--callout-border-opacity));
   --hr-color: rgba(var(--callout-color), var(--callout-border-opacity));
   max-width: 300px;
 }
@@ -19,14 +16,6 @@ Author: ElsaTam (Kapirklaa in Discord)
 }
 .callout[data-callout=fas-infobox] .callout-icon {
   display: none;
-}
-.callout[data-callout=fas-infobox] table {
-  width: 100%;
-}
-.callout[data-callout=fas-infobox] table td {
-  white-space: pre-wrap;
-  word-wrap: normal;
-  word-break: normal;
 }
 .callout[data-callout=fas-infobox] h1, .callout[data-callout=fas-infobox] h2, .callout[data-callout=fas-infobox] h3, .callout[data-callout=fas-infobox] h4, .callout[data-callout=fas-infobox] h5, .callout[data-callout=fas-infobox] h6 {
   text-align: center;
@@ -43,6 +32,21 @@ Author: ElsaTam (Kapirklaa in Discord)
   border-top: var(--hr-thickness) solid;
   border-color: var(--hr-color);
   height: unset;
+}
+
+/* tables */
+.callout[data-callout=fas-infobox] {
+  --table-row-alt-background: color-mix(in srgb, rgba(var(--callout-color), 0.2), rgba(var(--mono-rgb-0), 0.2) 50%);
+  --table-border-color: rgba(var(--callout-color), var(--callout-border-opacity));
+  --table-header-border-color: rgba(var(--callout-color), var(--callout-border-opacity));
+}
+.callout[data-callout=fas-infobox] table {
+  width: 100%;
+}
+.callout[data-callout=fas-infobox] table td {
+  white-space: pre-wrap;
+  word-wrap: normal;
+  word-break: normal;
 }
 
 /* images */
@@ -102,7 +106,7 @@ body {
   object-fit: cover;
   border-radius: 20%;
 }
-.callout[data-callout=fas-infobox] p:has(img[alt~=icon]) + :is(h1, h2, h3, h4, h5, h6, p) {
+.callout[data-callout=fas-infobox] p:has(img[alt~=icon], img[alt~=cover]) + :is(h1, h2, h3, h4, h5, h6, p) {
   margin-top: 0;
 }
 .callout[data-callout=fas-infobox] .image-embed[alt~=background] {
@@ -203,7 +207,7 @@ body {
 }
 
 /* footer */
-.callout[data-callout=fas-infobox] [data-callout=footer] {
+.callout[data-callout=fas-infobox] .callout[data-callout=footer] {
   --callout-blend-mode: normal;
   background: color-mix(in srgb, rgb(var(--callout-color)), rgb(var(--mono-rgb-0)) 80%);
   border: none;
@@ -211,13 +215,13 @@ body {
   overflow: visible;
   padding-top: 14px;
 }
-.callout[data-callout=fas-infobox] [data-callout=footer] .callout-title {
+.callout[data-callout=fas-infobox] .callout[data-callout=footer] .callout-title {
   display: none;
 }
-.callout[data-callout=fas-infobox] [data-callout=footer] .callout-content {
+.callout[data-callout=fas-infobox] .callout[data-callout=footer] .callout-content {
   border: none;
 }
-.callout[data-callout=fas-infobox] [data-callout=footer]::after {
+.callout[data-callout=fas-infobox] .callout[data-callout=footer]::after {
   content: "";
   position: absolute;
   left: 0;
