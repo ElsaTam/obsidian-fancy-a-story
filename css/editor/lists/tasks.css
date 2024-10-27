@@ -18,7 +18,7 @@ body {
       -webkit-mask-image: var(--checkbox-icon);
       background-color: var(--checkbox-color);
     }
-    :is(.HyperMD-task-line, .task-list-item) input[type=checkbox]:hover::after {
+    :is(.HyperMD-task-line, .task-list-item) input[type=checkbox]:where(:hover)::after {
       background-color: var(--checkbox-color-hover);
     }
     :is(.HyperMD-task-line, .task-list-item) [type=checkbox]:not(:checked)::after {
