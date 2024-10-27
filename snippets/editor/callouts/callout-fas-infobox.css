@@ -9,6 +9,7 @@ Author: ElsaTam (Kapirklaa in Discord)
   --callout-content-padding: 0;
   --image-shadow-offset: 0;
   --hr-color: rgba(var(--callout-color), var(--callout-border-opacity));
+  --heading-spacing: var(--p-spacing);
   max-width: 300px;
 }
 .callout[data-callout=fas-infobox] .callout-title {
