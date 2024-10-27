@@ -12,7 +12,8 @@ Callout option (`> [!fas-infobox|option1 option2]`)
 - `left`: place the infobox on the left
 - `center`: centers the infobox
 - `right`: place the infobox on the right (default)
-- `corners`: adds two triangle in the corners
+- `corners`: add two triangle in the corners
+- `no-thead` or `no-th`: remove table headers
 
 Specific elements inside an infobox
 - `# Header 1`: creates a divider ribbon accross the callout. Can be used in the title.
