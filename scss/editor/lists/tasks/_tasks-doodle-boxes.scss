@@ -19,7 +19,7 @@
                 background-color: var(--checkbox-color);
             }
 
-            &:hover::after {
+            &:where(:hover)::after {
                 background-color: var(--checkbox-color-hover);
             }
         }
