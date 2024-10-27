@@ -209,6 +209,13 @@ settings:
         description: Enable the background texture in the sidebars.
         type: class-toggle
         default: true
+    - 
+        id: fas-float-inline-margin
+        title: Inline margin (left/right) for float elements
+        description: Float elements contains for example the fas-infobox callout, the polaroid callout, floating images, etc.
+        type: variable-number
+        format: px
+        default: 12
 
 
 
