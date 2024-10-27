@@ -54,6 +54,9 @@ This option makes the vault easier to read, with sans serif fonts, and increased
 #### Background textures
 Enable the background texture in the sidebars.
 
+#### Inline margin (left/right) for float elements
+Modify the space between the floating elements and the text. Float elements are for example the fas-infobox callout, the polaroid callout, floating images, etc.
+
 
 
 # Workspace
