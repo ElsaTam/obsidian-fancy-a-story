@@ -19,12 +19,14 @@
 .is-readable-line-width.markdown-preview-view .aside-left {
     float: left;
     clear: left;
+    margin-right: var(--fas-float-inline-margin, 12px);
 }
 
 .markdown-preview-view aside,
 .is-readable-line-width.markdown-preview-view .aside-right {
     float: right;
     clear: right;
+    margin-left: var(--fas-float-inline-margin, 12px);
 }
 
 @container markdown-view (width > 1100px) {

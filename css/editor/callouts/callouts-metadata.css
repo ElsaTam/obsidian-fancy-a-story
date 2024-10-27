@@ -96,11 +96,11 @@ Author: ElsaTam (Kapirklaa in Discord)
 .markdown-preview-view .callout:is([data-callout-metadata~=right], [data-callout-metadata~=float-right]) {
   float: right;
   clear: right;
-  margin: var(--size-4-3) 0 var(--size-4-3) var(--size-4-3);
+  margin: var(--fas-float-inline-margin, 12px) 0 var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px);
 }
 
 .markdown-preview-view .callout:is([data-callout-metadata~=left], [data-callout-metadata~=float-left]) {
   float: left;
   clear: left;
-  margin: var(--size-4-3) var(--size-4-3) var(--size-4-3) 0;
+  margin: var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px) 0;
 }
