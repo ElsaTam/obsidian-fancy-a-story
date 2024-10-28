@@ -2,6 +2,10 @@
 FAS - Image
 Author: ElsaTam (Kapirklaa in Discord)
 */
+.markdown-rendered :is(ul, ol) {
+  display: flow-root;
+}
+
 body {
   --image-shadow-offset: var(--size-4-2);
   --image-shadow-stripe-thickness: 2px;

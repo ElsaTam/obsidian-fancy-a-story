@@ -1,6 +1,9 @@
 /*
     Inspired by ITS theme's infobox callouts from SlRvb (https://publish.obsidian.md/slrvb-docs/ITS+Theme/Callouts/Callout+-+Infoboxes)
 */
+
+@forward '../../shared/list-with-float';
+
 .callout[data-callout="fas-infobox"] {
     --callout-content-padding: 0;
     --image-shadow-offset: 0;

@@ -7,6 +7,10 @@ Author: ElsaTam (Kapirklaa in Discord)
   container: markdown-view/inline-size;
 }
 
+.markdown-rendered :is(ul, ol) {
+  display: flow-root;
+}
+
 .markdown-preview-view aside,
 .markdown-preview-view .aside-left,
 .markdown-preview-view .aside-right {
