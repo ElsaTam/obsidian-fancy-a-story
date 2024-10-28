@@ -7,6 +7,10 @@ Author: ElsaTam (Kapirklaa in Discord)
   container: markdown-view/inline-size;
 }
 
+.markdown-rendered :is(ul, ol) {
+  display: flow-root;
+}
+
 .callout[data-callout-metadata~=gray] {
   --callout-color: var(--color-gray-rgb);
 }

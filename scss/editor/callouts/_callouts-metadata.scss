@@ -1,4 +1,5 @@
 @forward '../../shared/markdown-container';
+@forward '../../shared/list-with-float';
 @use '../../mixins/wide';
 
 .callout[data-callout-metadata~="gray"]   { --callout-color: var(--color-gray-rgb);}

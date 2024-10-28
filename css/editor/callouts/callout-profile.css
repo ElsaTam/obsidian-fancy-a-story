@@ -24,6 +24,9 @@ body {
   float: right;
   margin-left: var(--size-4-3);
 }
+.callout[data-callout=profile] :is(ul, ol) {
+  display: flow-root;
+}
 .callout[data-callout=profile] .callout-content > p:first-child img {
   max-width: 150px;
   position: relative;
