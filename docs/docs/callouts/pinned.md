@@ -10,6 +10,8 @@ You can specify three sizes in the callout:
 - `medium` (300px)
 - `large` (100%)
 
+You can also add the option `dark` to have a black card with white text.
+
 [![]({% link images/callouts/pinned.webp %})]({% link images/callouts/pinned.webp %})
 
 ```markdown
