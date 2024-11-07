@@ -40,9 +40,12 @@
         justify-content: center;
         position: absolute;
         top: calc(var(--padding-top) - 0.5em);
-        width: 100%;
+        width: fit-content;
         background: none;
         z-index: 1;
+        left: 50%;
+        transform: translateX(-50%);
+        padding-inline: 2%;
 
         &::before {
             content: "";
@@ -50,10 +53,10 @@
             position: absolute;
             top: calc(0.5em - 0.5 * var(--callout-header-height));
             height: var(--callout-header-height);
-            width: 100%;
+            width: max(100%, 170px);
             background-image: var(--clue-tape-variant);
             background-repeat: no-repeat;
-            background-size: contain;
+            background-size: 100% 100%;
             background-position: center center;
         }
 
@@ -77,7 +80,6 @@
         > * > .callout-icon {  opacity: 0.5; }
     }
     > .callout-title:hover .callout-icon { opacity: 1; }
-    &:hover .callout-title-inner { font-weight: var(--font-bold); }
 }
 
 .callout[data-callout="clue"][data-callout-metadata*="ripped"] {
