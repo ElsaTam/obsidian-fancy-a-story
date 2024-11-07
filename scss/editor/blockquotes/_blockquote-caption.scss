@@ -10,7 +10,7 @@ blockquote:has(.caption) {
     :scope .internal-embed.image-embed {
         display: block;
         font-size: 0;
-        margin-bottom: calc(-1 * var(--image-shadow-offset));
+        margin-bottom: calc(-1 * var(--image-shadow-offset, 0));
         margin-top: 0;
     }
 

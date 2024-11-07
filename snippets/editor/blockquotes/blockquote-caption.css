@@ -17,7 +17,7 @@ blockquote:has(.caption) {
   :scope .internal-embed.image-embed {
     display: block;
     font-size: 0;
-    margin-bottom: calc(-1 * var(--image-shadow-offset));
+    margin-bottom: calc(-1 * var(--image-shadow-offset, 0));
     margin-top: 0;
   }
   :scope .caption {
@@ -40,4 +40,13 @@ blockquote:has(.caption) {
   .image-embed + br {
     display: none;
   }
+}
+/* Compatibility with ITS theme */
+@scope (blockquote:has(.caption)) {
+  :scope .internal-embed.image-embed.image-embed img {
+    padding: 0;
+  }
+}
+.callout.callout[data-callout=grid] .callout-content > blockquote > p {
+  display: block;
 }
