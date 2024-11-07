@@ -19,8 +19,8 @@
 
     position: relative;
     margin: 0 auto;
-    background-color: var(--color-base-100);
-    color: var(--color-base-00);
+    background-color: white;
+    color: black;
 
     &[data-callout-metadata~="small"]  { width: 200px; }
     &[data-callout-metadata~="medium"] { width: 350px; }
@@ -58,8 +58,19 @@
 
     .callout-content {
         font-family: var(--callout-font-body);
+        border: none;
     }
     p:last-of-type { margin-bottom: 0; }
+}
+
+.theme-light .callout[data-callout="pinned"]:not([data-callout-metadata~="dark"]) {
+    --callout-border-width: 1px;
+    --callout-border-opacity: 0.15;
+}
+
+.callout[data-callout="pinned"][data-callout-metadata~="dark"] {
+    background-color: black;
+    color: white;
 }
 
 body {
