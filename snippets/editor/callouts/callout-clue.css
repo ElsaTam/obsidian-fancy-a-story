@@ -73,9 +73,12 @@ Author: ElsaTam (Kapirklaa in Discord)
   justify-content: center;
   position: absolute;
   top: calc(var(--padding-top) - 0.5em);
-  width: 100%;
+  width: fit-content;
   background: none;
   z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-inline: 2%;
 }
 .callout[data-callout=clue] > .callout-title::before {
   content: "";
@@ -83,10 +86,10 @@ Author: ElsaTam (Kapirklaa in Discord)
   position: absolute;
   top: calc(0.5em - 0.5 * var(--callout-header-height));
   height: var(--callout-header-height);
-  width: 100%;
+  width: max(100%, 170px);
   background-image: var(--clue-tape-variant);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 100% 100%;
   background-position: center center;
 }
 .callout[data-callout=clue] > .callout-title .callout-icon, .callout[data-callout=clue] > .callout-title .callout-title-inner, .callout[data-callout=clue] > .callout-title .callout-fold {
@@ -110,9 +113,6 @@ Author: ElsaTam (Kapirklaa in Discord)
 }
 .callout[data-callout=clue] > .callout-title:hover .callout-icon {
   opacity: 1;
-}
-.callout[data-callout=clue]:hover .callout-title-inner {
-  font-weight: var(--font-bold);
 }
 
 .callout[data-callout=clue][data-callout-metadata*=ripped] .callout-content {
