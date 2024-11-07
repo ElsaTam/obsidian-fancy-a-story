@@ -5,6 +5,6 @@ nav_order: 3
 
 | Name                                                | Description                           | Source                                                           |
 |:----------------------------------------------------|:--------------------------------------|:-----------------------------------------------------------------|
-| [Caption]({% link docs/blockquotes/caption.md %})   | Add a caption to an image | [`_blockquote-caption.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/blockquotes/_blockquote-caption.scss) |
-| [Citation]({% link docs/blockquotes/citation.md %}) | Create a citation with the `<cite>` tag | [`_blockquote-citation.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/blockquotes/_blockquote-citation.scss) |
-| [Tooltip]({% link docs/blockquotes/tooltip.md %})   | Add a tooltip to an image | [`_blockquote-tooltip.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/blockquotes/_blockquote-tooltip.scss) |
+| [Caption]({% link docs/blockquotes/caption.md %})   | Add a caption to an image | [`blockquote-caption.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/blockquotes/blockquote-caption.css) |
+| [Citation]({% link docs/blockquotes/citation.md %}) | Create a citation with the `<cite>` tag | [`blockquote-citation.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/blockquotes/blockquote-citation.css) |
+| [Tooltip]({% link docs/blockquotes/tooltip.md %})   | Add a tooltip to an image | [`blockquote-tooltip.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/blockquotes/blockquote-tooltip.css) |

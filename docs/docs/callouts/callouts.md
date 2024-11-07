@@ -9,29 +9,29 @@ nav_order: 4
 
 | Name | Description | Source |
 |:-----|:------------|:-------|
-| [`autopsy`]({% link docs/callouts/autopsy.md %}) | A strict layout for an autopsy report | [`_callout-autopsy.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-autopsy.scss) |
-| [`cards-deck`]({% link docs/callouts/cards-deck.md %}) | Display a list of images as a deck | [`_callout-cards-deck.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-cards-deck.scss) |
-| [`clue`]({% link docs/callouts/clue.md %}) | That good ol' clue you pin on the wall with a tape | [`_callout-clue.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-clue.scss) |
-| [`comic`]({% link docs/callouts/comic.md %}) | Comic strip | [`_callout-comic.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-comic.scss) |
-| [`conversation` and variants]({% link docs/callouts/conversation.md %}) | Conversation between two people | [`_callout-conversation.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-conversation.scss) |
-| [`email`]({% link docs/callouts/email.md %}) | Email look | [`_callout-email.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-email.scss) |
-| [`fas-infobox`]({% link docs/callouts/fas-infobox.md %}) | Infobox | Source: [`_callout-fas-infobox.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-fas-infobox.scss) |
-| [`film-strip`]({% link docs/callouts/film-strip.md %}) | Create a film strip from several images | [`_callout-film-strip.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-film-strip.scss) |
-| [`letter`]({% link docs/callouts/letter.md %}) | A cursive font and a paper background make a nice letter | [`_callout-letter.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-letter.scss) |
-| [`paper-fold`]({% link docs/callouts/paper-fold.md %}) | Folded post-it with hover effect to unfold | [`_callout-paper-fold.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-paper-fold.scss) |
-| [`pinned`]({% link docs/callouts/pinned.md %}) | Small note with a push pin | [`_callout-pinned.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-pinned.scss) |
-| [`poem`]({% link docs/callouts/poem.md %}) | Several options to write nice poems | [`_callout-poem.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-poem.scss) |
-| [`polaroid`]({% link docs/callouts/polaroid.md %}) | Polaroid frame for images | [`_callout-polaroid.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-polaroid.scss) |
-| [`profile`]({% link docs/callouts/profile.md %}) | Float image on the right | [`_callout-profile.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-profile.scss) |
-| [`screen`]({% link docs/callouts/screen.md %}) | Retro green glowing screen | [`_callout-screen.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-screen.scss) |
-| [`timeline`]({% link docs/callouts/timeline.md %}) | Timeline with several options | [`_callout-timeline.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-timeline.scss) |
+| [`autopsy`]({% link docs/callouts/autopsy.md %}) | A strict layout for an autopsy report | [`callout-autopsy.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-autopsy.css) |
+| [`cards-deck`]({% link docs/callouts/cards-deck.md %}) | Display a list of images as a deck | [`callout-cards-deck.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-cards-deck.css) |
+| [`clue`]({% link docs/callouts/clue.md %}) | That good ol' clue you pin on the wall with a tape | [`callout-clue.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-clue.css) |
+| [`comic`]({% link docs/callouts/comic.md %}) | Comic strip | [`callout-comic.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-comic.css) |
+| [`conversation` and variants]({% link docs/callouts/conversation.md %}) | Conversation between two people | [`callout-conversation.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-conversation.css) |
+| [`email`]({% link docs/callouts/email.md %}) | Email look | [`callout-email.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-email.css) |
+| [`fas-infobox`]({% link docs/callouts/fas-infobox.md %}) | Infobox | Source: [`callout-fas-infobox.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-fas-infobox.css) |
+| [`film-strip`]({% link docs/callouts/film-strip.md %}) | Create a film strip from several images | [`callout-film-strip.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-film-strip.css) |
+| [`letter`]({% link docs/callouts/letter.md %}) | A cursive font and a paper background make a nice letter | [`callout-letter.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-letter.css) |
+| [`paper-fold`]({% link docs/callouts/paper-fold.md %}) | Folded post-it with hover effect to unfold | [`callout-paper-fold.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-paper-fold.css) |
+| [`pinned`]({% link docs/callouts/pinned.md %}) | Small note with a push pin | [`callout-pinned.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-pinned.css) |
+| [`poem`]({% link docs/callouts/poem.md %}) | Several options to write nice poems | [`callout-poem.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-poem.css) |
+| [`polaroid`]({% link docs/callouts/polaroid.md %}) | Polaroid frame for images | [`callout-polaroid.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-polaroid.css) |
+| [`profile`]({% link docs/callouts/profile.md %}) | Float image on the right | [`callout-profile.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-profile.css) |
+| [`screen`]({% link docs/callouts/screen.md %}) | Retro green glowing screen | [`callout-screen.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-screen.css) |
+| [`timeline`]({% link docs/callouts/timeline.md %}) | Timeline with several options | [`callout-timeline.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-timeline.css) |
 
 
 # Utility callouts
 
 | Name | Description | Source |
 |:-----|:------------|:-------|
-| `blank` | Zero styling, no title, no spacing, no border, etc. | [`_callout-blank.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-blank.scss) |
-| [`grid`]({% link docs/callouts/grid.md %}) | Grid layout | [`_callout-grid.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-grid.scss) |
-| [`masonry`]({% link docs/callouts/masonry.md %}) | For images, masonry-like layout | [`_callout-masonry.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-masonry.scss) |
+| `blank` | Zero styling, no title, no spacing, no border, etc. | [`callout-blank.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-blank.css) |
+| [`grid`]({% link docs/callouts/grid.md %}) | Grid layout | [`callout-grid.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-grid.css) |
+| [`masonry`]({% link docs/callouts/masonry.md %}) | For images, masonry-like layout | [`callout-masonry.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-masonry.css) |
 

@@ -3,7 +3,7 @@ title: Faded
 parent: Embeds
 ---
 
-Source: [`_embed-faded.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/embeds/_embed-faded.scss)
+Source: [`embed-faded.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/embeds/embed-faded.css)
 
 Use the option `faded` to create an embed that will be as much as possible "in the flow" of the current text.
 

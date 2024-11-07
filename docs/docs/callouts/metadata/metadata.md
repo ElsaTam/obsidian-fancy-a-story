@@ -20,4 +20,4 @@ Write `> [!callout-name|option-1 option-2 option-3]` to customize your callout.
 | `no-title`               | No title                                            |
 | `wide`                   | Make the element full wide                          |
 
-Source: [`_callouts-metadata.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callouts-metadata.scss)
+Source: [`callouts-metadata.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callouts-metadata.css)

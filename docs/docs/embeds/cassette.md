@@ -3,7 +3,7 @@ title: Cassette
 parent: Embeds
 ---
 
-Source: [`_audio-cassette.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/embeds/_audio-cassette.scss)
+Source: [`audio-cassette.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/embeds/audio-cassette.css)
 
 Add a cassette image on top of the audio media player.
 

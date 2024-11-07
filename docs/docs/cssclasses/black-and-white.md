@@ -3,7 +3,7 @@ title: Black and white
 parent: CSS Classes
 ---
 
-Source: [`_black-and-white.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/_black-and-white.scss) 
+Source: [`black-and-white.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/black-and-white.css) 
 
 **Normal**:
 

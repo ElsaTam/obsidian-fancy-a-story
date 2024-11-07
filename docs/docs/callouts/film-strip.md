@@ -3,7 +3,7 @@ title: Film strip
 parent: Callouts
 ---
 
-Source: [`_callout-film-strip.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-film-strip.scss)
+Source: [`callout-film-strip.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-film-strip.css)
 
 [![]({% link images/callouts/film-strip.webp %})]({% link images/callouts/film-strip.webp %})
 

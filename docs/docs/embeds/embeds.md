@@ -5,7 +5,7 @@ nav_order: 9
 
 # Images
 
-Source: [`_image.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/_image.scss)
+Source: [`image.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/image.css)
 
 When embeding an image, add an alt option:
 - `![[image.png|option]]`
@@ -24,12 +24,12 @@ When embeding an image, add an alt option:
 
 | Alt option | Description | Source |
 |:-----------|:------------|:-------|
-| [`faded`]({% link docs/embeds/faded.md %}) | Make the embed as much in the flow as possible | [`_embed-faded.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/embeds/_embed-faded.scss) |
+| [`faded`]({% link docs/embeds/faded.md %}) | Make the embed as much in the flow as possible | [`embed-faded.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/embeds/embed-faded.css) |
 
 
 # Audio
 
 | Alt option | Description | Source |
 |:-----------|:------------|:-------|
-| [`cassette`]({% link docs/embeds/cassette.md %}) | Make the embed as much in the flow as possible | [`_audio-cassette.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/embeds/_audio-cassette.scss) |
+| [`cassette`]({% link docs/embeds/cassette.md %}) | Make the embed as much in the flow as possible | [`audio-cassette.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/embeds/audio-cassette.css) |
 

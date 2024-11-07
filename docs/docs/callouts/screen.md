@@ -3,7 +3,7 @@ title: Screen
 parent: Callouts
 ---
 
-Source: [`_callout-screen.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-screen.scss)
+Source: [`callout-screen.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-screen.css)
 
 You can now create a old-retro-glowing-green screen with the screen callout.
 Works best in dark mode.
