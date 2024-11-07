@@ -3,7 +3,7 @@ title: Masonry
 parent: Callouts
 ---
 
-Source: [`_callout-masonry.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-masonry.scss)
+Source: [`callout-masonry.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-masonry.css)
 
 This callout create a masonry layout to display images.
 

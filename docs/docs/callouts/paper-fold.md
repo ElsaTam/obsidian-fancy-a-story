@@ -3,7 +3,7 @@ title: Paper fold
 parent: Callouts
 ---
 
-Source: [`_callout-paper-fold.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-paper-fold.scss)
+Source: [`callout-paper-fold.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-paper-fold.css)
 
 [![]({% link images/callouts/paper-fold.webp %})]({% link images/callouts/paper-fold.webp %})
 

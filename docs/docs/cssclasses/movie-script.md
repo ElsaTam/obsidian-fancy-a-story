@@ -3,7 +3,7 @@ title: Movie script
 parent: CSS Classes
 ---
 
-Source: [`_movie-script.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/_movie-script.scss)
+Source: [`movie-script.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/movie-script.css)
 
 # Full result
 

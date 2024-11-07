@@ -3,7 +3,7 @@ title: Note accent
 parent: CSS Classes
 ---
 
-Source: [`_note-accent.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/_note-accent.scss)
+Source: [`note-accent.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/note-accent.css)
 
 [![]({% link images/cssclasses/note-accent.webp %})]({% link images/cssclasses/note-accent.webp %})
 

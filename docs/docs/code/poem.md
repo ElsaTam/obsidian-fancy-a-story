@@ -3,7 +3,7 @@ title: Poem
 parent: Code
 ---
 
-Source: [`_code-poem.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/code/_code-poem.scss)
+Source: [`code-poem.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/code/code-poem.css)
 
 Create a codeblock with the language `poem` and its variant. For non-monospace and center align text, see the [poem callout]({% link docs/callouts/poem.md %}).
 

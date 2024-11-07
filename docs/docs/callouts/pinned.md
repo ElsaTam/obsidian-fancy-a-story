@@ -3,7 +3,7 @@ title: Pinned
 parent: Callouts
 ---
 
-Source: [`_callout-pinned.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/_callout-pinned.scss)
+Source: [`callout-pinned.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-pinned.css)
 
 You can specify three sizes in the callout:
 - `small` (200px)

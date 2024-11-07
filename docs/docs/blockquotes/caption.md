@@ -3,7 +3,7 @@ title: Caption
 parent: Blockquotes
 ---
 
-Source: [`_blockquote-caption.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/blockquotes/_blockquote-caption.scss)
+Source: [`blockquote-caption.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/blockquotes/blockquote-caption.css)
 
 [![]({% link images/blockquotes/caption.webp %})]({% link images/blockquotes/caption.webp %})
 

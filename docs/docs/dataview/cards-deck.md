@@ -3,7 +3,7 @@ title: Cards deck (Dataview JS)
 parent: Dataview
 ---
 
-Source: [`_dataview-cards-deck.scss`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/plugins/community/dataview/_dataview-cards-deck.scss)
+Source: [`dataview-cards-deck.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/plugins/community/dataview/dataview-cards-deck.css)
 
 See the [callout `cards-deck`]({% link docs/callouts/cards-deck.md %}) to create this effect with images in a callout.
 
