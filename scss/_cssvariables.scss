@@ -13,7 +13,6 @@ body {
     --font-interface-theme: "Poppins";
     --font-text-theme: "Noto Serif";
 
-    --font-weight: var(--font-light);
     --font-thin: 100;
     --font-extralight: 200;
     --font-light: 300;
@@ -37,4 +36,10 @@ body {
 
 body {
     --fas-float-inline-margin: 8px;
+}
+
+@container style(--font-text-override: '??') {
+    .view-content {
+        --font-weight: var(--font-light);
+    }
 }
