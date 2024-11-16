@@ -37,9 +37,3 @@ body {
 body {
     --fas-float-inline-margin: 8px;
 }
-
-@container style(--font-text-override: '??') {
-    .view-content {
-        --font-weight: var(--font-light);
-    }
-}
