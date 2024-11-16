@@ -139,7 +139,7 @@
             black calc(100% - var(--line-fade-width)),
             transparent
         );
-        -webkit-mask-repeat:repeat-y, no-repeat;
+        -webkit-mask-repeat: repeat-y, no-repeat;
         -webkit-mask-position: center, center;
         -webkit-mask-size: var(--line-thickness), 100%;
         mask-composite: intersect;
@@ -322,6 +322,48 @@
     line-height: 1;
     color: var(--color-base-00);
     font-weight: var(--font-bold);
+}
+
+// For small screen
+@container markdown-view (width < 500px) {
+    .callout[data-callout="timeline"]:not([data-callout-metadata~="horizontal"]) > .callout-content {
+        --bullet-size: 6px;
+        --bullet-numbered-size: 14px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-right: var(--line-thickness);
+
+        &::after {
+            -webkit-mask-position: right, center;
+        }
+
+        // Right column blocks
+        > *:nth-child(even) {
+            &::after  { left: unset; right: var(--shift-bullet);  }
+            &::before { left: unset; right: var(--shift-segment); }
+        }
+
+        // bullet
+        > *::after {
+            --shift-bullet: calc(-1 * (
+                  var(--bullet-size) * 0.5
+                + var(--bullet-border-width) 
+                + var(--line-thickness) * 0.5
+                + var(--card-border-width) * 2
+            ));
+        }
+    
+        // segment
+        > *::before {
+            width: calc(var(--line-thickness) * 0.5);
+            --shift-segment: calc(-1 * (
+                  var(--line-thickness) * 0.5
+                + var(--card-border-width)
+            ));
+        }
+    }
 }
 
 
