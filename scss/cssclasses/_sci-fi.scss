@@ -22,7 +22,7 @@ body {
 
 // FRAME
 
-.sci-fi .markdown-preview-sizer,
+.sci-fi .markdown-preview-sizer:not(.markdown-embed .markdown-preview-sizer),
 .sci-fi.markdown-source-view {
     padding-inline: 3cqh;
 }

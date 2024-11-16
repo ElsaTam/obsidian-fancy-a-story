@@ -27,7 +27,7 @@ body {
   --hr-color: rgb(var(--sci-fi-color-rgb));
 }
 
-.sci-fi .markdown-preview-sizer,
+.sci-fi .markdown-preview-sizer:not(.markdown-embed .markdown-preview-sizer),
 .sci-fi.markdown-source-view {
   padding-inline: 3cqh;
 }
