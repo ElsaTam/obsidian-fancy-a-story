@@ -1,0 +1,52 @@
+/* GPLv3 license
+FAS - Callout Grid
+Author: ElsaTam (Kapirklaa in Discord)
+*/
+.callout[data-callout=table-grid] {
+  --table-background: rgba(var(--mono-rgb-0), 0.2);
+  --table-row-alt-background: rgba(var(--mono-rgb-0), 0.2);
+  padding: 0;
+  background: none;
+  border: none;
+}
+.callout[data-callout=table-grid] .callout-title {
+  display: none;
+}
+.callout[data-callout=table-grid] .callout-content {
+  border: none;
+  padding: 0;
+}
+.callout[data-callout=table-grid] table {
+  width: 100%;
+}
+.callout[data-callout=table-grid] thead {
+  display: none;
+}
+.callout[data-callout=table-grid] tbody {
+  display: grid;
+  gap: 0.6em;
+  grid-template-columns: repeat(auto-fill, 14em);
+  justify-content: center;
+}
+.callout[data-callout=table-grid] tr {
+  display: flex;
+  flex-direction: column;
+  margin-block: 0;
+  border: var(--callout-border-width) solid rgba(var(--callout-color), var(--callout-border-opacity));
+}
+.callout[data-callout=table-grid] td {
+  text-align: center;
+  border: 0;
+}
+.callout[data-callout=table-grid] td:first-child {
+  --link-decoration: none;
+  border-bottom: var(--callout-border-width) solid rgba(var(--callout-color), var(--callout-border-opacity));
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.callout[data-callout=table-grid] td:nth-child(n+2) {
+  background-color: rgba(var(--mono-rgb-0), 0.2);
+}
+.callout[data-callout=table-grid] td:last-child {
+  flex-grow: 1;
+}
