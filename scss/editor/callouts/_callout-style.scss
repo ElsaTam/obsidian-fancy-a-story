@@ -20,7 +20,7 @@ body {
     border-top: var(--callout-border-width) dashed rgba(var(--callout-color), var(--callout-border-opacity));
 }
 
-.callout[data-callout-metadata~="accent"] {
+[data-callout-metadata~="accent"] {
     > .callout-title {
         background: linear-gradient(to right, rgb(from var(--color-accent) r g b / 0.1), transparent);
     }

@@ -51,14 +51,14 @@ Author: ElsaTam (Kapirklaa in Discord)
   --callout-color: var(--color-pink-rgb);
 }
 
-.callout[data-callout-metadata~=accent] {
+[data-callout-metadata~=accent] {
   border-color: rgb(from var(--color-accent) r g b/var(--callout-border-opacity));
   background-color: rgb(from var(--color-accent) r g b/0.1);
 }
-.callout[data-callout-metadata~=accent] > .callout-title {
+[data-callout-metadata~=accent] > .callout-title {
   color: var(--color-accent);
 }
-.callout[data-callout-metadata~=accent] > .callout-title .svg-icon {
+[data-callout-metadata~=accent] > .callout-title .svg-icon {
   color: var(--color-accent);
 }
 
