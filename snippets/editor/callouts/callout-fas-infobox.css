@@ -5,7 +5,7 @@ Author: ElsaTam (Kapirklaa in Discord)
 /*
     Inspired by ITS theme's infobox callouts from SlRvb (https://publish.obsidian.md/slrvb-docs/ITS+Theme/Callouts/Callout+-+Infoboxes)
 */
-.markdown-rendered :is(ul, ol) {
+:where(.markdown-rendered :is(ul, ol)) {
   display: flow-root;
 }
 

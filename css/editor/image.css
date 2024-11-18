@@ -2,7 +2,7 @@
 FAS - Image
 Author: ElsaTam (Kapirklaa in Discord)
 */
-.markdown-rendered :is(ul, ol) {
+:where(.markdown-rendered :is(ul, ol)) {
   display: flow-root;
 }
 
