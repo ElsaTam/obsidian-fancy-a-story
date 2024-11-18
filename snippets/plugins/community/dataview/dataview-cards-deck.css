@@ -8,16 +8,18 @@ body {
 }
 
 @scope (.dataview-cards-deck) to (.markdown-embed .markdown-embed) {
-  ul.dataview-result-list-root-ul {
-    --border-color-hover: var(--color-accent);
+  :scope {
     --card-gap: 50px;
     --card-width: 150px;
     --card-height: 300px;
+    --deck-border-width: 0;
+  }
+  ul.dataview-result-list-root-ul {
+    --border-color-hover: var(--color-accent);
     --list-indent: 0;
     --list-spacing: 0;
     --link-decoration: none;
     --link-decoration-hover: none;
-    --deck-border-width: 0;
     --image-shadow-offset: 0;
     list-style-type: none;
     border: var(--deck-border-width) solid var(--background-secondary);
