@@ -1,5 +1,5 @@
 ---
-title: Grid
+title: Table Cards
 parent: Callouts
 ---
 
