@@ -3,4 +3,9 @@ FAS - Callout Poem
 Author: ElsaTam (Kapirklaa in Discord)
 */
 
+.callout[data-callout=poem] {
+    --callout-padding: 0;
+    position: relative;
+}
+
 @use '../../../editor/callouts/callout-poem';
