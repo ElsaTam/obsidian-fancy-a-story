@@ -8,7 +8,7 @@ body {
 }
 
 @scope (.dataview-cards-deck) to (.markdown-embed .markdown-embed) {
-  .dataview-result-list-root-ul {
+  ul.dataview-result-list-root-ul {
     --border-color-hover: var(--color-accent);
     --card-gap: 50px;
     --card-width: 150px;
@@ -46,20 +46,20 @@ body {
     --padding-left: calc(-1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-x)));
     --padding-right: calc(-1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) + var(--card-shadow-offset-x)));
   }
-  .dataview-result-list-root-ul::-webkit-scrollbar {
+  ul.dataview-result-list-root-ul::-webkit-scrollbar {
     width: var(--deck-scrollbar-width);
     height: var(--deck-scrollbar-width);
   }
-  .dataview-result-list-root-ul > * {
+  ul.dataview-result-list-root-ul > * {
     width: var(--card-gap);
     transition: transform 0.5s ease-in-out;
     transform: translateX(var(--card-base-translation));
     transform-origin: right;
   }
-  .dataview-result-list-root-ul > :hover {
+  ul.dataview-result-list-root-ul > :hover {
     transform: translateX(var(--card-base-translation)) scale(var(--card-scale-hover));
   }
-  .dataview-result-list-root-ul > :hover ~ * {
+  ul.dataview-result-list-root-ul > :hover ~ * {
     transform: translateX(var(--card-base-translation)) translateX(calc(var(--card-width) - var(--card-gap)));
   }
   .dataview-result-list-li {
