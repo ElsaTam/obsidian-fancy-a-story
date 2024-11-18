@@ -16,6 +16,7 @@ Write `> [!callout-name|option-1 option-2 option-3]` to customize your callout.
 | `right`, `float-right`   | Floating element on the right                       |
 | `left`, `float-left`     | Floating element on the left                        |
 | `no-background`, `no-bg` | No background                                       |
+| `no-blending`            | No blending                                         |
 | `no-icon`                | No icon                                             |
 | `no-title`               | No title                                            |
 | `wide`                   | Make the element full wide                          |

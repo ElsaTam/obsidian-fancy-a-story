@@ -119,3 +119,7 @@ Author: ElsaTam (Kapirklaa in Discord)
   clear: left;
   margin: var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px) 0;
 }
+
+.callout[data-callout-metadata~=no-blending] {
+  --callout-blend-mode: normal;
+}
