@@ -117,6 +117,10 @@ body {
   inset: 0;
   clip-path: polygon(0 20px, 20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px, var(--callout-border-width) calc(20px + var(--callout-border-width) * 0.5), var(--callout-border-width) calc(100% - var(--callout-border-width)), calc(100% - 20px - var(--callout-border-width) * 0.5) calc(100% - var(--callout-border-width)), calc(100% - var(--callout-border-width)) calc(100% - 20px - var(--callout-border-width) * 0.5), calc(100% - var(--callout-border-width)) var(--callout-border-width), calc(20px + var(--callout-border-width) * 0.5) var(--callout-border-width), var(--callout-border-width) calc(20px + var(--callout-border-width) * 0.5));
 }
+.sci-fi .callout:is([data-callout=note], [data-callout=abstract], [data-callout=summary], [data-callout=tldr], [data-callout=info], [data-callout=todo], [data-callout=tip], [data-callout=hint], [data-callout=important], [data-callout=success], [data-callout=check], [data-callout=done], [data-callout=question], [data-callout=help], [data-callout=faq], [data-callout=warning], [data-callout=caution], [data-callout=attention], [data-callout=failure], [data-callout=fail], [data-callout=missing], [data-callout=danger], [data-callout=error], [data-callout=bug], [data-callout=example], [data-callout=quote], [data-callout=cite]):not(:is([data-callout=email], [data-callout=timeline]) .callout):is([data-callout-metadata~=accent])::before,
+.sci-fi .callout:is([data-callout=cards-deck], [data-callout=email], [data-callout=profile], [data-callout=autopsy], [data-callout=screen], [data-callout=profile]):not(:is([data-callout=email], [data-callout=timeline]) .callout):is([data-callout-metadata~=accent])::before {
+  background: rgb(from var(--color-accent) r g b/var(--callout-border-opacity));
+}
 
 .sci-fi:is(.markdown-preview-view, .markdown-source-view) hr {
   width: 100%;

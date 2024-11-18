@@ -138,6 +138,10 @@ body {
                 calc(20px + var(--callout-border-width) * 0.5) var(--callout-border-width),
                 var(--callout-border-width) calc(20px + var(--callout-border-width) * 0.5));
         }
+
+        &:is([data-callout-metadata~="accent"])::before {
+            background: rgb(from var(--color-accent) r g b / var(--callout-border-opacity));
+        }
     }
 }
 
