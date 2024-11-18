@@ -36,7 +36,6 @@ Author: ElsaTam (Kapirklaa in Discord)
   border: var(--callout-border-width) solid rgba(var(--callout-color), var(--callout-border-opacity));
 }
 .callout[data-callout=table-cards] td {
-  text-align: center;
   border: 0;
 }
 .callout[data-callout=table-cards] td:first-child {
