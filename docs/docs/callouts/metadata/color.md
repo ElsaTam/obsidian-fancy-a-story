@@ -22,3 +22,5 @@ Use `> [!calout-name|{color}]` with `{color}` being one of the following availab
 | `blue` | [![]({% link images/callouts/metadata/light-blue.webp %})]({% link images/callouts/metadata/light-blue.webp %}) | [![]({% link images/callouts/metadata/dark-blue.webp %})]({% link images/callouts/metadata/dark-blue.webp %}) |
 | `purple` | [![]({% link images/callouts/metadata/light-purple.webp %})]({% link images/callouts/metadata/light-purple.webp %}) | [![]({% link images/callouts/metadata/dark-purple.webp %})]({% link images/callouts/metadata/dark-purple.webp %}) |
 | `pink` | [![]({% link images/callouts/metadata/light-pink.webp %})]({% link images/callouts/metadata/light-pink.webp %}) | [![]({% link images/callouts/metadata/dark-pink.webp %})]({% link images/callouts/metadata/dark-pink.webp %}) |
+
+You can also use the `|accent` option which will use the accent color. It should work with any normal callout. But it is not (yet) supported with all the custom callouts from this theme.
