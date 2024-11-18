@@ -1,0 +1,62 @@
+@forward '../shared/markdown-container';
+@forward '../shared/workleaves';
+
+body {
+    --footer-img-height: 220px;
+    --footer-img-opacity: 0.2;
+    --footer-img-color: rgb(var(--mono-rgb-100));
+}
+
+.footer-img-accent { --footer-img-color: var(--color-accent); }
+.footer-img-gray   { --footer-img-color: var(--color-gray); }
+.footer-img-brown  { --footer-img-color: var(--color-brown); }
+.footer-img-red    { --footer-img-color: var(--color-red); }
+.footer-img-orange { --footer-img-color: var(--color-orange); }
+.footer-img-yellow { --footer-img-color: var(--color-yellow); }
+.footer-img-green  { --footer-img-color: var(--color-green); }
+.footer-img-cyan   { --footer-img-color: var(--color-cyan); }
+.footer-img-blue   { --footer-img-color: var(--color-blue); }
+.footer-img-purple { --footer-img-color: var(--color-purple); }
+.footer-img-pink   { --footer-img-color: var(--color-pink); }
+
+[class*="footer-img"] {
+    > .markdown-preview-section > div:nth-last-child(2) {
+        --image-shadow-offset: 0;
+        position: sticky;
+        bottom: 0;
+        width: calc(100cqw + 2 * var(--file-margins));
+        font-size: 0;
+        margin-left: calc(50% - 50cqw - var(--file-margins));
+        transform: scale(1) translateY(calc(var(--file-margins) + 1px));
+        background-color: var(--workleaves-background);
+    }
+    
+    > .markdown-preview-section > div:nth-last-child(2) p {
+        opacity: var(--footer-img-opacity);
+        margin: 0;
+        background-color: var(--footer-img-color);
+        mix-blend-mode: screen;
+    }
+    
+    > .markdown-preview-section > div:nth-last-child(2) img {
+        height: var(--footer-img-height);
+        width: 100%;
+        object-fit: cover;
+        object-position: center top;
+        filter: invert(1) saturate(0);
+        mix-blend-mode: multiply;
+    }
+    
+    > .markdown-preview-sizer {
+        padding-bottom: 0 !important;
+    }
+}
+
+.theme-light [class*="footer-img"] > .markdown-preview-section > div:nth-last-child(2) p {
+    background-color: rgb(from var(--footer-img-color) calc(255 - r) calc(255 - g) calc(255 - b));
+    mix-blend-mode: difference;
+}
+
+.footer-under[class*="footer-img"] > .markdown-preview-section > div:nth-last-child(2) {
+    z-index: -1;
+}
