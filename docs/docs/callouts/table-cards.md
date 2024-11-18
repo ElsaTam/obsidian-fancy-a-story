@@ -6,6 +6,7 @@ parent: Callouts
 Source: [`callout-table-cards.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-table-cards.css)
 
 Applies a card layout to any table inside the callout. Each row will create one card. The first column is used as a header. The table header (first row) will not be displayed.
+It will also work with a dataview TABLE query.
 
 [![]({% link images/callouts/table-grid.webp %})]({% link images/callouts/table-grid.webp %})
 
