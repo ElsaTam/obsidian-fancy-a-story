@@ -3,7 +3,7 @@
 
 @scope (.dataview-cards-deck) to (.markdown-embed .markdown-embed) {
     
-    .dataview-result-list-root-ul {
+    ul.dataview-result-list-root-ul {
         --border-color-hover: var(--color-accent);
         --card-gap: 50px;
         --card-width: 150px;
