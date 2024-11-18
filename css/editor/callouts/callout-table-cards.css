@@ -5,6 +5,7 @@ Author: ElsaTam (Kapirklaa in Discord)
 .callout[data-callout=table-cards] {
   --table-background: rgba(var(--mono-rgb-0), 0.2);
   --table-row-alt-background: rgba(var(--mono-rgb-0), 0.2);
+  --callout-blend-mode: normal;
   padding: 0;
   background: none;
   border: none;
@@ -49,4 +50,11 @@ Author: ElsaTam (Kapirklaa in Discord)
 }
 .callout[data-callout=table-cards] td:last-child {
   flex-grow: 1;
+}
+
+.callout[data-callout=table-cards][data-callout-metadata~=accent] tr {
+  border-color: rgb(from var(--color-accent) r g b/var(--callout-border-opacity));
+}
+.callout[data-callout=table-cards][data-callout-metadata~=accent] td:first-child {
+  border-bottom-color: rgb(from var(--color-accent) r g b/var(--callout-border-opacity));
 }
