@@ -7,7 +7,7 @@ Author: ElsaTam (Kapirklaa in Discord)
   container: markdown-view/inline-size;
 }
 
-.markdown-rendered :is(ul, ol) {
+:where(.markdown-rendered :is(ul, ol)) {
   display: flow-root;
 }
 
