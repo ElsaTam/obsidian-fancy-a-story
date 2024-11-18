@@ -95,6 +95,6 @@ body {
   mix-blend-mode: difference;
 }
 
-.footer-under[class*=footer-img] > .markdown-preview-section > div:nth-last-child(2) {
+:is(.footer-background, .footer-bg)[class*=footer-img] > .markdown-preview-section > div:nth-last-child(2) {
   z-index: -1;
 }
