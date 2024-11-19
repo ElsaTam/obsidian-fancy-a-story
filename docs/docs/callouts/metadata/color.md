@@ -12,8 +12,10 @@ Use `> [!calout-name|{color}]` with `{color}` being one of the following availab
 
 | Color | Light theme | Dark theme |
 |:------|:-----------:|:----------:|
-| `gray` | [![]({% link images/callouts/metadata/light-gray.webp %})]({% link images/callouts/metadata/light-gray.webp %}) | [![]({% link images/callouts/metadata/dark-gray.webp %})]({% link images/callouts/metadata/dark-gray.webp %}) |
-| `brown` | [![]({% link images/callouts/metadata/light-brown.webp %})]({% link images/callouts/metadata/light-brown.webp %}) | [![]({% link images/callouts/metadata/dark-brown.webp %})]({% link images/callouts/metadata/dark-brown.webp %}) |
+| `white` | [![]({% link images/callouts/metadata/light-white.webp %})]({% link images/callouts/metadata/light-white.webp %}) | [![]({% link images/callouts/metadata/dark-white.webp %})]({% link images/callouts/metadata/dark-white.webp %}) |
+| `black` | [![]({% link images/callouts/metadata/light-black.webp %})]({% link images/callouts/metadata/light-black.webp %}) | [![]({% link images/callouts/metadata/dark-black.webp %})]({% link images/callouts/metadata/dark-black.webp %}) |
+| `gray`\* | [![]({% link images/callouts/metadata/light-gray.webp %})]({% link images/callouts/metadata/light-gray.webp %}) | [![]({% link images/callouts/metadata/dark-gray.webp %})]({% link images/callouts/metadata/dark-gray.webp %}) |
+| `brown`\* | [![]({% link images/callouts/metadata/light-brown.webp %})]({% link images/callouts/metadata/light-brown.webp %}) | [![]({% link images/callouts/metadata/dark-brown.webp %})]({% link images/callouts/metadata/dark-brown.webp %}) |
 | `red` | [![]({% link images/callouts/metadata/light-red.webp %})]({% link images/callouts/metadata/light-red.webp %}) | [![]({% link images/callouts/metadata/dark-red.webp %})]({% link images/callouts/metadata/dark-red.webp %}) |
 | `orange` | [![]({% link images/callouts/metadata/light-orange.webp %})]({% link images/callouts/metadata/light-orange.webp %}) | [![]({% link images/callouts/metadata/dark-orange.webp %})]({% link images/callouts/metadata/dark-orange.webp %}) |
 | `yellow` | [![]({% link images/callouts/metadata/light-yellow.webp %})]({% link images/callouts/metadata/light-yellow.webp %}) | [![]({% link images/callouts/metadata/dark-yellow.webp %})]({% link images/callouts/metadata/dark-yellow.webp %}) |
@@ -24,3 +26,5 @@ Use `> [!calout-name|{color}]` with `{color}` being one of the following availab
 | `pink` | [![]({% link images/callouts/metadata/light-pink.webp %})]({% link images/callouts/metadata/light-pink.webp %}) | [![]({% link images/callouts/metadata/dark-pink.webp %})]({% link images/callouts/metadata/dark-pink.webp %}) |
 
 You can also use the `|accent` option which will use the accent color. It should work with any normal callout. But it is not (yet) supported with all the custom callouts from this theme.
+
+\* not available in the standalone snippet outside of the theme.

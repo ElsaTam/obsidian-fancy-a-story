@@ -12,6 +12,8 @@
 .callout[data-callout-metadata~="blue"]   { --callout-color: var(--color-blue-rgb);}
 .callout[data-callout-metadata~="purple"] { --callout-color: var(--color-purple-rgb);}
 .callout[data-callout-metadata~="pink"]   { --callout-color: var(--color-pink-rgb);}
+.callout[data-callout-metadata~="black"]  { --callout-color: 0, 0, 0;}
+.callout[data-callout-metadata~="white"]  { --callout-color: 255, 255, 255;}
 
 [data-callout-metadata~="accent"] {
     border-color: rgb(from var(--color-accent) r g b / var(--callout-border-opacity));
