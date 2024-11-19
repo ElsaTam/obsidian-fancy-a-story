@@ -1,7 +1,7 @@
 @forward '../../shared/markdown-container';
 @use '../../mixins/wide';
 
-.markdown-preview-view [alt~="wide"]:is(img, .markdown-embed, .file-embed) {
+.markdown-preview-view [alt~="wide"]:is(img:not(.image-embed img), .image-embed, .markdown-embed, .file-embed) {
     @include wide.wide(0.95);
 
     max-width: unset;
