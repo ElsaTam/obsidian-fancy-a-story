@@ -11,12 +11,15 @@ Author: ElsaTam (Kapirklaa in Discord)
   display: flow-root;
 }
 
-.markdown-preview-view aside,
-.markdown-preview-view .aside-left,
-.markdown-preview-view .aside-right {
+body {
   --aside-width: 250px;
   --aside-gap: 15px;
   --aside-border-thickness: 4px;
+}
+
+.markdown-preview-view aside,
+.markdown-preview-view .aside-left,
+.markdown-preview-view .aside-right {
   text-decoration: none;
   display: block;
   border-radius: var(--radius-l);
