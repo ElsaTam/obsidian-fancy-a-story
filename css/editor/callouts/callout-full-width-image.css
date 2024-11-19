@@ -15,6 +15,7 @@ body {
   --callout-blend-mode: normal;
   --image-shadow-offset: 0;
   --p-spacing: 0;
+  position: relative;
 }
 .callout:is([data-callout=full-width-image], [data-callout=full-w-img], [data-callout=fwi], [data-callout="full-width-panoramic-image-:jack_o_lantern:"], [data-callout=fwpi-jol]) .callout-content {
   font-size: 0;
