@@ -60,3 +60,11 @@ sem um numero
 ````
 
 [![]({% link images/code/poem-floral.webp %})]({% link images/code/poem-floral.webp %})
+
+
+## CSS Variables
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--poem-border-width` | Thickness of the border | `1px` |
+| `--poem-color-rgb` | Color of the poem | `350px` |

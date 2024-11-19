@@ -1,3 +1,7 @@
+body {
+    --callout-screen-font: 'ProFont', 'Chakra Petch', 'Courier New', Courier, monospace;
+}
+
 .callout[data-callout="screen"] {
     --callout-color: var(--color-green-rgb);
     --callout-icon: lucide-monitor;
@@ -12,7 +16,7 @@
     --image-shadow-offset: 0;
 
     color: rgb(var(--callout-color));
-    font-family: 'ProFont', 'Chakra Petch', 'Courier New', Courier, monospace;
+    font-family: var(--callout-screen-font);
 
     &, .callout-title {
         background: none;

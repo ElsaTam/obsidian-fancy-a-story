@@ -47,3 +47,9 @@ It comes in three different variations. If you need to have special text alignme
 ```
 
 [![]({% link images/callouts/poem-floral.webp %})]({% link images/callouts/poem-floral.webp %})
+
+## CSS Variables
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--poem-border-width` | Thickness of the border | `1px` |

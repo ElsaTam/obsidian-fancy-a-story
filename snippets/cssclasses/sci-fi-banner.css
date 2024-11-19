@@ -2,16 +2,19 @@
 FAS - Sci-fi Banner
 Author: ElsaTam (Kapirklaa in Discord)
 */
+body {
+  --sci-fi-arc-size: 400px;
+}
+
 .sci-fi-banner {
-  --arc-size: 400px;
   --inline-title-size: 3em;
   --inline-title-font: "Orbitron", Arial, serif;
 }
 
 .sci-fi-banner .inline-title {
   position: relative;
-  width: var(--arc-size);
-  height: var(--arc-size);
+  width: var(--sci-fi-arc-size);
+  height: var(--sci-fi-arc-size);
   display: flex;
   align-items: center;
 }
@@ -37,8 +40,8 @@ Author: ElsaTam (Kapirklaa in Discord)
 .sci-fi-banner .inline-title::after {
   content: "";
   position: absolute;
-  width: calc(var(--arc-size) * 0.5);
-  height: calc(var(--arc-size) * 0.5);
+  width: calc(var(--sci-fi-arc-size) * 0.5);
+  height: calc(var(--sci-fi-arc-size) * 0.5);
   top: -5%;
   right: -10%;
   transform: rotate(-20deg);

@@ -38,3 +38,11 @@ Praesent in erat lacus. Proin risus est, facilisis tempor vulputate nec, ullamco
 
 Phasellus aliquam magna massa, non lobortis ligula rutrum eget. ...
 ```
+
+## CSS Variables
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--callout-fwi-height` | Height of the image | `70px` |
+| `--callout-fwi-title-shadow` | Shadow used for the title | `0px 0px 0.1em rgb(var(--mono-rgb-0)), 0px 0px 0.2em rgb(var(--mono-rgb-0)), 0px 0px 0.5em rgb(var(--mono-rgb-0))` |
+| `--callout-fwi-title-blur` | Blur size | `5px` |

@@ -88,3 +88,13 @@ cssclasses:
 ```
 
 [![]({% link images/cssclasses/banner-no-title.webp %})]({% link images/cssclasses/banner-no-title.webp %})
+
+## CSS Variables
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--banner-height` | Height of the banner | `300px` |
+| `--banner-title-shadow` | Text shadow of the inline title |  |
+| `--banner-slope-angle` | Rising angle of the bottom border for the slope banner | `4deg` |
+| `--banner-slope-border-width` | Thickness of the bottom border for the slope banner | `5px` |
+| `--banner-slope-border-color` | Color of the bottom border for the slope banner | `var(--color-accent)` |

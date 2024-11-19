@@ -16,10 +16,14 @@ body {
   --workleaves-foreground: var(--text-normal);
 }
 
+body {
+  --tree-view-guide-color: var(--background-secondary);
+}
+
 ul:has(> li > .tag[href="#tree-view"]) {
   --indentation-guide-reading-indent: -0.8em;
   --indentation-guide-width: 2px;
-  --indentation-guide-color: var(--background-secondary);
+  --indentation-guide-color: var(--tree-view-guide-color);
   --list-bullet-size: 0.8em;
   position: relative;
 }

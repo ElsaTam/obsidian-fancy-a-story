@@ -12,3 +12,9 @@ CSS classes used in these screenshots:
 
 [![]({% link images/cssclasses/sci-fi.webp %})]({% link images/cssclasses/sci-fi.webp %})
 
+
+## CSS Variables
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--sci-fi-color-rgb` | Main color used in the `sci-fi` and `sci-fi-banner` classes | `var(--color-cyan-rgb)` |

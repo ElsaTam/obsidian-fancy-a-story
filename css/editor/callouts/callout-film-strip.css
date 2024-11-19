@@ -9,7 +9,6 @@ Author: ElsaTam (Kapirklaa in Discord)
   --callout-content-padding: 0;
   --callout-color: var(--mono-rgb-100);
   --image-shadow-offset: 0;
-  background: none;
   --frame-height: 140px;
   --n-holes: 8;
   --hole-width: 15px;
@@ -20,6 +19,7 @@ Author: ElsaTam (Kapirklaa in Discord)
   --frame-width: calc(var(--n-holes) * var(--hole-width) + (var(--n-holes) - 1) * var(--gap));
   --padding-y: calc(var(--hole-height) + 3 * var(--gap));
   --padding-x: calc(var(--gap) * 0.5);
+  background: none;
 }
 .callout[data-callout=film-strip] .callout-content > p {
   counter-reset: frames;

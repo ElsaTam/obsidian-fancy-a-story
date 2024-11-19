@@ -23,3 +23,11 @@ Vivamus et purus nec neque volutpat efficitur vitae eget augue. Maecenas vel mal
 
 Sed auctor vitae sapien mollis tincidunt. Aliquam consectetur nisi et semper tristique. Nam suscipit dolor auctor, consequat turpis ut, commodo neque. Sed finibus euismod pellentesque. Proin vitae sodales justo, eget facilisis nibh. Maecenas pulvinar condimentum pharetra. Integer a vehicula ante. Proin bibendum mi ligula, non elementum massa vulputate eget. Suspendisse maximus, orci eget congue tempor, augue dolor dictum tellus, eget luctus ante enim eu lacus. Sed a rutrum lectus. Phasellus turpis mi, semper convallis volutpat eu, rutrum ac justo. Suspendisse potenti.
 ```
+
+## CSS Variables
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--polaroid-angle` | Tilt angle for polaroid when they are on the side | `2deg` |
+| `--polaroid-img-size` | Height and width of the image | `2deg` |
+| `--polaroid-font` | Font of the title | `'Walter Turncoat', cursive` |

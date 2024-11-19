@@ -51,3 +51,14 @@ This snippet doesn't change between light and dark theme.
 > > 
 > > I'm just here to test overflow!
 ```
+
+## CSS Variables
+
+(defined in `.callout[data-callout="comic"]`)
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--comic-color-rgb` | Color of the lines, text, etc. | `0, 0, 0` |
+| `--comic-background-rgb` | Background of the whole comic | `255, 255, 255` |
+| `--strip-height` | Height of a comic strip | `200px` |
+| `--gutter` | Gap between each panel | `20px` |

@@ -35,3 +35,14 @@ Images from the same deck must be in the same block, i.e. no empty line between 
 > ![[image8.png]]
 > ![[image9.png]]
 ```
+
+## CSS Variables
+
+(defined in `.callout[data-callout="cards-deck"]`)
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--card-gap` | Gap between the left sides of two cards | `30px` |
+| `--card-width` | Width of a card | `70px` |
+| `--card-height` | Height of a card | `100px` |
+

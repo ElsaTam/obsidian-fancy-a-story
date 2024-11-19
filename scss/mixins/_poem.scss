@@ -5,7 +5,7 @@
         position: absolute;
         left: 0; right: 0;
         height: var(--poem-border-width);
-        background: linear-gradient(to right, transparent, rgb(var(--poem-color)) 20%, rgb(var(--poem-color)) 80%, transparent);
+        background: linear-gradient(to right, transparent, rgb(var(--poem-color-rgb)) 20%, rgb(var(--poem-color-rgb)) 80%, transparent);
     }
 
     &::before {
@@ -38,7 +38,7 @@
         top: 0; bottom: 0;
         left: 0; right: 0;
         height: unset;
-        background-color: rgb(var(--poem-color));
+        background-color: rgb(var(--poem-color-rgb));
         -webkit-mask-image: var(--top-divider-art);
         -webkit-mask-size: 100% auto;
         -webkit-mask-repeat: no-repeat;
@@ -52,7 +52,7 @@
         top: 0; bottom: 0;
         left: 0; right: 0;
         height: unset;
-        background-color: rgb(var(--poem-color));
+        background-color: rgb(var(--poem-color-rgb));
         -webkit-mask-image: var(--bottom-divider-art);
         -webkit-mask-size: 60% auto;
         -webkit-mask-repeat: no-repeat;
@@ -83,14 +83,14 @@
 
 @mixin poem-floral-top {
     margin-inline: var(--floral-width);
-    border-left: var(--poem-border-width) solid rgba(var(--poem-color), 1);
+    border-left: var(--poem-border-width) solid rgba(var(--poem-color-rgb), 1);
     background-color: var(--workleaves-background);
 }
 
 @mixin poem-floral-bottom {
     margin-inline: var(--floral-width);
-    border-left: var(--poem-border-width) solid rgba(var(--poem-color), 1);
-    border-bottom: var(--poem-border-width) solid rgba(var(--poem-color), 1);
+    border-left: var(--poem-border-width) solid rgba(var(--poem-color-rgb), 1);
+    border-bottom: var(--poem-border-width) solid rgba(var(--poem-color-rgb), 1);
     background-color: var(--workleaves-background);
     padding: var(--size-4-3);
 }
@@ -102,7 +102,7 @@
         position: absolute;
         top: 0; bottom: 0;
         height: unset;
-        background-color: rgba(var(--poem-color), 0.6);
+        background-color: rgba(var(--poem-color-rgb), 0.6);
         -webkit-mask-image: var(--left-ornament-flourish), linear-gradient(to left, transparent, black 40%);
         -webkit-mask-repeat: no-repeat;
         -webkit-mask-size: 100% auto;

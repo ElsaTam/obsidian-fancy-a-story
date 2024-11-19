@@ -55,3 +55,13 @@ dv.el("button", "Shuffle", { cls: "dataview-shuffle-button", attr: { onclick: `
 }});
 ```
 ````
+
+## CSS Variables
+
+(defined in `.dataview-cards-deck`)
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--card-gap` | Gap between the left sides of two cards | `50px` |
+| `--card-width` | Width of a card | `150px` |
+| `--card-height` | Height of a card | `300px` |

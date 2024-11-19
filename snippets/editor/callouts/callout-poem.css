@@ -9,13 +9,14 @@ body {
 
 body {
   --poem-border-width: 1px;
-  --poem-color: var(--color-blue-rgb);
+  --poem-color-rgb: var(--color-blue-rgb);
 }
 
 .callout[data-callout=poem] {
   --callout-icon: lucide-align-center;
   --callout-content-padding: 0;
   --line-height-normal: 1.7;
+  --poem-color-rgb: var(--callout-color);
   line-height: var(--line-height-normal);
   text-align: center;
   border: none;
@@ -27,7 +28,7 @@ body {
   left: 0;
   right: 0;
   height: var(--poem-border-width);
-  background: linear-gradient(to right, transparent, rgb(var(--poem-color)) 20%, rgb(var(--poem-color)) 80%, transparent);
+  background: linear-gradient(to right, transparent, rgb(var(--poem-color-rgb)) 20%, rgb(var(--poem-color-rgb)) 80%, transparent);
 }
 .callout[data-callout=poem]::before {
   top: 0;
@@ -67,7 +68,7 @@ body {
   left: 0;
   right: 0;
   height: unset;
-  background-color: rgb(var(--poem-color));
+  background-color: rgb(var(--poem-color-rgb));
   -webkit-mask-image: var(--top-divider-art);
   -webkit-mask-size: 100% auto;
   -webkit-mask-repeat: no-repeat;
@@ -82,7 +83,7 @@ body {
   left: 0;
   right: 0;
   height: unset;
-  background-color: rgb(var(--poem-color));
+  background-color: rgb(var(--poem-color-rgb));
   -webkit-mask-image: var(--bottom-divider-art);
   -webkit-mask-size: 60% auto;
   -webkit-mask-repeat: no-repeat;
@@ -95,13 +96,13 @@ body {
 }
 .callout[data-callout=poem][data-callout-metadata~=floral] > .callout-title {
   margin-inline: var(--floral-width);
-  border-left: var(--poem-border-width) solid rgba(var(--poem-color), 1);
+  border-left: var(--poem-border-width) solid rgba(var(--poem-color-rgb), 1);
   background-color: var(--workleaves-background);
 }
 .callout[data-callout=poem][data-callout-metadata~=floral] > .callout-content {
   margin-inline: var(--floral-width);
-  border-left: var(--poem-border-width) solid rgba(var(--poem-color), 1);
-  border-bottom: var(--poem-border-width) solid rgba(var(--poem-color), 1);
+  border-left: var(--poem-border-width) solid rgba(var(--poem-color-rgb), 1);
+  border-bottom: var(--poem-border-width) solid rgba(var(--poem-color-rgb), 1);
   background-color: var(--workleaves-background);
   padding: var(--size-4-3);
 }
@@ -111,7 +112,7 @@ body {
   top: 0;
   bottom: 0;
   height: unset;
-  background-color: rgba(var(--poem-color), 0.6);
+  background-color: rgba(var(--poem-color-rgb), 0.6);
   -webkit-mask-image: var(--left-ornament-flourish), linear-gradient(to left, transparent, black 40%);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 100% auto;

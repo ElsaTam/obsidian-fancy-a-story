@@ -4,13 +4,13 @@
     --strip-height: 200px;
     --image-shadow-offset: 0;
     
-    --comic-color: 0, 0, 0; // Color of the lines, text, etc. (black)
-    --comic-background: 255, 255, 255;  // background of the whole comic (white)
+    --comic-color-rgb: 0, 0, 0; // Color of the lines, text, etc. (black)
+    --comic-background-rgb: 255, 255, 255;  // background of the whole comic (white)
 
     --callout-radius: 0;
     --callout-content-padding: var(--size-4-4);
     --callout-blend-mode: normal;
-    --callout-color: var(--comic-color);
+    --callout-color: var(--comic-color-rgb);
     --callout-border-width: 1px;
     
     --border-radius-0: 81% 3% 0px 0px / 3% 94% 0px 0px;
@@ -18,7 +18,7 @@
     --border-radius-2: 100% 3% 0px 0px / 3% 49% 0px 0px;
     --border-radius-3: 4% 30% 0px 0px / 51% 3% 0px 0px;
 
-    background: rgb(var(--comic-background));
+    background: rgb(var(--comic-background-rgb));
     font-family: "VTC Letterer Pro", "Comic Sans", "Arial", sans-serif;
 }
 
@@ -30,9 +30,9 @@
 }
 
 .callout[data-callout="comic-panel"] {
-    --callout-color: var(--comic-color);
+    --callout-color: var(--comic-color-rgb);
     --callout-padding: 0;
-    background: rgb(var(--comic-background));
+    background: rgb(var(--comic-background-rgb));
     margin: 0;
     position: relative;
     border: none;
@@ -47,9 +47,9 @@
     }
     > .callout-content > *:not(:has(img)) {
         position: absolute;
-        color: rgb(var(--comic-color));
-        background-color: rgb(var(--comic-background));
-        border-top: 1px solid rgb(var(--comic-color));
+        color: rgb(var(--comic-color-rgb));
+        background-color: rgb(var(--comic-background-rgb));
+        border-top: 1px solid rgb(var(--comic-color-rgb));
         left: 0; right: 0;
         bottom: 0;
         text-align: center;
@@ -82,7 +82,7 @@
         top: var(--g);
         bottom: calc(var(--g) + var(--s));
         left: var(--g);
-        border: 1px solid rgb(var(--comic-color));
+        border: 1px solid rgb(var(--comic-color-rgb));
         box-shadow: 1px 1px 0px 1px #000000;
     }
 
@@ -125,7 +125,7 @@
 
     > .callout[data-callout-metadata~="overflow"] {
         border-image: none;
-        border: var(--b) solid rgb(var(--comic-color));
+        border: var(--b) solid rgb(var(--comic-color-rgb));
     }
     > .callout[data-callout-metadata~="overflow"]:nth-child(4n  ) { border-radius: var(--border-radius-0); }
     > .callout[data-callout-metadata~="overflow"]:nth-child(4n+1) { border-radius: var(--border-radius-1); }
@@ -134,7 +134,7 @@
 }
 
 .callout[data-callout="comic"][data-callout-metadata="straight"] > .callout-content > * {
-    border: 5px solid rgb(var(--comic-color));
+    border: 5px solid rgb(var(--comic-color-rgb));
 }
 
 body {
