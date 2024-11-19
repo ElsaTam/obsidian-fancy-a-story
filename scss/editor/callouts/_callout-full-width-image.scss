@@ -1,0 +1,56 @@
+body {
+    --callout-ribbon-height: 70px;
+    --callout-ribbon-title-shadow: 0px 0px 0.1em rgb(var(--mono-rgb-0)), 0px 0px 0.2em rgb(var(--mono-rgb-0)), 0px 0px 0.5em rgb(var(--mono-rgb-0));
+    --callout-ribbon-title-blur: 5px;
+}
+
+$aliases: ("full-width-image", "full-w-img", "fwi", "full-width-panoramic-image-:jack_o_lantern:", "fwpi-jol");
+$sel: ":is(";
+@each $alias in $aliases {
+    @if ($sel != ":is(") { $sel: $sel + ", "; }
+    $sel: $sel + "[data-callout='#{$alias}']";
+}
+$sel: $sel + ")";
+
+.callout#{$sel} {
+    --callout-padding: 0;
+    --callout-content-padding: 0;
+    --callout-border-width: 0;
+    --callout-blend-mode: normal;
+
+    --image-shadow-offset: 0;
+    --p-spacing: 0;
+
+
+    .callout-content {
+        font-size: 0;
+    }
+
+    img {
+        height: var(--callout-ribbon-height);
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .callout-icon {
+        display: none;
+    }
+
+    .callout-title {
+        background: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-shadow: var(--callout-ribbon-title-shadow);
+        z-index: 1;
+    }
+
+    &[data-callout-metadata~="blur"] .callout-content {
+        filter: blur(var(--callout-ribbon-title-blur));
+    }
+
+    &[data-callout-metadata~="grayscale"] img {
+        filter: grayscale(1);
+    }
+}
