@@ -94,7 +94,7 @@ cssclasses:
 | Variable | Description | Default value |
 |:---------|:------------|:--------------|
 | `--banner-height` | Height of the banner | `300px` |
-| `--banner-title-shadow` | Text shadow of the inline title |  |
+| `--banner-title-shadow` | Text shadow of the inline title | `0px 0px 0.1em rgb(var(--mono-rgb-0)), 0px 0px 0.2em rgb(var(--mono-rgb-0)), 0px 0px 0.5em rgb(var(--mono-rgb-0))` |
 | `--banner-slope-angle` | Rising angle of the bottom border for the slope banner | `4deg` |
 | `--banner-slope-border-width` | Thickness of the bottom border for the slope banner | `5px` |
 | `--banner-slope-border-color` | Color of the bottom border for the slope banner | `var(--color-accent)` |
