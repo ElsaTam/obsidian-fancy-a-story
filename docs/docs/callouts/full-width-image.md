@@ -24,17 +24,17 @@ And the following options:
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget pellentesque magnas ...
 
 > [!full-width-image|grayscale red] # Full width image
-> ![[Aurora.jpg]]
+> ![[image.png]]
 
 Nam non nunc felis. Curabitur faucibus nisi nisi, vitae ornare lectus feugiat id. ...
 
 > [!fwi|wide blur]
-> ![[Aurora.jpg]]
+> ![[image.png]]
 
 Praesent in erat lacus. Proin risus est, facilisis tempor vulputate nec, ullamcorper dapibus sem. ...
 
 > [!full-width-panoramic-image-:jack_o_lantern:|no-title]
-> ![[Aurora.jpg]]
+> ![[image.png]]
 
 Phasellus aliquam magna massa, non lobortis ligula rutrum eget. ...
 ```
