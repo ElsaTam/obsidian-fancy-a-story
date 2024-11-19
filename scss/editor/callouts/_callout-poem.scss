@@ -1,15 +1,12 @@
 @forward '../../shared/workleaves';
+@forward '../../shared/poem';
 @use '../../mixins/poem';
-
-body {
-    --poem-border-width: 1px;
-    --poem-color: var(--color-blue-rgb);
-}
 
 .callout[data-callout="poem"] {
     --callout-icon: lucide-align-center;
     --callout-content-padding: 0;
     --line-height-normal: 1.7;
+    --poem-color-rgb: var(--callout-color);
     line-height: var(--line-height-normal);
 
     text-align: center;

@@ -37,3 +37,11 @@ When a linked image is hovered, the other images get blurred.
 You can also add the `|horizontal` option to have an horizontal masonry layout (and this will keep the images in a row-major order).
 
 [![]({% link images/callouts/masonry-horizontal.webp %})]({% link images/callouts/masonry-horizontal.webp %})
+
+## CSS Variables
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--masonry-column-count` | Default column count (vertical layout) | `4` |
+| `--masonry-row-height` | Height of a row (horizontal layout) | `8rem` |
+| `--masonry-gap` | Gap between columns or rows | `0.5rem` |

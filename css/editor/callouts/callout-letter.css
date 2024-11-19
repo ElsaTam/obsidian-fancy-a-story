@@ -17,6 +17,11 @@ body {
   --workleaves-foreground: var(--text-normal);
 }
 
+body {
+  --callout-letter-title-font: "Tangerine", "Brush Script MT", cursive;
+  --callout-letter-body-font: "Homemade Apple", "Comic Sans MS", cursive;
+}
+
 .callout[data-callout=letter] {
   --callout-color: var(--color-yellow-rgb);
   --callout-title-size: 2em;
@@ -27,7 +32,7 @@ body {
   font-size: var(--font-text-size);
 }
 .callout[data-callout=letter] .callout-title {
-  font-family: "Tangerine", "Brush Script MT", cursive;
+  font-family: var(--callout-letter-title-font);
   gap: 1rem;
 }
 .callout[data-callout=letter] .callout-icon {
@@ -68,7 +73,7 @@ body {
   -webkit-mask-image: var(--lucide-mail-open);
 }
 .callout[data-callout=letter] .callout-content {
-  font-family: "Homemade Apple", "Comic Sans MS", cursive;
+  font-family: var(--callout-letter-body-font);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5) inset, 0 0 7px rgba(0, 0, 0, 0.5) inset;
 }
 .callout[data-callout=letter] :is(.fas-bg-textures .callout-content) {

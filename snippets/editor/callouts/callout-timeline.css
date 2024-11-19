@@ -23,8 +23,9 @@ body {
   --line-color: rgba(var(--callout-color), 0.4);
   --line-fade-width: 50px;
   --card-border-width: 5px;
-  --card-border-opacity: 1;
+  --card-border-opacity: 0.2;
   --card-padding: var(--size-4-3);
+  --card-width: 300px;
   --bullet-size: 8px;
   --bullet-numbered-size: 20px;
   --bullet-radius: 50%;
@@ -34,10 +35,6 @@ body {
   --bullet-outline-width: 3px;
   --segment-border-color: rgb(var(--callout-color));
   --segment-thickness: 1px;
-}
-
-.callout[data-callout=timeline][data-callout-metadata~=horizontal] {
-  --cards-width: 300px;
 }
 
 .callout[data-callout=timeline] {
@@ -54,7 +51,7 @@ body {
   --image-shadow-offset: 0;
   --s: var(--card-border-width);
   border: calc(2 * var(--s)) solid transparent;
-  outline: 1px dashed rgba(var(--callout-color), 0.2);
+  outline: 1px dashed rgba(var(--callout-color), var(--card-border-opacity));
   outline-offset: calc(-1 * var(--s));
   background: conic-gradient(from 90deg at 1px 1px, transparent 25%, rgba(var(--callout-color), 0.4) 0);
   padding: var(--card-padding);
@@ -204,7 +201,7 @@ body {
   position: relative;
   overflow: visible;
   margin-right: var(--col-gap);
-  width: var(--cards-width);
+  width: var(--card-width);
   z-index: 1;
 }
 .callout[data-callout=timeline][data-callout-metadata~=horizontal] > .callout-content > *:nth-child(odd) {

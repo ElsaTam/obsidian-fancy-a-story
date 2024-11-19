@@ -3,6 +3,8 @@
     --table-row-alt-background: rgba(var(--mono-rgb-0), 0.2);
     --callout-blend-mode: normal;
 
+    --card-width: 14em;
+
     padding: 0;
     background: none;
     border: none;
@@ -27,7 +29,7 @@
     tbody {
         display: grid;
         gap: 0.6em;
-        grid-template-columns: repeat(auto-fill, 14em);
+        grid-template-columns: repeat(auto-fill, var(--card-width));
         justify-content: center;
     }
 

@@ -21,3 +21,13 @@ To override the values defining the folding angle, use the snippet:
     --corner-angle: 60deg;
 }
 ```
+
+## CSS Variables
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--paper-fold-corner-diag` | Length of the diagonal of the folding part | `100px` (`25px` on mobile) |
+| `--paper-fold-corner-diag-hover` | Length of the diagonal of the folding part on hover | `10px` |
+| `--paper-fold-corner-angle` | Angle of the folding part | `30deg` (`70deg` on mobile) |
+| `--paper-fold-corner-angle-hover` | Angle of the folding part on hover | `60deg` |
+| `--paper-fold-color` | Color of the paper fold | `255, 247, 64` in light mode, `255, 255, 153` in dark mode |

@@ -22,19 +22,22 @@ body {
   --callout-font-body: var(--font-typewriter);
   --pushpin-size: 40px;
   --pushpin-scale-collapsed: 0.8;
+  --pinned-small-width: 200px;
+  --pinned-medium-width: 350px;
+  --pinned-large-width: 100%;
   position: relative;
   margin: 0 auto;
   background-color: white;
   color: black;
 }
 .callout[data-callout=pinned][data-callout-metadata~=small] {
-  width: 200px;
+  width: var(--pinned-small-width);
 }
 .callout[data-callout=pinned][data-callout-metadata~=medium] {
-  width: 350px;
+  width: var(--pinned-medium-width);
 }
 .callout[data-callout=pinned][data-callout-metadata~=large] {
-  width: 100%;
+  width: var(--pinned-large-width);
 }
 .callout[data-callout=pinned] .callout-icon {
   display: none;

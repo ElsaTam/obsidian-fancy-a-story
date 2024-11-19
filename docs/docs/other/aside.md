@@ -37,3 +37,12 @@ Sed posuere eu nisl et consectetur. Curabitur dignissim, nisl eu blandit sceleri
 
 Integer ac accumsan lacus, sed varius erat. Proin mollis felis quis elementum consequat. Etiam faucibus congue arcu et finibus. Duis efficitur ipsum eget feugiat ullamcorper. Proin sed porta lectus, vitae cursus felis. Nulla at nibh nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur malesuada dolor et feugiat. 
 ```
+
+
+## CSS Variables
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--aside-width` | Width of an aside block | `250px` |
+| `--aside-gap` |Gap between the content and an aside block | `250px` |
+| `--aside-border-thickness` | Border thickness of an aside block | `250px` |

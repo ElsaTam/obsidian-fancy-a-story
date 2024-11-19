@@ -2,6 +2,10 @@
 FAS - Callout Screen
 Author: ElsaTam (Kapirklaa in Discord)
 */
+body {
+  --callout-screen-font: "ProFont", "Chakra Petch", "Courier New", Courier, monospace;
+}
+
 .callout[data-callout=screen] {
   --callout-color: var(--color-green-rgb);
   --callout-icon: lucide-monitor;
@@ -14,7 +18,7 @@ Author: ElsaTam (Kapirklaa in Discord)
   --indentation-guide-color: rgba(var(--callout-color), 0.2);
   --image-shadow-offset: 0;
   color: rgb(var(--callout-color));
-  font-family: "ProFont", "Chakra Petch", "Courier New", Courier, monospace;
+  font-family: var(--callout-screen-font);
 }
 .callout[data-callout=screen], .callout[data-callout=screen] .callout-title {
   background: none;

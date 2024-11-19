@@ -2,6 +2,12 @@
 FAS - Callout Masonry
 Author: ElsaTam (Kapirklaa in Discord)
 */
+body {
+  --masonry-column-count: 4;
+  --masonry-row-height: 8rem;
+  --masonry-gap: 0.5rem;
+}
+
 .callout[data-callout=masonry] {
   --callout-padding: 0;
   --callout-content-padding: 0;
@@ -13,8 +19,8 @@ Author: ElsaTam (Kapirklaa in Discord)
   background: none;
 }
 .callout[data-callout=masonry] > .callout-content > p {
-  column-count: 4;
-  column-gap: 0.5rem;
+  column-count: var(--masonry-column-count);
+  column-gap: var(--masonry-gap);
 }
 .callout[data-callout=masonry] > .callout-title {
   display: none;
@@ -29,36 +35,36 @@ Author: ElsaTam (Kapirklaa in Discord)
   filter: saturate(10%) blur(1px);
 }
 
-.callout[data-callout=masonry][data-callout-metadata~=col-2] > .callout-content > p {
-  column-count: 2;
+.callout[data-callout=masonry][data-callout-metadata~=col-2] {
+  --masonry-column-count: 2;
 }
 
-.callout[data-callout=masonry][data-callout-metadata~=col-3] > .callout-content > p {
-  column-count: 3;
+.callout[data-callout=masonry][data-callout-metadata~=col-3] {
+  --masonry-column-count: 3;
 }
 
-.callout[data-callout=masonry][data-callout-metadata~=col-4] > .callout-content > p {
-  column-count: 4;
+.callout[data-callout=masonry][data-callout-metadata~=col-4] {
+  --masonry-column-count: 4;
 }
 
-.callout[data-callout=masonry][data-callout-metadata~=col-5] > .callout-content > p {
-  column-count: 5;
+.callout[data-callout=masonry][data-callout-metadata~=col-5] {
+  --masonry-column-count: 5;
 }
 
-.callout[data-callout=masonry][data-callout-metadata~=col-6] > .callout-content > p {
-  column-count: 6;
+.callout[data-callout=masonry][data-callout-metadata~=col-6] {
+  --masonry-column-count: 6;
 }
 
-.callout[data-callout=masonry][data-callout-metadata~=col-7] > .callout-content > p {
-  column-count: 7;
+.callout[data-callout=masonry][data-callout-metadata~=col-7] {
+  --masonry-column-count: 7;
 }
 
-.callout[data-callout=masonry][data-callout-metadata~=col-8] > .callout-content > p {
-  column-count: 8;
+.callout[data-callout=masonry][data-callout-metadata~=col-8] {
+  --masonry-column-count: 8;
 }
 
-.callout[data-callout=masonry][data-callout-metadata~=col-9] > .callout-content > p {
-  column-count: 9;
+.callout[data-callout=masonry][data-callout-metadata~=col-9] {
+  --masonry-column-count: 9;
 }
 
 .callout[data-callout=masonry][data-callout-metadata=horizontal] > .callout-content > p {
@@ -66,13 +72,13 @@ Author: ElsaTam (Kapirklaa in Discord)
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: var(--masonry-gap);
 }
 .callout[data-callout=masonry][data-callout-metadata=horizontal] > .callout-content > p > * {
   flex-grow: 1;
 }
 .callout[data-callout=masonry][data-callout-metadata=horizontal] img {
-  height: 8rem;
+  height: var(--masonry-row-height);
   width: 100%;
   object-fit: cover;
 }

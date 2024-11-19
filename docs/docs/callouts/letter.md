@@ -23,3 +23,10 @@ Source: [`callout-letter.css`](https://github.com/ElsaTam/obsidian-fancy-a-story
 >
 > John
 ```
+
+## CSS Variables
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--callout-letter-title-font` | Font family for the title | `"Tangerine", "Brush Script MT", cursive` |
+| `--callout-letter-body-font` | Font family for the body | `"Homemade Apple", "Comic Sans MS", cursive` |

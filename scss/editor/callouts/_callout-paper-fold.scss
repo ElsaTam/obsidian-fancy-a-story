@@ -16,20 +16,27 @@
     initial-value: 30deg;
 }
 
-.is-mobile .callout[data-callout="paper-fold"] {
-    --corner-diag: 25px;
-    --corner-angle: 70deg;
+body {
+    --paper-fold-corner-diag: 100px;
+    --paper-fold-corner-diag-hover: 10px;
+    --paper-fold-corner-angle: 30deg;
+    --paper-fold-corner-angle-hover: 60deg;
+}
+
+.is-mobile {
+    --paper-fold-corner-diag: 25px;
+    --paper-fold-corner-angle: 70deg;
 }
 
 .callout[data-callout="paper-fold"] {
-    --corner-width: calc(var(--corner-diag) / sin(var(--corner-angle)));
-    --corner-height: calc(var(--corner-diag) / sin(90deg - var(--corner-angle)));
-    transition: --corner-diag 0.5s ease-in-out, --corner-angle 0.5s ease-in-out;
+    --corner-width: calc(var(--paper-fold-corner-diag) / sin(var(--paper-fold-corner-angle)));
+    --corner-height: calc(var(--paper-fold-corner-diag) / sin(90deg - var(--paper-fold-corner-angle)));
+    transition: --paper-fold-corner-diag 0.5s ease-in-out, --paper-fold-corner-angle 0.5s ease-in-out;
 }
 
 .callout[data-callout="paper-fold"]:hover {
-    --corner-diag: 10px;
-    --corner-angle: 60deg;
+    --paper-fold-corner-diag: var(--paper-fold-corner-diag-hover);
+    --paper-fold-corner-angle: var(--paper-fold-corner-angle-hover);
 }
 
 
@@ -82,10 +89,10 @@
     color: black;
 
     background: linear-gradient(
-        calc(-1 * var(--corner-angle)),
-        transparent calc(var(--corner-diag) + 1px),
-        hsl(from var(--postit-color) h s calc(l * 1.1)) var(--corner-diag),
-        var(--postit-color) calc(var(--corner-diag) * 1.5))
+        calc(-1 * var(--paper-fold-corner-angle)),
+        transparent calc(var(--paper-fold-corner-diag) + 1px),
+        hsl(from var(--postit-color) h s calc(l * 1.1)) var(--paper-fold-corner-diag),
+        var(--postit-color) calc(var(--paper-fold-corner-diag) * 1.5))
         no-repeat;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--corner-height)), calc(100% - var(--corner-width)) 100%, 0 100%);
     overflow: hidden;
@@ -106,11 +113,11 @@
     background-repeat: no-repeat;
     height: var(--corner-height);
     width: var(--corner-width);
-    transform: matrix(cos(-2 * var(--corner-angle)), sin(-2 * var(--corner-angle)), sin(-2 * var(--corner-angle)), calc(-1 * cos(-2 * var(--corner-angle))), 0, 0);
+    transform: matrix(cos(-2 * var(--paper-fold-corner-angle)), sin(-2 * var(--paper-fold-corner-angle)), sin(-2 * var(--paper-fold-corner-angle)), calc(-1 * cos(-2 * var(--paper-fold-corner-angle))), 0, 0);
     background: linear-gradient(
-        calc(180deg - var(--corner-angle)),
-        hsl(from var(--postit-color) h s calc(l * 0.9) / 1) var(--corner-diag),
-        hsl(from var(--postit-color) h s calc(l * 1.1) / 1) calc(var(--corner-diag) + 0.3 * min(var(--corner-height), var(--corner-width))),
+        calc(180deg - var(--paper-fold-corner-angle)),
+        hsl(from var(--postit-color) h s calc(l * 0.9) / 1) var(--paper-fold-corner-diag),
+        hsl(from var(--postit-color) h s calc(l * 1.1) / 1) calc(var(--paper-fold-corner-diag) + 0.3 * min(var(--corner-height), var(--corner-width))),
         hsl(from var(--postit-color) h s calc(l * 0.5) / 1));
     box-shadow: 0 0 calc(min(var(--corner-width), var(--corner-height)) / 5) calc(min(var(--corner-width), var(--corner-height)) / 25) hsl(from var(--postit-color) h 40% 10%);
 }

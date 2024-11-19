@@ -68,3 +68,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget pellentesque m
 
 ![[footer.png]]
 ```
+
+## CSS Variables
+
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--footer-img-height` | Height of the footer image | `220px` |
+| `--footer-img-opacity` | Opacity of the footer image | `0.2` |
+| `--footer-img-color` | Color of the footer image | `rgb(var(--mono-rgb-100))` |

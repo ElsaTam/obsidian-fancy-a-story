@@ -18,3 +18,11 @@ It will also work with a dataview TABLE query.
 > | Row 2 A | Row 2 B | Row 2 C | Row 2 D | Row 2 E |
 > | Row 3 A | Row 3 B | Row 3 C | Row 3 D | Row 3 E |
 ```
+
+## CSS Variables
+
+(defined in `.callout[data-callout="table-cards"]`)
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--card-width` | Width of a card | `14em` |

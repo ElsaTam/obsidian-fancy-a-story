@@ -13,6 +13,7 @@ Author: ElsaTam (Kapirklaa in Discord)
 body {
   --polaroid-angle: 2deg;
   --polaroid-img-size: 200px;
+  --polaroid-font: "Walter Turncoat", cursive;
 }
 
 .callout[data-callout=polaroid] {
@@ -36,7 +37,7 @@ body {
   color: var(--text-normal);
   background: none;
   justify-content: center;
-  font-family: "Walter Turncoat", cursive;
+  font-family: var(--polaroid-font);
 }
 .callout[data-callout=polaroid] .callout-content {
   position: relative;

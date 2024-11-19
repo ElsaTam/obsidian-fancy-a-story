@@ -55,3 +55,10 @@ Hovering a leaf (an item without a sublist) will highlight the corresponding lin
         - Uranus - moons
         - Neptune - moons
 ```
+
+
+## CSS Variables
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--tree-view-guide-color` | Color of the connectors | `var(--background-secondary)` |

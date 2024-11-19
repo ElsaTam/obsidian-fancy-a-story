@@ -16,15 +16,18 @@
     --callout-font-body: var(--font-typewriter);
     --pushpin-size: 40px;
     --pushpin-scale-collapsed: 0.8;
+    --pinned-small-width: 200px;
+    --pinned-medium-width: 350px;
+    --pinned-large-width: 100%;
 
     position: relative;
     margin: 0 auto;
     background-color: white;
     color: black;
 
-    &[data-callout-metadata~="small"]  { width: 200px; }
-    &[data-callout-metadata~="medium"] { width: 350px; }
-    &[data-callout-metadata~="large"]  { width: 100%;}
+    &[data-callout-metadata~="small"]  { width: var(--pinned-small-width); }
+    &[data-callout-metadata~="medium"] { width: var(--pinned-medium-width); }
+    &[data-callout-metadata~="large"]  { width: var(--pinned-large-width);}
 
     .callout-icon { display: none; }
     .callout-fold svg { display: none; }

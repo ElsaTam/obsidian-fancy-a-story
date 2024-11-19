@@ -21,3 +21,9 @@ Works best in dark mode.
 > 
 > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac enim ut sapien imperdiet gravida. Nulla sed turpis et neque tincidunt convallis. Phasellus posuere nisi eros, non tincidunt erat tincidunt ut.
 ```
+
+## CSS Variables
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--callout-screen-font` | Font family | `'ProFont', 'Chakra Petch', 'Courier New', Courier, monospace` |

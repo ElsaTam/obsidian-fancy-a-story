@@ -6,6 +6,10 @@
     --callout-border-width: var(--deck-border-width);
     --border-color-hover: rgb(var(--callout-color));
     --p-spacing: 0;
+
+    --card-gap: 30px;
+    --card-width: 70px;
+    --card-height: 100px;
 }
 
 .callout[data-callout="cards-deck"] .callout-content {
@@ -13,10 +17,6 @@
 }
 
 .callout[data-callout="cards-deck"] .callout-content > p {
-    --card-gap: 30px;
-    --card-width: 70px;
-    --card-height: 100px;
-    
     padding-bottom: var(--padding-bottom);
     padding-top: var(--padding-top);
     padding-left: var(--padding-left);

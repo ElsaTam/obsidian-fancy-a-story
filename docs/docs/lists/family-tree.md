@@ -50,3 +50,10 @@ You can't have more than one wedding partner by sublist, otherwise they will be 
                         - #wed Aemilia Lepida
                 - Claudius
 ```
+
+
+## CSS Variables
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--family-tree-connectors-color` | Color of the connectors | `var(--background-secondary)` |

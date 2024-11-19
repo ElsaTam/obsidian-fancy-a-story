@@ -8,17 +8,6 @@ nav_order: 7
 
 # Editor
 
-## Banner
-
-| Variable | Description | Default value |
-|:---------|:------------|:--------------|
-| `--banner-height` | Height of the banner | `300px` |
-| `--banner-title-shadow` | Text shadow of the inline title |  |
-| `--banner-slope-angle` | Rising angle of the bottom border for the slope banner | `4deg` |
-| `--banner-slope-border-width` | Thickness of the bottom border for the slope banner | `5px` |
-| `--banner-slope-border-color` | Color of the bottom border for the slope banner | `var(--color-accent)` |
-
-
 ## Headings
 
 | Variable | Description | Default value |
@@ -47,12 +36,6 @@ nav_order: 7
 |:---------|:------------|:--------------|
 | `--table-header-line-height` | Line height for table headers | `1.8` |
 
-## Other CSS Classes
-
-| Variable | Description | Default value |
-|:---------|:------------|:--------------|
-| `--sci-fi-color-rgb` | Main color used in the `sci-fi` and `sci-fi-banner` classes | `var(--color-cyan-rgb)` |
-
 
 # Typography
 
@@ -61,7 +44,6 @@ nav_order: 7
 | Variable | Description | Default value |
 |:---------|:------------|:--------------|
 | `--font-typewriter` | Typewriter font-family | `"TT2020StyleE", "Courier", monospace` |
-
 
 
 

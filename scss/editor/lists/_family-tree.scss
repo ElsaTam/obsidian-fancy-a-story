@@ -1,9 +1,12 @@
 @forward '../../shared/workleaves';
 
+body {
+    --family-tree-connectors-color: var(--background-secondary);
+}
+
 ul:has(> li > .tag[href='#family-tree']) {
     --list-spacing: 0;
     --list-indent: 0;
-    --connectors-color: var(--background-secondary);
 
     overflow-x: scroll;
 
@@ -138,7 +141,7 @@ ul:has(> li > .tag[href='#family-tree']) {
         position: absolute;
         top: 0;
         right: 50%;
-        border-top: 1px solid var(--connectors-color);
+        border-top: 1px solid var(--family-tree-connectors-color);
         width: 50%;
         height: 10px;
     }
@@ -150,7 +153,7 @@ ul:has(> li > .tag[href='#family-tree']) {
     li::after {
         right: auto;
         left: 50%;
-        border-left: 1px solid var(--connectors-color);
+        border-left: 1px solid var(--family-tree-connectors-color);
     }
 
     // Remove left-right connectors from elements without any siblings
@@ -180,7 +183,7 @@ ul:has(> li > .tag[href='#family-tree']) {
         position: absolute;
         top: 0;
         left: 50%;
-        border-left: 1px solid var(--connectors-color);
+        border-left: 1px solid var(--family-tree-connectors-color);
         width: 0px;
         height: 20px;
 
