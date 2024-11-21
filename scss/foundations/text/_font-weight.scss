@@ -1,0 +1,28 @@
+body {
+    --font-thin: 100;
+    --font-extralight: 200;
+    --font-light: 300;
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+    --font-black: 900;
+}
+
+@container style(--font-text-override: '??') {
+    .app-container {
+        --font-weight: var(--font-light);
+    }
+    .markdown-source-view,
+    .markdown-source-view.mod-cm6 .cm-scroller,
+    .markdown-preview-view,
+    .community-modal-readme,
+    .sync-history-preview {
+        font-weight: var(--font-weight);
+    }
+}
+
+.cm-s-obsidian span.cm-formatting-quote {
+    font-weight: var(--font-extralight);
+}

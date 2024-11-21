@@ -2,5 +2,10 @@
 @use 'colors/dynamic_palette';
 @use 'colors/rainbow-colors-base';
 @use 'colors/rainbow-colors-variants';
-@use 'typography';
+@use 'text/font-family';
+@use 'text/font-weight';
+@use 'text/text-wrap';
 @use 'fas-accessibility';
+
+@use 'app-css-variables';
+@use 'shared-css-variables';
