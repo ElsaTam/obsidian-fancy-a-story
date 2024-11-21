@@ -1,14 +1,10 @@
-@use 'fas-bg-textures';
-// @use 'fas-dynamic-tabs';
 @use 'fas-opposite-bg';
 
 @use 'ribbon';
 @use 'scrollbar';
-@use 'sidebar';
 @use 'status-bar';
 @use 'tab-headers';
 @use 'titlebar';
 @use 'vault-profile';
 @use 'workspace';
-
-@use 'fas-bookmark-tabs';
+@use 'sidebars/sidebars';

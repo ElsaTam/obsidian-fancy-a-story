@@ -1,0 +1,27 @@
+@use 'foundations/text/font-import';
+@use 'foundations/colors/default_theme';
+@use 'foundations/fas-accessibility';
+@use 'foundations/text/text-wrap';
+@use 'foundations/shared-css-variables';
+@use 'foundations/publish-css-variables';
+
+@use 'editor/aside';
+@use 'editor/blockquotes/blockquote';
+@use 'editor/callouts/callouts';
+@use 'editor/code/code';
+@use 'editor/embeds/embeds';
+@use 'editor/footnotes';
+@use 'editor/headings/h1-display';
+@use 'editor/horizontal_rule';
+@use 'editor/image';
+@use 'editor/links/link-default';
+@use 'editor/links/link-external';
+@use 'editor/lists/lists';
+@use 'editor/tables/default-table';
+
+@use 'plugins/core/file-explorer-bullet';
+@use 'plugins/core/file-explorer-hover';
+
+@use 'window/sidebars/fas-bg-textures';
+@use 'window/sidebars/sidebar-layout';
+@use 'window/workspace';

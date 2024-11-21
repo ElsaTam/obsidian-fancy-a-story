@@ -1,0 +1,38 @@
+@mixin doodle-decoration {
+    & {
+        position: relative;
+    }
+
+    &:hover::after {
+        content: "";
+        position: absolute;
+        transition: bottom 0.3s;
+        left: 0;
+        right: 0;
+        bottom: -0.3em;
+        height: 0.34em;
+        background-color: var(--link-color-hover);
+        -webkit-mask-image: url("data:image/svg+xml,<svg width='100' height='64' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M-17 30.5C-1 22 72-4 54 13 37.9 28.2-2.5 57.5 16 55.5s72-29 104-40' stroke='black' stroke-width='14'/></svg>");
+        -webkit-mask-size: auto 100%;
+        -webkit-mask-repeat: repeat no-repeat;
+    }
+}
+
+body {
+    --link-decoration: doodle;
+}
+
+@container style(--link-decoration: doodle) {
+    .cm-hmd-internal-link,
+    .internal-link:not(:is(.metadata-container .internal-link)) {
+        @include doodle-decoration;
+    }
+}
+
+@container style(--link-external-decoration: doodle) {
+    .cm-url,
+    .cm-link,
+    .external-link:not(:is(.metadata-container .external-link)) {
+        @include doodle-decoration;
+    }
+}

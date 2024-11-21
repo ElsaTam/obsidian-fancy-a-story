@@ -1,75 +1,17 @@
-/* GPLv3 license
-FAS - Bookmark tabs
-Author: ElsaTam (Kapirklaa in Discord)
-*/
-body {
-  --workleaves-background: var(--background-primary);
-  --workleaves-foreground: var(--text-normal);
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 7 | @use '../../window/fas-bookmark-tabs';
+ *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   scss\css\window\fas-bookmark-tabs.scss 7:1  root stylesheet */
 
-body {
-  --titlebar-background: none;
-  --titlebar-background-focused: none;
-}
-
-body:not(:has(.is-right-sidedock-open)) .titlebar-button-container {
-  --titlebar-background: var(--workleaves-background);
-  --titlebar-background-focused: var(--workleaves-background);
-}
-body:not(:has(.is-right-sidedock-open)).is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -6px;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
   display: block;
-  width: 6px;
-  height: 6px;
-  background-color: var(--titlebar-background);
-  clip-path: polygon(100% 0, 100% 100%, 0 100%);
-}
-body:not(:has(.is-right-sidedock-open)).is-hidden-frameless:not(.is-fullscreen).is-focused .titlebar-button-container.mod-right::before {
-  background-color: var(--titlebar-background-focused);
-}
-
-body {
-  --fas-bookmark-tabs: flat; /* disable, flat, or volume */
-}
-
-@container not style(--fas-bookmark-tabs: disable) {
-  .mod-sidedock .workspace-tab-header-container {
-    position: absolute;
-    z-index: 1;
-    top: -2px;
-    width: 100%;
-  }
-  .mod-sidedock .workspace-tab-header-container-inner {
-    height: calc(var(--header-height) + 0.5 * var(--cutout-corner-radius, 0));
-    filter: drop-shadow(2px 2px 2px var(--shadow-color));
-    gap: 6px;
-  }
-  .mod-sidedock .workspace-tab-header-container:hover {
-    --icon-opacity: var(--icon-opacity-inactive);
-  }
-  .mod-sidedock .workspace-tab-header {
-    background-color: var(--workspace-background);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
-  }
-  .mod-sidedock .workspace-tab-header.is-active {
-    background-color: var(--color-accent);
-  }
-  .mod-sidedock .workspace-tab-header.is-active:hover {
-    background-color: var(--color-accent-1);
-  }
-  .mod-sidedock .workspace-tab-container {
-    margin-top: 6px;
-  }
-  .mod-sidedock .workspace-leaf {
-    padding-top: calc(var(--header-height) - 6px);
-  }
-}
-@container style(--fas-bookmark-tabs: volume) {
-  .mod-sidedock .workspace-tab-header {
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 2px, rgba(255, 255, 255, 0.03) 8px, transparent 20px);
-    background-size: 100% 100%;
-  }
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 7 \2502  @use '../../window/fas-bookmark-tabs';\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   scss\\css\\window\\fas-bookmark-tabs.scss 7:1  root stylesheet";
 }

@@ -1,0 +1,20 @@
+body {
+    --button-radius: var(--radius-s);
+
+    --caret-color: currentColor;
+
+    --divider-color: transparent;
+    --divider-color-hover: var(--color-base-50);
+
+    --file-header-border: 1px dashed var(--background-secondary);
+
+    --icon-opacity-inactive: 0.3;
+
+    --inline-title-color: var(--text-normal);
+
+    --input-radius: var(--radius-s);
+
+    --modal-radius: var(--radius-s);
+
+    --radius-s: 0;
+}

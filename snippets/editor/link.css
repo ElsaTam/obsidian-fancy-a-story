@@ -4,11 +4,6 @@ Author: ElsaTam (Kapirklaa in Discord)
 */
 body {
   --link-decoration: doodle;
-  --link-decoration-hover: var(--link-decoration);
-  --link-external-decoration: underline;
-  --link-external-decoration-hover: var(--link-external-decoration);
-  --link-decoration-thickness: 2px;
-  --link-decoration-thickness-hover: 1px;
 }
 
 @container style(--link-decoration: doodle) {
@@ -53,6 +48,14 @@ body {
     -webkit-mask-repeat: repeat no-repeat;
   }
 }
+body {
+  --link-decoration-hover: var(--link-decoration);
+  --link-external-decoration: underline;
+  --link-external-decoration-hover: var(--link-external-decoration);
+  --link-decoration-thickness: 2px;
+  --link-decoration-thickness-hover: 1px;
+}
+
 @container not style(--link-decoration: doodle) {
   .cm-hmd-internal-link .cm-underline,
   .markdown-rendered .internal-link:not(:is(.metadata-container .internal-link)),
