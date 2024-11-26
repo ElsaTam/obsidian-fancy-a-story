@@ -8,7 +8,8 @@ body {
 }
 
 @container metadata (width > 600px) {
-  .metadata-content {
+  .metadata-content:not(:has(.drag-ghost-hidden)) {
+    display: block;
     column-count: 2;
     column-rule: 1px dashed var(--metadata-border-color);
   }
