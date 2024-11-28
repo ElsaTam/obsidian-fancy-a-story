@@ -9,7 +9,9 @@ FANCY A STORY
 Installation
 ------------
 > [!WARNING]
-> **Minimal Installer version**: 1.6.5
+> **Minimum Installer version**: 1.6.5
+> 
+> **Recommended Installer version**: >= 1.7.0
 > 
 > **How to check**: go in Settings > General, and check the Installer Version. It is *under* the current version of Obsidian.
 > 
