@@ -10,6 +10,7 @@ nav_order: 6
 | [`columns-x`]({% link docs/cssclasses/columns.md %})               | Use a 2, 3 or 4 columns layout                       | [`columns.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/columns.css) |
 | `confidential`                                                     | Replace `==highlights==` with unreadable black marks | [`confidential.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/confidential.css) |
 | [`footer-img` and variants]({% link docs/cssclasses/footer-img.md %}) | Adds a footer image with different options        | [`footer-img.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/footer-img.css) |
+| `hide-properties`                                                  | Hide properties in reading view                      | [`hide-properties.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/hide-properties.css) |
 | `minimalist`                                                       | Simple and minimal styling                           | [`minimalist.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/minimalist.css) |
 | [`movie-script`]({% link docs/cssclasses/movie-script.md %})       | Movie-script styling with specific callouts          | [`movie-script.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/movie-script.css) |
 | [`newspaper`]({% link docs/cssclasses/newspaper.md %})             | Transform the page into an old newspaper             | [`newspaper.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/newspaper.css) |
@@ -21,7 +22,7 @@ nav_order: 6
 
 # Headings
 
-Source: [`kpr-headings.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/kpr-headings.css)
+Source: [`fas-headings.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/fas-headings.css)
 
 | Class                 | Description                                  |                 |
 |:----------------------|:---------------------------------------------|:---------------:|
