@@ -45,13 +45,14 @@ body {
 
 }
 
-.markdown-preview-view:not(.show-properties).banner {
-    .mod-header {
-        height: calc(var(--banner-height) - var(--file-margins));
-        padding-bottom: var(--file-margins);
-    }
+// Properties hidden
+.markdown-preview-view:not(.show-properties).banner .mod-header,
+.markdown-preview-view.hide-properties.banner .mod-header {
+    height: calc(var(--banner-height) - var(--file-margins));
+    padding-bottom: var(--file-margins);
 }
 
+// Properties visible
 @container not style(--metadata-display-reading: none) {
     .markdown-preview-view.show-properties.banner {
         .metadata-container {
