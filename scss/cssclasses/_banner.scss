@@ -1,4 +1,5 @@
 @forward '../shared/markdown-container';
+@forward '../shared/markdown-anchor';
 
 $img-embed-sel: '.mod-header + div + div > p > .image-embed:nth-child(1 of .image-embed)';
 
@@ -12,7 +13,6 @@ body {
 }
 
 .markdown-preview-view.banner {
-    --metadata-display-reading: none;
     --inline-title-margin-bottom: 0;
 
     #{$img-embed-sel} {
@@ -39,15 +39,25 @@ body {
         }
     }
 
-    .mod-header {
-        height: calc(var(--banner-height) - var(--file-margins));
-        padding-bottom: var(--file-margins);
-    }
-
     .inline-title {
         text-shadow: var(--banner-title-shadow);
     }
 
+}
+
+.markdown-preview-view:not(.show-properties).banner {
+    .mod-header {
+        height: calc(var(--banner-height) - var(--file-margins));
+        padding-bottom: var(--file-margins);
+    }
+}
+
+@container not style(--metadata-display-reading: none) {
+    .markdown-preview-view.show-properties.banner {
+        .metadata-container {
+            margin-top: calc(var(--banner-height) - var(--file-margins) + 4px + 0.8em);
+        }
+    }
 }
 
 .markdown-preview-view.banner.banner-gradient {
@@ -59,20 +69,18 @@ body {
 .markdown-preview-view.banner.banner-title {
     --inline-title-line-height: 3;
     
-    .mod-header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
     .inline-title {
+        position: absolute;
+        top: calc(var(--banner-height) * 0.5);
+        right: 50%;
+        transform: translate(50%, -50%);
         display: block;
         border: 1px solid var(--color-base-50);
         min-width: 50%;
         background-color: rgba(var(--mono-rgb-0), 0.4);
         backdrop-filter: blur(5px);
         text-shadow: none;
+        text-align: center;
     }
 }
 
@@ -93,21 +101,10 @@ body {
         }
     }
 
-    .mod-header {
-        position: relative;
-    }
-
     .inline-title {
         position: absolute;
-        transform: rotate(calc(-1 * var(--banner-slope-angle)));
-        bottom: calc((50% + 50cqw) * sin(var(--banner-slope-angle)) / sin(90deg - var(--banner-slope-angle)));
-        right: 0;
-    }
-}
-
-.markdown-preview-view.banner.banner-title.banner-slant,
-.markdown-preview-view.banner.banner-title.banner-slope {
-    .inline-title {
-        bottom: calc((50% + 50cqw) * sin(var(--banner-slope-angle)) / sin(90deg - var(--banner-slope-angle)) + var(--banner-slope-border-width) + 2px);
+        transform: rotate(calc(-1 * var(--banner-slope-angle))) translateY(-100%);
+        top: calc(anchor(--anchor-preview-section top) + var(--banner-height) - (50% + 50cqw) * sin(var(--banner-slope-angle)) / sin(90deg - var(--banner-slope-angle)) - 10px);
+        right: anchor(--anchor-preview-section right, var(--file-margins));
     }
 }
