@@ -1,0 +1,24 @@
+/* GPLv3 license
+FAS - Embed Faded
+Author: ElsaTam (Kapirklaa in Discord)
+*/
+body {
+  --callout-fwi-height: 70px;
+  --callout-fwi-title-shadow: 0px 0px 0.1em rgb(var(--mono-rgb-0)), 0px 0px 0.2em rgb(var(--mono-rgb-0)), 0px 0px 0.5em rgb(var(--mono-rgb-0));
+  --callout-fwi-title-blur: 5px;
+  --fwi-height: var(--callout-fwi-height);
+  --fwi-title-shadow: var(--callout-fwi-title-shadow);
+  --fwi-title-blur: var(--callout-fwi-title-blur);
+}
+
+.image-embed:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol]) {
+  --image-shadow-offset: 0;
+  display: block;
+  font-size: 0;
+  width: 100%;
+}
+.image-embed:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol]) img {
+  height: var(--fwi-height);
+  width: 100%;
+  object-fit: cover;
+}
