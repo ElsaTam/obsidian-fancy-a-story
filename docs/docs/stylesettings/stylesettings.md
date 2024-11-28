@@ -143,13 +143,6 @@ Set the file line width (width of notes).
 {: .note }
 If you change this value, the [asides]({% link docs/other/aside.md %}) elements might not switch correctly between in-text/in-margins positions.
 
-## Tables
-
-#### Use plain table style
-Select the plain style for the tables
-
-[![]({% link images/tables/table-default-vs-plain.webp %}){: width="400" }]({% link images/tables/table-default-vs-plain.webp %})
-
 ## Headings
 
 #### Color for the headings
@@ -223,6 +216,19 @@ See [tasks]({% link docs/lists/tasks.md %}) for screenshots.
 #### Invert in dark mode
 
 Invert your PDFs in dark mode.
+
+## Properties
+
+#### Number of columns
+
+Number of columns for the frontmatter properties. If the note is smaller than 600px, only one column will be displayed.
+
+## Tables
+
+#### Use plain table style
+Select the plain style for the tables
+
+[![]({% link images/tables/table-default-vs-plain.webp %}){: width="400" }]({% link images/tables/table-default-vs-plain.webp %})
 
 
 

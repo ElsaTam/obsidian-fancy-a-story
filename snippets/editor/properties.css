@@ -7,10 +7,14 @@ body {
   --workleaves-foreground: var(--text-normal);
 }
 
+body {
+  --properties-columns: 2;
+}
+
 @container metadata (width > 600px) {
   .metadata-content:not(:has(.drag-ghost-hidden)) {
     display: block;
-    column-count: 2;
+    column-count: var(--properties-columns);
     column-rule: 1px dashed var(--metadata-border-color);
   }
 }
