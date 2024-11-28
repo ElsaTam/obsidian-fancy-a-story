@@ -124,6 +124,11 @@ body {
         margin-left: 10px;
         object-fit: cover;
         border-radius: 20%;
+        z-index: 1;
+    }
+    p:has(img[alt~="icon"]) {
+        z-index: 2;
+        position: relative;
     }
 
     p:has(img[alt~="icon"], img[alt~="cover"]) + :is(h1,h2,h3,h4,h5,h6,p) {
