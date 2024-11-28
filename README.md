@@ -1,12 +1,12 @@
 FANCY A STORY
 =============
 
-<div style="padding: 15px; background: #e38940; color: #f5f5f5; border-radius: 10px; margin-bottom: 2em;">
-<img src="https://raw.githubusercontent.com/ElsaTam/obsidian-fancy-a-story/refs/heads/main/screenshots/installer_version.png" style="float: right; height: 100px;">
-<strong style="color: white;">Minimal Installer version</strong>: 1.6.5<br>
-<strong style="color: white;">How to check</strong>: go in Settings > General, and check the Installer Version. It is <em>under</em> the current version of Obsidian.<br>
-<strong style="color: white;">How to solve</strong>: if the Installer version is too low, download the latest version of Obsidian from the official website and install it again.
-</div>
+> [!WARNING]
+> **Minimal Installer version**: 1.6.5
+> **How to check**: go in Settings > General, and check the Installer Version. It is *under* the current version of Obsidian.
+> **How to solve**: if the Installer version is too low, download the latest version of Obsidian from the official website and install it again.
+>
+> ![](screenshots/installer_version.png)
 
 ![](screenshots/overview.webp)
 
