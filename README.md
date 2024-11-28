@@ -3,7 +3,9 @@ FANCY A STORY
 
 > [!WARNING]
 > **Minimal Installer version**: 1.6.5
+> 
 > **How to check**: go in Settings > General, and check the Installer Version. It is *under* the current version of Obsidian.
+> 
 > **How to solve**: if the Installer version is too low, download the latest version of Obsidian from the official website and install it again.
 >
 > ![](screenshots/installer_version.png)
