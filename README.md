@@ -1,6 +1,13 @@
 FANCY A STORY
 =============
 
+![](screenshots/overview.webp)
+
+[Read the **documentation**](https://elsatam.github.io/obsidian-fancy-a-story/) to see how to use all the features and settings of the theme!
+
+
+Installation
+------------
 > [!WARNING]
 > **Minimal Installer version**: 1.6.5
 > 
@@ -9,14 +16,6 @@ FANCY A STORY
 > **How to solve**: if the Installer version is too low, download the latest version of Obsidian from the official website and install it again.
 >
 > ![](screenshots/installer_version.png)
-
-![](screenshots/overview.webp)
-
-[Read the **documentation**](https://elsatam.github.io/obsidian-fancy-a-story/) to see how to use all the features and settings of the theme!
-
-
-Installation
-------------
 
 ### From Obsidian community themes
 
