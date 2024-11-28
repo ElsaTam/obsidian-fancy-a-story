@@ -444,17 +444,6 @@ settings:
         default: 700
 
     - 
-        id: table
-        title: Tables
-        type: heading
-        collapsed: true
-        level: 2
-    - 
-        id: fas-plain-tables
-        title: Use plain table style
-        type: class-toggle
-        default: false
-    - 
         id: headings
         title: Headings
         type: heading
@@ -640,6 +629,32 @@ settings:
             - 
                 value: disable
                 label: Disable
+            
+    - 
+        id: properties
+        title: Properties
+        type: heading
+        collapsed: true
+        level: 2
+    - 
+        id: properties-columns
+        title: Number of columns
+        type: variable-number
+        default: 2
+        min: 1
+        max: 4
+
+    - 
+        id: table
+        title: Tables
+        type: heading
+        collapsed: true
+        level: 2
+    - 
+        id: fas-plain-tables
+        title: Use plain table style
+        type: class-toggle
+        default: false
 
 
 
