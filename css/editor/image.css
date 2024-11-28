@@ -69,6 +69,11 @@ body {
   --image-shadow-color: rgba(var(--color-pink-rgb), 0.2);
 }
 
+img[alt~=black-and-white],
+img[alt~=b-w] {
+  filter: grayscale(100);
+}
+
 .image-embed[alt~=no-shadow] {
   --image-shadow-offset: 0;
 }

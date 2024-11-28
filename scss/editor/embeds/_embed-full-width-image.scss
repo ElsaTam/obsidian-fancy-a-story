@@ -1,0 +1,23 @@
+@use '../../shared/full-width-image-aliases';
+@forward '../../shared/full-width-image';
+
+$sel: ":is(";
+@each $alias in full-width-image-aliases.$aliases {
+    @if ($sel != ":is(") { $sel: $sel + ", "; }
+    $sel: $sel + "[alt~='#{$alias}']";
+}
+$sel: $sel + ")";
+
+.image-embed#{$sel} {
+    --image-shadow-offset: 0;
+
+    display: block;
+    font-size: 0;
+    width: 100%;
+
+    img {
+        height: var(--fwi-height);
+        width: 100%;
+        object-fit: cover;
+    }
+}

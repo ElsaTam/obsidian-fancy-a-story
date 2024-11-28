@@ -1,0 +1,13 @@
+body {
+    // retro-compatibility, old variables
+    --callout-fwi-height: 70px;
+    --callout-fwi-title-shadow: 0px 0px 0.1em rgb(var(--mono-rgb-0)), 0px 0px 0.2em rgb(var(--mono-rgb-0)), 0px 0px 0.5em rgb(var(--mono-rgb-0));
+    --callout-fwi-title-blur: 5px;
+
+    // new variables
+    --fwi-height: var(--callout-fwi-height);
+    --fwi-title-shadow: var(--callout-fwi-title-shadow);
+    --fwi-title-blur: var(--callout-fwi-title-blur);
+}
+
+

@@ -12,12 +12,13 @@ When embeding an image, add an alt option:
 - `![option](url/image.png)`
 
 
-| Alt option             | Description                         |
-|:-----------------------|:------------------------------------|
-| `right`, `float-right` | Right floating image (preview mode) |
-| `left`, `float-left`   | Left floating image (preview mode)  |
-| `{color}`              | Change the striped shadow color     |
-| `no-shadow`            | Remove the striped shadow           |
+| Alt option               | Description                         |
+|:-------------------------|:------------------------------------|
+| `right`, `float-right`   | Right floating image (preview mode) |
+| `left`, `float-left`     | Left floating image (preview mode)  |
+| `{color}`                | Change the striped shadow color     |
+| `no-shadow`              | Remove the striped shadow           |
+| `black-and-white`, `b-w` | Desaturate the image                |
 
 
 # Notes

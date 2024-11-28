@@ -1,12 +1,8 @@
-body {
-    --callout-fwi-height: 70px;
-    --callout-fwi-title-shadow: 0px 0px 0.1em rgb(var(--mono-rgb-0)), 0px 0px 0.2em rgb(var(--mono-rgb-0)), 0px 0px 0.5em rgb(var(--mono-rgb-0));
-    --callout-fwi-title-blur: 5px;
-}
+@use '../../shared/full-width-image-aliases';
+@forward '../../shared/full-width-image';
 
-$aliases: ("full-width-image", "full-w-img", "fwi", "full-width-panoramic-image-:jack_o_lantern:", "fwpi-jol");
 $sel: ":is(";
-@each $alias in $aliases {
+@each $alias in full-width-image-aliases.$aliases {
     @if ($sel != ":is(") { $sel: $sel + ", "; }
     $sel: $sel + "[data-callout='#{$alias}']";
 }
@@ -29,7 +25,7 @@ $sel: $sel + ")";
     }
 
     img {
-        height: var(--callout-fwi-height);
+        height: var(--fwi-height);
         width: 100%;
         object-fit: cover;
     }
@@ -44,12 +40,12 @@ $sel: $sel + ")";
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        text-shadow: var(--callout-fwi-title-shadow);
+        text-shadow: var(--fwi-title-shadow);
         z-index: 1;
     }
 
     &[data-callout-metadata~="blur"] .callout-content {
-        filter: blur(var(--callout-fwi-title-blur));
+        filter: blur(var(--fwi-title-blur));
     }
 
     &[data-callout-metadata~="grayscale"] img {
