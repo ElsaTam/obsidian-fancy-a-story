@@ -45,7 +45,8 @@ body {
   text-shadow: var(--banner-title-shadow);
 }
 
-.markdown-preview-view:not(.show-properties).banner .mod-header {
+.markdown-preview-view:not(.show-properties).banner .mod-header,
+.markdown-preview-view.hide-properties.banner .mod-header {
   height: calc(var(--banner-height) - var(--file-margins));
   padding-bottom: var(--file-margins);
 }
