@@ -2953,6 +2953,11 @@ body {
   --callout-blend-mode: normal;
 }
 
+.callout[data-callout-metadata~=center-title] .callout-title-inner {
+  flex-grow: 1;
+  text-align: center;
+}
+
 .cm-hmd-codeblock,
 code {
   max-width: 80ch;
