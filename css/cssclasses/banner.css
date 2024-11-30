@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* GPLv3 license
 FAS - Banner
 Author: ElsaTam (Kapirklaa in Discord)
@@ -99,4 +100,34 @@ body {
   transform: rotate(calc(-1 * var(--banner-slope-angle))) translateY(-100%);
   top: calc(anchor(--anchor-preview-section top) + var(--banner-height) - (50% + 50cqw) * sin(var(--banner-slope-angle)) / sin(90deg - var(--banner-slope-angle)) - 10px);
   right: anchor(--anchor-preview-section right, var(--file-margins));
+}
+
+.markdown-source-view.banner.banner-edit-hide .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) {
+  --image-shadow-offset: 0;
+}
+.markdown-source-view.banner.banner-edit-hide .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) img {
+  display: none;
+}
+
+.markdown-source-view.banner.banner-edit-icon .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) {
+  --image-shadow-offset: 0;
+}
+.markdown-source-view.banner.banner-edit-icon .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) img {
+  display: none;
+}
+.markdown-source-view.banner.banner-edit-icon .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed):hover img {
+  position: absolute;
+  display: block;
+}
+.markdown-source-view.banner.banner-edit-icon .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed)::after {
+  content: "🖼️ banner";
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.markdown-source-view.banner.banner-edit-small .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) {
+  --image-shadow-offset: 0;
+}
+.markdown-source-view.banner.banner-edit-small .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) img {
+  max-width: 100px;
 }
