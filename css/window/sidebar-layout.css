@@ -1,0 +1,90 @@
+/* GPLv3 license
+FAS - Sidebar
+Author: ElsaTam (Kapirklaa in Discord)
+*/
+body {
+  --cutout-corner-radius: 13px;
+}
+
+body {
+  --cutout-outline-inset: 3px;
+}
+
+.theme-light {
+  --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+.theme-dark {
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+body {
+  --workleaves-background: var(--background-primary);
+  --workleaves-foreground: var(--text-normal);
+}
+
+body {
+  --workspace-foreground: var(--text-normal);
+  --workspace-foreground-muted: var(--text-muted);
+  --workspace-foreground-faint: var(--text-faint);
+  --workspace-background: var(--background-secondary);
+}
+
+body {
+  --sidedock-inset-border-color: var(--background-secondary);
+}
+
+.mod-sidedock {
+  padding-bottom: var(--size-2-2);
+}
+
+.mod-sidedock .workspace-leaf {
+  background-color: var(--workleaves-background);
+  box-shadow: inset 0 0 20px 3px var(--shadow-color);
+  -webkit-mask: radial-gradient(var(--cutout-corner-radius) at var(--cutout-corner-radius) var(--cutout-corner-radius), transparent 100%, black) calc(-1 * var(--cutout-corner-radius)) calc(-1 * var(--cutout-corner-radius));
+}
+
+.mod-sidedock .workspace-leaf-content {
+  padding: var(--cutout-corner-radius);
+}
+
+.mod-sidedock .workspace-leaf::before {
+  content: "";
+  position: absolute;
+  inset: var(--cutout-outline-inset);
+  background: var(--sidedock-inset-border-color);
+  -webkit-mask: radial-gradient(var(--cutout-corner-radius) at var(--cutout-corner-radius) var(--cutout-corner-radius), transparent calc(100% - 1px), black calc(100% - 1px) 100%, transparent) calc(-1 * var(--cutout-corner-radius)) calc(-1 * var(--cutout-corner-radius)), linear-gradient(90deg, black 2px, transparent 0) -1px 50%/100% calc(100% - var(--cutout-corner-radius) * 2 + 1px) repeat-x, linear-gradient(black 2px, transparent 0) 50% -1px/calc(100% - var(--cutout-corner-radius) * 2 + 1px) 100% repeat-y;
+}
+
+.workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle {
+  width: calc(100% - (var(--cutout-corner-radius) + var(--cutout-outline-inset)) * 2);
+  align-self: center;
+  left: calc(var(--cutout-corner-radius) + var(--cutout-outline-inset));
+}
+
+.mod-sidedock .workspace-tab-header-container {
+  --icon-color: var(--workspace-foreground-muted);
+  --icon-color-hover: var(--workspace-foreground);
+}
+
+.mod-sidedock .workspace-tab-header-container-inner {
+  padding-bottom: var(--sidedock-tab-header-padding-bottom);
+}
+
+.is-hidden-frameless .mod-sidedock.mod-top .workspace-tab-header-container-inner {
+  margin-top: 6px;
+}
+
+.is-hidden-frameless:not(.is-fullscreen) .mod-sidedock .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
+  padding-left: calc(12px + var(--size-4-2) + var(--frame-left-space));
+}
+
+.mod-sidedock .workspace-tab-header-container {
+  padding-left: calc(12px + var(--size-4-2));
+  padding-right: calc(12px + var(--size-4-2));
+}
+
+.mod-sidedock .workspace-tab-header.is-active,
+.mod-sidedock .workspace-tab-header.is-active:hover {
+  background-color: var(--workleaves-background);
+}
