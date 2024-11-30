@@ -99,9 +99,20 @@ body:not(.is-frameless) .mod-root .workspace-tab-header:not(.is-active) .workspa
     }
 
     // Remove separator before and after active file 
-    .workspace-tab-header:has(+ .is-active) .workspace-tab-header-inner::after,
     .is-active + .workspace-tab-header .workspace-tab-header-inner::before {
         content: none;
+    }
+
+    // Using `:has()` to remove the divider before the active tab is too heavy when the windows need to be repainted
+    // So instead, we hide it with another pseuod-element
+    .workspace-tab-header + .workspace-tab-header.is-active::before {
+        content: '';
+        position: absolute;
+        inset-inline-start: -0.5px;
+        width: 1px;
+        background-color: var(--workleaves-background, var(--background-primary));
+        height: 100%;
+        top: 0;
     }
 }
 
