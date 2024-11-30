@@ -6,6 +6,10 @@ parent: CSS Classes
 Source: [`banner.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/banner.css)
 
 Add the cssclass `banner` to your note. This will use the first image as a banner in reading mode, hiding the properties.
+In live preview, the image will be shown as any image. In order to avoid that, the theme provides 3 more classes that you can pick from:
+- `banner-edit-small`: reduce the image to 100px wide, and remove the shadow;
+- `banner-edit-icon`: replace the image by an icon + text "banner", and you can hover this to show the actual image in miniature;
+- `banner-edit-hide`: completely remove the image (you will see an empty line instead).
 
 You can add several variants for different effects, see screenshots below. You can also combine them, as long as you have the `banner` class active.
 
