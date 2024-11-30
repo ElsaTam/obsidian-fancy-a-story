@@ -109,3 +109,39 @@ body {
         right: anchor(--anchor-preview-section right, var(--file-margins));
     }
 }
+
+.markdown-source-view.banner.banner-edit-hide {
+    .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) {
+        --image-shadow-offset: 0;
+        img {
+            display: none;
+        }
+    }
+}
+
+.markdown-source-view.banner.banner-edit-icon {
+    .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) {
+        --image-shadow-offset: 0;
+        img {
+            display: none;
+        }
+        &:hover img {
+            position: absolute;
+            display: block;
+        }
+        &::after {
+            content: "🖼️ banner";
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+    }
+}
+
+.markdown-source-view.banner.banner-edit-small {
+    .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) {
+        --image-shadow-offset: 0;
+        img {
+            max-width: 100px;
+        }
+    }
+}
