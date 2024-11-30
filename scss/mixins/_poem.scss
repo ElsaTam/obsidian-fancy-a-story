@@ -129,6 +129,13 @@
     }
 }
 
+@mixin poem-floral-pseudo-print {
+    &:not(.is-collapsed)::before,
+    &:not(.is-collapsed)::after {
+        -webkit-mask-image: var(--left-ornament-flourish);
+    }
+}
+
 @mixin poem-floral-properties {
     --floral-width: 18%;
 }
