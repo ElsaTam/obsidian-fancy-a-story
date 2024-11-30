@@ -2394,6 +2394,11 @@ body {
   transform: rotate(var(--polaroid-angle));
 }
 
+@media print {
+  .callout[data-callout=polaroid] {
+    border: 1px solid lightgray;
+  }
+}
 .callout[data-callout=profile] {
   --callout-color: var(--color-gray-rgb);
   --callout-icon: lucide-user;
