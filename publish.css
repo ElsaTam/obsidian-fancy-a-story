@@ -2826,6 +2826,26 @@ body {
     ));
   }
 }
+@media print {
+  .print .markdown-preview-view [data-callout=timeline] > .callout-content {
+    display: grid !important;
+    background: none;
+  }
+  .print [data-callout=timeline]:not([data-callout-metadata~=horizontal]) > .callout-content::after {
+    -webkit-mask-image: var(--rope-segment-vertical);
+    -webkit-mask-repeat: repeat-y;
+    -webkit-mask-position: center;
+    -webkit-mask-size: var(--line-thickness);
+    mask-composite: unset;
+  }
+  .print [data-callout=timeline][data-callout-metadata~=horizontal] > .callout-content::after {
+    -webkit-mask-image: var(--rope-segment-horizontal);
+    -webkit-mask-repeat: repeat-x;
+    -webkit-mask-position: center center;
+    -webkit-mask-size: var(--line-thickness);
+    mask-composite: unset;
+  }
+}
 body {
   --timeline-icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9.5361595" r="7.7601452" style="stroke-width:1.5"/><polyline points="12 6 12 12 16 14" transform="matrix(0.77601453,0,0,0.77601453,2.6878256,0.22398547)"/><circle cx="12.092106" cy="20.717064" r="1" /><circle cx="19.092106" cy="20.717064" r="1"/><circle cx="5.0921063" cy="20.717064" r="1"/><path style="stroke-width:1.5;" d="M 5.0921062,20.717063 H 19.092106"/></svg>';
   --rope-segment-vertical: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round' xml:space='preserve' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'%3E%3Cpath d='M 14.667729,-0.03812381 C 17.411371,3.3239782 18.324101,6.5246684 14.740774,11.984979'/%3E%3Cpath d='m 14.740774,24.008811 v 0'/%3E%3Cpath d='M 5.5421425,-0.03777659 C 5.8824781,2.6142947 7.9176748,4.9071178 10.867642,7.9241271 c 5.188949,5.3068839 8.826221,8.5371209 3.873132,16.0846839'/%3E%3Cpath d='m 8.0373013,4.8528187 c -4.7172275,6.7220493 -2.358609,9.7882593 2.8303407,15.0951393 1.435009,1.467627 2.751349,2.776428 3.800139,4.061644'/%3E%3Cpath d='M 8.0373013,16.87665 C 6.0017796,19.777265 5.2837706,21.997176 5.5421707,24.010125'/%3E%3C/svg%3E");

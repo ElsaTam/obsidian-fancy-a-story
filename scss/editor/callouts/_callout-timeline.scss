@@ -365,6 +365,29 @@
     }
 }
 
+@media print {
+    .print .markdown-preview-view [data-callout="timeline"] > .callout-content {
+        display: grid !important;
+        background: none;
+    }
+
+    .print [data-callout="timeline"]:not([data-callout-metadata~="horizontal"]) > .callout-content::after {
+        -webkit-mask-image: var(--rope-segment-vertical);
+        -webkit-mask-repeat: repeat-y;
+        -webkit-mask-position: center;
+        -webkit-mask-size: var(--line-thickness);
+        mask-composite: unset;
+    }
+
+    .print [data-callout=timeline][data-callout-metadata~=horizontal] > .callout-content::after {
+        -webkit-mask-image: var(--rope-segment-horizontal);
+        -webkit-mask-repeat: repeat-x;
+        -webkit-mask-position: center center;
+        -webkit-mask-size: var(--line-thickness);
+        mask-composite: unset;
+    }
+}
+
 
 body {
     --timeline-icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9.5361595" r="7.7601452" style="stroke-width:1.5"/><polyline points="12 6 12 12 16 14" transform="matrix(0.77601453,0,0,0.77601453,2.6878256,0.22398547)"/><circle cx="12.092106" cy="20.717064" r="1" /><circle cx="19.092106" cy="20.717064" r="1"/><circle cx="5.0921063" cy="20.717064" r="1"/><path style="stroke-width:1.5;" d="M 5.0921062,20.717063 H 19.092106"/></svg>';
