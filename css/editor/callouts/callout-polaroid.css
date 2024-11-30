@@ -69,6 +69,11 @@ body {
   transform: rotate(var(--polaroid-angle));
 }
 
+@media print {
+  .callout[data-callout=polaroid] {
+    border: 1px solid lightgray;
+  }
+}
 /* https://fonts.google.com/specimen/Walter+Turncoat */
 @font-face {
   font-family: "Walter Turncoat";

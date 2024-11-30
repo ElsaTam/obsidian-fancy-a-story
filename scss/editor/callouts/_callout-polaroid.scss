@@ -66,3 +66,9 @@ body {
     margin-right: var(--size-4-4);
     transform: rotate(var(--polaroid-angle));
 }
+
+@media print {
+    .callout[data-callout="polaroid"] {
+        border: 1px solid lightgray;
+    }
+}
