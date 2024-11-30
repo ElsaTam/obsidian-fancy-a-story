@@ -1,14 +1,22 @@
 @media print {
     body {
+        background-color: var(--workleaves-background);
+    }
+    .print {
         --workleaves-background: white;
         --workleaves-foreground: black;
     }
 
-    .callout {
+    .print .markdown-preview-view {
+        color: black;
+        background-color: var(--workleaves-background);
+    }
+
+    .print .callout {
         break-inside: avoid;
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    .print :is(h1, h2, h3, h4, h5, h6) {
         break-after: avoid;
     }
 }
