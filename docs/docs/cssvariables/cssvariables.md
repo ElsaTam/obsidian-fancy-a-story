@@ -74,3 +74,9 @@ nav_order: 7
 | `--cutout-corner-angle`      | Size of the cropped angles in the h1 headings                          | `0.25em` |
 | `--cutout-outline-inset`     | Space between the boundaries of a cutout element and its inside border | `3px`    |
 | `--cutout-outline-thickness` | Inline border thickness of a cutout element                            | `3px`    |
+
+## File explorer
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--active-file-bullet-size` | Size of the active file bullet indicator (require [Highlight active folder section](https://github.com/justanotherjurastudent/highlight-active-folder-section) plugin) | `6px` |

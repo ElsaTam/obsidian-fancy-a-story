@@ -128,3 +128,8 @@ Author: ElsaTam (Kapirklaa in Discord)
 .callout[data-callout-metadata~=no-blending] {
   --callout-blend-mode: normal;
 }
+
+.callout[data-callout-metadata~=center-title] .callout-title-inner {
+  flex-grow: 1;
+  text-align: center;
+}
