@@ -2013,6 +2013,11 @@ body {
   --paper-fold-corner-angle-hover: 60deg;
 }
 
+.print {
+  --paper-fold-corner-diag: 25px;
+  --paper-fold-corner-angle: 70deg;
+}
+
 .is-mobile {
   --paper-fold-corner-diag: 25px;
   --paper-fold-corner-angle: 70deg;
