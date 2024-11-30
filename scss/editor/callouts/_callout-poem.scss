@@ -60,6 +60,12 @@
     @include poem.poem-floral-pseudo;
 }
 
+@media print {
+    .print .callout[data-callout="poem"][data-callout-metadata~="floral"] {
+        @include poem.poem-floral-pseudo-print;
+    }
+}
+
 
 body {
     /* https://pixabay.com/vectors/divider-separator-line-art-vintage-5216039/ */

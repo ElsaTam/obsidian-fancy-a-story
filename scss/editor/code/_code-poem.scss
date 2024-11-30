@@ -48,3 +48,11 @@ pre.language-poem-floral {
         right: var(--floral-width);
     }
 }
+
+@media print {
+    .print pre.language-poem-floral {
+        @include poem.poem-floral-pseudo-print;
+        
+        break-inside: avoid;
+    }
+}

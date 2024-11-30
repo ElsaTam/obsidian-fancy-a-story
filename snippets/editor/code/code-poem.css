@@ -126,3 +126,12 @@ pre.language-poem-floral.is-collapsed::before, pre.language-poem-floral.is-colla
 pre.language-poem-floral .copy-code-button {
   right: var(--floral-width);
 }
+
+@media print {
+  .print pre.language-poem-floral {
+    break-inside: avoid;
+  }
+  .print pre.language-poem-floral:not(.is-collapsed)::before, .print pre.language-poem-floral:not(.is-collapsed)::after {
+    -webkit-mask-image: var(--left-ornament-flourish);
+  }
+}
