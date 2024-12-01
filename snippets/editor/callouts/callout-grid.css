@@ -66,3 +66,8 @@ Author: ElsaTam (Kapirklaa in Discord)
     grid-template-columns: repeat(2, 1fr);
   }
 }
+@media print {
+  .print .markdown-preview-view [data-callout=grid] > .callout-content {
+    display: grid !important;
+  }
+}

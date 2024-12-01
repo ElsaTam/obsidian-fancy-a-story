@@ -1439,6 +1439,11 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+@media print {
+  .print .markdown-preview-view [data-callout=grid] > .callout-content {
+    display: grid !important;
+  }
+}
 /*
     Inspired by ITS theme's infobox callouts from SlRvb (https://publish.obsidian.md/slrvb-docs/ITS+Theme/Callouts/Callout+-+Infoboxes)
 */
@@ -2844,7 +2849,6 @@ body {
 @media print {
   .print .markdown-preview-view [data-callout=timeline] > .callout-content {
     display: grid !important;
-    background: none;
   }
   .print [data-callout=timeline]:not([data-callout-metadata~=horizontal]) > .callout-content::after {
     -webkit-mask-image: var(--rope-segment-vertical);
