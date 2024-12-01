@@ -51,8 +51,7 @@ pre.language-poem-floral {
 
 @media print {
     .print pre.language-poem-floral {
-        @include poem.poem-floral-pseudo-print;
-        
         break-inside: avoid;
+        @include poem.poem-floral-pseudo-print;
     }
 }
