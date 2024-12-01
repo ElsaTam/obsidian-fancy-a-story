@@ -284,7 +284,7 @@ body {
   width: 30px;
   height: 30px;
   background-color: color-mix(in srgb, rgb(var(--callout-color)), rgb(var(--mono-rgb-0)) 20%);
-  z-index: 1;
+  z-index: 3;
 }
 .callout[data-callout=fas-infobox][data-callout-metadata~=corners]::before {
   right: -3px;
