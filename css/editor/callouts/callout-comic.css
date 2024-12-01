@@ -159,6 +159,11 @@ Author: ElsaTam (Kapirklaa in Discord)
   border: 5px solid rgb(var(--comic-color-rgb));
 }
 
+@media print {
+  .print .markdown-preview-view [data-callout=comic] > .callout-content {
+    display: flex !important;
+  }
+}
 body {
   --border-pannel-0-source: url("data:image/svg+xml,%3Csvg width='70.775017mm' height='70.522331mm' viewBox='0 0 70.775016 70.522331' fill='currentColor' stroke='%23000000' stroke-width='1.56305' stroke-linecap='round' stroke-linejoin='round' xml:space='preserve' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'%3E%3Cg transform='translate(-191.30635,-104.53226)'%3E%3Cpath d='m 261.29984,174.27306 c -7.66171,-0.15689 -15.27484,-0.33254 -22.8088,-0.51089 -14.61569,-0.34599 -29.88558,-0.29864 -45.35317,-0.12316 -0.25001,-14.75636 -0.69039,-29.38934 -0.88975,-44.14959 -0.10852,-8.03444 -0.15403,-16.09965 -0.16025,-24.17564 18.24165,0.11244 49.95933,1.02554 68.32887,1.25577 0.42901,22.52271 0.37113,45.85263 0.8831,67.70351 z' /%3E%3C/g%3E%3C/svg%3E%0A");
   --border-pannel-1-source: url("data:image/svg+xml,%3Csvg width='75.701805mm' height='71.086418mm' viewBox='0 0 75.701805 71.086418' fill='currentColor' stroke='%23000000' stroke-width='1.56305' stroke-linecap='round' stroke-linejoin='round' xml:space='preserve' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'%3E%3Cg transform='translate(-9.1744686,-10.268627)'%3E%3Cpath d='m 84.005784,11.829927 c 0.03228,15.861547 0.156829,31.747972 0.03986,47.355422 -0.05228,6.969791 -0.150303,14.009847 -0.302889,21.095533 -23.51781,-0.101818 -47.606341,0.273831 -72.561375,0.292557 -0.0329,2.3e-5 -0.0658,4.6e-5 -0.0988,7.8e-5 -1.9256303,-23.036075 -0.91598,-46.161469 -0.3644,-69.34338 7.22523,-0.039 14.40754,-0.0832 21.449641,-0.13185 11.176513,-0.0772 9.469824,0.0834 22.084919,-0.0328 12.615094,-0.11622 17.900836,0.45657 29.753001,0.76441 z' /%3E%3C/g%3E%3C/svg%3E%0A");
