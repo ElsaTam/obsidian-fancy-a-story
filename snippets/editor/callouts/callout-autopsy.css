@@ -385,6 +385,11 @@ Author: ElsaTam (Kapirklaa in Discord)
   transform: translateX(4cqw);
 }
 
+@media print {
+  .print .markdown-preview-view [data-callout=autopsy] > .callout-content {
+    display: grid !important;
+  }
+}
 .callout[data-callout=body] {
   --body-img-base-width: 750; /* don't put unit here, its only to compute a ratio */
   --body-img-base-height: 768; /* don't put unit here, its only to compute a ratio */
