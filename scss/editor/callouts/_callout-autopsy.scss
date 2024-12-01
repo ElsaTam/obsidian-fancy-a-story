@@ -277,6 +277,13 @@
     transform: translateX(4cqw);
 }
 
+@media print {
+    .print .markdown-preview-view [data-callout="autopsy"] > .callout-content {
+        display: grid !important;
+    }
+}
+
+
 
 
 .callout[data-callout="body"] {
