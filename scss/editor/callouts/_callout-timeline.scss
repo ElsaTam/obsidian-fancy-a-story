@@ -368,7 +368,6 @@
 @media print {
     .print .markdown-preview-view [data-callout="timeline"] > .callout-content {
         display: grid !important;
-        background: none;
     }
 
     .print [data-callout="timeline"]:not([data-callout-metadata~="horizontal"]) > .callout-content::after {
