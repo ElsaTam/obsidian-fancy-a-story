@@ -698,6 +698,37 @@ settings:
                 value: disable
                 label: Disable
 
+    -
+        id: banners
+        title: Banners
+        type: heading
+        collapsed: true
+        level: 2
+    - 
+        id: banner-height
+        title: Banner height
+        type: variable-number
+        default: 300
+        format: px
+    - 
+        id: banner-slope-angle
+        title: Banner slope angle
+        type: variable-number
+        default: 4
+        format: deg
+    - 
+        id: banner-print-width
+        title: Banner width in print mode
+        type: variable-select
+        default: full-bleed
+        options:
+            - 
+                value: full-bleed
+                label: Full bleed
+            - 
+                value: margins
+                label: Inside margins
+
 
 
     - 

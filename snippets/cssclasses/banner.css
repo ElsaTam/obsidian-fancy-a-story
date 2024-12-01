@@ -14,22 +14,24 @@ Author: ElsaTam (Kapirklaa in Discord)
 
 body {
   --banner-height: 300px;
-  --banner-title-shadow: 0px 0px 0.1em rgb(var(--mono-rgb-0)), 0px 0px 0.2em rgb(var(--mono-rgb-0)), 0px 0px 0.5em rgb(var(--mono-rgb-0));
+  --banner-title-shadow-size: 0.5em;
+  --banner-title-shadow: 0px 0px calc(var(--banner-title-shadow-size) * 0.2) rgb(var(--mono-rgb-0)), 0px 0px calc(var(--banner-title-shadow-size) * 0.5) rgb(var(--mono-rgb-0)), 0px 0px var(--banner-title-shadow-size) rgb(var(--mono-rgb-0));
   --banner-slope-angle: 4deg;
   --banner-slope-border-width: 5px;
   --banner-slope-border-color: var(--color-accent);
   --banner-width: calc(100cqw + 2 * var(--file-margins));
+  --banner-print-width: full-bleed;
 }
 
 .markdown-preview-view.banner {
   --inline-title-margin-bottom: 0;
 }
 .markdown-preview-view.banner .mod-header + div + div > p > .image-embed:nth-child(1 of .image-embed) {
+  top: 0;
+  left: 0;
   --image-shadow-offset: 0;
   display: block;
   position: absolute;
-  top: 0;
-  left: 0;
   z-index: -1;
   width: var(--banner-width);
   height: var(--banner-height);
@@ -46,6 +48,45 @@ body {
   text-shadow: var(--banner-title-shadow);
 }
 
+@media print {
+  .print .markdown-preview-view.banner .mod-frontmatter + div > p > .image-embed:nth-child(1 of .image-embed) {
+    --image-shadow-offset: 0;
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: var(--banner-width);
+    height: var(--banner-height);
+  }
+  .print .markdown-preview-view.banner .mod-frontmatter + div > p > .image-embed:nth-child(1 of .image-embed) img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .print .markdown-preview-view.banner .mod-frontmatter + div > p > .image-embed:nth-child(1 of .image-embed) + br {
+    display: none;
+  }
+  @container not style(--banner-print-width: full-bleed) {
+    .print {
+      --banner-width: calc(100cqw);
+    }
+    .print .markdown-preview-view.banner .mod-frontmatter + div > p > .image-embed:nth-child(1 of .image-embed) {
+      top: var(--file-margins);
+      left: var(--file-margins);
+    }
+    .print .markdown-preview-view.banner {
+      padding-top: calc(var(--banner-height) + var(--file-margins));
+    }
+  }
+  @container style(--banner-print-width: full-bleed) {
+    .print .markdown-preview-view.banner .mod-frontmatter + div > p > .image-embed:nth-child(1 of .image-embed) {
+      top: 0;
+      left: 0;
+    }
+    .print .markdown-preview-view.banner {
+      padding-top: var(--banner-height);
+    }
+  }
+}
 .markdown-preview-view:not(.show-properties).banner .mod-header,
 .markdown-preview-view.hide-properties.banner .mod-header {
   height: calc(var(--banner-height) - var(--file-margins));
@@ -61,6 +102,11 @@ body {
   -webkit-mask-image: linear-gradient(to bottom, black var(--file-margins), transparent);
 }
 
+@media print {
+  .print .markdown-preview-view.banner .mod-frontmatter + div > p > .image-embed:nth-child(1 of .image-embed) {
+    -webkit-mask-image: linear-gradient(to bottom, black var(--file-margins), transparent);
+  }
+}
 .markdown-preview-view.banner.banner-title {
   --inline-title-line-height: 3;
 }
@@ -97,11 +143,23 @@ body {
 .markdown-preview-view.banner.banner-slant .inline-title,
 .markdown-preview-view.banner.banner-slope .inline-title {
   position: absolute;
-  transform: rotate(calc(-1 * var(--banner-slope-angle))) translateY(-100%);
-  top: calc(anchor(--anchor-preview-section top) + var(--banner-height) - (50% + 50cqw) * sin(var(--banner-slope-angle)) / sin(90deg - var(--banner-slope-angle)) - 10px);
+  transform: rotate(calc(-1 * var(--banner-slope-angle)));
+  transform-origin: bottom left;
+  top: calc(anchor(--anchor-preview-section top) + var(--banner-height) - var(--file-margins) - 1em - var(--banner-title-shadow-size));
   right: anchor(--anchor-preview-section right, var(--file-margins));
+  left: 0;
+  text-align: right;
 }
 
+@media print {
+  .print .markdown-preview-view.banner .mod-frontmatter + div > p > .image-embed:nth-child(1 of .image-embed) {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--banner-angle-height)), 0 100%);
+    background-color: var(--banner-slope-border-color);
+  }
+  .print .markdown-preview-view.banner .mod-frontmatter + div > p > .image-embed:nth-child(1 of .image-embed) img {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--banner-angle-height) - var(--banner-slope-border-width)), 0 calc(100% - var(--banner-slope-border-width)));
+  }
+}
 .markdown-source-view.banner.banner-edit-hide .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) {
   --image-shadow-offset: 0;
 }
