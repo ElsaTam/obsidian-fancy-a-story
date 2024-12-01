@@ -103,7 +103,7 @@ body {
 }
 
 @media print {
-  .print .markdown-preview-view.banner .mod-frontmatter + div > p > .image-embed:nth-child(1 of .image-embed) {
+  .print .markdown-preview-view.banner.banner-gradient .mod-frontmatter + div > p > .image-embed:nth-child(1 of .image-embed) {
     -webkit-mask-image: linear-gradient(to bottom, black var(--file-margins), transparent);
   }
 }
@@ -152,11 +152,11 @@ body {
 }
 
 @media print {
-  .print .markdown-preview-view.banner .mod-frontmatter + div > p > .image-embed:nth-child(1 of .image-embed) {
+  .print .markdown-preview-view.banner:is(.banner-slant, .banner-slope) .mod-frontmatter + div > p > .image-embed:nth-child(1 of .image-embed) {
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--banner-angle-height)), 0 100%);
     background-color: var(--banner-slope-border-color);
   }
-  .print .markdown-preview-view.banner .mod-frontmatter + div > p > .image-embed:nth-child(1 of .image-embed) img {
+  .print .markdown-preview-view.banner:is(.banner-slant, .banner-slope) .mod-frontmatter + div > p > .image-embed:nth-child(1 of .image-embed) img {
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--banner-angle-height) - var(--banner-slope-border-width)), 0 calc(100% - var(--banner-slope-border-width)));
   }
 }

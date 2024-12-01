@@ -254,6 +254,20 @@ Lower the opacity of non active notes.
 
 Enable rainbow colors in the file explorer, for the top level folder
 
+## Banners
+
+#### Banner height
+
+Height of the banners when set by the cssclass `banner`.
+
+#### Banner slope angle
+
+Angle of the slope for the `banner-slope` or `banner-slant` cssclasses.
+
+#### Banner width in print mode
+
+Define the type of banner for PDF exports. Full bleed will make the banner go from on edge to the page to the other. Inside margins will not cover the margins in order to leave free space for printing.
+
 
 # Additional content
 

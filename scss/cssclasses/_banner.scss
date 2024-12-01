@@ -106,7 +106,7 @@ body {
 }
 
 @media print {
-    .print .markdown-preview-view.banner #{$img-embed-sel-print} {
+    .print .markdown-preview-view.banner.banner-gradient #{$img-embed-sel-print} {
         @include image-banner-gradient;
     }
 }
@@ -162,7 +162,7 @@ body {
 }
 
 @media print {
-    .print .markdown-preview-view.banner #{$img-embed-sel-print} {
+    .print .markdown-preview-view.banner:is(.banner-slant, .banner-slope) #{$img-embed-sel-print} {
         @include image-banner-slope;
     }
 }
