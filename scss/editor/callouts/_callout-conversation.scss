@@ -53,7 +53,7 @@
         content: "";
         position: absolute;
         top: -1px; bottom: -1px;
-        width: calc(40% - var(--callout-content-padding));
+        width: calc(40% - var(--callout-content-padding) + 3px);
         z-index: -1;
         background-size: 100% 50%, 100% 50%;
         background-position: center top, center bottom;
@@ -97,6 +97,12 @@
     }
     > .callout-content > *:last-child::before {
         background-position: center top, center calc(100% - 1px);
+    }
+}
+
+@media print {
+    .print .callout[data-callout="conversation-outline"] > .callout-content > *::before {
+        width: calc(40% - var(--callout-content-padding));
     }
 }
 
