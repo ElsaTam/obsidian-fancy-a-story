@@ -102,3 +102,4 @@ cssclasses:
 | `--banner-slope-angle` | Rising angle of the bottom border for the slope banner | `4deg` |
 | `--banner-slope-border-width` | Thickness of the bottom border for the slope banner | `5px` |
 | `--banner-slope-border-color` | Color of the bottom border for the slope banner | `var(--color-accent)` |
+| `--banner-print-width` | Define if the banner should cover the margins (full bleed) or not when printing to PDF | `full-bleed` |
