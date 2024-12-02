@@ -2,46 +2,46 @@
 FAS - Canvas Node Bundle
 Author: ElsaTam (Kapirklaa in Discord)
 */
-.canvas-node:has(.tag[href="#node-background"]):not(.is-focused) {
+.canvas-node:has(.tag[href="#node-background"], .node-background):not(.is-focused) {
   z-index: -1 !important;
 }
 
-.canvas-node:not(.is-focused) .tag[href="#node-background"] {
+.canvas-node:not(.is-focused) :is(.tag[href="#node-background"], .node-background) {
   display: none;
 }
 
-.canvas-node:has(.tag[href="#node-blur"]):not(.is-editing) {
+.canvas-node:has(.tag[href="#node-blur"], .node-blur):not(.is-editing) {
   backdrop-filter: blur(8px);
 }
-.canvas-node:has(.tag[href="#node-blur"]):not(.is-editing) .canvas-node-container {
+.canvas-node:has(.tag[href="#node-blur"], .node-blur):not(.is-editing) .canvas-node-container {
   border-radius: 0;
   background: none;
   box-shadow: none;
 }
-.canvas-node:has(.tag[href="#node-blur"]):not(.is-editing):not(.is-dragging):not(:hover) .canvas-node-container {
+.canvas-node:has(.tag[href="#node-blur"], .node-blur):not(.is-editing):not(.is-dragging):not(:hover) .canvas-node-container {
   border: 1px solid rgba(var(--canvas-color), 0.1);
 }
-.canvas-node:has(.tag[href="#node-blur"]):not(.is-editing) .canvas-node-content {
+.canvas-node:has(.tag[href="#node-blur"], .node-blur):not(.is-editing) .canvas-node-content {
   background: none;
 }
 
-.canvas-node:not(.is-editing) .tag[href="#node-blur"] {
+.canvas-node:not(.is-editing) :is(.tag[href="#node-blur"], .node-blur) {
   display: none;
 }
 
-.canvas-node:has(.tag[href="#node-comic"]):not(.is-editing) .canvas-node-container {
+.canvas-node:has(.tag[href="#node-comic"], .node-comic):not(.is-editing) .canvas-node-container {
   box-shadow: none;
   border-radius: 255px 15px 255px 15px/15px 255px 15px 255px;
 }
-.canvas-node:has(.tag[href="#node-comic"]):not(.is-editing) .markdown-preview-view {
+.canvas-node:has(.tag[href="#node-comic"], .node-comic):not(.is-editing) .markdown-preview-view {
   font-family: "VTC Letterer Pro", "Comic Sans", "Arial", sans-serif;
 }
 
-.canvas-node:not(.is-editing) .tag[href="#node-comic"] {
+.canvas-node:not(.is-editing) :is(.tag[href="#node-comic"], .node-comic) {
   display: none;
 }
 
-.canvas-node:has(.tag[href="#node-crime-scene-tape"]):not(.is-editing) .canvas-node-container {
+.canvas-node:has(.tag[href="#node-crime-scene-tape"], .node-crime-scene-tape):not(.is-editing) .canvas-node-container {
   border: none;
   box-shadow: none;
   background-color: hsl(from rgb(var(--canvas-color)) h 100% 50%);
@@ -52,48 +52,48 @@ Author: ElsaTam (Kapirklaa in Discord)
   background-repeat: repeat-x;
   background-position: left center;
 }
-.canvas-node:has(.tag[href="#node-crime-scene-tape"]):not(.is-editing).mod-canvas-color-custom .canvas-node-container {
+.canvas-node:has(.tag[href="#node-crime-scene-tape"], .node-crime-scene-tape):not(.is-editing).mod-canvas-color-custom .canvas-node-container {
   background-color: rgb(var(--canvas-color));
 }
-.canvas-node:has(.tag[href="#node-crime-scene-tape"]):not(.is-editing) .canvas-node-content {
+.canvas-node:has(.tag[href="#node-crime-scene-tape"], .node-crime-scene-tape):not(.is-editing) .canvas-node-content {
   background: none;
 }
 
-.canvas-node:not(.is-editing) .tag[href="#node-crime-scene-tape"] {
+.canvas-node:not(.is-editing) :is(.tag[href="#node-crime-scene-tape"], .node-crime-scene-tape) {
   display: none;
 }
 
-.canvas-node:has(.tag[href="#node-image"]):not(.is-editing) {
+.canvas-node:has(.tag[href="#node-image"], .node-image):not(.is-editing) {
   --p-spacing: 0;
   --image-shadow-offset: 0;
   container: node/size;
 }
-.canvas-node:has(.tag[href="#node-image"]):not(.is-editing) .canvas-node-container {
+.canvas-node:has(.tag[href="#node-image"], .node-image):not(.is-editing) .canvas-node-container {
   border: none;
   box-shadow: none;
   border-radius: 0;
 }
-.canvas-node:has(.tag[href="#node-image"]):not(.is-editing) .canvas-node-content {
+.canvas-node:has(.tag[href="#node-image"], .node-image):not(.is-editing) .canvas-node-content {
   background: none;
 }
-.canvas-node:has(.tag[href="#node-image"]):not(.is-editing) .markdown-preview-view {
+.canvas-node:has(.tag[href="#node-image"], .node-image):not(.is-editing) .markdown-preview-view {
   padding: 0;
   overflow: visible;
 }
-.canvas-node:has(.tag[href="#node-image"]):not(.is-editing) .markdown-preview-view::before,
-.canvas-node:has(.tag[href="#node-image"]):not(.is-editing) .markdown-preview-view::after {
+.canvas-node:has(.tag[href="#node-image"], .node-image):not(.is-editing) .markdown-preview-view::before,
+.canvas-node:has(.tag[href="#node-image"], .node-image):not(.is-editing) .markdown-preview-view::after {
   content: none;
 }
-.canvas-node:has(.tag[href="#node-image"]):not(.is-editing) br {
+.canvas-node:has(.tag[href="#node-image"], .node-image):not(.is-editing) br {
   display: none;
 }
-.canvas-node:has(.tag[href="#node-image"]):not(.is-editing) img {
+.canvas-node:has(.tag[href="#node-image"], .node-image):not(.is-editing) img {
   width: 100cqw;
   height: 100cqh;
   object-fit: cover;
 }
 
-.canvas-node:not(.is-editing) .tag[href="#node-image"] {
+.canvas-node:not(.is-editing) :is(.tag[href="#node-image"], .node-image) {
   display: none;
 }
 
@@ -101,34 +101,34 @@ body {
   --font-size-node-large: 5em;
 }
 
-.canvas-node:has(.tag[href="#node-large"]):not(.is-editing) .markdown-preview-view {
+.canvas-node:has(.tag[href="#node-large"], .node-large):not(.is-editing) .markdown-preview-view {
   font-size: var(--font-size-node-large);
 }
 
-.canvas-node:not(.is-editing) .tag[href="#node-large"] {
+.canvas-node:not(.is-editing) :is(.tag[href="#node-large"], .node-large) {
   display: none;
 }
 
-.canvas-node:has(.tag[href="#node-only-text"]):not(.is-editing) .canvas-node-container {
+.canvas-node:has(.tag[href="#node-only-text"], .node-only-text):not(.is-editing) .canvas-node-container {
   box-shadow: none;
   background: none;
 }
-.canvas-node:has(.tag[href="#node-only-text"]):not(.is-editing):not(:is(.is-dragging, :hover)) .canvas-node-container {
+.canvas-node:has(.tag[href="#node-only-text"], .node-only-text):not(.is-editing):not(:is(.is-dragging, :hover)) .canvas-node-container {
   border: none;
 }
-.canvas-node:has(.tag[href="#node-only-text"]):not(.is-editing) .canvas-node-content {
+.canvas-node:has(.tag[href="#node-only-text"], .node-only-text):not(.is-editing) .canvas-node-content {
   background: none;
 }
 
-.canvas-node:not(.is-editing) .tag[href="#node-only-text"] {
+.canvas-node:not(.is-editing) :is(.tag[href="#node-only-text"], .node-only-text) {
   display: none;
 }
 
-.canvas-node:has(.tag[href="#node-text-color-invert"]):not(.is-editing) .markdown-preview-view {
+.canvas-node:has(.tag[href="#node-text-color-invert"], .node-text-color-invert):not(.is-editing) .markdown-preview-view {
   color: rgb(var(--mono-rgb-0));
 }
 
-.canvas-node:not(.is-editing) .tag[href="#node-text-color-invert"] {
+.canvas-node:not(.is-editing) :is(.tag[href="#node-text-color-invert"], .node-text-color-invert) {
   display: none;
 }
 
@@ -136,39 +136,39 @@ body {
   --noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-.canvas-node:has(.tag[href="#node-title-arcane"]):not(.is-editing) {
+.canvas-node:has(.tag[href="#node-title-arcane"], .node-title-arcane):not(.is-editing) {
   --cutout-corner-angle: 1.5em;
   --cutout-outline-inset: 0;
   --cutout-outline-thickness: 5px;
   --cutout-border-background: linear-gradient(to top, rgba(var(--canvas-color), 0.9), hsl(from rgb(var(--canvas-color)) calc(h - 10) calc(s * 0.7) calc(l * 0.9) / 0.9)), var(--noise);
 }
-.canvas-node:has(.tag[href="#node-title-arcane"]):not(.is-editing) .canvas-node-container {
+.canvas-node:has(.tag[href="#node-title-arcane"], .node-title-arcane):not(.is-editing) .canvas-node-container {
   border: none;
 }
-.canvas-node:has(.tag[href="#node-title-arcane"]):not(.is-editing) .canvas-node-container {
+.canvas-node:has(.tag[href="#node-title-arcane"], .node-title-arcane):not(.is-editing) .canvas-node-container {
   box-shadow: none;
 }
-.canvas-node:has(.tag[href="#node-title-arcane"]):not(.is-editing) .canvas-node-content {
+.canvas-node:has(.tag[href="#node-title-arcane"], .node-title-arcane):not(.is-editing) .canvas-node-content {
   background: none;
 }
-.canvas-node:has(.tag[href="#node-title-arcane"]):not(.is-editing) .markdown-preview-view {
+.canvas-node:has(.tag[href="#node-title-arcane"], .node-title-arcane):not(.is-editing) .markdown-preview-view {
   --relief-color: hsl(from rgb(var(--canvas-color)) h calc(s * 0.5) calc(l * 0.5));
   font-family: "Arcane Nine", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: var(--font-extrabold);
   text-align: center;
   line-height: 1;
 }
-.canvas-node:has(.tag[href="#node-title-arcane"]):not(.is-editing) .markdown-preview-section {
+.canvas-node:has(.tag[href="#node-title-arcane"], .node-title-arcane):not(.is-editing) .markdown-preview-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.canvas-node:has(.tag[href="#node-title-arcane"]):not(.is-editing) p {
+.canvas-node:has(.tag[href="#node-title-arcane"], .node-title-arcane):not(.is-editing) p {
   background-clip: text;
   background-image: linear-gradient(to top, rgba(var(--canvas-color), 0.9), hsl(from rgb(var(--canvas-color)) calc(h - 20) calc(s * 0.5) calc(l * 0.7)/0.6)), var(--noise);
   color: transparent;
 }
-.canvas-node:has(.tag[href="#node-title-arcane"]):not(.is-editing) .canvas-node-container::before {
+.canvas-node:has(.tag[href="#node-title-arcane"], .node-title-arcane):not(.is-editing) .canvas-node-container::before {
   content: "";
   position: absolute;
   background: var(--cutout-border-background);
@@ -176,40 +176,40 @@ body {
   clip-path: polygon(0 var(--cutout-corner-angle), var(--cutout-corner-angle) 0, calc(100% - var(--cutout-corner-angle)) 0, 100% var(--cutout-corner-angle), 100% calc(100% - var(--cutout-corner-angle)), calc(100% - var(--cutout-corner-angle)) 100%, var(--cutout-corner-angle) 100%, 0 calc(100% - var(--cutout-corner-angle)), 0 var(--cutout-corner-angle), var(--cutout-outline-thickness) calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5), var(--cutout-outline-thickness) calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5), calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5) calc(100% - var(--cutout-outline-thickness)), calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5) calc(100% - var(--cutout-outline-thickness)), calc(100% - var(--cutout-outline-thickness)) calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5), calc(100% - var(--cutout-outline-thickness)) calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5), calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5) var(--cutout-outline-thickness), calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5) var(--cutout-outline-thickness), var(--cutout-outline-thickness) calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5));
 }
 
-.canvas-node:not(.is-editing) .tag[href="#node-title-arcane"] {
+.canvas-node:not(.is-editing) :is(.tag[href="#node-title-arcane"], .node-title-arcane) {
   display: none;
 }
 
-.canvas-node:has(.tag[href="#node-title-neon"]):not(.is-editing) .canvas-node-container {
+.canvas-node:has(.tag[href="#node-title-neon"], .node-title-neon):not(.is-editing) .canvas-node-container {
   border: none;
 }
-.canvas-node:has(.tag[href="#node-title-neon"]):not(.is-editing):not(:is(.is-dragging, :hover)) .canvas-node-container {
+.canvas-node:has(.tag[href="#node-title-neon"], .node-title-neon):not(.is-editing):not(:is(.is-dragging, :hover)) .canvas-node-container {
   box-shadow: none;
 }
-.canvas-node:has(.tag[href="#node-title-neon"]):not(.is-editing) .canvas-node-content {
+.canvas-node:has(.tag[href="#node-title-neon"], .node-title-neon):not(.is-editing) .canvas-node-content {
   background: none;
 }
-.canvas-node:has(.tag[href="#node-title-neon"]):not(.is-editing) .markdown-preview-view {
+.canvas-node:has(.tag[href="#node-title-neon"], .node-title-neon):not(.is-editing) .markdown-preview-view {
   font-family: "Neon Sans", Arial, Helvetica, sans-serif;
   text-align: center;
   color: rgb(var(--canvas-color));
   text-shadow: 0 0 0.1em rgba(var(--canvas-color), 0.8), 0 0 0.2em rgba(var(--canvas-color), 0.2), 0 0 0.3em rgba(var(--canvas-color), 0.3), 0 0 0.4em rgba(var(--canvas-color), 0.5), 0 0 0.5em rgba(var(--canvas-color), 1);
 }
 
-.canvas-node:not(.is-editing) .tag[href="#node-title-neon"] {
+.canvas-node:not(.is-editing) :is(.tag[href="#node-title-neon"], .node-title-neon) {
   display: none;
 }
 
-.canvas-node:has(.tag[href="#node-title-poster"]):not(.is-editing) .canvas-node-container {
+.canvas-node:has(.tag[href="#node-title-poster"], .node-title-poster):not(.is-editing) .canvas-node-container {
   border: none;
 }
-.canvas-node:has(.tag[href="#node-title-poster"]):not(.is-editing):not(:is(.is-dragging, :hover)) .canvas-node-container {
+.canvas-node:has(.tag[href="#node-title-poster"], .node-title-poster):not(.is-editing):not(:is(.is-dragging, :hover)) .canvas-node-container {
   box-shadow: none;
 }
-.canvas-node:has(.tag[href="#node-title-poster"]):not(.is-editing) .canvas-node-content {
+.canvas-node:has(.tag[href="#node-title-poster"], .node-title-poster):not(.is-editing) .canvas-node-content {
   background: none;
 }
-.canvas-node:has(.tag[href="#node-title-poster"]):not(.is-editing) .markdown-preview-view {
+.canvas-node:has(.tag[href="#node-title-poster"], .node-title-poster):not(.is-editing) .markdown-preview-view {
   --shadow-color: hsl(from rgb(var(--canvas-color)) h calc(s * 0.5) calc(l * 0.5));
   font-family: "Science Fair", Haettenschweiler, Impact, "Arial Narrow Bold", sans-serif;
   font-weight: var(--font-extrabold);
@@ -218,11 +218,11 @@ body {
   text-align: center;
 }
 
-.canvas-node:not(.is-editing) .tag[href="#node-title-poster"] {
+.canvas-node:not(.is-editing) :is(.tag[href="#node-title-poster"], .node-title-poster) {
   display: none;
 }
 
-.canvas-node:has(.tag[href="#node-title-vintage"]):not(.is-editing) .canvas-node-container {
+.canvas-node:has(.tag[href="#node-title-vintage"], .node-title-vintage):not(.is-editing) .canvas-node-container {
   --s: 0.5em;
   border-radius: var(--radius-s);
   border: calc(2 * var(--s)) solid transparent;
@@ -231,20 +231,20 @@ body {
   background-image: conic-gradient(from 90deg at 1px 1px, transparent 25%, rgba(var(--canvas-color), 1) 0);
   box-shadow: none;
 }
-.canvas-node:has(.tag[href="#node-title-vintage"]):not(.is-editing) .canvas-node-content {
+.canvas-node:has(.tag[href="#node-title-vintage"], .node-title-vintage):not(.is-editing) .canvas-node-content {
   background: none;
 }
-.canvas-node:has(.tag[href="#node-title-vintage"]):not(.is-editing) .markdown-preview-view {
+.canvas-node:has(.tag[href="#node-title-vintage"], .node-title-vintage):not(.is-editing) .markdown-preview-view {
   font-family: "Noir-et-Blanc", Palatino, Baskerville, "Times New Roman", Times, serif;
   text-align: center;
   color: rgb(var(--canvas-color));
 }
-.canvas-node:has(.tag[href="#node-title-vintage"]):not(.is-editing) .markdown-preview-section {
+.canvas-node:has(.tag[href="#node-title-vintage"], .node-title-vintage):not(.is-editing) .markdown-preview-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.canvas-node:has(.tag[href="#node-title-vintage"]):not(.is-editing) p::first-letter {
+.canvas-node:has(.tag[href="#node-title-vintage"], .node-title-vintage):not(.is-editing) p::first-letter {
   color: color-mix(in srgb, currentColor, var(--text-normal) 50%);
   text-transform: uppercase;
   text-decoration: underline;
@@ -252,7 +252,7 @@ body {
   text-underline-offset: 0.4em;
 }
 
-.canvas-node:not(.is-editing) .tag[href="#node-title-vintage"] {
+.canvas-node:not(.is-editing) :is(.tag[href="#node-title-vintage"], .node-title-vintage) {
   display: none;
 }
 

@@ -2,7 +2,7 @@
 FAS - Canvas Node Title Vintage
 Author: ElsaTam (Kapirklaa in Discord)
 */
-.canvas-node:has(.tag[href="#node-title-vintage"]):not(.is-editing) .canvas-node-container {
+.canvas-node:has(.tag[href="#node-title-vintage"], .node-title-vintage):not(.is-editing) .canvas-node-container {
   --s: 0.5em;
   border-radius: var(--radius-s);
   border: calc(2 * var(--s)) solid transparent;
@@ -11,20 +11,20 @@ Author: ElsaTam (Kapirklaa in Discord)
   background-image: conic-gradient(from 90deg at 1px 1px, transparent 25%, rgba(var(--canvas-color), 1) 0);
   box-shadow: none;
 }
-.canvas-node:has(.tag[href="#node-title-vintage"]):not(.is-editing) .canvas-node-content {
+.canvas-node:has(.tag[href="#node-title-vintage"], .node-title-vintage):not(.is-editing) .canvas-node-content {
   background: none;
 }
-.canvas-node:has(.tag[href="#node-title-vintage"]):not(.is-editing) .markdown-preview-view {
+.canvas-node:has(.tag[href="#node-title-vintage"], .node-title-vintage):not(.is-editing) .markdown-preview-view {
   font-family: "Noir-et-Blanc", Palatino, Baskerville, "Times New Roman", Times, serif;
   text-align: center;
   color: rgb(var(--canvas-color));
 }
-.canvas-node:has(.tag[href="#node-title-vintage"]):not(.is-editing) .markdown-preview-section {
+.canvas-node:has(.tag[href="#node-title-vintage"], .node-title-vintage):not(.is-editing) .markdown-preview-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.canvas-node:has(.tag[href="#node-title-vintage"]):not(.is-editing) p::first-letter {
+.canvas-node:has(.tag[href="#node-title-vintage"], .node-title-vintage):not(.is-editing) p::first-letter {
   color: color-mix(in srgb, currentColor, var(--text-normal) 50%);
   text-transform: uppercase;
   text-decoration: underline;
@@ -32,7 +32,7 @@ Author: ElsaTam (Kapirklaa in Discord)
   text-underline-offset: 0.4em;
 }
 
-.canvas-node:not(.is-editing) .tag[href="#node-title-vintage"] {
+.canvas-node:not(.is-editing) :is(.tag[href="#node-title-vintage"], .node-title-vintage) {
   display: none;
 }
 

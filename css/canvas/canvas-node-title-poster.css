@@ -2,16 +2,16 @@
 FAS - Canvas Node Title Poster
 Author: ElsaTam (Kapirklaa in Discord)
 */
-.canvas-node:has(.tag[href="#node-title-poster"]):not(.is-editing) .canvas-node-container {
+.canvas-node:has(.tag[href="#node-title-poster"], .node-title-poster):not(.is-editing) .canvas-node-container {
   border: none;
 }
-.canvas-node:has(.tag[href="#node-title-poster"]):not(.is-editing):not(:is(.is-dragging, :hover)) .canvas-node-container {
+.canvas-node:has(.tag[href="#node-title-poster"], .node-title-poster):not(.is-editing):not(:is(.is-dragging, :hover)) .canvas-node-container {
   box-shadow: none;
 }
-.canvas-node:has(.tag[href="#node-title-poster"]):not(.is-editing) .canvas-node-content {
+.canvas-node:has(.tag[href="#node-title-poster"], .node-title-poster):not(.is-editing) .canvas-node-content {
   background: none;
 }
-.canvas-node:has(.tag[href="#node-title-poster"]):not(.is-editing) .markdown-preview-view {
+.canvas-node:has(.tag[href="#node-title-poster"], .node-title-poster):not(.is-editing) .markdown-preview-view {
   --shadow-color: hsl(from rgb(var(--canvas-color)) h calc(s * 0.5) calc(l * 0.5));
   font-family: "Science Fair", Haettenschweiler, Impact, "Arial Narrow Bold", sans-serif;
   font-weight: var(--font-extrabold);
@@ -20,7 +20,7 @@ Author: ElsaTam (Kapirklaa in Discord)
   text-align: center;
 }
 
-.canvas-node:not(.is-editing) .tag[href="#node-title-poster"] {
+.canvas-node:not(.is-editing) :is(.tag[href="#node-title-poster"], .node-title-poster) {
   display: none;
 }
 

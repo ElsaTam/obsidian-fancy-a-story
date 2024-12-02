@@ -5,7 +5,7 @@ body {
     --tree-view-guide-color: var(--background-secondary);
 }
 
-ul:has(> li > .tag[href='#tree-view']) {
+ul:has(> li > :is(.tag[href='#tree-view'], .tree-view)) {
     --indentation-guide-reading-indent: -0.8em;
     --indentation-guide-width: 2px;
     --indentation-guide-color: var(--tree-view-guide-color);
@@ -13,7 +13,7 @@ ul:has(> li > .tag[href='#tree-view']) {
 
     position: relative;
 
-    .tag[href='#tree-view'] { display: none; }
+    :is(.tag[href='#tree-view'], .tree-view) { display: none; }
 
     li::after {
         content: '';
@@ -102,16 +102,16 @@ ul:has(> li > .tag[href='#tree-view']) {
 }
 
 @media print {
-    ul:has(> li > .tag[href="#tree-view"]),
-    ul:has(> li > .tag[href="#tree-view"]) ul {
+    ul:has(> li > :is(.tag[href='#tree-view'], .tree-view)),
+    ul:has(> li > :is(.tag[href='#tree-view'], .tree-view)) ul {
         list-style-type: none;
     }
 
-    ul:has(> li > .tag[href="#tree-view"]) ul {
+    ul:has(> li > :is(.tag[href='#tree-view'], .tree-view)) ul {
         position: relative;
     }
 
-    ul:has(> li > .tag[href="#tree-view"]) li::after {
+    ul:has(> li > :is(.tag[href='#tree-view'], .tree-view)) li::after {
         width: var(--list-indent);
     }
 }

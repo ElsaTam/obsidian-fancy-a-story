@@ -2,7 +2,7 @@
 FAS - Canvas Node Crime Scene Tape
 Author: ElsaTam (Kapirklaa in Discord)
 */
-.canvas-node:has(.tag[href="#node-crime-scene-tape"]):not(.is-editing) .canvas-node-container {
+.canvas-node:has(.tag[href="#node-crime-scene-tape"], .node-crime-scene-tape):not(.is-editing) .canvas-node-container {
   border: none;
   box-shadow: none;
   background-color: hsl(from rgb(var(--canvas-color)) h 100% 50%);
@@ -13,13 +13,13 @@ Author: ElsaTam (Kapirklaa in Discord)
   background-repeat: repeat-x;
   background-position: left center;
 }
-.canvas-node:has(.tag[href="#node-crime-scene-tape"]):not(.is-editing).mod-canvas-color-custom .canvas-node-container {
+.canvas-node:has(.tag[href="#node-crime-scene-tape"], .node-crime-scene-tape):not(.is-editing).mod-canvas-color-custom .canvas-node-container {
   background-color: rgb(var(--canvas-color));
 }
-.canvas-node:has(.tag[href="#node-crime-scene-tape"]):not(.is-editing) .canvas-node-content {
+.canvas-node:has(.tag[href="#node-crime-scene-tape"], .node-crime-scene-tape):not(.is-editing) .canvas-node-content {
   background: none;
 }
 
-.canvas-node:not(.is-editing) .tag[href="#node-crime-scene-tape"] {
+.canvas-node:not(.is-editing) :is(.tag[href="#node-crime-scene-tape"], .node-crime-scene-tape) {
   display: none;
 }

@@ -1,4 +1,4 @@
-.canvas-node:has(.tag[href="#node-comic"]):not(.is-editing) {
+.canvas-node:has(.tag[href="#node-comic"], .node-comic):not(.is-editing) {
     
     .canvas-node-container {
         box-shadow: none;
@@ -10,6 +10,6 @@
     }
 }
 
-.canvas-node:not(.is-editing) .tag[href="#node-comic"] {
+.canvas-node:not(.is-editing) :is(.tag[href="#node-comic"], .node-comic) {
     display: none;
 }

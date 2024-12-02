@@ -1,4 +1,4 @@
-.canvas-node:has(.tag[href="#node-blur"]):not(.is-editing) {
+.canvas-node:has(.tag[href="#node-blur"], .node-blur):not(.is-editing) {
     backdrop-filter: blur(8px);
     
     .canvas-node-container {
@@ -16,6 +16,6 @@
     }
 }
 
-.canvas-node:not(.is-editing) .tag[href="#node-blur"] {
+.canvas-node:not(.is-editing) :is(.tag[href="#node-blur"], .node-blur) {
     display: none;
 }

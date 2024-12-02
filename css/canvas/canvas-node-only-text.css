@@ -2,17 +2,17 @@
 FAS - Canvas Node Only Text
 Author: ElsaTam (Kapirklaa in Discord)
 */
-.canvas-node:has(.tag[href="#node-only-text"]):not(.is-editing) .canvas-node-container {
+.canvas-node:has(.tag[href="#node-only-text"], .node-only-text):not(.is-editing) .canvas-node-container {
   box-shadow: none;
   background: none;
 }
-.canvas-node:has(.tag[href="#node-only-text"]):not(.is-editing):not(:is(.is-dragging, :hover)) .canvas-node-container {
+.canvas-node:has(.tag[href="#node-only-text"], .node-only-text):not(.is-editing):not(:is(.is-dragging, :hover)) .canvas-node-container {
   border: none;
 }
-.canvas-node:has(.tag[href="#node-only-text"]):not(.is-editing) .canvas-node-content {
+.canvas-node:has(.tag[href="#node-only-text"], .node-only-text):not(.is-editing) .canvas-node-content {
   background: none;
 }
 
-.canvas-node:not(.is-editing) .tag[href="#node-only-text"] {
+.canvas-node:not(.is-editing) :is(.tag[href="#node-only-text"], .node-only-text) {
   display: none;
 }
