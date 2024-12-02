@@ -1,5 +1,10 @@
 @forward '../../shared/markdown-container';
 
+$stop2: 400px;
+$stop3: 550px;
+$stop4: 700px;
+$stop5: 850px;
+
 .callout[data-callout="grid"] {
     background: none;
     border: none;
@@ -41,20 +46,20 @@
     }
 }
 
-@container markdown-view (700px < width < 850px) {
+@container markdown-view (#{$stop4} < width < #{$stop5}) {
     .callout[data-callout="grid"][data-callout-metadata~="col-6"] > .callout-content {
         grid-template-columns: repeat(5, 1fr);
     }
 }
 
-@container markdown-view (550px < width < 700px) {
+@container markdown-view (#{$stop3} < width < #{$stop4}) {
     .callout[data-callout="grid"][data-callout-metadata~="col-5"] > .callout-content,
     .callout[data-callout="grid"][data-callout-metadata~="col-6"] > .callout-content {
         grid-template-columns: repeat(4, 1fr);
     }
 }
 
-@container markdown-view (400px < width < 550px) {
+@container markdown-view (#{$stop2} < width < #{$stop3}) {
     .callout[data-callout="grid"][data-callout-metadata~="col-4"] > .callout-content,
     .callout[data-callout="grid"][data-callout-metadata~="col-5"] > .callout-content,
     .callout[data-callout="grid"][data-callout-metadata~="col-6"] > .callout-content {
@@ -62,7 +67,7 @@
     }
 }
 
-@container markdown-view (width < 400px) {
+@container markdown-view (width < #{$stop2}) {
     .callout[data-callout="grid"][data-callout-metadata~="col-3"] > .callout-content,
     .callout[data-callout="grid"][data-callout-metadata~="col-4"] > .callout-content,
     .callout[data-callout="grid"][data-callout-metadata~="col-5"] > .callout-content,
@@ -74,5 +79,35 @@
 @media print {
     .print .markdown-preview-view [data-callout="grid"] > .callout-content {
         display: grid !important;
+    }
+
+    @media (#{$stop4} < width < #{$stop5}) {
+        .callout[data-callout="grid"][data-callout-metadata~="col-6"] > .callout-content {
+            grid-template-columns: repeat(5, 1fr);
+        }
+    }
+    
+    @media (#{$stop3} < width < #{$stop4}) {
+        .callout[data-callout="grid"][data-callout-metadata~="col-5"] > .callout-content,
+        .callout[data-callout="grid"][data-callout-metadata~="col-6"] > .callout-content {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+    
+    @media (#{$stop2} < width < #{$stop3}) {
+        .callout[data-callout="grid"][data-callout-metadata~="col-4"] > .callout-content,
+        .callout[data-callout="grid"][data-callout-metadata~="col-5"] > .callout-content,
+        .callout[data-callout="grid"][data-callout-metadata~="col-6"] > .callout-content {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    
+    @media (width < #{$stop2}) {
+        .callout[data-callout="grid"][data-callout-metadata~="col-3"] > .callout-content,
+        .callout[data-callout="grid"][data-callout-metadata~="col-4"] > .callout-content,
+        .callout[data-callout="grid"][data-callout-metadata~="col-5"] > .callout-content,
+        .callout[data-callout="grid"][data-callout-metadata~="col-6"] > .callout-content {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 }
