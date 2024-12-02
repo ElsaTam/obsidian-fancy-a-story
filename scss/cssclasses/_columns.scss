@@ -1,14 +1,18 @@
 @forward '../shared/markdown-container';
 
+
+$stop2: 600px;
+$stop3: 900px;
+
 .columns-2.markdown-preview-view .markdown-preview-section { column-count: 2; }
 .columns-3.markdown-preview-view .markdown-preview-section { column-count: 3; }
 .columns-4.markdown-preview-view .markdown-preview-section { column-count: 4; }
 
-@container markdown-view (width < 900px) {
+@container markdown-view (#{$stop2} < width < #{$stop3}) {
     .columns-4.markdown-preview-view .markdown-preview-section { column-count: 3; }
 }
 
-@container markdown-view (width < 600px) {
+@container markdown-view (width < #{$stop2}) {
     :is(.columns-3, .columns-4).markdown-preview-view .markdown-preview-section { column-count: 2; }
 }
 
@@ -23,11 +27,11 @@
     .print .columns-3.markdown-preview-view { column-count: 3; }
     .print .columns-4.markdown-preview-view { column-count: 4; }
 
-    @container markdown-view (width < 900px) {
+    @media (#{$stop2} < width < #{$stop3}) {
         .print .columns-4.markdown-preview-view { column-count: 3; }
     }
 
-    @container markdown-view (width < 600px) {
+    @media (width < #{$stop2}) {
         .print :is(.columns-3, .columns-4).markdown-preview-view { column-count: 2; }
     }
 
