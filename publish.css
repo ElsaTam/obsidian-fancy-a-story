@@ -182,33 +182,53 @@ body {
   margin-right: var(--fas-float-inline-margin, 12px);
 }
 
-.markdown-preview-view aside,
+.is-readable-line-width.markdown-preview-view aside,
 .is-readable-line-width.markdown-preview-view .aside-right {
   float: right;
   clear: right;
   margin-left: var(--fas-float-inline-margin, 12px);
 }
 
-@container markdown-view (width > 1100px) {
-  .markdown-preview-view aside,
-  .is-readable-line-width.markdown-preview-view .aside-right,
-  .is-readable-line-width.markdown-preview-view .aside-left {
-    --aside-width: calc(50cqw - var(--file-line-width) * 0.5 - var(--aside-gap) * 2);
-    margin-inline: 0;
-    border-block: none;
-    padding-block: 0;
+@media screen {
+  @container markdown-view (width > 1100px) {
+    .markdown-preview-view aside,
+    .is-readable-line-width.markdown-preview-view .aside-right,
+    .is-readable-line-width.markdown-preview-view .aside-left {
+      --aside-width: calc(50cqw - var(--file-line-width) * 0.5 - var(--aside-gap) * 2);
+      margin-inline: 0;
+      border-block: none;
+      padding-block: 0;
+    }
+    .is-readable-line-width.markdown-preview-view .aside-left {
+      margin-left: calc(-1 * var(--aside-width) - var(--aside-gap));
+      border-left: none;
+      padding-inline: 0 15px;
+      text-align: right;
+    }
+    .markdown-preview-view aside,
+    .is-readable-line-width.markdown-preview-view .aside-right {
+      margin-right: calc(-1 * var(--aside-width) - var(--aside-gap));
+      border-right: none;
+      padding-inline: 15px 0;
+    }
   }
-  .is-readable-line-width.markdown-preview-view .aside-left {
-    margin-left: calc(-1 * var(--aside-width) - var(--aside-gap));
-    border-left: none;
-    padding-inline: 0 15px;
-    text-align: right;
+}
+@media print {
+  .print aside,
+  .print .aside-left,
+  .print .aside-right {
+    page-break-inside: avoid;
   }
-  .markdown-preview-view aside,
-  .is-readable-line-width.markdown-preview-view .aside-right {
-    margin-right: calc(-1 * var(--aside-width) - var(--aside-gap));
-    border-right: none;
-    padding-inline: 15px 0;
+  .print .aside-left {
+    float: left;
+    clear: left;
+    margin-right: var(--fas-float-inline-margin, 12px);
+  }
+  .print aside,
+  .print .aside-right {
+    float: right;
+    clear: right;
+    margin-left: var(--fas-float-inline-margin, 12px);
   }
 }
 body {
