@@ -7,11 +7,11 @@ Source: [`family-tree.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/bl
 
 [![]({% link images/lists/family-tree.webp %})]({% link images/lists/family-tree.webp %})
 
-Start a list with the first item being the tag `#family-tree`. This will let know the CSS that the whole list must be turned into a family tree **in preview (reading) view**.
+Start a list with the first item being the tag `#family-tree` (or an html element with class `family-tree` such as `<span class="family-tree"></span>`). This will let know the CSS that the whole list must be turned into a family tree **in preview (reading) view**.
 
 Each item of a list is linked to items in its direct sublist by the relation "Parent --> Children".
 
-When the tag `#wed` is specifided. Then, the relationship becomes "Spouse <--> Spouse" and the wed partner is not rendered in the actual tree. Instead, a small ring icon is added and hovering it display the name of the wed partner.
+When the tag `#wed` (or an html element with class `wed` such as `<span class="wed"></span>`) is specifided. Then, the relationship becomes "Spouse <--> Spouse" and the wed partner is not rendered in the actual tree. Instead, a small ring icon is added and hovering it display the name of the wed partner.
 
 [![]({% link images/lists/family-tree-hover.webp %})]({% link images/lists/family-tree-hover.webp %})
 
