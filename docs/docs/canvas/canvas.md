@@ -9,6 +9,8 @@ nav_order: 5
 {: .note}
 Usage of tags to define specific styling for canvas card can be very powerful. However, it requires a code that can cause performance issues. Also, such styling come as independant snippets. You can add the file [canvas-node-bundle](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/css/canvas/canvas-node-bundle.css) to your [snippets file](https://help.obsidian.md/Extending+Obsidian/CSS+snippets) to download all the effects. Or choose individual ones from [this list](https://github.com/ElsaTam/obsidian-fancy-a-story/tree/main/css/canvas).
 
+Instead of using tag `#node-class`, you can us an html element with such as `<span class="node-class"></span>`)
+
 # Helper tags
 
 | Tag   | Description | Source |

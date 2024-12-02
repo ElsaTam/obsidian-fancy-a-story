@@ -5,7 +5,7 @@ parent: Lists
 
 Source: [`list-reversed.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/lists/list-reversed.css)
 
-Use the tag `#list-reversed` in an item of the list to reverse this list order in reading view.
+Use the tag `#list-reversed` (or an html element with class `list-reversed` such as `<span class="list-reversed"></span>`) in an item of the list to reverse this list order in reading view.
 
 [![]({% link images/lists/reversed-ol.webp %}){: width="150" }]({% link images/lists/reversed-ol.webp %})
 
@@ -35,7 +35,7 @@ The tag will affect only the items at its level, not the parent list, not the su
 - Item 3
 ```
 
-If you want to reverse the whole list, including sublists and ancestor lists, you can use the tag `#list-reversed-all`
+If you want to reverse the whole list, including sublists and ancestor lists, you can use the tag `#list-reversed-all` (or an html element with class `list-reversed-all` such as `<span class="list-reversed-all"></span>`).
 
 [![]({% link images/lists/reversed-all.webp %}){: width="150" }]({% link images/lists/reversed-all.webp %})
 
