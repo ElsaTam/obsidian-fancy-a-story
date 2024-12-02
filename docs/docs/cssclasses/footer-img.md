@@ -7,6 +7,8 @@ Source: [`footer-img.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blo
 
 Add the cssclass `footer-img` to your note. This will use the **last** image as a footer in reading mode.
 
+When exporting to PDF, the image will not be rendered.
+
 ## Footer color
 
 This image will be blended with the background in a monotone color. White = background color; Black = footer color; Shades of grey = shades of the footer color.

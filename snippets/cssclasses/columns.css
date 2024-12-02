@@ -34,7 +34,32 @@ Author: ElsaTam (Kapirklaa in Discord)
   column-gap: 50px;
 }
 
-:is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section .markdown-preview-pusher, :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section .mod-header, :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section div:has(.frontmatter), :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section :is(h1), :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section [alt~=span] {
+@media print {
+  .print .columns-2.markdown-preview-view {
+    column-count: 2;
+  }
+  .print .columns-3.markdown-preview-view {
+    column-count: 3;
+  }
+  .print .columns-4.markdown-preview-view {
+    column-count: 4;
+  }
+  @container markdown-view (width < 900px) {
+    .print .columns-4.markdown-preview-view {
+      column-count: 3;
+    }
+  }
+  @container markdown-view (width < 600px) {
+    .print :is(.columns-3, .columns-4).markdown-preview-view {
+      column-count: 2;
+    }
+  }
+  .print :is(.columns-2, .columns-3, .columns-4).markdown-preview-view {
+    column-rule: 1px solid var(--color-base-50);
+    column-gap: 50px;
+  }
+}
+:is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-pusher, :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .mod-header, :is(.columns-2, .columns-3, .columns-4).markdown-preview-view div:has(.frontmatter), :is(.columns-2, .columns-3, .columns-4).markdown-preview-view :is(h1), :is(.columns-2, .columns-3, .columns-4).markdown-preview-view [alt~=span] {
   column-span: all;
 }
 
@@ -46,6 +71,10 @@ Author: ElsaTam (Kapirklaa in Discord)
   display: block;
   width: fit-content;
   margin-inline: auto;
+}
+
+:is(.columns-2, .columns-3, .columns-4).markdown-preview-view [alt~=span]:not(img) {
+  margin-block: var(--p-spacing);
 }
 
 :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .list-bullet {
