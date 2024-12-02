@@ -1,4 +1,4 @@
-.canvas-node:has(.tag[href="#node-only-text"]):not(.is-editing) {
+.canvas-node:has(.tag[href="#node-only-text"], .node-only-text):not(.is-editing) {
     .canvas-node-container {
         box-shadow: none;
         background: none;
@@ -11,6 +11,6 @@
     }
 }
 
-.canvas-node:not(.is-editing) .tag[href="#node-only-text"] {
+.canvas-node:not(.is-editing) :is(.tag[href="#node-only-text"], .node-only-text) {
     display: none;
 }

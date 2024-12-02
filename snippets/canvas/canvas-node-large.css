@@ -6,10 +6,10 @@ body {
   --font-size-node-large: 5em;
 }
 
-.canvas-node:has(.tag[href="#node-large"]):not(.is-editing) .markdown-preview-view {
+.canvas-node:has(.tag[href="#node-large"], .node-large):not(.is-editing) .markdown-preview-view {
   font-size: var(--font-size-node-large);
 }
 
-.canvas-node:not(.is-editing) .tag[href="#node-large"] {
+.canvas-node:not(.is-editing) :is(.tag[href="#node-large"], .node-large) {
   display: none;
 }

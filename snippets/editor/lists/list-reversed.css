@@ -2,19 +2,19 @@
 FAS - List Reversed
 Author: ElsaTam (Kapirklaa in Discord)
 */
-:is(ul, ol):has(> li > .tag[href="#list-reversed"]) {
+:is(ul, ol):has(> li > :is(.tag[href="#list-reversed"], .list-reversed)) {
   transform: scaleY(-1);
 }
-:is(ul, ol):has(> li > .tag[href="#list-reversed"]) > li {
+:is(ul, ol):has(> li > :is(.tag[href="#list-reversed"], .list-reversed)) > li {
   transform: scaleY(-1);
 }
-:is(ul, ol):has(> li > .tag[href="#list-reversed"]) > li > .tag[href="#list-reversed"] {
+:is(ul, ol):has(> li > :is(.tag[href="#list-reversed"], .list-reversed)) > li > :is(.tag[href="#list-reversed"], .list-reversed) {
   display: none;
 }
 
-:is(ul, ol):has(> li > .tag[href="#list-reversed-all"]), :is(ul, ol):has(> li > .tag[href="#list-reversed-all"]) ul, :is(ul, ol):has(> li > .tag[href="#list-reversed-all"]) ol, :is(ul, ol):has(> li > .tag[href="#list-reversed-all"]) li {
+:is(ul, ol):has(> li > :is(.tag[href="#list-reversed-all"], .list-reversed-all)), :is(ul, ol):has(> li > :is(.tag[href="#list-reversed-all"], .list-reversed-all)) ul, :is(ul, ol):has(> li > :is(.tag[href="#list-reversed-all"], .list-reversed-all)) ol, :is(ul, ol):has(> li > :is(.tag[href="#list-reversed-all"], .list-reversed-all)) li {
   transform: scaleY(-1);
 }
-:is(ul, ol):has(> li > .tag[href="#list-reversed-all"]) .tag[href="#list-reversed-all"] {
+:is(ul, ol):has(> li > :is(.tag[href="#list-reversed-all"], .list-reversed-all)) :is(.tag[href="#list-reversed-all"], .list-reversed-all) {
   display: none;
 }

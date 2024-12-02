@@ -2,10 +2,10 @@
 FAS - Canvas Node Background
 Author: ElsaTam (Kapirklaa in Discord)
 */
-.canvas-node:has(.tag[href="#node-background"]):not(.is-focused) {
+.canvas-node:has(.tag[href="#node-background"], .node-background):not(.is-focused) {
   z-index: -1 !important;
 }
 
-.canvas-node:not(.is-focused) .tag[href="#node-background"] {
+.canvas-node:not(.is-focused) :is(.tag[href="#node-background"], .node-background) {
   display: none;
 }

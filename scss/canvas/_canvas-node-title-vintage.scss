@@ -1,4 +1,4 @@
-.canvas-node:has(.tag[href="#node-title-vintage"]):not(.is-editing) {
+.canvas-node:has(.tag[href="#node-title-vintage"], .node-title-vintage):not(.is-editing) {
     
     .canvas-node-container {
         --s: 0.5em;
@@ -31,6 +31,6 @@
     }
 }
 
-.canvas-node:not(.is-editing) .tag[href="#node-title-vintage"] {
+.canvas-node:not(.is-editing) :is(.tag[href="#node-title-vintage"], .node-title-vintage) {
     display: none;
 }

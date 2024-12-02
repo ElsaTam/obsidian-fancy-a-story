@@ -1,4 +1,4 @@
-.canvas-node:has(.tag[href="#node-title-poster"]):not(.is-editing) {
+.canvas-node:has(.tag[href="#node-title-poster"], .node-title-poster):not(.is-editing) {
     .canvas-node-container {
         border: none;
     }
@@ -21,6 +21,6 @@
     }
 }
 
-.canvas-node:not(.is-editing) .tag[href="#node-title-poster"] {
+.canvas-node:not(.is-editing) :is(.tag[href="#node-title-poster"], .node-title-poster) {
     display: none;
 }

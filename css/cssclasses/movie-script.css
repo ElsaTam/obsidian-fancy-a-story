@@ -78,9 +78,6 @@ Author: ElsaTam (Kapirklaa in Discord)
 .markdown-preview-view.movie-script h1 {
   margin-block-start: var(--heading-spacing);
 }
-.markdown-preview-view.movie-script h1 .tag[href="#italic"] {
-  display: none;
-}
 
 @media print {
   .movie-script .callout[data-callout=transition] {
