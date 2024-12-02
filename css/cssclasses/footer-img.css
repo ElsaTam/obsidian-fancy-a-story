@@ -7,6 +7,10 @@ Author: ElsaTam (Kapirklaa in Discord)
   container: markdown-view/inline-size;
 }
 
+.markdown-preview-section {
+  anchor-name: --anchor-preview-section;
+}
+
 body {
   --workleaves-background: var(--background-primary);
   --workleaves-foreground: var(--text-normal);
@@ -62,39 +66,49 @@ body {
   --footer-img-color: var(--color-pink);
 }
 
-[class*=footer-img] > .markdown-preview-section > div:nth-last-child(2) {
-  --image-shadow-offset: 0;
-  position: sticky;
-  bottom: 0;
-  width: calc(100cqw + 2 * var(--file-margins));
-  font-size: 0;
-  margin-left: calc(50% - 50cqw - var(--file-margins));
-  transform: scale(1) translateY(calc(var(--file-margins) + 1px));
-  background-color: var(--workleaves-background);
+@media screen {
+  .markdown-preview-view {
+    anchor-name: --anchor-reading-view;
+  }
+  [class*=footer-img] > .markdown-preview-section > div:nth-last-child(1 of div.el-p):has(.image-embed) {
+    --image-shadow-offset: 0;
+    position: fixed;
+    transform: translateY(calc(var(--file-margins) + 1px));
+    position-anchor: --anchor-reading-view;
+    bottom: anchor(bottom);
+    left: anchor(left);
+    width: calc(100cqw + 2 * var(--file-margins));
+    font-size: 0;
+    margin-left: calc(50% - 50cqw - var(--file-margins));
+    background-color: var(--workleaves-background);
+  }
+  [class*=footer-img] > .markdown-preview-section > div:nth-last-child(1 of div.el-p):has(.image-embed) p {
+    opacity: var(--footer-img-opacity);
+    margin: 0;
+    background-color: var(--footer-img-color);
+    mix-blend-mode: screen;
+  }
+  [class*=footer-img] > .markdown-preview-section > div:nth-last-child(1 of div.el-p):has(.image-embed) img {
+    height: var(--footer-img-height);
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+    filter: invert(1) saturate(0);
+    mix-blend-mode: multiply;
+  }
+  [class*=footer-img] > .markdown-preview-sizer {
+    padding-bottom: 0 !important;
+  }
+  .theme-light [class*=footer-img] > .markdown-preview-section > div:nth-last-child(2) p {
+    background-color: rgb(from var(--footer-img-color) calc(255 - r) calc(255 - g) calc(255 - b));
+    mix-blend-mode: difference;
+  }
+  :is(.footer-background, .footer-bg)[class*=footer-img] > .markdown-preview-section > div:nth-last-child(2) {
+    z-index: -1;
+  }
 }
-[class*=footer-img] > .markdown-preview-section > div:nth-last-child(2) p {
-  opacity: var(--footer-img-opacity);
-  margin: 0;
-  background-color: var(--footer-img-color);
-  mix-blend-mode: screen;
-}
-[class*=footer-img] > .markdown-preview-section > div:nth-last-child(2) img {
-  height: var(--footer-img-height);
-  width: 100%;
-  object-fit: cover;
-  object-position: center top;
-  filter: invert(1) saturate(0);
-  mix-blend-mode: multiply;
-}
-[class*=footer-img] > .markdown-preview-sizer {
-  padding-bottom: 0 !important;
-}
-
-.theme-light [class*=footer-img] > .markdown-preview-section > div:nth-last-child(2) p {
-  background-color: rgb(from var(--footer-img-color) calc(255 - r) calc(255 - g) calc(255 - b));
-  mix-blend-mode: difference;
-}
-
-:is(.footer-background, .footer-bg)[class*=footer-img] > .markdown-preview-section > div:nth-last-child(2) {
-  z-index: -1;
+@media print {
+  .print [class*=footer-img] > div:last-child img {
+    display: none;
+  }
 }
