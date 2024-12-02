@@ -103,3 +103,16 @@ ul:has(> li > .tag[href="#tree-view"]) li:has(> .list-bullet:last-child):hover::
   opacity: 0.2;
   animation: bg-slide 0.5s ease-in-out;
 }
+
+@media print {
+  ul:has(> li > .tag[href="#tree-view"]),
+  ul:has(> li > .tag[href="#tree-view"]) ul {
+    list-style-type: none;
+  }
+  ul:has(> li > .tag[href="#tree-view"]) ul {
+    position: relative;
+  }
+  ul:has(> li > .tag[href="#tree-view"]) li::after {
+    width: var(--list-indent);
+  }
+}
