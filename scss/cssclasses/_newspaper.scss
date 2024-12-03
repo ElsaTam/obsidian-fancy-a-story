@@ -1,6 +1,7 @@
 @forward '../shared/paper-texture';
 @forward '../shared/workleaves';
 @forward '../shared/markdown-container';
+@forward '../shared/file-margins';
 
 .newspaper {
     background-color: var(--workleaves-background);
@@ -47,8 +48,8 @@
     display: block;
     padding-top: var(--inline-title-padding-top);
     border-bottom: 2px solid var(--text-normal);
-    width: calc(100cqw + 2 * var(--file-margins));
-    margin-left: calc(50% - 50cqw - var(--file-margins));
+    width: calc(100cqw + 2 * var(--file-margins-inline));
+    margin-left: calc(50% - 50cqw - var(--file-margins-inline));
 }
 
 @container style(--metadata-display-reading: block) {
@@ -56,8 +57,8 @@
         content: "";
         display: block;
         border-bottom: 2px solid var(--text-normal);
-        width: calc(100cqw + 2 * var(--file-margins));
-        margin-left: calc(50% - 50cqw - var(--file-margins));
+        width: calc(100cqw + 2 * var(--file-margins-inline));
+        margin-left: calc(50% - 50cqw - var(--file-margins-inline));
     }
 
     :is(.newspaper.show-properties.markdown-preview-view .mod-header) {

@@ -1,3 +1,4 @@
+@forward '../shared/file-margins';
 
 .markdown-preview-view p:has(.markdown-embed[alt~="faded"]) {
     position: relative;
@@ -50,7 +51,7 @@
     // block embeds
     .markdown-embed-link {
         position: absolute;
-        right: calc(-1 * var(--file-margins));
+        right: calc(-1 * var(--file-margins-inline));
         top: 0;
     }
 

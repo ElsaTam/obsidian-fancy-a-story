@@ -1,5 +1,6 @@
 @forward '../../shared/shadow-color';
 @forward '../../shared/markdown-container';
+@forward '../shared/file-margins';
 
 .media-embed[alt*="cassette"] {
     --cassette-width: 0.8;
@@ -24,7 +25,7 @@
 
     content: "";
     display: block;
-    height: calc(min(var(--cassette-width) * var(--file-line-width), 100cqw - var(--file-margins)) * var(--ratio));
+    height: calc(min(var(--cassette-width) * var(--file-line-width), 100cqw - var(--file-margins-block)) * var(--ratio));
     width: calc(100% * var(--cassette-width));
     margin-inline: auto;
     background-image: var(--cassette);
@@ -32,10 +33,6 @@
     background-repeat: no-repeat;
     background-position: center bottom;
     margin-bottom: var(--size-4-2);
-}
-
-.is-mobile .media-embed[alt*="cassette"]::before {
-    height: calc(min(var(--cassette-width) * var(--file-line-width), 100cqw - var(--file-margins-block)) * var(--ratio));
 }
 
 .markdown-preview-view .media-embed[alt*="cassette"]::before {
