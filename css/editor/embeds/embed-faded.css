@@ -2,6 +2,17 @@
 FAS - Embed Faded
 Author: ElsaTam (Kapirklaa in Discord)
 */
+body {
+  --file-margins-block: var(--size-4-8);
+  --file-margins-inline: var(--size-4-8);
+  --file-margins: var(--file-margins-block) var(--file-margins-inline);
+}
+
+.is-mobile {
+  --file-margins-block: var(--size-4-2);
+  --file-margins-inline: var(--size-4-6);
+}
+
 .markdown-preview-view p:has(.markdown-embed[alt~=faded]) {
   position: relative;
 }
@@ -45,7 +56,7 @@ Author: ElsaTam (Kapirklaa in Discord)
   }
   .markdown-embed-link {
     position: absolute;
-    right: calc(-1 * var(--file-margins));
+    right: calc(-1 * var(--file-margins-inline));
     top: 0;
   }
   :scope .markdown-embed-content {

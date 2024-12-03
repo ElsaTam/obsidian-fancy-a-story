@@ -1,6 +1,6 @@
 @forward '../../shared/shadow-color';
 @forward '../../shared/markdown-container';
-@forward '../shared/file-margins';
+@forward '../../shared/file-margins';
 
 .media-embed[alt*="cassette"] {
     --cassette-width: 0.8;
