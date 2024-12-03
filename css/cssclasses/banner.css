@@ -174,17 +174,22 @@ body {
   position: absolute;
   transform: rotate(calc(-1 * var(--banner-slope-angle)));
   transform-origin: bottom left;
-  top: calc(anchor(--anchor-preview-section top) + var(--banner-height) - var(--file-margins) - 1em - var(--banner-title-shadow-size));
-  right: anchor(--anchor-preview-section right, var(--file-margins));
+  top: calc(var(--banner-height) - 1em - var(--banner-title-shadow-size));
+  right: var(--file-margins);
   left: 0;
   text-align: right;
 }
 
-.is-mobile .markdown-preview-view.banner:is(.banner-slant, .banner-slope) .inline-title {
-  top: calc(anchor(--anchor-preview-section top) + var(--banner-height) - var(--file-margins-block) - 1em - var(--banner-title-shadow-size));
-  right: anchor(--anchor-preview-section right, var(--file-margins-inline));
+@supports (top: anchor(--anchor-preview-section top)) and (right: anchor(--anchor-preview-section right)) {
+  .markdown-preview-view.banner:is(.banner-slant, .banner-slope) .inline-title {
+    top: calc(anchor(--anchor-preview-section top) + var(--banner-height) - var(--file-margins) - 1em - var(--banner-title-shadow-size));
+    right: anchor(--anchor-preview-section right, var(--file-margins));
+  }
+  .is-mobile .markdown-preview-view.banner:is(.banner-slant, .banner-slope) .inline-title {
+    top: calc(anchor(--anchor-preview-section top) + var(--banner-height) - var(--file-margins-block) - 1em - var(--banner-title-shadow-size));
+    right: anchor(--anchor-preview-section right, var(--file-margins-inline));
+  }
 }
-
 @media print {
   .print .markdown-preview-view.banner:is(.banner-slant, .banner-slope) .mod-frontmatter + div > p > .image-embed:nth-child(1 of .image-embed) {
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--banner-angle-height)), 0 100%);
