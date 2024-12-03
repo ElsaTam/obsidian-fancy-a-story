@@ -3,9 +3,6 @@
 @forward '../shared/workleaves';
 
 .is-mobile {
-    --file-margins-block: var(--size-4-2);
-    --file-margins-inline: var(--size-4-6);
-    --file-margins: var(--file-margins-block) var(--file-margins-inline);
     --icon-l-stroke-width: 1.2px;
     --link-decoration-thickness: 1px;
 }

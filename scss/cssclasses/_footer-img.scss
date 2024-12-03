@@ -1,6 +1,7 @@
 @forward '../shared/markdown-container';
 @forward '../shared/markdown-anchor';
 @forward '../shared/workleaves';
+@forward '../shared/file-margins';
 
 body {
     --footer-img-height: 220px;
@@ -30,10 +31,10 @@ body {
             --image-shadow-offset: 0;
             position: sticky;
             bottom: 0;
-            width: calc(100cqw + 2 * var(--file-margins));
+            width: calc(100cqw + 2 * var(--file-margins-inline));
             font-size: 0;
-            margin-left: calc(50% - 50cqw - var(--file-margins));
-            transform: translateY(calc(var(--file-margins) + 1px));
+            margin-left: calc(50% - 50cqw - var(--file-margins-inline));
+            transform: translateY(calc(var(--file-margins-block) + 1px));
             background-color: var(--workleaves-background);
             
             p {
@@ -65,12 +66,6 @@ body {
 
     :is(.footer-background, .footer-bg)[class*="footer-img"] > .markdown-preview-section > div:nth-last-child(2) {
         z-index: -1;
-    }
-
-    .is-mobile [class*="footer-img"] > .markdown-preview-section > div:nth-last-child(1 of div.el-p):has(.image-embed) {
-        transform: translateY(calc(var(--file-margins-block) + 1px));
-        width: calc(100cqw + 2 * var(--file-margins-inline));
-        margin-left: calc(50% - 50cqw - var(--file-margins-inline));
     }
 }
 

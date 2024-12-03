@@ -1,4 +1,5 @@
 @forward '../../shared/markdown-container';
+@forward '../shared/file-margins';
 @use '../../mixins/wide';
 
 .markdown-preview-view [alt~="wide"]:is(img:not(.image-embed img), .image-embed, .markdown-embed, .file-embed) {

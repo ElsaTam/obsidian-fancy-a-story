@@ -1,4 +1,5 @@
 @forward '../../../shared/markdown-container';
+@forward '../shared/file-margins';
 @use '../../../mixins/wide';
 
 .block-language-dataviewjs:has(.dataview-wide) {

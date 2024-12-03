@@ -1,0 +1,10 @@
+body {
+    --file-margins-block: var(--size-4-8);
+    --file-margins-inline: var(--size-4-8);
+    --file-margins: var(--file-margins-block) var(--file-margins-inline);
+}
+
+.is-mobile {
+    --file-margins-block: var(--size-4-2);
+    --file-margins-inline: var(--size-4-6);
+}
