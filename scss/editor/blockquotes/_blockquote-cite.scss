@@ -1,7 +1,15 @@
+body {
+    --cite-decoration-width: 50px;
+}
+
+.is-mobile {
+    --cite-decoration-width: 30px;
+}
+
 .markdown-rendered blockquote:has(cite) {
     font-style: italic;
     position: relative;
-    padding-inline-start: 55px;
+    padding-inline-start: calc(var(--cite-decoration-width) + 5px);
 }
 
 blockquote cite::after {
@@ -9,12 +17,12 @@ blockquote cite::after {
     position: absolute;
     font-style: italic;
     text-align: left;
-    font-size: 100px;
+    font-size: calc(var(--cite-decoration-width) * 2);
     line-height: 1;
     top: 0;
     bottom: 0;
     left: 0;
-    width: 50px;
+    width: var(--cite-decoration-width);
     color: var(--color-accent);
     font-family: Arial, Helvetica, sans-serif;
     background-color: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);

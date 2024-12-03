@@ -46,6 +46,10 @@ Author: ElsaTam (Kapirklaa in Discord)
   margin-bottom: var(--size-4-2);
 }
 
+.is-mobile .media-embed[alt*=cassette]::before {
+  height: calc(min(var(--cassette-width) * var(--file-line-width), 100cqw - var(--file-margins-block)) * var(--ratio));
+}
+
 .markdown-preview-view .media-embed[alt*=cassette]::before {
   filter: drop-shadow(2px 2px 2px var(--shadow-color)) drop-shadow(5px 5px 5px var(--shadow-color)) drop-shadow(12px 12px 12px var(--shadow-color));
 }

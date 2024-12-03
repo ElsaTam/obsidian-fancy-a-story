@@ -53,7 +53,7 @@
         content: "";
         position: absolute;
         top: -1px; bottom: -1px;
-        width: calc(40% - var(--callout-content-padding) + 3px);
+        width: calc(75% * 0.5 + 1px);
         z-index: -1;
         background-size: 100% 50%, 100% 50%;
         background-position: center top, center bottom;

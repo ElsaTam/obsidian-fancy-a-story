@@ -283,6 +283,10 @@
     }
 }
 
+.is-mobile .callout[data-callout="autopsy"] .callout[data-callout="body"] {
+    --checkbox-size: 12px;
+}
+
 
 
 

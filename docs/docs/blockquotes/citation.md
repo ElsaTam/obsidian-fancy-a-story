@@ -21,3 +21,9 @@ And another (external link, note specific href)
 > Nunc non lacus enim. Donec id doliam lurta orci, eget commodo est euismod a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae
 > <cite>— <a href="https://twitter.com/obsdmd/status/1458523572448727051?s=20">@obsdmd</a></cite>
 ```
+
+## CSS Variables
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--cite-decoration-width` | Width of the left decoration | `50px` |

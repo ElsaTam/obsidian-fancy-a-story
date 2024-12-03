@@ -164,6 +164,11 @@ body {
   --aside-border-thickness: 4px;
 }
 
+.is-mobile {
+  --aside-width: 200px;
+  --aside-border-thickness: 2px;
+}
+
 .markdown-preview-view aside,
 .markdown-preview-view .aside-left,
 .markdown-preview-view .aside-right {
@@ -270,10 +275,18 @@ blockquote:has(.caption) {
     display: none;
   }
 }
+body {
+  --cite-decoration-width: 50px;
+}
+
+.is-mobile {
+  --cite-decoration-width: 30px;
+}
+
 .markdown-rendered blockquote:has(cite) {
   font-style: italic;
   position: relative;
-  padding-inline-start: 55px;
+  padding-inline-start: calc(var(--cite-decoration-width) + 5px);
 }
 
 blockquote cite::after {
@@ -281,12 +294,12 @@ blockquote cite::after {
   position: absolute;
   font-style: italic;
   text-align: left;
-  font-size: 100px;
+  font-size: calc(var(--cite-decoration-width) * 2);
   line-height: 1;
   top: 0;
   bottom: 0;
   left: 0;
-  width: 50px;
+  width: var(--cite-decoration-width);
   color: var(--color-accent);
   font-family: Arial, Helvetica, sans-serif;
   background-color: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
@@ -754,6 +767,10 @@ body {
     display: grid !important;
   }
 }
+.is-mobile .callout[data-callout=autopsy] .callout[data-callout=body] {
+  --checkbox-size: 12px;
+}
+
 .callout[data-callout=body] {
   --body-img-base-width: 750; /* don't put unit here, its only to compute a ratio */
   --body-img-base-height: 768; /* don't put unit here, its only to compute a ratio */
@@ -925,7 +942,8 @@ body {
   justify-content: center;
   position: absolute;
   top: calc(var(--padding-top) - 0.5em);
-  width: fit-content;
+  width: max-content;
+  max-width: 100%;
   background: none;
   z-index: 1;
   left: 50%;
@@ -1066,7 +1084,7 @@ body {
 }
 .callout[data-callout=comic-panel] img {
   height: var(--strip-height);
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 0;
 }
 .callout[data-callout=comic-panel] p {
@@ -1100,6 +1118,10 @@ body {
 }
 .callout[data-callout=comic-panel][data-callout-metadata~=bubble][data-callout-metadata~=right] > .callout-content > *:not(:has(img)) {
   left: unset;
+}
+.callout[data-callout=comic-panel][data-callout-metadata~=bubble]:is([data-callout-metadata~=top], [data-callout-metadata~=bottom], [data-callout-metadata~=left], [data-callout-metadata~=right]) {
+  float: none;
+  margin: 0;
 }
 
 .callout[data-callout=comic-panel][data-callout-metadata~=overflow] {
@@ -1229,7 +1251,7 @@ body {
   position: absolute;
   top: -1px;
   bottom: -1px;
-  width: calc(40% - var(--callout-content-padding) + 3px);
+  width: calc(37.5% + 1px);
   z-index: -1;
   background-size: 100% 50%, 100% 50%;
   background-position: center top, center bottom;
@@ -1872,9 +1894,11 @@ body {
 .callout:is([data-callout=full-width-image], [data-callout=full-w-img], [data-callout=fwi], [data-callout="full-width-panoramic-image-:jack_o_lantern:"], [data-callout=fwpi-jol]) .callout-title {
   background: none;
   position: absolute;
+  justify-content: center;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
   text-shadow: var(--fwi-title-shadow);
   z-index: 1;
 }
@@ -3217,6 +3241,10 @@ pre.language-poem-floral .copy-code-button {
   margin-bottom: var(--size-4-2);
 }
 
+.is-mobile .media-embed[alt*=cassette]::before {
+  height: calc(min(var(--cassette-width) * var(--file-line-width), 100cqw - var(--file-margins-block)) * var(--ratio));
+}
+
 .markdown-preview-view .media-embed[alt*=cassette]::before {
   filter: drop-shadow(2px 2px 2px var(--shadow-color)) drop-shadow(5px 5px 5px var(--shadow-color)) drop-shadow(12px 12px 12px var(--shadow-color));
 }
@@ -4527,7 +4555,6 @@ ul:has(> li > :is(.tag[href="#family-tree"], .family-tree)) li:has(> ul > li:onl
 }
 ul:has(> li > :is(.tag[href="#family-tree"], .family-tree)), ul:has(> li > :is(.tag[href="#family-tree"], .family-tree)) ul {
   display: flex;
-  justify-content: center;
   padding-top: 10px;
   margin-top: 0px;
   position: relative;
@@ -4539,6 +4566,7 @@ ul:has(> li > :is(.tag[href="#family-tree"], .family-tree)) li {
   list-style-type: none;
   position: relative;
   padding: 20px 5px 0 5px;
+  margin-inline: auto;
 }
 ul:has(> li > :is(.tag[href="#family-tree"], .family-tree)) li::before,
 ul:has(> li > :is(.tag[href="#family-tree"], .family-tree)) li::after {
@@ -4577,7 +4605,7 @@ ul:has(> li > :is(.tag[href="#family-tree"], .family-tree)) ul::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 50%;
+  right: 50%;
   border-left: 1px solid var(--family-tree-connectors-color);
   width: 0px;
   height: 20px;
@@ -4592,11 +4620,16 @@ ul:has(> li > :is(.tag[href="#family-tree"], .family-tree)) ul:not(:has(> li))::
 ul:has(> li > :is(.tag[href="#family-tree"], .family-tree)) ul:has(> li:first-child:last-child > :is(.tag[href="#wed"], .wed))::before {
   content: none;
 }
-ul:has(> li > :is(.tag[href="#family-tree"], .family-tree)) li:not(:has(> :is(.tag[href="#wed"], .wed))):first-child:last-child,
+ul:has(> li > :is(.tag[href="#family-tree"], .family-tree)) li:not(:has(> :is(.tag[href="#wed"], .wed))):first-child:last-child::after,
 ul:has(> li > :is(.tag[href="#family-tree"], .family-tree)) li:has(> :is(.tag[href="#wed"], .wed)) + li:last-child::after {
   content: none;
 }
 
+@media print {
+  ul:has(> li > .tag[href="#family-tree"]) {
+    --family-tree-connectors-color: var(--text-normal);
+  }
+}
 @keyframes bg-slide {
   from {
     right: 100%;
