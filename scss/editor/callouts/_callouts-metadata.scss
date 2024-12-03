@@ -1,6 +1,6 @@
 @forward '../../shared/markdown-container';
 @forward '../../shared/list-with-float';
-@forward '../shared/file-margins';
+@forward '../../shared/file-margins';
 @use '../../mixins/wide';
 
 .callout[data-callout-metadata~="gray"]   { --callout-color: var(--color-gray-rgb);}

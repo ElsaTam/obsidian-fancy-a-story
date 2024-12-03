@@ -7,13 +7,24 @@ Author: ElsaTam (Kapirklaa in Discord)
   container: markdown-view/inline-size;
 }
 
+body {
+  --file-margins-block: var(--size-4-8);
+  --file-margins-inline: var(--size-4-8);
+  --file-margins: var(--file-margins-block) var(--file-margins-inline);
+}
+
+.is-mobile {
+  --file-margins-block: var(--size-4-2);
+  --file-margins-inline: var(--size-4-6);
+}
+
 .block-language-dataviewjs:has(.dataview-wide) {
   overflow: visible !important;
 }
 
 .markdown-reading-view .dataview-wide {
   position: relative;
-  --w: calc(0.95 * (100cqw + 2 * var(--file-margins)));
+  --w: calc(0.95 * (100cqw + 2 * var(--file-margins-inline)));
   width: var(--w);
   left: calc(50% - var(--w) * 0.5);
 }

@@ -1,4 +1,4 @@
-@forward '../shared/file-margins';
+@forward '../../shared/file-margins';
 
 .markdown-preview-view p:has(.markdown-embed[alt~="faded"]) {
     position: relative;

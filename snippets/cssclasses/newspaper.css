@@ -22,6 +22,17 @@ body {
   container: markdown-view/inline-size;
 }
 
+body {
+  --file-margins-block: var(--size-4-8);
+  --file-margins-inline: var(--size-4-8);
+  --file-margins: var(--file-margins-block) var(--file-margins-inline);
+}
+
+.is-mobile {
+  --file-margins-block: var(--size-4-2);
+  --file-margins-inline: var(--size-4-6);
+}
+
 .newspaper {
   background-color: var(--workleaves-background);
   background-image: var(--paper-texture);
@@ -69,8 +80,8 @@ body {
   display: block;
   padding-top: var(--inline-title-padding-top);
   border-bottom: 2px solid var(--text-normal);
-  width: calc(100cqw + 2 * var(--file-margins));
-  margin-left: calc(50% - 50cqw - var(--file-margins));
+  width: calc(100cqw + 2 * var(--file-margins-inline));
+  margin-left: calc(50% - 50cqw - var(--file-margins-inline));
 }
 
 @container style(--metadata-display-reading: block) {
@@ -78,8 +89,8 @@ body {
     content: "";
     display: block;
     border-bottom: 2px solid var(--text-normal);
-    width: calc(100cqw + 2 * var(--file-margins));
-    margin-left: calc(50% - 50cqw - var(--file-margins));
+    width: calc(100cqw + 2 * var(--file-margins-inline));
+    margin-left: calc(50% - 50cqw - var(--file-margins-inline));
   }
   :is(.newspaper.show-properties.markdown-preview-view .mod-header) {
     margin-bottom: var(--p-spacing);

@@ -11,6 +11,17 @@ Author: ElsaTam (Kapirklaa in Discord)
   display: flow-root;
 }
 
+body {
+  --file-margins-block: var(--size-4-8);
+  --file-margins-inline: var(--size-4-8);
+  --file-margins: var(--file-margins-block) var(--file-margins-inline);
+}
+
+.is-mobile {
+  --file-margins-block: var(--size-4-2);
+  --file-margins-inline: var(--size-4-6);
+}
+
 .callout[data-callout-metadata~=gray] {
   --callout-color: var(--color-gray-rgb);
 }
@@ -105,7 +116,7 @@ Author: ElsaTam (Kapirklaa in Discord)
 
 .markdown-preview-view .callout[data-callout-metadata~=wide] {
   position: relative;
-  --w: calc(0.95 * (100cqw + 2 * var(--file-margins)));
+  --w: calc(0.95 * (100cqw + 2 * var(--file-margins-inline)));
   width: var(--w);
   left: calc(50% - var(--w) * 0.5);
 }
