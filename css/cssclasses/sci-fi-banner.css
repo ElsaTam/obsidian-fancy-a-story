@@ -6,6 +6,10 @@ body {
   --sci-fi-arc-size: 400px;
 }
 
+.is-mobile {
+  --sci-fi-arc-size: 200px;
+}
+
 .sci-fi-banner {
   --inline-title-size: 3em;
   --inline-title-font: "Orbitron", Arial, serif;

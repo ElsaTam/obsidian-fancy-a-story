@@ -390,6 +390,10 @@ Author: ElsaTam (Kapirklaa in Discord)
     display: grid !important;
   }
 }
+.is-mobile .callout[data-callout=autopsy] .callout[data-callout=body] {
+  --checkbox-size: 12px;
+}
+
 .callout[data-callout=body] {
   --body-img-base-width: 750; /* don't put unit here, its only to compute a ratio */
   --body-img-base-height: 768; /* don't put unit here, its only to compute a ratio */

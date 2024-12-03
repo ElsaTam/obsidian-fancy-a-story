@@ -120,7 +120,6 @@ ul:has(> li > :is(.tag[href='#family-tree'], .family-tree)) {
 
     &, ul {
         display: flex;
-        justify-content: center;
         padding-top: 10px;
         margin-top: 0px;
         position: relative;
@@ -133,6 +132,7 @@ ul:has(> li > :is(.tag[href='#family-tree'], .family-tree)) {
         list-style-type: none;
         position: relative;
         padding: 20px 5px 0 5px;
+        margin-inline: auto;
     }
 
     li::before,
@@ -182,7 +182,7 @@ ul:has(> li > :is(.tag[href='#family-tree'], .family-tree)) {
         content: "";
         position: absolute;
         top: 0;
-        left: 50%;
+        right: 50%;
         border-left: 1px solid var(--family-tree-connectors-color);
         width: 0px;
         height: 20px;
@@ -204,8 +204,14 @@ ul:has(> li > :is(.tag[href='#family-tree'], .family-tree)) {
     }
 
     // Remove upwards connectors if only child
-    li:not(:has(> :is(.tag[href='#wed'], .wed))):first-child:last-child,
+    li:not(:has(> :is(.tag[href='#wed'], .wed))):first-child:last-child::after,
     li:has(> :is(.tag[href='#wed'], .wed)) + li:last-child::after {
         content: none;
     }
+}
+
+@media print {
+	ul:has(> li > .tag[href='#family-tree']) {
+    	--family-tree-connectors-color: var(--text-normal);
+	}
 }

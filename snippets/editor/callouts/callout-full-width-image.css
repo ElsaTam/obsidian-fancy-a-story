@@ -34,9 +34,11 @@ body {
 .callout:is([data-callout=full-width-image], [data-callout=full-w-img], [data-callout=fwi], [data-callout="full-width-panoramic-image-:jack_o_lantern:"], [data-callout=fwpi-jol]) .callout-title {
   background: none;
   position: absolute;
+  justify-content: center;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
   text-shadow: var(--fwi-title-shadow);
   z-index: 1;
 }

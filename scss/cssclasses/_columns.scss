@@ -1,6 +1,7 @@
 @forward '../shared/markdown-container';
 
 
+$stop1: 500px;
 $stop2: 600px;
 $stop3: 900px;
 
@@ -12,8 +13,12 @@ $stop3: 900px;
     .columns-4.markdown-preview-view .markdown-preview-section { column-count: 3; }
 }
 
-@container markdown-view (width < #{$stop2}) {
+@container markdown-view (#{$stop1} < width < #{$stop2}) {
     :is(.columns-3, .columns-4).markdown-preview-view .markdown-preview-section { column-count: 2; }
+}
+
+@container markdown-view (width < #{$stop1}) {
+    :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section { column-count: 1; }
 }
 
 :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section {

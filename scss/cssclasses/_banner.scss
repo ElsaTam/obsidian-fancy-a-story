@@ -15,6 +15,12 @@ body {
     --banner-print-width: full-bleed;
 }
 
+.is-mobile {
+    --banner-height: 180px;
+    --banner-slope-border-width: 4px;
+    --banner-width: calc(100cqw + 2 * var(--file-margins-inline));
+}
+
 @mixin image-banner {
     --image-shadow-offset: 0;
     display: block;
@@ -47,9 +53,17 @@ body {
     }
 
     .inline-title {
+        position: absolute;
+        top: var(--file-margins);
+        left: var(--file-margins);
+        padding-top: 0;
         text-shadow: var(--banner-title-shadow);
     }
+}
 
+.is-mobile .markdown-preview-view.banner .inline-title {
+    top: var(--file-margins-block);
+    left: var(--file-margins-inline);
 }
 
 @media print {
@@ -88,10 +102,11 @@ body {
 
 // Properties visible
 @container not style(--metadata-display-reading: none) {
-    .markdown-preview-view.show-properties.banner {
-        .metadata-container {
-            margin-top: calc(var(--banner-height) - var(--file-margins) + 4px + 0.8em);
-        }
+    .markdown-preview-view.show-properties.banner .metadata-container {
+        margin-top: calc(var(--banner-height) - var(--file-margins) + 4px + 0.8em);
+    }
+    .is-mobile .markdown-preview-view.show-properties.banner .metadata-container {
+        margin-top: calc(var(--banner-height) - var(--file-margins-block) + 4px + 0.8em);
     }
 }
 
@@ -128,6 +143,14 @@ body {
         text-align: center;
     }
 }
+.is-mobile .markdown-preview-view.banner.banner-title {
+    --inline-title-line-height: 2;
+
+    .inline-title {
+        left: unset;
+    }
+
+}
 
 @mixin image-banner-slope {
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--banner-angle-height)), 0 100%);
@@ -159,6 +182,11 @@ body {
         left: 0;
         text-align: right;
     }
+}
+
+.is-mobile .markdown-preview-view.banner:is(.banner-slant, .banner-slope) .inline-title {
+    top: calc(anchor(--anchor-preview-section top) + var(--banner-height) - var(--file-margins-block) - 1em - var(--banner-title-shadow-size));
+    right: anchor(--anchor-preview-section right, var(--file-margins-inline));
 }
 
 @media print {

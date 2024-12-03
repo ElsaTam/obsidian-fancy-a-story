@@ -61,7 +61,7 @@ Author: ElsaTam (Kapirklaa in Discord)
 }
 .callout[data-callout=comic-panel] img {
   height: var(--strip-height);
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 0;
 }
 .callout[data-callout=comic-panel] p {
@@ -95,6 +95,10 @@ Author: ElsaTam (Kapirklaa in Discord)
 }
 .callout[data-callout=comic-panel][data-callout-metadata~=bubble][data-callout-metadata~=right] > .callout-content > *:not(:has(img)) {
   left: unset;
+}
+.callout[data-callout=comic-panel][data-callout-metadata~=bubble]:is([data-callout-metadata~=top], [data-callout-metadata~=bottom], [data-callout-metadata~=left], [data-callout-metadata~=right]) {
+  float: none;
+  margin: 0;
 }
 
 .callout[data-callout=comic-panel][data-callout-metadata~=overflow] {

@@ -7,6 +7,11 @@ body {
     --aside-border-thickness: 4px;
 }
 
+.is-mobile {
+    --aside-width: 200px;
+    --aside-border-thickness: 2px;
+}
+
 .markdown-preview-view aside,
 .markdown-preview-view .aside-left,
 .markdown-preview-view .aside-right {

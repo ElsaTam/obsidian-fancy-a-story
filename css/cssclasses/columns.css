@@ -24,9 +24,14 @@ Author: ElsaTam (Kapirklaa in Discord)
     column-count: 3;
   }
 }
-@container markdown-view (width < 600px) {
+@container markdown-view (500px < width < 600px) {
   :is(.columns-3, .columns-4).markdown-preview-view .markdown-preview-section {
     column-count: 2;
+  }
+}
+@container markdown-view (width < 500px) {
+  :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section {
+    column-count: 1;
   }
 }
 :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section {

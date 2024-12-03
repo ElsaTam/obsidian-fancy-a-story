@@ -114,7 +114,6 @@ ul:has(> li > :is(.tag[href="#family-tree"], .family-tree)) li:not(:has(ul))::af
 }
 ul:has(> li > :is(.tag[href="#family-tree"], .family-tree)), ul:has(> li > :is(.tag[href="#family-tree"], .family-tree)) ul {
   display: flex;
-  justify-content: center;
   padding-top: 10px;
   margin-top: 0px;
   position: relative;
@@ -126,6 +125,7 @@ ul:has(> li > :is(.tag[href="#family-tree"], .family-tree)) li {
   list-style-type: none;
   position: relative;
   padding: 20px 5px 0 5px;
+  margin-inline: auto;
 }
 ul:has(> li > :is(.tag[href="#family-tree"], .family-tree)) li::before, ul:has(> li > :is(.tag[href="#family-tree"], .family-tree)) li::after {
   content: "";
@@ -157,7 +157,7 @@ ul:has(> li > :is(.tag[href="#family-tree"], .family-tree)) ul::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 50%;
+  right: 50%;
   border-left: 1px solid var(--family-tree-connectors-color);
   width: 0px;
   height: 20px;
@@ -171,6 +171,12 @@ ul:has(> li > :is(.tag[href="#family-tree"], .family-tree)) ul:not(:has(> li:fir
 ul:has(> li > :is(.tag[href="#family-tree"], .family-tree)) ul:not(:has(> li))::before, ul:has(> li > :is(.tag[href="#family-tree"], .family-tree)) ul:has(> li:first-child:last-child > :is(.tag[href="#wed"], .wed))::before {
   content: none;
 }
-ul:has(> li > :is(.tag[href="#family-tree"], .family-tree)) li:not(:has(> :is(.tag[href="#wed"], .wed))):first-child:last-child, ul:has(> li > :is(.tag[href="#family-tree"], .family-tree)) li:has(> :is(.tag[href="#wed"], .wed)) + li:last-child::after {
+ul:has(> li > :is(.tag[href="#family-tree"], .family-tree)) li:not(:has(> :is(.tag[href="#wed"], .wed))):first-child:last-child::after, ul:has(> li > :is(.tag[href="#family-tree"], .family-tree)) li:has(> :is(.tag[href="#wed"], .wed)) + li:last-child::after {
   content: none;
+}
+
+@media print {
+  ul:has(> li > .tag[href="#family-tree"]) {
+    --family-tree-connectors-color: var(--text-normal);
+  }
 }

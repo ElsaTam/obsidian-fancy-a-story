@@ -28,14 +28,12 @@ body {
     [class*="footer-img"] {
         > .markdown-preview-section > div:nth-last-child(1 of div.el-p):has(.image-embed) {
             --image-shadow-offset: 0;
-            position: fixed;
-            transform: translateY(calc(var(--file-margins) + 1px));
-            position-anchor: --anchor-reading-view;
-            bottom: anchor(bottom);
-            left: anchor(left);
+            position: sticky;
+            bottom: 0;
             width: calc(100cqw + 2 * var(--file-margins));
             font-size: 0;
             margin-left: calc(50% - 50cqw - var(--file-margins));
+            transform: translateY(calc(var(--file-margins) + 1px));
             background-color: var(--workleaves-background);
             
             p {
@@ -67,6 +65,12 @@ body {
 
     :is(.footer-background, .footer-bg)[class*="footer-img"] > .markdown-preview-section > div:nth-last-child(2) {
         z-index: -1;
+    }
+
+    .is-mobile [class*="footer-img"] > .markdown-preview-section > div:nth-last-child(1 of div.el-p):has(.image-embed) {
+        transform: translateY(calc(var(--file-margins-block) + 1px));
+        width: calc(100cqw + 2 * var(--file-margins-inline));
+        margin-left: calc(50% - 50cqw - var(--file-margins-inline));
     }
 }
 

@@ -40,7 +40,8 @@
         justify-content: center;
         position: absolute;
         top: calc(var(--padding-top) - 0.5em);
-        width: fit-content;
+        width: max-content;
+        max-width: 100%;
         background: none;
         z-index: 1;
         left: 50%;

@@ -60,7 +60,7 @@
     }
     img {
         height: var(--strip-height);
-        object-fit: contain;
+        object-fit: cover;
         border-radius: 0;
     }
     p {
@@ -90,6 +90,11 @@
     &[data-callout-metadata~="bottom"] > .callout-content > *:not(:has(img)) { top: unset; }
     &[data-callout-metadata~="left"] > .callout-content > *:not(:has(img)) { right: unset; }
     &[data-callout-metadata~="right"] > .callout-content > *:not(:has(img)) { left: unset; }
+
+    &:is([data-callout-metadata~="top"], [data-callout-metadata~="bottom"], [data-callout-metadata~="left"], [data-callout-metadata~="right"]) {
+        float: none;
+        margin: 0;
+    }
 }
 
 .callout[data-callout="comic-panel"][data-callout-metadata~="overflow"] {
