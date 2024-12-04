@@ -3,47 +3,23 @@
 @forward '../shared/workleaves';
 
 .is-mobile {
+    --font-ui-smaller: 13.5px;
+    --font-ui-small: 14px;
+    --font-ui-medium: 15px;
+    --font-ui-large: 20px;
     --icon-l-stroke-width: 1.2px;
+    --icon-s: 16px;
+    --icon-m: 18px;
+    --icon-l: 20px;
     --link-decoration-thickness: 1px;
 }
 
-// Circle cutouts
-.workspace-drawer:is(.mod-left, .mod-right) {
-    padding-inline: var(--cutout-outline-inset);
-    mask-composite: intersect;
-}
-.workspace-drawer.mod-left {
-    -webkit-mask-image: radial-gradient(var(--cutout-corner-radius) at 100% 0, transparent 100%, black),
-          radial-gradient(var(--cutout-corner-radius) at 100% 100%, transparent 100%, black);
-}
-.workspace-drawer.mod-right {
-    -webkit-mask-image: radial-gradient(var(--cutout-corner-radius) at 0 0, transparent 100%, black),
-          radial-gradient(var(--cutout-corner-radius) at 0 100%, transparent 100%, black);
+.workspace-drawer-active-tab-header {
+    border-radius: var(--radius-s);
 }
 
-.workspace-drawer::before {
-    content: "";
-    position: absolute;
-    inset: var(--cutout-outline-inset);
-    background: var(--background-secondary);
-    -webkit-mask: radial-gradient(
-        var(--cutout-corner-radius) at var(--cutout-corner-radius) var(--cutout-corner-radius),
-        transparent calc(100% - 1px),
-        black calc(100% - 1px) 100%,
-        transparent) calc(-1 * var(--cutout-corner-radius)) calc(-1 * var(--cutout-corner-radius)),
-    linear-gradient(90deg, black 2px, transparent 0) -1px 50% / 100% calc(100% - var(--cutout-corner-radius) * 2 + 1px) repeat-x,
-    linear-gradient(       black 2px, transparent 0) 50% -1px / calc(100% - var(--cutout-corner-radius) * 2 + 1px) 100% repeat-y;
-}
-
-// Background color
-.workspace-drawer {
-    --mobile-sidebar-background: var(--workleaves-background);
-}
-
-.workspace-drawer-inner,
-.theme-dark .workspace-drawer-inner,
-.workspace-drawer-active-tab-container {
-    background-color: transparent;
+.is-mobile .mod-root .view-header {
+    padding-inline: var(--size-4-3);
 }
 
 @scope (.is-mobile :is(.markdown-source-view, .markdown-preview-view) .markdown-embed[alt~="faded"]) to (.markdown-embed) {
