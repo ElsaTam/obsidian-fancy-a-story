@@ -243,10 +243,36 @@ Choose between
 
 See [tasks]({% link docs/lists/tasks.md %}) for screenshots.
 
+#### Floating button to switch note modes
+
+{: .note }
+Idea from the [Thing](https://github.com/colineckert/obsidian-things) theme, by colineckert, under MIT License.
+
+The button to switch between editing and reading modes can be made floating.
+
+The following css variables are used to define the button:
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--fas-floating-mode-button-color` | Color of the button | `var(--color-accent)` |
+| `--fas-floating-mode-button-icon-color` | Color of the icon | `white` |
+| `--fas-floating-mode-button-size` | Size of the button | `50px` |
+
+#### Floating button position
+
+Position of the floating button (to switch between editing and reading modes) on the screen.
+
+You can also change the following css variables in a snippet:
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--fas-floating-mode-button-space-inline` | Left or Right margin | `20px` |
+| `--fas-floating-mode-button-space-bottom` | Bottom margin | `50px` |
+
 #### Highlight active note
 
 {: .note }
-Idea from the plugin [Obsidian Limelight](https://github.com/smikula/obsidian-limelight/tree/master), by smikula, under MIT License.<br>Code adapted and shared by @tif on [Discord](https://discord.com/channels/686053708261228577/1283473301682786305/1292664955270860891). Thanks a lot!
+Idea from the plugin [Obsidian Limelight](https://github.com/smikula/obsidian-limelight), by smikula, under MIT License.<br>Code adapted and shared by @tif on [Discord](https://discord.com/channels/686053708261228577/1283473301682786305/1292664955270860891). Thanks a lot!
 
 Lower the opacity of non active notes.
 

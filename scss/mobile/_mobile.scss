@@ -2,6 +2,8 @@
 @forward '../shared/cutouts';
 @forward '../shared/workleaves';
 
+@use 'floating-mode-button';
+
 .is-mobile {
     --font-ui-smaller: 13.5px;
     --font-ui-small: 14px;

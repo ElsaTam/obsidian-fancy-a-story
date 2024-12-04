@@ -1,0 +1,32 @@
+body {
+    --fas-floating-mode-button: enable;
+    --fas-floating-mode-button-position: right;
+    --fas-floating-mode-button-color: var(--color-accent);
+    --fas-floating-mode-button-icon-color: white;
+    --fas-floating-mode-button-opacity: 0.8;
+    --fas-floating-mode-button-size: 50px;
+    --fas-floating-mode-button-space-inline: 20px;
+    --fas-floating-mode-button-space-bottom: 50px;
+}
+
+@container style(--fas-floating-mode-button: enable) {
+    .is-mobile .mod-root .view-action[aria-label*="edit"] {
+        --icon-stroke: 2px;
+        position: fixed;
+        bottom: var(--fas-floating-mode-button-space-bottom);
+        right: var(--fas-floating-mode-button-space-inline);
+        width: var(--fas-floating-mode-button-size);
+        height: var(--fas-floating-mode-button-size);
+        border-radius: 50%;
+        background-color: rgb(from var(--fas-floating-mode-button-color) r g b / var(--fas-floating-mode-button-opacity));
+        color: var(--fas-floating-mode-button-icon-color);
+        box-shadow: var(--shadow-s);
+    }
+}
+
+@container style(--fas-floating-mode-button-position: left) {
+    .is-mobile .mod-root .view-action[aria-label*="edit"] {
+        right: unset;
+        left: var(--fas-floating-mode-button-space-inline);
+    }
+}
