@@ -89,10 +89,12 @@ Credits and Thanks
 
 I would love to thanks all those people for their feedbacks, encouragements, and propositions during the development of the theme. Thank you also to some of you for your patience with the multiple times I broke the theme and the snippets while you were using them!
 - Aanu
-- icy
 - Data
 - Em
 - Gandalf
+- Hekx
+- Hydra
+- icy
 - kmfrog
 - Martin Crendraven
 - moss▲FLUX
@@ -108,6 +110,7 @@ I would love to thanks all those people for their feedbacks, encouragements, and
 Credit to these projects for some inspiration!
 - [ITS](https://github.com/SlRvb/Obsidian--ITS-Theme) by SlRvb, for the fas-infobox callout and the alternative checkboxes
 - [Minimal](https://github.com/kepano/obsidian-minimal) by kepano, for the alternative checkboxes
+- [Thing](https://github.com/colineckert/obsidian-things) by colineckert, for the floating button (edit/read)
 - [Limelight](https://github.com/smikula/obsidian-limelight/tree/master) by smikula, modified code by tif, for the Highlight active note feature
 - [Rainbow folder titles](https://github.com/r-u-s-h-i-k-e-s-h/Obsidian-CSS-Snippets/blob/Collection/Snippets/File%20explorer%20styling%20-%20Rainbow%20folder%20titles.md) by sailKite
 
