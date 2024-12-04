@@ -138,6 +138,7 @@ body {
   position: absolute;
   top: calc(var(--banner-height) * 0.5);
   right: 50%;
+  left: unset;
   transform: translate(50%, -50%);
   display: block;
   border: 1px solid var(--color-base-50);
