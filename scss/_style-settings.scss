@@ -724,6 +724,37 @@ settings:
 
     -
         id: banners
+        title: App background image
+        type: heading
+        collapsed: true
+        level: 2
+    -
+        id: fas-background-image
+        title: Enable app background image
+        type: class-toggle
+        default: false
+    -
+        id: fas-background-image-url
+        title: Image url
+        type: variable-text
+        default: url("")
+    -
+        id: fas-background-image-blur
+        title: Blur
+        type: variable-number
+        default: 0
+        format: px
+    -
+        id: fas-background-image-opacity
+        title: Opacity
+        type: variable-number-slider
+        default: 1
+        min: 0
+        max: 1
+        step: 0.05
+
+    -
+        id: banners
         title: Banners
         type: heading
         collapsed: true

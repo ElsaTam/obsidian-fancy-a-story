@@ -1,5 +1,3 @@
-@use 'fas-opposite-bg';
-
 @use 'ribbon';
 @use 'scrollbar';
 @use 'status-bar';
@@ -8,3 +6,7 @@
 @use 'vault-profile';
 @use 'workspace';
 @use 'sidebars/sidebars';
+
+@use 'fas-opposite-bg';
+@use 'fas-highlight-active-note';
+@use 'fas-background-image';
