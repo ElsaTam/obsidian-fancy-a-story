@@ -280,6 +280,24 @@ Lower the opacity of non active notes.
 
 Enable rainbow colors in the file explorer, for the top level folder
 
+## App background image
+
+Add a background image for the whole app.
+
+[![]({% link images/stylesettings/app-background-image.webp %}){: width="400" }]({% link images/stylesettings/app-background-image.webp %})
+
+#### Enable app background image
+
+#### Image url
+
+Must be either:
+- the web url of an online image;
+- the base64 encoded url of an embed image.
+
+#### Blur
+
+#### Opacity
+
 ## Banners
 
 #### Banner height

@@ -1,0 +1,106 @@
+body {
+    --fas-background-image-url: url('https://images6.alphacoders.com/132/1323880.png');
+    --fas-background-image-blur: 0px;
+    --fas-background-image-opacity: 1;
+}
+
+.fas-background-image:not(.is-mobile) {
+    // Makes the tab header container transparent
+    &.is-hidden-frameless:not(.is-fullscreen) .mod-root .workspace-tab-header-container,
+    &:not(.is-frameless) .mod-root .workspace-tab-header-container {
+        border-top: 6px solid transparent;
+        background-color: transparent;
+    }
+
+    // Add a margins
+    .workspace > .workspace-split.mod-root {
+        height: calc(100% - 6px);
+    }
+    .workspace:not(.is-right-sidedock-open) > .workspace-split.mod-root {
+        margin-right: 6px;
+    }
+    &.is-popout-window .workspace > .workspace-split.mod-root {
+        width: calc(100% - 12px);
+        margin-left: 6px;
+    }
+
+    // Add a soft border around each tab pane
+    .mod-root .workspace-tab-container {
+        border: 1px solid var(--sidedock-inset-border-color);
+    }
+
+    // Use the a background for individual tab headers
+    &.is-hidden-frameless:not(.is-fullscreen) .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner,
+    &:not(.is-frameless) .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
+        background-color: rgb(from var(--workspace-background) r g b / 0.8);
+    }
+    .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% calc(100% - 8px),
+            calc(100% - 8px) 100%,
+            8px 100%,
+            0 calc(100% - 8px)
+        );
+    }
+    .workspace-tab-header .workspace-tab-header-inner::before,
+    .workspace-tab-header .workspace-tab-header-inner::after,
+    .workspace-tab-header + .workspace-tab-header.is-active::before {
+        display: none;
+    }
+
+    // Remove cutout corner for first and last tabs 
+    .workspace-tab-header:not(.is-active):first-child .workspace-tab-header-inner {
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% calc(100% - 8px),
+            calc(100% - 8px) 100%,
+            0 100%
+        );
+    }
+    .workspace-tab-header:not(.is-active):last-child .workspace-tab-header-inner {
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 100%,
+            8px 100%,
+            0 calc(100% - 8px)
+        );
+    }
+    .workspace-tab-header:not(.is-active):first-child:last-child .workspace-tab-header-inner {
+        clip-path: none;
+    }
+    
+    // Add the background image
+    .app-container {
+        background-image: var(--fas-background-image-url);
+        background-size: cover;
+    }
+    // Opacity, blur, and shadow
+    .workspace {
+        background-color: rgb(from var(--workspace-background) r g b / calc(1 - var(--fas-background-image-opacity)));
+        backdrop-filter: blur(var(--fas-background-image-blur));
+        filter: drop-shadow(0 0 8px rgb(0 0 0 / 0.2));
+    }
+
+    // Vault profile and ribbon
+    .workspace-sidedock-vault-profile,
+    .workspace-ribbon {
+        --icon-opacity: 0.5;
+        transition: background-color 0.2s;
+    }
+
+    .workspace-ribbon:hover {
+        background-color: rgba(var(--mono-rgb-0), 0.6);
+    }
+    .workspace-split.mod-left-split .workspace-sidedock-vault-profile:not(:is(.is-mobile .workspace-sidedock-vault-profile)):hover {
+        background-color: rgba(var(--mono-rgb-0), 0.6);
+        --workspace-foreground: rgb(var(--mono-rgb-100));
+        --workspace-foreground-faint: rgba(var(--mono-rgb-100), 0.6);
+        --workspace-foreground-muted: rgba(var(--mono-rgb-100), 0.6);
+        --vault-profile-color: rgba(var(--mono-rgb-100), 0.6);
+        --vault-profile-color-hover: rgb(var(--mono-rgb-100));
+    }
+}
