@@ -5,6 +5,7 @@ nav_order: 6
 
 | Class                                                              | Description                                          | Source                                                           |
 |:-------------------------------------------------------------------|:-----------------------------------------------------|:-----------------------------------------------------------------|
+| [`background-image`]({% link docs/cssclasses/background-image.md %}) | Adds a background image (with Style Settings) | [`background-image.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/background-image.css) |
 | [`banner` and variants]({% link docs/cssclasses/banner.md %})      | Adds a banner with different options                 | [`banner.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/banner.css) |
 | [`black-and-white`]({% link docs/cssclasses/black-and-white.md %}) | Turns the page in black and white                    | [`black-and-white.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/black-and-white.css) |
 | [`columns-x`]({% link docs/cssclasses/columns.md %})               | Use a 2, 3 or 4 columns layout                       | [`columns.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/columns.css) |

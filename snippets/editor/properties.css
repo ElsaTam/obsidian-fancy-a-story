@@ -35,6 +35,9 @@ body {
   top: 0;
   transform: translateY(calc(-50% + 0.05em));
   background: linear-gradient(to right, transparent, var(--workleaves-background) var(--heading-padding-inline), var(--workleaves-background) calc(100% - var(--heading-padding-inline)), transparent 100%);
+  background-size: 100% 5px;
+  background-repeat: no-repeat;
+  background-position: center calc(50% + 1px);
   padding-inline: var(--heading-padding-inline);
 }
 

@@ -12,10 +12,6 @@ Author: ElsaTam (Kapirklaa in Discord)
   anchor-name: --anchor-preview-section;
 }
 
-.markdown-reading-view {
-  anchor-name: --anchor-reading-view;
-}
-
 body {
   --file-margins-block: var(--size-4-8);
   --file-margins-inline: var(--size-4-8);
