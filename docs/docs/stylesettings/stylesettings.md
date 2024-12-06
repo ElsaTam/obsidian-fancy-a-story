@@ -298,6 +298,22 @@ Must be either:
 
 #### Opacity
 
+## Notes background image
+
+Add a background image to every note. See the cssclass [`background-image`]({% link docs/cssclasses/background-image.md %}).
+
+#### Enable note background image for all notes
+
+#### Image url
+
+Must be either:
+- the web url of an online image;
+- the base64 encoded url of an embed image.
+
+#### Blend mode, light/dark mode
+
+#### Repeat background image
+
 ## Banners
 
 #### Banner height
