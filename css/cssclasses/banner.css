@@ -191,32 +191,40 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--banner-angle-height) - var(--banner-slope-border-width)), 0 calc(100% - var(--banner-slope-border-width)));
   }
 }
-.markdown-source-view.banner.banner-edit-hide .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) {
+.markdown-source-view.banner.banner-edit-hide .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed),
+.fas-banner-edit-hide .markdown-source-view.banner .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) {
   --image-shadow-offset: 0;
 }
-.markdown-source-view.banner.banner-edit-hide .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) img {
+.markdown-source-view.banner.banner-edit-hide .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) img,
+.fas-banner-edit-hide .markdown-source-view.banner .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) img {
   display: none;
 }
 
-.markdown-source-view.banner.banner-edit-icon .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) {
+.markdown-source-view.banner.banner-edit-icon .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed),
+.fas-banner-edit-icon .markdown-source-view.banner .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) {
   --image-shadow-offset: 0;
 }
-.markdown-source-view.banner.banner-edit-icon .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) img {
+.markdown-source-view.banner.banner-edit-icon .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) img,
+.fas-banner-edit-icon .markdown-source-view.banner .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) img {
   display: none;
 }
-.markdown-source-view.banner.banner-edit-icon .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed):hover img {
+.markdown-source-view.banner.banner-edit-icon .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed):hover img,
+.fas-banner-edit-icon .markdown-source-view.banner .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed):hover img {
   position: absolute;
   display: block;
 }
-.markdown-source-view.banner.banner-edit-icon .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed)::after {
+.markdown-source-view.banner.banner-edit-icon .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed)::after,
+.fas-banner-edit-icon .markdown-source-view.banner .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed)::after {
   content: "🖼️ banner";
   font-size: 12px;
   color: var(--text-muted);
 }
 
-.markdown-source-view.banner.banner-edit-small .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) {
+.markdown-source-view.banner.banner-edit-small .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed),
+.fas-banner-edit-small .markdown-source-view.banner .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) {
   --image-shadow-offset: 0;
 }
-.markdown-source-view.banner.banner-edit-small .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) img {
+.markdown-source-view.banner.banner-edit-small .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) img,
+.fas-banner-edit-small .markdown-source-view.banner .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) img {
   max-width: 100px;
 }

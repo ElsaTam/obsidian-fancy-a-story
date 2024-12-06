@@ -857,6 +857,22 @@ settings:
             - 
                 value: margins
                 label: Inside margins
+    - 
+        id: fas-banner-edit-mode
+        title: Banner style in edit mode
+        type: class-select
+        allowEmpty: true
+        default: none
+        options:
+            - 
+                value: fas-banner-edit-hide
+                label: Hidden
+            - 
+                value: fas-banner-edit-small
+                label: Small (100px)
+            - 
+                value: fas-banner-edit-icon
+                label: Icon
 
 
 
