@@ -187,7 +187,8 @@ body {
 }
 
 
-.markdown-source-view.banner.banner-edit-hide {
+.markdown-source-view.banner.banner-edit-hide,
+.fas-banner-edit-hide .markdown-source-view.banner {
     .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) {
         --image-shadow-offset: 0;
         img {
@@ -196,7 +197,8 @@ body {
     }
 }
 
-.markdown-source-view.banner.banner-edit-icon {
+.markdown-source-view.banner.banner-edit-icon,
+.fas-banner-edit-icon .markdown-source-view.banner {
     .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) {
         --image-shadow-offset: 0;
         img {
@@ -214,7 +216,8 @@ body {
     }
 }
 
-.markdown-source-view.banner.banner-edit-small {
+.markdown-source-view.banner.banner-edit-small,
+.fas-banner-edit-small .markdown-source-view.banner {
     .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) {
         --image-shadow-offset: 0;
         img {

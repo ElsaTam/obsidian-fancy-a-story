@@ -328,6 +328,13 @@ Angle of the slope for the `banner-slope` or `banner-slant` cssclasses.
 
 Define the type of banner for PDF exports. Full bleed will make the banner go from on edge to the page to the other. Inside margins will not cover the margins in order to leave free space for printing.
 
+#### Banner style in edit mode
+
+Select how the banner image will be displayed edit mode.
+- Hidden will completely hide the image
+- Small will reduce the width of the image to 100px
+- Icon will show a small `🖼️ banner` that you can hover to see the image in a very small icon (approx. 60px wide)
+
 
 # Additional content
 
