@@ -23,10 +23,9 @@ body {
 
 
 @media screen {
-    .markdown-preview-view {
-        anchor-name: --anchor-reading-view;
-    }
     [class*="footer-img"] {
+        background-color: var(--workleaves-background);
+
         > .markdown-preview-section > div:nth-last-child(1 of div.el-p):has(.image-embed) {
             --image-shadow-offset: 0;
             position: sticky;
@@ -35,13 +34,14 @@ body {
             font-size: 0;
             margin-left: calc(50% - 50cqw - var(--file-margins-inline));
             transform: translateY(calc(var(--file-margins-block) + 1px));
-            background-color: var(--workleaves-background);
+            background-color: black;
+            mix-blend-mode: multiply;
+            opacity: var(--footer-img-opacity);
             
             p {
-                opacity: var(--footer-img-opacity);
                 margin: 0;
                 background-color: var(--footer-img-color);
-                mix-blend-mode: screen;
+                mix-blend-mode: exclusion;
             }
         
             img {
@@ -49,8 +49,8 @@ body {
                 width: 100%;
                 object-fit: cover;
                 object-position: center top;
-                filter: invert(1) saturate(0);
-                mix-blend-mode: multiply;
+                filter: saturate(0);
+                mix-blend-mode: luminosity;
             }
         }
         
@@ -59,9 +59,13 @@ body {
         }
     }
 
-    .theme-light [class*="footer-img"] > .markdown-preview-section > div:nth-last-child(2) p {
-        background-color: rgb(from var(--footer-img-color) calc(255 - r) calc(255 - g) calc(255 - b));
-        mix-blend-mode: difference;
+    .theme-dark [class*="footer-img"] > .markdown-preview-section > div:nth-last-child(1 of div.el-p):has(.image-embed) {
+        background-color: white;
+        mix-blend-mode: screen;
+
+        p {
+            background-color: rgb(from var(--footer-img-color) calc(255 - r) calc(255 - g) calc(255 - b));
+        }
     }
 
     :is(.footer-background, .footer-bg)[class*="footer-img"] > .markdown-preview-section > div:nth-last-child(2) {

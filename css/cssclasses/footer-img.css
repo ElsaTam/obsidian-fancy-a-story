@@ -11,10 +11,6 @@ Author: ElsaTam (Kapirklaa in Discord)
   anchor-name: --anchor-preview-section;
 }
 
-.markdown-reading-view {
-  anchor-name: --anchor-reading-view;
-}
-
 body {
   --workleaves-background: var(--background-primary);
   --workleaves-foreground: var(--text-normal);
@@ -82,8 +78,8 @@ body {
 }
 
 @media screen {
-  .markdown-preview-view {
-    anchor-name: --anchor-reading-view;
+  [class*=footer-img] {
+    background-color: var(--workleaves-background);
   }
   [class*=footer-img] > .markdown-preview-section > div:nth-last-child(1 of div.el-p):has(.image-embed) {
     --image-shadow-offset: 0;
@@ -93,28 +89,32 @@ body {
     font-size: 0;
     margin-left: calc(50% - 50cqw - var(--file-margins-inline));
     transform: translateY(calc(var(--file-margins-block) + 1px));
-    background-color: var(--workleaves-background);
+    background-color: black;
+    mix-blend-mode: multiply;
+    opacity: var(--footer-img-opacity);
   }
   [class*=footer-img] > .markdown-preview-section > div:nth-last-child(1 of div.el-p):has(.image-embed) p {
-    opacity: var(--footer-img-opacity);
     margin: 0;
     background-color: var(--footer-img-color);
-    mix-blend-mode: screen;
+    mix-blend-mode: exclusion;
   }
   [class*=footer-img] > .markdown-preview-section > div:nth-last-child(1 of div.el-p):has(.image-embed) img {
     height: var(--footer-img-height);
     width: 100%;
     object-fit: cover;
     object-position: center top;
-    filter: invert(1) saturate(0);
-    mix-blend-mode: multiply;
+    filter: saturate(0);
+    mix-blend-mode: luminosity;
   }
   [class*=footer-img] > .markdown-preview-sizer {
     padding-bottom: 0 !important;
   }
-  .theme-light [class*=footer-img] > .markdown-preview-section > div:nth-last-child(2) p {
+  .theme-dark [class*=footer-img] > .markdown-preview-section > div:nth-last-child(1 of div.el-p):has(.image-embed) {
+    background-color: white;
+    mix-blend-mode: screen;
+  }
+  .theme-dark [class*=footer-img] > .markdown-preview-section > div:nth-last-child(1 of div.el-p):has(.image-embed) p {
     background-color: rgb(from var(--footer-img-color) calc(255 - r) calc(255 - g) calc(255 - b));
-    mix-blend-mode: difference;
   }
   :is(.footer-background, .footer-bg)[class*=footer-img] > .markdown-preview-section > div:nth-last-child(2) {
     z-index: -1;

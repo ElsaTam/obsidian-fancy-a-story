@@ -723,7 +723,7 @@ settings:
                 label: Disable
 
     -
-        id: banners
+        id: app-background-image
         title: App background image
         type: heading
         collapsed: true
@@ -752,6 +752,80 @@ settings:
         min: 0
         max: 1
         step: 0.05
+
+    -
+        id: note-background-image
+        title: Notes background image
+        type: heading
+        collapsed: true
+        level: 2
+    -
+        id: fas-note-background-image
+        title: Enable notes background image for all notes
+        description: Use the cssclass "no-background" to disable in specific notes. If this option feature is disabled globally, you can use the cssclass "background-img" to enable it in specific notes.
+        type: class-toggle
+        default: false
+    -
+        id: fas-note-background-image-url
+        title: Image url
+        type: variable-text
+        default: url("")
+    -
+        id: fas-note-background-image-blend-mode-light
+        title: Blend mode, light mode
+        type: variable-select
+        default: normal
+        options:
+            - normal
+            - multiply
+            - screen
+            - overlay
+            - darken
+            - lighten
+            - color-dodge
+            - color-burn
+            - hard-light
+            - soft-light
+            - difference
+            - exclusion
+            - hue
+            - saturation
+            - color
+            - luminosity
+            - plus-darker
+            - plus-lighter
+    -
+        id: fas-note-background-image-blend-mode-dark
+        title: Blend mode, dark mode
+        type: variable-select
+        default: normal
+        options:
+            - normal
+            - multiply
+            - screen
+            - overlay
+            - darken
+            - lighten
+            - color-dodge
+            - color-burn
+            - hard-light
+            - soft-light
+            - difference
+            - exclusion
+            - hue
+            - saturation
+            - color
+            - luminosity
+            - plus-darker
+            - plus-lighter
+    -
+        id: fas-note-background-image-repeat
+        title: Repeat background image
+        type: variable-select
+        default: no
+        options:
+            - yes
+            - no
 
     -
         id: banners

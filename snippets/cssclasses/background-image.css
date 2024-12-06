@@ -1,0 +1,40 @@
+/* GPLv3 license
+FAS - Background image
+Author: ElsaTam (Kapirklaa in Discord)
+*/
+body {
+  --fas-note-background-image-url: url("");
+  --fas-note-background-image-blend-mode-dark: normal;
+  --fas-note-background-image-blend-mode-light: normal;
+  --fas-note-background-image-repeat: no;
+}
+
+.theme-dark {
+  --fas-note-background-image-blend-mode: var(--fas-note-background-image-blend-mode-dark);
+}
+
+.theme-light {
+  --fas-note-background-image-blend-mode: var(--fas-note-background-image-blend-mode-light);
+}
+
+.markdown-source-view:is(.background-img, .bg-img), .markdown-preview-view:is(.background-img, .bg-img) {
+  background-color: var(--workleaves-background);
+  background-image: var(--fas-note-background-image-url);
+  background-blend-mode: var(--fas-note-background-image-blend-mode);
+}
+
+@container style(--fas-note-background-image-repeat: no) {
+  .markdown-source-view:is(.background-img, .bg-img), .markdown-preview-view:is(.background-img, .bg-img) {
+    background-size: cover;
+    background-position: center;
+  }
+}
+@container style(--fas-note-background-image-repeat: yes) {
+  .markdown-source-view:is(.background-img, .bg-img), .markdown-preview-view:is(.background-img, .bg-img) {
+    background-repeat: repeat;
+  }
+}
+:is(.background-img, .bg-img) .metadata-container {
+  background-color: rgb(from var(--workleaves-background) r g b/0.7);
+  backdrop-filter: blur(5px);
+}
