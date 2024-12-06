@@ -761,7 +761,7 @@ settings:
         level: 2
     -
         id: fas-note-background-image
-        title: Enable notes background image for all notes
+        title: Enable note background image for all notes
         description: Use the cssclass "no-background" to disable in specific notes. If this option feature is disabled globally, you can use the cssclass "background-img" to enable it in specific notes.
         type: class-toggle
         default: false
