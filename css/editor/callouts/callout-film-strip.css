@@ -76,7 +76,7 @@ Author: ElsaTam (Kapirklaa in Discord)
 }
 
 /* Fix for Minimal theme and img-grid cssclass */
-.callout[data-callout=film-strip] .callout-content > p:has(> .image-embed) {
-  display: flex;
+.callout[data-callout=film-strip] .callout-content > p {
+  display: flex !important;
   gap: 0;
 }
