@@ -2,7 +2,7 @@
 @forward '../../../shared/file-margins';
 @use '../../../mixins/wide';
 
-.block-language-dataviewjs:has(.dataview-wide) {
+.markdown-reading-view .block-language-dataviewjs {
     overflow: visible !important;
 }
 
