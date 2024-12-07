@@ -5,27 +5,15 @@ body {
     --titlebar-background-focused: none;
 }
 
-
-body:not(:has(.is-right-sidedock-open)) {
-
-    .titlebar-button-container {
-        --titlebar-background: var(--workleaves-background);
-        --titlebar-background-focused: var(--workleaves-background);
-    }
-    
-    &.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -6px;
-        display: block;
-        width: 6px;
-        height: 6px;
-        background-color: var(--titlebar-background);
-        clip-path: polygon(100% 0, 100% 100%, 0 100%);
-    }
-    
-    &.is-hidden-frameless:not(.is-fullscreen).is-focused .titlebar-button-container.mod-right::before {
-        background-color: var(--titlebar-background-focused);
-    }
+.mod-windows.is-hidden-frameless:not(.is-fullscreen) .workspace:not(.is-right-sidedock-open) .mod-root::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: calc(6px + var(--frame-right-space));
+    height: 6px;
+    background-color: var(--workleaves-background);
+    clip-path: polygon(6px 0, 100% 0, 100% 100%, 0 100%);
+    z-index: var(--layer-popover);
 }
