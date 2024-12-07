@@ -9,6 +9,10 @@ Author: ElsaTam (Kapirklaa in Discord)
   display: flow-root;
 }
 
+body {
+  --fas-infobox-padding: var(--size-4-3);
+}
+
 .callout[data-callout=fas-infobox] {
   --callout-content-padding: 0;
   --image-shadow-offset: 0;
@@ -29,8 +33,8 @@ Author: ElsaTam (Kapirklaa in Discord)
 .callout[data-callout=fas-infobox] h1 + p {
   margin-top: 0;
 }
-.callout[data-callout=fas-infobox] > .callout-content > :not(table, h1, p:has(.image-embed[alt~=cover]), p:has(img[alt~=cover])) {
-  padding-inline: var(--size-4-3);
+.callout[data-callout=fas-infobox] > .callout-content > * {
+  padding-inline: var(--fas-infobox-padding);
 }
 .callout[data-callout=fas-infobox] .callout-content hr:not(.sci-fi hr) {
   -webkit-mask-image: none;
@@ -70,21 +74,23 @@ body {
   /* background */
 }
 .callout[data-callout=fas-infobox] .image-embed[alt~=cover] {
-  border-bottom: 4px solid rgb(var(--callout-color));
   position: relative;
 }
 .callout[data-callout=fas-infobox] .image-embed[alt~=cover]::after {
   --triangle-size: 16px;
   content: "";
   position: absolute;
-  bottom: calc(-0.5 * var(--triangle-size) - 4px);
+  bottom: calc(-0.5 * var(--triangle-size));
   left: calc(50% - 0.5 * var(--triangle-size));
   border-right: calc(0.5 * var(--triangle-size)) solid transparent;
   border-left: calc(0.5 * var(--triangle-size)) solid transparent;
   border-top: calc(0.5 * var(--triangle-size)) solid rgb(var(--callout-color));
   z-index: 1;
 }
-.callout[data-callout=fas-infobox] img[alt*=cover]:not(.image-embed img) {
+.callout[data-callout=fas-infobox] img[alt*=cover] {
+  max-width: unset;
+  width: calc(100% + 2 * var(--fas-infobox-padding));
+  margin-left: calc(-1 * var(--fas-infobox-padding));
   border-bottom: 4px solid rgb(var(--callout-color));
 }
 .callout[data-callout=fas-infobox] .image-embed[alt~=icon] {
@@ -94,35 +100,21 @@ body {
   width: var(--infobox-icon-size, 70px);
   margin-top: calc(-0.5 * var(--infobox-icon-size, 70px));
   margin-bottom: calc(-0.5 * var(--infobox-icon-size, 70px));
-  margin-left: 10px;
-}
-.callout[data-callout=fas-infobox] .image-embed[alt~=icon] img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 20%;
-  border: 2px solid rgb(var(--callout-color));
-  background-color: var(--workleaves-background, var(--background-primary));
 }
 .callout[data-callout=fas-infobox] img[alt*=icon]:not(.image-embed img) {
   display: block;
   position: relative;
+  margin-top: calc(-0.5 * var(--infobox-icon-size, 70px) - var(--p-spacing));
+  margin-bottom: calc(-0.5 * var(--infobox-icon-size, 70px) - var(--p-spacing));
+}
+.callout[data-callout=fas-infobox] img[alt*=icon] {
   height: var(--infobox-icon-size, 70px);
   width: var(--infobox-icon-size, 70px);
   border: 2px solid rgb(var(--callout-color));
-  margin-top: calc(-0.5 * var(--infobox-icon-size, 70px));
-  margin-bottom: calc(-0.5 * var(--infobox-icon-size, 70px));
-  margin-left: 10px;
   object-fit: cover;
-  border-radius: 20%;
-  z-index: 1;
-}
-.callout[data-callout=fas-infobox] p:has(img[alt~=icon]) {
   z-index: 2;
-  position: relative;
-}
-.callout[data-callout=fas-infobox] p:has(img[alt~=icon], img[alt~=cover]) + :is(h1, h2, h3, h4, h5, h6, p) {
-  margin-top: 0;
+  border-radius: 20%;
+  background-color: var(--workleaves-background, var(--background-primary));
 }
 .callout[data-callout=fas-infobox] .image-embed[alt~=background] {
   position: absolute;
@@ -188,17 +180,18 @@ body {
   right: 0;
   border-right: calc(var(--overflow-width) - 1px) solid transparent;
 }
-.callout[data-callout=fas-infobox] .callout-title:has(> .callout-title-inner > h1:only-child) {
+
+.callout[data-callout=fas-infobox][data-callout-metadata~=h1-title] .callout-title {
   padding: 0;
   position: relative;
 }
-.callout[data-callout=fas-infobox] .callout-title:has(> .callout-title-inner > h1:only-child) .callout-title-inner {
+.callout[data-callout=fas-infobox][data-callout-metadata~=h1-title] .callout-title-inner {
   flex-grow: 1;
 }
-.callout[data-callout=fas-infobox] .callout-title:has(> .callout-title-inner > h1:only-child) h1 {
+.callout[data-callout=fas-infobox][data-callout-metadata~=h1-title] .callout-title h1 {
   padding-inline: calc(var(--icon-size) + var(--size-4-2));
 }
-.callout[data-callout=fas-infobox] .callout-title:has(> .callout-title-inner > h1:only-child) .callout-fold {
+.callout[data-callout=fas-infobox][data-callout-metadata~=h1-title] .callout-fold {
   position: absolute;
   z-index: 2;
   right: 0;
@@ -206,10 +199,10 @@ body {
   bottom: 0;
   transform: translateX(var(--overflow-width));
 }
-.callout[data-callout=fas-infobox] .callout-title:has(> .callout-title-inner > h1:only-child) .callout-fold svg {
+.callout[data-callout=fas-infobox][data-callout-metadata~=h1-title] .callout-fold svg {
   color: inherit;
 }
-.callout[data-callout=fas-infobox] .callout-title:has(> .callout-title-inner > h1:only-child) + .callout-content {
+.callout[data-callout=fas-infobox][data-callout-metadata~=h1-title] .callout-content {
   border: none;
 }
 
