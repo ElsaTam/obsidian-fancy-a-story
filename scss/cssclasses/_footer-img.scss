@@ -26,12 +26,11 @@ body {
     [class*="footer-img"] {
         background-color: var(--workleaves-background);
 
-        > .markdown-preview-section > div:nth-last-child(1 of div.el-p):has(.image-embed) {
+        > .markdown-preview-section > div:nth-last-child(1 of div.el-p) {
             --image-shadow-offset: 0;
             position: sticky;
-            bottom: 0;
+            bottom: -6px;
             width: calc(100cqw + 2 * var(--file-margins-inline));
-            font-size: 0;
             margin-left: calc(50% - 50cqw - var(--file-margins-inline));
             transform: translateY(calc(var(--file-margins-block) + 1px));
             background-color: black;
@@ -42,6 +41,7 @@ body {
                 margin: 0;
                 background-color: var(--footer-img-color);
                 mix-blend-mode: exclusion;
+                color: white;
             }
         
             img {
@@ -59,7 +59,7 @@ body {
         }
     }
 
-    .theme-dark [class*="footer-img"] > .markdown-preview-section > div:nth-last-child(1 of div.el-p):has(.image-embed) {
+    .theme-dark [class*="footer-img"] > .markdown-preview-section > div:nth-last-child(1 of div.el-p) {
         background-color: white;
         mix-blend-mode: screen;
 
