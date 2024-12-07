@@ -30,10 +30,11 @@ body {
         font-size: 0;
     }
 
-    &:has(a:hover) {
-        img:not(a:hover img) {
-            filter: saturate(10%) blur(1px);
-        }
+    &:hover img:not(a img) {
+        filter: saturate(10%) blur(1px);
+    }
+    &:hover a:not(:hover) img {
+        filter: saturate(70%);
     }
 }
 @for $i from 2 to 10 {
