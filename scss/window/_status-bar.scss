@@ -101,8 +101,12 @@
             opacity: var(--icon-opacity-inactive);
         }
 
-        .status-bar-item:not(:has(svg)) {
+        .status-bar-item {
             transform: rotate(180deg);
+        }
+
+        .status-bar-item svg {
+            transform: rotate(-180deg);
         }
 
         .status-bar:hover {
