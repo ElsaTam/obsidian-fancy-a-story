@@ -45,7 +45,7 @@
         border: none;
         padding: 0;
     }
-    > .callout-content > *:not(:has(img)) {
+    > .callout-content > p {
         position: absolute;
         color: rgb(var(--comic-color-rgb));
         background-color: rgb(var(--comic-background-rgb));
@@ -53,6 +53,11 @@
         left: 0; right: 0;
         bottom: 0;
         text-align: center;
+    }
+    blockquote {
+        border-inline-start: 0;
+        padding: 0;
+        margin: 0;
     }
     .image-embed {
         font-size: 0;
@@ -69,7 +74,7 @@
 }
 
 .callout[data-callout="comic-panel"][data-callout-metadata~="bubble"] {
-    > .callout-content > *:not(:has(img)) {
+    > .callout-content > p {
         border-radius: 17px;
         --g: 4px; // gap with the boundaries
         --s: 1px; // hard shadow size
@@ -86,10 +91,10 @@
         box-shadow: 1px 1px 0px 1px #000000;
     }
 
-    &[data-callout-metadata~="top"] > .callout-content > *:not(:has(img)) { bottom: unset; }
-    &[data-callout-metadata~="bottom"] > .callout-content > *:not(:has(img)) { top: unset; }
-    &[data-callout-metadata~="left"] > .callout-content > *:not(:has(img)) { right: unset; }
-    &[data-callout-metadata~="right"] > .callout-content > *:not(:has(img)) { left: unset; }
+    &[data-callout-metadata~="top"] > .callout-content > p { bottom: unset; }
+    &[data-callout-metadata~="bottom"] > .callout-content > p { top: unset; }
+    &[data-callout-metadata~="left"] > .callout-content > p { right: unset; }
+    &[data-callout-metadata~="right"] > .callout-content > p { left: unset; }
 
     &:is([data-callout-metadata~="top"], [data-callout-metadata~="bottom"], [data-callout-metadata~="left"], [data-callout-metadata~="right"]) {
         float: none;
