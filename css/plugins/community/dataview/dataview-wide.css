@@ -18,7 +18,7 @@ body {
   --file-margins-inline: var(--size-4-6);
 }
 
-.block-language-dataviewjs:has(.dataview-wide) {
+.markdown-reading-view .block-language-dataviewjs {
   overflow: visible !important;
 }
 
