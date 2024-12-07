@@ -83,10 +83,10 @@ Author: ElsaTam (Kapirklaa in Discord)
 .callout[data-callout=cards-deck] .callout-content > p > a > span > img:hover {
   --border-color: var(--border-color-hover);
 }
-.callout[data-callout=cards-deck] .callout-content > p:has(> :hover) > :not(:hover) {
+.callout[data-callout=cards-deck] .callout-content > p:hover > :not(:hover) {
   filter: saturate(0.2);
 }
-.callout[data-callout=cards-deck] .callout-content > p:has(> :hover) > :not(:hover), .callout[data-callout=cards-deck] .callout-content > p:has(> :hover) > :not(:hover) .markdown-preview-view {
+.callout[data-callout=cards-deck] .callout-content > p:hover > :not(:hover), .callout[data-callout=cards-deck] .callout-content > p:hover > :not(:hover) .markdown-preview-view {
   color: var(--text-faint);
 }
 .callout[data-callout=cards-deck] .callout-content > p > :hover ~ * {

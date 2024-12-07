@@ -66,7 +66,7 @@
 }
 
 @mixin card-not-hover {
-    &:has(> :hover) > :not(:hover) {
+    &:hover > :not(:hover) {
         filter: saturate(0.2);
         &, & .markdown-preview-view {
             color: var(--text-faint);

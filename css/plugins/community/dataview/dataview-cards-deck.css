@@ -145,10 +145,10 @@ body {
   .dataview-result-list-root-ul .markdown-embed-content:hover {
     outline: none;
   }
-  .dataview-result-list-root-ul:has(> :hover) > :not(:hover) {
+  .dataview-result-list-root-ul:hover > :not(:hover) {
     filter: saturate(0.2);
   }
-  .dataview-result-list-root-ul:has(> :hover) > :not(:hover), .dataview-result-list-root-ul:has(> :hover) > :not(:hover) .markdown-preview-view {
+  .dataview-result-list-root-ul:hover > :not(:hover), .dataview-result-list-root-ul:hover > :not(:hover) .markdown-preview-view {
     color: var(--text-faint);
   }
   .dataview-result-list-root-ul > :hover ~ * {
