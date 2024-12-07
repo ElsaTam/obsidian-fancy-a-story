@@ -31,8 +31,11 @@ body {
 .callout[data-callout=masonry] a {
   font-size: 0;
 }
-.callout[data-callout=masonry]:has(a:hover) img:not(a:hover img) {
+.callout[data-callout=masonry]:hover img:not(a img) {
   filter: saturate(10%) blur(1px);
+}
+.callout[data-callout=masonry]:hover a:not(:hover) img {
+  filter: saturate(70%);
 }
 
 .callout[data-callout=masonry][data-callout-metadata~=col-2] {
