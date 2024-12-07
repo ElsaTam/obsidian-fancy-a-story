@@ -6,7 +6,7 @@ body {
 }
 
 @container metadata (width > 600px) {
-    .metadata-content:not(:has(.drag-ghost-hidden)) {
+    .metadata-content:not(:is(body.is-grabbing .metadata-content:hover)) {
         display: block;
         column-count: var(--properties-columns);
         column-rule: 1px dashed var(--metadata-border-color);
