@@ -45,7 +45,7 @@ Author: ElsaTam (Kapirklaa in Discord)
   border: none;
   padding: 0;
 }
-.callout[data-callout=comic-panel] > .callout-content > *:not(:has(img)) {
+.callout[data-callout=comic-panel] > .callout-content > p {
   position: absolute;
   color: rgb(var(--comic-color-rgb));
   background-color: rgb(var(--comic-background-rgb));
@@ -54,6 +54,11 @@ Author: ElsaTam (Kapirklaa in Discord)
   right: 0;
   bottom: 0;
   text-align: center;
+}
+.callout[data-callout=comic-panel] blockquote {
+  border-inline-start: 0;
+  padding: 0;
+  margin: 0;
 }
 .callout[data-callout=comic-panel] .image-embed {
   font-size: 0;
@@ -68,7 +73,7 @@ Author: ElsaTam (Kapirklaa in Discord)
   margin: 0;
 }
 
-.callout[data-callout=comic-panel][data-callout-metadata~=bubble] > .callout-content > *:not(:has(img)) {
+.callout[data-callout=comic-panel][data-callout-metadata~=bubble] > .callout-content > p {
   border-radius: 17px;
   --g: 4px;
   --s: 1px;
@@ -84,16 +89,16 @@ Author: ElsaTam (Kapirklaa in Discord)
   border: 1px solid rgb(var(--comic-color-rgb));
   box-shadow: 1px 1px 0px 1px #000000;
 }
-.callout[data-callout=comic-panel][data-callout-metadata~=bubble][data-callout-metadata~=top] > .callout-content > *:not(:has(img)) {
+.callout[data-callout=comic-panel][data-callout-metadata~=bubble][data-callout-metadata~=top] > .callout-content > p {
   bottom: unset;
 }
-.callout[data-callout=comic-panel][data-callout-metadata~=bubble][data-callout-metadata~=bottom] > .callout-content > *:not(:has(img)) {
+.callout[data-callout=comic-panel][data-callout-metadata~=bubble][data-callout-metadata~=bottom] > .callout-content > p {
   top: unset;
 }
-.callout[data-callout=comic-panel][data-callout-metadata~=bubble][data-callout-metadata~=left] > .callout-content > *:not(:has(img)) {
+.callout[data-callout=comic-panel][data-callout-metadata~=bubble][data-callout-metadata~=left] > .callout-content > p {
   right: unset;
 }
-.callout[data-callout=comic-panel][data-callout-metadata~=bubble][data-callout-metadata~=right] > .callout-content > *:not(:has(img)) {
+.callout[data-callout=comic-panel][data-callout-metadata~=bubble][data-callout-metadata~=right] > .callout-content > p {
   left: unset;
 }
 .callout[data-callout=comic-panel][data-callout-metadata~=bubble]:is([data-callout-metadata~=top], [data-callout-metadata~=bottom], [data-callout-metadata~=left], [data-callout-metadata~=right]) {
