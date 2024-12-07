@@ -13,10 +13,6 @@ body {
   --file-margins-inline: var(--size-4-6);
 }
 
-.markdown-preview-view p:has(.markdown-embed[alt~=faded]) {
-  position: relative;
-}
-
 @scope (:is(.markdown-source-view, .markdown-preview-view) .markdown-embed[alt~="faded"]) to (.markdown-embed) {
   :scope {
     border-inline-start: none;
@@ -29,25 +25,6 @@ body {
   .embed-title {
     display: none;
   }
-  :scope:where(:not(:has(.mod-header + div + div)):not(:has(.mod-header + div br))):has(.mod-header + div > p),
-  :scope:where(:has(.mod-header + div > pre.frontmatter):not(:has(.mod-header + div + div + div)):not(:has(.mod-header + div + div br))):has(.mod-header + div + div > p) {
-    position: unset;
-  }
-  :scope:where(:not(:has(.mod-header + div + div)):not(:has(.mod-header + div br))):has(.mod-header + div > p) .markdown-embed-content .markdown-rendered p,
-  :scope:where(:has(.mod-header + div > pre.frontmatter):not(:has(.mod-header + div + div + div)):not(:has(.mod-header + div + div br))):has(.mod-header + div + div > p) .markdown-embed-content .markdown-rendered p {
-    margin-bottom: 0;
-  }
-  :scope:where(:not(:has(.mod-header + div + div)):not(:has(.mod-header + div br))):has(.mod-header + div > p), :scope:where(:not(:has(.mod-header + div + div)):not(:has(.mod-header + div br))):has(.mod-header + div > p) :where(.markdown-embed-content), :scope:where(:not(:has(.mod-header + div + div)):not(:has(.mod-header + div br))):has(.mod-header + div > p) :where(.markdown-embed-content .markdown-rendered), :scope:where(:not(:has(.mod-header + div + div)):not(:has(.mod-header + div br))):has(.mod-header + div > p) :where(.markdown-embed-content .markdown-rendered .markdown-preview-sizer), :scope:where(:not(:has(.mod-header + div + div)):not(:has(.mod-header + div br))):has(.mod-header + div > p) :where(.markdown-embed-content .markdown-rendered .markdown-preview-sizer .mod-header ~ div), :scope:where(:not(:has(.mod-header + div + div)):not(:has(.mod-header + div br))):has(.mod-header + div > p) :where(.markdown-embed-content .markdown-rendered .markdown-preview-sizer .mod-header ~ div p), :scope:where(:has(.mod-header + div > pre.frontmatter):not(:has(.mod-header + div + div + div)):not(:has(.mod-header + div + div br))):has(.mod-header + div + div > p), :scope:where(:has(.mod-header + div > pre.frontmatter):not(:has(.mod-header + div + div + div)):not(:has(.mod-header + div + div br))):has(.mod-header + div + div > p) :where(.markdown-embed-content), :scope:where(:has(.mod-header + div > pre.frontmatter):not(:has(.mod-header + div + div + div)):not(:has(.mod-header + div + div br))):has(.mod-header + div + div > p) :where(.markdown-embed-content .markdown-rendered), :scope:where(:has(.mod-header + div > pre.frontmatter):not(:has(.mod-header + div + div + div)):not(:has(.mod-header + div + div br))):has(.mod-header + div + div > p) :where(.markdown-embed-content .markdown-rendered .markdown-preview-sizer), :scope:where(:has(.mod-header + div > pre.frontmatter):not(:has(.mod-header + div + div + div)):not(:has(.mod-header + div + div br))):has(.mod-header + div + div > p) :where(.markdown-embed-content .markdown-rendered .markdown-preview-sizer .mod-header ~ div), :scope:where(:has(.mod-header + div > pre.frontmatter):not(:has(.mod-header + div + div + div)):not(:has(.mod-header + div + div br))):has(.mod-header + div + div > p) :where(.markdown-embed-content .markdown-rendered .markdown-preview-sizer .mod-header ~ div p) {
-    display: inline;
-  }
-  :scope:where(:not(:has(.mod-header + div + div)):not(:has(.mod-header + div br))):has(.mod-header + div > p) :where(.markdown-embed-content .markdown-rendered .markdown-preview-sizer .mod-header),
-  :scope:where(:has(.mod-header + div > pre.frontmatter):not(:has(.mod-header + div + div + div)):not(:has(.mod-header + div + div br))):has(.mod-header + div + div > p) :where(.markdown-embed-content .markdown-rendered .markdown-preview-sizer .mod-header) {
-    display: none;
-  }
-  :scope:where(:not(:has(.mod-header + div + div)):not(:has(.mod-header + div br))):has(.mod-header + div > p) :where(.markdown-embed-content .markdown-rendered .markdown-preview-sizer .markdown-preview-pusher),
-  :scope:where(:has(.mod-header + div > pre.frontmatter):not(:has(.mod-header + div + div + div)):not(:has(.mod-header + div + div br))):has(.mod-header + div + div > p) :where(.markdown-embed-content .markdown-rendered .markdown-preview-sizer .markdown-preview-pusher) {
-    display: inline-block;
-  }
   .markdown-embed-link {
     position: absolute;
     right: calc(-1 * var(--file-margins-inline));
@@ -56,7 +33,7 @@ body {
   :scope .markdown-embed-content {
     max-height: unset;
   }
-  :is(:scope, .markdown-embed):has(> .markdown-embed-link:hover) {
+  :is(:scope, .markdown-embed):hover {
     background-color: var(--background-modifier-hover);
   }
 }
