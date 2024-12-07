@@ -6,8 +6,8 @@ Author: ElsaTam (Kapirklaa in Discord)
 @use '../../../editor/callouts/callout-masonry';
 
 /* Fix for Minimal theme and img-grid cssclass */
-.callout[data-callout=masonry]:not([data-callout-metadata=horizontal]) > .callout-content > p:has(>.image-embed) {
-    display: block;
+.callout[data-callout=masonry]:not([data-callout-metadata=horizontal]) > .callout-content > p {
+    display: block !important;
     column-gap: 0.5rem;
 }
   
