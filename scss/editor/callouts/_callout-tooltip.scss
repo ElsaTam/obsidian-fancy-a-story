@@ -1,0 +1,49 @@
+.callout[data-callout="tooltip"] {
+
+    border: none;
+    background: none;
+    width: fit-content;
+    height: fit-content;
+
+    .callout-title {
+        position: absolute;
+        right: calc(var(--size-4-2) + var(--image-shadow-offset));
+        top: var(--size-4-2);
+        
+        border: none;
+        box-shadow: 0 2px 8px var(--background-modifier-box-shadow);
+        background-color: var(--background-modifier-message);
+        border-radius: var(--radius-s);
+        color: #FAFAFA;
+        font-size: var(--font-ui-smaller);
+        font-weight: var(--font-medium);
+        line-height: var(--line-height-tight);
+        max-width: 300px;
+        padding: 4px 8px;
+        text-align: center;
+        z-index: var(--layer-tooltip);
+        pointer-events: none;
+        display: none;
+    }
+
+    &:hover .callout-title {
+        display: flex;
+    }
+
+    .callout-icon {
+        display: none;
+    }
+
+    .callout-content {
+        padding: 0;
+        border: none;
+    }
+
+    .callout-content > :first-child {
+        margin-top: 0;
+    }
+    .callout-content > :plast-child {
+        margin-bottom: 0;
+    }
+
+}
