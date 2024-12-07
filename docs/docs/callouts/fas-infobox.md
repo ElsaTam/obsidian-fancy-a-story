@@ -14,6 +14,7 @@ Callout option (`> [!fas-infobox|option1 option2]`)
 - `right`: place the infobox on the right (default)
 - `corners`: add two triangle in the corners
 - `no-thead` or `no-th`: remove table headers
+- `h1-title`: use the ribbon styling for the title (needs to be a heading `# title`)
 
 Specific elements inside an infobox
 - `# Header 1`: creates a divider ribbon accross the callout. Can be used in the title.
@@ -29,7 +30,9 @@ Specific elements inside an infobox
 ```markdown
 > [!fas-infobox]+
 > # Header 1
+> 
 > ![[obsidian.png|cover]]
+> 
 > ![[aurora.png|icon]]
 > 
 > ## Header 2
@@ -49,7 +52,7 @@ Specific elements inside an infobox
 [![]({% link images/callouts/fas-infobox-2.webp %}){: width="250" }]({% link images/callouts/fas-infobox-2.webp %})
 
 ```markdown
-> [!fas-infobox]+ # Header 1
+> [!fas-infobox|h1-title]+ # Header 1
 > ![[aurora.png|background]]
 > 
 > ## Header 2

@@ -4,6 +4,10 @@
 
 @forward '../../shared/list-with-float';
 
+body {
+    --fas-infobox-padding: var(--size-4-3);
+}
+
 .callout[data-callout="fas-infobox"] {
     --callout-content-padding: 0;
     --image-shadow-offset: 0;
@@ -30,8 +34,8 @@
         margin-top: 0;
     }
 
-    > .callout-content > :not(table, h1, p:has(.image-embed[alt~="cover"]), p:has(img[alt~="cover"])) {
-        padding-inline: var(--size-4-3);
+    > .callout-content > * {
+        padding-inline: var(--fas-infobox-padding);
     }
 
 
@@ -77,21 +81,23 @@ body {
 
     /* cover */
     .image-embed[alt~="cover"] {
-        border-bottom: 4px solid rgb(var(--callout-color));
         position: relative;
     }
     .image-embed[alt~="cover"]::after {
         --triangle-size: 16px;
         content: "";
         position: absolute;
-        bottom: calc(-0.5 * var(--triangle-size) - 4px);
+        bottom: calc(-0.5 * var(--triangle-size));
         left: calc(50% - 0.5 * var(--triangle-size));
         border-right: calc(0.5 * var(--triangle-size)) solid transparent;
         border-left: calc(0.5 * var(--triangle-size)) solid transparent;
         border-top: calc(0.5 * var(--triangle-size)) solid rgb(var(--callout-color));
         z-index: 1;
     }
-    img[alt*="cover"]:not(.image-embed img) {
+    img[alt*="cover"] {
+        max-width: unset;
+        width: calc(100% + 2 * var(--fas-infobox-padding));
+        margin-left: calc(-1 * var(--fas-infobox-padding));
         border-bottom: 4px solid rgb(var(--callout-color));
     }
 
@@ -103,36 +109,21 @@ body {
         width: var(--infobox-icon-size, 70px);
         margin-top: calc(-0.5 * var(--infobox-icon-size, 70px));
         margin-bottom: calc(-0.5 * var(--infobox-icon-size, 70px));
-        margin-left: 10px;
-    }
-    .image-embed[alt~="icon"] img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        border-radius: 20%;
-        border: 2px solid rgb(var(--callout-color));
-        background-color: var(--workleaves-background, var(--background-primary));
     }
     img[alt*="icon"]:not(.image-embed img) {
         display: block;
         position: relative;
+        margin-top: calc(-0.5 * var(--infobox-icon-size, 70px) - var(--p-spacing));
+        margin-bottom: calc(-0.5 * var(--infobox-icon-size, 70px) - var(--p-spacing));
+    }
+    img[alt*="icon"] {
         height: var(--infobox-icon-size, 70px);
         width: var(--infobox-icon-size, 70px);
         border: 2px solid rgb(var(--callout-color));
-        margin-top: calc(-0.5 * var(--infobox-icon-size, 70px));
-        margin-bottom: calc(-0.5 * var(--infobox-icon-size, 70px));
-        margin-left: 10px;
         object-fit: cover;
-        border-radius: 20%;
-        z-index: 1;
-    }
-    p:has(img[alt~="icon"]) {
         z-index: 2;
-        position: relative;
-    }
-
-    p:has(img[alt~="icon"], img[alt~="cover"]) + :is(h1,h2,h3,h4,h5,h6,p) {
-        margin-top: 0;
+        border-radius: 20%;
+        background-color: var(--workleaves-background, var(--background-primary));
     }
 
     /* background */
@@ -203,32 +194,32 @@ body {
         right: 0;
         border-right: calc(var(--overflow-width) - 1px) solid transparent;
     }
-
-    .callout-title:has(> .callout-title-inner > h1:only-child) {
+}
+.callout[data-callout="fas-infobox"][data-callout-metadata~="h1-title"] {
+    .callout-title {
         padding: 0;
         position: relative;
+    }
 
-        .callout-title-inner {
-            flex-grow: 1;
-        }
+    .callout-title-inner {
+        flex-grow: 1;
+    }
+    .callout-title h1 {
+        padding-inline: calc(var(--icon-size) + var(--size-4-2));
+    }
 
-        h1 {
-            padding-inline: calc(var(--icon-size) + var(--size-4-2));
-        }
+    .callout-fold {
+        position: absolute;
+        z-index: 2;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        transform: translateX(var(--overflow-width));
+        svg { color: inherit; }
+    }
 
-        .callout-fold {
-            position: absolute;
-            z-index: 2;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            transform: translateX(var(--overflow-width));
-            svg { color: inherit; }
-        }
-
-        + .callout-content {
-            border: none;
-        }
+    .callout-content {
+        border: none;
     }
 }
 :is(body.fas-h1-stroke, .h1-stroke) .callout[data-callout="fas-infobox"] {
