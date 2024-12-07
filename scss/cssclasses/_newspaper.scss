@@ -76,7 +76,7 @@
     }
 }
 
-.newspaper div:has(> .frontmatter) + div ~ div > h1, // TODO: replace with .mod-frontmatter on 1.7.3 release
+.newspaper .mod-frontmatter + div ~ div > h1,
 .newspaper .cm-content > .cm-line ~ .HyperMD-header-1 {
     border-top: 1px solid var(--text-normal);
 }

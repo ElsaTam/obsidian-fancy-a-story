@@ -68,7 +68,7 @@ Author: ElsaTam (Kapirklaa in Discord)
 }
 :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-pusher,
 :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .mod-header,
-:is(.columns-2, .columns-3, .columns-4).markdown-preview-view div:has(.frontmatter),
+:is(.columns-2, .columns-3, .columns-4).markdown-preview-view .mod-frontmatter,
 :is(.columns-2, .columns-3, .columns-4).markdown-preview-view :is(h1),
 :is(.columns-2, .columns-3, .columns-4).markdown-preview-view [alt~=span] {
   column-span: all;
