@@ -1,0 +1,82 @@
+body {
+  --active-file-bullet-size: 6px;
+}
+
+.nav-files-container .highlighted-folder {
+  background-color: transparent;
+  border-radius: unset;
+  margin: unset;
+  padding: unset;
+  box-shadow: unset;
+}
+.nav-files-container .highlighted-folder > .nav-folder-title {
+  background-color: unset;
+  border-radius: var(--radius-s);
+  margin-bottom: var(--size-2-1);
+  color: var(--nav-item-color);
+  font-weight: var(--nav-item-weight);
+}
+.nav-files-container .highlighted-parent-folder {
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+.nav-files-container .highlighted-parent-folder > .nav-folder-title {
+  border-radius: var(--radius-s);
+  margin-bottom: var(--size-2-1);
+  color: var(--nav-item-color);
+  font-weight: var(--nav-item-weight);
+}
+.nav-files-container .highlighted-folder > .nav-folder-title:hover,
+.nav-files-container .highlighted-folder > .nav-folder-title.is-being-dragged,
+.nav-files-container .highlighted-parent-folder > .nav-folder-title:hover,
+.nav-files-container .highlighted-parent-folder > .nav-folder-title.is-being-dragged {
+  color: var(--nav-item-color-hover);
+}
+.nav-files-container .highlighted-folder .nav-file-title,
+.nav-files-container .highlighted-parent-folder .nav-file-title {
+  color: inherit;
+}
+.nav-files-container .highlighted-folder .nav-file-title.is-active {
+  font-weight: var(--nav-item-weight);
+  color: inherit;
+}
+.nav-files-container .highlighted-parent-folder .nav-file-title.is-active {
+  font-weight: var(--nav-item-weight);
+  color: inherit;
+}
+.nav-files-container .highlighted-folder .nav-file-title:hover,
+.nav-files-container .highlighted-folder .nav-file-title.is-being-dragged,
+.nav-files-container .highlighted-parent-folder .nav-file-title:hover,
+.nav-files-container .highlighted-parent-folder .nav-file-title.is-being-dragged {
+  color: inherit;
+}
+.nav-files-container .input-width-150 {
+  width: 150px;
+}
+.nav-files-container .margin-left-10 {
+  margin-left: 0px;
+}
+.nav-files-container .highlighted-intermediate-folder > .nav-folder-title::after,
+.nav-files-container .highlighted-folder > .nav-folder-title::after,
+.nav-files-container .highlighted-parent-folder > .nav-folder-title::after {
+  content: "";
+  position: absolute;
+  left: calc(-4px - var(--active-file-bullet-size, 6px));
+  top: calc(50% - var(--active-file-bullet-size, 6px) * 0.5);
+  width: var(--active-file-bullet-size, 6px);
+  height: var(--active-file-bullet-size, 6px);
+  border-radius: 50%;
+  background-color: currentColor;
+}
+.nav-files-container .highlighted-folder .nav-file-title.is-active::after {
+  content: "";
+  position: absolute;
+  left: calc(-4px - var(--active-file-bullet-size, 6px));
+  top: calc(50% - var(--active-file-bullet-size, 6px) * 0.5);
+  width: var(--active-file-bullet-size, 6px);
+  height: var(--active-file-bullet-size, 6px);
+  border-radius: 50%;
+  background-color: currentColor;
+}

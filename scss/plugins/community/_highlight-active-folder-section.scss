@@ -84,8 +84,7 @@ body {
         background-color: currentColor;
     }
 
-    .nav-file-title.is-active::after,
-    .nav-folder-title.is-active::after {
+    .highlighted-folder .nav-file-title.is-active::after {
         content: "";
         position: absolute;
         left: calc(-4px - var(--active-file-bullet-size, 6px));
