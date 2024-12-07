@@ -5,7 +5,7 @@ parent: CSS Classes
 
 Source: [`footer-img.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/footer-img.css)
 
-Add the cssclass `footer-img` to your note. This will use the **last** image as a footer in reading mode.
+Add the cssclass `footer-img` to your note. This will use the **last paragraph** as a footer in reading mode. In order to work properly, it must includes only one image, no text.
 
 When exporting to PDF, the image will not be rendered.
 

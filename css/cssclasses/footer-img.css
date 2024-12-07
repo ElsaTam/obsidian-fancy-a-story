@@ -11,6 +11,10 @@ Author: ElsaTam (Kapirklaa in Discord)
   anchor-name: --anchor-preview-section;
 }
 
+.view-content {
+  anchor-name: --view-content;
+}
+
 body {
   --workleaves-background: var(--background-primary);
   --workleaves-foreground: var(--text-normal);
@@ -81,24 +85,24 @@ body {
   [class*=footer-img] {
     background-color: var(--workleaves-background);
   }
-  [class*=footer-img] > .markdown-preview-section > div:nth-last-child(1 of div.el-p):has(.image-embed) {
+  [class*=footer-img] > .markdown-preview-section > div:nth-last-child(1 of div.el-p) {
     --image-shadow-offset: 0;
     position: sticky;
-    bottom: 0;
+    bottom: -6px;
     width: calc(100cqw + 2 * var(--file-margins-inline));
-    font-size: 0;
     margin-left: calc(50% - 50cqw - var(--file-margins-inline));
     transform: translateY(calc(var(--file-margins-block) + 1px));
     background-color: black;
     mix-blend-mode: multiply;
     opacity: var(--footer-img-opacity);
   }
-  [class*=footer-img] > .markdown-preview-section > div:nth-last-child(1 of div.el-p):has(.image-embed) p {
+  [class*=footer-img] > .markdown-preview-section > div:nth-last-child(1 of div.el-p) p {
     margin: 0;
     background-color: var(--footer-img-color);
     mix-blend-mode: exclusion;
+    color: white;
   }
-  [class*=footer-img] > .markdown-preview-section > div:nth-last-child(1 of div.el-p):has(.image-embed) img {
+  [class*=footer-img] > .markdown-preview-section > div:nth-last-child(1 of div.el-p) img {
     height: var(--footer-img-height);
     width: 100%;
     object-fit: cover;
@@ -109,11 +113,11 @@ body {
   [class*=footer-img] > .markdown-preview-sizer {
     padding-bottom: 0 !important;
   }
-  .theme-dark [class*=footer-img] > .markdown-preview-section > div:nth-last-child(1 of div.el-p):has(.image-embed) {
+  .theme-dark [class*=footer-img] > .markdown-preview-section > div:nth-last-child(1 of div.el-p) {
     background-color: white;
     mix-blend-mode: screen;
   }
-  .theme-dark [class*=footer-img] > .markdown-preview-section > div:nth-last-child(1 of div.el-p):has(.image-embed) p {
+  .theme-dark [class*=footer-img] > .markdown-preview-section > div:nth-last-child(1 of div.el-p) p {
     background-color: rgb(from var(--footer-img-color) calc(255 - r) calc(255 - g) calc(255 - b));
   }
   :is(.footer-background, .footer-bg)[class*=footer-img] > .markdown-preview-section > div:nth-last-child(2) {
