@@ -1,19 +1,14 @@
 /* GPLv3 license
-FAS - Blockquote Tooltip
+FAS - Callout Tooltip
 Author: ElsaTam (Kapirklaa in Discord)
 */
-s.caption-tooltip {
-  text-decoration: none;
-}
-
-blockquote:has(:is(dialog, .caption-tooltip)) {
-  --blockquote-border-thickness: 0;
-  padding: 0;
+.callout[data-callout=tooltip] {
+  border: none;
+  background: none;
   width: fit-content;
-  position: relative;
+  height: fit-content;
 }
-
-blockquote :is(dialog, .caption-tooltip) {
+.callout[data-callout=tooltip] .callout-title {
   position: absolute;
   right: calc(var(--size-4-2) + var(--image-shadow-offset));
   top: var(--size-4-2);
@@ -30,17 +25,21 @@ blockquote :is(dialog, .caption-tooltip) {
   text-align: center;
   z-index: var(--layer-tooltip);
   pointer-events: none;
-}
-
-blockquote dialog {
-  margin-left: auto;
-  margin-right: 0;
-}
-
-blockquote .caption-tooltip {
   display: none;
 }
-
-blockquote:hover :is(dialog, .caption-tooltip) {
-  display: block;
+.callout[data-callout=tooltip]:hover .callout-title {
+  display: flex;
+}
+.callout[data-callout=tooltip] .callout-icon {
+  display: none;
+}
+.callout[data-callout=tooltip] .callout-content {
+  padding: 0;
+  border: none;
+}
+.callout[data-callout=tooltip] .callout-content > :first-child {
+  margin-top: 0;
+}
+.callout[data-callout=tooltip] .callout-content > :plast-child {
+  margin-bottom: 0;
 }

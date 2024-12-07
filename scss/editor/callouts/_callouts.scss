@@ -1,7 +1,9 @@
 @use 'callout-style';
 
 @use 'callout-autopsy';
+@use 'callout-caption';
 @use 'callout-cards-deck';
+@use 'callout-cite';
 @use 'callout-clue';
 @use 'callout-comic';
 @use 'callout-conversation';
@@ -21,5 +23,6 @@
 @use 'callout-screen';
 @use 'callout-table-cards';
 @use 'callout-timeline';
+@use 'callout-tooltip';
 
 @use 'callouts-metadata';
