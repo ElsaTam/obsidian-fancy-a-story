@@ -1,0 +1,30 @@
+@scope (:is(.markdown-source-view, .markdown-preview-view) .markdown-embed[alt~="inline"]) to (.markdown-embed) {
+    // Making embeds inline when possible
+    :scope:where(:not(:has(.mod-header + div + div)):not(:has(.mod-header + div br))):has(.mod-header + div > p),
+    :scope:where(:has(.mod-header + div > pre.frontmatter):not(:has(.mod-header + div + div + div)):not(:has(.mod-header + div + div br))):has(.mod-header + div + div > p) {
+        
+        position: unset;
+
+        .markdown-embed-content .markdown-rendered p {
+            margin-bottom: 0;
+        }
+
+        // Inline cascading
+        &,
+        & :where(.markdown-embed-content), 
+        & :where(.markdown-embed-content .markdown-rendered), 
+        & :where(.markdown-embed-content .markdown-rendered .markdown-preview-sizer), 
+        & :where(.markdown-embed-content .markdown-rendered .markdown-preview-sizer .mod-header ~ div), 
+        & :where(.markdown-embed-content .markdown-rendered .markdown-preview-sizer .mod-header ~ div p) {
+            display: inline;
+        }
+
+        & :where(.markdown-embed-content .markdown-rendered .markdown-preview-sizer .mod-header) {
+            display: none;
+        }
+
+        & :where(.markdown-embed-content .markdown-rendered .markdown-preview-sizer .markdown-preview-pusher) {
+            display: inline-block;
+        }
+    }
+}

@@ -1,15 +1,18 @@
 ---
-title: Faded
+title: Faded & Inline
 parent: Embeds
 ---
 
-Source: [`embed-faded.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/embeds/embed-faded.css)
+Sources:
+- [`embed-faded.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/embeds/embed-faded.css)
+- [`embed-inline.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/embeds/embed-inline.css)
 
-Use the option `faded` to create an embed that will be as much as possible "in the flow" of the current text.
+{: .warning }
+The `inline` option is not included in the theme due to performance issues, it needs to be downloaded on the side.
 
-When it can, the embed will be inlined. Otherwise, it will start a new block with no title, no border, and no spacing.
+Use the option `faded` to remove borders, paddings and title to the embed note.
 
-The link icon of faded embed is moved to the right of the text, and can be hovered to highlight the associated content.
+Use the option `inline` to create an embed that will be as much as possible "in the flow" of the current text. When it can, the embed will be inlined.
 
 # Examples
 

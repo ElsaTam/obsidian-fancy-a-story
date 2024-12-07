@@ -25,7 +25,7 @@ When embeding an image, add an alt option:
 
 | Alt option | Description | Source |
 |:-----------|:------------|:-------|
-| [`faded`]({% link docs/embeds/faded.md %}) | Make the embed as much in the flow as possible | [`embed-faded.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/embeds/embed-faded.css) |
+| [`faded` and `inline`]({% link docs/embeds/faded and inline.md %}) | Make the embed as much in the flow as possible | [`embed-faded.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/embeds/embed-faded.css), [`embed-inline.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/embeds/embed-inline.css) |
 
 
 # Audio
