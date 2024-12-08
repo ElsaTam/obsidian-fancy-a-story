@@ -36,3 +36,18 @@ Source: [`fas-headings.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/b
 {: .note }
 - If both of your primary and text color are shades of grey (0% saturation), the middle hue and its complement will also be shades of grey.
 - If one of your primary or text color is a shade of grey with the Custom color scheme, it will be considered as red hue to compute the middle hue, hence giving a mix between red and the other primary/text color.
+
+# Lists
+
+## Unordered lists
+
+| Tag                                                    | Description                           | Source                                                           |
+|:-------------------------------------------------------|:--------------------------------------|:-----------------------------------------------------------------|
+| [`family-tree`]({% link docs/cssclasses/family-tree.md %}) | Transform lists into family trees | [`family-tree.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/cssclasses/family-tree.css) |
+| [`tree-view`]({% link docs/cssclasses/tree-view.md %})     | Transform lists into tree views   | [`tree-view.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/cssclasses/tree-view.css) |
+
+## Any list
+
+| Tag                                                    | Description                           | Source                                                           |
+|:-------------------------------------------------------|:--------------------------------------|:-----------------------------------------------------------------|
+| [`list-reversed`]({% link docs/cssclasses/list-reversed.md %}) | Reverse the order of lists   | [`list-reversed.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/cssclasses/list-reversed.css) |
