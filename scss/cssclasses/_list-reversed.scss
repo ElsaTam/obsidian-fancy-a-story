@@ -1,0 +1,24 @@
+@for $n from 1 through 10 {
+    .list-reversed-#{$n} :is(.el-ul, .el-ol) {
+        $sel: "";
+        @if $n > 1 {
+            @for $i from 0 to $n - 1 {
+                $sel: $sel + "> :is(ul, ol) > li";
+            }
+        }
+        #{$sel} > :is(ul, ol) {
+            transform: scaleY(-1);
+    
+            > li {
+                transform: scaleY(-1);
+            }
+        }
+    }
+}
+
+
+.list-reversed-all :is(.el-ul, .el-ol) > :is(ul, ol) {
+    &, ul, ol, li {
+        transform: scaleY(-1);
+    }
+}

@@ -1,16 +1,23 @@
 ---
 title: List reversed
-parent: Lists
+parent: CSS Classes
 ---
 
-Source: [`list-reversed.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/lists/list-reversed.css)
+Source: [`list-reversed.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/cssclasses/list-reversed.css)
 
-Use the tag `#list-reversed` (or an html element with class `list-reversed` such as `<span class="list-reversed"></span>`) in an item of the list to reverse this list order in reading view.
+Use the cssclass `list-reversed-{n}` to reverse order of list items at depth `n` (up to 10). To reverse all the orders at once, use the cssclass `list-reversed-all`.
+
+---
 
 [![]({% link images/lists/reversed-ol.webp %}){: width="150" }]({% link images/lists/reversed-ol.webp %})
 
 ```markdown
-1. Item 1 #list-reversed
+---
+cssclasses:
+  - list-reversed-1
+---
+
+1. Item 1
 2. Item 2
     - Item 2.1
         - Item 2.1.1
@@ -20,11 +27,16 @@ Use the tag `#list-reversed` (or an html element with class `list-reversed` such
 3. Item 3
 ```
 
-The tag will affect only the items at its level, not the parent list, not the sublists. To invert a sublist, you need to add the tag at the desired level.
+---
 
 [![]({% link images/lists/reversed-ul.webp %}){: width="150" }]({% link images/lists/reversed-ul.webp %})
 
 ```markdown
+---
+cssclasses:
+  - list-reversed-3
+---
+
 - Item 1
 - Item 2
     - Item 2.1
@@ -35,12 +47,17 @@ The tag will affect only the items at its level, not the parent list, not the su
 - Item 3
 ```
 
-If you want to reverse the whole list, including sublists and ancestor lists, you can use the tag `#list-reversed-all` (or an html element with class `list-reversed-all` such as `<span class="list-reversed-all"></span>`).
+---
 
 [![]({% link images/lists/reversed-all.webp %}){: width="150" }]({% link images/lists/reversed-all.webp %})
 
 ```markdown
-1. Item 1 #list-reversed-all
+---
+cssclasses:
+  - list-reversed-all
+---
+
+1. Item 1 #list-reversed
 2. Item 2
     - Item 2.1
         - Item 2.1.1
