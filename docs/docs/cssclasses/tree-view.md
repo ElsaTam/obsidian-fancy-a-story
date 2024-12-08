@@ -5,8 +5,6 @@ parent: CSS Classes
 
 Source: [`tree-view.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/cssclasses/tree-view.css)
 
-[![]({% link images/lists/tree-view.webp %})]({% link images/lists/tree-view.webp %})
-
 Use the cssclass `tree-view` to turn lists into tree views **in preview (reading) view**.
 
 Hovering a leaf (an item without a sublist) will highlight the corresponding lines as well as the item itself.
@@ -60,6 +58,8 @@ cssclasses:
         - Uranus - moons
         - Neptune - moons
 ```
+
+[![]({% link images/lists/tree-view.webp %})]({% link images/lists/tree-view.webp %})
 
 
 ## CSS Variables
