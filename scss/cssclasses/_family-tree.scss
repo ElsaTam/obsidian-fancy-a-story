@@ -1,18 +1,14 @@
-@forward '../../shared/workleaves';
+@forward '../shared/workleaves';
 
 body {
     --family-tree-connectors-color: var(--background-secondary);
 }
 
-ul:has(> li > :is(.tag[href='#family-tree'], .family-tree)) {
+.family-tree .el-ul > ul {
     --list-spacing: 0;
     --list-indent: 0;
 
     overflow-x: scroll;
-
-    li:has(> :is(.tag[href='#family-tree'], .family-tree)) {
-        display: none;
-    }
 
     .list-bullet {
         display: none;
@@ -58,7 +54,7 @@ ul:has(> li > :is(.tag[href='#family-tree'], .family-tree)) {
 
     // Spouse info tooltip
     :is(.tag[href='#wed'], .wed) { display: none; }
-    li:has(> :is(.tag[href='#wed'], .wed)) {
+    :is(.tag[href='#wed'], .wed) + ul > li:first-child {
         display: none;
         position: absolute;
         left: 50%;
@@ -72,7 +68,7 @@ ul:has(> li > :is(.tag[href='#family-tree'], .family-tree)) {
         z-index: var(--layer-tooltip);
         top: 0;
     }
-    li:has(> :is(.tag[href='#wed'], .wed))::before {
+    :is(.tag[href='#wed'], .wed) + ul > li:first-child::before {
         content: "Wed to ";
         display: unset;
         position: unset;
@@ -80,14 +76,14 @@ ul:has(> li > :is(.tag[href='#family-tree'], .family-tree)) {
     }
 
     // Spouse ring icon
-    li:has(> ul > li > :is(.tag[href='#wed'], .wed)) > .list-bullet {
+    li:has(> :is(.tag[href='#wed'], .wed)) > .list-bullet {
         display: inline-block;
         float: none;
         margin-inline-start: 0;
         margin-inline-end: 0.1em;
         transform: translateY(-0.2em);
     }
-    li:has(> ul > li > :is(.tag[href='#wed'], .wed)) > .list-bullet::after {
+    li:has(> :is(.tag[href='#wed'], .wed)) > .list-bullet::after {
         content: "💍";
         position: static;
         margin: 0;
@@ -97,24 +93,24 @@ ul:has(> li > :is(.tag[href='#family-tree'], .family-tree)) {
         background: none;
         box-shadow: none;
     }
-    li:has(> ul > li > :is(.tag[href='#wed'], .wed)):has(> .list-bullet:hover) > ul > li:has(> :is(.tag[href='#wed'], .wed)) {
+    li:has(> :is(.tag[href='#wed'], .wed)):has(> .list-bullet:hover) > ul > li:first-child {
         display: block;
     }
 
     // element with no child, or only a spouse (#wed)
     li:not(:has(ul)),
-    li:has(> ul > li:only-child > :is(.tag[href='#wed'], .wed)) {
+    li:has(> :is(.tag[href='#wed'], .wed) + ul > li:only-child) {
         text-wrap: nowrap;
         .list-collapse-indicator { display: none; }
     }
 
     ul:not(:has(ul))::before,
-    ul:has(> li:only-child > :is(.tag[href='#wed'], .wed))::before {
+    :is(.tag[href='#wed'], .wed) + ul:has(> li:only-child)::before {
         height: 30px;
-    }    
+    }
 
     li:not(:has(ul))::after,
-    li:has(> ul > li:only-child > :is(.tag[href='#wed'], .wed))::after {
+    li:has(> :is(.tag[href='#wed'], .wed) + ul > li:only-child)::after {
         height: 20px;
     }
 
@@ -146,7 +142,7 @@ ul:has(> li > :is(.tag[href='#family-tree'], .family-tree)) {
         height: 10px;
     }
 
-    li:has(> :is(.tag[href='#wed'], .wed))::after {
+    :is(.tag[href='#wed'], .wed) + ul > li:first-child::after {
         content: none;
     }
 
@@ -163,10 +159,7 @@ ul:has(> li > :is(.tag[href='#family-tree'], .family-tree)) {
     }
 
     // Remove left connector from first child and connector from last child
-    li:first-child:has(> :is(.tag[href='#wed'], .wed)) + li::before,
-    li:first-child:has(> :is(.tag[href='#family-tree'], .family-tree)) + li::before,
-    li:has(+ li:last-child > :is(.tag[href='#wed'], .wed))::after,
-    li:has(+ li:last-child > :is(.tag[href='#family-tree'], .family-tree))::after,
+    :is(.tag[href='#wed'], .wed) + ul > li:nth-child(2)::before,
     li:first-child::before,
     li:last-child::after {
         border-top: none;
@@ -193,25 +186,25 @@ ul:has(> li > :is(.tag[href='#family-tree'], .family-tree)) {
     }
 
     // Reduce heights for downward connectors if multiple childs
-    ul:not(:has(> li:first-child > :is(.tag[href='#wed'], .wed)):has(> li:nth-child(2):last-child))::before {
+    :is(.tag[href='#wed'], .wed) + ul:has(> li:nth-child(3))::before {
         height: 10px;
     }
 
     // Remove downward connectors if no child
     ul:not(:has(> li))::before,
-    ul:has(> li:first-child:last-child > :is(.tag[href='#wed'], .wed))::before {
+    :is(.tag[href='#wed'], .wed) + ul:has(> li:only-child)::before {
         content: none;
     }
 
     // Remove upwards connectors if only child
-    li:not(:has(> :is(.tag[href='#wed'], .wed))):first-child:last-child::after,
-    li:has(> :is(.tag[href='#wed'], .wed)) + li:last-child::after {
+    ul:not(:is(.tag[href='#wed'], .wed) + ul) > li:only-child::after,
+    :is(.tag[href='#wed'], .wed) + ul > li:nth-child(2):last-child::after {
         content: none;
     }
 }
 
 @media print {
-	ul:has(> li > .tag[href='#family-tree']) {
+	.family-tree ul {
     	--family-tree-connectors-color: var(--text-normal);
 	}
 }

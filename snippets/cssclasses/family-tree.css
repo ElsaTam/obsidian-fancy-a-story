@@ -1,0 +1,186 @@
+@charset "UTF-8";
+/* GPLv3 license
+FAS - Family Tree
+Author: ElsaTam (Kapirklaa in Discord)
+*/
+body {
+  --workleaves-background: var(--background-primary);
+  --workleaves-foreground: var(--text-normal);
+}
+
+body {
+  --family-tree-connectors-color: var(--background-secondary);
+}
+
+.family-tree .el-ul > ul {
+  --list-spacing: 0;
+  --list-indent: 0;
+  overflow-x: scroll;
+}
+.family-tree .el-ul > ul .list-bullet {
+  display: none;
+}
+.family-tree .el-ul > ul .list-collapse-indicator {
+  position: absolute;
+  opacity: 1;
+  top: 10px;
+  left: 50%;
+  margin: 0;
+  padding: 0;
+  transform: translateX(-50%);
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--workleaves-background);
+  border: 1px solid var(--color-accent);
+  z-index: 1;
+}
+.family-tree .el-ul > ul .list-collapse-indicator.is-collapsed {
+  background: var(--color-accent);
+}
+.family-tree .el-ul > ul .list-collapse-indicator:hover {
+  background: color-mix(in srgb, var(--color-accent), var(--workleaves-background) 70%);
+}
+.family-tree .el-ul > ul .list-collapse-indicator.is-collapsed:hover {
+  background: color-mix(in srgb, var(--color-accent), var(--workleaves-background) 30%);
+}
+.family-tree .el-ul > ul .list-collapse-indicator svg {
+  display: none;
+}
+.family-tree .el-ul > ul li.is-collapsed {
+  text-wrap: nowrap;
+}
+.family-tree .el-ul > ul li.is-collapsed > ul > * {
+  display: none;
+}
+.family-tree .el-ul > ul :is(.tag[href="#wed"], .wed) {
+  display: none;
+}
+.family-tree .el-ul > ul :is(.tag[href="#wed"], .wed) + ul > li:first-child {
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 2px 8px var(--background-modifier-box-shadow);
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #ccc;
+  font-size: var(--font-ui-small);
+  padding: 5px 12px;
+  text-align: center;
+  z-index: var(--layer-tooltip);
+  top: 0;
+}
+.family-tree .el-ul > ul :is(.tag[href="#wed"], .wed) + ul > li:first-child::before {
+  content: "Wed to ";
+  display: unset;
+  position: unset;
+  color: #727272;
+}
+.family-tree .el-ul > ul li:has(> :is(.tag[href="#wed"], .wed)) > .list-bullet {
+  display: inline-block;
+  float: none;
+  margin-inline-start: 0;
+  margin-inline-end: 0.1em;
+  transform: translateY(-0.2em);
+}
+.family-tree .el-ul > ul li:has(> :is(.tag[href="#wed"], .wed)) > .list-bullet::after {
+  content: "💍";
+  position: static;
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  -webkit-mask-image: none;
+  background: none;
+  box-shadow: none;
+}
+.family-tree .el-ul > ul li:has(> :is(.tag[href="#wed"], .wed)):has(> .list-bullet:hover) > ul > li:first-child {
+  display: block;
+}
+.family-tree .el-ul > ul li:not(:has(ul)),
+.family-tree .el-ul > ul li:has(> :is(.tag[href="#wed"], .wed) + ul > li:only-child) {
+  text-wrap: nowrap;
+}
+.family-tree .el-ul > ul li:not(:has(ul)) .list-collapse-indicator,
+.family-tree .el-ul > ul li:has(> :is(.tag[href="#wed"], .wed) + ul > li:only-child) .list-collapse-indicator {
+  display: none;
+}
+.family-tree .el-ul > ul ul:not(:has(ul))::before,
+.family-tree .el-ul > ul :is(.tag[href="#wed"], .wed) + ul:has(> li:only-child)::before {
+  height: 30px;
+}
+.family-tree .el-ul > ul li:not(:has(ul))::after,
+.family-tree .el-ul > ul li:has(> :is(.tag[href="#wed"], .wed) + ul > li:only-child)::after {
+  height: 20px;
+}
+.family-tree .el-ul > ul, .family-tree .el-ul > ul ul {
+  display: flex;
+  padding-top: 10px;
+  margin-top: 0px;
+  position: relative;
+  background-color: var(--workleaves-background);
+}
+.family-tree .el-ul > ul li {
+  float: left;
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+  padding: 20px 5px 0 5px;
+  margin-inline: auto;
+}
+.family-tree .el-ul > ul li::before,
+.family-tree .el-ul > ul li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border-top: 1px solid var(--family-tree-connectors-color);
+  width: 50%;
+  height: 10px;
+}
+.family-tree .el-ul > ul :is(.tag[href="#wed"], .wed) + ul > li:first-child::after {
+  content: none;
+}
+.family-tree .el-ul > ul li::after {
+  right: auto;
+  left: 50%;
+  border-left: 1px solid var(--family-tree-connectors-color);
+}
+.family-tree .el-ul > ul li:only-child::after,
+.family-tree .el-ul > ul li:only-child::before {
+  display: none;
+}
+.family-tree .el-ul > ul :is(.tag[href="#wed"], .wed) + ul > li:nth-child(2)::before, .family-tree .el-ul > ul li:first-child::before, .family-tree .el-ul > ul li:last-child::after {
+  border-top: none;
+}
+.family-tree .el-ul > ul li:only-child {
+  padding-top: 0;
+}
+.family-tree .el-ul > ul ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border-left: 1px solid var(--family-tree-connectors-color);
+  width: 0px;
+  height: 20px;
+  inset-inline-start: unset;
+  bottom: unset;
+  border-inline-end: unset;
+}
+.family-tree .el-ul > ul :is(.tag[href="#wed"], .wed) + ul:has(> li:nth-child(3))::before {
+  height: 10px;
+}
+.family-tree .el-ul > ul ul:not(:has(> li))::before,
+.family-tree .el-ul > ul :is(.tag[href="#wed"], .wed) + ul:has(> li:only-child)::before {
+  content: none;
+}
+.family-tree .el-ul > ul ul:not(:is(.tag[href="#wed"], .wed) + ul) > li:only-child::after, .family-tree .el-ul > ul :is(.tag[href="#wed"], .wed) + ul > li:nth-child(2):last-child::after {
+  content: none;
+}
+
+@media print {
+  .family-tree ul {
+    --family-tree-connectors-color: var(--text-normal);
+  }
+}
