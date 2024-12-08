@@ -1,19 +1,17 @@
-@use '../../animations/animations';
-@forward '../../shared/workleaves';
+@use '../animations/animations';
+@forward '../shared/workleaves';
 
 body {
     --tree-view-guide-color: var(--background-secondary);
 }
 
-ul:has(> li > :is(.tag[href='#tree-view'], .tree-view)) {
+.tree-view .el-ul > ul {
     --indentation-guide-reading-indent: -0.8em;
     --indentation-guide-width: 2px;
     --indentation-guide-color: var(--tree-view-guide-color);
     --list-bullet-size: 0.8em;
 
     position: relative;
-
-    :is(.tag[href='#tree-view'], .tree-view) { display: none; }
 
     li::after {
         content: '';
@@ -74,8 +72,7 @@ ul:has(> li > :is(.tag[href='#tree-view'], .tree-view)) {
     }
 
 
-    li:has(li:hover > .list-bullet:last-child),
-    li:has(.list-bullet:last-child):hover {
+    li:hover {
         &::after {
             border-color: var(--color-accent);
         }
@@ -102,16 +99,15 @@ ul:has(> li > :is(.tag[href='#tree-view'], .tree-view)) {
 }
 
 @media print {
-    ul:has(> li > :is(.tag[href='#tree-view'], .tree-view)),
-    ul:has(> li > :is(.tag[href='#tree-view'], .tree-view)) ul {
+    .tree-view ul {
         list-style-type: none;
     }
 
-    ul:has(> li > :is(.tag[href='#tree-view'], .tree-view)) ul {
+    .tree-view ul ul {
         position: relative;
     }
 
-    ul:has(> li > :is(.tag[href='#tree-view'], .tree-view)) li::after {
+    .tree-view ul li::after {
         width: var(--list-indent);
     }
 }

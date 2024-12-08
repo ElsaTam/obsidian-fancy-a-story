@@ -1,13 +1,13 @@
 ---
 title: Tree view
-parent: Lists
+parent: CSS Classes
 ---
 
-Source: [`tree-view.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/lists/tree-view.css)
+Source: [`tree-view.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/cssclasses/tree-view.css)
 
 [![]({% link images/lists/tree-view.webp %})]({% link images/lists/tree-view.webp %})
 
-Add the tag `#tree-view` (or an html element with class `tree-view` such as `<span class="tree-view"></span>`) on any item of your list. It will be used by the CSS as a flag to turn the whole list into a tree view **in preview (reading) view**.
+Use the cssclass `tree-view` to turn lists into tree views **in preview (reading) view**.
 
 Hovering a leaf (an item without a sublist) will highlight the corresponding lines as well as the item itself.
 
@@ -15,7 +15,12 @@ Hovering a leaf (an item without a sublist) will highlight the corresponding lin
 
 
 ```md
-- Solar bodies #tree-view
+---
+cssclasses:
+  - tree-view
+---
+
+- Solar bodies
     - Solar System
         - Terrestrial planet
         - Giant planet

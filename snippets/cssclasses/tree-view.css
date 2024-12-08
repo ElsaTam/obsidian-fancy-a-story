@@ -20,17 +20,14 @@ body {
   --tree-view-guide-color: var(--background-secondary);
 }
 
-ul:has(> li > :is(.tag[href="#tree-view"], .tree-view)) {
+.tree-view .el-ul > ul {
   --indentation-guide-reading-indent: -0.8em;
   --indentation-guide-width: 2px;
   --indentation-guide-color: var(--tree-view-guide-color);
   --list-bullet-size: 0.8em;
   position: relative;
 }
-ul:has(> li > :is(.tag[href="#tree-view"], .tree-view)) :is(.tag[href="#tree-view"], .tree-view) {
-  display: none;
-}
-ul:has(> li > :is(.tag[href="#tree-view"], .tree-view)) li::after {
+.tree-view .el-ul > ul li::after {
   content: "";
   display: block;
   position: absolute;
@@ -43,8 +40,8 @@ ul:has(> li > :is(.tag[href="#tree-view"], .tree-view)) li::after {
   border-bottom-left-radius: var(--radius-m);
   pointer-events: none;
 }
-ul:has(> li > :is(.tag[href="#tree-view"], .tree-view))::before,
-ul:has(> li > :is(.tag[href="#tree-view"], .tree-view)) ul::before {
+.tree-view .el-ul > ul::before,
+.tree-view .el-ul > ul ul::before {
   content: "​";
   position: absolute;
   display: block;
@@ -54,10 +51,10 @@ ul:has(> li > :is(.tag[href="#tree-view"], .tree-view)) ul::before {
   top: calc(-0.5em * var(--line-height-normal) - var(--indentation-guide-width) * 0.5);
   z-index: 1;
 }
-ul:has(> li > :is(.tag[href="#tree-view"], .tree-view)) .list-bullet {
+.tree-view .el-ul > ul .list-bullet {
   display: none;
 }
-ul:has(> li > :is(.tag[href="#tree-view"], .tree-view)) .list-collapse-indicator {
+.tree-view .el-ul > ul .list-collapse-indicator {
   position: absolute;
   opacity: 1;
   top: calc(0.5em * var(--line-height-normal) - var(--list-bullet-size) * 0.5 + var(--list-spacing));
@@ -72,27 +69,25 @@ ul:has(> li > :is(.tag[href="#tree-view"], .tree-view)) .list-collapse-indicator
   border: 1px solid var(--color-accent);
   z-index: 2;
 }
-ul:has(> li > :is(.tag[href="#tree-view"], .tree-view)) .list-collapse-indicator.is-collapsed {
+.tree-view .el-ul > ul .list-collapse-indicator.is-collapsed {
   background: var(--color-accent);
 }
-ul:has(> li > :is(.tag[href="#tree-view"], .tree-view)) .list-collapse-indicator:hover {
+.tree-view .el-ul > ul .list-collapse-indicator:hover {
   background: color-mix(in srgb, var(--color-accent), var(--workleaves-background) 70%);
 }
-ul:has(> li > :is(.tag[href="#tree-view"], .tree-view)) .list-collapse-indicator.is-collapsed:hover {
+.tree-view .el-ul > ul .list-collapse-indicator.is-collapsed:hover {
   background: color-mix(in srgb, var(--color-accent), var(--workleaves-background) 30%);
 }
-ul:has(> li > :is(.tag[href="#tree-view"], .tree-view)) .list-collapse-indicator svg {
+.tree-view .el-ul > ul .list-collapse-indicator svg {
   display: none;
 }
-ul:has(> li > :is(.tag[href="#tree-view"], .tree-view)) li:has(li:hover > .list-bullet:last-child)::after,
-ul:has(> li > :is(.tag[href="#tree-view"], .tree-view)) li:has(.list-bullet:last-child):hover::after {
+.tree-view .el-ul > ul li:hover::after {
   border-color: var(--color-accent);
 }
-ul:has(> li > :is(.tag[href="#tree-view"], .tree-view)) li:has(li:hover > .list-bullet:last-child) > ul::before,
-ul:has(> li > :is(.tag[href="#tree-view"], .tree-view)) li:has(.list-bullet:last-child):hover > ul::before {
+.tree-view .el-ul > ul li:hover > ul::before {
   border-color: var(--color-accent);
 }
-ul:has(> li > :is(.tag[href="#tree-view"], .tree-view)) li:has(> .list-bullet:last-child):hover::before {
+.tree-view .el-ul > ul li:has(> .list-bullet:last-child):hover::before {
   content: "";
   position: absolute;
   top: 0;
@@ -105,14 +100,13 @@ ul:has(> li > :is(.tag[href="#tree-view"], .tree-view)) li:has(> .list-bullet:la
 }
 
 @media print {
-  ul:has(> li > :is(.tag[href="#tree-view"], .tree-view)),
-  ul:has(> li > :is(.tag[href="#tree-view"], .tree-view)) ul {
+  .tree-view ul {
     list-style-type: none;
   }
-  ul:has(> li > :is(.tag[href="#tree-view"], .tree-view)) ul {
+  .tree-view ul ul {
     position: relative;
   }
-  ul:has(> li > :is(.tag[href="#tree-view"], .tree-view)) li::after {
+  .tree-view ul li::after {
     width: var(--list-indent);
   }
 }
