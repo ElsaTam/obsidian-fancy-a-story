@@ -1,0 +1,77 @@
+/* GPLv3 license
+FAS - List Reversed
+Author: ElsaTam (Kapirklaa in Discord)
+*/
+.list-reversed-1 :is(.el-ul, .el-ol) > :is(ul, ol) {
+  transform: scaleY(-1);
+}
+.list-reversed-1 :is(.el-ul, .el-ol) > :is(ul, ol) > li {
+  transform: scaleY(-1);
+}
+
+.list-reversed-2 :is(.el-ul, .el-ol) > :is(ul, ol) > li > :is(ul, ol) {
+  transform: scaleY(-1);
+}
+.list-reversed-2 :is(.el-ul, .el-ol) > :is(ul, ol) > li > :is(ul, ol) > li {
+  transform: scaleY(-1);
+}
+
+.list-reversed-3 :is(.el-ul, .el-ol) > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) {
+  transform: scaleY(-1);
+}
+.list-reversed-3 :is(.el-ul, .el-ol) > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li {
+  transform: scaleY(-1);
+}
+
+.list-reversed-4 :is(.el-ul, .el-ol) > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) {
+  transform: scaleY(-1);
+}
+.list-reversed-4 :is(.el-ul, .el-ol) > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li {
+  transform: scaleY(-1);
+}
+
+.list-reversed-5 :is(.el-ul, .el-ol) > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) {
+  transform: scaleY(-1);
+}
+.list-reversed-5 :is(.el-ul, .el-ol) > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li {
+  transform: scaleY(-1);
+}
+
+.list-reversed-6 :is(.el-ul, .el-ol) > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) {
+  transform: scaleY(-1);
+}
+.list-reversed-6 :is(.el-ul, .el-ol) > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li {
+  transform: scaleY(-1);
+}
+
+.list-reversed-7 :is(.el-ul, .el-ol) > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) {
+  transform: scaleY(-1);
+}
+.list-reversed-7 :is(.el-ul, .el-ol) > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li {
+  transform: scaleY(-1);
+}
+
+.list-reversed-8 :is(.el-ul, .el-ol) > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) {
+  transform: scaleY(-1);
+}
+.list-reversed-8 :is(.el-ul, .el-ol) > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li {
+  transform: scaleY(-1);
+}
+
+.list-reversed-9 :is(.el-ul, .el-ol) > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) {
+  transform: scaleY(-1);
+}
+.list-reversed-9 :is(.el-ul, .el-ol) > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li {
+  transform: scaleY(-1);
+}
+
+.list-reversed-10 :is(.el-ul, .el-ol) > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) {
+  transform: scaleY(-1);
+}
+.list-reversed-10 :is(.el-ul, .el-ol) > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li > :is(ul, ol) > li {
+  transform: scaleY(-1);
+}
+
+.list-reversed-all :is(.el-ul, .el-ol) > :is(ul, ol), .list-reversed-all :is(.el-ul, .el-ol) > :is(ul, ol) ul, .list-reversed-all :is(.el-ul, .el-ol) > :is(ul, ol) ol, .list-reversed-all :is(.el-ul, .el-ol) > :is(ul, ol) li {
+  transform: scaleY(-1);
+}
