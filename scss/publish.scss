@@ -6,7 +6,6 @@
 @use 'foundations/publish-css-variables';
 
 @use 'editor/aside';
-@use 'editor/blockquotes/blockquote';
 @use 'editor/callouts/callouts';
 @use 'editor/code/code';
 @use 'editor/embeds/embeds';
@@ -19,7 +18,6 @@
 @use 'editor/lists/lists';
 @use 'editor/tables/default-table';
 
-@use 'plugins/core/file-explorer-bullet';
 @use 'plugins/core/file-explorer-hover';
 
 @use 'window/sidebars/fas-bg-textures';
