@@ -12,6 +12,10 @@ Author: ElsaTam (Kapirklaa in Discord)
   anchor-name: --anchor-preview-section;
 }
 
+.view-content {
+  anchor-name: --view-content;
+}
+
 body {
   --file-margins-block: var(--size-4-8);
   --file-margins-inline: var(--size-4-8);
