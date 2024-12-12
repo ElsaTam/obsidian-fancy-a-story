@@ -44,6 +44,11 @@
     }
 }
 
+body:not(.is-ios) .callout[data-callout="cards-deck"] .callout-content > p::-webkit-scrollbar{
+    width: var(--deck-scrollbar-width);
+    height: var(--deck-scrollbar-width);
+}
+
 
 /* Remove code bellow in case of performance issues */
 
