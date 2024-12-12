@@ -1,9 +1,9 @@
-body {
+body:not(.is-ios) {
     --scrollbar-thumb-bg: var(--color-base-20);
     --scrollbar-width: 10px;
 }
 
-body:not(.native-scrollbars) ::-webkit-scrollbar {
+body:not(.native-scrollbars):not(.is-ios) ::-webkit-scrollbar {
     width: var(--scrollbar-width);
     height: var(--scrollbar-width);
 }

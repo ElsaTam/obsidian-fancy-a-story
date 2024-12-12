@@ -48,10 +48,6 @@ body {
     --padding-left: calc(-1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-x)));
     --padding-right: calc(-1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) + var(--card-shadow-offset-x)));
   }
-  ul.dataview-result-list-root-ul::-webkit-scrollbar {
-    width: var(--deck-scrollbar-width);
-    height: var(--deck-scrollbar-width);
-  }
   ul.dataview-result-list-root-ul > * {
     width: var(--card-gap);
     transition: transform 0.5s ease-in-out;
@@ -137,6 +133,12 @@ body {
     max-width: 100%;
     object-fit: cover;
     object-position: center;
+  }
+}
+@scope (body:not(.is-ios) .dataview-cards-deck) to (.markdown-embed .markdown-embed) {
+  .ul.dataview-result-list-root-ul::-webkit-scrollbar {
+    width: var(--deck-scrollbar-width);
+    height: var(--deck-scrollbar-width);
   }
 }
 /* Remove code bellow in case of performance issues */

@@ -21,11 +21,6 @@
     --padding-top: max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-y) + var(--padding-scale-factor));
     --padding-left: calc(-1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-x)));
     --padding-right: calc(-1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) + var(--card-shadow-offset-x)));
-    
-    &::-webkit-scrollbar{
-        width: var(--deck-scrollbar-width);
-        height: var(--deck-scrollbar-width);
-    }
 
     > * {
         width: var(--card-gap);

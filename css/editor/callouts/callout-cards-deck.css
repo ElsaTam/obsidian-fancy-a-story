@@ -43,10 +43,6 @@ Author: ElsaTam (Kapirklaa in Discord)
   --padding-left: calc(-1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-x)));
   --padding-right: calc(-1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) + var(--card-shadow-offset-x)));
 }
-.callout[data-callout=cards-deck] .callout-content > p::-webkit-scrollbar {
-  width: var(--deck-scrollbar-width);
-  height: var(--deck-scrollbar-width);
-}
 .callout[data-callout=cards-deck] .callout-content > p > * {
   width: var(--card-gap);
   transition: transform 0.5s ease-in-out;
@@ -76,6 +72,11 @@ Author: ElsaTam (Kapirklaa in Discord)
   height: var(--card-height);
   object-fit: cover;
   object-position: center center;
+}
+
+body:not(.is-ios) .callout[data-callout=cards-deck] .callout-content > p::-webkit-scrollbar {
+  width: var(--deck-scrollbar-width);
+  height: var(--deck-scrollbar-width);
 }
 
 /* Remove code bellow in case of performance issues */
