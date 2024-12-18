@@ -35,6 +35,7 @@ nav_order: 7
 | Variable | Description | Default value |
 |:---------|:------------|:--------------|
 | `--table-header-line-height` | Line height for table headers | `1.8` |
+| `--table-margin-inline`      | Inline (left/right) margins for tables in preview mode | `auto` |
 
 
 # Typography

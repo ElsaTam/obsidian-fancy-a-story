@@ -230,6 +230,10 @@ Select the plain style for the tables
 
 [![]({% link images/tables/table-default-vs-plain.webp %}){: width="400" }]({% link images/tables/table-default-vs-plain.webp %})
 
+#### Table position
+
+Horizontal position of the table in preview mode.
+
 
 
 # Features
