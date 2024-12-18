@@ -4445,6 +4445,7 @@ body {
   --table-column-first-border-width: 0;
   --table-column-last-border-width: 0;
   --table-header-line-height: 1.8;
+  --table-margin-inline: auto;
 }
 
 .markdown-preview-view table thead th {
@@ -4454,7 +4455,7 @@ body {
   height: calc(var(--table-text-size) * var(--table-line-height) + var(--size-2-2) * 2);
 }
 .markdown-preview-view table {
-  margin-inline: auto;
+  margin-inline: var(--table-margin-inline);
 }
 
 .cm-html-embed th,

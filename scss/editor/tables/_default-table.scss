@@ -7,6 +7,7 @@ body {
 
     // custom
     --table-header-line-height: 1.8;
+    --table-margin-inline: auto;
 }
 
 .markdown-preview-view {
@@ -19,7 +20,7 @@ body {
     }
 
     table {
-        margin-inline: auto;
+        margin-inline: var(--table-margin-inline);
     }
 }
 
