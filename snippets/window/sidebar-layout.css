@@ -67,20 +67,20 @@ body {
   --icon-color-hover: var(--workspace-foreground);
 }
 
-.workspace-drawer:is(.mod-left, .mod-right) {
+body:not(.is-ios) .workspace-drawer:is(.mod-left, .mod-right) {
   padding-inline: var(--cutout-outline-inset);
   mask-composite: intersect;
 }
 
-.workspace-drawer.mod-left {
+body:not(.is-ios) .workspace-drawer.mod-left {
   -webkit-mask-image: radial-gradient(var(--cutout-corner-radius) at 100% 0, transparent 100%, black), radial-gradient(var(--cutout-corner-radius) at 100% 100%, transparent 100%, black);
 }
 
-.workspace-drawer.mod-right {
+body:not(.is-ios) .workspace-drawer.mod-right {
   -webkit-mask-image: radial-gradient(var(--cutout-corner-radius) at 0 0, transparent 100%, black), radial-gradient(var(--cutout-corner-radius) at 0 100%, transparent 100%, black);
 }
 
-.workspace-drawer::before {
+body:not(.is-ios) .workspace-drawer::before {
   content: "";
   position: absolute;
   inset: var(--cutout-outline-inset);
