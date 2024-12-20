@@ -91,3 +91,9 @@ body {
         margin-inline: auto;
     }
 }
+@container style(--image-centered: enable) and (style(--image-shadow-offset: 0) or style(--image-shadow-offset: 0px)) {
+    .markdown-source-view .cm-content > .image-embed img {
+        display: block;
+        margin-inline: auto;
+    }
+}
