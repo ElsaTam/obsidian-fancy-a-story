@@ -169,6 +169,9 @@ Gap between the stripes of the image shadow
 [![]({% link images/stylesettings/image-shadow.webp %})]({% link images/stylesettings/image-shadow.webp %})
 [![]({% link images/stylesettings/image-shadow-modified.webp %})]({% link images/stylesettings/image-shadow-modified.webp %})
 
+#### Center images
+If enabled, the images will be centered if they are not in a paragraph (one empty line before and after)
+
 ## Links
 
 #### Internal link decoration

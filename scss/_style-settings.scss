@@ -504,6 +504,19 @@ settings:
         type: variable-number
         default: 4
         format: px
+    - 
+        id: image-centered
+        title: Center images
+        description: If enabled, the images will be centered if they are not in a paragraph (one empty line before and after)
+        type: variable-select
+        default: disable
+        options:
+            - 
+                value: enable
+                label: Enable
+            - 
+                value: disable
+                label: Disable
 
     - 
         id: links
