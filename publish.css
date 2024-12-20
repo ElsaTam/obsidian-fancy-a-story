@@ -4546,6 +4546,10 @@ body {
   filter: sepia(1);
 }
 
+.is-mobile.fas-bg-textures .workspace-leaf-content[data-type=file-explorer] {
+  background-color: var(--mobile-sidebar-background);
+}
+
 .is-mobile.fas-bg-textures .workspace-leaf-content[data-type=file-explorer]::before {
   bottom: calc(max(var(--size-4-2), var(--safe-area-inset-bottom)) + var(--icon-size) + var(--size-2-2) + var(--size-2-3));
   z-index: unset;
