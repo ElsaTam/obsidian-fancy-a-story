@@ -106,3 +106,17 @@ img[alt~=b-w] {
     background: repeating-linear-gradient(-45deg, var(--image-shadow-color), var(--image-shadow-color) var(--image-shadow-stripe-thickness), transparent var(--image-shadow-stripe-thickness), transparent calc(var(--image-shadow-stripe-thickness) + var(--image-shadow-stripe-gap)));
   }
 }
+body {
+  --image-centered: disable;
+}
+
+@container style(--image-centered: enable) {
+  .markdown-rendered .image-embed:only-child {
+    display: block;
+    margin-inline: auto;
+  }
+  .markdown-rendered img:not(.image-embed img):not(.emoji):only-child {
+    display: block;
+    margin-inline: auto;
+  }
+}

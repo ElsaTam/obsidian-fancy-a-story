@@ -3635,6 +3635,20 @@ img[alt~=b-w] {
   }
 }
 body {
+  --image-centered: disable;
+}
+
+@container style(--image-centered: enable) {
+  .markdown-rendered .image-embed:only-child {
+    display: block;
+    margin-inline: auto;
+  }
+  .markdown-rendered img:not(.image-embed img):not(.emoji):only-child {
+    display: block;
+    margin-inline: auto;
+  }
+}
+body {
   --link-decoration-hover: var(--link-decoration);
   --link-external-decoration: underline;
   --link-external-decoration-hover: var(--link-external-decoration);

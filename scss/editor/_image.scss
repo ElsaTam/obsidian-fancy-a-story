@@ -39,6 +39,8 @@ img[alt~="b-w"] {
     --image-shadow-offset: 0;
 }
 
+// IMAGE SHADOW
+
 @container not (style(--image-shadow-offset: 0) or style(--image-shadow-offset: 0px)) {
     .image-embed {
         z-index: 1;
@@ -72,5 +74,20 @@ img[alt~="b-w"] {
                 transparent calc(var(--image-shadow-stripe-thickness) + var(--image-shadow-stripe-gap))
             );
         }
+    }
+}
+
+// IMAGE CENTERED
+body {
+    --image-centered: disable;
+}
+@container style(--image-centered: enable) {
+    .markdown-rendered .image-embed:only-child {
+        display: block;
+        margin-inline: auto;
+    }
+    .markdown-rendered img:not(.image-embed img):not(.emoji):only-child {
+        display: block;
+        margin-inline: auto;
     }
 }
