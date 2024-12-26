@@ -21,18 +21,6 @@ body {
     gap: var(--workspace-gap);
 }
 
-.mod-left-split > .workspace-leaf-resize-handle {
-    transform: translateX(calc(0.5 * var(--workspace-gap) + var(--divider-width-hover) * 0.5));
-}
-.mod-right-split > .workspace-leaf-resize-handle {
-    transform: translateX(calc(-0.5 * var(--workspace-gap) - var(--divider-width-hover) * 0.5));
-}
-.mod-vertical > div > .workspace-leaf-resize-handle {
-    transform: translateX(calc(0.5 * var(--workspace-gap) + var(--divider-width-hover) * 0.5));
-}
-.mod-horizontal > div > .workspace-leaf-resize-handle {
-    transform: translateY(calc(0.5 * var(--workspace-gap) + var(--divider-width-hover) * 0.5));
-}
 .mod-root .workspace-tabs {
     overflow: visible;
 }
