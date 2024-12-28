@@ -152,5 +152,6 @@ body {
 
 .callout[data-callout=poem] {
   --callout-padding: 0;
+  --callout-title-padding: var(--size-4-3);
   position: relative;
 }

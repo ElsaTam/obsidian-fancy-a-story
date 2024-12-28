@@ -5,3 +5,10 @@ Author: ElsaTam (Kapirklaa in Discord)
 
 @use '../../../editor/callouts/callout-paper-fold';
 @use '../../../shared/fonts/walter_turncoat';
+
+.callout[data-callout=paper-fold] {
+    --callout-padding: 0;
+    --callout-content-padding: var(--size-4-3) var(--size-4-3) var(--size-4-3) var(--size-4-6);
+    --callout-title-padding: var(--size-4-3);
+    position: relative;
+}

@@ -6,3 +6,61 @@ Author: ElsaTam (Kapirklaa in Discord)
 @use '../../../editor/callouts/callout-letter';
 @use '../../../shared/fonts/tangerine';
 @use '../../../shared/fonts/homemade_apple';
+
+.callout[data-callout=letter] {
+    --callout-border-width: 1px;
+    --callout-padding: 0;
+    --callout-content-padding: var(--size-4-3) var(--size-4-3) var(--size-4-3) var(--size-4-6);
+    --callout-title-padding: var(--size-4-3);
+}
+
+.callout[data-callout=letter] .callout-content {
+    background-color: color-mix(in srgb, rgb(var(--callout-color)), var(--workleaves-background) 92%);
+    background-image: var(--paper-texture);
+    background-size: 500px;
+    background-blend-mode: multiply;
+}
+
+/* Fixes for themes */
+
+/* Minimal (outline callout style) *//*
+.callouts-outlined .callout[data-callout="letter"] .callout-title {
+    margin-top: unset;
+    z-index: unset;
+    width: unset;
+    padding: var(--callout-padding);
+    margin-left: unset;
+    letter-spacing: unset;
+    font-variant-caps: normal;
+}/**/
+
+/* Primary *//*
+.callout[data-callout="letter"] {
+    --callout-title-color: var(--callout-color);
+}/**/
+
+/* Prism *//*
+body:not(.pt-disable-callout-styling) .callout:not(.cg-note-toolbar-callout)[data-callout="letter"] {
+    border: none;
+    .callout-title {
+        position: unset;
+        border-top-left-radius: var(--callout-radius);
+        border-top-right-radius: var(--callout-radius);
+    }
+    .callout-content {
+        margin-top: 0;
+    }
+}/**/
+
+/* ShibaInu *//*
+.shib-callout-toggle.shib-callout-style-2 .callout.is-collapsible:not(.is-collapsed)[data-callout="letter"],
+.shib-callout-toggle.shib-callout-style-3 .callout.is-collapsible:not(.is-collapsed)[data-callout="letter"],
+body:not(.shib-callout-toggle) .callout.is-collapsible:not(.is-collapsed)[data-callout="letter"] {
+    padding: 0;
+}/**/
+
+/* WY Console *//*
+.callout[data-callout="letter"] .callout-icon::after,
+.callout[data-callout="letter"] .callout-fold::after {
+    background-color: var(--col-pr-txt-quote);
+}/**/

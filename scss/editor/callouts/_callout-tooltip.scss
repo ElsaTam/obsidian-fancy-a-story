@@ -7,7 +7,7 @@
 
     .callout-title {
         position: absolute;
-        right: calc(var(--size-4-2) + var(--image-shadow-offset));
+        right: calc(var(--size-4-2) + var(--image-shadow-offset, 0px));
         top: var(--size-4-2);
         
         border: none;

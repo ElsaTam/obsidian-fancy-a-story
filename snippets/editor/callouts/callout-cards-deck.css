@@ -96,3 +96,13 @@ body:not(.is-ios) .callout[data-callout=cards-deck] .callout-content > p::-webki
 .callout[data-callout=cards-deck] .callout-content > p:hover {
   z-index: 1;
 }
+
+/* Fixes for themes */
+/* Minimal */ /*
+.callout[data-callout=cards-deck] {
+    --image-muted: 1;
+}
+.markdown-preview-view.is-readable-line-width .markdown-preview-sizer .callout[data-callout=cards-deck] img,
+.markdown-source-view.mod-cm6.is-readable-line-width .cm-contentContainer.cm-contentContainer > .cm-content .callout[data-callout=cards-deck] img {
+    max-width: unset;
+}/**/

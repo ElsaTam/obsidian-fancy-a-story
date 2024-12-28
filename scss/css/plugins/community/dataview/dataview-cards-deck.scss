@@ -4,3 +4,13 @@ Author: ElsaTam (Kapirklaa in Discord)
 */
 
 @use '../../../../plugins/community/dataview/dataview-cards-deck';
+
+
+/* Fixes for themes */
+
+/* Minimal *//*
+@scope (.dataview-cards-deck) to (.markdown-embed .markdown-embed) {
+    ul.dataview-result-list-root-ul .markdown-embed {
+        padding: 0;
+    }
+}/**/

@@ -4,13 +4,13 @@
 //  - width  = diag / sin(angle)
 //  - height = diag / sin(90 - angle)
 
-@property --corner-diag {
+@property --paper-fold-corner-diag {
     syntax: "<length>";
     inherits: true;
     initial-value: 100px;
 }
 
-@property --corner-angle {
+@property --paper-fold-corner-angle {
     syntax: "<angle>";
     inherits: true;
     initial-value: 30deg;
@@ -65,9 +65,9 @@ body {
 .callout[data-callout="paper-fold"] {
     --corner-width: calc(1px * var(--corner-width-n));
     --corner-height: calc(1px * var(--corner-height-n));
-    --corner-diag: calc(1px * var(--corner-diag-n));
-    --corner-diag-n: calc(var(--corner-width-n) * var(--corner-height-n) / hypot(var(--corner-width-n), var(--corner-height-n)));
-    --corner-angle: calc(asin(var(--corner-diag-n) / var(--corner-width-n)));
+    --paper-fold-corner-diag: calc(1px * var(--paper-fold-corner-diag-n));
+    --paper-fold-corner-diag-n: calc(var(--corner-width-n) * var(--corner-height-n) / hypot(var(--corner-width-n), var(--corner-height-n)));
+    --paper-fold-corner-angle: calc(asin(var(--paper-fold-corner-diag-n) / var(--corner-width-n)));
     transition: --corner-width-n 0.5s ease-out, --corner-height-n 0.5s ease-out;
 }
 .callout[data-callout="paper-fold"]:hover {

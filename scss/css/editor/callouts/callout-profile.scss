@@ -4,3 +4,14 @@ Author: ElsaTam (Kapirklaa in Discord)
 */
 
 @use '../../../editor/callouts/callout-profile';
+
+
+.theme-light .callout[data-callout=profile] {
+    --color-gray: #4d4d4d;
+    --color-gray-rgb: 77, 77, 77;
+}
+  
+.theme-dark .callout[data-callout=profile] {
+    --color-gray: #bdbdbd;
+    --color-gray-rgb: 189, 189, 189;
+}

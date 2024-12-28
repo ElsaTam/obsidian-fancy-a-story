@@ -17,6 +17,7 @@ $stop5: 850px;
     > .callout-content {
         border: none;
         display: grid;
+        align-items: flex-start;
         gap: 10px;
         padding: 0;
     }

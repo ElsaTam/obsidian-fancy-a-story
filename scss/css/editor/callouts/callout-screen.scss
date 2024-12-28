@@ -5,3 +5,10 @@ Author: ElsaTam (Kapirklaa in Discord)
 
 @use '../../../editor/callouts/callout-screen';
 @use '../../../shared/fonts/profont';
+
+/* Fixes for themes */
+
+/* Minimal *//*
+.callouts-outlined .callout[data-callout=screen] .callout-title {
+    background-color: var(--background-primary);
+}/**/

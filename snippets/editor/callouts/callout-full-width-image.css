@@ -48,3 +48,7 @@ body {
 .callout:is([data-callout=full-width-image], [data-callout=full-w-img], [data-callout=fwi], [data-callout="full-width-panoramic-image-:jack_o_lantern:"], [data-callout=fwpi-jol])[data-callout-metadata~=grayscale] img {
   filter: grayscale(1);
 }
+
+.callout:is([data-callout=full-width-image], [data-callout=full-w-img], [data-callout=fwi], [data-callout="full-width-panoramic-image-:jack_o_lantern:"], [data-callout=fwpi-jol])[data-callout-metadata~=no-title] .callout-title {
+  display: none;
+}

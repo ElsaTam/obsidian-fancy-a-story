@@ -1440,6 +1440,7 @@ body {
 .callout[data-callout=grid] > .callout-content {
   border: none;
   display: grid;
+  align-items: flex-start;
   gap: 10px;
   padding: 0;
 }
@@ -1994,6 +1995,7 @@ body {
   --callout-padding: 0;
   --callout-content-padding: 0;
   --callout-border-width: 0;
+  --callout-blend-mode: normal;
   --image-shadow-offset: 0;
   --link-decoration: none;
   --link-unresolved-opacity: 1;
@@ -2012,12 +2014,6 @@ body {
 }
 .callout[data-callout=masonry] a {
   font-size: 0;
-}
-.callout[data-callout=masonry]:hover img:not(a img) {
-  filter: saturate(10%) blur(1px);
-}
-.callout[data-callout=masonry]:hover a:not(:hover) img {
-  filter: saturate(70%);
 }
 
 .callout[data-callout=masonry][data-callout-metadata~=col-2] {
@@ -2074,12 +2070,12 @@ body {
   display: none;
 }
 
-@property --corner-diag {
+@property --paper-fold-corner-diag {
   syntax: "<length>";
   inherits: true;
   initial-value: 100px;
 }
-@property --corner-angle {
+@property --paper-fold-corner-angle {
   syntax: "<angle>";
   inherits: true;
   initial-value: 30deg;
@@ -2127,9 +2123,9 @@ body {
 .callout[data-callout="paper-fold"] {
     --corner-width: calc(1px * var(--corner-width-n));
     --corner-height: calc(1px * var(--corner-height-n));
-    --corner-diag: calc(1px * var(--corner-diag-n));
-    --corner-diag-n: calc(var(--corner-width-n) * var(--corner-height-n) / hypot(var(--corner-width-n), var(--corner-height-n)));
-    --corner-angle: calc(asin(var(--corner-diag-n) / var(--corner-width-n)));
+    --paper-fold-corner-diag: calc(1px * var(--paper-fold-corner-diag-n));
+    --paper-fold-corner-diag-n: calc(var(--corner-width-n) * var(--corner-height-n) / hypot(var(--corner-width-n), var(--corner-height-n)));
+    --paper-fold-corner-angle: calc(asin(var(--paper-fold-corner-diag-n) / var(--corner-width-n)));
     transition: --corner-width-n 0.5s ease-out, --corner-height-n 0.5s ease-out;
 }
 .callout[data-callout="paper-fold"]:hover {
@@ -2205,7 +2201,7 @@ body {
   --pinned-medium-width: 350px;
   --pinned-large-width: 100%;
   position: relative;
-  margin: 0 auto;
+  margin-inline: auto;
   background-color: white;
   color: black;
 }
@@ -2519,10 +2515,18 @@ body {
   --callout-screen-font: "ProFont", "Chakra Petch", "Courier New", Courier, monospace;
 }
 
+.theme-dark .callout[data-callout=screen] {
+  --callout-color: 68, 207, 110;
+}
+
+.theme-light .callout[data-callout=screen] {
+  --callout-color: 33, 162, 58;
+}
+
 .callout[data-callout=screen] {
-  --callout-color: var(--color-green-rgb);
   --callout-icon: lucide-monitor;
   --callout-title-size: 1.3em;
+  --callout-border-width: 1px;
   --list-marker-color: rgb(var(--callout-color));
   --list-marker-color-collapsed: color-mix(in srgb, rgb(var(--callout-color)), rgb(var(--mono-rgb-0)) 40%);
   --collapse-icon-color: rgb(var(--callout-color));
@@ -2546,7 +2550,7 @@ body {
   text-align: center;
 }
 .callout[data-callout=screen]:not(.is-collapsed) {
-  filter: drop-shadow(0 0 3px rgba(var(--callout-color), 0.5));
+  text-shadow: 0 0 3px rgba(var(--callout-color), 0.5);
 }
 .callout[data-callout=screen] .image-embed {
   display: inline-block;
@@ -2954,7 +2958,7 @@ body {
 }
 .callout[data-callout=tooltip] .callout-title {
   position: absolute;
-  right: calc(var(--size-4-2) + var(--image-shadow-offset));
+  right: calc(var(--size-4-2) + var(--image-shadow-offset, 0px));
   top: var(--size-4-2);
   border: none;
   box-shadow: 0 2px 8px var(--background-modifier-box-shadow);
