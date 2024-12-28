@@ -6,10 +6,12 @@ layout: minimal
 
 <div class="masonry" id="macy-container">
 <a class="masonry-item" href="{% link docs/callouts/autopsy.md %}"><img src="{% link images/callouts/autopsy.webp %}"></a>
+<a class="masonry-item" href="{% link docs/callouts/caption.md %}"><img src="{% link images/callouts/caption.webp %}"></a>
 <a class="masonry-item" href="{% link docs/callouts/cards-deck.md %}">
 <img src="{% link images/callouts/cards-deck.webp %}"><br>
 <img src="{% link images/callouts/cards-deck-gif.webp %}">
 </a>
+<a class="masonry-item" href="{% link docs/callouts/cite.md %}"><img src="{% link images/callouts/citation.webp %}"></a>
 <a class="masonry-item" href="{% link docs/callouts/clue.md %}">
 <img src="{% link images/callouts/clue-b.webp %}"><br>
 <img src="{% link images/callouts/clue-c.webp %}"><br>
@@ -21,7 +23,10 @@ layout: minimal
 <a class="masonry-item" href="{% link docs/callouts/email.md %}"><img src="{% link images/callouts/email.webp %}"></a>
 <a class="masonry-item" href="{% link docs/callouts/fas-infobox.md %}"><img src="{% link images/callouts/fas-infobox-1.webp %}"></a>
 <a class="masonry-item" href="{% link docs/callouts/film-strip.md %}"><img src="{% link images/callouts/film-strip.webp %}"></a>
+<a class="masonry-item" href="{% link docs/callouts/full-width-image.md %}"><img src="{% link images/callouts/full-width-image.webp %}"></a>
+<a class="masonry-item" href="{% link docs/callouts/grid.md %}"><img src="{% link images/callouts/grid.webp %}"></a>
 <a class="masonry-item" href="{% link docs/callouts/letter.md %}"><img src="{% link images/callouts/letter.webp %}"></a>
+<a class="masonry-item" href="{% link docs/callouts/masonry.md %}"><img src="{% link images/callouts/masonry.webp %}"></a>
 <a class="masonry-item" href="{% link docs/callouts/paper-fold.md %}"><img src="{% link images/callouts/paper-fold.webp %}"></a>
 <a class="masonry-item" href="{% link docs/callouts/pinned.md %}"><img src="{% link images/callouts/pinned.webp %}"></a>
 <a class="masonry-item" href="{% link docs/callouts/poem.md %}">
@@ -32,6 +37,7 @@ layout: minimal
 <a class="masonry-item" href="{% link docs/callouts/polaroid.md %}"><img src="{% link images/callouts/polaroid-center.webp %}"></a>
 <a class="masonry-item" href="{% link docs/callouts/profile.md %}"><img src="{% link images/callouts/profile.webp %}"></a>
 <a class="masonry-item" href="{% link docs/callouts/screen.md %}"><img src="{% link images/callouts/screen.webp %}"></a>
+<a class="masonry-item" href="{% link docs/callouts/table-cards.md %}"><img src="{% link images/callouts/table-cards.webp %}"></a>
 <a class="masonry-item" href="{% link docs/callouts/timeline.md %}">
 <img src="{% link images/callouts/timeline.webp %}"><br>
 <img src="{% link images/callouts/timeline-horizontal.webp %}">
