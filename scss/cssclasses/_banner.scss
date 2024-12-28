@@ -46,6 +46,8 @@ body {
 .markdown-preview-view.banner {
     --inline-title-margin-bottom: 0;
 
+    isolation: isolate;
+
     #{$img-embed-sel} {
         top: 0;
         left: 0;

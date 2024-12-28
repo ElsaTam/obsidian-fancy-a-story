@@ -45,6 +45,7 @@ body {
 
 .markdown-preview-view.banner {
   --inline-title-margin-bottom: 0;
+  isolation: isolate;
 }
 .markdown-preview-view.banner .mod-header + div + div > p > .image-embed:nth-child(1 of .image-embed) {
   top: 0;
