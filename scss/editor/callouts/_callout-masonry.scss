@@ -8,6 +8,7 @@ body {
     --callout-padding: 0;
     --callout-content-padding: 0;
     --callout-border-width: 0;
+    --callout-blend-mode: normal;
     --image-shadow-offset: 0;
     --link-decoration: none;
     --link-unresolved-opacity: 1;
@@ -28,13 +29,6 @@ body {
 
     a {
         font-size: 0;
-    }
-
-    &:hover img:not(a img) {
-        filter: saturate(10%) blur(1px);
-    }
-    &:hover a:not(:hover) img {
-        filter: saturate(70%);
     }
 }
 @for $i from 2 to 10 {

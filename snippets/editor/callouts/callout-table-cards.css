@@ -58,3 +58,9 @@ Author: ElsaTam (Kapirklaa in Discord)
 .callout[data-callout=table-cards][data-callout-metadata~=accent] td:first-child {
   border-bottom-color: rgb(from var(--color-accent) r g b/var(--callout-border-opacity));
 }
+
+/* Minimal */ /*
+.callout[data-callout=table-cards] {
+    --table-width: 100%;
+}
+/**/

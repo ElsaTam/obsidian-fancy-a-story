@@ -22,7 +22,7 @@ body {
   font-style: italic;
   border-bottom: 1px dashed rgb(var(--callout-color));
   background-color: color-mix(in srgb, var(--workleaves-background), rgb(var(--callout-color)) 20%);
-  inset-block-start: calc(-1 * var(--image-shadow-offset));
+  inset-block-start: calc(-1 * var(--image-shadow-offset, 0px));
   padding-inline-start: 0.4em;
   padding-inline-end: 1.5em;
   padding-block: 0.2em;
@@ -47,4 +47,8 @@ body {
 }
 .callout[data-callout=caption][data-callout-metadata~=accent] .callout-content {
   border-left: 1px solid var(--color-accent);
+}
+
+.callout[data-callout=caption] p {
+  font-size: 0;
 }

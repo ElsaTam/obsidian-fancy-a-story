@@ -5,3 +5,29 @@ Author: ElsaTam (Kapirklaa in Discord)
 
 @use '../../../editor/callouts/callout-timeline';
 @use '../../../shared/fonts/playfair-display';
+
+.callout[data-callout=timeline][data-callout-metadata~=no-fancy] .callout-content > * {
+    background: unset;
+    outline: none;
+}
+.callout[data-callout=timeline][data-callout-metadata~=no-fancy] .callout-content > .callout {
+    background-color: rgba(var(--callout-color), 0.2);
+}
+.callout[data-callout=timeline][data-callout-metadata~=no-fancy] {
+    --line-thickness: 4px;
+    --card-border-width: 0px;
+    --rope-segment-vertical: linear-gradient(to right, black, black 100%);
+    --rope-segment-horizontal: linear-gradient(to bottom, black, black 100%);
+    --row-gap: 18px;
+}
+.callout[data-callout=timeline][data-callout-metadata~=no-fancy]>.callout-content>*:not(:is(.callout, code, pre, ul, ol))::first-letter,
+.callout[data-callout=timeline][data-callout-metadata~=no-fancy]>.callout-content>*.callout .callout-content>*:not(:is(.callout, code, pre, ul, ol))::first-letter {
+    color: unset;
+    font-weight: unset;
+    font-size: unset;
+    font-family: unset;
+}
+.callout[data-callout=timeline][data-callout-metadata~=no-fancy][data-callout-metadata~=horizontal]>.callout-content>*:nth-child(odd).callout:not(.is-collapsed) .callout-content {
+    border-top: 0;
+    border-bottom: 0;
+}

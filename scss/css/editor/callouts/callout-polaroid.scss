@@ -5,3 +5,25 @@ Author: ElsaTam (Kapirklaa in Discord)
 
 @use '../../../editor/callouts/callout-polaroid';
 @use '../../../shared/fonts/walter_turncoat';
+
+.markdown-source-view.mod-cm6 .callout[data-callout=polaroid] {
+    margin-inline: auto;
+}
+.markdown-source-view .callout[data-callout=polaroid]:is([data-callout-metadata~=right], [data-callout-metadata~=float-right]) {
+    margin-right: 0;
+}
+.markdown-source-view .callout[data-callout=polaroid]:is([data-callout-metadata~=left], [data-callout-metadata~=float-left]) {
+    margin-left: 0;
+}
+
+.markdown-preview-view .callout[data-callout=polaroid]:is([data-callout-metadata~=right], [data-callout-metadata~=float-right]) {
+    float: right;
+    clear: right;
+    margin: 12px 0 12px 12px;
+}
+
+.markdown-preview-view .callout[data-callout=polaroid]:is([data-callout-metadata~=left], [data-callout-metadata~=float-left]) {
+    float: left;
+    clear: left;
+    margin: 12px 12px 12px 0;
+}

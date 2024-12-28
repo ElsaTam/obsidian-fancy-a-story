@@ -4,4 +4,61 @@ Author: ElsaTam (Kapirklaa in Discord)
 */
 
 @use '../../../editor/callouts/callout-pinned';
+
+
+
+
+/* Fixes for themes */
+
+/* AnupPuccin *//*
+.theme-light .callout[data-callout="pinned"]:not([data-callout-metadata*=revert]) > .callout-title > .callout-title-inner {
+    color: var(--color-accent);
+}/**/
+
+/* ITS *//*
+.callout[data-callout="pinned"].callout.callout {
+    margin-left: auto;
+    margin-right: auto;
+}/**/
+
+/* Primary *//*
+.callout[data-callout="pinned"] .callout-title {
+    box-shadow: none;
+}
+.callout[data-callout="pinned"] .callout-content {
+    box-shadow: none;
+}/**/
+
+/* Prism *//*
+body:not(.pt-disable-callout-styling) .callout[data-callout="pinned"]:not(.cg-note-toolbar-callout) :is(.callout-title, .callout-content) {
+    background-color: var(--color-base-100);
+}/**/
+
+/* ShibaInu *//*
+.shib-callout-toggle.shib-callout-style-2,
+.shib-callout-toggle.shib-callout-style-2,
+body:not(.shib-callout-toggle)  {
+    .callout[data-callout="pinned"].is-collapsible .callout-title {
+        padding-left: calc(var(--pushpin-size) * 0.6);
+    }
+}
+.shib-callout-toggle.shib-callout-style-2,
+.shib-callout-toggle.shib-callout-style-3,
+body:not(.shib-callout-toggle) {
+    .callout[data-callout="pinned"] {
+        background-color: var(--color-base-100);
+    }
+}/**/
+
+/* Willemstad *//*
+.callout[data-callout="pinned"] .callout-title .callout-icon {
+    display: none;
+}
+.callout[data-callout="pinned"] .callout-content {
+    background: transparent;
+}
+.callout[data-callout="pinned"] .callout-title .callout-fold {
+    opacity: 1;
+}/**/
+
 @use '../../../shared/fonts/tt2020';

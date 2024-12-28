@@ -4,3 +4,9 @@ Author: ElsaTam (Kapirklaa in Discord)
 */
 
 @use '../../../editor/callouts/callout-tooltip';
+
+.callout[data-callout=tooltip] {
+    --callout-padding: 0;
+    --callout-radius: 0;
+    position: relative;
+}

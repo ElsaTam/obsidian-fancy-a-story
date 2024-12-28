@@ -85,8 +85,8 @@ img[alt~=b-w] {
   }
   .markdown-source-view .image-embed,
   .markdown-rendered .image-embed {
-    padding-right: var(--image-shadow-offset);
-    padding-bottom: var(--image-shadow-offset);
+    padding-right: var(--image-shadow-offset, 0px);
+    padding-bottom: var(--image-shadow-offset, 0px);
     display: inline-block;
     height: fit-content;
     width: fit-content;
@@ -98,8 +98,8 @@ img[alt~=b-w] {
     content: "";
     position: absolute;
     z-index: -1;
-    top: var(--image-shadow-offset);
-    left: var(--image-shadow-offset);
+    top: var(--image-shadow-offset, 0px);
+    left: var(--image-shadow-offset, 0px);
     right: 0;
     bottom: 0;
     border-radius: inherit;

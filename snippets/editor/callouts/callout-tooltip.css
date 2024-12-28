@@ -10,7 +10,7 @@ Author: ElsaTam (Kapirklaa in Discord)
 }
 .callout[data-callout=tooltip] .callout-title {
   position: absolute;
-  right: calc(var(--size-4-2) + var(--image-shadow-offset));
+  right: calc(var(--size-4-2) + var(--image-shadow-offset, 0px));
   top: var(--size-4-2);
   border: none;
   box-shadow: 0 2px 8px var(--background-modifier-box-shadow);
@@ -42,4 +42,10 @@ Author: ElsaTam (Kapirklaa in Discord)
 }
 .callout[data-callout=tooltip] .callout-content > :plast-child {
   margin-bottom: 0;
+}
+
+.callout[data-callout=tooltip] {
+  --callout-padding: 0;
+  --callout-radius: 0;
+  position: relative;
 }
