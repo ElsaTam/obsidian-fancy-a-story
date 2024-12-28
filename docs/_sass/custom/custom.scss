@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 body {
     font-weight: 300;
 }
@@ -85,6 +87,13 @@ body:not(:has(> .side-bar)) .main:has(.masonry) {
 }
 .masonry-item {
     position: absolute;
+    background-color: color.scale($grey-dk-300, $lightness: -5%);
+    border: 2px solid #{$grey-dk-250};
+    padding: 15px;
+    border-radius: 15px;
+}
+.masonry-item:hover {
+    border: 1px solid #{$grey-dk-100};
 }
 .masonry-item img {
     border: none;
