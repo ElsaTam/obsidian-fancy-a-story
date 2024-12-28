@@ -13,6 +13,7 @@ Use this callout to create a timeline. Several options are available.:
 - In nested callouts:
   - `no-icon`: remove the icon of this callout.
   - `skip`: don't count this block in the numbering (require `numbered` at the first level callout)
+  - `no-fancy`: remove the border style and use normal style for each element
 
 Note that inside the timeline callout, you can use what you want. All blocks will be transformed into "date cards", not only callouts. So paragraphs, blockquotes, code, etc., they all work. But callouts are the only one you can add options to.
 
