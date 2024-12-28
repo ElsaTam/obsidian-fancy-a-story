@@ -389,6 +389,35 @@
     }
 }
 
+.callout[data-callout=timeline][data-callout-metadata~=no-fancy] {
+    --line-thickness: 4px;
+    --card-border-width: 0px;
+    --rope-segment-vertical: linear-gradient(to right, black, black 100%);
+    --rope-segment-horizontal: linear-gradient(to bottom, black, black 100%);
+    --row-gap: 18px;
+
+    .callout-content > * {
+        background: unset;
+        outline: none;
+    }
+
+    .callout-content > .callout {
+        background-color: rgba(var(--callout-color), 0.2);
+    }
+    
+    >.callout-content>*:not(:is(.callout, code, pre, ul, ol))::first-letter,
+    >.callout-content>*.callout .callout-content>*:not(:is(.callout, code, pre, ul, ol))::first-letter {
+        color: unset;
+        font-weight: unset;
+        font-size: unset;
+        font-family: unset;
+    }
+
+    &[data-callout-metadata~=horizontal] .callout:not(.is-collapsed):is(:nth-child(odd), :nth-child(even)) .callout-content {
+        border-top: 0;
+        border-bottom: 0;
+    }
+}
 
 body {
     --timeline-icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9.5361595" r="7.7601452" style="stroke-width:1.5"/><polyline points="12 6 12 12 16 14" transform="matrix(0.77601453,0,0,0.77601453,2.6878256,0.22398547)"/><circle cx="12.092106" cy="20.717064" r="1" /><circle cx="19.092106" cy="20.717064" r="1"/><circle cx="5.0921063" cy="20.717064" r="1"/><path style="stroke-width:1.5;" d="M 5.0921062,20.717063 H 19.092106"/></svg>';
