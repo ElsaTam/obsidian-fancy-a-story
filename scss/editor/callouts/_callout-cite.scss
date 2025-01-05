@@ -13,7 +13,7 @@ body {
     padding-inline-start: calc(var(--cite-decoration-width) + 5px);
     background: none;
     border: none;
-    border-inline-start: var(--blockquote-border-thickness) solid var(--blockquote-border-color);
+    border-inline-start: var(--blockquote-border-thickness) solid rgb(var(--callout-color));
 
     .callout-title {
         display: none;
@@ -32,7 +32,7 @@ body {
     }
 
 
-    cite::after {
+    &::after {
         content: '\201C';
         position: absolute;
         font-style: italic;
@@ -43,9 +43,9 @@ body {
         bottom: 0;
         left: 0;
         width: var(--cite-decoration-width);
-        color: var(--color-accent);
+        color: rgb(var(--callout-color));
         font-family: Arial, Helvetica, sans-serif;
-        background-color: hsla(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
+        background-color: rgba(var(--callout-color), 0.1);
     }
 
     cite {
