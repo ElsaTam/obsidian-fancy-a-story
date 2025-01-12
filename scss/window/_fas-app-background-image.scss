@@ -103,4 +103,10 @@ body {
         --vault-profile-color: rgba(var(--mono-rgb-100), 0.6);
         --vault-profile-color-hover: rgb(var(--mono-rgb-100));
     }
+
+
+    // Remove the titlebar clip-path
+    &.mod-windows.is-hidden-frameless:not(.is-fullscreen) .workspace:not(.is-right-sidedock-open) .mod-root::before {
+        content: none;
+    }
 }
