@@ -45,7 +45,11 @@ img[alt~="b-w"] {
 
 $no_shadow_attributes: full-width-image-aliases.$aliases;
 $no_shadow_attributes: list.append($no_shadow_attributes, 'no-shadow');
+// ITS compatibility https://publish.obsidian.md/slrvb-docs/ITS+Theme/Image+Adjustments
 $no_shadow_attributes: list.append($no_shadow_attributes, 'banner');
+$no_shadow_attributes: list.append($no_shadow_attributes, 'banner+small');
+$no_shadow_attributes: list.append($no_shadow_attributes, 'banner+tall');
+$no_shadow_attributes: list.append($no_shadow_attributes, 'sban');
 $no_shadow_selector: ":is(";
 @each $alias in $no_shadow_attributes {
     @if ($no_shadow_selector != ":is(") { $no_shadow_selector: $no_shadow_selector + ", "; }
