@@ -3114,6 +3114,8 @@ body {
 
 .callout[data-callout-metadata~=blank] {
   margin: 0;
+  mix-blend-mode: none;
+  border-radius: 0;
 }
 .callout[data-callout-metadata~=blank], .callout[data-callout-metadata~=blank] > .callout-content {
   border: none;
@@ -3637,12 +3639,12 @@ img[alt~=b-w] {
 }
 
 @container not (style(--image-shadow-offset: 0) or style(--image-shadow-offset: 0px)) {
-  .image-embed {
+  .image-embed:not(:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner])) {
     z-index: 1;
     width: fit-content;
   }
-  .markdown-source-view .image-embed,
-  .markdown-rendered .image-embed {
+  .markdown-source-view .image-embed:not(:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner])),
+  .markdown-rendered .image-embed:not(:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner])) {
     padding-right: var(--image-shadow-offset, 0px);
     padding-bottom: var(--image-shadow-offset, 0px);
     display: inline-block;
@@ -3651,8 +3653,8 @@ img[alt~=b-w] {
     position: relative;
     font-size: 0;
   }
-  .markdown-source-view .image-embed::before,
-  .markdown-rendered .image-embed::before {
+  .markdown-source-view .image-embed:not(:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner]))::before,
+  .markdown-rendered .image-embed:not(:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner]))::before {
     content: "";
     position: absolute;
     z-index: -1;

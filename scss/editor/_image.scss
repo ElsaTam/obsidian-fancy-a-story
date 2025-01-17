@@ -1,5 +1,7 @@
 @forward '../shared/list-with-float';
+@use '../shared/full-width-image-aliases';
 @use '../foundations/colors/colors_definitions';
+@use 'sass:list';
 
 
 body {
@@ -41,14 +43,24 @@ img[alt~="b-w"] {
 
 // IMAGE SHADOW
 
+$no_shadow_attributes: full-width-image-aliases.$aliases;
+$no_shadow_attributes: list.append($no_shadow_attributes, 'no-shadow');
+$no_shadow_attributes: list.append($no_shadow_attributes, 'banner');
+$no_shadow_selector: ":is(";
+@each $alias in $no_shadow_attributes {
+    @if ($no_shadow_selector != ":is(") { $no_shadow_selector: $no_shadow_selector + ", "; }
+    $no_shadow_selector: $no_shadow_selector + "[alt~='#{$alias}']";
+}
+$no_shadow_selector: $no_shadow_selector + ")";
+
 @container not (style(--image-shadow-offset: 0) or style(--image-shadow-offset: 0px)) {
-    .image-embed {
+    .image-embed:not(#{$no_shadow_selector}) {
         z-index: 1;
         width: fit-content;
     }
     
-    .markdown-source-view .image-embed,
-    .markdown-rendered .image-embed {
+    .markdown-source-view .image-embed:not(#{$no_shadow_selector}),
+    .markdown-rendered .image-embed:not(#{$no_shadow_selector}) {
         padding-right: var(--image-shadow-offset, 0px);
         padding-bottom: var(--image-shadow-offset, 0px);
         display: inline-block;
