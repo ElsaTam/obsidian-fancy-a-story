@@ -104,6 +104,8 @@ body {
 
 .callout[data-callout-metadata~=blank] {
   margin: 0;
+  mix-blend-mode: none;
+  border-radius: 0;
 }
 .callout[data-callout-metadata~=blank], .callout[data-callout-metadata~=blank] > .callout-content {
   border: none;
