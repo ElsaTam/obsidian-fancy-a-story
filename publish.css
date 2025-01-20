@@ -1429,10 +1429,15 @@ body {
   content: "← " counter(frames);
 }
 
+body {
+  --grid-callout-default-columns: 3;
+}
+
 .callout[data-callout=grid] {
   background: none;
   border: none;
   padding: 0;
+  --n-col: var(--grid-callout-default-columns);
 }
 .callout[data-callout=grid] > .callout-title {
   display: none;
@@ -1443,55 +1448,145 @@ body {
   align-items: flex-start;
   gap: 10px;
   padding: 0;
+  grid-template-columns: repeat(var(--n-col), 1fr);
 }
 .callout[data-callout=grid] > .callout-content.callout-content > * {
   margin: 0;
 }
 .callout[data-callout=grid][data-callout-metadata~=col-2] > .callout-content {
-  grid-template-columns: repeat(2, 1fr);
+  --n-col: 2;
 }
 .callout[data-callout=grid][data-callout-metadata~=col-3] > .callout-content {
-  grid-template-columns: repeat(3, 1fr);
+  --n-col: 3;
 }
 .callout[data-callout=grid][data-callout-metadata~=col-4] > .callout-content {
-  grid-template-columns: repeat(4, 1fr);
+  --n-col: 4;
 }
 .callout[data-callout=grid][data-callout-metadata~=col-5] > .callout-content {
-  grid-template-columns: repeat(5, 1fr);
+  --n-col: 5;
 }
 .callout[data-callout=grid][data-callout-metadata~=col-6] > .callout-content {
-  grid-template-columns: repeat(6, 1fr);
+  --n-col: 6;
+}
+.callout[data-callout=grid] > .callout-content > [data-callout-metadata~=span-2] {
+  grid-column: span 2;
+}
+.callout[data-callout=grid] > .callout-content > [data-callout-metadata~=span-3] {
+  grid-column: span 3;
+}
+.callout[data-callout=grid] > .callout-content > [data-callout-metadata~=span-4] {
+  grid-column: span 4;
+}
+.callout[data-callout=grid] > .callout-content > [data-callout-metadata~=span-5] {
+  grid-column: span 5;
+}
+.callout[data-callout=grid] > .callout-content > [data-callout-metadata~=span-6] {
+  grid-column: span 6;
 }
 
-@container markdown-view (700px < width < 850px) {
+@container markdown-view (0px < width < 250px) {
+  .callout[data-callout=grid][data-callout-metadata~=col-2] > .callout-content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .callout[data-callout=grid][data-callout-metadata~=col-3] > .callout-content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .callout[data-callout=grid][data-callout-metadata~=col-4] > .callout-content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .callout[data-callout=grid][data-callout-metadata~=col-5] > .callout-content {
+    grid-template-columns: repeat(1, 1fr);
+  }
   .callout[data-callout=grid][data-callout-metadata~=col-6] > .callout-content {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 }
-@container markdown-view (550px < width < 700px) {
-  .callout[data-callout=grid][data-callout-metadata~=col-5] > .callout-content,
+@media print and (0px < width < 250px) {
+  .callout[data-callout=grid][data-callout-metadata~=col-2] > .callout-content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .callout[data-callout=grid][data-callout-metadata~=col-3] > .callout-content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .callout[data-callout=grid][data-callout-metadata~=col-4] > .callout-content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .callout[data-callout=grid][data-callout-metadata~=col-5] > .callout-content {
+    grid-template-columns: repeat(1, 1fr);
+  }
   .callout[data-callout=grid][data-callout-metadata~=col-6] > .callout-content {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 }
-@container markdown-view (400px < width < 550px) {
-  .callout[data-callout=grid][data-callout-metadata~=col-4] > .callout-content,
-  .callout[data-callout=grid][data-callout-metadata~=col-5] > .callout-content,
-  .callout[data-callout=grid][data-callout-metadata~=col-6] > .callout-content {
-    grid-template-columns: repeat(3, 1fr);
+@container markdown-view (250px < width < 400px) {
+  .callout[data-callout=grid][data-callout-metadata~=col-3] > .callout-content {
+    grid-template-columns: repeat(2, 1fr);
   }
-}
-@container markdown-view (width < 400px) {
-  .callout[data-callout=grid][data-callout-metadata~=col-3] > .callout-content,
-  .callout[data-callout=grid][data-callout-metadata~=col-4] > .callout-content,
-  .callout[data-callout=grid][data-callout-metadata~=col-5] > .callout-content,
+  .callout[data-callout=grid][data-callout-metadata~=col-4] > .callout-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .callout[data-callout=grid][data-callout-metadata~=col-5] > .callout-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .callout[data-callout=grid][data-callout-metadata~=col-6] > .callout-content {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media print {
-  .print .markdown-preview-view [data-callout=grid] > .callout-content {
-    display: grid !important;
+@media print and (250px < width < 400px) {
+  .callout[data-callout=grid][data-callout-metadata~=col-3] > .callout-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .callout[data-callout=grid][data-callout-metadata~=col-4] > .callout-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .callout[data-callout=grid][data-callout-metadata~=col-5] > .callout-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .callout[data-callout=grid][data-callout-metadata~=col-6] > .callout-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@container markdown-view (400px < width < 550px) {
+  .callout[data-callout=grid][data-callout-metadata~=col-4] > .callout-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .callout[data-callout=grid][data-callout-metadata~=col-5] > .callout-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .callout[data-callout=grid][data-callout-metadata~=col-6] > .callout-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media print and (400px < width < 550px) {
+  .callout[data-callout=grid][data-callout-metadata~=col-4] > .callout-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .callout[data-callout=grid][data-callout-metadata~=col-5] > .callout-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .callout[data-callout=grid][data-callout-metadata~=col-6] > .callout-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@container markdown-view (550px < width < 700px) {
+  .callout[data-callout=grid][data-callout-metadata~=col-5] > .callout-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .callout[data-callout=grid][data-callout-metadata~=col-6] > .callout-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media print and (550px < width < 700px) {
+  .callout[data-callout=grid][data-callout-metadata~=col-5] > .callout-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .callout[data-callout=grid][data-callout-metadata~=col-6] > .callout-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@container markdown-view (700px < width < 850px) {
+  .callout[data-callout=grid][data-callout-metadata~=col-6] > .callout-content {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 @media print and (700px < width < 850px) {
@@ -1499,25 +1594,9 @@ body {
     grid-template-columns: repeat(5, 1fr);
   }
 }
-@media print and (550px < width < 700px) {
-  .callout[data-callout=grid][data-callout-metadata~=col-5] > .callout-content,
-  .callout[data-callout=grid][data-callout-metadata~=col-6] > .callout-content {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-@media print and (400px < width < 550px) {
-  .callout[data-callout=grid][data-callout-metadata~=col-4] > .callout-content,
-  .callout[data-callout=grid][data-callout-metadata~=col-5] > .callout-content,
-  .callout[data-callout=grid][data-callout-metadata~=col-6] > .callout-content {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media print and (width < 400px) {
-  .callout[data-callout=grid][data-callout-metadata~=col-3] > .callout-content,
-  .callout[data-callout=grid][data-callout-metadata~=col-4] > .callout-content,
-  .callout[data-callout=grid][data-callout-metadata~=col-5] > .callout-content,
-  .callout[data-callout=grid][data-callout-metadata~=col-6] > .callout-content {
-    grid-template-columns: repeat(2, 1fr);
+@media print {
+  .print .markdown-preview-view [data-callout=grid] > .callout-content {
+    display: grid !important;
   }
 }
 /*

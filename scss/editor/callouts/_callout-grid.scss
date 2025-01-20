@@ -1,14 +1,17 @@
 @forward '../../shared/markdown-container';
 
-$stop2: 400px;
-$stop3: 550px;
-$stop4: 700px;
-$stop5: 850px;
+$colmax: 6;
+
+body {
+    --grid-callout-default-columns: 3;
+}
 
 .callout[data-callout="grid"] {
     background: none;
     border: none;
     padding: 0;
+
+    --n-col: var(--grid-callout-default-columns);
 
     > .callout-title {
         display: none;
@@ -20,95 +23,53 @@ $stop5: 850px;
         align-items: flex-start;
         gap: 10px;
         padding: 0;
+        grid-template-columns: repeat(var(--n-col), 1fr);
     }
 
     > .callout-content.callout-content > * {
         margin: 0;
     }
 
-    &[data-callout-metadata~="col-2"] > .callout-content {
-        grid-template-columns: repeat(2, 1fr);
+    @for $i from 2 through $colmax {
+        &[data-callout-metadata~="col-#{$i}"] > .callout-content {
+            --n-col: #{$i};
+        }
     }
 
-    &[data-callout-metadata~="col-3"] > .callout-content {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    &[data-callout-metadata~="col-4"] > .callout-content {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    &[data-callout-metadata~="col-5"] > .callout-content {
-        grid-template-columns: repeat(5, 1fr);
-    }
-
-    &[data-callout-metadata~="col-6"] > .callout-content {
-        grid-template-columns: repeat(6, 1fr);
+    @for $i from 2 through $colmax {
+        > .callout-content > [data-callout-metadata~="span-#{$i}"] {
+            grid-column: span #{$i};
+        }
     }
 }
 
-@container markdown-view (#{$stop4} < width < #{$stop5}) {
-    .callout[data-callout="grid"][data-callout-metadata~="col-6"] > .callout-content {
-        grid-template-columns: repeat(5, 1fr);
+@for $i from 2 through $colmax {
+    $start: 250 + ($i - 3) * 150;
+    $stop: 250 + ($i - 2) * 150;
+    @if $i == 2 {
+        $start: 0;
     }
-}
-
-@container markdown-view (#{$stop3} < width < #{$stop4}) {
-    .callout[data-callout="grid"][data-callout-metadata~="col-5"] > .callout-content,
-    .callout[data-callout="grid"][data-callout-metadata~="col-6"] > .callout-content {
-        grid-template-columns: repeat(4, 1fr);
+    @container markdown-view (#{$start}px < width < #{$stop}px) {
+        @for $j from $i through $colmax {
+            .callout[data-callout="grid"][data-callout-metadata~="col-#{$j}"] > .callout-content {
+                grid-template-columns: repeat(#{$i - 1}, 1fr);
+            }
+        }
     }
-}
 
-@container markdown-view (#{$stop2} < width < #{$stop3}) {
-    .callout[data-callout="grid"][data-callout-metadata~="col-4"] > .callout-content,
-    .callout[data-callout="grid"][data-callout-metadata~="col-5"] > .callout-content,
-    .callout[data-callout="grid"][data-callout-metadata~="col-6"] > .callout-content {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@container markdown-view (width < #{$stop2}) {
-    .callout[data-callout="grid"][data-callout-metadata~="col-3"] > .callout-content,
-    .callout[data-callout="grid"][data-callout-metadata~="col-4"] > .callout-content,
-    .callout[data-callout="grid"][data-callout-metadata~="col-5"] > .callout-content,
-    .callout[data-callout="grid"][data-callout-metadata~="col-6"] > .callout-content {
-        grid-template-columns: repeat(2, 1fr);
+    @media print {
+        @media (#{$start}px < width < #{$stop}px) {
+            @for $j from $i through $colmax {
+                .callout[data-callout="grid"][data-callout-metadata~="col-#{$j}"] > .callout-content {
+                    grid-template-columns: repeat(#{$i - 1}, 1fr);
+                }
+            }
+        }
     }
 }
 
 @media print {
     .print .markdown-preview-view [data-callout="grid"] > .callout-content {
         display: grid !important;
-    }
-
-    @media (#{$stop4} < width < #{$stop5}) {
-        .callout[data-callout="grid"][data-callout-metadata~="col-6"] > .callout-content {
-            grid-template-columns: repeat(5, 1fr);
-        }
-    }
-    
-    @media (#{$stop3} < width < #{$stop4}) {
-        .callout[data-callout="grid"][data-callout-metadata~="col-5"] > .callout-content,
-        .callout[data-callout="grid"][data-callout-metadata~="col-6"] > .callout-content {
-            grid-template-columns: repeat(4, 1fr);
-        }
-    }
-    
-    @media (#{$stop2} < width < #{$stop3}) {
-        .callout[data-callout="grid"][data-callout-metadata~="col-4"] > .callout-content,
-        .callout[data-callout="grid"][data-callout-metadata~="col-5"] > .callout-content,
-        .callout[data-callout="grid"][data-callout-metadata~="col-6"] > .callout-content {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
-    
-    @media (width < #{$stop2}) {
-        .callout[data-callout="grid"][data-callout-metadata~="col-3"] > .callout-content,
-        .callout[data-callout="grid"][data-callout-metadata~="col-4"] > .callout-content,
-        .callout[data-callout="grid"][data-callout-metadata~="col-5"] > .callout-content,
-        .callout[data-callout="grid"][data-callout-metadata~="col-6"] > .callout-content {
-            grid-template-columns: repeat(2, 1fr);
-        }
     }
 }
