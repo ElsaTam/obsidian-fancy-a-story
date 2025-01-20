@@ -17,7 +17,7 @@ Instead of using tag `#node-class`, you can us an html element with such as `<sp
 |:------|:------------|:-------|
 | `#node-background` | Keep the node in the background | [`canvas-node-background.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/canvas/canvas-node-background.css) |
 | `#node-blur` | Everything behind the node will be blured | [`canvas-node-blur.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/canvas/canvas-node-blur.css) |
-| `#node-image` | To be used with one image, make the image be displayed as such. Useful to combine with `#node-background` | [`canvas-node-blur.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/canvas/canvas-node-blur.css) |
+| `#node-image` | To be used with one image, make the image be displayed as such. Useful to combine with `#node-background` | [`canvas-node-image.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/canvas/canvas-node-image.css) |
 | `#node-large` | Make the text very large (5em). Useful with the title tags | [`canvas-node-large.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/canvas/canvas-node-large.css) |
 | `#node-only-text` | Remove border and background | [`canvas-node-only-text.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/canvas/canvas-node-only-text.css) |
 | `#node-text-color-invert` | Text color black in dark mode, white in light mode | [`canvas-node-text-color-invert.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/canvas/canvas-node-text-color-invert.css) |

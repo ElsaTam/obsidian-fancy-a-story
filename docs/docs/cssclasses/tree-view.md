@@ -3,7 +3,7 @@ title: Tree view
 parent: CSS Classes
 ---
 
-Source: [`tree-view.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/cssclasses/tree-view.css)
+Source: [`tree-view.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/tree-view.css)
 
 Use the cssclass `tree-view` to turn lists into tree views **in preview (reading) view**.
 

@@ -228,10 +228,10 @@ Number of columns for the frontmatter properties. If the note is smaller than 60
 
 ## Tables
 
-#### Use plain table style
-Select the plain style for the tables
+#### Table style
+Default, with borders, or plain
 
-[![]({% link images/tables/table-default-vs-plain.webp %}){: width="400" }]({% link images/tables/table-default-vs-plain.webp %})
+[![]({% link images/tables/table-default-vs-plain.webp %}){: width="600" }]({% link images/tables/table-default-vs-plain.webp %})
 
 #### Table position
 

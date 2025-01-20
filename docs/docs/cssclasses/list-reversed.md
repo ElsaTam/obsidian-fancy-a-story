@@ -3,7 +3,7 @@ title: List reversed
 parent: CSS Classes
 ---
 
-Source: [`list-reversed.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/cssclasses/list-reversed.css)
+Source: [`list-reversed.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/list-reversed.css)
 
 Use the cssclass `list-reversed-{n}` to reverse order of list items at depth `n` (up to 10). To reverse all the orders at once, use the cssclass `list-reversed-all`.
 

@@ -3,7 +3,7 @@ title: Family tree
 parent: CSS Classes
 ---
 
-Source: [`family-tree.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/cssclasses/family-tree.css)
+Source: [`family-tree.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/family-tree.css)
 
 Use the cssclass `family-tree` to turn unordered lists into family trees **in preview (reading) view**.
 

@@ -5,20 +5,19 @@ nav_order: 9
 
 # Images
 
-Source: [`image.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/image.css)
-
 When embeding an image, add an alt option:
 - `![[image.png|option]]`
 - `![option](url/image.png)`
 
 
-| Alt option               | Description                         |
-|:-------------------------|:------------------------------------|
-| `right`, `float-right`   | Right floating image (preview mode) |
-| `left`, `float-left`     | Left floating image (preview mode)  |
-| `{color}`                | Change the striped shadow color     |
-| `no-shadow`              | Remove the striped shadow           |
-| `black-and-white`, `b-w` | Desaturate the image                |
+| Alt option               | Description                         | Source |
+|:-------------------------|:------------------------------------|:-------|
+| `right`, `float-right`   | Right floating image (preview mode) | [`image.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/image.css) |
+| `left`, `float-left`     | Left floating image (preview mode)  | [`image.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/image.css) |
+| `{color}`                | Change the striped shadow color     | [`image.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/image.css) |
+| `no-shadow`              | Remove the striped shadow           | [`image.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/image.css) |
+| `black-and-white`, `b-w` | Desaturate the image                | [`image.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/image.css) |
+| `full-width-image`       | Full width image                    | [`embed-full-width-image.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/embeds/embed-full-width-image.css) |
 
 
 # Notes

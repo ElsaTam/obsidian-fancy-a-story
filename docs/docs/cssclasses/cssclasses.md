@@ -43,11 +43,11 @@ Source: [`fas-headings.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/b
 
 | Tag                                                    | Description                           | Source                                                           |
 |:-------------------------------------------------------|:--------------------------------------|:-----------------------------------------------------------------|
-| [`family-tree`]({% link docs/cssclasses/family-tree.md %}) | Transform lists into family trees | [`family-tree.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/cssclasses/family-tree.css) |
-| [`tree-view`]({% link docs/cssclasses/tree-view.md %})     | Transform lists into tree views   | [`tree-view.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/cssclasses/tree-view.css) |
+| [`family-tree`]({% link docs/cssclasses/family-tree.md %}) | Transform lists into family trees | [`family-tree.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/family-tree.css) |
+| [`tree-view`]({% link docs/cssclasses/tree-view.md %})     | Transform lists into tree views   | [`tree-view.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/tree-view.css) |
 
 ## Any list
 
 | Tag                                                    | Description                           | Source                                                           |
 |:-------------------------------------------------------|:--------------------------------------|:-----------------------------------------------------------------|
-| [`list-reversed`]({% link docs/cssclasses/list-reversed.md %}) | Reverse the order of lists   | [`list-reversed.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/cssclasses/list-reversed.css) |
+| [`list-reversed`]({% link docs/cssclasses/list-reversed.md %}) | Reverse the order of lists   | [`list-reversed.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/list-reversed.css) |
