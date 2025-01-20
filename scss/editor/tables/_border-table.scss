@@ -1,0 +1,10 @@
+.fas-border-tables {
+    --table-border-width: 1px;
+    --table-column-border-width: var(--table-border-width);
+    --table-column-first-border-width: var(--table-border-width);
+    --table-column-last-border-width: var(--table-border-width);
+
+    :is(.cm-html-embed, .markdown-rendered) :is(th, td) {
+        border-inline-width: var(--table-border-width);
+    }
+}

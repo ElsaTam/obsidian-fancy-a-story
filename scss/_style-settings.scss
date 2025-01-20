@@ -663,11 +663,19 @@ settings:
         type: heading
         collapsed: true
         level: 2
-    - 
-        id: fas-plain-tables
-        title: Use plain table style
-        type: class-toggle
-        default: false
+    -
+        id: table-style
+        title: Table style
+        type: class-select
+        allowEmpty: true
+        default: none
+        options:
+            - 
+                value: fas-border-tables
+                label: With borders
+            - 
+                value: fas-plain-tables
+                label: Plain
     - 
         id: table-margin-inline
         title: Table position
