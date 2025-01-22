@@ -81,3 +81,9 @@ nav_order: 7
 | Variable | Description | Default value |
 |:---------|:------------|:--------------|
 | `--active-file-bullet-size` | Size of the active file bullet indicator (require [Highlight active folder section](https://github.com/justanotherjurastudent/highlight-active-folder-section) plugin) | `6px` |
+
+## Scrollbars
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--scrollbar-width-base` | Width of the scrollbars (not on iOS) | `10px` |
