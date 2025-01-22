@@ -6,7 +6,7 @@ parent: Callouts
 Source: [`callout-timeline.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-timeline.css)
 
 Use this callout to create a timeline. Several options are available.:
-- At the first level timeline callout `> ![timeline|option]`:
+- At the first level timeline callout `> [!timeline|option]`:
   - `no-icon`: remove all icons from callout title, the main and the nested ones.
   - `numbered`: add increasing numbers inside the bullets for each item.
   - `horizontal`: make the timeline horizontal (vertical by default).
