@@ -145,6 +145,12 @@ Set the file line width (width of notes).
 {: .note }
 If you change this value, the [asides]({% link docs/other/aside.md %}) elements might not switch correctly between in-text/in-margins positions.
 
+## Callouts
+
+#### Theme quote callout
+
+Enable to use the Fancy-a-Story specific style for the `quote` and `cite` callouts (the style can still be used with `cite-fas` or `quote-fas` callout types if you keep this option disabled).
+
 ## Headings
 
 #### Color for the headings

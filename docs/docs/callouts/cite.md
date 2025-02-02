@@ -20,10 +20,12 @@ And another (just a name)
 
 And another (external link, note specific href)
 
-> [!cite]
+> [!cite-fas]
 > Nunc non lacus enim. Donec id doliam lurta orci, eget commodo est euismod a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae
 > <cite>— <a href="https://twitter.com/obsdmd/status/1458523572448727051?s=20">@obsdmd</a></cite>
 ```
+
+To use `cite` and `quote` callout types and have this effect, you need to enable the option in `Community plugins > Style Settings > Fancy-a-Story > Editor > Callouts`. Otherwise, you can use `cite-fas` or `quote-fas` which will always work.
 
 ## CSS Variables
 
