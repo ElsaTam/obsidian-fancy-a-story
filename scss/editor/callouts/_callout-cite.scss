@@ -6,8 +6,10 @@ body {
     --cite-decoration-width: 30px;
 }
 
-.callout[data-callout~="cite"],
-.callout[data-callout~="quote"] {
+.fas-callout-cite-alt .callout[data-callout~="cite"],
+.fas-callout-cite-alt .callout[data-callout~="quote"],
+.callout[data-callout~="cite-fas"],
+.callout[data-callout~="quote-fas"] {
     font-style: italic;
     position: relative;
     padding-inline-start: calc(var(--cite-decoration-width) + 5px);

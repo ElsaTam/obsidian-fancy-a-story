@@ -450,6 +450,19 @@ settings:
         default: 700
 
     - 
+        id: callouts
+        title: Callouts
+        type: heading
+        collapsed: true
+        level: 2
+    - 
+        id: fas-callout-cite-alt
+        title: Theme quote callout
+        description: Enable to use the Fancy-a-Story specific style for the quote and cite callouts (the style can still be used with `cite-fas` or `quote-fas` callout types if you keep this option disabled).
+        markdown: true
+        type: class-toggle
+
+    - 
         id: headings
         title: Headings
         type: heading
