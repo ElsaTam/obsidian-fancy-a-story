@@ -89,6 +89,7 @@ Credits and Thanks
 
 I would love to thanks all those people for their feedbacks, encouragements, and propositions during the development of the theme. Thank you also to some of you for your patience with the multiple times I broke the theme and the snippets while you were using them!
 - Aanu
+- AForAnglerfishRights
 - Data
 - Em
 - Gandalf
