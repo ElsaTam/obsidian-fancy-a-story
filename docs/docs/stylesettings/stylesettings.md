@@ -245,6 +245,9 @@ Default, with borders, or plain
 
 Horizontal position of the table in preview mode.
 
+#### Wrap in source mode
+
+Wrap the table code in source mode so it isn't wider than the note.
 
 
 # Features

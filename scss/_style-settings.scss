@@ -710,6 +710,18 @@ settings:
             - 
                 value: auto 0
                 label: Right
+    - 
+        id: table-source-min-width
+        title: Wrap in source mode
+        type: variable-select
+        default: max-content
+        options:
+            - 
+                value: max-content
+                label: No
+            - 
+                value: min-content
+                label: Yes
 
 
 

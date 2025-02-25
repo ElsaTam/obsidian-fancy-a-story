@@ -36,6 +36,7 @@ nav_order: 7
 |:---------|:------------|:--------------|
 | `--table-header-line-height` | Line height for table headers | `1.8` |
 | `--table-margin-inline`      | Inline (left/right) margins for tables in preview mode | `auto` |
+| `--table-source-min-width`   | `min-width` of a table line in source mode | `max-content` |
 
 
 # Typography

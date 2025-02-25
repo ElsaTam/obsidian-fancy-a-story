@@ -1,0 +1,8 @@
+body {
+    --table-source-min-width: max-content;
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-table-row {
+    min-width: var(--table-source-min-width);
+    white-space: pre-wrap;
+}
