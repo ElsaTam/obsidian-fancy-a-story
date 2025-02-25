@@ -893,6 +893,20 @@ settings:
         options:
             - yes
             - no
+    -
+        id: fas-note-background-image-blur
+        title: Blur
+        type: variable-number
+        default: 0
+        format: px
+    -
+        id: fas-note-background-image-opacity
+        title: Opacity
+        type: variable-number-slider
+        default: 1
+        min: 0
+        max: 1
+        step: 0.05
 
     -
         id: banners

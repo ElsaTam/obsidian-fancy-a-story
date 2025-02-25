@@ -332,6 +332,10 @@ Must be either:
 
 #### Repeat background image
 
+#### Blur
+
+#### Opacity
+
 ## Banners
 
 #### Banner height
