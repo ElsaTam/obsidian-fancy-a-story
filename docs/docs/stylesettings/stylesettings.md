@@ -338,6 +338,10 @@ Must be either:
 
 #### Brightness light/dark mode
 
+#### Export to PDF
+
+Use the note's background when exporting the note to PDF.
+
 ## Banners
 
 #### Banner height

@@ -82,3 +82,14 @@ body {
     background-color: rgb(from var(--workleaves-background) r g b / 0.7);
     backdrop-filter: blur(5px);
 }
+
+@media print {
+    body:not(.fas-print-note-background) .print {
+        --fas-note-background-image-url: url('');
+        --fas-note-background-image-blend-mode: normal;
+        --fas-note-background-image-repeat: no;
+        --fas-note-background-image-blur: 0px;
+        --fas-note-background-image-opacity: 1;
+        --fas-note-background-image-brightness: 1;
+    }
+}

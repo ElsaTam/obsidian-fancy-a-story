@@ -917,6 +917,13 @@ settings:
         title: Brightness (dark mode)
         type: variable-number
         default: 1
+    -
+        id: fas-print-note-background
+        title: Export to PDF
+        description: Use the note's background when exporting the note to PDF.
+        type: class-toggle
+        default: false
+
 
     -
         id: banners
