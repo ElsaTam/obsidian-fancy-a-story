@@ -336,6 +336,8 @@ Must be either:
 
 #### Opacity
 
+#### Brightness light/dark mode
+
 ## Banners
 
 #### Banner height

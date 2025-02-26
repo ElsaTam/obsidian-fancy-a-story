@@ -5,14 +5,18 @@ body {
     --fas-note-background-image-repeat: no;
     --fas-note-background-image-blur: 0px;
     --fas-note-background-image-opacity: 1;
+    --fas-note-background-image-brightness-dark: 1;
+    --fas-note-background-image-brightness-light: 1;
 }
 
 .theme-dark {
     --fas-note-background-image-blend-mode: var(--fas-note-background-image-blend-mode-dark);
+    --fas-note-background-image-brightness: var(--fas-note-background-image-brightness-dark);
 }
 
 .theme-light {
     --fas-note-background-image-blend-mode: var(--fas-note-background-image-blend-mode-light);
+    --fas-note-background-image-brightness: var(--fas-note-background-image-brightness-light);
 }
 
 .fas-note-background-image .markdown-source-view:not(.no-background, .no-bg),
@@ -24,20 +28,21 @@ body {
     background-blend-mode: var(--fas-note-background-image-blend-mode);
 }
 
-@container (not (style(--fas-note-background-image-blur: 0) or style(--fas-note-background-image-blur: 0px))) or (not style(--fas-note-background-image-opacity: 1)) {
+@container (not (style(--fas-note-background-image-blur: 0) or style(--fas-note-background-image-blur: 0px))) or (not style(--fas-note-background-image-opacity: 1)) or (not style(--fas-note-background-image-brightness: 1)) {
+    /* Source */
     .fas-note-background-image .markdown-source-view:not(.no-background, .no-bg) .cm-editor,
     .markdown-source-view:is(.background-img, .bg-img) .cm-editor {
         background-color: rgb(from var(--workleaves-background) r g b / calc(1 - var(--fas-note-background-image-opacity)));
-        backdrop-filter: blur(var(--fas-note-background-image-blur));
+        backdrop-filter: blur(var(--fas-note-background-image-blur)) brightness(var(--fas-note-background-image-brightness));
     }
 
-    
-    :is(body:not(.native-scrollbars).fas-note-background-image .markdown-preview-view:not(.no-background, .no-bg))::-webkit-scrollbar-track,
-    :is(body:not(.native-scrollbars) .markdown-preview-view:is(.background-img, .bg-img))::-webkit-scrollbar-track {
+    /* Preview scrollbar */
+    body:not(.native-scrollbars).fas-note-background-image .markdown-preview-view:not(.no-background, .no-bg)::-webkit-scrollbar-track,
+    body:not(.native-scrollbars) .markdown-preview-view:is(.background-img, .bg-img)::-webkit-scrollbar-track {
         background-color: rgb(from var(--workleaves-background) r g b / calc(1 - var(--fas-note-background-image-opacity)));
-        backdrop-filter: blur(var(--fas-note-background-image-blur));
     }
 
+    /* Preview, needs resizing so it covers the whole image */
     .fas-note-background-image .markdown-preview-view:not(.no-background, .no-bg),
     .markdown-preview-view:is(.background-img, .bg-img) {
         padding: 0;
@@ -47,7 +52,7 @@ body {
             padding-inline: calc(0.5 * (100% - var(--file-margins-inline) - var(--file-line-width)) + var(--scrollbar-width));
             max-width: 100%;
             background-color: rgb(from var(--workleaves-background) r g b / calc(1 - var(--fas-note-background-image-opacity)));
-            backdrop-filter: blur(var(--fas-note-background-image-blur));
+            backdrop-filter: blur(var(--fas-note-background-image-blur)) brightness(var(--fas-note-background-image-brightness));
         }
     }
 }

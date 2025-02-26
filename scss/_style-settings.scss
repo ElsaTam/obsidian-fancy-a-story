@@ -907,6 +907,16 @@ settings:
         min: 0
         max: 1
         step: 0.05
+    -
+        id: fas-note-background-image-brightness-light
+        title: Brightness (light mode)
+        type: variable-number
+        default: 1
+    -
+        id: fas-note-background-image-brightness-dark
+        title: Brightness (dark mode)
+        type: variable-number
+        default: 1
 
     -
         id: banners

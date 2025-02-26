@@ -23,3 +23,7 @@ Add the cssclass `background-img` or `bg-img` to your note to add a background t
 | `--fas-note-background-image-blend-mode-dark` | Blending mode in dark mode | `normal` |
 | `--fas-note-background-image-blend-mode-light` | Blending mode in light mode | `normal` |
 | `--fas-note-background-image-repeat` | Repeat (yes) or not (no) the background | `no` |
+| `--fas-note-background-image-blur` | Blurriness of the image | `0px` |
+| `--fas-note-background-image-opacity` | Opacity of the image | `1` |
+| `--fas-note-background-image-brightness-dark` | Brightness in dark mode | `1` |
+| `--fas-note-background-image-brightness-light` | Brightness in light mode | `1` |
