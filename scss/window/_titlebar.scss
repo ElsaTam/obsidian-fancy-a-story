@@ -1,11 +1,11 @@
-@forward '../shared/workleaves';
+@forward "../shared/workleaves";
 
 body {
     --titlebar-background: none;
     --titlebar-background-focused: none;
 }
 
-.mod-windows.is-hidden-frameless:not(.is-fullscreen) .workspace:not(.is-right-sidedock-open) > .mod-root::before {
+.mod-windows.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right::before {
     content: "";
     position: absolute;
     top: 0;
@@ -15,5 +15,5 @@ body {
     height: 6px;
     background-color: var(--workleaves-background);
     clip-path: polygon(6px 0, 100% 0, 100% 100%, 0 100%);
-    z-index: var(--layer-popover);
+    z-index: -1;
 }
