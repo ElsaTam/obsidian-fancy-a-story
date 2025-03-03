@@ -1,19 +1,19 @@
-
-@use 'foundations/foundations';
-@use 'print';
-
+@use "foundations/foundations";
+@use "print";
 
 //@use 'canvas/canvas';*/
-@use 'components/components';
-@use 'editor/editor';
-@use 'plugins/plugins';
-@use 'window/window';
-@use 'mobile/mobile';
+@use "components/components";
+@use "editor/editor";
+@use "plugins/plugins";
+@use "window/window";
+@use "mobile/mobile";
 
-@use 'cssclasses/cssclasses';
+@use "cssclasses/cssclasses";
 
-@use 'style-settings';
+@use "styles/styles";
 
-@use 'shared/fonts/main_fonts';
+@use "style-settings";
+
+@use "shared/fonts/main_fonts";
 //@use 'shared/fonts/additional_fonts';*/
 //@use 'test';*/
