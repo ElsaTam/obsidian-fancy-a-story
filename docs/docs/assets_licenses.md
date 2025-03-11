@@ -29,13 +29,6 @@ Homemade Apple
 
 **License**: [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 
-Orbitron
---------
-
-**Source**: https://fonts.google.com/specimen/Orbitron
-
-**License**: [Open Font License](https://openfontlicense.org/)
-
 Neon Sans
 ---------
 
@@ -63,6 +56,20 @@ Noto Serif
 **Source**: https://fonts.google.com/noto/specimen/Noto+Serif
 
 **License**: [Open Font License](https://openfontlicense.org/)
+
+Orbitron
+--------
+
+**Source**: https://fonts.google.com/specimen/Orbitron
+
+**License**: [Open Font License](https://openfontlicense.org/)
+
+Park Lane NF
+------------
+
+**Source**: https://www.1001fonts.com/parklane-font.html
+
+**License** [1001Fonts Free For Commercial Use License (FFC)](https://www.1001fonts.com/licenses/ffc.html)
 
 Poppins
 -------
@@ -133,6 +140,13 @@ Anatomy body schema
 **License**: Creative Commons [CC0 1.0 Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/deed.en).
 
 **Modified**: yes
+
+Art Deco Design Elements
+------------------------
+
+**Source**: https://www.freeject.net/2022/07/free-demo-art-deco-design-element.html
+
+**License (copy)**: "All project in freejct (included DEMO) are free to use for personal or commercial. Attribution is not required. May not redistribute or sell to other stock websites. Edit first before publication. If any changes will be updated on [the license page](https://www.freeject.net/p/lisen.html)."
 
 Clue paper
 ----------
