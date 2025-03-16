@@ -11,6 +11,11 @@ nav_order: 12
 [![]({% link images/skins/art-deco-1.webp %})]({% link images/skins/art-deco-1.webp %})
 
 
+## Colors
+
+- The base colors in the screenshot can be chosen from the Style Settings plugin (Fancy-a-Story > Colors > Light/Dark color scheme > "Art Deco").
+- The color for the Art Deco elements can be changed from the Style Settings plugin (Fancy-a-Story > Skins > Art Deco > Custom color for the art deco elements).
+
 
 ## Fonts
 
