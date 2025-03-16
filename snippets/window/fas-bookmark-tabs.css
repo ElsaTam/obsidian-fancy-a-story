@@ -31,7 +31,10 @@ body {
   .mod-sidedock .workspace-tab-header.is-active:hover {
     background-color: var(--color-accent-1);
   }
-  .mod-sidedock .workspace-tab-container {
+  .mod-sidedock .workspace-tabs:not(.mod-top) .workspace-tab-header-container-inner {
+    margin-top: 0;
+  }
+  .mod-sidedock .mod-top .workspace-tab-container {
     margin-top: 6px;
   }
   .mod-sidedock .workspace-leaf {

@@ -22,12 +22,26 @@ Chakra Petch
 
 **License**: [Open Font License](https://openfontlicense.org/)
 
+Federo
+---------
+
+**Source** : https://fonts.google.com/specimen/Federo
+
+**License** : [Open Font License](https://openfontlicense.org/)
+
 Homemade Apple
 --------------
 
 **Source**: https://fonts.google.com/specimen/Homemade+Apple
 
 **License**: [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+
+Limelight
+---------
+
+**Source** : https://fonts.google.com/specimen/Limelight
+
+**License** : [Open Font License](https://openfontlicense.org/)
 
 Neon Sans
 ---------
@@ -91,6 +105,13 @@ Science Fair
 **Source**: https://www.dafont.com/science-fair.font
 
 **License (copy)**: "Hi, thanks for downloading my font family Science Fair and I hope you like them. Remember: they are free for personal and commercial use! Hey, like me on Facebook: https://www.facebook.com/Skomii.PauloR to know more about me and what I'm doing."
+
+Semplicità
+----------
+
+**Source** : https://www.1001fonts.com/semplicita-font.html
+
+**License** : [Creative Commons Attribution-NoDerivs License (CC BY-ND)](https://creativecommons.org/licenses/by-nd/3.0/)
 
 Spectral
 --------

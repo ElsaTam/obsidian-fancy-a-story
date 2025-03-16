@@ -1,5 +1,4 @@
-
-@import 'foundations/colors/colors_definitions';
+@import "foundations/colors/colors_definitions";
 
 /* @settings
 
@@ -20,6 +19,9 @@ settings:
         allowEmpty: false
         default: fas-silver-light
         options:
+            - 
+                label: Art deco
+                value: fas-art-deco
             - 
                 label: Automn
                 value: fas-automn
@@ -52,6 +54,9 @@ settings:
         allowEmpty: false
         default: fas-silver-dark
         options:
+            - 
+                label: Art deco
+                value: fas-art-deco
             - 
                 label: Artic
                 value: fas-artic
@@ -975,6 +980,62 @@ settings:
 
 
     - 
+        id: skins
+        title: Skins
+        type: heading
+        collapsed: true
+        level: 1
+    - 
+        id: fas-skin-select
+        title: Skin style
+        type: class-select
+        allowEmpty: true
+        default: none
+        options:
+            - 
+                value: fas-skin-art-deco
+                label: Art Deco
+
+    - 
+        id: art-deco
+        title: Art Deco
+        type: heading
+        collapsed: true
+        level: 2
+    -
+        id: art-deco-fonts
+        type: info-text
+        markdown: true
+        title: Art Deco fonts
+        description: "To used the fonts setup with this skins as shown in the screenshot, add [art_deco_fonts.css](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/css/skins/art_deco_fonts.css) to your [snippets folder](https://help.obsidian.md/Extending+Obsidian/CSS+snippets)."
+    - 
+        id: art-deco-color
+        title: Color for the art deco elements
+        type: variable-select
+        allowEmpty: false
+        default: var(--art-deco-color-custom)
+        options:
+            - 
+                label: Accent
+                value: var(--color-accent)
+            - 
+                label: Custom
+                value: var(--art-deco-color-custom)
+    - 
+        id: art-deco-color-custom
+        title: Custom color for the art deco elements
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-light: '#161547'
+        default-dark: '#e3c24a'
+    
+
+    
+    
+
+
+    - 
         id: additional-content
         title: Additional content
         type: heading
@@ -985,24 +1046,30 @@ settings:
         type: info-text
         markdown: true
         title: Additional fonts
-        description: "Multiple elements of this theme can use specific fonts if they are available. To download the required fonts, you can add the file [additional_fonts.css](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/css/additional_fonts.css) to your [snippets file](https://help.obsidian.md/Extending+Obsidian/CSS+snippets). This file can be very heavy. If you don't plan on using all of them, I would recommend deleting the unecessary @font-face from the snippet. You can see how which font is used [in the doc](https://elsatam.github.io/obsidian-fancy-a-story/docs/stylesettings/stylesettings.html#additional-fonts)"
+        description: "Multiple elements of this theme can use specific fonts if they are available. To download the required fonts, you can add the file [additional_fonts.css](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/css/additional_fonts.css) to your [snippets folder](https://help.obsidian.md/Extending+Obsidian/CSS+snippets). This file can be very heavy. If you don't plan on using all of them, I would recommend deleting the unecessary @font-face from the snippet. You can see how which font is used [in the doc](https://elsatam.github.io/obsidian-fancy-a-story/docs/stylesettings/stylesettings.html#additional-fonts)"
     -
         id: canvas-node-bundle
         type: info-text
         markdown: true
         title: Canvas node tags
-        description: "Usage of tags to define specific styling for canvas card can be very powerful. However, it requires a code that can cause performance issues. Also, such styling come as independant snippets. You can add the file [canvas-node-bundle](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/css/canvas/canvas-node-bundle.css) to your [snippets file](https://help.obsidian.md/Extending+Obsidian/CSS+snippets) to download all the effects. Or choose individual ones from [this list](https://github.com/ElsaTam/obsidian-fancy-a-story/tree/main/css/canvas)."
+        description: "Usage of tags to define specific styling for canvas card can be very powerful. However, it requires a code that can cause performance issues. Also, such styling come as independant snippets. You can add the file [canvas-node-bundle](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/css/canvas/canvas-node-bundle.css) to your [snippets folder](https://help.obsidian.md/Extending+Obsidian/CSS+snippets) to download all the effects. Or choose individual ones from [this list](https://github.com/ElsaTam/obsidian-fancy-a-story/tree/main/css/canvas)."
 
 
 */
 
-// Disable the settings when not used 
+// Disable the settings when not used
 body:not(.fas-custom-light) .style-settings-container [data-id="custom-color-base-00"] .theme-light,
 body:not(.fas-custom-light) .style-settings-container [data-id="custom-color-base-100"] .theme-light,
-body:not(.fas-custom-dark)  .style-settings-container [data-id="custom-color-base-00"] .theme-dark,
-body:not(.fas-custom-dark)  .style-settings-container [data-id="custom-color-base-100"] .theme-dark,
-body:not(.fas-custom-light):not(.fas-custom-dark) .style-settings-container [data-id="custom-color-base-00"] .setting-item-info,
-body:not(.fas-custom-light):not(.fas-custom-dark) .style-settings-container [data-id="custom-color-base-100"] .setting-item-info,
+body:not(.fas-custom-dark) .style-settings-container [data-id="custom-color-base-00"] .theme-dark,
+body:not(.fas-custom-dark) .style-settings-container [data-id="custom-color-base-100"] .theme-dark,
+body:not(.fas-custom-light):not(.fas-custom-dark)
+    .style-settings-container
+    [data-id="custom-color-base-00"]
+    .setting-item-info,
+body:not(.fas-custom-light):not(.fas-custom-dark)
+    .style-settings-container
+    [data-id="custom-color-base-100"]
+    .setting-item-info,
 body:not(.fas-custom-light):not(.fas-custom-dark) .style-settings-container [data-id="custom-color-space"],
 body.fas-accessibility .style-settings-container [data-id="fas-sans-serif"],
 body.fas-accessibility .style-settings-container [data-id="fas-bigger-font"],
@@ -1013,12 +1080,21 @@ body:not(.fas-sidebar-texture-custom) .style-settings-container [data-id="sideba
 body:not(.fas-sidebar-texture-custom) .style-settings-container [data-id="sidebar-texture-position-custom"],
 body:not(.fas-sidebar-texture-custom) .style-settings-container [data-id="sidebar-texture-opacity-custom"],
 body:not(.fas-file-explorer-decoration-custom) .style-settings-container [data-id="file-explorer-decoration-custom"],
-body:not(.fas-file-explorer-decoration-custom) .style-settings-container [data-id="file-explorer-decoration-blend-custom"],
-body:not(.fas-file-explorer-decoration-custom) .style-settings-container [data-id="file-explorer-decoration-blend-custom-dark"],
-body:not(.fas-file-explorer-decoration-custom) .style-settings-container [data-id="file-explorer-decoration-size-custom"],
-body:not(.fas-file-explorer-decoration-custom) .style-settings-container [data-id="file-explorer-decoration-position-custom"],
-body:not(.fas-file-explorer-decoration-custom) .style-settings-container [data-id="file-explorer-decoration-opacity-custom"]
-{
+body:not(.fas-file-explorer-decoration-custom)
+    .style-settings-container
+    [data-id="file-explorer-decoration-blend-custom"],
+body:not(.fas-file-explorer-decoration-custom)
+    .style-settings-container
+    [data-id="file-explorer-decoration-blend-custom-dark"],
+body:not(.fas-file-explorer-decoration-custom)
+    .style-settings-container
+    [data-id="file-explorer-decoration-size-custom"],
+body:not(.fas-file-explorer-decoration-custom)
+    .style-settings-container
+    [data-id="file-explorer-decoration-position-custom"],
+body:not(.fas-file-explorer-decoration-custom)
+    .style-settings-container
+    [data-id="file-explorer-decoration-opacity-custom"] {
     opacity: 0.5;
     pointer-events: none;
 }
@@ -1040,27 +1116,29 @@ body:not(.fas-file-explorer-decoration-custom) .style-settings-container [data-i
 }
 
 .style-settings-container {
-
     --h1-color: var(--color-accent);
     --current-h1-color: hsl(from var(--h1-color) h calc(s * 1) l);
     --pickr-size: 1.3em;
 
-
-    // Color the headers 
-    > .style-settings-container { --current-h1-color: hsl(from var(--h1-color) h calc(s * 0.5) l); }
-    > .style-settings-container > .style-settings-container { --current-h1-color: hsl(from var(--h1-color) h calc(s * 0.3) l); }
+    // Color the headers
+    > .style-settings-container {
+        --current-h1-color: hsl(from var(--h1-color) h calc(s * 0.5) l);
+    }
+    > .style-settings-container > .style-settings-container {
+        --current-h1-color: hsl(from var(--h1-color) h calc(s * 0.3) l);
+    }
     .style-settings-heading .setting-item-name {
         color: var(--current-h1-color);
     }
 
-    // Visualise the hiearchical structure 
+    // Visualise the hiearchical structure
     & .style-settings-container {
         margin-left: 0;
         padding: var(--size-4-1) var(--size-2-3) 0 var(--size-4-6);
         border-left: 1px solid var(--current-h1-color);
     }
 
-    // More compact color pickers 
+    // More compact color pickers
     & .pickr button {
         width: var(--pickr-size);
         height: var(--pickr-size);
@@ -1091,7 +1169,7 @@ body:not(.fas-file-explorer-decoration-custom) .style-settings-container [data-i
         --background-primary: var(--color-base-00);
     }
 
-    // Title and description on the same line 
+    // Title and description on the same line
     & .setting-item:not(.style-settings-info-text) .setting-item-info {
         > div {
             display: inline;

@@ -11,8 +11,8 @@ body {
   --cite-decoration-width: 30px;
 }
 
-.callout[data-callout~=cite],
-.callout[data-callout~=quote] {
+.callout[data-callout~=cite-fas],
+.callout[data-callout~=quote-fas] {
   font-style: italic;
   position: relative;
   padding-inline-start: calc(var(--cite-decoration-width) + 5px);
@@ -20,25 +20,25 @@ body {
   border: none;
   border-inline-start: var(--blockquote-border-thickness) solid rgb(var(--callout-color));
 }
-.callout[data-callout~=cite] .callout-title,
-.callout[data-callout~=quote] .callout-title {
+.callout[data-callout~=cite-fas] .callout-title,
+.callout[data-callout~=quote-fas] .callout-title {
   display: none;
 }
-.callout[data-callout~=cite] .callout-content,
-.callout[data-callout~=quote] .callout-content {
+.callout[data-callout~=cite-fas] .callout-content,
+.callout[data-callout~=quote-fas] .callout-content {
   border: none;
   padding: 0;
 }
-.callout[data-callout~=cite] .callout-content > :first-child,
-.callout[data-callout~=quote] .callout-content > :first-child {
+.callout[data-callout~=cite-fas] .callout-content > :first-child,
+.callout[data-callout~=quote-fas] .callout-content > :first-child {
   margin-top: 0;
 }
-.callout[data-callout~=cite] .callout-content > :plast-child,
-.callout[data-callout~=quote] .callout-content > :plast-child {
+.callout[data-callout~=cite-fas] .callout-content > :plast-child,
+.callout[data-callout~=quote-fas] .callout-content > :plast-child {
   margin-bottom: 0;
 }
-.callout[data-callout~=cite]::after,
-.callout[data-callout~=quote]::after {
+.callout[data-callout~=cite-fas]::after,
+.callout[data-callout~=quote-fas]::after {
   content: "“";
   position: absolute;
   font-style: italic;
@@ -53,8 +53,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgba(var(--callout-color), 0.1);
 }
-.callout[data-callout~=cite] cite,
-.callout[data-callout~=quote] cite {
+.callout[data-callout~=cite-fas] cite,
+.callout[data-callout~=quote-fas] cite {
   display: block;
   margin-top: 10px;
   font-style: normal;

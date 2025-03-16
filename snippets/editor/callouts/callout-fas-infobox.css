@@ -26,7 +26,12 @@ body {
 .callout[data-callout=fas-infobox] .callout-icon {
   display: none;
 }
-.callout[data-callout=fas-infobox] h1, .callout[data-callout=fas-infobox] h2, .callout[data-callout=fas-infobox] h3, .callout[data-callout=fas-infobox] h4, .callout[data-callout=fas-infobox] h5, .callout[data-callout=fas-infobox] h6 {
+.callout[data-callout=fas-infobox] h1,
+.callout[data-callout=fas-infobox] h2,
+.callout[data-callout=fas-infobox] h3,
+.callout[data-callout=fas-infobox] h4,
+.callout[data-callout=fas-infobox] h5,
+.callout[data-callout=fas-infobox] h6 {
   text-align: center;
 }
 .callout[data-callout=fas-infobox] p:first-child,
@@ -149,7 +154,8 @@ body {
   --overflow-width: 10px;
   --h1-line-height: 1.6;
 }
-.callout[data-callout=fas-infobox], .callout[data-callout=fas-infobox] > .callout-content {
+.callout[data-callout=fas-infobox],
+.callout[data-callout=fas-infobox] > .callout-content {
   overflow: visible;
 }
 .callout[data-callout=fas-infobox] h1 {
@@ -324,4 +330,41 @@ body {
 }
 .markdown-source-view .callout[data-callout=fas-infobox] {
   margin-inline: auto;
+}
+
+/* Color accent */
+.callout[data-callout=fas-infobox][data-callout-metadata~=accent] {
+  --hr-color: rgb(from var(--color-accent) r g b / var(--callout-border-opacity));
+  --table-row-alt-background: color-mix(
+      in srgb,
+      rgb(from var(--color-accent) r g b / 0.2),
+      rgba(var(--mono-rgb-0), 0.2) 50%
+  );
+  --table-border-color: rgb(from var(--color-accent) r g b / var(--callout-border-opacity));
+  --table-header-border-color: rgb(from var(--color-accent) r g b / var(--callout-border-opacity));
+}
+.callout[data-callout=fas-infobox][data-callout-metadata~=accent] .image-embed[alt~=cover]::after {
+  border-top: calc(0.5 * var(--triangle-size)) solid var(--color-accent);
+}
+.callout[data-callout=fas-infobox][data-callout-metadata~=accent] img[alt*=cover] {
+  border-bottom: 4px solid var(--color-accent);
+}
+.callout[data-callout=fas-infobox][data-callout-metadata~=accent] img[alt*=icon] {
+  border: 2px solid var(--color-accent);
+}
+.callout[data-callout=fas-infobox][data-callout-metadata~=accent] h1 {
+  background: color-mix(in srgb, var(--color-accent), rgb(var(--mono-rgb-0)) 20%);
+}
+.callout[data-callout=fas-infobox][data-callout-metadata~=accent] h1::before,
+.callout[data-callout=fas-infobox][data-callout-metadata~=accent] h1::after {
+  border-top: calc(var(--overflow-width) - 1px) solid color-mix(in srgb, var(--color-accent), rgb(0, 0, 0) 60%);
+}
+.callout[data-callout=fas-infobox][data-callout-metadata~=accent] .callout[data-callout=footer] {
+  background: color-mix(in srgb, var(--color-accent), rgb(var(--mono-rgb-0)) 80%);
+}
+.callout[data-callout=fas-infobox][data-callout-metadata~=accent] .callout[data-callout=footer]::after {
+  border-top: 2px dashed rgb(from var(--color-accent) r g b/var(--callout-border-opacity));
+}
+.callout[data-callout=fas-infobox][data-callout-metadata~=accent][data-callout-metadata~=corners]::before, .callout[data-callout=fas-infobox][data-callout-metadata~=accent][data-callout-metadata~=corners]::after {
+  background-color: color-mix(in srgb, var(--color-accent), rgb(var(--mono-rgb-0)) 20%);
 }

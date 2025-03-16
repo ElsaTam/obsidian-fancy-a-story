@@ -364,6 +364,13 @@ Select how the banner image will be displayed edit mode.
 - Icon will show a small `🖼️ banner` that you can hover to see the image in a very small icon (approx. 60px wide)
 
 
+# Skins
+
+Give a whole new vibe to your vault!
+
+Work in progress. See [skins]({% link docs/skins/skins.md %}) for the currently available skins.
+
+
 # Additional content
 
 #### Additional fonts
