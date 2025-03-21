@@ -252,6 +252,18 @@ settings:
             - 
                 label: Ribbon
                 value: fas-status-bar-ribbon
+    -
+        id: show-note-header-on-hover
+        title: Show note header on hover
+        type: variable-select
+        default: disable
+        options:
+            - 
+                label: Yes
+                value: enable
+            - 
+                label: No
+                value: disable
 
     - 
         id: sidebar

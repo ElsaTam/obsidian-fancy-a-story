@@ -1,0 +1,23 @@
+body {
+    --show-note-header-on-hover: disable;
+}
+
+@container style(--show-note-header-on-hover: enable) {
+    .mod-root .view-header {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 0;
+        transition: 0.5s height;
+        padding-bottom: 10px;
+    }
+
+    .mod-root .view-header > * {
+        overflow: hidden;
+    }
+
+    .mod-root .view-header:hover {
+        height: var(--header-height);
+    }
+}

@@ -1,13 +1,14 @@
-@use 'loading-screen';
-@use 'ribbon';
-@use 'scrollbar';
-@use 'status-bar';
-@use 'tab-headers';
-@use 'titlebar';
-@use 'vault-profile';
-@use 'workspace';
-@use 'sidebars/sidebars';
+@use "file-title-hover";
+@use "loading-screen";
+@use "ribbon";
+@use "scrollbar";
+@use "status-bar";
+@use "tab-headers";
+@use "titlebar";
+@use "vault-profile";
+@use "workspace";
+@use "sidebars/sidebars";
 
-@use 'fas-opposite-bg';
-@use 'fas-highlight-active-note';
-@use 'fas-app-background-image';
+@use "fas-opposite-bg";
+@use "fas-highlight-active-note";
+@use "fas-app-background-image";
