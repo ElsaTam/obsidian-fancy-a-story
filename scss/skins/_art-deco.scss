@@ -263,6 +263,7 @@
             mask-repeat: no-repeat;
             z-index: 10;
             transform: scaleY(-1) translateY(calc(-100% + 6px));
+            pointer-events: none;
         }
     }
 }
