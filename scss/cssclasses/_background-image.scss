@@ -1,5 +1,5 @@
 body {
-    --fas-note-background-image-url: url('');
+    --fas-note-background-image-url: url("");
     --fas-note-background-image-blend-mode-dark: normal;
     --fas-note-background-image-blend-mode-light: normal;
     --fas-note-background-image-repeat: no;
@@ -32,14 +32,20 @@ body {
     /* Source */
     .fas-note-background-image .markdown-source-view:not(.no-background, .no-bg) .cm-editor,
     .markdown-source-view:is(.background-img, .bg-img) .cm-editor {
-        background-color: rgb(from var(--workleaves-background) r g b / calc(1 - var(--fas-note-background-image-opacity)));
-        backdrop-filter: blur(var(--fas-note-background-image-blur)) brightness(var(--fas-note-background-image-brightness));
+        background-color: rgb(
+            from var(--workleaves-background) r g b / calc(1 - var(--fas-note-background-image-opacity))
+        );
+        backdrop-filter: blur(var(--fas-note-background-image-blur))
+            brightness(var(--fas-note-background-image-brightness));
     }
 
     /* Preview scrollbar */
-    body:not(.native-scrollbars).fas-note-background-image .markdown-preview-view:not(.no-background, .no-bg)::-webkit-scrollbar-track,
+    body:not(.native-scrollbars).fas-note-background-image
+        .markdown-preview-view:not(.no-background, .no-bg)::-webkit-scrollbar-track,
     body:not(.native-scrollbars) .markdown-preview-view:is(.background-img, .bg-img)::-webkit-scrollbar-track {
-        background-color: rgb(from var(--workleaves-background) r g b / calc(1 - var(--fas-note-background-image-opacity)));
+        background-color: rgb(
+            from var(--workleaves-background) r g b / calc(1 - var(--fas-note-background-image-opacity))
+        );
     }
 
     /* Preview, needs resizing so it covers the whole image */
@@ -49,10 +55,16 @@ body {
 
         > :first-child {
             padding-block: var(--file-margins-block);
-            padding-inline: calc(0.5 * (100% - var(--file-margins-inline) - var(--file-line-width)) + var(--scrollbar-width));
+            padding-inline: max(
+                var(--file-margins-inline),
+                0.5 * (100% - var(--file-margins-inline) - var(--file-line-width)) + var(--scrollbar-width)
+            );
             max-width: 100%;
-            background-color: rgb(from var(--workleaves-background) r g b / calc(1 - var(--fas-note-background-image-opacity)));
-            backdrop-filter: blur(var(--fas-note-background-image-blur)) brightness(var(--fas-note-background-image-brightness));
+            background-color: rgb(
+                from var(--workleaves-background) r g b / calc(1 - var(--fas-note-background-image-opacity))
+            );
+            backdrop-filter: blur(var(--fas-note-background-image-blur))
+                brightness(var(--fas-note-background-image-brightness));
         }
     }
 }
@@ -85,7 +97,7 @@ body {
 
 @media print {
     body:not(.fas-print-note-background) .print {
-        --fas-note-background-image-url: url('');
+        --fas-note-background-image-url: url("");
         --fas-note-background-image-blend-mode: normal;
         --fas-note-background-image-repeat: no;
         --fas-note-background-image-blur: 0px;
