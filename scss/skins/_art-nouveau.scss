@@ -1,0 +1,8 @@
+.metadata-container::after {
+    content: "";
+    display: block;
+    height: 500px;
+    width: 500px;
+    background-color: red;
+    mask-image: url("data:image/svg+xml, %3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%0A%3E%3Cpath style='fill: none;' id='circlePath' d=' M 10, 50 a 40,40 0 1,1 80,0 40,40 0 1,1 -80,0 ' /%3E%3Ctext%3E%3CtextPath href='%23circlePath'%3E Properties %3C/textPath%3E%3C/text%3E%3C/svg%3E ");
+}

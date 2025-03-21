@@ -1029,6 +1029,188 @@ settings:
         opacity: false
         default-light: '#161547'
         default-dark: '#e3c24a'
+    - 
+        id: art-deco-style-hr
+        title: Change the horizontal lines
+        type: variable-select
+        default: enable
+        options:
+            - 
+                value: enable
+                label: Yes
+            - 
+                value: disable
+                label: No
+    - 
+        id: art-deco-style-fonts
+        title: Change the fonts
+        type: variable-select
+        default: enable
+        options:
+            - 
+                value: enable
+                label: Yes
+            - 
+                value: disable
+                label: No
+    - 
+        id: art-deco-style-file-explorer-icons
+        title: Add file explorer icons for files and folders
+        type: variable-select
+        default: enable
+        options:
+            - 
+                value: enable
+                label: Yes
+            - 
+                value: disable
+                label: No
+    - 
+        id: art-deco-style-sidebar-corners
+        title: Change the corners in the sidebars
+        type: variable-select
+        default: enable
+        options:
+            - 
+                value: enable
+                label: Yes
+            - 
+                value: disable
+                label: No
+    - 
+        id: art-deco-style-tab-flags
+        title: Change the style of the sidebar tabs
+        description: The bookmark style for the tabs must be enabled
+        type: variable-select
+        default: enable
+        options:
+            - 
+                value: enable
+                label: Yes
+            - 
+                value: disable
+                label: No
+    - 
+        id: art-deco-style-file-header
+        title: Add a decoration under the file header
+        type: variable-select
+        default: enable
+        options:
+            - 
+                value: enable
+                label: Yes
+            - 
+                value: disable
+                label: No
+    - 
+        id: art-deco-style-ribbon-deco
+        title: Add a decoration in the left ribbon
+        type: variable-select
+        default: enable
+        options:
+            - 
+                value: enable
+                label: Yes
+            - 
+                value: disable
+                label: No
+    - 
+        id: art-deco-style-callouts
+        title: Style the callouts
+        type: variable-select
+        default: enable
+        options:
+            - 
+                value: enable
+                label: Yes
+            - 
+                value: disable
+                label: No
+    - 
+        id: art-deco-style-sidebar-textures
+        title: Change the sidebar textures
+        type: variable-select
+        default: enable
+        options:
+            - 
+                value: enable
+                label: Yes
+            - 
+                value: disable
+                label: No
+    - 
+        id: art-deco-style-properties
+        title: Style the properties
+        type: variable-select
+        default: enable
+        options:
+            - 
+                value: enable
+                label: Yes
+            - 
+                value: disable
+                label: No
+    - 
+        id: art-deco-style-lists
+        title: Style the list items bullets
+        type: variable-select
+        default: enable
+        options:
+            - 
+                value: enable
+                label: Yes
+            - 
+                value: disable
+                label: No
+    - 
+        id: art-deco-style-h1-display
+        title: Style the first level heading (h1)
+        description: The style must be set to Display
+        type: variable-select
+        default: enable
+        options:
+            - 
+                value: enable
+                label: Yes
+            - 
+                value: disable
+                label: No
+    - 
+        id: art-deco-style-status-bar
+        title: Style the status bar
+        type: variable-select
+        default: enable
+        options:
+            - 
+                value: enable
+                label: Yes
+            - 
+                value: disable
+                label: No
+    - 
+        id: art-deco-style-empty-note
+        title: Add a special styling to empty spaces (when no file is open)
+        type: variable-select
+        default: enable
+        options:
+            - 
+                value: enable
+                label: Yes
+            - 
+                value: disable
+                label: No
+    - 
+        id: art-deco-style-root-tabs
+        title: Style the tabs in the main space
+        type: variable-select
+        default: enable
+        options:
+            - 
+                value: enable
+                label: Yes
+            - 
+                value: disable
+                label: No
     
 
     
