@@ -740,6 +740,29 @@ settings:
                 value: min-content
                 label: Yes
 
+    - 
+        id: typography
+        title: Typography
+        type: heading
+        collapsed: true
+        level: 2
+    -
+        id: bold-color
+        title: Bold text color
+        type: variable-themed-color
+        opacity: false
+        format: rgb
+        default-light: '#000000'
+        default-dark: '#ffffff'
+    -
+        id: italic-color
+        title: Italic text color
+        type: variable-themed-color
+        opacity: false
+        format: rgb
+        default-light: '#000000'
+        default-dark: '#ffffff'
+
 
 
     - 

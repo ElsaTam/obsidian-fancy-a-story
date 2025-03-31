@@ -249,6 +249,12 @@ Horizontal position of the table in preview mode.
 
 Wrap the table code in source mode so it isn't wider than the note.
 
+## Typography
+
+#### Bold text color
+
+#### Italic text color
+
 
 # Features
 
