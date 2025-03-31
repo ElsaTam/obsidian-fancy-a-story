@@ -21,7 +21,7 @@ settings:
         options:
             - 
                 label: Art deco
-                value: fas-art-deco
+                value: fas-art-deco-light
             - 
                 label: Automn
                 value: fas-automn
@@ -34,6 +34,9 @@ settings:
             - 
                 label: Canyon
                 value: fas-canyon
+            - 
+                label: Diesel Punk
+                value: fas-diesel-punk-light
             - 
                 label: Ice
                 value: fas-ice
@@ -56,7 +59,7 @@ settings:
         options:
             - 
                 label: Art deco
-                value: fas-art-deco
+                value: fas-art-deco-dark
             - 
                 label: Artic
                 value: fas-artic
@@ -69,6 +72,9 @@ settings:
             - 
                 label: Coffee
                 value: fas-coffee-dark
+            - 
+                label: Diesel Punk
+                value: fas-diesel-punk-dark
             - 
                 label: Forest
                 value: fas-forest
@@ -1007,6 +1013,9 @@ settings:
             - 
                 value: fas-skin-art-deco
                 label: Art Deco
+            - 
+                value: fas-skin-diesel-punk
+                label: Diesel Punk
 
     - 
         id: art-deco

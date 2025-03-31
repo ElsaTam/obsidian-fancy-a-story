@@ -535,11 +535,11 @@ $fwi_sel: "";
 
 /* Workspace tabs */
 @container style(--art-deco-style-root-tabs: enable) {
-    .mod-root .workspace-tab-header-container {
+    .fas-skin-art-deco .mod-root .workspace-tab-header-container {
         --tab-text-color-focused-active-current: var(--art-deco-color);
     }
 
-    @scope (.mod-root .workspace-tabs:not(.mod-stacked)) {
+    @scope (.fas-skin-art-deco .mod-root .workspace-tabs:not(.mod-stacked)) {
         .is-active .workspace-tab-header-inner {
             border-bottom: 1px solid var(--art-deco-color);
             background-image: linear-gradient(

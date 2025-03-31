@@ -4,27 +4,28 @@ $default-text-dark: #1f1f1f;
 $default-primary-dark: #d9d9d9;
 
 $themes: (
-    "light" "art-deco" #d8d7cb #060a24 "srgb-linear",
-    "light" "coffee-light" #ece0d1 #38220f "lab",
-    "light" "sand" #e6e4cc #2c2517 "srgb-linear",
+    "light" "art-deco-light" #d8d7cb #060a24 "srgb-linear",
     "light" "automn" #f1f1dc #4b220b "hsl",
-    "light" "ice" #e1f0f3 #083a3f "srgb",
-    "light" "canyon" #f8efda #884823 "srgb-linear",
-    "light" "silver-light" #e7e7e7 #000000 "srgb-linear",
     "light" "candy" #f7e5ef #6b3c63 "lab",
+    "light" "canyon" #f8efda #884823 "srgb-linear",
+    "light" "coffee-light" #ece0d1 #38220f "lab",
+    "light" "ice" #e1f0f3 #083a3f "srgb",
     "light" "meadow" #e9f5dd #192903 "srgb-linear",
-    "dark" "art-deco" #070918 #e2dec5 "lab",
-    "dark" "coffee-dark" #201918 #d6cbc0 "lab",
-    "dark" "forest" #09180c #d6b498 "lab",
-    "dark" "volcano" #080300 #ee8e78 "lab",
+    "light" "sand" #e6e4cc #2c2517 "srgb-linear",
+    "light" "silver-light" #e7e7e7 #000000 "srgb-linear",
+    "dark" "art-deco-dark" #070918 #e2dec5 "lab",
     "dark" "artic" #021e22 #caf0f7 "lab",
-    "dark" "silver-dark" #1f1f1f #d9d9d9 "lab",
+    "dark" "atom" #272b34 #ffffff "lab",
     "dark" "chocolate" #231e1a #d7c0a3 "lab",
-    "dark" "unwerwater" #0a0a29 #b3e5ff "lab",
+    "dark" "coffee-dark" #201918 #d6cbc0 "lab",
+    "dark" "diesel-punk-dark" #333335 #efd097 "lab",
+    "dark" "forest" #09180c #d6b498 "lab",
     "dark" "mystic" #0d0514 #f3d0ff "lab",
-    "dark" "swamp" #1b2329 #e2d0b6 "lab",
     "dark" "navy" #000016 #fff5bb "oklab",
-    "dark" "atom" #272b34 #ffffff "lab"
+    "dark" "silver-dark" #1f1f1f #d9d9d9 "lab",
+    "dark" "swamp" #1b2329 #e2d0b6 "lab",
+    "dark" "unwerwater" #0a0a29 #b3e5ff "lab",
+    "dark" "volcano" #080300 #ee8e78 "lab"
 );
 
 $extended-colors: (
