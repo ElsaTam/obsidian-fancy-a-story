@@ -1263,13 +1263,13 @@ settings:
         type: info-text
         markdown: true
         title: Additional fonts
-        description: "Multiple elements of this theme can use specific fonts if they are available. To download the required fonts, you can add the file [additional_fonts.css](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/css/additional_fonts.css) to your [snippets folder](https://help.obsidian.md/Extending+Obsidian/CSS+snippets). This file can be very heavy. If you don't plan on using all of them, I would recommend deleting the unecessary @font-face from the snippet. You can see how which font is used [in the doc](https://elsatam.github.io/obsidian-fancy-a-story/docs/stylesettings/stylesettings.html#additional-fonts)"
+        description: "Multiple elements of this theme can use specific fonts if they are available. To download the required fonts, you can add the file [additional_fonts.css](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/additional_fonts.css) to your [snippets folder](https://help.obsidian.md/Extending+Obsidian/CSS+snippets). This file can be very heavy. If you don't plan on using all of them, I would recommend deleting the unecessary @font-face from the snippet. You can see how which font is used [in the doc](https://elsatam.github.io/obsidian-fancy-a-story/docs/stylesettings/stylesettings.html#additional-fonts)"
     -
         id: canvas-node-bundle
         type: info-text
         markdown: true
         title: Canvas node tags
-        description: "Usage of tags to define specific styling for canvas card can be very powerful. However, it requires a code that can cause performance issues. Also, such styling come as independant snippets. You can add the file [canvas-node-bundle](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/css/canvas/canvas-node-bundle.css) to your [snippets folder](https://help.obsidian.md/Extending+Obsidian/CSS+snippets) to download all the effects. Or choose individual ones from [this list](https://github.com/ElsaTam/obsidian-fancy-a-story/tree/main/css/canvas)."
+        description: "Usage of tags to define specific styling for canvas card can be very powerful. However, it requires a code that can cause performance issues. Also, such styling come as independant snippets. You can add the file [canvas-node-bundle](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/canvas/canvas-node-bundle.css) to your [snippets folder](https://help.obsidian.md/Extending+Obsidian/CSS+snippets) to download all the effects. Or choose individual ones from [this list](https://github.com/ElsaTam/obsidian-fancy-a-story/tree/main/snippets/canvas)."
 
 
 */
