@@ -45,7 +45,7 @@ body {
   }
   .markdown-preview-view:is(.background-img, .bg-img) > :first-child {
     padding-block: var(--file-margins-block);
-    padding-inline: calc(0.5 * (100% - var(--file-margins-inline) - var(--file-line-width)) + var(--scrollbar-width));
+    padding-inline: max(var(--file-margins-inline), 0.5 * (100% - var(--file-margins-inline) - var(--file-line-width)) + var(--scrollbar-width));
     max-width: 100%;
     background-color: rgb(from var(--workleaves-background) r g b/calc(1 - var(--fas-note-background-image-opacity)));
     backdrop-filter: blur(var(--fas-note-background-image-blur)) brightness(var(--fas-note-background-image-brightness));

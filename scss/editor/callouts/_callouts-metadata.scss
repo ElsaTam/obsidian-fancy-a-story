@@ -1,20 +1,44 @@
-@forward '../../shared/markdown-container';
-@forward '../../shared/list-with-float';
-@forward '../../shared/file-margins';
-@use '../../mixins/wide';
+@forward "../../shared/markdown-container";
+@forward "../../shared/list-with-float";
+@forward "../../shared/file-margins";
+@use "../../mixins/wide";
 
-.callout[data-callout-metadata~="gray"]   { --callout-color: var(--color-gray-rgb);}
-.callout[data-callout-metadata~="brown"]  { --callout-color: var(--color-brown-rgb);}
-.callout[data-callout-metadata~="red"]    { --callout-color: var(--color-red-rgb);}
-.callout[data-callout-metadata~="orange"] { --callout-color: var(--color-orange-rgb);}
-.callout[data-callout-metadata~="yellow"] { --callout-color: var(--color-yellow-rgb);}
-.callout[data-callout-metadata~="green"]  { --callout-color: var(--color-green-rgb);}
-.callout[data-callout-metadata~="cyan"]   { --callout-color: var(--color-cyan-rgb);}
-.callout[data-callout-metadata~="blue"]   { --callout-color: var(--color-blue-rgb);}
-.callout[data-callout-metadata~="purple"] { --callout-color: var(--color-purple-rgb);}
-.callout[data-callout-metadata~="pink"]   { --callout-color: var(--color-pink-rgb);}
-.callout[data-callout-metadata~="black"]  { --callout-color: 0, 0, 0;}
-.callout[data-callout-metadata~="white"]  { --callout-color: 255, 255, 255;}
+.callout[data-callout-metadata~="gray"] {
+    --callout-color: var(--color-gray-rgb);
+}
+.callout[data-callout-metadata~="brown"] {
+    --callout-color: var(--color-brown-rgb);
+}
+.callout[data-callout-metadata~="red"] {
+    --callout-color: var(--color-red-rgb);
+}
+.callout[data-callout-metadata~="orange"] {
+    --callout-color: var(--color-orange-rgb);
+}
+.callout[data-callout-metadata~="yellow"] {
+    --callout-color: var(--color-yellow-rgb);
+}
+.callout[data-callout-metadata~="green"] {
+    --callout-color: var(--color-green-rgb);
+}
+.callout[data-callout-metadata~="cyan"] {
+    --callout-color: var(--color-cyan-rgb);
+}
+.callout[data-callout-metadata~="blue"] {
+    --callout-color: var(--color-blue-rgb);
+}
+.callout[data-callout-metadata~="purple"] {
+    --callout-color: var(--color-purple-rgb);
+}
+.callout[data-callout-metadata~="pink"] {
+    --callout-color: var(--color-pink-rgb);
+}
+.callout[data-callout-metadata~="black"] {
+    --callout-color: 0, 0, 0;
+}
+.callout[data-callout-metadata~="white"] {
+    --callout-color: 255, 255, 255;
+}
 
 [data-callout-metadata~="accent"] {
     border-color: rgb(from var(--color-accent) r g b / var(--callout-border-opacity));
@@ -31,7 +55,9 @@
 
 .callout[data-callout-metadata~="no-bg"],
 .callout[data-callout-metadata~="no-background"] {
-    &, > .callout-content, > .callout-title {
+    &,
+    > .callout-content,
+    > .callout-title {
         background: none;
     }
 }
@@ -41,28 +67,33 @@
     filter: grayscale(100);
 }
 
+.callout[data-callout-metadata~="no-icon"] > .callout-title > .callout-icon {
+    display: none;
+}
 
-.callout[data-callout-metadata~="no-icon"] > .callout-title > .callout-icon { display: none; }
-
-
-.callout[data-callout-metadata~="no-title"] > .callout-title { display: none; }
-.callout[data-callout-metadata~="no-title"] > .callout-content { border: none; }
-
+.callout[data-callout-metadata~="no-title"] > .callout-title {
+    display: none;
+}
+.callout[data-callout-metadata~="no-title"] > .callout-content {
+    border: none;
+}
 
 .callout[data-callout-metadata~="blank"] {
     margin: 0;
     mix-blend-mode: none;
     border-radius: 0;
 
-    &, > .callout-content {
+    &,
+    > .callout-content {
         border: none;
         background: none;
         padding: 0;
     }
 
-    > .callout-title { display: none; }
+    > .callout-title {
+        display: none;
+    }
 }
-
 
 .markdown-preview-view .callout[data-callout-metadata~="wide"] {
     @include wide.wide(0.95);
@@ -75,14 +106,17 @@
 .markdown-preview-view .callout:is([data-callout-metadata~="right"], [data-callout-metadata~="float-right"]) {
     float: right;
     clear: right;
-    margin: var(--fas-float-inline-margin, 12px) 0 var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px);
+    margin: var(--fas-float-inline-margin, 12px) 0 var(--fas-float-inline-margin, 12px)
+        var(--fas-float-inline-margin, 12px);
+    max-width: 300px;
 }
-
 
 .markdown-preview-view .callout:is([data-callout-metadata~="left"], [data-callout-metadata~="float-left"]) {
     float: left;
     clear: left;
-    margin: var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px) 0;
+    margin: var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px)
+        var(--fas-float-inline-margin, 12px) 0;
+    max-width: 300px;
 }
 
 .callout[data-callout-metadata~="no-blending"] {

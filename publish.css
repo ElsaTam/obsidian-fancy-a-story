@@ -3225,7 +3225,9 @@ body {
   color: var(--color-accent);
 }
 
-.callout[data-callout-metadata~=no-bg], .callout[data-callout-metadata~=no-bg] > .callout-content, .callout[data-callout-metadata~=no-bg] > .callout-title,
+.callout[data-callout-metadata~=no-bg],
+.callout[data-callout-metadata~=no-bg] > .callout-content,
+.callout[data-callout-metadata~=no-bg] > .callout-title,
 .callout[data-callout-metadata~=no-background],
 .callout[data-callout-metadata~=no-background] > .callout-content,
 .callout[data-callout-metadata~=no-background] > .callout-title {
@@ -3254,7 +3256,8 @@ body {
   mix-blend-mode: none;
   border-radius: 0;
 }
-.callout[data-callout-metadata~=blank], .callout[data-callout-metadata~=blank] > .callout-content {
+.callout[data-callout-metadata~=blank],
+.callout[data-callout-metadata~=blank] > .callout-content {
   border: none;
   background: none;
   padding: 0;
@@ -3277,12 +3280,14 @@ body {
   float: right;
   clear: right;
   margin: var(--fas-float-inline-margin, 12px) 0 var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px);
+  max-width: 300px;
 }
 
 .markdown-preview-view .callout:is([data-callout-metadata~=left], [data-callout-metadata~=float-left]) {
   float: left;
   clear: left;
   margin: var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px) 0;
+  max-width: 300px;
 }
 
 .callout[data-callout-metadata~=no-blending] {
