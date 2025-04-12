@@ -58,7 +58,7 @@ settings:
                 label: Art deco
                 value: fas-art-deco
             - 
-                label: Artic
+                label: Arctic
                 value: fas-artic
             - 
                 label: Atom
@@ -476,6 +476,12 @@ settings:
         id: fas-callout-cite-alt
         title: Theme quote callout
         description: Enable to use the Fancy-a-Story specific style for the quote and cite callouts (the style can still be used with `cite-fas` or `quote-fas` callout types if you keep this option disabled).
+        markdown: true
+        type: class-toggle
+    - 
+        id: fas-callout-infobox
+        title: Use > [!infobox]
+        description: Enable the usage of `infobox` as an alias for `fas-infobox`
         markdown: true
         type: class-toggle
 
