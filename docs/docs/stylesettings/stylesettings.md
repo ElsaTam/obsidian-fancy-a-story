@@ -151,6 +151,10 @@ If you change this value, the [asides]({% link docs/other/aside.md %}) elements 
 
 Enable to use the Fancy-a-Story specific style for the `quote` and `cite` callouts (the style can still be used with `cite-fas` or `quote-fas` callout types if you keep this option disabled).
 
+#### Use `> [!infobox]`
+
+Enable the usage of `infobox` as an alias for `fas-infobox`. Only check this option if you are not using ITS's callout adjustments snippets.
+
 ## Headings
 
 #### Color for the headings

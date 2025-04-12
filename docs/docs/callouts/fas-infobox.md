@@ -23,6 +23,9 @@ Specific elements inside an infobox
 - `![[image.png|background]]`: use the image as a background for the whole callout
 - `> > [!footer]`: nested callout to add a footer area (opaque + dashed top border)
 
+{: .note}
+You can enable the support for the alias `infobox` withing the [Style Settings]({% link docs/stylesettings/stylesettings.md %}#use--infobox) plugin.
+
 ---
 
 [![]({% link images/callouts/fas-infobox-1.webp %}){: width="250" }]({% link images/callouts/fas-infobox-1.webp %})
@@ -97,3 +100,4 @@ If you wish to use it with the `fas-infobox` callouts, follow these steps:
 
 {: .note}
 This has been written with the approval of SlRvb (ITS theme's creator). If you consider sharing this snippet publicly, remember that this code is distributed under the [GPL-2.0 License](https://github.com/SlRvb/Obsidian--ITS-Theme/blob/main/LICENSE).
+
