@@ -59,7 +59,14 @@ Modify the space between the floating elements and the text. Float elements are 
 
 #### Scrollbars width
 
+#### Vertical spacing for files titles
+Change the padding of each file title in the File explorer and the Bookmarks tree. Since each item has its own padding, the actual space between two items is doubled (or summed with the padding of folder titles, depending on what is preceding/following).
 
+#### Vertical spacing for folders titles
+Change the padding of each folder title in the File explorer and the Bookmarks tree. Since each item has its own padding, the actual space between two items is doubled (or summed with the padding of files titles, depending on what is preceding/following).
+
+#### Icon opacity in inactive tabs
+Modify the opacity of the icons in inactive tabs.
 
 # Workspace
 
@@ -237,6 +244,10 @@ Invert your PDFs in dark mode.
 #### Number of columns
 
 Number of columns for the frontmatter properties. If the note is smaller than 600px, only one column will be displayed.
+
+
+#### Label width
+Change the width of the properties labels (also called keys, or names).
 
 ## Tables
 

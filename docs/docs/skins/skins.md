@@ -27,3 +27,7 @@ You can also download and install them directly on your computer: [ParkLaneNF](h
 ## Pick your changes
 
 Every change made by the Art Deco skin is optional and can be disabled withn the Style Settings plugin.
+
+# Sci-fi
+
+See [sci-fi cssclass]({% link docs/cssclasses/sci-fi.md %}). The skin is not complete yet and only modify the editor. Using this option lets you use the sci-fi look everywhere without the need to specify the cssclass for each note.
