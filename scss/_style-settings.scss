@@ -1058,6 +1058,9 @@ settings:
             - 
                 value: fas-skin-art-deco
                 label: Art Deco
+            - 
+                value: fas-skin-sci-fi
+                label: Sci-fi (wip)
 
     - 
         id: art-deco
@@ -1265,6 +1268,25 @@ settings:
     - 
         id: art-deco-style-root-tabs
         title: Style the tabs in the main space
+        type: variable-select
+        default: enable
+        options:
+            - 
+                value: enable
+                label: Yes
+            - 
+                value: disable
+                label: No
+
+    - 
+        id: sci-fi
+        title: Science-fiction
+        type: heading
+        collapsed: true
+        level: 2
+    - 
+        id: sci-fi-style-fonts
+        title: Change the fonts
         type: variable-select
         default: enable
         options:
