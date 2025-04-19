@@ -227,6 +227,20 @@ settings:
         type: variable-number
         format: px
         default: 10
+    -
+        id: nav-item-padding-block
+        title: Vertical spacing for files titles
+        description: Padding of each file title in the File explorer and the Bookmarks tree
+        type: variable-number
+        format: px
+        default: 4
+    -
+        id: nav-item-parent-padding-block
+        title: Vertical spacing for folders titles
+        description: Padding of each folder title in the File explorer and the Bookmarks tree
+        type: variable-number
+        format: px
+        default: 4
 
 
 
