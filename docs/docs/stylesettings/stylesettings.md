@@ -162,6 +162,11 @@ Enable to use the Fancy-a-Story specific style for the `quote` and `cite` callou
 
 Enable the usage of `infobox` as an alias for `fas-infobox`. Only check this option if you are not using ITS's callout adjustments snippets.
 
+## Code
+
+#### Limit code to 80 characterss
+Use the standard brought to us by the IBM's 1928 punch card format and limit the number of characters to 80 for your code (only affects reading mode).
+
 ## Headings
 
 #### Color for the headings

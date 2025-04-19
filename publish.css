@@ -3385,11 +3385,16 @@ body {
   text-align: center;
 }
 
-.cm-hmd-codeblock,
-code {
-  max-width: 80ch;
+body {
+  --limit-code-to-80-chars: enable;
 }
 
+@container style(--limit-code-to-80-chars: enable) {
+  code {
+    max-width: 80ch;
+    display: block;
+  }
+}
 pre.language-poem,
 pre.language-poem-frame,
 pre.language-poem-floral {

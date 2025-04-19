@@ -508,6 +508,27 @@ settings:
         type: class-toggle
 
     - 
+        id: code
+        title: Code
+        type: heading
+        collapsed: true
+        level: 2
+    - 
+        id: limit-code-to-80-chars
+        title: Limit code to 80 characterss
+        description: Use the standard brought to us by the IBM's 1928 punch card format and limit the number of characters to 80 for your code (only affects reading mode).
+        type: variable-select
+        default: disable
+        options:
+            - 
+                value: enable
+                label: Enable
+            - 
+                value: disable
+                label: Disable
+    
+
+    - 
         id: headings
         title: Headings
         type: heading
