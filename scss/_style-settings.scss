@@ -241,6 +241,14 @@ settings:
         type: variable-number
         format: px
         default: 4
+    -
+        id: icon-opacity-inactive
+        title: Icon opacity in inactive tabs
+        type: variable-number-slider
+        default: 0.3
+        min: 0
+        max: 1
+        step: 0.05
 
 
 
