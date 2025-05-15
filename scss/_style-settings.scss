@@ -227,6 +227,28 @@ settings:
         type: variable-number
         format: px
         default: 10
+    -
+        id: nav-item-padding-block
+        title: Vertical spacing for files titles
+        description: Padding of each file title in the File explorer and the Bookmarks tree
+        type: variable-number
+        format: px
+        default: 4
+    -
+        id: nav-item-parent-padding-block
+        title: Vertical spacing for folders titles
+        description: Padding of each folder title in the File explorer and the Bookmarks tree
+        type: variable-number
+        format: px
+        default: 4
+    -
+        id: icon-opacity-inactive
+        title: Icon opacity in inactive tabs
+        type: variable-number-slider
+        default: 0.3
+        min: 0
+        max: 1
+        step: 0.05
 
 
 
@@ -498,6 +520,27 @@ settings:
         type: class-toggle
 
     - 
+        id: code
+        title: Code
+        type: heading
+        collapsed: true
+        level: 2
+    - 
+        id: limit-code-to-80-chars
+        title: Limit code to 80 characterss
+        description: Use the standard brought to us by the IBM's 1928 punch card format and limit the number of characters to 80 for your code (only affects reading mode).
+        type: variable-select
+        default: disable
+        options:
+            - 
+                value: enable
+                label: Enable
+            - 
+                value: disable
+                label: Disable
+    
+
+    - 
         id: headings
         title: Headings
         type: heading
@@ -710,6 +753,14 @@ settings:
         default: 2
         min: 1
         max: 4
+    -
+        id: metadata-label-width
+        title: Label width
+        description: The width of the properties labels (also called keys, or names)
+        type: variable-number
+        default: 9
+        format: em
+
 
     - 
         id: table
@@ -1048,6 +1099,9 @@ settings:
             - 
                 value: fas-skin-art-deco
                 label: Art Deco
+            - 
+                value: fas-skin-sci-fi
+                label: Sci-fi (wip)
 
     - 
         id: art-deco
@@ -1255,6 +1309,25 @@ settings:
     - 
         id: art-deco-style-root-tabs
         title: Style the tabs in the main space
+        type: variable-select
+        default: enable
+        options:
+            - 
+                value: enable
+                label: Yes
+            - 
+                value: disable
+                label: No
+
+    - 
+        id: sci-fi
+        title: Science-fiction
+        type: heading
+        collapsed: true
+        level: 2
+    - 
+        id: sci-fi-style-fonts
+        title: Change the fonts
         type: variable-select
         default: enable
         options:

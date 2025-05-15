@@ -3385,11 +3385,16 @@ body {
   text-align: center;
 }
 
-.cm-hmd-codeblock,
-code {
-  max-width: 80ch;
+body {
+  --limit-code-to-80-chars: enable;
 }
 
+@container style(--limit-code-to-80-chars: enable) {
+  code {
+    max-width: 80ch;
+    display: block;
+  }
+}
 pre.language-poem,
 pre.language-poem-frame,
 pre.language-poem-floral {
@@ -5025,21 +5030,4 @@ body {
   --tab-container-background: transparent;
 }
 
-body {
-  --crop-root-corners: disable;
-}
-
-@container style(--crop-root-corners: enable) {
-  body:not(.fas-background-image) .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root .mod-top:nth-child(1 of .mod-top) .workspace-tab-header-container,
-  body:not(.fas-background-image) .workspace.is-left-sidedock-open.is-right-sidedock-open .mod-root .mod-top:nth-child(1 of .mod-top):not(.mod-top:nth-last-child(1 of .mod-top)) .workspace-tab-header-container {
-    -webkit-mask-image: radial-gradient(var(--cutout-corner-radius) at 0 var(--workspace-top-margin), transparent 100%, black);
-  }
-  body:not(.fas-background-image) .workspace.is-right-sidedock-open:not(.is-left-sidedock-open) .mod-root .mod-top:nth-last-child(1 of .mod-top) .workspace-tab-header-container,
-  body:not(.fas-background-image) .workspace.is-left-sidedock-open.is-right-sidedock-open .mod-root .mod-top:nth-last-child(1 of .mod-top):not(.mod-top:nth-child(1 of .mod-top)) .workspace-tab-header-container {
-    -webkit-mask-image: radial-gradient(var(--cutout-corner-radius) at 100% var(--workspace-top-margin), transparent 100%, black);
-  }
-  body:not(.fas-background-image) .workspace.is-left-sidedock-open.is-right-sidedock-open .mod-root .mod-top:nth-child(1 of .mod-top):nth-last-child(1 of .mod-top) .workspace-tab-header-container {
-    -webkit-mask-image: radial-gradient(var(--cutout-corner-radius) at 0 var(--workspace-top-margin), transparent 100%, black), radial-gradient(var(--cutout-corner-radius) at 100% var(--workspace-top-margin), transparent 100%, black);
-    mask-composite: intersect;
-  }
-}
+/*# sourceMappingURL=publish.css.map */

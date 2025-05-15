@@ -1,0 +1,11 @@
+body {
+    --nav-item-padding-block: 4px;
+    --nav-item-parent-padding-block: 10px;
+}
+
+.nav-file-title {
+    padding-block: var(--nav-item-padding-block);
+}
+.tree-item-self.mod-collapsible {
+    padding-block: var(--nav-item-parent-padding-block);
+}
