@@ -17,8 +17,26 @@ body {
     border: none;
     border-inline-start: var(--blockquote-border-thickness) solid rgb(var(--callout-color));
 
-    .callout-title {
+    &:not(.is-collapsible) .callout-title {
         display: none;
+    }
+
+    &.is-collapsible {
+        display: flex;
+        flex-direction: column-reverse;
+
+        .callout-title {
+            background: none;
+            justify-content: flex-end;
+        }
+
+        .callout-icon {
+            display: none;
+        }
+
+        .callout-title-inner::before {
+            content: "~ ";
+        }
     }
 
     .callout-content {
@@ -33,9 +51,8 @@ body {
         margin-bottom: 0;
     }
 
-
     &::after {
-        content: '\201C';
+        content: "\201C";
         position: absolute;
         font-style: italic;
         text-align: left;

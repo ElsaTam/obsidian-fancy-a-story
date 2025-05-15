@@ -20,9 +20,27 @@ body {
   border: none;
   border-inline-start: var(--blockquote-border-thickness) solid rgb(var(--callout-color));
 }
-.callout[data-callout~=cite-fas] .callout-title,
-.callout[data-callout~=quote-fas] .callout-title {
+.callout[data-callout~=cite-fas]:not(.is-collapsible) .callout-title,
+.callout[data-callout~=quote-fas]:not(.is-collapsible) .callout-title {
   display: none;
+}
+.callout[data-callout~=cite-fas].is-collapsible,
+.callout[data-callout~=quote-fas].is-collapsible {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.callout[data-callout~=cite-fas].is-collapsible .callout-title,
+.callout[data-callout~=quote-fas].is-collapsible .callout-title {
+  background: none;
+  justify-content: flex-end;
+}
+.callout[data-callout~=cite-fas].is-collapsible .callout-icon,
+.callout[data-callout~=quote-fas].is-collapsible .callout-icon {
+  display: none;
+}
+.callout[data-callout~=cite-fas].is-collapsible .callout-title-inner::before,
+.callout[data-callout~=quote-fas].is-collapsible .callout-title-inner::before {
+  content: "~ ";
 }
 .callout[data-callout~=cite-fas] .callout-content,
 .callout[data-callout~=quote-fas] .callout-content {
