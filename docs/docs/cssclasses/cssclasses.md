@@ -23,12 +23,12 @@ nav_order: 6
 
 # Headings
 
-Source: [`fas-headings.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/fas-headings.css)
+Source: [`headings.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/headings)
 
 | Class                 | Description                                  |                 |
 |:----------------------|:---------------------------------------------|:---------------:|
-| `h1-display`          | H1 headings style                            | [![]({% link images/cssclasses/h1-display.webp %}){: width="200" }]({% link images/cssclasses/h1-display.webp %})         |
-| `h1-stroke`           | H1 headings style                            | [![]({% link images/cssclasses/h1-stroke.webp %}){: width="200" }]({% link images/cssclasses/h1-stroke.webp %}) |
+| `h1-display`          | H1 headings style (also exists with h2, h3, h4, h5, h6) | [![]({% link images/cssclasses/h1-display.webp %}){: width="200" }]({% link images/cssclasses/h1-display.webp %}) |
+| `h1-stroke`           | H1 headings style (also exists with h2, h3, h4, h5, h6) | [![]({% link images/cssclasses/h1-stroke.webp %}){: width="200" }]({% link images/cssclasses/h1-stroke.webp %}) |
 | `headings-hue`        | Use a middle hue between background and text | [![]({% link images/cssclasses/headings-hue.webp %}){: width="100" }]({% link images/cssclasses/headings-hue.webp %}) |
 | `headings-complement` | Use the complementary of the middle hue      | [![]({% link images/cssclasses/headings-complement.webp %}){: width="100" }]({% link images/cssclasses/headings-complement.webp %}) |
 | `headings-accent`     | Use the accent color                         | [![]({% link images/cssclasses/headings-accent.webp %}){: width="100" }]({% link images/cssclasses/headings-accent.webp %}) |

@@ -1,15 +1,28 @@
-@forward '../../shared/middle-color';
+@forward "../../shared/middle-color";
 
-.fas-headings-hue, .headings-hue { --h1-color: var(--middle-color); }
-.fas-headings-complement, .headings-complement { --h1-color: var(--middle-color-complement); }
-.fas-headings-accent, .headings-accent { --h1-color: var(--color-accent); }
+.fas-headings-hue,
+.headings-hue {
+    --header-gradient-base-color: var(--middle-color);
+}
+.fas-headings-complement,
+.headings-complement {
+    --header-gradient-base-color: var(--middle-color-complement);
+}
+.fas-headings-accent,
+.headings-accent {
+    --header-gradient-base-color: var(--color-accent);
+}
 
-.fas-headings-hue, .headings-hue,
-.fas-headings-complement, .headings-complement,
-.fas-headings-accent, .headings-accent {
-    --h2-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 10%);
-    --h3-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 20%);
-    --h4-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 40%);
-    --h5-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 60%);
-    --h6-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 80%);
+.fas-headings-hue,
+.headings-hue,
+.fas-headings-complement,
+.headings-complement,
+.fas-headings-accent,
+.headings-accent {
+    --h1-color: var(--header-gradient-base-color);
+    --h2-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 10%);
+    --h3-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 20%);
+    --h4-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 40%);
+    --h5-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 60%);
+    --h6-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 80%);
 }

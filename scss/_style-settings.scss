@@ -591,6 +591,71 @@ settings:
             - 
                 label: Stroke
                 value: fas-h1-stroke
+    - 
+        id: header-style-h2
+        title: Style for the second level heading (h2)
+        type: class-select
+        allowEmpty: true
+        default: none
+        options:
+            - 
+                label: Display
+                value: fas-h2-display
+            - 
+                label: Stroke
+                value: fas-h2-stroke
+    - 
+        id: header-style-h3
+        title: Style for the third level heading (h3)
+        type: class-select
+        allowEmpty: true
+        default: none
+        options:
+            - 
+                label: Display
+                value: fas-h3-display
+            - 
+                label: Stroke
+                value: fas-h3-stroke
+    - 
+        id: header-style-h4
+        title: Style for the fourth level heading (h4)
+        type: class-select
+        allowEmpty: true
+        default: none
+        options:
+            - 
+                label: Display
+                value: fas-h4-display
+            - 
+                label: Stroke
+                value: fas-h4-stroke
+    - 
+        id: header-style-h5
+        title: Style for the fifth level heading (h5)
+        type: class-select
+        allowEmpty: true
+        default: none
+        options:
+            - 
+                label: Display
+                value: fas-h5-display
+            - 
+                label: Stroke
+                value: fas-h5-stroke
+    - 
+        id: header-style-h6
+        title: Style for the sixth level heading (h6)
+        type: class-select
+        allowEmpty: true
+        default: none
+        options:
+            - 
+                label: Display
+                value: fas-h6-display
+            - 
+                label: Stroke
+                value: fas-h6-stroke
             
     - 
         id: images
@@ -1286,8 +1351,8 @@ settings:
                 value: disable
                 label: No
     - 
-        id: art-deco-style-h1-display
-        title: Style the first level heading (h1)
+        id: art-deco-style-h-display
+        title: Style the first headings
         description: The style must be set to Display
         type: variable-select
         default: enable

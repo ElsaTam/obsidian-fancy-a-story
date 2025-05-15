@@ -29,21 +29,24 @@ Author: ElsaTam (Kapirklaa in Discord)
 }
 
 .headings-hue {
-  --h1-color: var(--middle-color);
+  --header-gradient-base-color: var(--middle-color);
 }
 
 .headings-complement {
-  --h1-color: var(--middle-color-complement);
+  --header-gradient-base-color: var(--middle-color-complement);
 }
 
 .headings-accent {
-  --h1-color: var(--color-accent);
+  --header-gradient-base-color: var(--color-accent);
 }
 
-.headings-hue, .headings-complement, .headings-accent {
-  --h2-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 10%);
-  --h3-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 20%);
-  --h4-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 40%);
-  --h5-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 60%);
-  --h6-color: color-mix(in srgb, var(--h1-color), var(--text-normal) 80%);
+.headings-hue,
+.headings-complement,
+.headings-accent {
+  --h1-color: var(--header-gradient-base-color);
+  --h2-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 10%);
+  --h3-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 20%);
+  --h4-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 40%);
+  --h5-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 60%);
+  --h6-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 80%);
 }

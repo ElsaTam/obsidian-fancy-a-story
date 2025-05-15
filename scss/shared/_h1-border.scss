@@ -1,4 +1,6 @@
 body {
-    --h1-border-color: currentColor;
-    --h1-border-color-collapsed: var(--collapse-icon-color-collapsed);
+    @for $i from 1 through 6 {
+        --h#{$i}-border-color: currentColor;
+        --h#{$i}-border-color-collapsed: var(--collapse-icon-color-collapsed);
+    }
 }

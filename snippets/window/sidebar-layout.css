@@ -102,8 +102,8 @@ body:not(.is-ios) .workspace-drawer::before {
   padding-bottom: var(--sidedock-tab-header-padding-bottom);
 }
 
-.is-hidden-frameless .mod-sidedock.mod-top .workspace-tab-header-container-inner {
-  margin-top: 6px;
+.mod-sidedock.mod-top .workspace-tab-header-container-inner {
+  margin-top: var(--workspace-top-margin);
 }
 
 .is-hidden-frameless:not(.is-fullscreen) .mod-sidedock .workspace-tabs.mod-top-left-space .workspace-tab-header-container {

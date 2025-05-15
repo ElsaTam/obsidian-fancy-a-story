@@ -11,6 +11,11 @@ Author: ElsaTam (Kapirklaa in Discord)
 
 body {
   --fas-infobox-padding: var(--size-4-3);
+  --fas-infobox-max-width: 300px;
+}
+
+.callout[data-callout=fas-infobox][data-callout-metadata~=full-width] {
+  --fas-infobox-max-width: 100%;
 }
 
 .callout[data-callout=fas-infobox] {
@@ -18,7 +23,7 @@ body {
   --image-shadow-offset: 0;
   --hr-color: rgba(var(--callout-color), var(--callout-border-opacity));
   --heading-spacing: var(--p-spacing);
-  max-width: 300px;
+  max-width: var(--fas-infobox-max-width);
 }
 .callout[data-callout=fas-infobox] .callout-title {
   justify-content: center;
@@ -297,18 +302,18 @@ body {
 }
 
 /* Position */
-.markdown-preview-view .callout[data-callout=fas-infobox],
-.markdown-preview-view .callout[data-callout=fas-infobox][data-callout-metadata~=right] {
+.markdown-preview-view .callout[data-callout=fas-infobox]:not([data-callout-metadata~=full-width]),
+.markdown-preview-view .callout[data-callout=fas-infobox]:not([data-callout-metadata~=full-width])[data-callout-metadata~=right] {
   float: right;
   margin-left: calc(var(--overflow-width) + var(--fas-float-inline-margin, 12px));
 }
 
-.markdown-preview-view .callout[data-callout=fas-infobox][data-callout-metadata~=left] {
+.markdown-preview-view .callout[data-callout=fas-infobox]:not([data-callout-metadata~=full-width])[data-callout-metadata~=left] {
   float: left;
   margin-right: calc(var(--overflow-width) + var(--fas-float-inline-margin, 12px));
 }
 
-.markdown-preview-view .callout[data-callout=fas-infobox][data-callout-metadata~=center] {
+.markdown-preview-view .callout[data-callout=fas-infobox]:not([data-callout-metadata~=full-width])[data-callout-metadata~=center] {
   float: unset;
   margin-inline: auto;
 }

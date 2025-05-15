@@ -16,7 +16,8 @@ body {
   .mod-sidedock .workspace-tab-header-container-inner {
     height: calc(var(--header-height) + 0.5 * var(--cutout-corner-radius, 0));
     filter: drop-shadow(2px 2px 2px var(--shadow-color));
-    gap: 6px;
+    gap: var(--size-2-3);
+    margin-top: var(--workspace-top-margin);
   }
   .mod-sidedock .workspace-tab-header-container:hover {
     --icon-opacity: var(--icon-opacity-inactive);
@@ -35,10 +36,10 @@ body {
     margin-top: 0;
   }
   .mod-sidedock .mod-top .workspace-tab-container {
-    margin-top: 6px;
+    margin-top: var(--workspace-top-margin);
   }
   .mod-sidedock .workspace-leaf {
-    padding-top: calc(var(--header-height) - 6px);
+    padding-top: calc(var(--header-height) - var(--workspace-top-margin));
   }
 }
 @container style(--fas-bookmark-tabs: volume) {

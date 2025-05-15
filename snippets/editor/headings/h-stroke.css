@@ -1,0 +1,168 @@
+/* GPLv3 license
+FAS - H1 Stroke
+Author: ElsaTam (Kapirklaa in Discord)
+*/
+body {
+  --h1-border-color: currentColor;
+  --h1-border-color-collapsed: var(--collapse-icon-color-collapsed);
+  --h2-border-color: currentColor;
+  --h2-border-color-collapsed: var(--collapse-icon-color-collapsed);
+  --h3-border-color: currentColor;
+  --h3-border-color-collapsed: var(--collapse-icon-color-collapsed);
+  --h4-border-color: currentColor;
+  --h4-border-color-collapsed: var(--collapse-icon-color-collapsed);
+  --h5-border-color: currentColor;
+  --h5-border-color-collapsed: var(--collapse-icon-color-collapsed);
+  --h6-border-color: currentColor;
+  --h6-border-color-collapsed: var(--collapse-icon-color-collapsed);
+}
+
+.markdown-preview-view.h1-stroke h1 {
+  --h1-weight: var(--font-extralight);
+  --h1-size: 2em;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.markdown-preview-view.h1-stroke h1::before {
+  content: "";
+  display: block;
+  flex-grow: 1;
+  background-color: var(--h1-border-color);
+  height: 1px;
+}
+.markdown-preview-view.h1-stroke h1::after {
+  content: "";
+  display: block;
+  flex-grow: 1;
+  background-color: var(--h1-border-color);
+  height: 1px;
+}
+.markdown-preview-view.h1-stroke h1:is(.is-collapsed > h1)::before, .markdown-preview-view.h1-stroke h1:is(.is-collapsed > h1)::after {
+  background-color: var(--h1-border-color-collapsed);
+}
+
+.markdown-preview-view.h2-stroke h2 {
+  --h2-weight: var(--font-extralight);
+  --h2-size: 1.8em;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.markdown-preview-view.h2-stroke h2::before {
+  content: "";
+  display: block;
+  flex-grow: 1;
+  background-color: var(--h2-border-color);
+  height: 1px;
+}
+.markdown-preview-view.h2-stroke h2::after {
+  content: "";
+  display: block;
+  flex-grow: 1;
+  background-color: var(--h2-border-color);
+  height: 1px;
+}
+.markdown-preview-view.h2-stroke h2:is(.is-collapsed > h2)::before, .markdown-preview-view.h2-stroke h2:is(.is-collapsed > h2)::after {
+  background-color: var(--h2-border-color-collapsed);
+}
+
+.markdown-preview-view.h3-stroke h3 {
+  --h3-weight: var(--font-extralight);
+  --h3-size: 1.6em;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.markdown-preview-view.h3-stroke h3::before {
+  content: "";
+  display: block;
+  flex-grow: 1;
+  background-color: var(--h3-border-color);
+  height: 1px;
+}
+.markdown-preview-view.h3-stroke h3::after {
+  content: "";
+  display: block;
+  flex-grow: 1;
+  background-color: var(--h3-border-color);
+  height: 1px;
+}
+.markdown-preview-view.h3-stroke h3:is(.is-collapsed > h3)::before, .markdown-preview-view.h3-stroke h3:is(.is-collapsed > h3)::after {
+  background-color: var(--h3-border-color-collapsed);
+}
+
+.markdown-preview-view.h4-stroke h4 {
+  --h4-weight: var(--font-extralight);
+  --h4-size: 1.4em;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.markdown-preview-view.h4-stroke h4::before {
+  content: "";
+  display: block;
+  flex-grow: 1;
+  background-color: var(--h4-border-color);
+  height: 1px;
+}
+.markdown-preview-view.h4-stroke h4::after {
+  content: "";
+  display: block;
+  flex-grow: 1;
+  background-color: var(--h4-border-color);
+  height: 1px;
+}
+.markdown-preview-view.h4-stroke h4:is(.is-collapsed > h4)::before, .markdown-preview-view.h4-stroke h4:is(.is-collapsed > h4)::after {
+  background-color: var(--h4-border-color-collapsed);
+}
+
+.markdown-preview-view.h5-stroke h5 {
+  --h5-weight: var(--font-extralight);
+  --h5-size: 1.2em;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.markdown-preview-view.h5-stroke h5::before {
+  content: "";
+  display: block;
+  flex-grow: 1;
+  background-color: var(--h5-border-color);
+  height: 1px;
+}
+.markdown-preview-view.h5-stroke h5::after {
+  content: "";
+  display: block;
+  flex-grow: 1;
+  background-color: var(--h5-border-color);
+  height: 1px;
+}
+.markdown-preview-view.h5-stroke h5:is(.is-collapsed > h5)::before, .markdown-preview-view.h5-stroke h5:is(.is-collapsed > h5)::after {
+  background-color: var(--h5-border-color-collapsed);
+}
+
+.markdown-preview-view.h6-stroke h6 {
+  --h6-weight: var(--font-extralight);
+  --h6-size: 1em;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.markdown-preview-view.h6-stroke h6::before {
+  content: "";
+  display: block;
+  flex-grow: 1;
+  background-color: var(--h6-border-color);
+  height: 1px;
+}
+.markdown-preview-view.h6-stroke h6::after {
+  content: "";
+  display: block;
+  flex-grow: 1;
+  background-color: var(--h6-border-color);
+  height: 1px;
+}
+.markdown-preview-view.h6-stroke h6:is(.is-collapsed > h6)::before, .markdown-preview-view.h6-stroke h6:is(.is-collapsed > h6)::after {
+  background-color: var(--h6-border-color-collapsed);
+}
