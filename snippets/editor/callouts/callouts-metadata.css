@@ -146,6 +146,10 @@ body {
   max-width: 300px;
 }
 
+.callout[data-callout-metadata~=clear] {
+  clear: both;
+}
+
 .callout[data-callout-metadata~=no-blending] {
   --callout-blend-mode: normal;
 }
