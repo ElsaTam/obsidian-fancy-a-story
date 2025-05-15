@@ -4958,8 +4958,8 @@ body:not(.is-ios) .workspace-drawer::before {
   padding-bottom: var(--sidedock-tab-header-padding-bottom);
 }
 
-.is-hidden-frameless .mod-sidedock.mod-top .workspace-tab-header-container-inner {
-  margin-top: 6px;
+.mod-sidedock.mod-top .workspace-tab-header-container-inner {
+  margin-top: var(--workspace-top-margin);
 }
 
 .is-hidden-frameless:not(.is-fullscreen) .mod-sidedock .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
@@ -4974,6 +4974,14 @@ body:not(.is-ios) .workspace-drawer::before {
 .mod-sidedock .workspace-tab-header.is-active,
 .mod-sidedock .workspace-tab-header.is-active:hover {
   background-color: var(--workleaves-background);
+}
+
+body.is-hidden-frameless {
+  --workspace-top-margin: 6px;
+}
+
+body:not(.is-hidden-frameless) {
+  --workspace-top-margin: 0px;
 }
 
 body,
@@ -5015,4 +5023,23 @@ body {
 .sidebar-toggle-button,
 .workspace-tabs.mod-top {
   --tab-container-background: transparent;
+}
+
+body {
+  --crop-root-corners: disable;
+}
+
+@container style(--crop-root-corners: enable) {
+  body:not(.fas-background-image) .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root .mod-top:nth-child(1 of .mod-top) .workspace-tab-header-container,
+  body:not(.fas-background-image) .workspace.is-left-sidedock-open.is-right-sidedock-open .mod-root .mod-top:nth-child(1 of .mod-top):not(.mod-top:nth-last-child(1 of .mod-top)) .workspace-tab-header-container {
+    -webkit-mask-image: radial-gradient(var(--cutout-corner-radius) at 0 var(--workspace-top-margin), transparent 100%, black);
+  }
+  body:not(.fas-background-image) .workspace.is-right-sidedock-open:not(.is-left-sidedock-open) .mod-root .mod-top:nth-last-child(1 of .mod-top) .workspace-tab-header-container,
+  body:not(.fas-background-image) .workspace.is-left-sidedock-open.is-right-sidedock-open .mod-root .mod-top:nth-last-child(1 of .mod-top):not(.mod-top:nth-child(1 of .mod-top)) .workspace-tab-header-container {
+    -webkit-mask-image: radial-gradient(var(--cutout-corner-radius) at 100% var(--workspace-top-margin), transparent 100%, black);
+  }
+  body:not(.fas-background-image) .workspace.is-left-sidedock-open.is-right-sidedock-open .mod-root .mod-top:nth-child(1 of .mod-top):nth-last-child(1 of .mod-top) .workspace-tab-header-container {
+    -webkit-mask-image: radial-gradient(var(--cutout-corner-radius) at 0 var(--workspace-top-margin), transparent 100%, black), radial-gradient(var(--cutout-corner-radius) at 100% var(--workspace-top-margin), transparent 100%, black);
+    mask-composite: intersect;
+  }
 }

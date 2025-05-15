@@ -1,5 +1,5 @@
-@forward '../shared/workleaves';
-@forward '../shared/workspace';
+@forward "../shared/workleaves";
+@forward "../shared/workspace";
 
 body {
     --tab-container-background: none;
@@ -17,18 +17,18 @@ body {
     --sidedock-tab-header-padding-bottom: 0px;
 }
 
-// default icon opacity 
+// default icon opacity
 .workspace-tab-header-container {
     --icon-opacity: var(--icon-opacity-inactive);
     --icon-opacity-hover: 1;
 }
 
-// Full opacity when the header container is hovered 
+// Full opacity when the header container is hovered
 .workspace-tab-header-container:hover {
     --icon-opacity: var(--icon-opacity-hover);
 }
 
-// ---------- FILE TABS ---------- 
+// ---------- FILE TABS ----------
 
 .mod-root .workspace-tab-header-container {
     --tab-container-background: var(--workleaves-background);
@@ -38,7 +38,6 @@ body {
     --tab-text-color-focused-active-current: var(--workspace-foreground);
 }
 
-
 .mod-root .workspace-tab-header-container-inner,
 .workspace .mod-root .workspace-tab-header {
     padding-top: 0;
@@ -46,18 +45,20 @@ body {
 
 body.is-hidden-frameless:not(.is-fullscreen) .mod-root .workspace-tab-header-container,
 body:not(.is-frameless) .mod-root .workspace-tab-header-container {
-    border-top: 6px solid var(--workspace-background);
+    border-top: var(--workspace-top-margin) solid var(--workspace-background);
     box-sizing: content-box;
 }
-body.is-hidden-frameless:not(.is-fullscreen) .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner,
+body.is-hidden-frameless:not(.is-fullscreen)
+    .mod-root
+    .workspace-tab-header:not(.is-active)
+    .workspace-tab-header-inner,
 body:not(.is-frameless) .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
-    padding-top: 6px;
+    padding-top: var(--workspace-top-margin);
 }
 
-// Style active tab in non-stack mode 
+// Style active tab in non-stack mode
 
 @scope (.mod-root .workspace-tabs:not(.mod-stacked)) {
-
     .workspace-tab-header.is-active {
         background: none;
         filter: drop-shadow(4px 2px 2px rgba(0, 0, 0, 0.2)) drop-shadow(-4px 2px 2px rgba(0, 0, 0, 0.2));
@@ -65,40 +66,21 @@ body:not(.is-frameless) .mod-root .workspace-tab-header:not(.is-active) .workspa
 
     .is-active .workspace-tab-header-inner {
         background-color: var(--workspace-background);
-        clip-path: polygon(
-            0 0,
-            100% 0,
-            100% calc(100% - 8px),
-            calc(100% - 8px) 100%,
-            8px 100%,
-            0 calc(100% - 8px)
-        );
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px));
     }
 
-    // Remove cutout corner for first and last tabs 
+    // Remove cutout corner for first and last tabs
     .is-active:first-child .workspace-tab-header-inner {
-        clip-path: polygon(
-            0 0,
-            100% 0,
-            100% calc(100% - 8px),
-            calc(100% - 8px) 100%,
-            0 100%
-        );
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
     }
     .is-active:last-child .workspace-tab-header-inner {
-        clip-path: polygon(
-            0 0,
-            100% 0,
-            100% 100%,
-            8px 100%,
-            0 calc(100% - 8px)
-        );
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 8px 100%, 0 calc(100% - 8px));
     }
     .is-active:first-child:last-child .workspace-tab-header-inner {
         clip-path: none;
     }
 
-    // Remove separator before and after active file 
+    // Remove separator before and after active file
     .is-active + .workspace-tab-header .workspace-tab-header-inner::before {
         content: none;
     }
@@ -106,7 +88,7 @@ body:not(.is-frameless) .mod-root .workspace-tab-header:not(.is-active) .workspa
     // Using `:has()` to remove the divider before the active tab is too heavy when the windows need to be repainted
     // So instead, we hide it with another pseuod-element
     .workspace-tab-header + .workspace-tab-header.is-active::before {
-        content: '';
+        content: "";
         position: absolute;
         inset-inline-start: -0.5px;
         width: 1px;
@@ -116,7 +98,7 @@ body:not(.is-frameless) .mod-root .workspace-tab-header:not(.is-active) .workspa
     }
 }
 
-// ---------- FILE TABS - STACK MODE ---------- 
+// ---------- FILE TABS - STACK MODE ----------
 
 .theme-dark .workspace-tabs.mod-stacked {
     --tab-stacked-shadow: -10px 0 10px rgba(0, 0, 0, 0.2);
@@ -144,9 +126,9 @@ body:not(.is-frameless) .mod-root .workspace-tab-header:not(.is-active) .workspa
     background-color: var(--tab-color-hover);
 }
 
-// ---------- NAV HEADER ---------- 
+// ---------- NAV HEADER ----------
 
-// Dotted bottom border 
+// Dotted bottom border
 .nav-header {
     border-bottom: var(--file-header-border);
 }

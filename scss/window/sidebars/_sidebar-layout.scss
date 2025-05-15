@@ -1,47 +1,56 @@
-@forward '../../shared/cutout-circles';
-@forward '../../shared/cutouts';
-@forward '../../shared/shadow-color';
-@forward '../../shared/workleaves';
-@forward '../../shared/workspace';
+@forward "../../shared/cutout-circles";
+@forward "../../shared/cutouts";
+@forward "../../shared/shadow-color";
+@forward "../../shared/workleaves";
+@forward "../../shared/workspace";
 
 body {
     --sidedock-inset-border-color: var(--background-secondary);
 }
 
-// Minimum padding with window bottom border 
+// Minimum padding with window bottom border
 .mod-sidedock {
     padding-bottom: var(--size-2-2);
 }
 
-// Sidedocks workleaves 
+// Sidedocks workleaves
 .mod-sidedock .workspace-leaf {
     background-color: var(--workleaves-background);
     box-shadow: inset 0 0 20px 3px var(--shadow-color);
-    -webkit-mask: radial-gradient(var(--cutout-corner-radius) at var(--cutout-corner-radius) var(--cutout-corner-radius), transparent 100%, black)
+    -webkit-mask: radial-gradient(
+            var(--cutout-corner-radius) at var(--cutout-corner-radius) var(--cutout-corner-radius),
+            transparent 100%,
+            black
+        )
         calc(-1 * var(--cutout-corner-radius)) calc(-1 * var(--cutout-corner-radius));
 }
 
-// Padding needed because of the cropped circle corners 
+// Padding needed because of the cropped circle corners
 .mod-sidedock .workspace-leaf-content {
     padding: var(--cutout-corner-radius);
 }
 
-// Thin inside outline effect 
+// Thin inside outline effect
 .mod-sidedock .workspace-leaf::before {
     content: "";
     position: absolute;
     inset: var(--cutout-outline-inset);
     background: var(--sidedock-inset-border-color);
-    -webkit-mask: radial-gradient(
-        var(--cutout-corner-radius) at var(--cutout-corner-radius) var(--cutout-corner-radius),
-        transparent calc(100% - 1px),
-        black calc(100% - 1px) 100%,
-        transparent) calc(-1 * var(--cutout-corner-radius)) calc(-1 * var(--cutout-corner-radius)),
-    linear-gradient(90deg, black 2px, transparent 0) -1px 50% / 100% calc(100% - var(--cutout-corner-radius) * 2 + 1px) repeat-x,
-    linear-gradient(       black 2px, transparent 0) 50% -1px / calc(100% - var(--cutout-corner-radius) * 2 + 1px) 100% repeat-y;
+    -webkit-mask:
+        radial-gradient(
+                var(--cutout-corner-radius) at var(--cutout-corner-radius) var(--cutout-corner-radius),
+                transparent calc(100% - 1px),
+                black calc(100% - 1px) 100%,
+                transparent
+            )
+            calc(-1 * var(--cutout-corner-radius)) calc(-1 * var(--cutout-corner-radius)),
+        linear-gradient(90deg, black 2px, transparent 0) -1px 50% / 100% calc(
+                100% - var(--cutout-corner-radius) * 2 + 1px
+            ) repeat-x,
+        linear-gradient(black 2px, transparent 0) 50% -1px / calc(100% - var(--cutout-corner-radius) * 2 + 1px) 100% repeat-y;
 }
 
-// Resize the handle to not expand in the cropped circle corners 
+// Resize the handle to not expand in the cropped circle corners
 .workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle {
     width: calc(100% - (var(--cutout-corner-radius) + var(--cutout-outline-inset)) * 2);
     align-self: center;
@@ -59,13 +68,11 @@ body:not(.is-ios) .workspace-drawer:is(.mod-left, .mod-right) {
     mask-composite: intersect;
 }
 body:not(.is-ios) .workspace-drawer.mod-left {
-    -webkit-mask-image:
-        radial-gradient(var(--cutout-corner-radius) at 100% 0,    transparent 100%, black),
+    -webkit-mask-image: radial-gradient(var(--cutout-corner-radius) at 100% 0, transparent 100%, black),
         radial-gradient(var(--cutout-corner-radius) at 100% 100%, transparent 100%, black);
 }
 body:not(.is-ios) .workspace-drawer.mod-right {
-    -webkit-mask-image:
-        radial-gradient(var(--cutout-corner-radius) at 0 0,    transparent 100%, black),
+    -webkit-mask-image: radial-gradient(var(--cutout-corner-radius) at 0 0, transparent 100%, black),
         radial-gradient(var(--cutout-corner-radius) at 0 100%, transparent 100%, black);
 }
 body:not(.is-ios) .workspace-drawer::before {
@@ -75,12 +82,16 @@ body:not(.is-ios) .workspace-drawer::before {
     background: var(--background-secondary);
     -webkit-mask:
         radial-gradient(
-            var(--cutout-corner-radius) at var(--cutout-corner-radius) var(--cutout-corner-radius),
-            transparent calc(100% - 1px),
-            black calc(100% - 1px) 100%,
-            transparent) calc(-1 * var(--cutout-corner-radius)) calc(-1 * var(--cutout-corner-radius)),
-        linear-gradient(90deg, black 2px, transparent 0) -1px 50% / 100% calc(100% - var(--cutout-corner-radius) * 2 + 1px) repeat-x,
-        linear-gradient(       black 2px, transparent 0) 50% -1px / calc(100% - var(--cutout-corner-radius) * 2 + 1px) 100% repeat-y;
+                var(--cutout-corner-radius) at var(--cutout-corner-radius) var(--cutout-corner-radius),
+                transparent calc(100% - 1px),
+                black calc(100% - 1px) 100%,
+                transparent
+            )
+            calc(-1 * var(--cutout-corner-radius)) calc(-1 * var(--cutout-corner-radius)),
+        linear-gradient(90deg, black 2px, transparent 0) -1px 50% / 100% calc(
+                100% - var(--cutout-corner-radius) * 2 + 1px
+            ) repeat-x,
+        linear-gradient(black 2px, transparent 0) 50% -1px / calc(100% - var(--cutout-corner-radius) * 2 + 1px) 100% repeat-y;
 }
 
 .workspace-drawer {
@@ -93,21 +104,23 @@ body:not(.is-ios) .workspace-drawer::before {
     background-color: transparent;
 }
 
-
 // -------------- Tab Headers
 
-// Remove gap between header and content 
+// Remove gap between header and content
 .mod-sidedock .workspace-tab-header-container-inner {
     padding-bottom: var(--sidedock-tab-header-padding-bottom);
 }
 
-// Ensure gap between header and top border windows 
-.is-hidden-frameless .mod-sidedock.mod-top .workspace-tab-header-container-inner {
-    margin-top: 6px;
+// Ensure gap between header and top border windows
+.mod-sidedock.mod-top .workspace-tab-header-container-inner {
+    margin-top: var(--workspace-top-margin);
 }
 
-// Ensure sufficient padding for cropped circle corners 
-.is-hidden-frameless:not(.is-fullscreen) .mod-sidedock .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
+// Ensure sufficient padding for cropped circle corners
+.is-hidden-frameless:not(.is-fullscreen)
+    .mod-sidedock
+    .workspace-tabs.mod-top-left-space
+    .workspace-tab-header-container {
     padding-left: calc(12px + var(--size-4-2) + var(--frame-left-space));
 }
 .mod-sidedock .workspace-tab-header-container {
@@ -115,7 +128,7 @@ body:not(.is-ios) .workspace-drawer::before {
     padding-right: calc(12px + var(--size-4-2));
 }
 
-// Match the background for the active tab header 
+// Match the background for the active tab header
 .mod-sidedock .workspace-tab-header.is-active,
 .mod-sidedock .workspace-tab-header.is-active:hover {
     background-color: var(--workleaves-background);

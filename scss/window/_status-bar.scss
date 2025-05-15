@@ -1,10 +1,8 @@
-@forward '../shared/shadow-color';
-@forward '../shared/workspace';
+@forward "../shared/shadow-color";
+@forward "../shared/workspace";
 
 @scope (body:not(.is-popout-window):not(.is-mobile)) {
-    
     :scope.fas-status-bar-top {
-
         .app-container {
             flex-direction: column-reverse;
         }
@@ -12,14 +10,16 @@
         .horizontal-main-container {
             position: relative;
         }
-        
+
         .status-bar {
             position: initial;
             background: none;
         }
-        
+
         &.is-hidden-frameless:not(.is-fullscreen):not(.mod-macos) .status-bar {
-            margin-right: calc(var(--frame-right-space) + var(--size-4-2) + 6px + var(--header-height) - 1px);
+            margin-right: calc(
+                var(--frame-right-space) + var(--size-4-2) + var(--workspace-top-margin) + var(--header-height) - 1px
+            );
         }
 
         &.is-hidden-frameless:not(.is-fullscreen):not(.mod-macos) .status-bar::before {
@@ -28,13 +28,13 @@
             height: 100%;
             flex-grow: 1;
         }
-        
+
         &.is-hidden-frameless:not(.is-fullscreen) .mod-root .workspace-tab-header-container,
         &:not(.is-frameless) .mod-root .workspace-tab-header-container {
             border-top: 0 !important;
             box-sizing: border-box;
         }
-        
+
         &.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right::before {
             left: calc(-1 * var(--header-height) + 1px) !important;
             width: calc(var(--header-height) - 1px) !important;
@@ -48,8 +48,6 @@
             padding-right: 0;
         }
     }
-
-
 
     :scope.fas-status-bar-default-hover {
         .status-bar {
@@ -77,13 +75,11 @@
             transition-property: left;
             z-index: -1;
         }
-        
+
         .status-bar:hover::before {
             left: 0;
         }
     }
-
-
 
     :scope.fas-status-bar-ribbon {
         --status-bar-radius: 0;

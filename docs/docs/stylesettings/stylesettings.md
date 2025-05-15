@@ -69,6 +69,12 @@ Modify the space between the floating elements and the text. Float elements are 
 - **Top**: at the top of the window
 - **Ribbon**: split the ribbon space in two, the status-bar goes in the bottom part
 
+#### Show note header on hover
+Hide the note header by default and reveal it only on hovered.
+
+#### Also crop the corners of the central pane
+Make the left/top corners circular - like the sidebars - in the central pane when the sidebars are opened.
+
 ## Sidebars
 
 #### Bookmark style for the tabs

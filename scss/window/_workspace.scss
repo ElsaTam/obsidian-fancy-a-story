@@ -1,18 +1,26 @@
-@forward '../shared/workleaves';
-@forward '../shared/workspace';
+@forward "../shared/workleaves";
+@forward "../shared/workspace";
 
-// ----------- App background color ----------- 
+// ----------- Top space between the edge of the windows and the content -----------
+body.is-hidden-frameless {
+    --workspace-top-margin: 6px;
+}
+body:not(.is-hidden-frameless) {
+    --workspace-top-margin: 0px;
+}
+
+// ----------- App background color -----------
 body,
 .workspace {
     background-color: var(--workspace-background);
 }
 
-// ----------- Workspace ----------- 
+// ----------- Workspace -----------
 .workspace.is-right-sidedock-open {
     padding-right: var(--size-2-2);
 }
 
-// ----------- Gap between panes ----------- 
+// ----------- Gap between panes -----------
 body {
     --workspace-gap: 10px;
 }
@@ -25,7 +33,7 @@ body {
     overflow: visible;
 }
 
-// ----------- Mod root ----------- 
+// ----------- Mod root -----------
 .workspace-split.mod-root {
     background: none;
 }
@@ -37,11 +45,70 @@ body {
 }
 
 .mod-fade:not(.mod-at-end):after {
-    background: linear-gradient(to right, transparent, var(--workleaves-background))
+    background: linear-gradient(to right, transparent, var(--workleaves-background));
 }
 
 // ----------- Top bar (toggle button + tabs) -----------
 .sidebar-toggle-button,
 .workspace-tabs.mod-top {
     --tab-container-background: transparent;
+}
+
+// ---------- Cropped circle corners on root (top only) ----------
+body {
+    --crop-root-corners: disable;
+}
+
+@container style(--crop-root-corners: enable) {
+    body:not(.fas-background-image) {
+        // Only left
+        .workspace.is-left-sidedock-open:not(.is-right-sidedock-open)
+            .mod-root
+            .mod-top:nth-child(1 of .mod-top)
+            .workspace-tab-header-container,
+        .workspace.is-left-sidedock-open.is-right-sidedock-open
+            .mod-root
+            .mod-top:nth-child(1 of .mod-top):not(.mod-top:nth-last-child(1 of .mod-top))
+            .workspace-tab-header-container {
+            -webkit-mask-image: radial-gradient(
+                var(--cutout-corner-radius) at 0 var(--workspace-top-margin),
+                transparent 100%,
+                black
+            );
+        }
+
+        // Only right
+        .workspace.is-right-sidedock-open:not(.is-left-sidedock-open)
+            .mod-root
+            .mod-top:nth-last-child(1 of .mod-top)
+            .workspace-tab-header-container,
+        .workspace.is-left-sidedock-open.is-right-sidedock-open
+            .mod-root
+            .mod-top:nth-last-child(1 of .mod-top):not(.mod-top:nth-child(1 of .mod-top))
+            .workspace-tab-header-container {
+            -webkit-mask-image: radial-gradient(
+                var(--cutout-corner-radius) at 100% var(--workspace-top-margin),
+                transparent 100%,
+                black
+            );
+        }
+
+        // Both
+        .workspace.is-left-sidedock-open.is-right-sidedock-open
+            .mod-root
+            .mod-top:nth-child(1 of .mod-top):nth-last-child(1 of .mod-top)
+            .workspace-tab-header-container {
+            -webkit-mask-image: radial-gradient(
+                    var(--cutout-corner-radius) at 0 var(--workspace-top-margin),
+                    transparent 100%,
+                    black
+                ),
+                radial-gradient(
+                    var(--cutout-corner-radius) at 100% var(--workspace-top-margin),
+                    transparent 100%,
+                    black
+                );
+            mask-composite: intersect;
+        }
+    }
 }

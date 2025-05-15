@@ -264,6 +264,18 @@ settings:
             - 
                 label: No
                 value: disable
+    -
+        id: crop-root-corners
+        title: Also crop the corners of the central pane
+        type: variable-select
+        default: disable
+        options:
+            - 
+                label: Yes
+                value: enable
+            - 
+                label: No
+                value: disable
 
     - 
         id: sidebar
