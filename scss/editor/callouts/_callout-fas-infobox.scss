@@ -6,6 +6,11 @@
 
 body {
     --fas-infobox-padding: var(--size-4-3);
+    --fas-infobox-max-width: 300px;
+}
+
+.callout[data-callout="fas-infobox"][data-callout-metadata~="full-width"] {
+    --fas-infobox-max-width: 100%;
 }
 
 :where(.fas-callout-infobox) .callout[data-callout="infobox"],
@@ -15,7 +20,7 @@ body {
     --hr-color: rgba(var(--callout-color), var(--callout-border-opacity));
     --heading-spacing: var(--p-spacing);
 
-    max-width: 300px;
+    max-width: var(--fas-infobox-max-width);
 
     .callout-title {
         justify-content: center;
@@ -341,20 +346,31 @@ body {
 }
 
 /* Position */
-:where(.fas-callout-infobox) .markdown-preview-view .callout[data-callout="infobox"],
-:where(.fas-callout-infobox) .markdown-preview-view .callout[data-callout="infobox"][data-callout-metadata~="right"],
-.markdown-preview-view .callout[data-callout="fas-infobox"],
-.markdown-preview-view .callout[data-callout="fas-infobox"][data-callout-metadata~="right"] {
+:where(.fas-callout-infobox)
+    .markdown-preview-view
+    .callout[data-callout="infobox"]:not([data-callout-metadata~="full-width"]),
+:where(.fas-callout-infobox)
+    .markdown-preview-view
+    .callout[data-callout="infobox"]:not([data-callout-metadata~="full-width"])[data-callout-metadata~="right"],
+.markdown-preview-view .callout[data-callout="fas-infobox"]:not([data-callout-metadata~="full-width"]),
+.markdown-preview-view
+    .callout[data-callout="fas-infobox"]:not([data-callout-metadata~="full-width"])[data-callout-metadata~="right"] {
     float: right;
     margin-left: calc(var(--overflow-width) + var(--fas-float-inline-margin, 12px));
 }
-:where(.fas-callout-infobox) .markdown-preview-view .callout[data-callout="infobox"][data-callout-metadata~="left"],
-.markdown-preview-view .callout[data-callout="fas-infobox"][data-callout-metadata~="left"] {
+:where(.fas-callout-infobox)
+    .markdown-preview-view
+    .callout[data-callout="infobox"]:not([data-callout-metadata~="full-width"])[data-callout-metadata~="left"],
+.markdown-preview-view
+    .callout[data-callout="fas-infobox"]:not([data-callout-metadata~="full-width"])[data-callout-metadata~="left"] {
     float: left;
     margin-right: calc(var(--overflow-width) + var(--fas-float-inline-margin, 12px));
 }
-:where(.fas-callout-infobox) .markdown-preview-view .callout[data-callout="infobox"][data-callout-metadata~="center"],
-.markdown-preview-view .callout[data-callout="fas-infobox"][data-callout-metadata~="center"] {
+:where(.fas-callout-infobox)
+    .markdown-preview-view
+    .callout[data-callout="infobox"]:not([data-callout-metadata~="full-width"])[data-callout-metadata~="center"],
+.markdown-preview-view
+    .callout[data-callout="fas-infobox"]:not([data-callout-metadata~="full-width"])[data-callout-metadata~="center"] {
     float: unset;
     margin-inline: auto;
 }

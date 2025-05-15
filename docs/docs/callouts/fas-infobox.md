@@ -12,6 +12,7 @@ Callout option (`> [!fas-infobox|option1 option2]`)
 - `left`: place the infobox on the left
 - `center`: centers the infobox
 - `right`: place the infobox on the right (default)
+- `full-width`: takes up the full width of the note
 - `corners`: add two triangle in the corners
 - `no-thead` or `no-th`: remove table headers
 - `h1-title`: use the ribbon styling for the title (needs to be a heading `# title`)
@@ -101,3 +102,10 @@ If you wish to use it with the `fas-infobox` callouts, follow these steps:
 {: .note}
 This has been written with the approval of SlRvb (ITS theme's creator). If you consider sharing this snippet publicly, remember that this code is distributed under the [GPL-2.0 License](https://github.com/SlRvb/Obsidian--ITS-Theme/blob/main/LICENSE).
 
+## CSS Variables
+
+(defined in `body`)
+
+| Variable | Description | Default value |
+|:---------|:------------|:--------------|
+| `--fas-infobox-max-width` | Max width of the infobox callout | `300px` |
