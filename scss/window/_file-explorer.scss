@@ -1,6 +1,7 @@
 body {
     --nav-item-padding-block: 4px;
     --nav-item-parent-padding-block: 4px;
+    --nav-item-children-margin-start: 12px;
 }
 
 .nav-file-title {
@@ -8,4 +9,11 @@ body {
 }
 .tree-item-self.mod-collapsible {
     padding-block: var(--nav-item-parent-padding-block);
+}
+
+.tree-item-self .tree-item-icon {
+    margin-inline-start: min(
+        calc(-1 * var(--size-4-5)),
+        calc(-1 * var(--size-4-5) + var(--nav-item-children-margin-start) - 12px)
+    );
 }

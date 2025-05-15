@@ -228,20 +228,6 @@ settings:
         format: px
         default: 10
     -
-        id: nav-item-padding-block
-        title: Vertical spacing for files titles
-        description: Padding of each file title in the File explorer and the Bookmarks tree
-        type: variable-number
-        format: px
-        default: 4
-    -
-        id: nav-item-parent-padding-block
-        title: Vertical spacing for folders titles
-        description: Padding of each folder title in the File explorer and the Bookmarks tree
-        type: variable-number
-        format: px
-        default: 4
-    -
         id: icon-opacity-inactive
         title: Icon opacity in inactive tabs
         type: variable-number-slider
@@ -298,6 +284,36 @@ settings:
             - 
                 label: No
                 value: disable
+
+        
+    - 
+        id: file-explorer
+        title: File explorer
+        type: heading
+        collapsed: true
+        level: 2
+    -
+        id: nav-item-children-margin-start
+        title: Indentation for files and folders
+        description: Left indentation of each child of a folder in the File explorer and the Bookmarks tree
+        type: variable-number
+        format: px
+        default: 12
+    -
+        id: nav-item-padding-block
+        title: Vertical spacing for files titles
+        description: Padding of each file title in the File explorer and the Bookmarks tree
+        type: variable-number
+        format: px
+        default: 4
+    -
+        id: nav-item-parent-padding-block
+        title: Vertical spacing for folders titles
+        description: Padding of each folder title in the File explorer and the Bookmarks tree
+        type: variable-number
+        format: px
+        default: 4
+
 
     - 
         id: sidebar
