@@ -3436,7 +3436,7 @@ body {
 }
 
 @container style(--limit-code-to-80-chars: enable) {
-  code {
+  pre code {
     max-width: 80ch;
     display: block;
   }
