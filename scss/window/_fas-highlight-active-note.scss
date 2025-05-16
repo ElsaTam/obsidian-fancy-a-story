@@ -5,14 +5,10 @@
     Code adapted and shared by @tif. Thanks a lot!
 */
 
-.fas-highlight-active-note .workspace-leaf {
-    background-color: inherit;
+.fas-highlight-active-note .workspace-leaf:not(.mod-active) .workspace-leaf-content[data-type="markdown"] {
+    opacity: 0.5;
 }
 
-.fas-highlight-active-note .workspace-leaf:not(.mod-active) .workspace-leaf-content[data-type='markdown'] {
-    opacity: 0.5
-}
-
-.fas-highlight-active-note .workspace-leaf .workspace-leaf-content[data-type='markdown'] {
+.fas-highlight-active-note .workspace-leaf .workspace-leaf-content[data-type="markdown"] {
     transition: opacity 0.25s ease-out;
 }
