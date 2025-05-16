@@ -1,8 +1,7 @@
-@forward '../shared/list-with-float';
-@use '../shared/full-width-image-aliases';
-@use '../foundations/colors/colors_definitions';
-@use 'sass:list';
-
+@forward "../shared/list-with-float";
+@use "../shared/full-width-image-aliases";
+@use "../foundations/colors/colors_definitions";
+@use "sass:list";
 
 body {
     // custom
@@ -15,21 +14,25 @@ body {
 .image-embed {
     font-size: 0;
 }
-    
+
 .markdown-rendered .image-embed:is([alt~="right"], [alt~="float-right"]) {
     float: right;
     clear: right;
-    margin: var(--fas-float-inline-margin, 12px) 0 var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px);
+    margin: var(--fas-float-inline-margin, 12px) 0 var(--fas-float-inline-margin, 12px)
+        var(--fas-float-inline-margin, 12px);
 }
 
 .markdown-rendered .image-embed:is([alt~="left"], [alt~="float-left"]) {
     float: left;
     clear: left;
-    margin: var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px) 0;
+    margin: var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px)
+        var(--fas-float-inline-margin, 12px) 0;
 }
-    
+
 @each $key, $c in map-get(colors_definitions.$extended-colors, "light") {
-    .image-embed[alt~="#{$key}"] { --image-shadow-color: rgba(var(--color-#{$key}-rgb), 0.2); }
+    .image-embed[alt~="#{$key}"] {
+        --image-shadow-color: rgba(var(--color-#{$key}-rgb), 0.2);
+    }
 }
 
 img[alt~="black-and-white"],
@@ -44,15 +47,17 @@ img[alt~="b-w"] {
 // IMAGE SHADOW
 
 $no_shadow_attributes: full-width-image-aliases.$aliases;
-$no_shadow_attributes: list.append($no_shadow_attributes, 'no-shadow');
+$no_shadow_attributes: list.append($no_shadow_attributes, "no-shadow");
 // ITS compatibility https://publish.obsidian.md/slrvb-docs/ITS+Theme/Image+Adjustments
-$no_shadow_attributes: list.append($no_shadow_attributes, 'banner');
-$no_shadow_attributes: list.append($no_shadow_attributes, 'banner+small');
-$no_shadow_attributes: list.append($no_shadow_attributes, 'banner+tall');
-$no_shadow_attributes: list.append($no_shadow_attributes, 'sban');
+$no_shadow_attributes: list.append($no_shadow_attributes, "banner");
+$no_shadow_attributes: list.append($no_shadow_attributes, "banner+small");
+$no_shadow_attributes: list.append($no_shadow_attributes, "banner+tall");
+$no_shadow_attributes: list.append($no_shadow_attributes, "sban");
 $no_shadow_selector: ":is(";
 @each $alias in $no_shadow_attributes {
-    @if ($no_shadow_selector != ":is(") { $no_shadow_selector: $no_shadow_selector + ", "; }
+    @if ($no_shadow_selector != ":is(") {
+        $no_shadow_selector: $no_shadow_selector + ", ";
+    }
     $no_shadow_selector: $no_shadow_selector + "[alt~='#{$alias}']";
 }
 $no_shadow_selector: $no_shadow_selector + ")";
@@ -62,8 +67,9 @@ $no_shadow_selector: $no_shadow_selector + ")";
         z-index: 1;
         width: fit-content;
     }
-    
+
     .markdown-source-view .image-embed:not(#{$no_shadow_selector}),
+    .markdown-source-view.mod-cm6 .cm-line .image-embed:not(#{$no_shadow_selector}),
     .markdown-rendered .image-embed:not(#{$no_shadow_selector}) {
         padding-right: var(--image-shadow-offset, 0px);
         padding-bottom: var(--image-shadow-offset, 0px);
@@ -72,7 +78,7 @@ $no_shadow_selector: $no_shadow_selector + ")";
         width: fit-content;
         position: relative;
         font-size: 0;
-    
+
         &::before {
             content: "";
             position: absolute;
