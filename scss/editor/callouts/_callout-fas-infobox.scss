@@ -92,10 +92,12 @@ body {
     /* cover */
     .image-embed[alt~="cover"] {
         position: relative;
+        display: block;
     }
     .image-embed[alt~="cover"]::after {
         --triangle-size: 16px;
         content: "";
+        display: block;
         position: absolute;
         bottom: calc(-0.5 * var(--triangle-size));
         left: calc(50% - 0.5 * var(--triangle-size));
@@ -119,12 +121,20 @@ body {
         width: var(--infobox-icon-size, 70px);
         margin-top: calc(-0.5 * var(--infobox-icon-size, 70px));
         margin-bottom: calc(-0.5 * var(--infobox-icon-size, 70px));
+        z-index: 2;
+    }
+    p + p > .image-embed[alt~="icon"] {
+        margin-top: calc(-0.5 * var(--infobox-icon-size, 70px) - var(--p-spacing));
     }
     img[alt*="icon"]:not(.image-embed img) {
         display: block;
         position: relative;
+        margin-top: calc(-0.5 * var(--infobox-icon-size, 70px));
+        margin-bottom: calc(-0.5 * var(--infobox-icon-size, 70px));
+        z-index: 2;
+    }
+    p + p > img[alt*="icon"]:not(.image-embed img) {
         margin-top: calc(-0.5 * var(--infobox-icon-size, 70px) - var(--p-spacing));
-        margin-bottom: calc(-0.5 * var(--infobox-icon-size, 70px) - var(--p-spacing));
     }
     img[alt*="icon"] {
         height: var(--infobox-icon-size, 70px);
