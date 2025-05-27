@@ -2,6 +2,7 @@
 /*@forward '../shared/markdown-anchor';*/
 
 body {
+    --sci-fi-style-fonts: enable;
     --sci-fi-color-rgb: var(--color-cyan-rgb);
 }
 
@@ -13,7 +14,7 @@ body {
     --hr-color: rgb(var(--sci-fi-color-rgb));
 }
 
-@container style(--art-deco-style-fonts: enable) {
+@container style(--sci-fi-style-fonts: enable) {
     .fas-skin-sci-fi :is(.markdown-source-view, .markdown-preview-view),
     .sci-fi {
         --inline-title-font: "Orbitron", Arial, serif;
