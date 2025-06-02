@@ -83,7 +83,7 @@ img[alt~=b-w] {
     z-index: 1;
     width: fit-content;
   }
-  .markdown-source-view .image-embed:not(:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner], [alt~="banner+small"], [alt~="banner+tall"], [alt~=sban])), .markdown-rendered .image-embed:not(:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner], [alt~="banner+small"], [alt~="banner+tall"], [alt~=sban])) {
+  .markdown-source-view .image-embed:not(:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner], [alt~="banner+small"], [alt~="banner+tall"], [alt~=sban])), .markdown-source-view.mod-cm6 .cm-line .image-embed:not(:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner], [alt~="banner+small"], [alt~="banner+tall"], [alt~=sban])), .markdown-rendered .image-embed:not(:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner], [alt~="banner+small"], [alt~="banner+tall"], [alt~=sban])) {
     padding-right: var(--image-shadow-offset, 0px);
     padding-bottom: var(--image-shadow-offset, 0px);
     display: inline-block;
@@ -92,7 +92,7 @@ img[alt~=b-w] {
     position: relative;
     font-size: 0;
   }
-  .markdown-source-view .image-embed:not(:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner], [alt~="banner+small"], [alt~="banner+tall"], [alt~=sban]))::before, .markdown-rendered .image-embed:not(:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner], [alt~="banner+small"], [alt~="banner+tall"], [alt~=sban]))::before {
+  .markdown-source-view .image-embed:not(:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner], [alt~="banner+small"], [alt~="banner+tall"], [alt~=sban]))::before, .markdown-source-view.mod-cm6 .cm-line .image-embed:not(:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner], [alt~="banner+small"], [alt~="banner+tall"], [alt~=sban]))::before, .markdown-rendered .image-embed:not(:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner], [alt~="banner+small"], [alt~="banner+tall"], [alt~=sban]))::before {
     content: "";
     position: absolute;
     z-index: -1;

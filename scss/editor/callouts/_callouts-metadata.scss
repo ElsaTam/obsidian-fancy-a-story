@@ -133,3 +133,9 @@
         text-align: center;
     }
 }
+
+.callout[data-callout-metadata~="table-fixed"] {
+    table {
+        table-layout: fixed;
+    }
+}

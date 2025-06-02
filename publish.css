@@ -3447,6 +3447,10 @@ body {
   text-align: center;
 }
 
+.callout[data-callout-metadata~=table-fixed] table {
+  table-layout: fixed;
+}
+
 body {
   --limit-code-to-80-chars: enable;
 }
