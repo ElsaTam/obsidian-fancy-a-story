@@ -65,6 +65,7 @@ body {
 // Mobile
 body:not(.is-ios) .workspace-drawer:is(.mod-left, .mod-right) {
     padding-inline: var(--cutout-outline-inset);
+    -webkit-mask-composite: source-in;
     mask-composite: intersect;
 }
 body:not(.is-ios) .workspace-drawer.mod-left {

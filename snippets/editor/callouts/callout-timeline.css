@@ -118,11 +118,23 @@ body {
   left: 0;
   right: 0;
   background-color: var(--line-color);
-  -webkit-mask-image: var(--rope-segment-vertical), linear-gradient(to bottom, transparent, black var(--line-fade-width), black calc(100% - var(--line-fade-width)), transparent);
-  -webkit-mask-repeat: repeat-y, no-repeat;
-  -webkit-mask-position: center, center;
-  -webkit-mask-size: var(--line-thickness), 100%;
-  mask-composite: intersect;
+}
+@supports (mask-composite: intersect) {
+  .callout[data-callout=timeline]:not([data-callout-metadata~=horizontal]) > .callout-content::after {
+    -webkit-mask-image: var(--rope-segment-vertical), linear-gradient(to bottom, transparent, black var(--line-fade-width), black calc(100% - var(--line-fade-width)), transparent);
+    -webkit-mask-repeat: repeat-y, no-repeat;
+    -webkit-mask-position: center, center;
+    -webkit-mask-size: var(--line-thickness), 100%;
+    mask-composite: intersect;
+  }
+}
+@supports not (mask-composite: intersect) {
+  .callout[data-callout=timeline]:not([data-callout-metadata~=horizontal]) > .callout-content::after {
+    -webkit-mask-image: var(--rope-segment-vertical);
+    -webkit-mask-repeat: repeat-y;
+    -webkit-mask-position: center;
+    -webkit-mask-size: var(--line-thickness);
+  }
 }
 .callout[data-callout=timeline]:not([data-callout-metadata~=horizontal]) > .callout-content > *:nth-child(2) {
   grid-row: 2/4;
@@ -158,21 +170,15 @@ body {
 }
 .callout[data-callout=timeline]:not([data-callout-metadata~=horizontal]) > .callout-content > *::after {
   top: calc(50% - var(--bullet-size) * 0.5 - var(--bullet-border-width));
-  --shift-bullet: calc(-1 * (
-        var(--bullet-size) * 0.5
-      + var(--bullet-border-width)
-      + var(--col-gap)
-      + var(--card-border-width) * 2
-  ));
+  --shift-bullet: calc(
+      -1 * (var(--bullet-size) * 0.5 + var(--bullet-border-width) + var(--col-gap) + var(--card-border-width) * 2)
+  );
 }
 .callout[data-callout=timeline]:not([data-callout-metadata~=horizontal]) > .callout-content > *::before {
   height: var(--segment-thickness);
   width: var(--col-gap);
   top: calc(50% - var(--segment-thickness) * 0.5);
-  --shift-segment: calc(-1 * (
-        var(--col-gap)
-      + var(--card-border-width)
-  ));
+  --shift-segment: calc(-1 * (var(--col-gap) + var(--card-border-width)));
 }
 
 .callout[data-callout=timeline][data-callout-metadata~=horizontal] > .callout-content {
@@ -186,12 +192,24 @@ body {
   grid-row: 2;
   grid-column: 1/span 100;
   background-color: var(--line-color);
-  -webkit-mask-image: var(--rope-segment-horizontal), linear-gradient(to right, transparent, black var(--line-fade-width), black calc(100% - var(--line-fade-width)), transparent);
-  -webkit-mask-repeat: repeat-x, no-repeat;
-  -webkit-mask-position: center center;
-  -webkit-mask-size: var(--line-thickness), 100%;
-  mask-composite: intersect;
   z-index: 0;
+}
+@supports (mask-composite: intersect) {
+  .callout[data-callout=timeline][data-callout-metadata~=horizontal] > .callout-content::after {
+    -webkit-mask-image: var(--rope-segment-horizontal), linear-gradient(to right, transparent, black var(--line-fade-width), black calc(100% - var(--line-fade-width)), transparent);
+    -webkit-mask-repeat: repeat-x, no-repeat;
+    -webkit-mask-position: center center;
+    -webkit-mask-size: var(--line-thickness), 100%;
+    mask-composite: intersect;
+  }
+}
+@supports not (mask-composite: intersect) {
+  .callout[data-callout=timeline][data-callout-metadata~=horizontal] > .callout-content::after {
+    -webkit-mask-image: var(--rope-segment-horizontal);
+    -webkit-mask-repeat: repeat-x;
+    -webkit-mask-position: center center;
+    -webkit-mask-size: var(--line-thickness);
+  }
 }
 .callout[data-callout=timeline][data-callout-metadata~=horizontal] > .callout-content > *:nth-child(2) {
   grid-column: 2/4;
@@ -248,23 +266,16 @@ body {
 }
 .callout[data-callout=timeline][data-callout-metadata~=horizontal] > .callout-content > *::after {
   left: calc(50% - var(--bullet-size) * 0.5 - var(--bullet-border-width));
-  --shift-bullet: calc(-1 * (
-      var(--bullet-size) * 0.5
-      + var(--bullet-border-width)
-      + var(--card-border-width) * 2
-      + var(--row-gap)
-      + var(--line-thickness) * 0.5
-  ));
+  --shift-bullet: calc(
+      -1 * (var(--bullet-size) * 0.5 + var(--bullet-border-width) + var(--card-border-width) * 2 + var(--row-gap) +
+                  var(--line-thickness) * 0.5)
+  );
 }
 .callout[data-callout=timeline][data-callout-metadata~=horizontal] > .callout-content > *::before {
   width: var(--segment-thickness);
   height: calc(var(--row-gap) + var(--line-thickness) * 0.5 + var(--card-border-width));
   left: calc(50% - var(--segment-thickness) * 0.5);
-  --shift-segment: calc(-1 * (
-        var(--row-gap)
-        + var(--line-thickness) * 0.5
-        + var(--card-border-width)
-  ));
+  --shift-segment: calc(-1 * (var(--row-gap) + var(--line-thickness) * 0.5 + var(--card-border-width)));
 }
 
 .callout[data-callout=timeline][data-callout-metadata~=numbered] > .callout-content {
@@ -307,19 +318,14 @@ body {
     left: var(--shift-segment);
   }
   .callout[data-callout=timeline]:not([data-callout-metadata~=horizontal]) > .callout-content > *::after {
-    --shift-bullet: calc(-1 * (
-          var(--bullet-size) * 0.5
-        + var(--bullet-border-width)
-        + var(--line-thickness) * 0.5
-        + var(--card-border-width) * 2
-    ));
+    --shift-bullet: calc(
+        -1 * (var(--bullet-size) * 0.5 + var(--bullet-border-width) + var(--line-thickness) * 0.5 +
+                    var(--card-border-width) * 2)
+    );
   }
   .callout[data-callout=timeline]:not([data-callout-metadata~=horizontal]) > .callout-content > *::before {
     width: calc(var(--line-thickness) * 0.5);
-    --shift-segment: calc(-1 * (
-          var(--line-thickness) * 0.5
-        + var(--card-border-width)
-    ));
+    --shift-segment: calc(-1 * (var(--line-thickness) * 0.5 + var(--card-border-width)));
   }
 }
 @media print {

@@ -104,6 +104,7 @@ pre.language-poem-floral:not(.is-collapsed)::before, pre.language-poem-floral:no
   -webkit-mask-image: var(--left-ornament-flourish), linear-gradient(to left, transparent, black 40%);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 100% auto;
+  -webkit-mask-composite: source-in;
   mask-composite: intersect;
   z-index: -1;
 }

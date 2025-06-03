@@ -1009,7 +1009,9 @@ body {
   background-size: 100% 100%;
   background-position: center center;
 }
-.callout[data-callout=clue] > .callout-title .callout-icon, .callout[data-callout=clue] > .callout-title .callout-title-inner, .callout[data-callout=clue] > .callout-title .callout-fold {
+.callout[data-callout=clue] > .callout-title .callout-icon,
+.callout[data-callout=clue] > .callout-title .callout-title-inner,
+.callout[data-callout=clue] > .callout-title .callout-fold {
   z-index: 1;
 }
 .callout[data-callout=clue] > .callout-content {
@@ -1037,6 +1039,7 @@ body {
   -webkit-mask-size: 101% auto;
   -webkit-mask-position: center calc(100% + 1px), center;
   -webkit-mask-repeat: no-repeat;
+  -webkit-mask-composite: xor;
   mask-composite: exclude;
   padding-bottom: 15px;
 }
@@ -1552,6 +1555,7 @@ body {
   -webkit-mask-size: 100%;
   -webkit-mask-position: center;
   mask-composite: intersect;
+  -webkit-mask-composite: source-in;
 }
 .callout[data-callout=film-strip] .callout-content > p > span::after {
   content: "← " counter(frames) " →";
@@ -2748,6 +2752,7 @@ body {
   -webkit-mask-image: var(--left-ornament-flourish), linear-gradient(to left, transparent, black 40%);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 100% auto;
+  -webkit-mask-composite: source-in;
   mask-composite: intersect;
   z-index: -1;
 }
@@ -3092,11 +3097,23 @@ body {
   left: 0;
   right: 0;
   background-color: var(--line-color);
-  -webkit-mask-image: var(--rope-segment-vertical), linear-gradient(to bottom, transparent, black var(--line-fade-width), black calc(100% - var(--line-fade-width)), transparent);
-  -webkit-mask-repeat: repeat-y, no-repeat;
-  -webkit-mask-position: center, center;
-  -webkit-mask-size: var(--line-thickness), 100%;
-  mask-composite: intersect;
+}
+@supports (mask-composite: intersect) {
+  .callout[data-callout=timeline]:not([data-callout-metadata~=horizontal]) > .callout-content::after {
+    -webkit-mask-image: var(--rope-segment-vertical), linear-gradient(to bottom, transparent, black var(--line-fade-width), black calc(100% - var(--line-fade-width)), transparent);
+    -webkit-mask-repeat: repeat-y, no-repeat;
+    -webkit-mask-position: center, center;
+    -webkit-mask-size: var(--line-thickness), 100%;
+    mask-composite: intersect;
+  }
+}
+@supports not (mask-composite: intersect) {
+  .callout[data-callout=timeline]:not([data-callout-metadata~=horizontal]) > .callout-content::after {
+    -webkit-mask-image: var(--rope-segment-vertical);
+    -webkit-mask-repeat: repeat-y;
+    -webkit-mask-position: center;
+    -webkit-mask-size: var(--line-thickness);
+  }
 }
 .callout[data-callout=timeline]:not([data-callout-metadata~=horizontal]) > .callout-content > *:nth-child(2) {
   grid-row: 2/4;
@@ -3132,21 +3149,15 @@ body {
 }
 .callout[data-callout=timeline]:not([data-callout-metadata~=horizontal]) > .callout-content > *::after {
   top: calc(50% - var(--bullet-size) * 0.5 - var(--bullet-border-width));
-  --shift-bullet: calc(-1 * (
-        var(--bullet-size) * 0.5
-      + var(--bullet-border-width)
-      + var(--col-gap)
-      + var(--card-border-width) * 2
-  ));
+  --shift-bullet: calc(
+      -1 * (var(--bullet-size) * 0.5 + var(--bullet-border-width) + var(--col-gap) + var(--card-border-width) * 2)
+  );
 }
 .callout[data-callout=timeline]:not([data-callout-metadata~=horizontal]) > .callout-content > *::before {
   height: var(--segment-thickness);
   width: var(--col-gap);
   top: calc(50% - var(--segment-thickness) * 0.5);
-  --shift-segment: calc(-1 * (
-        var(--col-gap)
-      + var(--card-border-width)
-  ));
+  --shift-segment: calc(-1 * (var(--col-gap) + var(--card-border-width)));
 }
 
 .callout[data-callout=timeline][data-callout-metadata~=horizontal] > .callout-content {
@@ -3160,12 +3171,24 @@ body {
   grid-row: 2;
   grid-column: 1/span 100;
   background-color: var(--line-color);
-  -webkit-mask-image: var(--rope-segment-horizontal), linear-gradient(to right, transparent, black var(--line-fade-width), black calc(100% - var(--line-fade-width)), transparent);
-  -webkit-mask-repeat: repeat-x, no-repeat;
-  -webkit-mask-position: center center;
-  -webkit-mask-size: var(--line-thickness), 100%;
-  mask-composite: intersect;
   z-index: 0;
+}
+@supports (mask-composite: intersect) {
+  .callout[data-callout=timeline][data-callout-metadata~=horizontal] > .callout-content::after {
+    -webkit-mask-image: var(--rope-segment-horizontal), linear-gradient(to right, transparent, black var(--line-fade-width), black calc(100% - var(--line-fade-width)), transparent);
+    -webkit-mask-repeat: repeat-x, no-repeat;
+    -webkit-mask-position: center center;
+    -webkit-mask-size: var(--line-thickness), 100%;
+    mask-composite: intersect;
+  }
+}
+@supports not (mask-composite: intersect) {
+  .callout[data-callout=timeline][data-callout-metadata~=horizontal] > .callout-content::after {
+    -webkit-mask-image: var(--rope-segment-horizontal);
+    -webkit-mask-repeat: repeat-x;
+    -webkit-mask-position: center center;
+    -webkit-mask-size: var(--line-thickness);
+  }
 }
 .callout[data-callout=timeline][data-callout-metadata~=horizontal] > .callout-content > *:nth-child(2) {
   grid-column: 2/4;
@@ -3222,23 +3245,16 @@ body {
 }
 .callout[data-callout=timeline][data-callout-metadata~=horizontal] > .callout-content > *::after {
   left: calc(50% - var(--bullet-size) * 0.5 - var(--bullet-border-width));
-  --shift-bullet: calc(-1 * (
-      var(--bullet-size) * 0.5
-      + var(--bullet-border-width)
-      + var(--card-border-width) * 2
-      + var(--row-gap)
-      + var(--line-thickness) * 0.5
-  ));
+  --shift-bullet: calc(
+      -1 * (var(--bullet-size) * 0.5 + var(--bullet-border-width) + var(--card-border-width) * 2 + var(--row-gap) +
+                  var(--line-thickness) * 0.5)
+  );
 }
 .callout[data-callout=timeline][data-callout-metadata~=horizontal] > .callout-content > *::before {
   width: var(--segment-thickness);
   height: calc(var(--row-gap) + var(--line-thickness) * 0.5 + var(--card-border-width));
   left: calc(50% - var(--segment-thickness) * 0.5);
-  --shift-segment: calc(-1 * (
-        var(--row-gap)
-        + var(--line-thickness) * 0.5
-        + var(--card-border-width)
-  ));
+  --shift-segment: calc(-1 * (var(--row-gap) + var(--line-thickness) * 0.5 + var(--card-border-width)));
 }
 
 .callout[data-callout=timeline][data-callout-metadata~=numbered] > .callout-content {
@@ -3281,19 +3297,14 @@ body {
     left: var(--shift-segment);
   }
   .callout[data-callout=timeline]:not([data-callout-metadata~=horizontal]) > .callout-content > *::after {
-    --shift-bullet: calc(-1 * (
-          var(--bullet-size) * 0.5
-        + var(--bullet-border-width)
-        + var(--line-thickness) * 0.5
-        + var(--card-border-width) * 2
-    ));
+    --shift-bullet: calc(
+        -1 * (var(--bullet-size) * 0.5 + var(--bullet-border-width) + var(--line-thickness) * 0.5 +
+                    var(--card-border-width) * 2)
+    );
   }
   .callout[data-callout=timeline]:not([data-callout-metadata~=horizontal]) > .callout-content > *::before {
     width: calc(var(--line-thickness) * 0.5);
-    --shift-segment: calc(-1 * (
-          var(--line-thickness) * 0.5
-        + var(--card-border-width)
-    ));
+    --shift-segment: calc(-1 * (var(--line-thickness) * 0.5 + var(--card-border-width)));
   }
 }
 @media print {
@@ -3643,6 +3654,7 @@ pre.language-poem-floral:not(.is-collapsed)::before, pre.language-poem-floral:no
   -webkit-mask-image: var(--left-ornament-flourish), linear-gradient(to left, transparent, black 40%);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 100% auto;
+  -webkit-mask-composite: source-in;
   mask-composite: intersect;
   z-index: -1;
 }
@@ -5452,6 +5464,7 @@ body {
 
 body:not(.is-ios) .workspace-drawer:is(.mod-left, .mod-right) {
   padding-inline: var(--cutout-outline-inset);
+  -webkit-mask-composite: source-in;
   mask-composite: intersect;
 }
 
@@ -5567,6 +5580,7 @@ body {
   }
   body:not(.fas-background-image) .workspace.is-left-sidedock-open.is-right-sidedock-open .mod-root .mod-top:nth-child(1 of .mod-top):nth-last-child(1 of .mod-top) .workspace-tab-header-container {
     -webkit-mask-image: radial-gradient(var(--cutout-corner-radius) at 0 var(--workspace-top-margin), transparent 100%, black), radial-gradient(var(--cutout-corner-radius) at 100% var(--workspace-top-margin), transparent 100%, black);
+    -webkit-mask-composite: source-in;
     mask-composite: intersect;
   }
 }

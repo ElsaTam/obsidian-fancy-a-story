@@ -1,5 +1,5 @@
-@forward '../../shared/workleaves';
-@forward '../../shared/markdown-container';
+@forward "../../shared/workleaves";
+@forward "../../shared/markdown-container";
 
 // Variables
 .callout[data-callout="timeline"] {
@@ -40,21 +40,23 @@
 
 // General styling
 .callout[data-callout="timeline"] {
-    background: none; 
+    background: none;
 
-    .callout-icon svg { fill: none; }
+    .callout-icon svg {
+        fill: none;
+    }
 
     > .callout-content {
         display: grid;
         position: relative;
-        
+
         // for any child
         > * {
             --image-shadow-offset: 0;
             --s: var(--card-border-width);
             border: calc(2 * var(--s)) solid transparent;
             outline: 1px dashed rgba(var(--callout-color), var(--card-border-opacity));
-            outline-offset: calc(-1*var(--s));
+            outline-offset: calc(-1 * var(--s));
             background: conic-gradient(from 90deg at 1px 1px, transparent 25%, rgba(var(--callout-color), 0.4) 0);
             padding: var(--card-padding);
 
@@ -62,7 +64,6 @@
                 outline: 1px dashed rgba(var(--callout-color), 0.4);
                 background: conic-gradient(from 90deg at 1px 1px, transparent 25%, rgba(var(--callout-color), 0.8) 0);
             }
-
         }
 
         // Stylise first letter
@@ -71,9 +72,9 @@
             color: color-mix(in srgb, rgb(var(--callout-color)), var(--text-normal) 40%);
             font-weight: var(--font-bold);
             font-size: 1.5em;
-            font-family: "Playfair Display", Georgia, 'Times New Roman', Times, serif;
+            font-family: "Playfair Display", Georgia, "Times New Roman", Times, serif;
         }
-        
+
         // for callout children
         > .callout {
             --callout-content-padding: var(--card-padding);
@@ -88,12 +89,15 @@
             > .callout-content {
                 flex-grow: 1;
             }
-
         }
 
         // for paragraphs (indirect)
-        p:first-child { margin-top: 0; }
-        p:last-child  { margin-bottom: 0; }
+        p:first-child {
+            margin-top: 0;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -116,7 +120,6 @@
     position: absolute;
 }
 
-
 // Vertical timeline (default)
 .callout[data-callout="timeline"]:not([data-callout-metadata~="horizontal"]) > .callout-content {
     grid-template-columns: 1fr 1fr;
@@ -129,26 +132,43 @@
     &::after {
         content: "";
         position: absolute;
-        top: 0; bottom: 0;
-        left: 0; right: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
         background-color: var(--line-color);
-        -webkit-mask-image: var(--rope-segment-vertical),
-        linear-gradient(
-            to bottom,
-            transparent,
-            black var(--line-fade-width),
-            black calc(100% - var(--line-fade-width)),
-            transparent
-        );
-        -webkit-mask-repeat: repeat-y, no-repeat;
-        -webkit-mask-position: center, center;
-        -webkit-mask-size: var(--line-thickness), 100%;
-        mask-composite: intersect;
+    }
+
+    @supports (mask-composite: intersect) {
+        &::after {
+            -webkit-mask-image: var(--rope-segment-vertical),
+                linear-gradient(
+                    to bottom,
+                    transparent,
+                    black var(--line-fade-width),
+                    black calc(100% - var(--line-fade-width)),
+                    transparent
+                );
+            -webkit-mask-repeat: repeat-y, no-repeat;
+            -webkit-mask-position: center, center;
+            -webkit-mask-size: var(--line-thickness), 100%;
+            mask-composite: intersect;
+        }
+    }
+    @supports not (mask-composite: intersect) {
+        &::after {
+            -webkit-mask-image: var(--rope-segment-vertical);
+            -webkit-mask-repeat: repeat-y;
+            -webkit-mask-position: center;
+            -webkit-mask-size: var(--line-thickness);
+        }
     }
 
     // Second element, shifted
-    > *:nth-child(2) { grid-row: 2/4; }
-    
+    > *:nth-child(2) {
+        grid-row: 2/4;
+    }
+
     // Any direct child
     > * {
         grid-row: span 2; // span two rows
@@ -167,27 +187,32 @@
     > *:nth-child(odd) {
         grid-column: 1;
 
-        &::after  { right: var(--shift-bullet);  }
-        &::before { right: var(--shift-segment); }
+        &::after {
+            right: var(--shift-bullet);
+        }
+        &::before {
+            right: var(--shift-segment);
+        }
     }
 
     // Right column blocks
     > *:nth-child(even) {
         grid-column: 2;
 
-        &::after  { left: var(--shift-bullet);  }
-        &::before { left: var(--shift-segment); }
+        &::after {
+            left: var(--shift-bullet);
+        }
+        &::before {
+            left: var(--shift-segment);
+        }
     }
 
     // bullet
     > *::after {
         top: calc(50% - var(--bullet-size) * 0.5 - var(--bullet-border-width));
-        --shift-bullet: calc(-1 * (
-              var(--bullet-size) * 0.5
-            + var(--bullet-border-width) 
-            + var(--col-gap)
-            + var(--card-border-width) * 2
-        ));
+        --shift-bullet: calc(
+            -1 * (var(--bullet-size) * 0.5 + var(--bullet-border-width) + var(--col-gap) + var(--card-border-width) * 2)
+        );
     }
 
     // segment
@@ -195,13 +220,9 @@
         height: var(--segment-thickness);
         width: var(--col-gap);
         top: calc(50% - var(--segment-thickness) * 0.5);
-        --shift-segment: calc(-1 * (
-              var(--col-gap)
-            + var(--card-border-width)
-        ));
+        --shift-segment: calc(-1 * (var(--col-gap) + var(--card-border-width)));
     }
 }
-
 
 // Horizontal timeline
 .callout[data-callout="timeline"][data-callout-metadata~="horizontal"] > .callout-content {
@@ -216,24 +237,39 @@
         grid-row: 2;
         grid-column: 1 / span 100;
         background-color: var(--line-color);
-        -webkit-mask-image: var(--rope-segment-horizontal),
-        linear-gradient(
-            to right,
-            transparent,
-            black var(--line-fade-width),
-            black calc(100% - var(--line-fade-width)),
-            transparent
-        );
-        -webkit-mask-repeat: repeat-x, no-repeat;
-        -webkit-mask-position: center center;
-        -webkit-mask-size: var(--line-thickness), 100%;
-        mask-composite: intersect;
         z-index: 0;
     }
 
+    @supports (mask-composite: intersect) {
+        &::after {
+            -webkit-mask-image: var(--rope-segment-horizontal),
+                linear-gradient(
+                    to right,
+                    transparent,
+                    black var(--line-fade-width),
+                    black calc(100% - var(--line-fade-width)),
+                    transparent
+                );
+            -webkit-mask-repeat: repeat-x, no-repeat;
+            -webkit-mask-position: center center;
+            -webkit-mask-size: var(--line-thickness), 100%;
+            mask-composite: intersect;
+        }
+    }
+    @supports not (mask-composite: intersect) {
+        &::after {
+            -webkit-mask-image: var(--rope-segment-horizontal);
+            -webkit-mask-repeat: repeat-x;
+            -webkit-mask-position: center center;
+            -webkit-mask-size: var(--line-thickness);
+        }
+    }
+
     // Second element, shifted
-    > *:nth-child(2) { grid-column: 2 / 4; }
-    
+    > *:nth-child(2) {
+        grid-column: 2 / 4;
+    }
+
     // Any direct child
     > * {
         grid-column: span 2; // span two columns
@@ -251,16 +287,24 @@
         grid-row: 1;
         align-self: flex-end;
 
-        &::after  { bottom: var(--shift-bullet);  }
-        &::before { bottom: var(--shift-segment); }
+        &::after {
+            bottom: var(--shift-bullet);
+        }
+        &::before {
+            bottom: var(--shift-segment);
+        }
 
         // Inverse title/content of callouts
         &.callout {
             display: flex;
             flex-direction: column-reverse;
-            .callout-fold { transform: scaleY(-1); }
+            .callout-fold {
+                transform: scaleY(-1);
+            }
         }
-        &.callout.is-collapsed { align-self: flex-end; } // Prevent stretching when collapsed
+        &.callout.is-collapsed {
+            align-self: flex-end;
+        } // Prevent stretching when collapsed
         &.callout .callout-content {
             vertical-align: bottom;
         }
@@ -275,22 +319,25 @@
         grid-row: 3;
         align-self: flex-start;
 
-        &::after  { top: var(--shift-bullet);  }
-        &::before { top: var(--shift-segment); }
+        &::after {
+            top: var(--shift-bullet);
+        }
+        &::before {
+            top: var(--shift-segment);
+        }
 
-        &.callout.is-collapsed { align-self: flex-start; } // Prevent stretching when collapsed
+        &.callout.is-collapsed {
+            align-self: flex-start;
+        } // Prevent stretching when collapsed
     }
 
     // bullet
     > *::after {
         left: calc(50% - var(--bullet-size) * 0.5 - var(--bullet-border-width));
-        --shift-bullet: calc(-1 * (
-            var(--bullet-size) * 0.5
-            + var(--bullet-border-width)
-            + var(--card-border-width) * 2
-            + var(--row-gap)
-            + var(--line-thickness) * 0.5
-        ));
+        --shift-bullet: calc(
+            -1 * (var(--bullet-size) * 0.5 + var(--bullet-border-width) + var(--card-border-width) * 2 + var(--row-gap) +
+                        var(--line-thickness) * 0.5)
+        );
     }
 
     // segment
@@ -298,19 +345,17 @@
         width: var(--segment-thickness);
         height: calc(var(--row-gap) + var(--line-thickness) * 0.5 + var(--card-border-width));
         left: calc(50% - var(--segment-thickness) * 0.5);
-        --shift-segment: calc(-1 * (
-              var(--row-gap)
-              + var(--line-thickness) * 0.5
-              + var(--card-border-width)
-        ));
+        --shift-segment: calc(-1 * (var(--row-gap) + var(--line-thickness) * 0.5 + var(--card-border-width)));
     }
 }
 
 // Numbered timelines
-.callout[data-callout="timeline"][data-callout-metadata~="numbered"] > .callout-content  {
+.callout[data-callout="timeline"][data-callout-metadata~="numbered"] > .callout-content {
     counter-reset: bullet;
 }
-.callout[data-callout="timeline"][data-callout-metadata~="numbered"] > .callout-content > .callout:not([data-callout-metadata~="skip"])::after,
+.callout[data-callout="timeline"][data-callout-metadata~="numbered"]
+    > .callout-content
+    > .callout:not([data-callout-metadata~="skip"])::after,
 .callout[data-callout="timeline"][data-callout-metadata~="numbered"] > .callout-content > :not(.callout)::after {
     --bullet-size: var(--bullet-numbered-size);
     --bullet-color: var(--bullet-border-color);
@@ -342,27 +387,28 @@
 
         // Right column blocks
         > *:nth-child(odd) {
-            &::after  { right: unset; left: var(--shift-bullet);  }
-            &::before { right: unset; left: var(--shift-segment); }
+            &::after {
+                right: unset;
+                left: var(--shift-bullet);
+            }
+            &::before {
+                right: unset;
+                left: var(--shift-segment);
+            }
         }
 
         // bullet
         > *::after {
-            --shift-bullet: calc(-1 * (
-                  var(--bullet-size) * 0.5
-                + var(--bullet-border-width) 
-                + var(--line-thickness) * 0.5
-                + var(--card-border-width) * 2
-            ));
+            --shift-bullet: calc(
+                -1 * (var(--bullet-size) * 0.5 + var(--bullet-border-width) + var(--line-thickness) * 0.5 +
+                            var(--card-border-width) * 2)
+            );
         }
-    
+
         // segment
         > *::before {
             width: calc(var(--line-thickness) * 0.5);
-            --shift-segment: calc(-1 * (
-                  var(--line-thickness) * 0.5
-                + var(--card-border-width)
-            ));
+            --shift-segment: calc(-1 * (var(--line-thickness) * 0.5 + var(--card-border-width)));
         }
     }
 }
@@ -380,7 +426,7 @@
         mask-composite: unset;
     }
 
-    .print [data-callout=timeline][data-callout-metadata~=horizontal] > .callout-content::after {
+    .print [data-callout="timeline"][data-callout-metadata~="horizontal"] > .callout-content::after {
         -webkit-mask-image: var(--rope-segment-horizontal);
         -webkit-mask-repeat: repeat-x;
         -webkit-mask-position: center center;
@@ -389,7 +435,7 @@
     }
 }
 
-.callout[data-callout=timeline][data-callout-metadata~=no-fancy] {
+.callout[data-callout="timeline"][data-callout-metadata~="no-fancy"] {
     --line-thickness: 4px;
     --card-border-width: 0px;
     --rope-segment-vertical: linear-gradient(to right, black, black 100%);
@@ -404,16 +450,18 @@
     .callout-content > .callout {
         background-color: rgba(var(--callout-color), 0.2);
     }
-    
-    >.callout-content>*:not(:is(.callout, code, pre, ul, ol))::first-letter,
-    >.callout-content>*.callout .callout-content>*:not(:is(.callout, code, pre, ul, ol))::first-letter {
+
+    > .callout-content > *:not(:is(.callout, code, pre, ul, ol))::first-letter,
+    > .callout-content > *.callout .callout-content > *:not(:is(.callout, code, pre, ul, ol))::first-letter {
         color: unset;
         font-weight: unset;
         font-size: unset;
         font-family: unset;
     }
 
-    &[data-callout-metadata~=horizontal] .callout:not(.is-collapsed):is(:nth-child(odd), :nth-child(even)) .callout-content {
+    &[data-callout-metadata~="horizontal"]
+        .callout:not(.is-collapsed):is(:nth-child(odd), :nth-child(even))
+        .callout-content {
         border-top: 0;
         border-bottom: 0;
     }

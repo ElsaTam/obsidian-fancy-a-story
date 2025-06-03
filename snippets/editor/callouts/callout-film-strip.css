@@ -54,6 +54,7 @@ Author: ElsaTam (Kapirklaa in Discord)
   -webkit-mask-size: 100%;
   -webkit-mask-position: center;
   mask-composite: intersect;
+  -webkit-mask-composite: source-in;
 }
 .callout[data-callout=film-strip] .callout-content > p > span::after {
   content: "← " counter(frames) " →";

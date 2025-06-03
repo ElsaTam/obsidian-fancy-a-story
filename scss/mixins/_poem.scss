@@ -3,9 +3,16 @@
     &::after {
         content: "";
         position: absolute;
-        left: 0; right: 0;
+        left: 0;
+        right: 0;
         height: var(--poem-border-width);
-        background: linear-gradient(to right, transparent, rgb(var(--poem-color-rgb)) 20%, rgb(var(--poem-color-rgb)) 80%, transparent);
+        background: linear-gradient(
+            to right,
+            transparent,
+            rgb(var(--poem-color-rgb)) 20%,
+            rgb(var(--poem-color-rgb)) 80%,
+            transparent
+        );
     }
 
     &::before {
@@ -35,8 +42,10 @@
     &::before {
         content: "";
         position: absolute;
-        top: 0; bottom: 0;
-        left: 0; right: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
         height: unset;
         background-color: rgb(var(--poem-color-rgb));
         -webkit-mask-image: var(--top-divider-art);
@@ -49,8 +58,10 @@
     &:not(.is-collapsed)::after {
         content: "";
         position: absolute;
-        top: 0; bottom: 0;
-        left: 0; right: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
         height: unset;
         background-color: rgb(var(--poem-color-rgb));
         -webkit-mask-image: var(--bottom-divider-art);
@@ -63,7 +74,7 @@
 
 @mixin poem-frame {
     @include poem-frame-properties;
-    
+
     > code,
     > .callout-title {
         @include poem-frame-top;
@@ -77,9 +88,7 @@
     @include poem-frame-pseudo;
 }
 
-
 // FLORAL
-
 
 @mixin poem-floral-top {
     margin-inline: var(--floral-width);
@@ -100,23 +109,27 @@
     &:not(.is-collapsed)::after {
         content: "";
         position: absolute;
-        top: 0; bottom: 0;
+        top: 0;
+        bottom: 0;
         height: unset;
         background-color: rgba(var(--poem-color-rgb), 0.6);
         -webkit-mask-image: var(--left-ornament-flourish), linear-gradient(to left, transparent, black 40%);
         -webkit-mask-repeat: no-repeat;
         -webkit-mask-size: 100% auto;
+        -webkit-mask-composite: source-in;
         mask-composite: intersect;
         z-index: -1;
     }
 
     &:not(.is-collapsed)::before {
-        left: 0; width: var(--floral-width);
+        left: 0;
+        width: var(--floral-width);
         -webkit-mask-position: left bottom;
     }
 
     &:not(.is-collapsed)::after {
-        right: 0; width: var(--floral-width);
+        right: 0;
+        width: var(--floral-width);
         left: unset;
         opacity: 0.2;
         -webkit-mask-position: right bottom;
@@ -142,7 +155,7 @@
 
 @mixin poem-floral {
     @include poem-floral-properties;
-    
+
     > code,
     > .callout-title {
         @include poem-floral-top;

@@ -108,6 +108,7 @@ body {
                     transparent 100%,
                     black
                 );
+            -webkit-mask-composite: source-in;
             mask-composite: intersect;
         }
     }
