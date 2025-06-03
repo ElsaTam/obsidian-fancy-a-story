@@ -24,6 +24,16 @@ Author: ElsaTam (Kapirklaa in Discord)
   display: none;
 }
 
+@supports (color: hsl(from white h s l)) {
+  .canvas-node:has(.tag[href="#node-title-poster"], .node-title-poster):not(.is-editing) .markdown-preview-view {
+    --shadow-color: hsl(from rgb(var(--canvas-color)) h calc(s * 0.5) calc(l * 0.5));
+  }
+}
+@supports not (color: hsl(from white h s l)) {
+  .canvas-node:has(.tag[href="#node-title-poster"], .node-title-poster):not(.is-editing) .markdown-preview-view {
+    --shadow-color: color-mix(in hsl, rgb(var(--canvas-color)), black 50%);
+  }
+}
 @font-face {
   /* https://www.dafont.com/science-fair.font */
   font-family: "Science Fair";

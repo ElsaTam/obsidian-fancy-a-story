@@ -437,7 +437,7 @@ body {
 [data-callout=autopsy],
 [data-callout=screen],
 [data-callout=profile]):not(:is([data-callout=email], [data-callout=timeline]) .callout):is([data-callout-metadata~=accent])::before {
-  background: rgb(from var(--color-accent) r g b/var(--callout-border-opacity));
+  background: hsl(var(--accent-h) var(--accent-s) var(--accent-l)/var(--callout-border-opacity));
 }
 
 .sci-fi:is(.markdown-preview-view, .markdown-source-view) hr {

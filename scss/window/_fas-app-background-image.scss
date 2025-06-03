@@ -1,5 +1,5 @@
 body {
-    --fas-background-image-url: url('');
+    --fas-background-image-url: url("");
     --fas-background-image-blur: 0px;
     --fas-background-image-opacity: 1;
 }
@@ -30,19 +30,15 @@ body {
     }
 
     // Use the a background for individual tab headers
-    &.is-hidden-frameless:not(.is-fullscreen) .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner,
+    &.is-hidden-frameless:not(.is-fullscreen)
+        .mod-root
+        .workspace-tab-header:not(.is-active)
+        .workspace-tab-header-inner,
     &:not(.is-frameless) .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
-        background-color: rgb(from var(--workspace-background) r g b / 0.8);
+        background-color: color-mix(in srgb, var(--workspace-background), transparent 20%);
     }
     .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
-        clip-path: polygon(
-            0 0,
-            100% 0,
-            100% calc(100% - 8px),
-            calc(100% - 8px) 100%,
-            8px 100%,
-            0 calc(100% - 8px)
-        );
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px));
     }
     .workspace-tab-header .workspace-tab-header-inner::before,
     .workspace-tab-header .workspace-tab-header-inner::after,
@@ -50,29 +46,17 @@ body {
         display: none;
     }
 
-    // Remove cutout corner for first and last tabs 
+    // Remove cutout corner for first and last tabs
     .workspace-tab-header:not(.is-active):first-child .workspace-tab-header-inner {
-        clip-path: polygon(
-            0 0,
-            100% 0,
-            100% calc(100% - 8px),
-            calc(100% - 8px) 100%,
-            0 100%
-        );
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
     }
     .workspace-tab-header:not(.is-active):last-child .workspace-tab-header-inner {
-        clip-path: polygon(
-            0 0,
-            100% 0,
-            100% 100%,
-            8px 100%,
-            0 calc(100% - 8px)
-        );
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 8px 100%, 0 calc(100% - 8px));
     }
     .workspace-tab-header:not(.is-active):first-child:last-child .workspace-tab-header-inner {
         clip-path: none;
     }
-    
+
     // Add the background image
     .app-container {
         background-image: var(--fas-background-image-url);
@@ -80,7 +64,11 @@ body {
     }
     // Opacity, blur, and shadow
     .workspace {
-        background-color: rgb(from var(--workspace-background) r g b / calc(1 - var(--fas-background-image-opacity)));
+        background-color: color-mix(
+            in srgb,
+            var(--workspace-background),
+            calc(100% * var(--fas-background-image-opacity))
+        );
         backdrop-filter: blur(var(--fas-background-image-blur));
         filter: drop-shadow(0 0 8px rgb(0 0 0 / 0.2));
     }
@@ -95,7 +83,8 @@ body {
     .workspace-ribbon:hover {
         background-color: rgba(var(--mono-rgb-0), 0.6);
     }
-    .workspace-split.mod-left-split .workspace-sidedock-vault-profile:not(:is(.is-mobile .workspace-sidedock-vault-profile)):hover {
+    .workspace-split.mod-left-split
+        .workspace-sidedock-vault-profile:not(:is(.is-mobile .workspace-sidedock-vault-profile)):hover {
         background-color: rgba(var(--mono-rgb-0), 0.6);
         --workspace-foreground: rgb(var(--mono-rgb-100));
         --workspace-foreground-faint: rgba(var(--mono-rgb-100), 0.6);
@@ -103,7 +92,6 @@ body {
         --vault-profile-color: rgba(var(--mono-rgb-100), 0.6);
         --vault-profile-color-hover: rgb(var(--mono-rgb-100));
     }
-
 
     // Remove the titlebar clip-path
     &.mod-windows.is-hidden-frameless:not(.is-fullscreen) .workspace:not(.is-right-sidedock-open) .mod-root::before {

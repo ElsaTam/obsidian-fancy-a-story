@@ -18,7 +18,11 @@ body {
         width: var(--fas-floating-mode-button-size);
         height: var(--fas-floating-mode-button-size);
         border-radius: 50%;
-        background-color: rgb(from var(--fas-floating-mode-button-color) r g b / var(--fas-floating-mode-button-opacity));
+        background-color: color-mix(
+            in srgb,
+            var(--fas-floating-mode-button-color),
+            transparent calc(100% * (1 - var(--fas-floating-mode-button-opacity)))
+        );
         color: var(--fas-floating-mode-button-icon-color);
         box-shadow: var(--shadow-s);
     }

@@ -32,7 +32,7 @@
     --link-decoration: underline;
     --link-external-decoration: underline;
     --link-decoration-thickness: 1px;
-    
+
     --table-column-first-border-width: 1px;
     --table-column-last-border-width: 1px;
     --table-header-border-width: 1px;
@@ -44,7 +44,8 @@
 
 .minimalist .callout {
     background: none;
-    border: var(--callout-border-width) solid rgb(from var(--text-normal) r g b / var(--callout-border-opacity));
+    border: var(--callout-border-width) solid
+        color-mix(in srgb, var(--text-normal), transparent calc(100% * (1 - var(--callout-border-opacity))));
 }
 
 .minimalist .callout-title {
@@ -69,8 +70,6 @@
 .minimalist.markdown-preview-view .aside-right {
     --aside-border-thickness: 0px;
 }
-
-
 
 .minimalist :is(th, td) {
     border-inline-width: var(--table-border-width);

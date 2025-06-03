@@ -46,6 +46,6 @@ body {
 	.nav-files-container > div > .nav-folder .nav-folder-title,
 	[data-type="bookmarks"] .tree-item {
 		--nav-item-color: var(--folder-color);
-		--nav-item-background-hover: rgb(from var(--folder-color) r g b / 0.2);
+		--nav-item-background-hover: color-mix(in srgb, var(--folder-color), transparent 80%);
 	}
 }

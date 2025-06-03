@@ -1,4 +1,81 @@
-@forward '../../shared/workleaves';
+@forward "../../shared/workleaves";
+
+@supports (color: hsl(from white h s l)) {
+    .callout[data-callout="conversation-minimalist"],
+    .callout[data-callout="conversation"],
+    .callout[data-callout="conversation-outline"] {
+        --line-color-odd: hsl(from rgb(var(--conversation-color)) calc(h + 15) s l);
+        --line-color-even: hsl(from rgb(var(--conversation-color)) calc(h - 15) s l);
+    }
+}
+
+@supports not (color: hsl(from white h s l)) {
+    $color_order: ("red", "brown", "orange", "yellow", "green", "cyan", "blue", "purple", "pink");
+
+    @for $i from 1 through length($color_order) {
+        $prev: "blue";
+        $next: "blue";
+        @if $i == 1 {
+            $prev: nth($color_order, length($color_order));
+        } @else {
+            $prev: nth($color_order, $i - 1);
+        }
+        @if $i == length($color_order) {
+            $next: nth($color_order, 1);
+        } @else {
+            $next: nth($color_order, $i + 1);
+        }
+
+        $curr: nth($color_order, $i);
+
+        .callout[data-callout="conversation-minimalist"],
+        .callout[data-callout="conversation"],
+        .callout[data-callout="conversation-outline"] {
+            &[data-callout-metadata~="#{$curr}"] {
+                --shift-color-even: var(--color-#{$prev});
+                --shift-color-odd: var(--color-#{$next});
+            }
+        }
+    }
+
+    $i: index($color_order, "blue");
+    $prev: "blue";
+    $next: "blue";
+    @if $i == 1 {
+        $prev: nth($color_order, length($color_order));
+    } @else {
+        $prev: nth($color_order, $i - 1);
+    }
+    @if $i == length($color_order) {
+        $next: nth($color_order, 1);
+    } @else {
+        $next: nth($color_order, $i + 1);
+    }
+    .callout[data-callout="conversation-minimalist"],
+    .callout[data-callout="conversation"],
+    .callout[data-callout="conversation-outline"] {
+        --shift-color-even: var(--color-#{$prev});
+        --shift-color-odd: var(--color-#{$next});
+    }
+
+    .callout[data-callout="conversation-minimalist"],
+    .callout[data-callout="conversation"],
+    .callout[data-callout="conversation-outline"] {
+        &[data-callout-metadata~="gray"],
+        &[data-callout-metadata~="black"],
+        &[data-callout-metadata~="white"] {
+            --shift-color-even: white;
+            --shift-color-odd: black;
+        }
+    }
+
+    .callout[data-callout="conversation-minimalist"],
+    .callout[data-callout="conversation"],
+    .callout[data-callout="conversation-outline"] {
+        --line-color-odd: color-mix(in srgb, rgb(var(--conversation-color)), var(--shift-color-odd) 25%);
+        --line-color-even: color-mix(in srgb, rgb(var(--conversation-color)), var(--shift-color-even) 25%);
+    }
+}
 
 .callout[data-callout="conversation-minimalist"],
 .callout[data-callout="conversation"],
@@ -7,9 +84,6 @@
     --conversation-color: var(--callout-color);
     --callout-icon: lucide-messages-square;
     --callout-content-padding: var(--size-4-3);
-
-    --line-color-odd: hsl(from rgb(var(--conversation-color)) calc(h + 15) s l);
-    --line-color-even: hsl(from rgb(var(--conversation-color)) calc(h - 15) s l);
 
     background: none;
 
@@ -29,11 +103,10 @@
 }
 
 .callout[data-callout="conversation"] {
-
     > .callout-content > * {
         width: fit-content;
         max-width: 80%;
-        background: rgb(from var(--line-color) r g b / 0.2);
+        background: color-mix(in srgb, var(--line-color), transparent 80%);
         border-radius: var(--radius-l);
         margin-block: var(--size-4-3);
     }
@@ -52,11 +125,16 @@
     > .callout-content > *::before {
         content: "";
         position: absolute;
-        top: -1px; bottom: -1px;
+        top: -1px;
+        bottom: -1px;
         width: calc(75% * 0.5 + 1px);
         z-index: -1;
-        background-size: 100% 50%, 100% 50%;
-        background-position: center top, center bottom;
+        background-size:
+            100% 50%,
+            100% 50%;
+        background-position:
+            center top,
+            center bottom;
         background-repeat: no-repeat;
         opacity: 0.5;
     }
@@ -66,9 +144,8 @@
         border-left: 0;
         border-top-right-radius: var(--radius-l);
         border-bottom-right-radius: var(--radius-l);
-        background-image:
-            linear-gradient(to right, var(--line-color-even), var(--line-color-odd)),
-            linear-gradient(to left,  var(--line-color-odd), var(--line-color-odd));
+        background-image: linear-gradient(to right, var(--line-color-even), var(--line-color-odd)),
+            linear-gradient(to left, var(--line-color-odd), var(--line-color-odd));
     }
 
     > .callout-content > *:nth-child(even)::before {
@@ -76,8 +153,7 @@
         border-right: 0;
         border-top-left-radius: var(--radius-l);
         border-bottom-left-radius: var(--radius-l);
-        background-image:
-            linear-gradient(to left,  var(--line-color-odd), var(--line-color-even)),
+        background-image: linear-gradient(to left, var(--line-color-odd), var(--line-color-even)),
             linear-gradient(to right, var(--line-color-even), var(--line-color-even));
     }
 
@@ -87,7 +163,9 @@
         border-top-right-radius: 0;
     }
     > .callout-content > *:first-child::before {
-        background-position: center 1px, center bottom;
+        background-position:
+            center 1px,
+            center bottom;
     }
 
     > .callout-content > *:last-child,
@@ -96,7 +174,9 @@
         border-bottom-right-radius: 0;
     }
     > .callout-content > *:last-child::before {
-        background-position: center top, center calc(100% - 1px);
+        background-position:
+            center top,
+            center calc(100% - 1px);
     }
 }
 
@@ -105,8 +185,6 @@
         width: calc(40% - var(--callout-content-padding));
     }
 }
-
-
 
 .callout[data-callout="conversation-minimalist"] {
     --callout-border-width: 0;

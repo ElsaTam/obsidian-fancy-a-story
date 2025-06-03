@@ -41,8 +41,8 @@
 }
 
 [data-callout-metadata~="accent"] {
-    border-color: rgb(from var(--color-accent) r g b / var(--callout-border-opacity));
-    background-color: rgb(from var(--color-accent) r g b / 0.1);
+    border-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l) / var(--callout-border-opacity));
+    background-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l) / 0.1);
 
     > .callout-title {
         color: var(--color-accent);

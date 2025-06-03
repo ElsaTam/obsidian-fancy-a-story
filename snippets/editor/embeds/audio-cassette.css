@@ -40,7 +40,7 @@ body {
 }
 .media-embed[alt*=cassette] > audio::-webkit-media-controls-panel {
   border: none;
-  background: linear-gradient(to right, rgb(from var(--cassette-color-1) r g b/0.5), rgb(from var(--cassette-color-2) r g b/0.5));
+  background: linear-gradient(to right, color-mix(in srgb, var(--cassette-color-1), transparent 50%), color-mix(in srgb, var(--cassette-color-2), transparent 50%));
 }
 
 .media-embed[alt*=cassette]::before {

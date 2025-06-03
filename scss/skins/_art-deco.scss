@@ -220,19 +220,11 @@
 
             @media (hover: hover) {
                 .mod-sidedock .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
-                    background-color: color-mix(
-                        in srgb,
-                        var(--workleaves-background),
-                        rgb(from var(--background-modifier-hover) r g b / 1) 7.5%
-                    );
+                    background-color: color-mix(in srgb, var(--workleaves-background), rgb(var(--mono-rgb-100)) 7.5%);
                 }
 
                 .mod-sidedock .workspace-tab-header.is-active:hover .workspace-tab-header-inner {
-                    background-color: color-mix(
-                        in srgb,
-                        var(--workleaves-background),
-                        rgb(from var(--background-modifier-hover) r g b / 1) 7.5%
-                    );
+                    background-color: color-mix(in srgb, var(--workleaves-background), rgb(var(--mono-rgb-100)) 7.5%);
                 }
 
                 .mod-sidedock .workspace-tab-header.is-active:hover {

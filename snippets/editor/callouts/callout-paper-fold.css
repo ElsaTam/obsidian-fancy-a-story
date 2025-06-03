@@ -76,11 +76,12 @@ body {
   --callout-color: var(--paper-fold-color);
   --metadata-property-radius: 0;
   --metadata-padding: 0 0 8px 0;
-  --postit-color: hsl(from rgb(var(--callout-color)) h s l / 0.7);
+  --postit-color-transparent: color-mix(in srgb, rgb(var(--callout-color)), transparent 30%);
+  --postit-color-opaque: rgb(var(--callout-color));
   --postit-border-color: var(--text-faint);
   font-family: "Walter Turncoat", "Comic Sans MS", cursive;
   color: black;
-  background: linear-gradient(calc(-1 * var(--paper-fold-corner-angle)), transparent calc(var(--paper-fold-corner-diag) + 1px), hsl(from var(--postit-color) h s calc(l * 1.1)) var(--paper-fold-corner-diag), var(--postit-color) calc(var(--paper-fold-corner-diag) * 1.5)) no-repeat;
+  background: linear-gradient(calc(-1 * var(--paper-fold-corner-angle)), transparent calc(var(--paper-fold-corner-diag) + 1px), color-mix(in hsl, var(--postit-color-transparent), white 10%) var(--paper-fold-corner-diag), var(--postit-color-transparent) calc(var(--paper-fold-corner-diag) * 1.5)) no-repeat;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--corner-height)), calc(100% - var(--corner-width)) 100%, 0 100%);
   overflow: hidden;
 }
@@ -100,12 +101,12 @@ body {
   height: var(--corner-height);
   width: var(--corner-width);
   transform: matrix(cos(-2 * var(--paper-fold-corner-angle)), sin(-2 * var(--paper-fold-corner-angle)), sin(-2 * var(--paper-fold-corner-angle)), calc(-1 * cos(-2 * var(--paper-fold-corner-angle))), 0, 0);
-  background: linear-gradient(calc(180deg - var(--paper-fold-corner-angle)), hsl(from var(--postit-color) h s calc(l * 0.9)/1) var(--paper-fold-corner-diag), hsl(from var(--postit-color) h s calc(l * 1.1)/1) calc(var(--paper-fold-corner-diag) + 0.3 * min(var(--corner-height), var(--corner-width))), hsl(from var(--postit-color) h s calc(l * 0.5)/1));
-  box-shadow: 0 0 calc(min(var(--corner-width), var(--corner-height)) / 5) calc(min(var(--corner-width), var(--corner-height)) / 25) hsl(from var(--postit-color) h 40% 10%);
+  background: linear-gradient(calc(180deg - var(--paper-fold-corner-angle)), color-mix(in hsl, rgb(var(--callout-color)), black 10%) var(--paper-fold-corner-diag), color-mix(in hsl, rgb(var(--callout-color)), white 30%) calc(var(--paper-fold-corner-diag) + 0.3 * min(var(--corner-height), var(--corner-width))), color-mix(in hsl, rgb(var(--callout-color)), black 50%));
+  box-shadow: 0 0 calc(min(var(--corner-width), var(--corner-height)) / 5) calc(min(var(--corner-width), var(--corner-height)) / 25) color-mix(in hsl, var(--postit-color-transparent), black 70%);
 }
 
 .callout[data-callout=paper-fold] .callout-title {
-  background-color: hsl(from var(--postit-color) h calc(s * 0.97) calc(l * 0.99)/0.3);
+  background-color: color-mix(in hwb, var(--postit-color-transparent), black 5%);
   text-align: center;
 }
 

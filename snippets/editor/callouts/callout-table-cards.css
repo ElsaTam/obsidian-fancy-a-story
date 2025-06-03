@@ -53,10 +53,10 @@ Author: ElsaTam (Kapirklaa in Discord)
 }
 
 .callout[data-callout=table-cards][data-callout-metadata~=accent] tr {
-  border-color: rgb(from var(--color-accent) r g b/var(--callout-border-opacity));
+  border-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l)/var(--callout-border-opacity));
 }
 .callout[data-callout=table-cards][data-callout-metadata~=accent] td:first-child {
-  border-bottom-color: rgb(from var(--color-accent) r g b/var(--callout-border-opacity));
+  border-bottom-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l)/var(--callout-border-opacity));
 }
 
 /* Minimal */ /*

@@ -32,12 +32,12 @@ body {
 @container (not (style(--fas-note-background-image-blur: 0) or style(--fas-note-background-image-blur: 0px))) or (not style(--fas-note-background-image-opacity: 1)) or (not style(--fas-note-background-image-brightness: 1)) {
   /* Source */
   .markdown-source-view:is(.background-img, .bg-img) .cm-editor {
-    background-color: rgb(from var(--workleaves-background) r g b/calc(1 - var(--fas-note-background-image-opacity)));
+    background-color: color-mix(in srgb, var(--workleaves-background), transparent calc(100% * var(--fas-note-background-image-opacity)));
     backdrop-filter: blur(var(--fas-note-background-image-blur)) brightness(var(--fas-note-background-image-brightness));
   }
   /* Preview scrollbar */
   body:not(.native-scrollbars) .markdown-preview-view:is(.background-img, .bg-img)::-webkit-scrollbar-track {
-    background-color: rgb(from var(--workleaves-background) r g b/calc(1 - var(--fas-note-background-image-opacity)));
+    background-color: color-mix(in srgb, var(--workleaves-background), transparent calc(100% * var(--fas-note-background-image-opacity)));
   }
   /* Preview, needs resizing so it covers the whole image */
   .markdown-preview-view:is(.background-img, .bg-img) {
@@ -47,7 +47,7 @@ body {
     padding-block: var(--file-margins-block);
     padding-inline: max(var(--file-margins-inline), 0.5 * (100% - var(--file-margins-inline) - var(--file-line-width)) + var(--scrollbar-width));
     max-width: 100%;
-    background-color: rgb(from var(--workleaves-background) r g b/calc(1 - var(--fas-note-background-image-opacity)));
+    background-color: color-mix(in srgb, var(--workleaves-background), transparent calc(100% * var(--fas-note-background-image-opacity)));
     backdrop-filter: blur(var(--fas-note-background-image-blur)) brightness(var(--fas-note-background-image-brightness));
   }
 }
@@ -63,7 +63,7 @@ body {
   }
 }
 :is(.background-img, .bg-img) .metadata-container {
-  background-color: rgb(from var(--workleaves-background) r g b/0.7);
+  background-color: color-mix(in srgb, var(--workleaves-background), transparent 30%);
   backdrop-filter: blur(5px);
 }
 

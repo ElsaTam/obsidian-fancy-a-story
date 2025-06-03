@@ -1504,18 +1504,33 @@ body:not(.fas-file-explorer-decoration-custom)
     border-radius: 50%;
 }
 
+// Color the headers
+@supports (color: hsl(from white h s l)) {
+    .style-settings-container {
+        > .style-settings-container {
+            --current-h1-color: hsl(from var(--h1-color) h calc(s * 0.5) l);
+        }
+        > .style-settings-container > .style-settings-container {
+            --current-h1-color: hsl(from var(--h1-color) h calc(s * 0.3) l);
+        }
+    }
+}
+@supports not (color: hsl(from white h s l)) {
+    .style-settings-container {
+        > .style-settings-container {
+            --current-h1-color: color-mix(in hsl, var(--h1-color), var(--color-gray) 50%);
+        }
+        > .style-settings-container > .style-settings-container {
+            --current-h1-color: color-mix(in hsl, var(--h1-color), var(--color-gray) 70%);
+        }
+    }
+}
+
 .style-settings-container {
     --h1-color: var(--color-accent);
-    --current-h1-color: hsl(from var(--h1-color) h calc(s * 1) l);
+    --current-h1-color: var(--h1-color);
     --pickr-size: 1.3em;
 
-    // Color the headers
-    > .style-settings-container {
-        --current-h1-color: hsl(from var(--h1-color) h calc(s * 0.5) l);
-    }
-    > .style-settings-container > .style-settings-container {
-        --current-h1-color: hsl(from var(--h1-color) h calc(s * 0.3) l);
-    }
     .style-settings-heading .setting-item-name {
         color: var(--current-h1-color);
     }

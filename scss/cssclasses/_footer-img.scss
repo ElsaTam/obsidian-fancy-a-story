@@ -1,7 +1,7 @@
-@forward '../shared/markdown-container';
-@forward '../shared/markdown-anchor';
-@forward '../shared/workleaves';
-@forward '../shared/file-margins';
+@forward "../shared/markdown-container";
+@forward "../shared/markdown-anchor";
+@forward "../shared/workleaves";
+@forward "../shared/file-margins";
 
 body {
     --footer-img-height: 220px;
@@ -9,18 +9,39 @@ body {
     --footer-img-color: rgb(var(--mono-rgb-100));
 }
 
-.footer-img-accent { --footer-img-color: var(--color-accent); }
-.footer-img-gray   { --footer-img-color: var(--color-gray); }
-.footer-img-brown  { --footer-img-color: var(--color-brown); }
-.footer-img-red    { --footer-img-color: var(--color-red); }
-.footer-img-orange { --footer-img-color: var(--color-orange); }
-.footer-img-yellow { --footer-img-color: var(--color-yellow); }
-.footer-img-green  { --footer-img-color: var(--color-green); }
-.footer-img-cyan   { --footer-img-color: var(--color-cyan); }
-.footer-img-blue   { --footer-img-color: var(--color-blue); }
-.footer-img-purple { --footer-img-color: var(--color-purple); }
-.footer-img-pink   { --footer-img-color: var(--color-pink); }
-
+.footer-img-accent {
+    --footer-img-color: var(--color-accent);
+}
+.footer-img-gray {
+    --footer-img-color: var(--color-gray);
+}
+.footer-img-brown {
+    --footer-img-color: var(--color-brown);
+}
+.footer-img-red {
+    --footer-img-color: var(--color-red);
+}
+.footer-img-orange {
+    --footer-img-color: var(--color-orange);
+}
+.footer-img-yellow {
+    --footer-img-color: var(--color-yellow);
+}
+.footer-img-green {
+    --footer-img-color: var(--color-green);
+}
+.footer-img-cyan {
+    --footer-img-color: var(--color-cyan);
+}
+.footer-img-blue {
+    --footer-img-color: var(--color-blue);
+}
+.footer-img-purple {
+    --footer-img-color: var(--color-purple);
+}
+.footer-img-pink {
+    --footer-img-color: var(--color-pink);
+}
 
 @media screen {
     [class*="footer-img"] {
@@ -36,14 +57,14 @@ body {
             background-color: black;
             mix-blend-mode: multiply;
             opacity: var(--footer-img-opacity);
-            
+
             p {
                 margin: 0;
                 background-color: var(--footer-img-color);
                 mix-blend-mode: exclusion;
                 color: white;
             }
-        
+
             img {
                 height: var(--footer-img-height);
                 width: 100%;
@@ -53,7 +74,7 @@ body {
                 mix-blend-mode: luminosity;
             }
         }
-        
+
         > .markdown-preview-sizer {
             padding-bottom: 0 !important;
         }
@@ -72,7 +93,6 @@ body {
         z-index: -1;
     }
 }
-
 
 @media print {
     .print [class*="footer-img"] > div:last-child img {

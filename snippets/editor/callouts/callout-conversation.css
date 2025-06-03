@@ -7,6 +7,86 @@ body {
   --workleaves-foreground: var(--text-normal);
 }
 
+@supports (color: hsl(from white h s l)) {
+  .callout[data-callout=conversation-minimalist],
+  .callout[data-callout=conversation],
+  .callout[data-callout=conversation-outline] {
+    --line-color-odd: hsl(from rgb(var(--conversation-color)) calc(h + 15) s l);
+    --line-color-even: hsl(from rgb(var(--conversation-color)) calc(h - 15) s l);
+  }
+}
+@supports not (color: hsl(from white h s l)) {
+  .callout[data-callout=conversation-minimalist][data-callout-metadata~=red],
+  .callout[data-callout=conversation][data-callout-metadata~=red],
+  .callout[data-callout=conversation-outline][data-callout-metadata~=red] {
+    --shift-color-even: var(--color-pink);
+    --shift-color-odd: var(--color-brown);
+  }
+  .callout[data-callout=conversation-minimalist][data-callout-metadata~=brown],
+  .callout[data-callout=conversation][data-callout-metadata~=brown],
+  .callout[data-callout=conversation-outline][data-callout-metadata~=brown] {
+    --shift-color-even: var(--color-red);
+    --shift-color-odd: var(--color-orange);
+  }
+  .callout[data-callout=conversation-minimalist][data-callout-metadata~=orange],
+  .callout[data-callout=conversation][data-callout-metadata~=orange],
+  .callout[data-callout=conversation-outline][data-callout-metadata~=orange] {
+    --shift-color-even: var(--color-brown);
+    --shift-color-odd: var(--color-yellow);
+  }
+  .callout[data-callout=conversation-minimalist][data-callout-metadata~=yellow],
+  .callout[data-callout=conversation][data-callout-metadata~=yellow],
+  .callout[data-callout=conversation-outline][data-callout-metadata~=yellow] {
+    --shift-color-even: var(--color-orange);
+    --shift-color-odd: var(--color-green);
+  }
+  .callout[data-callout=conversation-minimalist][data-callout-metadata~=green],
+  .callout[data-callout=conversation][data-callout-metadata~=green],
+  .callout[data-callout=conversation-outline][data-callout-metadata~=green] {
+    --shift-color-even: var(--color-yellow);
+    --shift-color-odd: var(--color-cyan);
+  }
+  .callout[data-callout=conversation-minimalist][data-callout-metadata~=cyan],
+  .callout[data-callout=conversation][data-callout-metadata~=cyan],
+  .callout[data-callout=conversation-outline][data-callout-metadata~=cyan] {
+    --shift-color-even: var(--color-green);
+    --shift-color-odd: var(--color-blue);
+  }
+  .callout[data-callout=conversation-minimalist][data-callout-metadata~=blue],
+  .callout[data-callout=conversation][data-callout-metadata~=blue],
+  .callout[data-callout=conversation-outline][data-callout-metadata~=blue] {
+    --shift-color-even: var(--color-cyan);
+    --shift-color-odd: var(--color-purple);
+  }
+  .callout[data-callout=conversation-minimalist][data-callout-metadata~=purple],
+  .callout[data-callout=conversation][data-callout-metadata~=purple],
+  .callout[data-callout=conversation-outline][data-callout-metadata~=purple] {
+    --shift-color-even: var(--color-blue);
+    --shift-color-odd: var(--color-pink);
+  }
+  .callout[data-callout=conversation-minimalist][data-callout-metadata~=pink],
+  .callout[data-callout=conversation][data-callout-metadata~=pink],
+  .callout[data-callout=conversation-outline][data-callout-metadata~=pink] {
+    --shift-color-even: var(--color-purple);
+    --shift-color-odd: var(--color-red);
+  }
+  .callout[data-callout=conversation-minimalist],
+  .callout[data-callout=conversation],
+  .callout[data-callout=conversation-outline] {
+    --shift-color-even: var(--color-cyan);
+    --shift-color-odd: var(--color-purple);
+  }
+  .callout[data-callout=conversation-minimalist][data-callout-metadata~=gray], .callout[data-callout=conversation-minimalist][data-callout-metadata~=black], .callout[data-callout=conversation-minimalist][data-callout-metadata~=white], .callout[data-callout=conversation][data-callout-metadata~=gray], .callout[data-callout=conversation][data-callout-metadata~=black], .callout[data-callout=conversation][data-callout-metadata~=white], .callout[data-callout=conversation-outline][data-callout-metadata~=gray], .callout[data-callout=conversation-outline][data-callout-metadata~=black], .callout[data-callout=conversation-outline][data-callout-metadata~=white] {
+    --shift-color-even: white;
+    --shift-color-odd: black;
+  }
+  .callout[data-callout=conversation-minimalist],
+  .callout[data-callout=conversation],
+  .callout[data-callout=conversation-outline] {
+    --line-color-odd: color-mix(in srgb, rgb(var(--conversation-color)), var(--shift-color-odd) 25%);
+    --line-color-even: color-mix(in srgb, rgb(var(--conversation-color)), var(--shift-color-even) 25%);
+  }
+}
 .callout[data-callout=conversation-minimalist],
 .callout[data-callout=conversation],
 .callout[data-callout=conversation-outline] {
@@ -14,8 +94,6 @@ body {
   --conversation-color: var(--callout-color);
   --callout-icon: lucide-messages-square;
   --callout-content-padding: var(--size-4-3);
-  --line-color-odd: hsl(from rgb(var(--conversation-color)) calc(h + 15) s l);
-  --line-color-even: hsl(from rgb(var(--conversation-color)) calc(h - 15) s l);
   background: none;
 }
 .callout[data-callout=conversation-minimalist] > .callout-content > *:nth-child(odd),
@@ -40,7 +118,7 @@ body {
 .callout[data-callout=conversation] > .callout-content > * {
   width: fit-content;
   max-width: 80%;
-  background: rgb(from var(--line-color) r g b/0.2);
+  background: color-mix(in srgb, var(--line-color), transparent 80%);
   border-radius: var(--radius-l);
   margin-block: var(--size-4-3);
 }

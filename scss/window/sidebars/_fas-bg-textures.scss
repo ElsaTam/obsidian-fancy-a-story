@@ -1,6 +1,6 @@
-@forward '../../shared/paper-texture';
+@forward "../../shared/paper-texture";
 
-// ----------- Coffee stain ----------- 
+// ----------- Coffee stain -----------
 body {
     --file-explorer-decoration: var(--coffee-stain);
     --file-explorer-decoration-size: 150px;
@@ -27,8 +27,10 @@ body {
 .fas-bg-textures .workspace-leaf-content[data-type="file-explorer"]::before {
     content: "";
     position: absolute;
-    top: 0; bottom: 0;
-    left: 0; right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     background-image: var(--file-explorer-decoration);
     background-size: var(--file-explorer-decoration-size);
     background-position: var(--file-explorer-decoration-position);
@@ -48,12 +50,13 @@ body {
     background-color: var(--mobile-sidebar-background);
 }
 .is-mobile.fas-bg-textures .workspace-leaf-content[data-type="file-explorer"]::before {
-    bottom: calc(max(var(--size-4-2), var(--safe-area-inset-bottom)) + var(--icon-size) + var(--size-2-2) + var(--size-2-3));
+    bottom: calc(
+        max(var(--size-4-2), var(--safe-area-inset-bottom)) + var(--icon-size) + var(--size-2-2) + var(--size-2-3)
+    );
     z-index: unset;
 }
 
-
-// ----------- Paper texture ----------- 
+// ----------- Paper texture -----------
 body {
     --sidebar-texture: var(--paper-texture);
     --sidebar-texture-size: 500px;
@@ -77,7 +80,7 @@ body {
     --sidebar-texture-opacity: var(--sidebar-texture-opacity-custom);
 }
 .fas-bg-textures .mod-sidedock .workspace-leaf {
-    --c: rgb(from var(--workleaves-background) r g b / calc(1 - var(--sidebar-texture-opacity)));
+    --c: color-mix(in srgb, var(--workleaves-background), transparent calc(100% * var(--sidebar-texture-opacity)));
     background-image: linear-gradient(to right, var(--c), var(--c) 100%), var(--sidebar-texture);
     background-size: var(--sidebar-texture-size);
     background-blend-mode: normal, var(--sidebar-texture-blend);

@@ -1,25 +1,37 @@
-.theme-dark {
-    --middle-color: color-mix(
-        in srgb-linear,
-        hsl(from var(--color-base-00) h 100% 55%),
-        hsl(from var(--color-base-100) h 100% 55%) 50%
-    );
-    --middle-color-complement: color-mix(
-        in srgb-linear,
-        hsl(from var(--color-base-00)  calc(h - 90) 100% 55%),
-        hsl(from var(--color-base-100) calc(h + 90) 100% 55%) 50%
-    );
+@supports (color: hsl(from white h s l)) {
+    .theme-dark {
+        --middle-color: color-mix(
+            in srgb-linear,
+            hsl(from var(--color-base-00) h 100% 55%),
+            hsl(from var(--color-base-100) h 100% 55%) 50%
+        );
+        --middle-color-complement: color-mix(
+            in srgb-linear,
+            hsl(from var(--color-base-00) calc(h - 90) 100% 55%),
+            hsl(from var(--color-base-100) calc(h + 90) 100% 55%) 50%
+        );
+    }
+
+    .theme-light {
+        --middle-color: color-mix(
+            in srgb-linear,
+            hsl(from var(--color-base-00) h 100% 40%),
+            hsl(from var(--color-base-100) h 100% 40%) 50%
+        );
+        --middle-color-complement: color-mix(
+            in srgb-linear,
+            hsl(from var(--color-base-00) calc(h - 90) 100% 40%),
+            hsl(from var(--color-base-100) calc(h + 90) 100% 40%) 50%
+        );
+    }
 }
 
-.theme-light {
-    --middle-color: color-mix(
-        in srgb-linear,
-        hsl(from var(--color-base-00) h 100% 40%),
-        hsl(from var(--color-base-100) h 100% 40%) 50%
-    );
-    --middle-color-complement: color-mix(
-        in srgb-linear,
-        hsl(from var(--color-base-00)  calc(h - 90) 100% 40%),
-        hsl(from var(--color-base-100) calc(h + 90) 100% 40%) 50%
-    );
+@supports not (color: hsln(from white h s l)) {
+    .style-settings-container .setting-item[data-id="header-color"] .setting-item-info::after {
+        content: '"Hue" and "Complementary hue" not supported on your device.';
+        color: var(--text-muted);
+        font-size: var(--font-ui-smaller);
+        padding-top: var(--size-4-1);
+        line-height: var(--line-height-tight);
+    }
 }

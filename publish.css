@@ -259,10 +259,10 @@ body {
 }
 
 [data-callout-metadata~=accent] > .callout-title {
-  background: linear-gradient(to right, rgb(from var(--color-accent) r g b/0.1), transparent);
+  background: linear-gradient(to right, hsl(var(--accent-h) var(--accent-s) var(--accent-l)/0.1), transparent);
 }
 [data-callout-metadata~=accent] > .callout-content {
-  border-top: var(--callout-border-width) dashed rgb(from var(--color-accent) r g b/var(--callout-border-opacity));
+  border-top: var(--callout-border-width) dashed hsl(var(--accent-h) var(--accent-s) var(--accent-l)/var(--callout-border-opacity));
 }
 
 .callout[data-callout=autopsy] {
@@ -412,7 +412,8 @@ body {
 .callout[data-callout=autopsy] th {
   font-variant: small-caps;
 }
-.callout[data-callout=autopsy] th, .callout[data-callout=autopsy] td {
+.callout[data-callout=autopsy] th,
+.callout[data-callout=autopsy] td {
   text-align: center;
 }
 .callout[data-callout=autopsy] table:not(:first-child) {
@@ -452,7 +453,11 @@ body {
   --checkbox-color-unchecked: rgb(var(--callout-color-nested));
   --checkbox-opacity-unchecked: 0.2;
   --checkbox-border-color: var(--checkbox-color-unchecked);
-  --checkbox-border-color-hover: color-mix(in srgb, var(--checkbox-color-unchecked), rgb(var(--mono-rgb-100)) 60%);
+  --checkbox-border-color-hover: color-mix(
+      in srgb,
+      var(--checkbox-color-unchecked),
+      rgb(var(--mono-rgb-100)) 60%
+  );
   overflow: visible;
   z-index: 1;
 }
@@ -485,7 +490,7 @@ body {
 }
 .callout[data-callout=autopsy] .callout[data-callout=body] .task-list-item-checkbox:not(:checked) {
   /* Set a background for unchecked checkboxes */
-  background-color: rgb(from var(--checkbox-color-unchecked) r g b/var(--checkbox-opacity-unchecked));
+  background-color: color-mix(in srgb, var(--checkbox-color-unchecked), transparent calc(100% * (1 - var(--checkbox-opacity-unchecked))));
 }
 .callout[data-callout=autopsy] .callout[data-callout=body] .task-list-item {
   /* Positioning of the checkboxes */
@@ -1247,6 +1252,92 @@ body {
   --border-pannel-5-source: url("data:image/svg+xml,%3Csvg width='73.545616mm' height='71.283852mm' viewBox='0 0 73.545615 71.283851' fill='none' stroke='%23000000' stroke-width='1.56305' stroke-linecap='round' stroke-linejoin='round' xml:space='preserve' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'%3E%3Cg transform='translate(-99.656525,-101.94349)'%3E%3Cpath d='m 172.42062,103.61183 c -0.1921,19.03997 -0.0609,37.77398 -0.59574,56.68899 -0.111,3.92581 -0.0141,7.94385 -0.0859,11.86677 -23.47263,-0.2306 -47.30762,0.29246 -70.78568,-0.473 -0.0574,-3.22796 0.15298,-7.02071 0.0718,-10.26626 -0.51779,-20.70434 -0.48731,-39.93321 -0.58706,-58.70332 10.1599,0.59443 19.29693,0.55221 29.32155,0.57526 8.40959,0.0194 18.33381,-0.0817 21.4592,-0.16822 3.12539,-0.0865 10.26625,0.5099 21.20182,0.47978 z' /%3E%3C/g%3E%3C/svg%3E%0A");
 }
 
+@supports (color: hsl(from white h s l)) {
+  .callout[data-callout=conversation-minimalist],
+  .callout[data-callout=conversation],
+  .callout[data-callout=conversation-outline] {
+    --line-color-odd: hsl(from rgb(var(--conversation-color)) calc(h + 15) s l);
+    --line-color-even: hsl(from rgb(var(--conversation-color)) calc(h - 15) s l);
+  }
+}
+@supports not (color: hsl(from white h s l)) {
+  .callout[data-callout=conversation-minimalist][data-callout-metadata~=red],
+  .callout[data-callout=conversation][data-callout-metadata~=red],
+  .callout[data-callout=conversation-outline][data-callout-metadata~=red] {
+    --shift-color-even: var(--color-pink);
+    --shift-color-odd: var(--color-brown);
+  }
+  .callout[data-callout=conversation-minimalist][data-callout-metadata~=brown],
+  .callout[data-callout=conversation][data-callout-metadata~=brown],
+  .callout[data-callout=conversation-outline][data-callout-metadata~=brown] {
+    --shift-color-even: var(--color-red);
+    --shift-color-odd: var(--color-orange);
+  }
+  .callout[data-callout=conversation-minimalist][data-callout-metadata~=orange],
+  .callout[data-callout=conversation][data-callout-metadata~=orange],
+  .callout[data-callout=conversation-outline][data-callout-metadata~=orange] {
+    --shift-color-even: var(--color-brown);
+    --shift-color-odd: var(--color-yellow);
+  }
+  .callout[data-callout=conversation-minimalist][data-callout-metadata~=yellow],
+  .callout[data-callout=conversation][data-callout-metadata~=yellow],
+  .callout[data-callout=conversation-outline][data-callout-metadata~=yellow] {
+    --shift-color-even: var(--color-orange);
+    --shift-color-odd: var(--color-green);
+  }
+  .callout[data-callout=conversation-minimalist][data-callout-metadata~=green],
+  .callout[data-callout=conversation][data-callout-metadata~=green],
+  .callout[data-callout=conversation-outline][data-callout-metadata~=green] {
+    --shift-color-even: var(--color-yellow);
+    --shift-color-odd: var(--color-cyan);
+  }
+  .callout[data-callout=conversation-minimalist][data-callout-metadata~=cyan],
+  .callout[data-callout=conversation][data-callout-metadata~=cyan],
+  .callout[data-callout=conversation-outline][data-callout-metadata~=cyan] {
+    --shift-color-even: var(--color-green);
+    --shift-color-odd: var(--color-blue);
+  }
+  .callout[data-callout=conversation-minimalist][data-callout-metadata~=blue],
+  .callout[data-callout=conversation][data-callout-metadata~=blue],
+  .callout[data-callout=conversation-outline][data-callout-metadata~=blue] {
+    --shift-color-even: var(--color-cyan);
+    --shift-color-odd: var(--color-purple);
+  }
+  .callout[data-callout=conversation-minimalist][data-callout-metadata~=purple],
+  .callout[data-callout=conversation][data-callout-metadata~=purple],
+  .callout[data-callout=conversation-outline][data-callout-metadata~=purple] {
+    --shift-color-even: var(--color-blue);
+    --shift-color-odd: var(--color-pink);
+  }
+  .callout[data-callout=conversation-minimalist][data-callout-metadata~=pink],
+  .callout[data-callout=conversation][data-callout-metadata~=pink],
+  .callout[data-callout=conversation-outline][data-callout-metadata~=pink] {
+    --shift-color-even: var(--color-purple);
+    --shift-color-odd: var(--color-red);
+  }
+  .callout[data-callout=conversation-minimalist],
+  .callout[data-callout=conversation],
+  .callout[data-callout=conversation-outline] {
+    --shift-color-even: var(--color-cyan);
+    --shift-color-odd: var(--color-purple);
+  }
+  .callout[data-callout=conversation-minimalist][data-callout-metadata~=gray], .callout[data-callout=conversation-minimalist][data-callout-metadata~=black], .callout[data-callout=conversation-minimalist][data-callout-metadata~=white],
+  .callout[data-callout=conversation][data-callout-metadata~=gray],
+  .callout[data-callout=conversation][data-callout-metadata~=black],
+  .callout[data-callout=conversation][data-callout-metadata~=white],
+  .callout[data-callout=conversation-outline][data-callout-metadata~=gray],
+  .callout[data-callout=conversation-outline][data-callout-metadata~=black],
+  .callout[data-callout=conversation-outline][data-callout-metadata~=white] {
+    --shift-color-even: white;
+    --shift-color-odd: black;
+  }
+  .callout[data-callout=conversation-minimalist],
+  .callout[data-callout=conversation],
+  .callout[data-callout=conversation-outline] {
+    --line-color-odd: color-mix(in srgb, rgb(var(--conversation-color)), var(--shift-color-odd) 25%);
+    --line-color-even: color-mix(in srgb, rgb(var(--conversation-color)), var(--shift-color-even) 25%);
+  }
+}
 .callout[data-callout=conversation-minimalist],
 .callout[data-callout=conversation],
 .callout[data-callout=conversation-outline] {
@@ -1254,8 +1345,6 @@ body {
   --conversation-color: var(--callout-color);
   --callout-icon: lucide-messages-square;
   --callout-content-padding: var(--size-4-3);
-  --line-color-odd: hsl(from rgb(var(--conversation-color)) calc(h + 15) s l);
-  --line-color-even: hsl(from rgb(var(--conversation-color)) calc(h - 15) s l);
   background: none;
 }
 .callout[data-callout=conversation-minimalist] > .callout-content > *:nth-child(odd),
@@ -1280,7 +1369,7 @@ body {
 .callout[data-callout=conversation] > .callout-content > * {
   width: fit-content;
   max-width: 80%;
-  background: rgb(from var(--line-color) r g b/0.2);
+  background: color-mix(in srgb, var(--line-color), transparent 80%);
   border-radius: var(--radius-l);
   margin-block: var(--size-4-3);
 }
@@ -2084,14 +2173,14 @@ body {
 /* Color accent */
 :where(.fas-callout-infobox) .callout[data-callout=infobox][data-callout-metadata~=accent],
 .callout[data-callout=fas-infobox][data-callout-metadata~=accent] {
-  --hr-color: rgb(from var(--color-accent) r g b / var(--callout-border-opacity));
+  --hr-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l) / var(--callout-border-opacity));
   --table-row-alt-background: color-mix(
       in srgb,
-      rgb(from var(--color-accent) r g b / 0.2),
+      hsl(var(--accent-h) var(--accent-s) var(--accent-l) / 0.2),
       rgba(var(--mono-rgb-0), 0.2) 50%
   );
-  --table-border-color: rgb(from var(--color-accent) r g b / var(--callout-border-opacity));
-  --table-header-border-color: rgb(from var(--color-accent) r g b / var(--callout-border-opacity));
+  --table-border-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l) / var(--callout-border-opacity));
+  --table-header-border-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l) / var(--callout-border-opacity));
 }
 :where(.fas-callout-infobox) .callout[data-callout=infobox][data-callout-metadata~=accent] .image-embed[alt~=cover]::after,
 .callout[data-callout=fas-infobox][data-callout-metadata~=accent] .image-embed[alt~=cover]::after {
@@ -2121,7 +2210,7 @@ body {
 }
 :where(.fas-callout-infobox) .callout[data-callout=infobox][data-callout-metadata~=accent] .callout[data-callout=footer]::after,
 .callout[data-callout=fas-infobox][data-callout-metadata~=accent] .callout[data-callout=footer]::after {
-  border-top: 2px dashed rgb(from var(--color-accent) r g b/var(--callout-border-opacity));
+  border-top: 2px dashed hsl(var(--accent-h) var(--accent-s) var(--accent-l)/var(--callout-border-opacity));
 }
 :where(.fas-callout-infobox) .callout[data-callout=infobox][data-callout-metadata~=accent][data-callout-metadata~=corners]::before, :where(.fas-callout-infobox) .callout[data-callout=infobox][data-callout-metadata~=accent][data-callout-metadata~=corners]::after,
 .callout[data-callout=fas-infobox][data-callout-metadata~=accent][data-callout-metadata~=corners]::before,
@@ -2425,11 +2514,12 @@ body {
   --callout-color: var(--paper-fold-color);
   --metadata-property-radius: 0;
   --metadata-padding: 0 0 8px 0;
-  --postit-color: hsl(from rgb(var(--callout-color)) h s l / 0.7);
+  --postit-color-transparent: color-mix(in srgb, rgb(var(--callout-color)), transparent 30%);
+  --postit-color-opaque: rgb(var(--callout-color));
   --postit-border-color: var(--text-faint);
   font-family: "Walter Turncoat", "Comic Sans MS", cursive;
   color: black;
-  background: linear-gradient(calc(-1 * var(--paper-fold-corner-angle)), transparent calc(var(--paper-fold-corner-diag) + 1px), hsl(from var(--postit-color) h s calc(l * 1.1)) var(--paper-fold-corner-diag), var(--postit-color) calc(var(--paper-fold-corner-diag) * 1.5)) no-repeat;
+  background: linear-gradient(calc(-1 * var(--paper-fold-corner-angle)), transparent calc(var(--paper-fold-corner-diag) + 1px), color-mix(in hsl, var(--postit-color-transparent), white 10%) var(--paper-fold-corner-diag), var(--postit-color-transparent) calc(var(--paper-fold-corner-diag) * 1.5)) no-repeat;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--corner-height)), calc(100% - var(--corner-width)) 100%, 0 100%);
   overflow: hidden;
 }
@@ -2449,12 +2539,12 @@ body {
   height: var(--corner-height);
   width: var(--corner-width);
   transform: matrix(cos(-2 * var(--paper-fold-corner-angle)), sin(-2 * var(--paper-fold-corner-angle)), sin(-2 * var(--paper-fold-corner-angle)), calc(-1 * cos(-2 * var(--paper-fold-corner-angle))), 0, 0);
-  background: linear-gradient(calc(180deg - var(--paper-fold-corner-angle)), hsl(from var(--postit-color) h s calc(l * 0.9)/1) var(--paper-fold-corner-diag), hsl(from var(--postit-color) h s calc(l * 1.1)/1) calc(var(--paper-fold-corner-diag) + 0.3 * min(var(--corner-height), var(--corner-width))), hsl(from var(--postit-color) h s calc(l * 0.5)/1));
-  box-shadow: 0 0 calc(min(var(--corner-width), var(--corner-height)) / 5) calc(min(var(--corner-width), var(--corner-height)) / 25) hsl(from var(--postit-color) h 40% 10%);
+  background: linear-gradient(calc(180deg - var(--paper-fold-corner-angle)), color-mix(in hsl, rgb(var(--callout-color)), black 10%) var(--paper-fold-corner-diag), color-mix(in hsl, rgb(var(--callout-color)), white 30%) calc(var(--paper-fold-corner-diag) + 0.3 * min(var(--corner-height), var(--corner-width))), color-mix(in hsl, rgb(var(--callout-color)), black 50%));
+  box-shadow: 0 0 calc(min(var(--corner-width), var(--corner-height)) / 5) calc(min(var(--corner-width), var(--corner-height)) / 25) color-mix(in hsl, var(--postit-color-transparent), black 70%);
 }
 
 .callout[data-callout=paper-fold] .callout-title {
-  background-color: hsl(from var(--postit-color) h calc(s * 0.97) calc(l * 0.99)/0.3);
+  background-color: color-mix(in hwb, var(--postit-color-transparent), black 5%);
   text-align: center;
 }
 
@@ -2889,10 +2979,10 @@ body {
 }
 
 .callout[data-callout=table-cards][data-callout-metadata~=accent] tr {
-  border-color: rgb(from var(--color-accent) r g b/var(--callout-border-opacity));
+  border-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l)/var(--callout-border-opacity));
 }
 .callout[data-callout=table-cards][data-callout-metadata~=accent] td:first-child {
-  border-bottom-color: rgb(from var(--color-accent) r g b/var(--callout-border-opacity));
+  border-bottom-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l)/var(--callout-border-opacity));
 }
 
 .callout[data-callout=timeline] {
@@ -3359,8 +3449,8 @@ body {
 }
 
 [data-callout-metadata~=accent] {
-  border-color: rgb(from var(--color-accent) r g b/var(--callout-border-opacity));
-  background-color: rgb(from var(--color-accent) r g b/0.1);
+  border-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l)/var(--callout-border-opacity));
+  background-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l)/0.1);
 }
 [data-callout-metadata~=accent] > .callout-title {
   color: var(--color-accent);
@@ -3598,7 +3688,7 @@ pre.language-poem-floral .copy-code-button {
 }
 .media-embed[alt*=cassette] > audio::-webkit-media-controls-panel {
   border: none;
-  background: linear-gradient(to right, rgb(from var(--cassette-color-1) r g b/0.5), rgb(from var(--cassette-color-2) r g b/0.5));
+  background: linear-gradient(to right, color-mix(in srgb, var(--cassette-color-1), transparent 50%), color-mix(in srgb, var(--cassette-color-2), transparent 50%));
 }
 
 .media-embed[alt*=cassette]::before {
@@ -5296,7 +5386,7 @@ body {
 }
 
 .fas-bg-textures .mod-sidedock .workspace-leaf {
-  --c: rgb(from var(--workleaves-background) r g b / calc(1 - var(--sidebar-texture-opacity)));
+  --c: color-mix(in srgb, var(--workleaves-background), transparent calc(100% * var(--sidebar-texture-opacity)));
   background-image: linear-gradient(to right, var(--c), var(--c) 100%), var(--sidebar-texture);
   background-size: var(--sidebar-texture-size);
   background-blend-mode: normal, var(--sidebar-texture-blend);

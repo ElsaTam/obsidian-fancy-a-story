@@ -155,7 +155,8 @@ Author: ElsaTam (Kapirklaa in Discord)
 .callout[data-callout=autopsy] th {
   font-variant: small-caps;
 }
-.callout[data-callout=autopsy] th, .callout[data-callout=autopsy] td {
+.callout[data-callout=autopsy] th,
+.callout[data-callout=autopsy] td {
   text-align: center;
 }
 .callout[data-callout=autopsy] table:not(:first-child) {
@@ -195,7 +196,11 @@ Author: ElsaTam (Kapirklaa in Discord)
   --checkbox-color-unchecked: rgb(var(--callout-color-nested));
   --checkbox-opacity-unchecked: 0.2;
   --checkbox-border-color: var(--checkbox-color-unchecked);
-  --checkbox-border-color-hover: color-mix(in srgb, var(--checkbox-color-unchecked), rgb(var(--mono-rgb-100)) 60%);
+  --checkbox-border-color-hover: color-mix(
+      in srgb,
+      var(--checkbox-color-unchecked),
+      rgb(var(--mono-rgb-100)) 60%
+  );
   overflow: visible;
   z-index: 1;
 }
@@ -228,7 +233,7 @@ Author: ElsaTam (Kapirklaa in Discord)
 }
 .callout[data-callout=autopsy] .callout[data-callout=body] .task-list-item-checkbox:not(:checked) {
   /* Set a background for unchecked checkboxes */
-  background-color: rgb(from var(--checkbox-color-unchecked) r g b/var(--checkbox-opacity-unchecked));
+  background-color: color-mix(in srgb, var(--checkbox-color-unchecked), transparent calc(100% * (1 - var(--checkbox-opacity-unchecked))));
 }
 .callout[data-callout=autopsy] .callout[data-callout=body] .task-list-item {
   /* Positioning of the checkboxes */

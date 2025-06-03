@@ -51,7 +51,7 @@
         white-space: nowrap;
     }
 
-    td:nth-child(n+2) {
+    td:nth-child(n + 2) {
         background-color: rgba(var(--mono-rgb-0), 0.2);
     }
 
@@ -62,9 +62,9 @@
 
 .callout[data-callout="table-cards"][data-callout-metadata~="accent"] {
     tr {
-        border-color: rgb(from var(--color-accent) r g b / var(--callout-border-opacity));
+        border-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l) / var(--callout-border-opacity));
     }
     td:first-child {
-        border-bottom-color: rgb(from var(--color-accent) r g b / var(--callout-border-opacity));
+        border-bottom-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l) / var(--callout-border-opacity));
     }
 }
