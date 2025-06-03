@@ -261,6 +261,29 @@ settings:
                 label: Ribbon
                 value: fas-status-bar-ribbon
     -
+        id: ribbon-position
+        title: Ribbon position
+        type: class-select
+        allowEmpty: true
+        default: none
+        options:
+            - 
+                label: Floating horizontal, bottom
+                value: fas-ribbon-horizontal-floating
+            - 
+                label: Floating horizontal, bottom, on hover
+                value: fas-ribbon-horizontal-floating-hover
+    -
+        id: fas-left-toggle-button-in-root
+        title: Left sidebar toggle button out of ribbon
+        type: class-toggle
+        default: false
+    -
+        id: fas-vault-menu-top
+        title: Vault menu at the top
+        type: class-toggle
+        default: false
+    -
         id: show-note-header-on-hover
         title: Show note header on hover
         type: variable-select
@@ -1483,7 +1506,9 @@ body:not(.fas-file-explorer-decoration-custom)
     [data-id="file-explorer-decoration-position-custom"],
 body:not(.fas-file-explorer-decoration-custom)
     .style-settings-container
-    [data-id="file-explorer-decoration-opacity-custom"] {
+    [data-id="file-explorer-decoration-opacity-custom"],
+body.fas-ribbon-horizontal-floating .style-settings-container [data-id="fas-left-toggle-button-in-root"],
+body.fas-ribbon-horizontal-floating-hover .style-settings-container [data-id="fas-left-toggle-button-in-root"] {
     opacity: 0.5;
     pointer-events: none;
 }

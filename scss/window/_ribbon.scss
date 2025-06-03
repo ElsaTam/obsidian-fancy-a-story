@@ -1,4 +1,4 @@
-@forward '../shared/workspace';
+@forward "../shared/workspace";
 
 body {
     --ribbon-background: none;
@@ -14,4 +14,143 @@ body {
 
 .workspace-ribbon:hover {
     --icon-opacity: var(--icon-opacity-hover);
+}
+
+body.fas-ribbon-horizontal-floating-hover {
+    --ribbon-background: var(--workspace-background);
+
+    .workspace-ribbon.mod-left {
+        --transition-duration: 0.5s;
+        --transition-timing-function: ease;
+        --border-width: max(15px, var(--radius-m));
+
+        transition-duration: var(--transition-duration), max(0s, calc(var(--transition-duration) - 0.2s));
+        transition-timing-function: var(--transition-timing-function);
+        transition-property: transform, border;
+
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        flex-direction: row;
+        width: unset;
+        height: var(--ribbon-width);
+        flex: unset;
+        box-shadow: var(--shadow-s);
+        border-radius: 0 var(--radius-m) 0 0;
+        border-top: 1px solid var(--color-base-40);
+        border-right: 1px solid var(--color-base-40);
+        margin-top: 0;
+    }
+
+    .workspace-ribbon.mod-left:not(:hover) {
+        transform: translateX(calc(-100% + var(--border-width)));
+        border-right: var(--color-accent) solid var(--border-width);
+        box-shadow: 4px 0px 8px var(--shadow-color);
+    }
+
+    .workspace-ribbon.mod-left::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100%;
+        transition-duration: var(--transition-duration);
+        transition-timing-function: var(--transition-timing-function);
+        transition-property: left;
+        z-index: -1;
+    }
+
+
+    .workspace-ribbon:hover::after {
+        right: 0;
+    }
+
+    .workspace-ribbon.mod-left::before {
+        position: static;
+        width: var(--ribbon-width);
+        height: unset;
+        border-bottom: none;
+        border-right: var(--tab-outline-width) solid var(--tab-outline-color);
+    }
+
+    .mod-sidedock.mod-left-split {
+        margin-left: var(--workspace-gap);
+    }
+
+    .side-dock-settings,
+    .side-dock-actions {
+        flex-direction: row;
+    }
+}
+
+
+body.fas-ribbon-horizontal-floating {
+    --ribbon-background: var(--workspace-background);
+
+    .workspace-ribbon.mod-left {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        flex-direction: row;
+        width: unset;
+        height: var(--ribbon-width);
+        flex: unset;
+        box-shadow: var(--shadow-s);
+        border-radius: 0 var(--radius-m) 0 0;
+        border-top: 1px solid var(--color-base-40);
+        border-right: 1px solid var(--color-base-40);
+        margin-top: 0;
+    }
+
+    .workspace-ribbon.mod-left::before {
+        position: static;
+        width: var(--ribbon-width);
+        height: unset;
+        border-bottom: none;
+        border-right: var(--tab-outline-width) solid var(--tab-outline-color);
+    }
+
+    .mod-sidedock.mod-left-split {
+        margin-left: var(--workspace-gap);
+    }
+
+    .side-dock-settings,
+    .side-dock-actions {
+        flex-direction: row;
+    }
+}
+
+body.is-hidden-frameless:not(.is-fullscreen):not(.mod-macos).fas-left-toggle-button-in-root:not(.fas-ribbon-horizontal-floating):not(.fas-ribbon-horizontal-floating-hover) {
+    .mod-root :nth-child(1 of .mod-top) .workspace-tab-header-container {
+        anchor-name: --top-tab-header-container;
+
+        &::before {
+            content: "";
+            display: block;
+            width: var(--ribbon-width);
+            -webkit-app-region: no-drag;
+        }
+    }
+
+    .mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container::before {
+        position: static;
+        width: var(--ribbon-width);
+    }
+
+
+    .workspace-ribbon.mod-left .sidebar-toggle-button {
+        position-anchor: --top-tab-header-container;
+        top: calc(anchor(top) + 4px);
+        left: anchor(left);
+        z-index: 200;
+    }
+
+    .workspace-ribbon.mod-left {
+        margin-top: var(--workspace-top-margin);
+    }
+
+    .workspace-ribbon.mod-left::before {
+        content: none;
+    }
 }

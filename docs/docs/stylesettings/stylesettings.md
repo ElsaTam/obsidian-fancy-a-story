@@ -70,6 +70,18 @@ Modify the opacity of the icons in inactive tabs.
 - **Top**: at the top of the window
 - **Ribbon**: split the ribbon space in two, the status-bar goes in the bottom part
 
+#### Ribbon position
+- **(none)**: default position
+- **Floating horizontal, bottom**: at the bottom left corner, always visible
+- **Floating horizontal, bottom, on hover**: at the bottom left corner, only shown on hover
+
+#### Left sidebar toggle button out of ribbon
+Place the toggle sidebar button in the central pane, on the opposite side of the right sidebar toggle button.
+Incompatible with the floating ribbon options.
+
+#### Vault menu at the top
+Place the vault menu at the top of the left sidebar rather than the default bottom.
+
 #### Show note header on hover
 Hide the note header by default and reveal it only on hovered.
 

@@ -1,4 +1,4 @@
-@forward '../shared/workspace';
+@forward "../shared/workspace";
 
 body {
     --vault-profile-color: var(--workspace-foreground-faint);
@@ -16,12 +16,29 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
     background: none;
 }
 
-body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher-icon {
+body:not(.is-mobile)
+    .workspace-split.mod-left-split
+    .workspace-sidedock-vault-profile
+    .workspace-drawer-vault-switcher-icon {
     color: var(--workspace-foreground-faint);
 }
 
 @media (hover: hover) {
-    body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher:hover .workspace-drawer-vault-switcher-icon {
+    body:not(.is-mobile)
+        .workspace-split.mod-left-split
+        .workspace-sidedock-vault-profile
+        .workspace-drawer-vault-switcher:hover
+        .workspace-drawer-vault-switcher-icon {
         color: var(--workspace-foreground-muted);
+    }
+}
+
+body:not(.is-mobile).fas-vault-menu-top {
+    .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+        order: -1;
+        padding-bottom: 0;
+    }
+    .mod-sidedock.mod-left-split {
+        padding-bottom: 6px;
     }
 }
