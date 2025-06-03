@@ -1001,6 +1001,28 @@ settings:
             - 
                 value: disable
                 label: Disable
+    - 
+        id: fas-rainbow-lists
+        title: Rainbow lists markers
+        type: variable-select
+        default: disable
+        options:
+            - 
+                value: enable
+                label: Enable
+            - 
+                value: disable
+                label: Disable
+    - 
+        id: rainbow-brightness
+        title: Rainbow text brightness
+        type: variable-number
+        default: 1
+    - 
+        id: rainbow-saturation
+        title: Rainbow text saturation
+        type: variable-number
+        default: 1
 
     -
         id: app-background-image
@@ -1514,6 +1536,13 @@ body.fas-ribbon-horizontal-floating-hover .style-settings-container [data-id="fa
 }
 @container not style(--fas-bookmark-tabs: disable) {
     .style-settings-container [data-id="sidedock-tab-header-padding-bottom"] {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+}
+@container not style(--fas-rainbow-folders: enable) {
+    .style-settings-container [data-id="rainbow-brightness"],
+    .style-settings-container [data-id="rainbow-saturation"] {
         opacity: 0.5;
         pointer-events: none;
     }

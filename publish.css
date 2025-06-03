@@ -4678,6 +4678,142 @@ body {
 }
 
 body {
+  --fas-rainbow-lists: disable;
+}
+
+@container style(--fas-rainbow-lists: enable) {
+  .el-ul > ul > li:nth-of-type(10n + 1) .list-bullet::after {
+    --list-marker-color: var(--color-rainbow-1);
+    filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
+  }
+  .el-ol > ol > li:nth-of-type(10n + 1) .list-bullet::after,
+  .el-ol > ol > li:nth-of-type(10n + 1)::marker,
+  .el-ol > ol > li:nth-of-type(10n + 1) li::marker {
+    --list-marker-color: var(--color-rainbow-1);
+  }
+  .HyperMD-list-line:nth-child(10n+1 of .HyperMD-list-line) {
+    --list-marker-color: var(--color-rainbow-1);
+    filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
+  }
+  .el-ul > ul > li:nth-of-type(10n + 2) .list-bullet::after {
+    --list-marker-color: var(--color-rainbow-2);
+    filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
+  }
+  .el-ol > ol > li:nth-of-type(10n + 2) .list-bullet::after,
+  .el-ol > ol > li:nth-of-type(10n + 2)::marker,
+  .el-ol > ol > li:nth-of-type(10n + 2) li::marker {
+    --list-marker-color: var(--color-rainbow-2);
+  }
+  .HyperMD-list-line:nth-child(10n+2 of .HyperMD-list-line) {
+    --list-marker-color: var(--color-rainbow-2);
+    filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
+  }
+  .el-ul > ul > li:nth-of-type(10n + 3) .list-bullet::after {
+    --list-marker-color: var(--color-rainbow-3);
+    filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
+  }
+  .el-ol > ol > li:nth-of-type(10n + 3) .list-bullet::after,
+  .el-ol > ol > li:nth-of-type(10n + 3)::marker,
+  .el-ol > ol > li:nth-of-type(10n + 3) li::marker {
+    --list-marker-color: var(--color-rainbow-3);
+  }
+  .HyperMD-list-line:nth-child(10n+3 of .HyperMD-list-line) {
+    --list-marker-color: var(--color-rainbow-3);
+    filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
+  }
+  .el-ul > ul > li:nth-of-type(10n + 4) .list-bullet::after {
+    --list-marker-color: var(--color-rainbow-4);
+    filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
+  }
+  .el-ol > ol > li:nth-of-type(10n + 4) .list-bullet::after,
+  .el-ol > ol > li:nth-of-type(10n + 4)::marker,
+  .el-ol > ol > li:nth-of-type(10n + 4) li::marker {
+    --list-marker-color: var(--color-rainbow-4);
+  }
+  .HyperMD-list-line:nth-child(10n+4 of .HyperMD-list-line) {
+    --list-marker-color: var(--color-rainbow-4);
+    filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
+  }
+  .el-ul > ul > li:nth-of-type(10n + 5) .list-bullet::after {
+    --list-marker-color: var(--color-rainbow-5);
+    filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
+  }
+  .el-ol > ol > li:nth-of-type(10n + 5) .list-bullet::after,
+  .el-ol > ol > li:nth-of-type(10n + 5)::marker,
+  .el-ol > ol > li:nth-of-type(10n + 5) li::marker {
+    --list-marker-color: var(--color-rainbow-5);
+  }
+  .HyperMD-list-line:nth-child(10n+5 of .HyperMD-list-line) {
+    --list-marker-color: var(--color-rainbow-5);
+    filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
+  }
+  .el-ul > ul > li:nth-of-type(10n + 6) .list-bullet::after {
+    --list-marker-color: var(--color-rainbow-6);
+    filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
+  }
+  .el-ol > ol > li:nth-of-type(10n + 6) .list-bullet::after,
+  .el-ol > ol > li:nth-of-type(10n + 6)::marker,
+  .el-ol > ol > li:nth-of-type(10n + 6) li::marker {
+    --list-marker-color: var(--color-rainbow-6);
+  }
+  .HyperMD-list-line:nth-child(10n+6 of .HyperMD-list-line) {
+    --list-marker-color: var(--color-rainbow-6);
+    filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
+  }
+  .el-ul > ul > li:nth-of-type(10n + 7) .list-bullet::after {
+    --list-marker-color: var(--color-rainbow-7);
+    filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
+  }
+  .el-ol > ol > li:nth-of-type(10n + 7) .list-bullet::after,
+  .el-ol > ol > li:nth-of-type(10n + 7)::marker,
+  .el-ol > ol > li:nth-of-type(10n + 7) li::marker {
+    --list-marker-color: var(--color-rainbow-7);
+  }
+  .HyperMD-list-line:nth-child(10n+7 of .HyperMD-list-line) {
+    --list-marker-color: var(--color-rainbow-7);
+    filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
+  }
+  .el-ul > ul > li:nth-of-type(10n + 8) .list-bullet::after {
+    --list-marker-color: var(--color-rainbow-8);
+    filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
+  }
+  .el-ol > ol > li:nth-of-type(10n + 8) .list-bullet::after,
+  .el-ol > ol > li:nth-of-type(10n + 8)::marker,
+  .el-ol > ol > li:nth-of-type(10n + 8) li::marker {
+    --list-marker-color: var(--color-rainbow-8);
+  }
+  .HyperMD-list-line:nth-child(10n+8 of .HyperMD-list-line) {
+    --list-marker-color: var(--color-rainbow-8);
+    filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
+  }
+  .el-ul > ul > li:nth-of-type(10n + 9) .list-bullet::after {
+    --list-marker-color: var(--color-rainbow-9);
+    filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
+  }
+  .el-ol > ol > li:nth-of-type(10n + 9) .list-bullet::after,
+  .el-ol > ol > li:nth-of-type(10n + 9)::marker,
+  .el-ol > ol > li:nth-of-type(10n + 9) li::marker {
+    --list-marker-color: var(--color-rainbow-9);
+  }
+  .HyperMD-list-line:nth-child(10n+9 of .HyperMD-list-line) {
+    --list-marker-color: var(--color-rainbow-9);
+    filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
+  }
+  .el-ul > ul > li:nth-of-type(10n + 10) .list-bullet::after {
+    --list-marker-color: var(--color-rainbow-10);
+    filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
+  }
+  .el-ol > ol > li:nth-of-type(10n + 10) .list-bullet::after,
+  .el-ol > ol > li:nth-of-type(10n + 10)::marker,
+  .el-ol > ol > li:nth-of-type(10n + 10) li::marker {
+    --list-marker-color: var(--color-rainbow-10);
+  }
+  .HyperMD-list-line:nth-child(10n+10 of .HyperMD-list-line) {
+    --list-marker-color: var(--color-rainbow-10);
+    filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
+  }
+}
+body {
   --fas-checkbox-style: doodle;
   --fas-alternative-checkboxes: doodle;
 }

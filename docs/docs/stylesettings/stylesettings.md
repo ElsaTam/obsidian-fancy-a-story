@@ -347,6 +347,15 @@ Lower the opacity of non active notes.
 
 Enable rainbow colors in the file explorer, for the top level folder
 
+#### Rainbow lists markers
+
+Enable rainbow colors for lists markers. The coloring effects are different in livre preview (each line has a new color) and preview mode (the color changes only on the first depth items).
+
+#### Rainbow text brightness/saturation
+
+Adjust the brightness and the saturation of the rainbow colored text.
+Doesn't affect ordered lists number markers in preview mode.
+
 ## App background image
 
 Add a background image for the whole app.

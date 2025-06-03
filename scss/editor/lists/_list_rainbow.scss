@@ -1,0 +1,22 @@
+body {
+    --fas-rainbow-lists: disable;
+}
+
+@container style(--fas-rainbow-lists: enable) {
+    @for $i from 1 through 10 {
+        .el-ul > ul > li:nth-of-type(10n + #{$i}) .list-bullet::after {
+            --list-marker-color: var(--color-rainbow-#{$i});
+            filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
+        }
+        .el-ol > ol > li:nth-of-type(10n + #{$i}) .list-bullet::after,
+        .el-ol > ol > li:nth-of-type(10n + #{$i})::marker,
+        .el-ol > ol > li:nth-of-type(10n + #{$i}) li::marker {
+            --list-marker-color: var(--color-rainbow-#{$i});
+        }
+
+        .HyperMD-list-line:nth-child(10n + #{$i} of .HyperMD-list-line) {
+            --list-marker-color: var(--color-rainbow-#{$i});
+            filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
+        }
+    }
+}
