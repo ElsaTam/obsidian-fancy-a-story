@@ -1092,6 +1092,8 @@ body {
   --border-radius-2: 100% 3% 0px 0px / 3% 49% 0px 0px;
   --border-radius-3: 4% 30% 0px 0px / 51% 3% 0px 0px;
   background: rgb(var(--comic-background-rgb));
+}
+.callout[data-callout=comic]:not([data-callout-metadata~=default-font]) {
   font-family: "VTC Letterer Pro", "Comic Sans", "Arial", sans-serif;
 }
 
@@ -1174,7 +1176,10 @@ body {
 .callout[data-callout=comic-panel][data-callout-metadata~=bubble][data-callout-metadata~=right] > .callout-content > p {
   left: unset;
 }
-.callout[data-callout=comic-panel][data-callout-metadata~=bubble]:is([data-callout-metadata~=top], [data-callout-metadata~=bottom], [data-callout-metadata~=left], [data-callout-metadata~=right]) {
+.callout[data-callout=comic-panel][data-callout-metadata~=bubble]:is([data-callout-metadata~=top],
+[data-callout-metadata~=bottom],
+[data-callout-metadata~=left],
+[data-callout-metadata~=right]) {
   float: none;
   margin: 0;
 }
@@ -1183,7 +1188,8 @@ body {
   --g: 3px;
   --b: 5px;
 }
-.callout[data-callout=comic-panel][data-callout-metadata~=overflow], .callout[data-callout=comic-panel][data-callout-metadata~=overflow] .callout-content {
+.callout[data-callout=comic-panel][data-callout-metadata~=overflow],
+.callout[data-callout=comic-panel][data-callout-metadata~=overflow] .callout-content {
   overflow: visible;
 }
 .callout[data-callout=comic-panel][data-callout-metadata~=overflow] .callout-content {
@@ -1454,6 +1460,8 @@ body {
   --callout-border-width: 1px;
   --callout-email-color: var(--mono-rgb-100);
   --callout-color: var(--callout-email-color);
+}
+.callout[data-callout=email]:not([data-callout-metadata~=default-font]) {
   font-family: "Courier New", Courier, monospace;
 }
 .callout[data-callout=email] > .callout-title {
@@ -2293,8 +2301,13 @@ body {
   line-height: var(--line-height-normal);
   font-size: var(--font-text-size);
 }
-.callout[data-callout=letter] .callout-title {
+.callout[data-callout=letter]:not([data-callout-metadata~=default-font]) .callout-title {
   font-family: var(--callout-letter-title-font);
+}
+.callout[data-callout=letter]:not([data-callout-metadata~=default-font]) .callout-content {
+  font-family: var(--callout-letter-body-font);
+}
+.callout[data-callout=letter] .callout-title {
   gap: 1rem;
 }
 .callout[data-callout=letter] .callout-icon {
@@ -2335,7 +2348,6 @@ body {
   -webkit-mask-image: var(--lucide-mail-open);
 }
 .callout[data-callout=letter] .callout-content {
-  font-family: var(--callout-letter-body-font);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5) inset, 0 0 7px rgba(0, 0, 0, 0.5) inset;
 }
 .callout[data-callout=letter] :is(.fas-bg-textures .callout-content) {
@@ -2521,11 +2533,14 @@ body {
   --postit-color-transparent: color-mix(in srgb, rgb(var(--callout-color)), transparent 30%);
   --postit-color-opaque: rgb(var(--callout-color));
   --postit-border-color: var(--text-faint);
-  font-family: "Walter Turncoat", "Comic Sans MS", cursive;
   color: black;
   background: linear-gradient(calc(-1 * var(--paper-fold-corner-angle)), transparent calc(var(--paper-fold-corner-diag) + 1px), color-mix(in hsl, var(--postit-color-transparent), white 10%) var(--paper-fold-corner-diag), var(--postit-color-transparent) calc(var(--paper-fold-corner-diag) * 1.5)) no-repeat;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--corner-height)), calc(100% - var(--corner-width)) 100%, 0 100%);
   overflow: hidden;
+}
+
+.callout[data-callout=paper-fold]:not([data-callout-metadata~=default-font]) {
+  font-family: "Walter Turncoat", "Comic Sans MS", cursive;
 }
 
 .callout[data-callout=paper-fold] :is(.callout-title, svg) {
@@ -2568,8 +2583,6 @@ body {
   --callout-title-weight: var(--h3-weight);
   --callout-title-size: var(--h3-size);
   --callout-padding: var(--size-4-3) var(--size-4-3) var(--size-4-3) var(--size-4-3);
-  --callout-font-header: var(--font-typewriter);
-  --callout-font-body: var(--font-typewriter);
   --pushpin-size: 40px;
   --pushpin-scale-collapsed: 0.8;
   --pinned-small-width: 200px;
@@ -2611,17 +2624,25 @@ body {
   transform: scaleX(-1) scale(var(--pushpin-scale-collapsed));
   filter: saturate(0%) contrast(90%) brightness(150%);
 }
+.callout[data-callout=pinned]:not([data-callout-metadata~=default-font]) {
+  --callout-font-header: var(--font-typewriter);
+  --callout-font-body: var(--font-typewriter);
+}
+.callout[data-callout=pinned]:not([data-callout-metadata~=default-font]) .callout-title-inner {
+  font-family: var(--callout-font-header);
+}
+.callout[data-callout=pinned]:not([data-callout-metadata~=default-font]) .callout-content {
+  font-family: var(--callout-font-body);
+}
 .callout[data-callout=pinned] .callout-title {
   padding-left: calc(var(--pushpin-size) * 0.6);
   justify-content: center;
   background: none;
 }
 .callout[data-callout=pinned] .callout-title-inner {
-  font-family: var(--callout-font-header);
   color: var(--color-accent);
 }
 .callout[data-callout=pinned] .callout-content {
-  font-family: var(--callout-font-body);
   border: none;
 }
 .callout[data-callout=pinned] p:last-of-type {
@@ -2822,6 +2843,8 @@ body {
   color: var(--text-normal);
   background: none;
   justify-content: center;
+}
+.callout[data-callout=polaroid]:not([data-callout-metadata~=default-font]) .callout-title {
   font-family: var(--polaroid-font);
 }
 .callout[data-callout=polaroid] .callout-content {
@@ -2867,7 +2890,7 @@ body {
   --line-height-tight: 1;
   --icon-stroke: 3px;
 }
-.callout[data-callout=profile] .callout-title {
+.callout[data-callout=profile]:not([data-callout-metadata~=default-font]) .callout-title {
   font-family: var(--font-typewriter);
 }
 .callout[data-callout=profile] .callout-icon {
@@ -2911,9 +2934,12 @@ body {
   --indentation-guide-color: rgba(var(--callout-color), 0.2);
   --image-shadow-offset: 0;
   color: rgb(var(--callout-color));
+}
+.callout[data-callout=screen]:not([data-callout-metadata~=default-font]) {
   font-family: var(--callout-screen-font);
 }
-.callout[data-callout=screen], .callout[data-callout=screen] .callout-title {
+.callout[data-callout=screen],
+.callout[data-callout=screen] .callout-title {
   background: none;
 }
 .callout[data-callout=screen] .callout-fold {

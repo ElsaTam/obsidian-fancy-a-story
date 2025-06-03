@@ -31,8 +31,13 @@ body {
   line-height: var(--line-height-normal);
   font-size: var(--font-text-size);
 }
-.callout[data-callout=letter] .callout-title {
+.callout[data-callout=letter]:not([data-callout-metadata~=default-font]) .callout-title {
   font-family: var(--callout-letter-title-font);
+}
+.callout[data-callout=letter]:not([data-callout-metadata~=default-font]) .callout-content {
+  font-family: var(--callout-letter-body-font);
+}
+.callout[data-callout=letter] .callout-title {
   gap: 1rem;
 }
 .callout[data-callout=letter] .callout-icon {
@@ -73,7 +78,6 @@ body {
   -webkit-mask-image: var(--lucide-mail-open);
 }
 .callout[data-callout=letter] .callout-content {
-  font-family: var(--callout-letter-body-font);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5) inset, 0 0 7px rgba(0, 0, 0, 0.5) inset;
 }
 .callout[data-callout=letter] p {

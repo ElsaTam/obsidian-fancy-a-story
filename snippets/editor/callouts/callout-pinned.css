@@ -18,8 +18,6 @@ body {
   --callout-title-weight: var(--h3-weight);
   --callout-title-size: var(--h3-size);
   --callout-padding: var(--size-4-3) var(--size-4-3) var(--size-4-3) var(--size-4-3);
-  --callout-font-header: var(--font-typewriter);
-  --callout-font-body: var(--font-typewriter);
   --pushpin-size: 40px;
   --pushpin-scale-collapsed: 0.8;
   --pinned-small-width: 200px;
@@ -61,17 +59,25 @@ body {
   transform: scaleX(-1) scale(var(--pushpin-scale-collapsed));
   filter: saturate(0%) contrast(90%) brightness(150%);
 }
+.callout[data-callout=pinned]:not([data-callout-metadata~=default-font]) {
+  --callout-font-header: var(--font-typewriter);
+  --callout-font-body: var(--font-typewriter);
+}
+.callout[data-callout=pinned]:not([data-callout-metadata~=default-font]) .callout-title-inner {
+  font-family: var(--callout-font-header);
+}
+.callout[data-callout=pinned]:not([data-callout-metadata~=default-font]) .callout-content {
+  font-family: var(--callout-font-body);
+}
 .callout[data-callout=pinned] .callout-title {
   padding-left: calc(var(--pushpin-size) * 0.6);
   justify-content: center;
   background: none;
 }
 .callout[data-callout=pinned] .callout-title-inner {
-  font-family: var(--callout-font-header);
   color: var(--color-accent);
 }
 .callout[data-callout=pinned] .callout-content {
-  font-family: var(--callout-font-body);
   border: none;
 }
 .callout[data-callout=pinned] p:last-of-type {

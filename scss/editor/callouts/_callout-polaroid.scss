@@ -1,9 +1,9 @@
-@forward '../../shared/shadow-color';
+@forward "../../shared/shadow-color";
 
 body {
     --polaroid-angle: 2deg;
     --polaroid-img-size: 200px;
-    --polaroid-font: 'Walter Turncoat', cursive;
+    --polaroid-font: "Walter Turncoat", cursive;
 }
 
 .callout[data-callout="polaroid"] {
@@ -30,6 +30,9 @@ body {
         color: var(--text-normal);
         background: none;
         justify-content: center;
+    }
+
+    &:not([data-callout-metadata~="default-font"]) .callout-title {
         font-family: var(--polaroid-font);
     }
 
@@ -40,8 +43,10 @@ body {
     .callout-content::before {
         content: "";
         position: absolute;
-        top: 0; bottom: 0;
-        left: 0; right: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
     }
 
     .callout-icon {
@@ -55,12 +60,10 @@ body {
     }
 }
 
-
 .callout[data-callout="polaroid"]:is([data-callout-metadata~="right"], [data-callout-metadata~="float-right"]) {
     margin-left: var(--size-4-4);
     transform: rotate(calc(-1 * var(--polaroid-angle)));
 }
-
 
 .callout[data-callout="polaroid"]:is([data-callout-metadata~="left"], [data-callout-metadata~="float-left"]) {
     margin-right: var(--size-4-4);

@@ -79,11 +79,14 @@ body {
   --postit-color-transparent: color-mix(in srgb, rgb(var(--callout-color)), transparent 30%);
   --postit-color-opaque: rgb(var(--callout-color));
   --postit-border-color: var(--text-faint);
-  font-family: "Walter Turncoat", "Comic Sans MS", cursive;
   color: black;
   background: linear-gradient(calc(-1 * var(--paper-fold-corner-angle)), transparent calc(var(--paper-fold-corner-diag) + 1px), color-mix(in hsl, var(--postit-color-transparent), white 10%) var(--paper-fold-corner-diag), var(--postit-color-transparent) calc(var(--paper-fold-corner-diag) * 1.5)) no-repeat;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--corner-height)), calc(100% - var(--corner-width)) 100%, 0 100%);
   overflow: hidden;
+}
+
+.callout[data-callout=paper-fold]:not([data-callout-metadata~=default-font]) {
+  font-family: "Walter Turncoat", "Comic Sans MS", cursive;
 }
 
 .callout[data-callout=paper-fold] :is(.callout-title, svg) {

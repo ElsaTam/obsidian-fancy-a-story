@@ -1,4 +1,4 @@
-@forward '../../shared/font-typewriter';
+@forward "../../shared/font-typewriter";
 
 .markdown-source-view .callout[data-callout="pinned"] {
     margin-inline: auto;
@@ -12,8 +12,6 @@
     --callout-title-weight: var(--h3-weight);
     --callout-title-size: var(--h3-size);
     --callout-padding: var(--size-4-3) var(--size-4-3) var(--size-4-3) var(--size-4-3);
-    --callout-font-header: var(--font-typewriter);
-    --callout-font-body: var(--font-typewriter);
     --pushpin-size: 40px;
     --pushpin-scale-collapsed: 0.8;
     --pinned-small-width: 200px;
@@ -25,12 +23,22 @@
     background-color: white;
     color: black;
 
-    &[data-callout-metadata~="small"]  { width: var(--pinned-small-width); }
-    &[data-callout-metadata~="medium"] { width: var(--pinned-medium-width); }
-    &[data-callout-metadata~="large"]  { width: var(--pinned-large-width);}
+    &[data-callout-metadata~="small"] {
+        width: var(--pinned-small-width);
+    }
+    &[data-callout-metadata~="medium"] {
+        width: var(--pinned-medium-width);
+    }
+    &[data-callout-metadata~="large"] {
+        width: var(--pinned-large-width);
+    }
 
-    .callout-icon { display: none; }
-    .callout-fold svg { display: none; }
+    .callout-icon {
+        display: none;
+    }
+    .callout-fold svg {
+        display: none;
+    }
 
     .callout-fold {
         position: absolute;
@@ -49,21 +57,32 @@
         filter: saturate(0%) contrast(90%) brightness(150%);
     }
 
+    &:not([data-callout-metadata~="default-font"]) {
+        --callout-font-header: var(--font-typewriter);
+        --callout-font-body: var(--font-typewriter);
+        .callout-title-inner {
+            font-family: var(--callout-font-header);
+        }
+        .callout-content {
+            font-family: var(--callout-font-body);
+        }
+    }
+
     .callout-title {
         padding-left: calc(var(--pushpin-size) * 0.6);
         justify-content: center;
         background: none;
     }
     .callout-title-inner {
-        font-family: var(--callout-font-header);
         color: var(--color-accent);
     }
 
     .callout-content {
-        font-family: var(--callout-font-body);
         border: none;
     }
-    p:last-of-type { margin-bottom: 0; }
+    p:last-of-type {
+        margin-bottom: 0;
+    }
 }
 
 .theme-light .callout[data-callout="pinned"]:not([data-callout-metadata~="dark"]) {

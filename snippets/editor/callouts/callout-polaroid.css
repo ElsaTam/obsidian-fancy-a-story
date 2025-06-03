@@ -37,6 +37,8 @@ body {
   color: var(--text-normal);
   background: none;
   justify-content: center;
+}
+.callout[data-callout=polaroid]:not([data-callout-metadata~=default-font]) .callout-title {
   font-family: var(--polaroid-font);
 }
 .callout[data-callout=polaroid] .callout-content {

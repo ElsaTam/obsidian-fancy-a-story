@@ -14,6 +14,7 @@ Write `> [!callout-name|option-1 option-2 option-3]` to customize your callout.
 | `black-and-white`, `b-w` | Desaturate everything inside the callout            |
 | `blank`                  | Zero styling, no title, no spacing, no border, etc. |
 | `clear`                  | Allows the callout to be below (cleared) floating elements |
+| `default-font`           | Don't use specific font for the callout             |
 | `right`, `float-right`   | Floating element on the right                       |
 | `left`, `float-left`     | Floating element on the left                        |
 | `no-background`, `no-bg` | No background                                       |

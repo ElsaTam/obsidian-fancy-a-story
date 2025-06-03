@@ -1,5 +1,5 @@
 body {
-    --callout-screen-font: 'ProFont', 'Chakra Petch', 'Courier New', Courier, monospace;
+    --callout-screen-font: "ProFont", "Chakra Petch", "Courier New", Courier, monospace;
 }
 
 .theme-dark .callout[data-callout="screen"] {
@@ -23,9 +23,13 @@ body {
     --image-shadow-offset: 0;
 
     color: rgb(var(--callout-color));
-    font-family: var(--callout-screen-font);
 
-    &, .callout-title {
+    &:not([data-callout-metadata~="default-font"]) {
+        font-family: var(--callout-screen-font);
+    }
+
+    &,
+    .callout-title {
         background: none;
     }
     .callout-fold {

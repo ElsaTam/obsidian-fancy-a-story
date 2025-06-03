@@ -14,7 +14,7 @@ body {
   --line-height-tight: 1;
   --icon-stroke: 3px;
 }
-.callout[data-callout=profile] .callout-title {
+.callout[data-callout=profile]:not([data-callout-metadata~=default-font]) .callout-title {
   font-family: var(--font-typewriter);
 }
 .callout[data-callout=profile] .callout-icon {

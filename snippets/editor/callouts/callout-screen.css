@@ -26,9 +26,12 @@ body {
   --indentation-guide-color: rgba(var(--callout-color), 0.2);
   --image-shadow-offset: 0;
   color: rgb(var(--callout-color));
+}
+.callout[data-callout=screen]:not([data-callout-metadata~=default-font]) {
   font-family: var(--callout-screen-font);
 }
-.callout[data-callout=screen], .callout[data-callout=screen] .callout-title {
+.callout[data-callout=screen],
+.callout[data-callout=screen] .callout-title {
   background: none;
 }
 .callout[data-callout=screen] .callout-fold {

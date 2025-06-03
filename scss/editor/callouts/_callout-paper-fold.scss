@@ -90,7 +90,6 @@ body {
     --postit-color-opaque: rgb(var(--callout-color));
     --postit-border-color: var(--text-faint);
 
-    font-family: "Walter Turncoat", "Comic Sans MS", cursive;
     color: black;
 
     background: linear-gradient(
@@ -108,6 +107,10 @@ body {
         0 100%
     );
     overflow: hidden;
+}
+
+.callout[data-callout="paper-fold"]:not([data-callout-metadata~="default-font"]) {
+    font-family: "Walter Turncoat", "Comic Sans MS", cursive;
 }
 
 .callout[data-callout="paper-fold"] :is(.callout-title, svg) {

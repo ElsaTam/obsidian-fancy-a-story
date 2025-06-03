@@ -13,6 +13,8 @@ body {
   --callout-border-width: 1px;
   --callout-email-color: var(--mono-rgb-100);
   --callout-color: var(--callout-email-color);
+}
+.callout[data-callout=email]:not([data-callout-metadata~=default-font]) {
   font-family: "Courier New", Courier, monospace;
 }
 .callout[data-callout=email] > .callout-title {

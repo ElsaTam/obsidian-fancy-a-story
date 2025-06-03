@@ -3,23 +3,26 @@
     --gutter: 20px;
     --strip-height: 200px;
     --image-shadow-offset: 0;
-    
+
     --comic-color-rgb: 0, 0, 0; // Color of the lines, text, etc. (black)
-    --comic-background-rgb: 255, 255, 255;  // background of the whole comic (white)
+    --comic-background-rgb: 255, 255, 255; // background of the whole comic (white)
 
     --callout-radius: 0;
     --callout-content-padding: var(--size-4-4);
     --callout-blend-mode: normal;
     --callout-color: var(--comic-color-rgb);
     --callout-border-width: 1px;
-    
+
     --border-radius-0: 81% 3% 0px 0px / 3% 94% 0px 0px;
     --border-radius-1: 100% 4% 0px 0px / 6% 82% 0px 0px;
     --border-radius-2: 100% 3% 0px 0px / 3% 49% 0px 0px;
     --border-radius-3: 4% 30% 0px 0px / 51% 3% 0px 0px;
 
     background: rgb(var(--comic-background-rgb));
-    font-family: "VTC Letterer Pro", "Comic Sans", "Arial", sans-serif;
+
+    &:not([data-callout-metadata~="default-font"]) {
+        font-family: "VTC Letterer Pro", "Comic Sans", "Arial", sans-serif;
+    }
 }
 
 .callout[data-callout="comic"] .callout-content {
@@ -37,7 +40,7 @@
     position: relative;
     border: none;
     max-height: var(--strip-height);
-    
+
     > .callout-title {
         display: none;
     }
@@ -50,7 +53,8 @@
         color: rgb(var(--comic-color-rgb));
         background-color: rgb(var(--comic-background-rgb));
         border-top: 1px solid rgb(var(--comic-color-rgb));
-        left: 0; right: 0;
+        left: 0;
+        right: 0;
         bottom: 0;
         text-align: center;
     }
@@ -91,12 +95,25 @@
         box-shadow: 1px 1px 0px 1px #000000;
     }
 
-    &[data-callout-metadata~="top"] > .callout-content > p { bottom: unset; }
-    &[data-callout-metadata~="bottom"] > .callout-content > p { top: unset; }
-    &[data-callout-metadata~="left"] > .callout-content > p { right: unset; }
-    &[data-callout-metadata~="right"] > .callout-content > p { left: unset; }
+    &[data-callout-metadata~="top"] > .callout-content > p {
+        bottom: unset;
+    }
+    &[data-callout-metadata~="bottom"] > .callout-content > p {
+        top: unset;
+    }
+    &[data-callout-metadata~="left"] > .callout-content > p {
+        right: unset;
+    }
+    &[data-callout-metadata~="right"] > .callout-content > p {
+        left: unset;
+    }
 
-    &:is([data-callout-metadata~="top"], [data-callout-metadata~="bottom"], [data-callout-metadata~="left"], [data-callout-metadata~="right"]) {
+    &:is(
+            [data-callout-metadata~="top"],
+            [data-callout-metadata~="bottom"],
+            [data-callout-metadata~="left"],
+            [data-callout-metadata~="right"]
+        ) {
         float: none;
         margin: 0;
     }
@@ -105,7 +122,8 @@
 .callout[data-callout="comic-panel"][data-callout-metadata~="overflow"] {
     --g: 3px; // small gap to avoid touching other panels
     --b: 5px; // border-width
-    &, .callout-content {
+    &,
+    .callout-content {
         overflow: visible;
     }
     .callout-content {
@@ -126,21 +144,41 @@
         border-image-repeat: stretch stretch;
         border-style: solid;
     }
-    > *:nth-child(6n  ) { border-image-source: var(--border-pannel-0-source); }
-    > *:nth-child(6n+1) { border-image-source: var(--border-pannel-1-source); }
-    > *:nth-child(6n+2) { border-image-source: var(--border-pannel-2-source); }
-    > *:nth-child(6n+3) { border-image-source: var(--border-pannel-3-source); }
-    > *:nth-child(6n+4) { border-image-source: var(--border-pannel-4-source); }
-    > *:nth-child(6n+5) { border-image-source: var(--border-pannel-5-source); }
+    > *:nth-child(6n) {
+        border-image-source: var(--border-pannel-0-source);
+    }
+    > *:nth-child(6n + 1) {
+        border-image-source: var(--border-pannel-1-source);
+    }
+    > *:nth-child(6n + 2) {
+        border-image-source: var(--border-pannel-2-source);
+    }
+    > *:nth-child(6n + 3) {
+        border-image-source: var(--border-pannel-3-source);
+    }
+    > *:nth-child(6n + 4) {
+        border-image-source: var(--border-pannel-4-source);
+    }
+    > *:nth-child(6n + 5) {
+        border-image-source: var(--border-pannel-5-source);
+    }
 
     > .callout[data-callout-metadata~="overflow"] {
         border-image: none;
         border: var(--b) solid rgb(var(--comic-color-rgb));
     }
-    > .callout[data-callout-metadata~="overflow"]:nth-child(4n  ) { border-radius: var(--border-radius-0); }
-    > .callout[data-callout-metadata~="overflow"]:nth-child(4n+1) { border-radius: var(--border-radius-1); }
-    > .callout[data-callout-metadata~="overflow"]:nth-child(4n+2) { border-radius: var(--border-radius-2); }
-    > .callout[data-callout-metadata~="overflow"]:nth-child(4n+3) { border-radius: var(--border-radius-3); }
+    > .callout[data-callout-metadata~="overflow"]:nth-child(4n) {
+        border-radius: var(--border-radius-0);
+    }
+    > .callout[data-callout-metadata~="overflow"]:nth-child(4n + 1) {
+        border-radius: var(--border-radius-1);
+    }
+    > .callout[data-callout-metadata~="overflow"]:nth-child(4n + 2) {
+        border-radius: var(--border-radius-2);
+    }
+    > .callout[data-callout-metadata~="overflow"]:nth-child(4n + 3) {
+        border-radius: var(--border-radius-3);
+    }
 }
 
 .callout[data-callout="comic"][data-callout-metadata="straight"] > .callout-content > * {

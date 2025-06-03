@@ -19,6 +19,8 @@ Author: ElsaTam (Kapirklaa in Discord)
   --border-radius-2: 100% 3% 0px 0px / 3% 49% 0px 0px;
   --border-radius-3: 4% 30% 0px 0px / 51% 3% 0px 0px;
   background: rgb(var(--comic-background-rgb));
+}
+.callout[data-callout=comic]:not([data-callout-metadata~=default-font]) {
   font-family: "VTC Letterer Pro", "Comic Sans", "Arial", sans-serif;
 }
 
@@ -101,7 +103,10 @@ Author: ElsaTam (Kapirklaa in Discord)
 .callout[data-callout=comic-panel][data-callout-metadata~=bubble][data-callout-metadata~=right] > .callout-content > p {
   left: unset;
 }
-.callout[data-callout=comic-panel][data-callout-metadata~=bubble]:is([data-callout-metadata~=top], [data-callout-metadata~=bottom], [data-callout-metadata~=left], [data-callout-metadata~=right]) {
+.callout[data-callout=comic-panel][data-callout-metadata~=bubble]:is([data-callout-metadata~=top],
+[data-callout-metadata~=bottom],
+[data-callout-metadata~=left],
+[data-callout-metadata~=right]) {
   float: none;
   margin: 0;
 }
@@ -110,7 +115,8 @@ Author: ElsaTam (Kapirklaa in Discord)
   --g: 3px;
   --b: 5px;
 }
-.callout[data-callout=comic-panel][data-callout-metadata~=overflow], .callout[data-callout=comic-panel][data-callout-metadata~=overflow] .callout-content {
+.callout[data-callout=comic-panel][data-callout-metadata~=overflow],
+.callout[data-callout=comic-panel][data-callout-metadata~=overflow] .callout-content {
   overflow: visible;
 }
 .callout[data-callout=comic-panel][data-callout-metadata~=overflow] .callout-content {
