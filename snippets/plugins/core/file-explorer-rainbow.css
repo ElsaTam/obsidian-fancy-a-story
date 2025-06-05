@@ -2,6 +2,11 @@
 FAS - File Explorer Rainbow
 Author: ElsaTam (Kapirklaa in Discord)
 */
+body {
+  --rainbow-brightness: 1;
+  --rainbow-saturation: 1;
+}
+
 .theme-light {
   --color-rainbow-1: hsl(18, 60%, 40%);
   --color-rainbow-1-rgb: 163, 78, 41;
@@ -50,8 +55,6 @@ Author: ElsaTam (Kapirklaa in Discord)
 
 body {
   --fas-rainbow-folders: enable;
-  --rainbow-brightness: 1;
-  --rainbow-saturation: 10;
 }
 
 @container style(--fas-rainbow-folders: enable) {

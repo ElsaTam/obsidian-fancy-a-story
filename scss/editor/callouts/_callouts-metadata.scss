@@ -109,6 +109,10 @@
     margin: var(--fas-float-inline-margin, 12px) 0 var(--fas-float-inline-margin, 12px)
         var(--fas-float-inline-margin, 12px);
     max-width: 300px;
+
+    img {
+        max-width: calc(299px - var(--image-shadow-offset));
+    }
 }
 
 .markdown-preview-view .callout:is([data-callout-metadata~="left"], [data-callout-metadata~="float-left"]) {
@@ -117,6 +121,10 @@
     margin: var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px)
         var(--fas-float-inline-margin, 12px) 0;
     max-width: 300px;
+
+    img {
+        max-width: calc(299px - var(--image-shadow-offset));
+    }
 }
 
 .callout[data-callout-metadata~="clear"] {

@@ -1,17 +1,17 @@
-@forward '../../shared/workleaves';
+@forward "../../shared/workleaves";
+
 
 
 .callout[data-callout="caption"] {
+    --p-spacing: 0;
     border: none;
     background: none;
-    --p-spacing: 0;
 
     display: flex;
     flex-direction: column-reverse;
 
     .callout-title {
         font-size: 0.8em;
-        display: block;
         width: fit-content;
         margin-inline-end: auto;
         font-style: italic;
@@ -31,10 +31,22 @@
         display: none;
     }
 
+    .callout-fold {
+        order: -1;
+        padding-inline-end: 0;
+    }
+
     .callout-content {
         padding: 0;
         border: none;
         border-left: 1px solid rgb(var(--callout-color));
+        overflow: hidden;
+    }
+}
+
+.callout[data-callout="caption"].is-collapsed {
+    .callout-title {
+        inset-block-start: unset;
     }
 }
 
@@ -44,6 +56,7 @@
         background-color: color-mix(in srgb, var(--workleaves-background), var(--color-accent) 20%);
         border-left: 1px solid var(--color-accent);
     }
+
     .callout-content {
         border-left: 1px solid var(--color-accent);
     }
