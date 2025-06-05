@@ -1,5 +1,10 @@
-@import 'helper-functions';
-@import 'colors_definitions';
+@import "helper-functions";
+@import "colors_definitions";
+
+body {
+    --rainbow-brightness: 1;
+    --rainbow-saturation: 1;
+}
 
 // Create the block for default theme (no mixing)
 @each $tone in ("light", "dark") {
