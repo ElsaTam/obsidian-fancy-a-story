@@ -935,6 +935,22 @@ settings:
         format: rgb
         default-light: '#000000'
         default-dark: '#ffffff'
+    -
+        id: text-highlight-bg
+        title: Highlight background color
+        type: variable-themed-color
+        opacity: true
+        format: rgb
+        default-light: '#ffd00066'
+        default-dark: '#ffd00066'
+    -
+        id: text-highlight-fg
+        title: Highlight text color
+        type: variable-themed-color
+        opacity: false
+        format: rgb
+        default-light: '#000000'
+        default-dark: '#ffffff'
 
 
 
