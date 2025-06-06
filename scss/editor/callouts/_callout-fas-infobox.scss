@@ -9,6 +9,7 @@ body {
     --fas-infobox-max-width: 300px;
 }
 
+:where(.fas-callout-infobox) .callout[data-callout="infobox"][data-callout-metadata~="full-width"],
 .callout[data-callout="fas-infobox"][data-callout-metadata~="full-width"] {
     --fas-infobox-max-width: 100%;
 }

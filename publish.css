@@ -1771,6 +1771,7 @@ body {
   --fas-infobox-max-width: 300px;
 }
 
+:where(.fas-callout-infobox) .callout[data-callout=infobox][data-callout-metadata~=full-width],
 .callout[data-callout=fas-infobox][data-callout-metadata~=full-width] {
   --fas-infobox-max-width: 100%;
 }
@@ -3564,8 +3565,10 @@ body {
   margin: var(--fas-float-inline-margin, 12px) 0 var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px);
   max-width: 300px;
 }
-.markdown-preview-view .callout:is([data-callout-metadata~=right], [data-callout-metadata~=float-right]) img {
-  max-width: calc(299px - var(--image-shadow-offset));
+@container not (style(--image-shadow-offset: 0) or style(--image-shadow-offset: 0px)) {
+  .markdown-preview-view .callout:is([data-callout-metadata~=right], [data-callout-metadata~=float-right]) img {
+    max-width: min(100%, 299px - var(--image-shadow-offset));
+  }
 }
 
 .markdown-preview-view .callout:is([data-callout-metadata~=left], [data-callout-metadata~=float-left]) {
@@ -3574,8 +3577,10 @@ body {
   margin: var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px) 0;
   max-width: 300px;
 }
-.markdown-preview-view .callout:is([data-callout-metadata~=left], [data-callout-metadata~=float-left]) img {
-  max-width: calc(299px - var(--image-shadow-offset));
+@container not (style(--image-shadow-offset: 0) or style(--image-shadow-offset: 0px)) {
+  .markdown-preview-view .callout:is([data-callout-metadata~=left], [data-callout-metadata~=float-left]) img {
+    max-width: min(100%, 299px - var(--image-shadow-offset));
+  }
 }
 
 .callout[data-callout-metadata~=clear] {

@@ -110,8 +110,10 @@
         var(--fas-float-inline-margin, 12px);
     max-width: 300px;
 
-    img {
-        max-width: calc(299px - var(--image-shadow-offset));
+    @container not (style(--image-shadow-offset: 0) or style(--image-shadow-offset: 0px)) {
+        img {
+            max-width: min(100%, 299px - var(--image-shadow-offset));
+        }
     }
 }
 
@@ -122,8 +124,10 @@
         var(--fas-float-inline-margin, 12px) 0;
     max-width: 300px;
 
-    img {
-        max-width: calc(299px - var(--image-shadow-offset));
+    @container not (style(--image-shadow-offset: 0) or style(--image-shadow-offset: 0px)) {
+        img {
+            max-width: min(100%, 299px - var(--image-shadow-offset));
+        }
     }
 }
 
