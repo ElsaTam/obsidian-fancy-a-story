@@ -373,10 +373,10 @@ $fwi_sel: "";
 
 /* Sidebar backgrounds */
 @container style(--art-deco-style-sidebar-textures: enable) {
-    .fas-skin-art-deco:not(.fas-file-explorer-decoration-custom) .app-container {
+    .fas-skin-art-deco.fas-bg-textures:not(.fas-file-explorer-decoration-custom) .app-container {
         --file-explorer-decoration: ;
     }
-    .fas-skin-art-deco:not(.fas-sidebar-texture-custom) .app-container {
+    .fas-skin-art-deco.fas-bg-textures:not(.fas-sidebar-texture-custom) .app-container {
         --sidebar-texture: var(--art-deco-background);
         --sidebar-texture-size: auto 100%;
         --sidebar-texture-blend: soft-light;

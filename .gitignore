@@ -24,3 +24,4 @@ node_modules
 .memo.md
 _test.scss
 git-filter-repo
+assets/

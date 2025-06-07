@@ -39,8 +39,8 @@ body {
     background-repeat: no-repeat;
     z-index: -1;
 }
-.fas-bg-textures.theme-dark .workspace-leaf-content[data-type="file-explorer"]::before {
-    mix-blend-mode: var(--file-explorer-decoration-blend-dark);
+.fas-bg-textures.theme-dark {
+    --file-explorer-decoration-blend: var(--file-explorer-decoration-blend-dark);
 }
 .fas-bg-textures:not(.fas-file-explorer-decoration-custom) .workspace-leaf-content[data-type="file-explorer"]::before {
     filter: sepia(1);
@@ -86,8 +86,8 @@ body {
     background-blend-mode: normal, var(--sidebar-texture-blend);
     background-position: var(--sidebar-texture-position);
 }
-.fas-bg-textures.theme-dark .mod-sidedock .workspace-leaf {
-    background-blend-mode: normal, var(--sidebar-texture-blend-dark);
+.fas-bg-textures.theme-dark {
+    --sidebar-texture-blend: var(--sidebar-texture-blend-dark);
 }
 
 body {

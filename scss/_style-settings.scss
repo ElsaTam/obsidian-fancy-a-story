@@ -538,6 +538,12 @@ settings:
         type: variable-number
         format: px
         default: 700
+    - 
+        id: fas-compact
+        title: Compact mode
+        description: Enable to use a more compact layout in the editor, reducing multiple spacingg
+        markdown: true
+        type: class-toggle
 
     - 
         id: callouts
