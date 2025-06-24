@@ -1,0 +1,60 @@
+@use "../../mixins/wide";
+
+body {
+    --page-break-height-thin: 1.5em;
+    --page-break-height-default: 3em;
+    --page-break-height-large: 5em;
+    --page-break-height-xlarge: 7em;
+}
+
+.callout[data-callout="page-break"][data-callout-metadata~="thin"] {
+    --page-break-height: var(--page-break-height-thin);
+}
+
+.callout[data-callout="page-break"][data-callout-metadata~="large"] {
+    --page-break-height: var(--page-break-height-large);
+}
+
+.callout[data-callout="page-break"][data-callout-metadata~="x-large"] {
+    --page-break-height: var(--page-break-height-xlarge);
+}
+
+.callout[data-callout="page-break"] {
+    --page-break-height: var(--page-break-height-default);
+    --callout-blend-mode: normal;
+    --callout-padding: 0;
+    --callout-title-padding: 0;
+    --callout-content-padding: 0;
+
+    @include wide.wide(1);
+
+    background-color: var(--workspace-background, var(--background-secondary));
+    min-height: var(--page-break-height);
+
+    border-block: 1px rgb(var(--mono-rgb-0)) solid;
+    border-inline: none;
+    display: flex;
+
+    .callout-title {
+        background: none;
+        border: none;
+        align-items: center;
+    }
+
+    .callout-content {
+        border: none;
+    }
+
+    .callout-icon,
+    .callout-title-inner {
+        display: none;
+    }
+}
+
+@media print {
+    .print .callout[data-callout="page-break"] {
+        max-height: 0 !important;
+        visibility: hidden;
+        break-after: page;
+    }
+}
