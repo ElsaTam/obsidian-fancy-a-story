@@ -298,6 +298,18 @@ Wrap the table code in source mode so it isn't wider than the note.
 
 #### Italic text color
 
+#### Highlight background color
+
+#### Highlight text color
+
+#### Pen highlighter effect
+
+Add a skeuomorphic effect to the highlights. Works better in light mode.
+
+[![]({% link images/typography/pen-highlighter-light.webp %})]({% link images/typography/pen-highlighter-light.webp %})
+
+[![]({% link images/typography/pen-highlighter-dark.webp %})]({% link images/typography/pen-highlighter-dark.webp %})
+
 
 # Features
 

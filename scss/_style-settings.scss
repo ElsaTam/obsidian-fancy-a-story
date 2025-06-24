@@ -957,6 +957,18 @@ settings:
         format: rgb
         default-light: '#000000'
         default-dark: '#ffffff'
+    - 
+        id: pen-highlighter-effect
+        title: Pen highlighter effect
+        type: variable-select
+        default: disable
+        options:
+            - 
+                value: enable
+                label: Enable
+            - 
+                value: disable
+                label: Disable
 
 
 
