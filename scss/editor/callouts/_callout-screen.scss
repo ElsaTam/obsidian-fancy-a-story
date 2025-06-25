@@ -1,12 +1,14 @@
 body {
     --callout-screen-font: "ProFont", "Chakra Petch", "Courier New", Courier, monospace;
+    --callout-screen-color-light-rgb: 33, 162, 58;
+    --callout-screen-color-dark-rgb: 68, 207, 110;
 }
 
-.theme-dark .callout[data-callout="screen"] {
-    --callout-color: 68, 207, 110;
-}
 .theme-light .callout[data-callout="screen"] {
-    --callout-color: 33, 162, 58;
+    --callout-color: var(--callout-screen-color-light-rgb);
+}
+.theme-dark .callout[data-callout="screen"] {
+    --callout-color: var(--callout-screen-color-dark-rgb);
 }
 
 .callout[data-callout="screen"] {
