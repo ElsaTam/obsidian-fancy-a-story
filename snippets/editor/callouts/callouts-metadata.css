@@ -172,3 +172,26 @@ body {
 .callout[data-callout-metadata~=table-fixed] table {
   table-layout: fixed;
 }
+
+.callout[data-callout-metadata~=overflow],
+.callout[data-callout-metadata~=overflow] .callout-content {
+  overflow: visible;
+}
+
+body {
+  --callout-handwritten-font: "Lucida Handwriting", "Comic Sans MS", "Brush Script MT", cursive;
+  --callout-monospace-font: var(--font-monospace);
+  --callout-sans-serif-font: "Noto";
+}
+
+.callout[data-callout-metadata~=handwritten] {
+  font-family: var(--callout-handwritten-font);
+}
+
+.callout[data-callout-metadata~=monospace] {
+  font-family: var(--callout-monospace-font);
+}
+
+.callout[data-callout-metadata~=sans-serif] {
+  font-family: var(--callout-sans-serif-font);
+}

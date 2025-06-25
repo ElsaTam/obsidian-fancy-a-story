@@ -88,8 +88,8 @@ Author: ElsaTam (Kapirklaa in Discord)
 }
 .callout[data-callout=autopsy] .callout {
   /* NESTED CALLOUTS */
-  --callout-border-width: 0;
-  --callout-radius: 0;
+  --callout-border-width: 0px;
+  --callout-radius: 0px;
   --callout-color: var(--callout-color-nested);
   --callout-title-color: var(--callout-color-nested);
   --callout-padding: var(--size-4-5) var(--size-4-3);
