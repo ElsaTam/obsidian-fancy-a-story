@@ -12,6 +12,8 @@ nav_order: 1
 <strong style="color: white;">How to solve</strong>: if the Installer version is too low, download the latest version of Obsidian from the official website and install it again.
 </div>
 
+You can download a demo vault here: https://github.com/ElsaTam/obsidian-fancy-a-story-demo-vault
+
 # Included in this theme
 
 - [Style Settings]({% link docs/stylesettings/stylesettings.md %})
