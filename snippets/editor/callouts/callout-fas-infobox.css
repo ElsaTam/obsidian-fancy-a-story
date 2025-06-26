@@ -111,21 +111,19 @@ body {
   height: var(--infobox-icon-size, 70px);
   width: var(--infobox-icon-size, 70px);
   margin-top: calc(-0.5 * var(--infobox-icon-size, 70px));
-  margin-bottom: calc(-0.5 * var(--infobox-icon-size, 70px));
   z-index: 2;
 }
 .callout[data-callout=fas-infobox] p + p > .image-embed[alt~=icon] {
-  margin-top: calc(-0.5 * var(--infobox-icon-size, 70px) - var(--p-spacing));
+  margin-top: calc(-0.5 * var(--infobox-icon-size, 70px) - var(--p-spacing) - var(--font-text-size));
 }
 .callout[data-callout=fas-infobox] img[alt*=icon]:not(.image-embed img) {
   display: block;
   position: relative;
   margin-top: calc(-0.5 * var(--infobox-icon-size, 70px));
-  margin-bottom: calc(-0.5 * var(--infobox-icon-size, 70px));
   z-index: 2;
 }
 .callout[data-callout=fas-infobox] p + p > img[alt*=icon]:not(.image-embed img) {
-  margin-top: calc(-0.5 * var(--infobox-icon-size, 70px) - var(--p-spacing));
+  margin-top: calc(-0.5 * var(--infobox-icon-size, 70px) - var(--p-spacing) - var(--font-text-size));
 }
 .callout[data-callout=fas-infobox] img[alt*=icon] {
   height: var(--infobox-icon-size, 70px);

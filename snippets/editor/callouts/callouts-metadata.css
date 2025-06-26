@@ -171,6 +171,7 @@ body {
 
 .callout[data-callout-metadata~=table-fixed] table {
   table-layout: fixed;
+  width: 100%;
 }
 
 .callout[data-callout-metadata~=overflow],
@@ -181,7 +182,7 @@ body {
 body {
   --callout-handwritten-font: "Lucida Handwriting", "Comic Sans MS", "Brush Script MT", cursive;
   --callout-monospace-font: var(--font-monospace);
-  --callout-sans-serif-font: "Noto";
+  --callout-sans-serif-font: "Noto", "Arial", serif;
 }
 
 .callout[data-callout-metadata~=handwritten] {

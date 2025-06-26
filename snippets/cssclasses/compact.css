@@ -1,0 +1,52 @@
+/* GPLv3 license
+FAS - Compact
+Author: ElsaTam (Kapirklaa in Discord)
+*/
+/* Both */
+.compact:is(.markdown-source-view, .markdown-preview-view) {
+  --callout-title-padding: 5px 12px;
+  --callout-content-padding: var(--size-2-3) var(--size-2-3) var(--size-2-3) var(--size-4-3);
+  --table-cell-vertical-alignment: middle;
+  --p-spacing: 0.6rem;
+  --heading-spacing: calc(var(--p-spacing) * 1.5);
+  --line-height-normal: 1.25em;
+  --line-height-tight: 1em;
+  --metadata-padding: var(--size-4-3) var(--size-4-1) var(--size-4-1) var(--size-4-1);
+}
+.compact:is(.markdown-source-view, .markdown-preview-view) .callout {
+  margin-block: 0.3em;
+}
+.compact:is(.markdown-source-view, .markdown-preview-view) .callout-icon {
+  --icon-size: 14px;
+}
+.compact:is(.markdown-source-view, .markdown-preview-view) .callout-content > *:first-child {
+  margin-block-start: 0px;
+}
+.compact:is(.markdown-source-view, .markdown-preview-view) .callout-content > *:last-child {
+  margin-block-end: 0px;
+}
+.compact:is(.markdown-source-view, .markdown-preview-view) .callout[data-callout=grid] > .callout-content {
+  gap: 0.3em;
+}
+.compact:is(.markdown-source-view, .markdown-preview-view) .callout[data-callout=fas-infobox] {
+  --p-spacing: 0;
+  --h1-line-height: 1.4;
+}
+.compact:is(.markdown-source-view, .markdown-preview-view) .callout[data-callout=fas-infobox] h1 {
+  --h1-size: 1.5em;
+}
+.compact:is(.markdown-source-view, .markdown-preview-view) audio {
+  height: 32px;
+}
+.compact:is(.markdown-source-view, .markdown-preview-view) audio::-webkit-media-controls-current-time-display, .compact:is(.markdown-source-view, .markdown-preview-view) audio::-webkit-media-controls-time-remaining-display {
+  font-size: 12px;
+}
+.compact:is(.markdown-source-view, .markdown-preview-view) table {
+  line-height: 1;
+}
+.compact:is(.markdown-source-view, .markdown-preview-view) table :is(td, th):empty {
+  height: unset;
+}
+
+/* Live preview */
+/* Preview */

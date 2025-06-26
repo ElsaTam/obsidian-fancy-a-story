@@ -26,6 +26,7 @@ body {
   --indentation-guide-color: var(--tree-view-guide-color);
   --list-bullet-size: 0.8em;
   position: relative;
+  padding-inline-start: calc(var(--list-indent) - 3ch);
 }
 .tree-view .el-ul > ul li::after {
   content: "";

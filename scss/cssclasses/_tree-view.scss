@@ -1,5 +1,5 @@
-@use '../animations/animations';
-@forward '../shared/workleaves';
+@use "../animations/animations";
+@forward "../shared/workleaves";
 
 body {
     --tree-view-guide-color: var(--background-secondary);
@@ -12,9 +12,10 @@ body {
     --list-bullet-size: 0.8em;
 
     position: relative;
+    padding-inline-start: calc(var(--list-indent) - 3ch);
 
     li::after {
-        content: '';
+        content: "";
         display: block;
         position: absolute;
         top: calc(-0.5em * var(--line-height-normal) - var(--indentation-guide-width) * 0.5);
@@ -47,7 +48,10 @@ body {
         position: absolute;
         opacity: 1;
         top: calc(0.5em * var(--line-height-normal) - var(--list-bullet-size) * 0.5 + var(--list-spacing));
-        left: calc(var(--indentation-guide-reading-indent) - var(--list-bullet-size) * 0.5 + var(--indentation-guide-width) * 0.5);
+        left: calc(
+            var(--indentation-guide-reading-indent) - var(--list-bullet-size) * 0.5 + var(--indentation-guide-width) *
+                0.5
+        );
         margin: 0;
         padding: 0;
         display: block;
@@ -71,7 +75,6 @@ body {
         display: none;
     }
 
-
     li:hover {
         &::after {
             border-color: var(--color-accent);
@@ -81,7 +84,6 @@ body {
         }
     }
 
-
     li:has(> .list-bullet:last-child):hover::before {
         content: "";
         position: absolute;
@@ -89,10 +91,7 @@ body {
         right: 0;
         left: 0;
         bottom: 0;
-        background: linear-gradient(to right,
-            var(--color-accent),
-            transparent 100%
-        );
+        background: linear-gradient(to right, var(--color-accent), transparent 100%);
         opacity: 0.2;
         animation: bg-slide 0.5s ease-in-out;
     }

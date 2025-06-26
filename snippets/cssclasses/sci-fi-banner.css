@@ -34,7 +34,7 @@ body {
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 100% 100%;
   transition: all 0.5s ease-in-out;
-  z-index: -1;
+  pointer-events: none;
 }
 
 .sci-fi-banner .inline-title:hover::before {
@@ -54,7 +54,7 @@ body {
   -webkit-mask-size: 100%;
   -webkit-mask-repeat: no-repeat;
   transition: all 0.5s ease-in-out;
-  z-index: -1;
+  pointer-events: none;
 }
 
 .sci-fi-banner .inline-title:hover::after {

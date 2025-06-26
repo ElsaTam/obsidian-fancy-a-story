@@ -15,12 +15,15 @@ Write `> [!callout-name|option-1 option-2 option-3]` to customize your callout.
 | `blank`                  | Zero styling, no title, no spacing, no border, etc. |
 | `clear`                  | Allows the callout to be below (cleared) floating elements |
 | `default-font`           | Don't use specific font for the callout             |
-| `right`, `float-right`   | Floating element on the right                       |
-| `left`, `float-left`     | Floating element on the left                        |
+| `handwritten`            | Handwritten/cursive font                            |
+| `float-right`, `right`   | Floating element on the right                       |
+| `float-left`, `left`     | Floating element on the left                        |
+| `monospace`              | Monospace font                                      |
 | `no-background`, `no-bg` | No background                                       |
 | `no-blending`            | No blending                                         |
 | `no-icon`                | No icon                                             |
 | `no-title`               | No title                                            |
+| `sans-serif`             | Sans-serif font                                     |
 | `wide`                   | Make the element full wide                          |
 
 Source: [`callouts-metadata.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callouts-metadata.css)

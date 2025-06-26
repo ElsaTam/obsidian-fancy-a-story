@@ -124,3 +124,17 @@ body {
     margin-inline: auto;
   }
 }
+.markdown-rendered .image-embed[alt~=center]:only-child {
+  display: block;
+  margin-inline: auto;
+}
+
+.markdown-rendered img[alt~=center]:not(.image-embed img):not(.emoji):only-child {
+  display: block;
+  margin-inline: auto;
+}
+
+.markdown-source-view .cm-content > .image-embed[alt~=center] img {
+  display: block;
+  margin-inline: auto;
+}

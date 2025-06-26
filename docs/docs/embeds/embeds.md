@@ -12,6 +12,7 @@ When embeding an image, add an alt option:
 
 | Alt option               | Description                         | Source |
 |:-------------------------|:------------------------------------|:-------|
+| `center`                 | Center the image if possible (doesn't work with shadow in live preview) | [`image.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/image.css) |
 | `right`, `float-right`   | Right floating image (preview mode) | [`image.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/image.css) |
 | `left`, `float-left`     | Left floating image (preview mode)  | [`image.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/image.css) |
 | `{color}`                | Change the striped shadow color     | [`image.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/image.css) |

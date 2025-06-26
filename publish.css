@@ -1892,24 +1892,22 @@ body {
   height: var(--infobox-icon-size, 70px);
   width: var(--infobox-icon-size, 70px);
   margin-top: calc(-0.5 * var(--infobox-icon-size, 70px));
-  margin-bottom: calc(-0.5 * var(--infobox-icon-size, 70px));
   z-index: 2;
 }
 :where(.fas-callout-infobox) .callout[data-callout=infobox] p + p > .image-embed[alt~=icon],
 .callout[data-callout=fas-infobox] p + p > .image-embed[alt~=icon] {
-  margin-top: calc(-0.5 * var(--infobox-icon-size, 70px) - var(--p-spacing));
+  margin-top: calc(-0.5 * var(--infobox-icon-size, 70px) - var(--p-spacing) - var(--font-text-size));
 }
 :where(.fas-callout-infobox) .callout[data-callout=infobox] img[alt*=icon]:not(.image-embed img),
 .callout[data-callout=fas-infobox] img[alt*=icon]:not(.image-embed img) {
   display: block;
   position: relative;
   margin-top: calc(-0.5 * var(--infobox-icon-size, 70px));
-  margin-bottom: calc(-0.5 * var(--infobox-icon-size, 70px));
   z-index: 2;
 }
 :where(.fas-callout-infobox) .callout[data-callout=infobox] p + p > img[alt*=icon]:not(.image-embed img),
 .callout[data-callout=fas-infobox] p + p > img[alt*=icon]:not(.image-embed img) {
-  margin-top: calc(-0.5 * var(--infobox-icon-size, 70px) - var(--p-spacing));
+  margin-top: calc(-0.5 * var(--infobox-icon-size, 70px) - var(--p-spacing) - var(--font-text-size));
 }
 :where(.fas-callout-infobox) .callout[data-callout=infobox] img[alt*=icon],
 .callout[data-callout=fas-infobox] img[alt*=icon] {
@@ -3764,6 +3762,7 @@ body {
 
 .callout[data-callout-metadata~=table-fixed] table {
   table-layout: fixed;
+  width: 100%;
 }
 
 .callout[data-callout-metadata~=overflow],
@@ -3774,7 +3773,7 @@ body {
 body {
   --callout-handwritten-font: "Lucida Handwriting", "Comic Sans MS", "Brush Script MT", cursive;
   --callout-monospace-font: var(--font-monospace);
-  --callout-sans-serif-font: "Noto";
+  --callout-sans-serif-font: "Noto", "Arial", serif;
 }
 
 .callout[data-callout-metadata~=handwritten] {
@@ -4690,6 +4689,21 @@ body {
     margin-inline: auto;
   }
 }
+.markdown-rendered .image-embed[alt~=center]:only-child {
+  display: block;
+  margin-inline: auto;
+}
+
+.markdown-rendered img[alt~=center]:not(.image-embed img):not(.emoji):only-child {
+  display: block;
+  margin-inline: auto;
+}
+
+.markdown-source-view .cm-content > .image-embed[alt~=center] img {
+  display: block;
+  margin-inline: auto;
+}
+
 body {
   --link-decoration-hover: var(--link-decoration);
   --link-external-decoration: underline;

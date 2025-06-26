@@ -57,6 +57,7 @@ body {
             background-color: black;
             mix-blend-mode: multiply;
             opacity: var(--footer-img-opacity);
+            pointer-events: none;
 
             p {
                 margin: 0;
@@ -87,10 +88,6 @@ body {
         p {
             background-color: rgb(from var(--footer-img-color) calc(255 - r) calc(255 - g) calc(255 - b));
         }
-    }
-
-    :is(.footer-background, .footer-bg)[class*="footer-img"] > .markdown-preview-section > div:nth-last-child(2) {
-        z-index: -1;
     }
 }
 
