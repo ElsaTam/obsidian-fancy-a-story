@@ -332,7 +332,7 @@ $fwi_sel: "";
         border-bottom-width: 0;
         padding-bottom: 30px;
 
-        &[data-callout-metadata="accent"]::after {
+        &[data-callout-metadata~="accent"]::after {
             --art-deco-color: var(--color-accent);
         }
 
@@ -385,8 +385,6 @@ $fwi_sel: "";
         }
 
         &::before {
-            --art-deco-color: rgb(var(--callout-color));
-            @include art-deco-gradient();
             content: "";
             display: block;
             position: absolute;
@@ -402,6 +400,14 @@ $fwi_sel: "";
                 bottom left,
                 bottom right;
             pointer-events: none;
+        }
+
+        &[data-callout-metadata~="accent"] {
+            border-bottom-color: var(--color-accent);
+
+            &::before {
+                background-color: var(--color-accent);
+            }
         }
     }
 
