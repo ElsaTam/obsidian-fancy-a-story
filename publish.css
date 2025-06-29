@@ -4369,7 +4369,6 @@ body {
 .fas-h1-stroke .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h1-display)) h1,
 .markdown-preview-view.h1-stroke h1 {
   --h1-weight: var(--font-extralight);
-  --h1-size: 2em;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -4399,7 +4398,6 @@ body {
 .fas-h2-stroke .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h2-display)) h2,
 .markdown-preview-view.h2-stroke h2 {
   --h2-weight: var(--font-extralight);
-  --h2-size: 1.8em;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -4429,7 +4427,6 @@ body {
 .fas-h3-stroke .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h3-display)) h3,
 .markdown-preview-view.h3-stroke h3 {
   --h3-weight: var(--font-extralight);
-  --h3-size: 1.6em;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -4459,7 +4456,6 @@ body {
 .fas-h4-stroke .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h4-display)) h4,
 .markdown-preview-view.h4-stroke h4 {
   --h4-weight: var(--font-extralight);
-  --h4-size: 1.4em;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -4489,7 +4485,6 @@ body {
 .fas-h5-stroke .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h5-display)) h5,
 .markdown-preview-view.h5-stroke h5 {
   --h5-weight: var(--font-extralight);
-  --h5-size: 1.2em;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -4519,7 +4514,6 @@ body {
 .fas-h6-stroke .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h6-display)) h6,
 .markdown-preview-view.h6-stroke h6 {
   --h6-weight: var(--font-extralight);
-  --h6-size: 1em;
   display: flex;
   align-items: center;
   gap: 20px;

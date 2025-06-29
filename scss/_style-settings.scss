@@ -608,8 +608,14 @@ settings:
                 label: Accent color
                 value: fas-headings-accent
     - 
+        id: h1
+        title: First level headings (H1)
+        type: heading
+        collapsed: true
+        level: 3
+    - 
         id: header-style-h1
-        title: Style for the first level heading (h1)
+        title: Appearance
         type: class-select
         allowEmpty: true
         default: fas-h1-display
@@ -621,8 +627,56 @@ settings:
                 label: Stroke
                 value: fas-h1-stroke
     - 
+        id: h1-size
+        title: Font size (em)
+        description: Not affecting the Display appearance
+        type: variable-number
+        default: 1.802
+        format: em
+    - 
+        id: h1-weight
+        title: Weight
+        description: Not affecting the Stroke appearance
+        type: variable-number
+        default: 700
+    - 
+        id: h1-variant
+        title: Variant
+        type: variable-select
+        default: normal
+        options:
+            - normal
+            - small-caps
+            - all-small-caps
+            - petite-caps
+            - all-petite-caps
+            - unicase
+            - titling-caps
+    - 
+        id: h1-line-height
+        title: Line height
+        description: Not affecting the Display appearance
+        type: variable-number
+        default: 1.2
+    - 
+        id: h1-style
+        title: Style
+        type: variable-select
+        default: normal
+        options:
+            - normal
+            - italic
+            - oblique
+        
+    - 
+        id: h2
+        title: Second level headings (H2)
+        type: heading
+        collapsed: true
+        level: 3
+    - 
         id: header-style-h2
-        title: Style for the second level heading (h2)
+        title: Appearance
         type: class-select
         allowEmpty: true
         default: none
@@ -634,8 +688,55 @@ settings:
                 label: Stroke
                 value: fas-h2-stroke
     - 
+        id: h2-size
+        title: Font size (em)
+        description: Not affecting the Display appearance
+        type: variable-number
+        default: 1.602
+        format: em
+    - 
+        id: h2-weight
+        title: Weight
+        description: Not affecting the Stroke appearance
+        type: variable-number
+        default: 600
+    - 
+        id: h2-variant
+        title: Variant
+        type: variable-select
+        default: normal
+        options:
+            - normal
+            - small-caps
+            - all-small-caps
+            - petite-caps
+            - all-petite-caps
+            - unicase
+            - titling-caps
+    - 
+        id: h2-line-height
+        title: Line height
+        description: Not affecting the Display appearance
+        type: variable-number
+        default: 1.2
+    - 
+        id: h2-style
+        title: Style
+        type: variable-select
+        default: normal
+        options:
+            - normal
+            - italic
+            - oblique
+    - 
+        id: h3
+        title: Third level headings (H3)
+        type: heading
+        collapsed: true
+        level: 3
+    - 
         id: header-style-h3
-        title: Style for the third level heading (h3)
+        title: Appearance
         type: class-select
         allowEmpty: true
         default: none
@@ -647,8 +748,55 @@ settings:
                 label: Stroke
                 value: fas-h3-stroke
     - 
+        id: h3-size
+        title: Font size (em)
+        description: Not affecting the Display appearance
+        type: variable-number
+        default: 1.424
+        format: em
+    - 
+        id: h3-weight
+        title: Weight
+        description: Not affecting the Stroke appearance
+        type: variable-number
+        default: 600
+    - 
+        id: h3-variant
+        title: Variant
+        type: variable-select
+        default: normal
+        options:
+            - normal
+            - small-caps
+            - all-small-caps
+            - petite-caps
+            - all-petite-caps
+            - unicase
+            - titling-caps
+    - 
+        id: h3-line-height
+        title: Line height
+        description: Not affecting the Display appearance
+        type: variable-number
+        default: 1.3
+    - 
+        id: h3-style
+        title: Style
+        type: variable-select
+        default: normal
+        options:
+            - normal
+            - italic
+            - oblique
+    - 
+        id: h4
+        title: Fourth level headings (H4)
+        type: heading
+        collapsed: true
+        level: 3
+    - 
         id: header-style-h4
-        title: Style for the fourth level heading (h4)
+        title: Appearance
         type: class-select
         allowEmpty: true
         default: none
@@ -660,8 +808,55 @@ settings:
                 label: Stroke
                 value: fas-h4-stroke
     - 
+        id: h4-size
+        title: Font size (em)
+        description: Not affecting the Display appearance
+        type: variable-number
+        default: 1.266
+        format: em
+    - 
+        id: h4-weight
+        title: Weight
+        description: Not affecting the Stroke appearance
+        type: variable-number
+        default: 600
+    - 
+        id: h4-variant
+        title: Variant
+        type: variable-select
+        default: normal
+        options:
+            - normal
+            - small-caps
+            - all-small-caps
+            - petite-caps
+            - all-petite-caps
+            - unicase
+            - titling-caps
+    - 
+        id: h4-line-height
+        title: Line height
+        description: Not affecting the Display appearance
+        type: variable-number
+        default: 1.4
+    - 
+        id: h4-style
+        title: Style
+        type: variable-select
+        default: normal
+        options:
+            - normal
+            - italic
+            - oblique
+    - 
+        id: h5
+        title: Fifth level headings (H5)
+        type: heading
+        collapsed: true
+        level: 3
+    - 
         id: header-style-h5
-        title: Style for the fifth level heading (h5)
+        title: Appearance
         type: class-select
         allowEmpty: true
         default: none
@@ -673,8 +868,55 @@ settings:
                 label: Stroke
                 value: fas-h5-stroke
     - 
+        id: h5-size
+        title: Font size (em)
+        description: Not affecting the Display appearance
+        type: variable-number
+        default: 1.125
+        format: em
+    - 
+        id: h5-weight
+        title: Weight
+        description: Not affecting the Stroke appearance
+        type: variable-number
+        default: 600
+    - 
+        id: h5-variant
+        title: Variant
+        type: variable-select
+        default: normal
+        options:
+            - normal
+            - small-caps
+            - all-small-caps
+            - petite-caps
+            - all-petite-caps
+            - unicase
+            - titling-caps
+    - 
+        id: h5-line-height
+        title: Line height
+        description: Not affecting the Display appearance
+        type: variable-number
+        default: 1.5
+    - 
+        id: h5-style
+        title: Style
+        type: variable-select
+        default: normal
+        options:
+            - normal
+            - italic
+            - oblique
+    - 
+        id: h6
+        title: Sixth level headings (H6)
+        type: heading
+        collapsed: true
+        level: 3
+    - 
         id: header-style-h6
-        title: Style for the sixth level heading (h6)
+        title: Appearance
         type: class-select
         allowEmpty: true
         default: none
@@ -685,6 +927,47 @@ settings:
             - 
                 label: Stroke
                 value: fas-h6-stroke
+    - 
+        id: h6-size
+        title: Font size (em)
+        description: Not affecting the Display appearance
+        type: variable-number
+        default: 1
+        format: em
+    - 
+        id: h6-weight
+        title: Weight
+        description: Not affecting the Stroke appearance
+        type: variable-number
+        default: 600
+    - 
+        id: h6-variant
+        title: Variant
+        type: variable-select
+        default: normal
+        options:
+            - normal
+            - small-caps
+            - all-small-caps
+            - petite-caps
+            - all-petite-caps
+            - unicase
+            - titling-caps
+    - 
+        id: h6-line-height
+        title: Line height
+        description: Not affecting the Display appearance
+        type: variable-number
+        default: 1.5
+    - 
+        id: h6-style
+        title: Style
+        type: variable-select
+        default: normal
+        options:
+            - normal
+            - italic
+            - oblique
             
     - 
         id: images

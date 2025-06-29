@@ -4,7 +4,7 @@
     .fas-h#{$i}-stroke .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h#{$i}-display)) h#{$i},
     .markdown-preview-view.h#{$i}-stroke h#{$i} {
         --h#{$i}-weight: var(--font-extralight);
-        --h#{$i}-size: #{calc(2.2em - 0.2em * $i)};
+        //--h#{$i}-size: #{calc(2.2em - 0.2em * $i)};
         display: flex;
         align-items: center;
         gap: 20px;
