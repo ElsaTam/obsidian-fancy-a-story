@@ -106,6 +106,7 @@ body {
 @container style(--image-centered: enable) {
     .markdown-rendered .image-embed:only-child {
         display: block;
+        width: fit-content;
         margin-inline: auto;
     }
     .markdown-rendered img:not(.image-embed img):not(.emoji):only-child {
@@ -122,6 +123,7 @@ body {
 
 .markdown-rendered .image-embed[alt~="center"]:only-child {
     display: block;
+    width: fit-content;
     margin-inline: auto;
 }
 .markdown-rendered img[alt~="center"]:not(.image-embed img):not(.emoji):only-child {
