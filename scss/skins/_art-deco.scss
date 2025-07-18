@@ -457,6 +457,18 @@ $fwi_sel: "";
     .fas-skin-art-deco.fas-bg-textures:not(.fas-sidebar-texture-custom) .mod-sidedock .workspace-leaf {
         background-repeat: no-repeat;
     }
+
+    @media (orientation: portrait) {
+        .mod-sidedock {
+            container-name: sidedock;
+            container-type: size;
+        }
+        @container sidedock (aspect-ratio < 0.4) {
+            .workspace-leaf:is(.fas-skin-art-deco.fas-bg-textures:not(.fas-sidebar-texture-custom) *) {
+                --sidebar-texture-size: contain; /* default is: auto 100% */
+            }
+        }
+    }
 }
 
 /* Properties */
