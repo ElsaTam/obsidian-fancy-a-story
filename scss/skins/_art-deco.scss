@@ -336,8 +336,11 @@ $fwi_sel: "";
             --art-deco-color: var(--color-accent);
         }
 
-        &::after {
+        &:not(:where([data-callout="page-break"]))::after {
             --art-deco-color: rgb(var(--callout-color));
+        }
+
+        &::after {
             @include art-deco-gradient();
             --h: 47.001941;
             --ew: 113.10071;
@@ -372,8 +375,34 @@ $fwi_sel: "";
         }
     }
 
+    .callout[data-callout="page-break"] {
+        --page-break-color: var(--art-deco-color);
+
+        &[data-callout-metadata~="accent"] {
+            --page-break-color: var(--color-accent);
+        }
+
+        &:is(
+                [data-callout-metadata~="gray"],
+                [data-callout-metadata~="brown"],
+                [data-callout-metadata~="red"],
+                [data-callout-metadata~="orange"],
+                [data-callout-metadata~="yellow"],
+                [data-callout-metadata~="green"],
+                [data-callout-metadata~="cyan"],
+                [data-callout-metadata~="blue"],
+                [data-callout-metadata~="purple"],
+                [data-callout-metadata~="pink"],
+                [data-callout-metadata~="black"],
+                [data-callout-metadata~="white"]
+            ) {
+            --art-deco-color: rgb(var(--callout-color));
+            --page-break-color: rgb(var(--callout-color));
+        }
+    }
+
     .callout.callout[data-callout="page-break"]:not(.callout *) {
-        border-bottom: 2px solid rgb(var(--callout-color));
+        border-bottom: 2px solid var(--page-break-color);
 
         &::after {
             bottom: 0;
@@ -392,7 +421,7 @@ $fwi_sel: "";
             top: -40px;
             width: 100%;
             height: 40px;
-            background-color: rgb(var(--callout-color));
+            background-color: var(--page-break-color);
             mask-image: var(--art-deco-corner-2-bottom-left), var(--art-deco-corner-2-bottom-right);
             mask-size: 40px;
             mask-repeat: no-repeat;
@@ -400,14 +429,6 @@ $fwi_sel: "";
                 bottom left,
                 bottom right;
             pointer-events: none;
-        }
-
-        &[data-callout-metadata~="accent"] {
-            border-bottom-color: var(--color-accent);
-
-            &::before {
-                background-color: var(--color-accent);
-            }
         }
     }
 
