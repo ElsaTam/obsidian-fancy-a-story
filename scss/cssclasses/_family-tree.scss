@@ -138,6 +138,7 @@ body {
         position: relative;
         padding: 20px 5px 0 5px;
         margin-inline: auto;
+        flex-grow: 1;
     }
 
     li::before,
