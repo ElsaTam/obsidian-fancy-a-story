@@ -3789,7 +3789,7 @@ body {
 }
 
 body {
-  --limit-code-to-80-chars: enable;
+  --limit-code-to-80-chars: disable;
 }
 
 @container style(--limit-code-to-80-chars: enable) {

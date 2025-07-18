@@ -1,0 +1,7 @@
+.status-bar-item.plugin-better-word-count,
+.status-bar-item.plugin-word-count {
+    --font-interface-theme: "??";
+    --font-interface: var(--font-interface-override), var(--font-interface-theme), var(--default-font, "??"),
+        var(--font-default);
+    font-family: var(--font-interface);
+}
