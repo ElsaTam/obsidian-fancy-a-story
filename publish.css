@@ -4169,6 +4169,7 @@ body {
 .fas-h1-display .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h1-stroke, .h1-normal, .sci-fi)) h1:not(.callout h1, ul h1, ol h1) .heading-collapse-indicator,
 .markdown-preview-view.h1-display h1:not(.callout h1, ul h1, ol h1) .heading-collapse-indicator {
   margin-inline-start: 0;
+  left: var(--size-4-2);
 }
 
 .fas-h2-display .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h2-stroke, .h2-normal, .sci-fi)) h2:not(.callout h2, ul h2, ol h2),
@@ -4208,6 +4209,7 @@ body {
 .fas-h2-display .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h2-stroke, .h2-normal, .sci-fi)) h2:not(.callout h2, ul h2, ol h2) .heading-collapse-indicator,
 .markdown-preview-view.h2-display h2:not(.callout h2, ul h2, ol h2) .heading-collapse-indicator {
   margin-inline-start: 0;
+  left: var(--size-4-2);
 }
 
 .fas-h3-display .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h3-stroke, .h3-normal, .sci-fi)) h3:not(.callout h3, ul h3, ol h3),
@@ -4247,6 +4249,7 @@ body {
 .fas-h3-display .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h3-stroke, .h3-normal, .sci-fi)) h3:not(.callout h3, ul h3, ol h3) .heading-collapse-indicator,
 .markdown-preview-view.h3-display h3:not(.callout h3, ul h3, ol h3) .heading-collapse-indicator {
   margin-inline-start: 0;
+  left: var(--size-4-2);
 }
 
 .fas-h4-display .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h4-stroke, .h4-normal, .sci-fi)) h4:not(.callout h4, ul h4, ol h4),
@@ -4286,6 +4289,7 @@ body {
 .fas-h4-display .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h4-stroke, .h4-normal, .sci-fi)) h4:not(.callout h4, ul h4, ol h4) .heading-collapse-indicator,
 .markdown-preview-view.h4-display h4:not(.callout h4, ul h4, ol h4) .heading-collapse-indicator {
   margin-inline-start: 0;
+  left: var(--size-4-2);
 }
 
 .fas-h5-display .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h5-stroke, .h5-normal, .sci-fi)) h5:not(.callout h5, ul h5, ol h5),
@@ -4325,6 +4329,7 @@ body {
 .fas-h5-display .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h5-stroke, .h5-normal, .sci-fi)) h5:not(.callout h5, ul h5, ol h5) .heading-collapse-indicator,
 .markdown-preview-view.h5-display h5:not(.callout h5, ul h5, ol h5) .heading-collapse-indicator {
   margin-inline-start: 0;
+  left: var(--size-4-2);
 }
 
 .fas-h6-display .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h6-stroke, .h6-normal, .sci-fi)) h6:not(.callout h6, ul h6, ol h6),
@@ -4364,6 +4369,7 @@ body {
 .fas-h6-display .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h6-stroke, .h6-normal, .sci-fi)) h6:not(.callout h6, ul h6, ol h6) .heading-collapse-indicator,
 .markdown-preview-view.h6-display h6:not(.callout h6, ul h6, ol h6) .heading-collapse-indicator {
   margin-inline-start: 0;
+  left: var(--size-4-2);
 }
 
 .fas-h1-stroke .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h1-display)) h1,

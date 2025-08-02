@@ -516,7 +516,7 @@ $fwi_sel: "";
     }
 }
 
-/* H1 display */
+/* Heading display */
 @container style(--art-deco-style-h-display: enable) {
     @for $i from 1 through 6 {
         .fas-skin-art-deco.fas-h#{$i}-display
