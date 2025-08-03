@@ -23,6 +23,14 @@ The fonts used in the screenshot are not directly included in the theme but can 
 
 You can also download and install them directly on your computer: [ParkLaneNF](https://www.1001fonts.com/parklane-font.html), [Semplicità](https://www.1001fonts.com/semplicita-font.html), [Limelight](https://fonts.google.com/specimen/Limelight), [Federo](https://fonts.google.com/specimen/Federo)
 
+## Callout
+
+Art Deco adds by default a decoration to every callout. This decoration makes by default the callout to be full width. If you want to remove the decoration, you can disable it using
+
+```md
+> [!callout|no-deco] Callout
+> Text
+```
 
 ## Pick your changes
 
