@@ -563,6 +563,42 @@ settings:
         description: Enable the usage of `infobox` as an alias for `fas-infobox`
         markdown: true
         type: class-toggle
+    -
+        id: callout-default
+        title: Default color for callouts
+        type: variable-select
+        default: var(--color-blue-rgb)
+        options:
+            -
+                value: var(--color-gray-rgb)
+                label: Gray
+            -
+                value: var(--color-brown-rgb)
+                label: Brown
+            -
+                value: var(--color-red-rgb)
+                label: Red
+            -
+                value: var(--color-orange-rgb)
+                label: Orange
+            -
+                value: var(--color-yellow-rgb)
+                label: Yellow
+            -
+                value: var(--color-green-rgb)
+                label: Green
+            -
+                value: var(--color-cyan-rgb)
+                label: Cyan
+            -
+                value: var(--color-blue-rgb)
+                label: Blue
+            -
+                value: var(--color-purple-rgb)
+                label: Purple
+            -
+                value: var(--color-pink-rgb)
+                label: Pink
 
     - 
         id: code
