@@ -185,6 +185,10 @@ Enable to use the Fancy-a-Story specific style for the `quote` and `cite` callou
 
 Enable the usage of `infobox` as an alias for `fas-infobox`. Only check this option if you are not using ITS's callout adjustments snippets.
 
+#### Default color for callouts
+
+Change the default color for callouts to something else than the default blue. Every callout with a specific callouts will not be affected. This goes for every [official callout types](https://help.obsidian.md/callouts#Supported%20types), as well as for some custom callouts from this theme (such as the screen callout, the paper-fold, etc.).
+
 ## Code
 
 #### Limit code to 80 characterss
@@ -193,10 +197,37 @@ Use the standard brought to us by the IBM's 1928 punch card format and limit the
 ## Headings
 
 #### Color for the headings
-See [Headings CSS Classes]({% link docs/cssclasses/cssclasses.md %})
+See [Headings CSS Classes]({% link docs/cssclasses/cssclasses.md %}#headings)
 
-#### Style for the first level heading (h1)
-See [Headings CSS Classes]({% link docs/cssclasses/cssclasses.md %})
+## n-th level headings
+
+#### Appearance
+
+See [Headings CSS Classes]({% link docs/cssclasses/cssclasses.md %}#headings)
+
+#### Color
+
+Specific color for the heading level. Overriden if you choose a global way to compute all headings color (hue, complementary hue, accent, or rainbow).
+
+#### Font size
+
+[Font size](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size) for the heading level, in [em](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Values_and_units#relative_length_units). Overriden by the Display apperance if you select it.
+
+#### Weight
+
+[Font weight](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight) for the heading level. Overriden by the Stroke apperance if you select it.
+
+#### Variant
+
+[Font variant](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant) for the heading level.
+
+#### Line height
+
+[Line height](https://developer.mozilla.org/en-US/docs/Web/CSS/line-height) for the heading level. Overriden by the Display apperance if you select it.
+
+#### Style
+
+[Font style](https://developer.mozilla.org/en-US/docs/Web/CSS/font-style) for the heading level. Overriden by the Display apperance if you select it.
 
 ## Images
 
