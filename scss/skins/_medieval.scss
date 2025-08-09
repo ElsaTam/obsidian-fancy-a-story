@@ -17,7 +17,7 @@
         --sidebar-texture-position: center top;
         --sidebar-texture-opacity: 1;
 
-        .mod-sidedock .workspace-tab-header-container::after {
+        .mod-sidedock .workspace-tab-header-container::before {
             content: "";
             position: absolute;
             inset: 0;
@@ -36,9 +36,16 @@
             mask-repeat: no-repeat;
         }
 
-        .mod-sidedock .mod-top .workspace-tab-header-container::after {
+        .mod-sidedock .mod-top .workspace-tab-header-container::before {
             background-size: 100% calc(100% - var(--workspace-top-margin));
             mask-size: 100% calc(100% - var(--workspace-top-margin));
+        }
+
+        :is(.is-hidden-frameless:not(.is-fullscreen):not(.mod-macos) *)
+            .workspace-tabs.mod-top-left-space
+            .workspace-tab-header-container::before {
+            height: unset;
+            width: unset;
         }
 
         .mod-sidedock .workspace-leaf {
