@@ -5,12 +5,13 @@
 @forward "../../shared/workleaves";
 @use "../../mixins/cutout_border";
 
-:is(.fas-headings-hue, .fas-headings-complement, .fas-headings-accent).fas-h1-display,
-:is(.fas-headings-hue, .fas-headings-complement, .fas-headings-accent)
-    .h1-display
-    .fas-h1-display
-    :is(.headings-hue, .headings-complement, .headings-accent),
-.h1-display:is(.headings-hue, .headings-complement, .headings-accent) {
+:is(.fas-headings-hue, .fas-headings-complement, .fas-headings-accent):is(
+        .fas-h1-display,
+        .fas-h1-display-left-aligned
+    ),
+:is(.fas-headings-hue, .fas-headings-complement, .fas-headings-accent) :is(.h1-display, .h1-display-left-aligned),
+:is(.fas-h1-display, .fas-h1-display-left-aligned) :is(.headings-hue, .headings-complement, .headings-accent),
+:is(.h1-display, .h1-display-left-aligned):is(.headings-hue, .headings-complement, .headings-accent) {
     --h2-color: var(--header-gradient-base-color);
     --h3-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 20%);
     --h4-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 40%);
@@ -19,11 +20,19 @@
 }
 
 @for $i from 1 through 6 {
-    .fas-h#{$i}-display
+    :is(.fas-h#{$i}-display, .fas-h#{$i}-display-left-aligned)
         .markdown-preview-view:not(
-            :is(.newspaper, .movie-script, .minimalist, .h#{$i}-stroke, .h#{$i}-normal, .sci-fi)
+            :is(
+                    .newspaper,
+                    .movie-script,
+                    .minimalist,
+                    .h#{$i}-stroke,
+                    .h#{$i}-stroke-left-aligned,
+                    .h#{$i}-normal,
+                    .sci-fi
+                )
         ),
-    .markdown-preview-view.h#{$i}-display {
+    .markdown-preview-view:is(.h#{$i}-display, .h#{$i}-display-left-aligned) {
         h#{$i}:not(.callout h#{$i}, ul h#{$i}, ol h#{$i}) {
             --h#{$i}-line-height: 1.2em;
             --h#{$i}-size: #{calc(3.2em - 0.2em * $i)};
@@ -34,7 +43,8 @@
             background-color: var(--h#{$i}-background);
             text-align: center;
             position: relative;
-            padding: var(--cutout-outline-inset);
+            padding-block: var(--cutout-outline-inset);
+            padding-inline: calc(var(--cutout-outline-inset) + 14px);
             clip-path: polygon(
                 0 var(--cutout-corner-angle),
                 var(--cutout-corner-angle) 0,
@@ -87,8 +97,28 @@
 
             .heading-collapse-indicator {
                 margin-inline-start: 0;
-                left: var(--size-4-2);
+                left: var(--size-2-1);
             }
+        }
+    }
+}
+
+@for $i from 1 through 6 {
+    .fas-h#{$i}-display-left-aligned
+        .markdown-preview-view:not(
+            :is(
+                    .newspaper,
+                    .movie-script,
+                    .minimalist,
+                    .h#{$i}-stroke,
+                    .h#{$i}-stroke-left-aligned,
+                    .h#{$i}-normal,
+                    .sci-fi
+                )
+        ),
+    .markdown-preview-view.h#{$i}-display-left-aligned {
+        h#{$i}:not(.callout h#{$i}, ul h#{$i}, ol h#{$i}) {
+            text-align: left;
         }
     }
 }

@@ -1,8 +1,12 @@
 @forward "../../shared/h1-border";
 
 @for $i from 1 through 6 {
-    .fas-h#{$i}-stroke .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h#{$i}-display)) h#{$i},
-    .markdown-preview-view.h#{$i}-stroke h#{$i} {
+    :is(.fas-h#{$i}-stroke, .fas-h#{$i}-stroke-left-aligned)
+        .markdown-preview-view:not(
+            :is(.newspaper, .movie-script, .minimalist, .h#{$i}-display, .h#{$i}-display-left-aligned)
+        )
+        h#{$i},
+    .markdown-preview-view:is(.h#{$i}-stroke, .h#{$i}-stroke-left-aligned) h#{$i} {
         --h#{$i}-weight: var(--font-extralight);
         //--h#{$i}-size: #{calc(2.2em - 0.2em * $i)};
         display: flex;
@@ -28,6 +32,20 @@
         &:is(.is-collapsed > h#{$i})::before,
         &:is(.is-collapsed > h#{$i})::after {
             background-color: var(--h#{$i}-border-color-collapsed);
+        }
+    }
+
+    .fas-h#{$i}-stroke-left-aligned
+        .markdown-preview-view:not(
+            :is(.newspaper, .movie-script, .minimalist, .h#{$i}-display, .h#{$i}-display-left-aligned)
+        )
+        h#{$i},
+    .markdown-preview-view.h#{$i}-stroke-left-aligned h#{$i} {
+        align-items: left;
+
+        &::before {
+            flex-grow: 0;
+            flex-basis: 10px;
         }
     }
 }

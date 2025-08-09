@@ -660,8 +660,22 @@ settings:
                 label: Display
                 value: fas-h1-display
             - 
+                label: Display - left aligned
+                value: fas-h1-display-left-aligned
+            - 
                 label: Stroke
                 value: fas-h1-stroke
+            - 
+                label: Stroke - left aligned
+                value: fas-h1-stroke-left-aligned
+    -
+        id: h1-color
+        title: Color
+        type: variable-themed-color
+        opacity: false
+        format: hex
+        default-light: '#000000'
+        default-dark: '#d9d9d9'
     - 
         id: h1-size
         title: Font size (em)
@@ -721,8 +735,22 @@ settings:
                 label: Display
                 value: fas-h2-display
             - 
+                label: Display - left aligned
+                value: fas-h2-display-left-aligned
+            - 
                 label: Stroke
                 value: fas-h2-stroke
+            - 
+                label: Stroke - left aligned
+                value: fas-h2-stroke-left-aligned
+    -
+        id: h2-color
+        title: Color
+        type: variable-themed-color
+        opacity: false
+        format: hex
+        default-light: '#000000'
+        default-dark: '#d9d9d9'
     - 
         id: h2-size
         title: Font size (em)
@@ -781,8 +809,22 @@ settings:
                 label: Display
                 value: fas-h3-display
             - 
+                label: Display - left aligned
+                value: fas-h3-display-left-aligned
+            - 
                 label: Stroke
                 value: fas-h3-stroke
+            - 
+                label: Stroke - left aligned
+                value: fas-h3-stroke-left-aligned
+    -
+        id: h3-color
+        title: Color
+        type: variable-themed-color
+        opacity: false
+        format: hex
+        default-light: '#000000'
+        default-dark: '#d9d9d9'
     - 
         id: h3-size
         title: Font size (em)
@@ -841,8 +883,22 @@ settings:
                 label: Display
                 value: fas-h4-display
             - 
+                label: Display - left aligned
+                value: fas-h4-display-left-aligned
+            - 
                 label: Stroke
                 value: fas-h4-stroke
+            - 
+                label: Stroke - left aligned
+                value: fas-h4-stroke-left-aligned
+    -
+        id: h4-color
+        title: Color
+        type: variable-themed-color
+        opacity: false
+        format: hex
+        default-light: '#000000'
+        default-dark: '#d9d9d9'
     - 
         id: h4-size
         title: Font size (em)
@@ -901,8 +957,22 @@ settings:
                 label: Display
                 value: fas-h5-display
             - 
+                label: Display - left aligned
+                value: fas-h5-display-left-aligned
+            - 
                 label: Stroke
                 value: fas-h5-stroke
+            - 
+                label: Stroke - left aligned
+                value: fas-h5-stroke-left-aligned
+    -
+        id: h5-color
+        title: Color
+        type: variable-themed-color
+        opacity: false
+        format: hex
+        default-light: '#000000'
+        default-dark: '#d9d9d9'
     - 
         id: h5-size
         title: Font size (em)
@@ -961,8 +1031,22 @@ settings:
                 label: Display
                 value: fas-h6-display
             - 
+                label: Display - left aligned
+                value: fas-h6-display-left-aligned
+            - 
                 label: Stroke
                 value: fas-h6-stroke
+            - 
+                label: Stroke - left aligned
+                value: fas-h6-stroke-left-aligned
+    -
+        id: h6-color
+        title: Color
+        type: variable-themed-color
+        opacity: false
+        format: hex
+        default-light: '#000000'
+        default-dark: '#d9d9d9'
     - 
         id: h6-size
         title: Font size (em)
