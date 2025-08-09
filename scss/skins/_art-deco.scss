@@ -297,6 +297,7 @@ $fwi_sel: "";
         .callout:not(
             :where(
                     [data-callout-metadata~="blank"],
+					[data-callout-metadata~="no-deco"],
                     [data-callout="autopsy"],
                     [data-callout="caption"],
                     [data-callout="clue"],
@@ -326,11 +327,13 @@ $fwi_sel: "";
                 )
                 *
         ) {
-        clear: both;
+		
+		clear: both;
         overflow: visible;
         margin-bottom: calc(1em + 23px);
         border-bottom-width: 0;
         padding-bottom: 30px;
+
 
         &[data-callout-metadata~="accent"]::after {
             --art-deco-color: var(--color-accent);
@@ -340,7 +343,7 @@ $fwi_sel: "";
             --art-deco-color: rgb(var(--callout-color));
         }
 
-        &::after {
+        &:not(:where([data-callout-metadata~="no-deco"]))::after {
             @include art-deco-gradient();
             --h: 47.001941;
             --ew: 113.10071;
@@ -351,7 +354,7 @@ $fwi_sel: "";
             display: block;
             position: absolute;
             bottom: -23px;
-            left: -15px;
+			left: -15px;
             right: -15px;
             height: calc(var(--H) * 1px);
             background-image: var(--art-deco-gradient);
