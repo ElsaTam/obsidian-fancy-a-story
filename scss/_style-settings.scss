@@ -1737,10 +1737,16 @@ settings:
         options:
             - 
                 value: enable
-                label: Yes
+                label: Both
+            - 
+                value: folders
+                label: Folders
+            - 
+                value: files
+                label: Files
             - 
                 value: disable
-                label: No
+                label: None
     - 
         id: art-deco-style-sidebar-corners
         title: Change the corners in the sidebars

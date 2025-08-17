@@ -92,7 +92,8 @@
             border: none;
             background-color: var(--hr-color);
             height: calc(var(--hr-height) + var(--hr-thickness));
-            -webkit-mask-image: linear-gradient(
+            -webkit-mask-image:
+                linear-gradient(
                     to right,
                     transparent var(--ornament-width),
                     black var(--ornament-width),
@@ -130,8 +131,8 @@
 }
 
 /* Folders and files icons */
-@container style(--art-deco-style-file-explorer-icons: enable) {
-    .fas-skin-art-deco [data-type="file-explorer"] :is(.nav-folder-title-content, .nav-file-title-content)::before {
+@container style(--art-deco-style-file-explorer-icons: enable) or style(--art-deco-style-file-explorer-icons: folders) {
+    .fas-skin-art-deco [data-type="file-explorer"] .nav-folder-title-content::before {
         content: "";
         display: inline-block;
         width: 1.2em;
@@ -140,13 +141,20 @@
         vertical-align: text-bottom;
         mask-size: contain;
         mask-position: center;
-    }
-    .fas-skin-art-deco [data-type="file-explorer"] .nav-folder-title-content::before {
         background: var(--art-deco-color);
         mask-image: var(--art-deco-folder-icon);
     }
-
+}
+@container style(--art-deco-style-file-explorer-icons: enable) or style(--art-deco-style-file-explorer-icons: files) {
     .fas-skin-art-deco [data-type="file-explorer"] .nav-file-title-content::before {
+        content: "";
+        display: inline-block;
+        width: 1.2em;
+        aspect-ratio: 1;
+        margin-right: var(--size-4-2);
+        vertical-align: text-bottom;
+        mask-size: contain;
+        mask-position: center;
         background: var(--art-deco-color);
         mask-image: var(--art-deco-file-icon);
         opacity: 0.5;
@@ -296,26 +304,26 @@ $fwi_sel: "";
     .fas-skin-art-deco
         .callout:not(
             :where(
-                    [data-callout-metadata~="blank"],
-					[data-callout-metadata~="no-deco"],
-                    [data-callout="autopsy"],
-                    [data-callout="caption"],
-                    [data-callout="clue"],
-                    [data-callout="comic"],
-                    [data-callout="film-strip"],
-                    #{$fwi_sel},
-                    [data-callout="grid"],
-                    [data-callout="infobox"],
-                    [data-callout="fas-infobox"],
-                    [data-callout="letter"],
-                    [data-callout="masonry"],
-                    [data-callout="paper-fold"],
-                    [data-callout="pinned"],
-                    [data-callout="poem"],
-                    [data-callout="polaroid"],
-                    [data-callout="table-cards"],
-                    [data-callout="tooltip"]
-                )
+                [data-callout-metadata~="blank"],
+                [data-callout-metadata~="no-deco"],
+                [data-callout="autopsy"],
+                [data-callout="caption"],
+                [data-callout="clue"],
+                [data-callout="comic"],
+                [data-callout="film-strip"],
+                #{$fwi_sel},
+                [data-callout="grid"],
+                [data-callout="infobox"],
+                [data-callout="fas-infobox"],
+                [data-callout="letter"],
+                [data-callout="masonry"],
+                [data-callout="paper-fold"],
+                [data-callout="pinned"],
+                [data-callout="poem"],
+                [data-callout="polaroid"],
+                [data-callout="table-cards"],
+                [data-callout="tooltip"]
+            )
         ):not(
             :where(
                     [data-callout="autopsy"],
@@ -327,13 +335,11 @@ $fwi_sel: "";
                 )
                 *
         ) {
-		
-		clear: both;
+        clear: both;
         overflow: visible;
         margin-bottom: calc(1em + 23px);
         border-bottom-width: 0;
         padding-bottom: 30px;
-
 
         &[data-callout-metadata~="accent"]::after {
             --art-deco-color: var(--color-accent);
@@ -354,7 +360,7 @@ $fwi_sel: "";
             display: block;
             position: absolute;
             bottom: -23px;
-			left: -15px;
+            left: -15px;
             right: -15px;
             height: calc(var(--H) * 1px);
             background-image: var(--art-deco-gradient);
@@ -386,19 +392,19 @@ $fwi_sel: "";
         }
 
         &:is(
-                [data-callout-metadata~="gray"],
-                [data-callout-metadata~="brown"],
-                [data-callout-metadata~="red"],
-                [data-callout-metadata~="orange"],
-                [data-callout-metadata~="yellow"],
-                [data-callout-metadata~="green"],
-                [data-callout-metadata~="cyan"],
-                [data-callout-metadata~="blue"],
-                [data-callout-metadata~="purple"],
-                [data-callout-metadata~="pink"],
-                [data-callout-metadata~="black"],
-                [data-callout-metadata~="white"]
-            ) {
+            [data-callout-metadata~="gray"],
+            [data-callout-metadata~="brown"],
+            [data-callout-metadata~="red"],
+            [data-callout-metadata~="orange"],
+            [data-callout-metadata~="yellow"],
+            [data-callout-metadata~="green"],
+            [data-callout-metadata~="cyan"],
+            [data-callout-metadata~="blue"],
+            [data-callout-metadata~="purple"],
+            [data-callout-metadata~="pink"],
+            [data-callout-metadata~="black"],
+            [data-callout-metadata~="white"]
+        ) {
             --art-deco-color: rgb(var(--callout-color));
             --page-break-color: rgb(var(--callout-color));
         }
@@ -640,7 +646,8 @@ $fwi_sel: "";
     @scope (.fas-skin-art-deco .mod-root .workspace-tabs:not(.mod-stacked)) {
         .is-active .workspace-tab-header-inner {
             border-bottom: 1px solid var(--art-deco-color);
-            background-image: linear-gradient(
+            background-image:
+                linear-gradient(
                     -45deg,
                     transparent 0px,
                     var(--art-deco-color) 0px,
