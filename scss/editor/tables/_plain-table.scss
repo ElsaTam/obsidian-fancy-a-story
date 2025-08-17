@@ -1,8 +1,8 @@
 .fas-plain-tables {
-    --table-background: rgba(var(--mono-rgb-100), 0.03);
+    --table-background: color-mix(in hwb, var(--background-primary), rgb(var(--mono-rgb-100)) 3%);
     --table-border-color: transparent;
     --table-column-alt-background: none;
-    --table-header-background: rgba(var(--mono-rgb-0), 0.3);
+    --table-header-background: color-mix(in hwb, var(--background-primary), rgb(var(--mono-rgb-0)) 30%);
     --table-header-border-width: 1px;
     --table-row-alt-background: var(--background-primary-alt);
     --table-row-alt-background-hover: var(--table-row-alt-background);
