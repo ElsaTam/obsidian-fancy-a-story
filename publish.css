@@ -4001,8 +4001,8 @@ body {
   z-index: 0;
 }
 
-.markdown-preview-view .image-embed[alt~=background],
-.markdown-preview-view img[alt~=background]:not(.image-embed *) {
+.markdown-preview-view.markdown-preview-view .image-embed[alt~=background],
+.markdown-preview-view.markdown-preview-view img[alt~=background]:not(.image-embed *) {
   --image-shadow-offset: 0;
   margin: 0px auto;
   position: fixed;
@@ -4016,7 +4016,7 @@ body {
   opacity: var(--fas-note-background-image-opacity);
   filter: blur(var(--fas-note-background-image-blur)) brightness(var(--fas-note-background-image-brightness));
 }
-.markdown-preview-view img[alt~=background] {
+.markdown-preview-view.markdown-preview-view img[alt~=background] {
   height: 100%;
   width: 100%;
   object-fit: cover;

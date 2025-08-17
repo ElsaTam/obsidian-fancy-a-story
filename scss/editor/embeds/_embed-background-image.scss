@@ -2,7 +2,7 @@
     z-index: 0;
 }
 
-.markdown-preview-view {
+.markdown-preview-view.markdown-preview-view {
     .image-embed[alt~="background"],
     img[alt~="background"]:not(.image-embed *) {
         --image-shadow-offset: 0;
