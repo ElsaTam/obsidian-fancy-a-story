@@ -103,30 +103,32 @@
     }
 }
 
-.markdown-preview-view .callout:is([data-callout-metadata~="right"], [data-callout-metadata~="float-right"]) {
-    float: right;
-    clear: right;
-    margin: var(--fas-float-inline-margin, 12px) 0 var(--fas-float-inline-margin, 12px)
-        var(--fas-float-inline-margin, 12px);
-    max-width: 300px;
+@media (width > 600px) {
+    .markdown-preview-view .callout:is([data-callout-metadata~="right"], [data-callout-metadata~="float-right"]) {
+        float: right;
+        clear: right;
+        margin: var(--fas-float-inline-margin, 12px) 0 var(--fas-float-inline-margin, 12px)
+            var(--fas-float-inline-margin, 12px);
+        max-width: 300px;
 
-    @container not (style(--image-shadow-offset: 0) or style(--image-shadow-offset: 0px)) {
-        img {
-            max-width: min(100%, 299px - var(--image-shadow-offset));
+        @container not (style(--image-shadow-offset: 0) or style(--image-shadow-offset: 0px)) {
+            img {
+                max-width: min(100%, 299px - var(--image-shadow-offset));
+            }
         }
     }
-}
 
-.markdown-preview-view .callout:is([data-callout-metadata~="left"], [data-callout-metadata~="float-left"]) {
-    float: left;
-    clear: left;
-    margin: var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px)
-        var(--fas-float-inline-margin, 12px) 0;
-    max-width: 300px;
+    .markdown-preview-view .callout:is([data-callout-metadata~="left"], [data-callout-metadata~="float-left"]) {
+        float: left;
+        clear: left;
+        margin: var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px)
+            var(--fas-float-inline-margin, 12px) 0;
+        max-width: 300px;
 
-    @container not (style(--image-shadow-offset: 0) or style(--image-shadow-offset: 0px)) {
-        img {
-            max-width: min(100%, 299px - var(--image-shadow-offset));
+        @container not (style(--image-shadow-offset: 0) or style(--image-shadow-offset: 0px)) {
+            img {
+                max-width: min(100%, 299px - var(--image-shadow-offset));
+            }
         }
     }
 }

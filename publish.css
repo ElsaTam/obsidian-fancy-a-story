@@ -1766,11 +1766,12 @@ body {
 /*
     Inspired by ITS theme's infobox callouts from SlRvb (https://publish.obsidian.md/slrvb-docs/ITS+Theme/Callouts/Callout+-+Infoboxes)
 */
-body {
-  --fas-infobox-padding: var(--size-4-3);
-  --fas-infobox-max-width: 300px;
+@media (width > 600px) {
+  body {
+    --fas-infobox-padding: var(--size-4-3);
+    --fas-infobox-max-width: 300px;
+  }
 }
-
 :where(.fas-callout-infobox) .callout[data-callout=infobox][data-callout-metadata~=full-width],
 .callout[data-callout=fas-infobox][data-callout-metadata~=full-width] {
   --fas-infobox-max-width: 100%;
@@ -1782,7 +1783,7 @@ body {
   --image-shadow-offset: 0;
   --hr-color: rgba(var(--callout-color), var(--callout-border-opacity));
   --heading-spacing: var(--p-spacing);
-  max-width: var(--fas-infobox-max-width);
+  max-width: var(--fas-infobox-max-width, 100%);
 }
 :where(.fas-callout-infobox) .callout[data-callout=infobox] .callout-title,
 .callout[data-callout=fas-infobox] .callout-title {
@@ -1814,7 +1815,7 @@ body {
 }
 :where(.fas-callout-infobox) .callout[data-callout=infobox] > .callout-content > *,
 .callout[data-callout=fas-infobox] > .callout-content > * {
-  padding-inline: var(--fas-infobox-padding);
+  padding-inline: var(--fas-infobox-padding, 0);
 }
 :where(.fas-callout-infobox) .callout[data-callout=infobox] .callout-content hr:not(.sci-fi hr),
 .callout[data-callout=fas-infobox] .callout-content hr:not(.sci-fi hr) {
@@ -1880,9 +1881,9 @@ body {
 }
 :where(.fas-callout-infobox) .callout[data-callout=infobox] img[alt*=cover],
 .callout[data-callout=fas-infobox] img[alt*=cover] {
-  max-width: unset;
-  width: calc(100% + 2 * var(--fas-infobox-padding));
-  margin-left: calc(-1 * var(--fas-infobox-padding));
+  max-width: var(--fas-infobox-max-width, 100%);
+  width: calc(100% + 2 * var(--fas-infobox-padding, 0));
+  margin-left: calc(-1 * var(--fas-infobox-padding, 0));
   border-bottom: 4px solid rgb(var(--callout-color));
 }
 :where(.fas-callout-infobox) .callout[data-callout=infobox] .image-embed[alt~=icon],
@@ -2143,45 +2144,23 @@ body {
 }
 
 /* Position */
-:where(.fas-callout-infobox) .markdown-preview-view .callout[data-callout=infobox]:not([data-callout-metadata~=full-width]),
-:where(.fas-callout-infobox) .markdown-preview-view .callout[data-callout=infobox]:not([data-callout-metadata~=full-width])[data-callout-metadata~=right],
-.markdown-preview-view .callout[data-callout=fas-infobox]:not([data-callout-metadata~=full-width]),
-.markdown-preview-view .callout[data-callout=fas-infobox]:not([data-callout-metadata~=full-width])[data-callout-metadata~=right] {
-  float: right;
-  margin-left: calc(var(--overflow-width) + var(--fas-float-inline-margin, 12px));
-}
-
-:where(.fas-callout-infobox) .markdown-preview-view .callout[data-callout=infobox]:not([data-callout-metadata~=full-width])[data-callout-metadata~=left],
-.markdown-preview-view .callout[data-callout=fas-infobox]:not([data-callout-metadata~=full-width])[data-callout-metadata~=left] {
-  float: left;
-  margin-right: calc(var(--overflow-width) + var(--fas-float-inline-margin, 12px));
-}
-
-:where(.fas-callout-infobox) .markdown-preview-view .callout[data-callout=infobox]:not([data-callout-metadata~=full-width])[data-callout-metadata~=center],
-.markdown-preview-view .callout[data-callout=fas-infobox]:not([data-callout-metadata~=full-width])[data-callout-metadata~=center] {
-  float: unset;
-  margin-inline: auto;
-}
-
-@container markdown-view (width < 500px) {
-  :where(.fas-callout-infobox) .markdown-preview-view .callout[data-callout=infobox],
-  :where(.fas-callout-infobox) .markdown-preview-view .callout[data-callout=infobox][data-callout-metadata~=right],
-  :where(.fas-callout-infobox) .markdown-preview-view .callout[data-callout=infobox][data-callout-metadata~=left],
-  .markdown-preview-view .callout[data-callout=fas-infobox],
-  .markdown-preview-view .callout[data-callout=fas-infobox][data-callout-metadata~=right],
-  .markdown-preview-view .callout[data-callout=fas-infobox][data-callout-metadata~=left] {
+@media (width > 600px) {
+  :where(.fas-callout-infobox) .markdown-preview-view .callout[data-callout=infobox]:not([data-callout-metadata~=full-width]),
+  :where(.fas-callout-infobox) .markdown-preview-view .callout[data-callout=infobox]:not([data-callout-metadata~=full-width])[data-callout-metadata~=right],
+  .markdown-preview-view .callout[data-callout=fas-infobox]:not([data-callout-metadata~=full-width]),
+  .markdown-preview-view .callout[data-callout=fas-infobox]:not([data-callout-metadata~=full-width])[data-callout-metadata~=right] {
+    float: right;
+    margin-left: calc(var(--overflow-width) + var(--fas-float-inline-margin, 12px));
+  }
+  :where(.fas-callout-infobox) .markdown-preview-view .callout[data-callout=infobox]:not([data-callout-metadata~=full-width])[data-callout-metadata~=left],
+  .markdown-preview-view .callout[data-callout=fas-infobox]:not([data-callout-metadata~=full-width])[data-callout-metadata~=left] {
+    float: left;
+    margin-right: calc(var(--overflow-width) + var(--fas-float-inline-margin, 12px));
+  }
+  :where(.fas-callout-infobox) .markdown-preview-view .callout[data-callout=infobox]:not([data-callout-metadata~=full-width])[data-callout-metadata~=center],
+  .markdown-preview-view .callout[data-callout=fas-infobox]:not([data-callout-metadata~=full-width])[data-callout-metadata~=center] {
     float: unset;
-    margin-inline: 0;
-  }
-  :where(.fas-callout-infobox) .markdown-preview-view .callout[data-callout=infobox],
-  :where(.fas-callout-infobox) .markdown-preview-view .callout[data-callout=infobox][data-callout-metadata~=right],
-  .markdown-preview-view .callout[data-callout=fas-infobox],
-  .markdown-preview-view .callout[data-callout=fas-infobox][data-callout-metadata~=right] {
-    margin-left: auto;
-  }
-  :where(.fas-callout-infobox) .markdown-preview-view .callout[data-callout=infobox][data-callout-metadata~=left],
-  .markdown-preview-view .callout[data-callout=fas-infobox][data-callout-metadata~=left] {
-    margin-right: auto;
+    margin-inline: auto;
   }
 }
 :where(.fas-callout-infobox) .markdown-source-view .callout[data-callout=infobox],
@@ -3723,30 +3702,30 @@ body {
   justify-content: center;
 }
 
-.markdown-preview-view .callout:is([data-callout-metadata~=right], [data-callout-metadata~=float-right]) {
-  float: right;
-  clear: right;
-  margin: var(--fas-float-inline-margin, 12px) 0 var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px);
-  max-width: 300px;
-}
-@container not (style(--image-shadow-offset: 0) or style(--image-shadow-offset: 0px)) {
-  .markdown-preview-view .callout:is([data-callout-metadata~=right], [data-callout-metadata~=float-right]) img {
-    max-width: min(100%, 299px - var(--image-shadow-offset));
+@media (width > 600px) {
+  .markdown-preview-view .callout:is([data-callout-metadata~=right], [data-callout-metadata~=float-right]) {
+    float: right;
+    clear: right;
+    margin: var(--fas-float-inline-margin, 12px) 0 var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px);
+    max-width: 300px;
+  }
+  @container not (style(--image-shadow-offset: 0) or style(--image-shadow-offset: 0px)) {
+    .markdown-preview-view .callout:is([data-callout-metadata~=right], [data-callout-metadata~=float-right]) img {
+      max-width: min(100%, 299px - var(--image-shadow-offset));
+    }
+  }
+  .markdown-preview-view .callout:is([data-callout-metadata~=left], [data-callout-metadata~=float-left]) {
+    float: left;
+    clear: left;
+    margin: var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px) 0;
+    max-width: 300px;
+  }
+  @container not (style(--image-shadow-offset: 0) or style(--image-shadow-offset: 0px)) {
+    .markdown-preview-view .callout:is([data-callout-metadata~=left], [data-callout-metadata~=float-left]) img {
+      max-width: min(100%, 299px - var(--image-shadow-offset));
+    }
   }
 }
-
-.markdown-preview-view .callout:is([data-callout-metadata~=left], [data-callout-metadata~=float-left]) {
-  float: left;
-  clear: left;
-  margin: var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px) 0;
-  max-width: 300px;
-}
-@container not (style(--image-shadow-offset: 0) or style(--image-shadow-offset: 0px)) {
-  .markdown-preview-view .callout:is([data-callout-metadata~=left], [data-callout-metadata~=float-left]) img {
-    max-width: min(100%, 299px - var(--image-shadow-offset));
-  }
-}
-
 .callout[data-callout-metadata~=clear] {
   clear: both;
 }
