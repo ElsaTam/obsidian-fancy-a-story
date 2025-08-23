@@ -70,6 +70,22 @@
 
 // Live preview
 @for $i from 1 through 6 {
+    // Center
+    .fas-h#{$i}-stroke,
+    .h#{$i}-stroke {
+        --h#{$i}-stroke-alignment: center;
+        --h#{$i}-stroke-left-anchor: 20px;
+        --h#{$i}-stroke-padding-left: 0px;
+    }
+
+    // Left
+    .fas-h#{$i}-stroke-left-aligned,
+    .h#{$i}-stroke-left-aligned {
+        --h#{$i}-stroke-alignment: left;
+        --h#{$i}-stroke-left-anchor: -10px;
+        --h#{$i}-stroke-padding-left: 30px;
+    }
+
     :is(.fas-h#{$i}-stroke, .fas-h#{$i}-stroke-left-aligned)
         .markdown-source-view.is-live-preview:not(
             :is(.newspaper, .movie-script, .minimalist, .h#{$i}-display, .h#{$i}-display-left-aligned)
@@ -77,8 +93,10 @@
         .HyperMD-header-#{$i},
     .markdown-source-view.is-live-preview:is(.h#{$i}-stroke, .h#{$i}-stroke-left-aligned) .HyperMD-header-#{$i} {
         --h#{$i}-weight: var(--font-extralight);
+        text-align: var(--h#{$i}-stroke-alignment);
 
         .cm-header-#{$i} {
+            padding-left: var(--h#{$i}-stroke-padding-left);
             anchor-name: --header-anchor;
             &::before,
             &::after {
@@ -92,7 +110,7 @@
             }
             &::before {
                 left: 0;
-                right: calc(anchor(left) + 20px);
+                right: calc(anchor(left) + var(--h#{$i}-stroke-left-anchor));
             }
 
             &::after {
@@ -112,39 +130,6 @@
             }
             &::after {
                 left: calc(anchor(right) + 20px + 1ch);
-            }
-        }
-    }
-
-    // Center
-    .fas-h#{$i}-stroke
-        .markdown-source-view.is-live-preview:not(
-            :is(
-                .newspaper,
-                .movie-script,
-                .minimalist,
-                .h#{$i}-display,
-                .h#{$i}-display-left-aligned,
-                .h#{$i}-stroke-left-aligned
-            )
-        )
-        .HyperMD-header-#{$i},
-    .markdown-source-view.is-live-preview.h#{$i}-stroke .HyperMD-header-#{$i} {
-        text-align: center;
-    }
-
-    // Left
-    .fas-h#{$i}-stroke-left-aligned
-        .markdown-source-view.is-live-preview:not(
-            :is(.newspaper, .movie-script, .minimalist, .h#{$i}-display, .h#{$i}-display-left-aligned)
-        )
-        .HyperMD-header-#{$i},
-    .markdown-source-view.is-live-preview.h#{$i}-stroke-left-aligned .HyperMD-header-#{$i} {
-        .cm-header-#{$i}.cm-header-#{$i} {
-            padding-left: 30px;
-
-            &::before {
-                right: calc(anchor(left) - 10px);
             }
         }
     }
