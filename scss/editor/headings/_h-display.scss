@@ -6,9 +6,9 @@
 @use "../../mixins/cutout_border";
 
 :is(.fas-headings-hue, .fas-headings-complement, .fas-headings-accent):is(
-        .fas-h1-display,
-        .fas-h1-display-left-aligned
-    ),
+    .fas-h1-display,
+    .fas-h1-display-left-aligned
+),
 :is(.fas-headings-hue, .fas-headings-complement, .fas-headings-accent) :is(.h1-display, .h1-display-left-aligned),
 :is(.fas-h1-display, .fas-h1-display-left-aligned) :is(.headings-hue, .headings-complement, .headings-accent),
 :is(.h1-display, .h1-display-left-aligned):is(.headings-hue, .headings-complement, .headings-accent) {
@@ -20,20 +20,35 @@
 }
 
 @for $i from 1 through 6 {
+    // Center
+    .fas-h#{$i}-display,
+    .h#{$i}-display {
+        --h#{$i}-display-alignment: center;
+    }
+
+    // Left
+    .fas-h#{$i}-display-left-aligned,
+    .h#{$i}-display-left-aligned {
+        --h#{$i}-display-alignment: left;
+    }
+
     :is(.fas-h#{$i}-display, .fas-h#{$i}-display-left-aligned)
-        .markdown-preview-view:not(
+        :is(.markdown-preview-view, .markdown-source-view.is-live-preview):not(
             :is(
-                    .newspaper,
-                    .movie-script,
-                    .minimalist,
-                    .h#{$i}-stroke,
-                    .h#{$i}-stroke-left-aligned,
-                    .h#{$i}-normal,
-                    .sci-fi
-                )
+                .newspaper,
+                .movie-script,
+                .minimalist,
+                .h#{$i}-stroke,
+                .h#{$i}-stroke-left-aligned,
+                .h#{$i}-normal,
+                .sci-fi
+            )
         ),
-    .markdown-preview-view:is(.h#{$i}-display, .h#{$i}-display-left-aligned) {
-        h#{$i}:not(.callout h#{$i}, ul h#{$i}, ol h#{$i}) {
+    :is(.markdown-preview-view, .markdown-source-view.is-live-preview):is(
+        .h#{$i}-display,
+        .h#{$i}-display-left-aligned
+    ) {
+        :is(h#{$i}, .HyperMD-header-#{$i}):not(.callout *, ul *, ol *) {
             --h#{$i}-line-height: 1.2em;
             --h#{$i}-size: #{calc(3.2em - 0.2em * $i)};
             --h#{$i}-font: var(--font-typewriter), var(--font-text);
@@ -41,7 +56,7 @@
             --h#{$i}-background: var(--color-base-100);
 
             background-color: var(--h#{$i}-background);
-            text-align: center;
+            text-align: var(--h#{$i}-display-alignment);
             position: relative;
             padding-block: var(--cutout-outline-inset);
             padding-inline: calc(var(--cutout-outline-inset) + 14px);
@@ -59,10 +74,12 @@
 
             @include cutout_border.outline;
 
+            /* Only in preview */
             &:is(.is-collapsed > h#{$i})::before {
                 background: var(--h#{$i}-border-color-collapsed);
             }
 
+            /* Only in preview */
             &:is(.is-collapsed > h#{$i})::after {
                 content: "";
                 position: absolute;
@@ -95,30 +112,11 @@
                 );
             }
 
+            /* Only in preview */
             .heading-collapse-indicator {
                 margin-inline-start: 0;
                 left: var(--size-2-1);
             }
-        }
-    }
-}
-
-@for $i from 1 through 6 {
-    .fas-h#{$i}-display-left-aligned
-        .markdown-preview-view:not(
-            :is(
-                    .newspaper,
-                    .movie-script,
-                    .minimalist,
-                    .h#{$i}-stroke,
-                    .h#{$i}-stroke-left-aligned,
-                    .h#{$i}-normal,
-                    .sci-fi
-                )
-        ),
-    .markdown-preview-view.h#{$i}-display-left-aligned {
-        h#{$i}:not(.callout h#{$i}, ul h#{$i}, ol h#{$i}) {
-            text-align: left;
         }
     }
 }
