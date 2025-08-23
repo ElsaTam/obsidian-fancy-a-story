@@ -4839,7 +4839,6 @@ body {
 .markdown-preview-view:is(.h1-stroke, .h1-stroke-left-aligned) h1::before {
   content: "";
   display: block;
-  flex-grow: 1;
   background-color: var(--h1-border-color);
   height: 1px;
 }
@@ -4857,11 +4856,17 @@ body {
   background-color: var(--h1-border-color-collapsed);
 }
 
-.fas-h1-stroke-left-aligned .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned)) h1,
-.markdown-preview-view.h1-stroke-left-aligned h1 {
-  align-items: left;
+.fas-h1-stroke .markdown-preview-view:not(:is(.newspaper,
+.movie-script,
+.minimalist,
+.h1-display,
+.h1-display-left-aligned,
+.h1-stroke-left-aligned)) h1::before,
+.markdown-preview-view.h1-stroke h1::before {
+  flex-grow: 1;
 }
-.fas-h1-stroke-left-aligned .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned)) h1::before,
+
+.fas-h1-stroke-left-aligned .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned, .h1-stroke)) h1::before,
 .markdown-preview-view.h1-stroke-left-aligned h1::before {
   flex-grow: 0;
   flex-basis: 10px;
@@ -4878,7 +4883,6 @@ body {
 .markdown-preview-view:is(.h2-stroke, .h2-stroke-left-aligned) h2::before {
   content: "";
   display: block;
-  flex-grow: 1;
   background-color: var(--h2-border-color);
   height: 1px;
 }
@@ -4896,11 +4900,17 @@ body {
   background-color: var(--h2-border-color-collapsed);
 }
 
-.fas-h2-stroke-left-aligned .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned)) h2,
-.markdown-preview-view.h2-stroke-left-aligned h2 {
-  align-items: left;
+.fas-h2-stroke .markdown-preview-view:not(:is(.newspaper,
+.movie-script,
+.minimalist,
+.h2-display,
+.h2-display-left-aligned,
+.h2-stroke-left-aligned)) h2::before,
+.markdown-preview-view.h2-stroke h2::before {
+  flex-grow: 1;
 }
-.fas-h2-stroke-left-aligned .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned)) h2::before,
+
+.fas-h2-stroke-left-aligned .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned, .h2-stroke)) h2::before,
 .markdown-preview-view.h2-stroke-left-aligned h2::before {
   flex-grow: 0;
   flex-basis: 10px;
@@ -4917,7 +4927,6 @@ body {
 .markdown-preview-view:is(.h3-stroke, .h3-stroke-left-aligned) h3::before {
   content: "";
   display: block;
-  flex-grow: 1;
   background-color: var(--h3-border-color);
   height: 1px;
 }
@@ -4935,11 +4944,17 @@ body {
   background-color: var(--h3-border-color-collapsed);
 }
 
-.fas-h3-stroke-left-aligned .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned)) h3,
-.markdown-preview-view.h3-stroke-left-aligned h3 {
-  align-items: left;
+.fas-h3-stroke .markdown-preview-view:not(:is(.newspaper,
+.movie-script,
+.minimalist,
+.h3-display,
+.h3-display-left-aligned,
+.h3-stroke-left-aligned)) h3::before,
+.markdown-preview-view.h3-stroke h3::before {
+  flex-grow: 1;
 }
-.fas-h3-stroke-left-aligned .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned)) h3::before,
+
+.fas-h3-stroke-left-aligned .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned, .h3-stroke)) h3::before,
 .markdown-preview-view.h3-stroke-left-aligned h3::before {
   flex-grow: 0;
   flex-basis: 10px;
@@ -4956,7 +4971,6 @@ body {
 .markdown-preview-view:is(.h4-stroke, .h4-stroke-left-aligned) h4::before {
   content: "";
   display: block;
-  flex-grow: 1;
   background-color: var(--h4-border-color);
   height: 1px;
 }
@@ -4974,11 +4988,17 @@ body {
   background-color: var(--h4-border-color-collapsed);
 }
 
-.fas-h4-stroke-left-aligned .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned)) h4,
-.markdown-preview-view.h4-stroke-left-aligned h4 {
-  align-items: left;
+.fas-h4-stroke .markdown-preview-view:not(:is(.newspaper,
+.movie-script,
+.minimalist,
+.h4-display,
+.h4-display-left-aligned,
+.h4-stroke-left-aligned)) h4::before,
+.markdown-preview-view.h4-stroke h4::before {
+  flex-grow: 1;
 }
-.fas-h4-stroke-left-aligned .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned)) h4::before,
+
+.fas-h4-stroke-left-aligned .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned, .h4-stroke)) h4::before,
 .markdown-preview-view.h4-stroke-left-aligned h4::before {
   flex-grow: 0;
   flex-basis: 10px;
@@ -4995,7 +5015,6 @@ body {
 .markdown-preview-view:is(.h5-stroke, .h5-stroke-left-aligned) h5::before {
   content: "";
   display: block;
-  flex-grow: 1;
   background-color: var(--h5-border-color);
   height: 1px;
 }
@@ -5013,11 +5032,17 @@ body {
   background-color: var(--h5-border-color-collapsed);
 }
 
-.fas-h5-stroke-left-aligned .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned)) h5,
-.markdown-preview-view.h5-stroke-left-aligned h5 {
-  align-items: left;
+.fas-h5-stroke .markdown-preview-view:not(:is(.newspaper,
+.movie-script,
+.minimalist,
+.h5-display,
+.h5-display-left-aligned,
+.h5-stroke-left-aligned)) h5::before,
+.markdown-preview-view.h5-stroke h5::before {
+  flex-grow: 1;
 }
-.fas-h5-stroke-left-aligned .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned)) h5::before,
+
+.fas-h5-stroke-left-aligned .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned, .h5-stroke)) h5::before,
 .markdown-preview-view.h5-stroke-left-aligned h5::before {
   flex-grow: 0;
   flex-basis: 10px;
@@ -5034,7 +5059,6 @@ body {
 .markdown-preview-view:is(.h6-stroke, .h6-stroke-left-aligned) h6::before {
   content: "";
   display: block;
-  flex-grow: 1;
   background-color: var(--h6-border-color);
   height: 1px;
 }
@@ -5052,14 +5076,392 @@ body {
   background-color: var(--h6-border-color-collapsed);
 }
 
-.fas-h6-stroke-left-aligned .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned)) h6,
-.markdown-preview-view.h6-stroke-left-aligned h6 {
-  align-items: left;
+.fas-h6-stroke .markdown-preview-view:not(:is(.newspaper,
+.movie-script,
+.minimalist,
+.h6-display,
+.h6-display-left-aligned,
+.h6-stroke-left-aligned)) h6::before,
+.markdown-preview-view.h6-stroke h6::before {
+  flex-grow: 1;
 }
-.fas-h6-stroke-left-aligned .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned)) h6::before,
+
+.fas-h6-stroke-left-aligned .markdown-preview-view:not(:is(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned, .h6-stroke)) h6::before,
 .markdown-preview-view.h6-stroke-left-aligned h6::before {
   flex-grow: 0;
   flex-basis: 10px;
+}
+
+:is(.fas-h1-stroke, .fas-h1-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned)) .HyperMD-header-1,
+.markdown-source-view.is-live-preview:is(.h1-stroke, .h1-stroke-left-aligned) .HyperMD-header-1 {
+  --h1-weight: var(--font-extralight);
+}
+:is(.fas-h1-stroke, .fas-h1-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned)) .HyperMD-header-1 .cm-header-1,
+.markdown-source-view.is-live-preview:is(.h1-stroke, .h1-stroke-left-aligned) .HyperMD-header-1 .cm-header-1 {
+  anchor-name: --header-anchor;
+}
+:is(.fas-h1-stroke, .fas-h1-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned)) .HyperMD-header-1 .cm-header-1::before, :is(.fas-h1-stroke, .fas-h1-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned)) .HyperMD-header-1 .cm-header-1::after,
+.markdown-source-view.is-live-preview:is(.h1-stroke, .h1-stroke-left-aligned) .HyperMD-header-1 .cm-header-1::before,
+.markdown-source-view.is-live-preview:is(.h1-stroke, .h1-stroke-left-aligned) .HyperMD-header-1 .cm-header-1::after {
+  content: "";
+  position: absolute;
+  position-anchor: --header-anchor;
+  bottom: 0.5em;
+  display: block;
+  background-color: var(--h1-border-color);
+  height: 1px;
+}
+:is(.fas-h1-stroke, .fas-h1-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned)) .HyperMD-header-1 .cm-header-1::before,
+.markdown-source-view.is-live-preview:is(.h1-stroke, .h1-stroke-left-aligned) .HyperMD-header-1 .cm-header-1::before {
+  left: 0;
+  right: calc(anchor(left) + 20px);
+}
+:is(.fas-h1-stroke, .fas-h1-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned)) .HyperMD-header-1 .cm-header-1::after,
+.markdown-source-view.is-live-preview:is(.h1-stroke, .h1-stroke-left-aligned) .HyperMD-header-1 .cm-header-1::after {
+  right: 0;
+  left: calc(anchor(right) + 20px);
+}
+:is(.fas-h1-stroke, .fas-h1-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned)) .HyperMD-header-1.cm-active .cm-header-1::before,
+.markdown-source-view.is-live-preview:is(.h1-stroke, .h1-stroke-left-aligned) .HyperMD-header-1.cm-active .cm-header-1::before {
+  right: calc(anchor(left) + 20px + 1.7ch);
+}
+:is(.fas-h1-stroke, .fas-h1-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned)) .HyperMD-header-1 .is-collapsed ~ .cm-header-1::before, :is(.fas-h1-stroke, .fas-h1-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned)) .HyperMD-header-1 .is-collapsed ~ .cm-header-1::after,
+.markdown-source-view.is-live-preview:is(.h1-stroke, .h1-stroke-left-aligned) .HyperMD-header-1 .is-collapsed ~ .cm-header-1::before,
+.markdown-source-view.is-live-preview:is(.h1-stroke, .h1-stroke-left-aligned) .HyperMD-header-1 .is-collapsed ~ .cm-header-1::after {
+  background-color: var(--h1-border-color-collapsed);
+}
+:is(.fas-h1-stroke, .fas-h1-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned)) .HyperMD-header-1 .is-collapsed ~ .cm-header-1::after,
+.markdown-source-view.is-live-preview:is(.h1-stroke, .h1-stroke-left-aligned) .HyperMD-header-1 .is-collapsed ~ .cm-header-1::after {
+  left: calc(anchor(right) + 20px + 1ch);
+}
+
+.fas-h1-stroke .markdown-source-view.is-live-preview:not(:is(.newspaper,
+.movie-script,
+.minimalist,
+.h1-display,
+.h1-display-left-aligned,
+.h1-stroke-left-aligned)) .HyperMD-header-1,
+.markdown-source-view.is-live-preview.h1-stroke .HyperMD-header-1 {
+  text-align: center;
+}
+
+.fas-h1-stroke-left-aligned .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned)) .HyperMD-header-1 .cm-header-1.cm-header-1,
+.markdown-source-view.is-live-preview.h1-stroke-left-aligned .HyperMD-header-1 .cm-header-1.cm-header-1 {
+  padding-left: 30px;
+}
+.fas-h1-stroke-left-aligned .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned)) .HyperMD-header-1 .cm-header-1.cm-header-1::before,
+.markdown-source-view.is-live-preview.h1-stroke-left-aligned .HyperMD-header-1 .cm-header-1.cm-header-1::before {
+  right: calc(anchor(left) - 10px);
+}
+
+:is(.fas-h2-stroke, .fas-h2-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned)) .HyperMD-header-2,
+.markdown-source-view.is-live-preview:is(.h2-stroke, .h2-stroke-left-aligned) .HyperMD-header-2 {
+  --h2-weight: var(--font-extralight);
+}
+:is(.fas-h2-stroke, .fas-h2-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned)) .HyperMD-header-2 .cm-header-2,
+.markdown-source-view.is-live-preview:is(.h2-stroke, .h2-stroke-left-aligned) .HyperMD-header-2 .cm-header-2 {
+  anchor-name: --header-anchor;
+}
+:is(.fas-h2-stroke, .fas-h2-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned)) .HyperMD-header-2 .cm-header-2::before, :is(.fas-h2-stroke, .fas-h2-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned)) .HyperMD-header-2 .cm-header-2::after,
+.markdown-source-view.is-live-preview:is(.h2-stroke, .h2-stroke-left-aligned) .HyperMD-header-2 .cm-header-2::before,
+.markdown-source-view.is-live-preview:is(.h2-stroke, .h2-stroke-left-aligned) .HyperMD-header-2 .cm-header-2::after {
+  content: "";
+  position: absolute;
+  position-anchor: --header-anchor;
+  bottom: 0.5em;
+  display: block;
+  background-color: var(--h2-border-color);
+  height: 1px;
+}
+:is(.fas-h2-stroke, .fas-h2-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned)) .HyperMD-header-2 .cm-header-2::before,
+.markdown-source-view.is-live-preview:is(.h2-stroke, .h2-stroke-left-aligned) .HyperMD-header-2 .cm-header-2::before {
+  left: 0;
+  right: calc(anchor(left) + 20px);
+}
+:is(.fas-h2-stroke, .fas-h2-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned)) .HyperMD-header-2 .cm-header-2::after,
+.markdown-source-view.is-live-preview:is(.h2-stroke, .h2-stroke-left-aligned) .HyperMD-header-2 .cm-header-2::after {
+  right: 0;
+  left: calc(anchor(right) + 20px);
+}
+:is(.fas-h2-stroke, .fas-h2-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned)) .HyperMD-header-2.cm-active .cm-header-2::before,
+.markdown-source-view.is-live-preview:is(.h2-stroke, .h2-stroke-left-aligned) .HyperMD-header-2.cm-active .cm-header-2::before {
+  right: calc(anchor(left) + 20px + 1.7ch);
+}
+:is(.fas-h2-stroke, .fas-h2-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned)) .HyperMD-header-2 .is-collapsed ~ .cm-header-2::before, :is(.fas-h2-stroke, .fas-h2-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned)) .HyperMD-header-2 .is-collapsed ~ .cm-header-2::after,
+.markdown-source-view.is-live-preview:is(.h2-stroke, .h2-stroke-left-aligned) .HyperMD-header-2 .is-collapsed ~ .cm-header-2::before,
+.markdown-source-view.is-live-preview:is(.h2-stroke, .h2-stroke-left-aligned) .HyperMD-header-2 .is-collapsed ~ .cm-header-2::after {
+  background-color: var(--h2-border-color-collapsed);
+}
+:is(.fas-h2-stroke, .fas-h2-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned)) .HyperMD-header-2 .is-collapsed ~ .cm-header-2::after,
+.markdown-source-view.is-live-preview:is(.h2-stroke, .h2-stroke-left-aligned) .HyperMD-header-2 .is-collapsed ~ .cm-header-2::after {
+  left: calc(anchor(right) + 20px + 1ch);
+}
+
+.fas-h2-stroke .markdown-source-view.is-live-preview:not(:is(.newspaper,
+.movie-script,
+.minimalist,
+.h2-display,
+.h2-display-left-aligned,
+.h2-stroke-left-aligned)) .HyperMD-header-2,
+.markdown-source-view.is-live-preview.h2-stroke .HyperMD-header-2 {
+  text-align: center;
+}
+
+.fas-h2-stroke-left-aligned .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned)) .HyperMD-header-2 .cm-header-2.cm-header-2,
+.markdown-source-view.is-live-preview.h2-stroke-left-aligned .HyperMD-header-2 .cm-header-2.cm-header-2 {
+  padding-left: 30px;
+}
+.fas-h2-stroke-left-aligned .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned)) .HyperMD-header-2 .cm-header-2.cm-header-2::before,
+.markdown-source-view.is-live-preview.h2-stroke-left-aligned .HyperMD-header-2 .cm-header-2.cm-header-2::before {
+  right: calc(anchor(left) - 10px);
+}
+
+:is(.fas-h3-stroke, .fas-h3-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned)) .HyperMD-header-3,
+.markdown-source-view.is-live-preview:is(.h3-stroke, .h3-stroke-left-aligned) .HyperMD-header-3 {
+  --h3-weight: var(--font-extralight);
+}
+:is(.fas-h3-stroke, .fas-h3-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned)) .HyperMD-header-3 .cm-header-3,
+.markdown-source-view.is-live-preview:is(.h3-stroke, .h3-stroke-left-aligned) .HyperMD-header-3 .cm-header-3 {
+  anchor-name: --header-anchor;
+}
+:is(.fas-h3-stroke, .fas-h3-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned)) .HyperMD-header-3 .cm-header-3::before, :is(.fas-h3-stroke, .fas-h3-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned)) .HyperMD-header-3 .cm-header-3::after,
+.markdown-source-view.is-live-preview:is(.h3-stroke, .h3-stroke-left-aligned) .HyperMD-header-3 .cm-header-3::before,
+.markdown-source-view.is-live-preview:is(.h3-stroke, .h3-stroke-left-aligned) .HyperMD-header-3 .cm-header-3::after {
+  content: "";
+  position: absolute;
+  position-anchor: --header-anchor;
+  bottom: 0.5em;
+  display: block;
+  background-color: var(--h3-border-color);
+  height: 1px;
+}
+:is(.fas-h3-stroke, .fas-h3-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned)) .HyperMD-header-3 .cm-header-3::before,
+.markdown-source-view.is-live-preview:is(.h3-stroke, .h3-stroke-left-aligned) .HyperMD-header-3 .cm-header-3::before {
+  left: 0;
+  right: calc(anchor(left) + 20px);
+}
+:is(.fas-h3-stroke, .fas-h3-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned)) .HyperMD-header-3 .cm-header-3::after,
+.markdown-source-view.is-live-preview:is(.h3-stroke, .h3-stroke-left-aligned) .HyperMD-header-3 .cm-header-3::after {
+  right: 0;
+  left: calc(anchor(right) + 20px);
+}
+:is(.fas-h3-stroke, .fas-h3-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned)) .HyperMD-header-3.cm-active .cm-header-3::before,
+.markdown-source-view.is-live-preview:is(.h3-stroke, .h3-stroke-left-aligned) .HyperMD-header-3.cm-active .cm-header-3::before {
+  right: calc(anchor(left) + 20px + 1.7ch);
+}
+:is(.fas-h3-stroke, .fas-h3-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned)) .HyperMD-header-3 .is-collapsed ~ .cm-header-3::before, :is(.fas-h3-stroke, .fas-h3-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned)) .HyperMD-header-3 .is-collapsed ~ .cm-header-3::after,
+.markdown-source-view.is-live-preview:is(.h3-stroke, .h3-stroke-left-aligned) .HyperMD-header-3 .is-collapsed ~ .cm-header-3::before,
+.markdown-source-view.is-live-preview:is(.h3-stroke, .h3-stroke-left-aligned) .HyperMD-header-3 .is-collapsed ~ .cm-header-3::after {
+  background-color: var(--h3-border-color-collapsed);
+}
+:is(.fas-h3-stroke, .fas-h3-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned)) .HyperMD-header-3 .is-collapsed ~ .cm-header-3::after,
+.markdown-source-view.is-live-preview:is(.h3-stroke, .h3-stroke-left-aligned) .HyperMD-header-3 .is-collapsed ~ .cm-header-3::after {
+  left: calc(anchor(right) + 20px + 1ch);
+}
+
+.fas-h3-stroke .markdown-source-view.is-live-preview:not(:is(.newspaper,
+.movie-script,
+.minimalist,
+.h3-display,
+.h3-display-left-aligned,
+.h3-stroke-left-aligned)) .HyperMD-header-3,
+.markdown-source-view.is-live-preview.h3-stroke .HyperMD-header-3 {
+  text-align: center;
+}
+
+.fas-h3-stroke-left-aligned .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned)) .HyperMD-header-3 .cm-header-3.cm-header-3,
+.markdown-source-view.is-live-preview.h3-stroke-left-aligned .HyperMD-header-3 .cm-header-3.cm-header-3 {
+  padding-left: 30px;
+}
+.fas-h3-stroke-left-aligned .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned)) .HyperMD-header-3 .cm-header-3.cm-header-3::before,
+.markdown-source-view.is-live-preview.h3-stroke-left-aligned .HyperMD-header-3 .cm-header-3.cm-header-3::before {
+  right: calc(anchor(left) - 10px);
+}
+
+:is(.fas-h4-stroke, .fas-h4-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned)) .HyperMD-header-4,
+.markdown-source-view.is-live-preview:is(.h4-stroke, .h4-stroke-left-aligned) .HyperMD-header-4 {
+  --h4-weight: var(--font-extralight);
+}
+:is(.fas-h4-stroke, .fas-h4-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned)) .HyperMD-header-4 .cm-header-4,
+.markdown-source-view.is-live-preview:is(.h4-stroke, .h4-stroke-left-aligned) .HyperMD-header-4 .cm-header-4 {
+  anchor-name: --header-anchor;
+}
+:is(.fas-h4-stroke, .fas-h4-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned)) .HyperMD-header-4 .cm-header-4::before, :is(.fas-h4-stroke, .fas-h4-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned)) .HyperMD-header-4 .cm-header-4::after,
+.markdown-source-view.is-live-preview:is(.h4-stroke, .h4-stroke-left-aligned) .HyperMD-header-4 .cm-header-4::before,
+.markdown-source-view.is-live-preview:is(.h4-stroke, .h4-stroke-left-aligned) .HyperMD-header-4 .cm-header-4::after {
+  content: "";
+  position: absolute;
+  position-anchor: --header-anchor;
+  bottom: 0.5em;
+  display: block;
+  background-color: var(--h4-border-color);
+  height: 1px;
+}
+:is(.fas-h4-stroke, .fas-h4-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned)) .HyperMD-header-4 .cm-header-4::before,
+.markdown-source-view.is-live-preview:is(.h4-stroke, .h4-stroke-left-aligned) .HyperMD-header-4 .cm-header-4::before {
+  left: 0;
+  right: calc(anchor(left) + 20px);
+}
+:is(.fas-h4-stroke, .fas-h4-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned)) .HyperMD-header-4 .cm-header-4::after,
+.markdown-source-view.is-live-preview:is(.h4-stroke, .h4-stroke-left-aligned) .HyperMD-header-4 .cm-header-4::after {
+  right: 0;
+  left: calc(anchor(right) + 20px);
+}
+:is(.fas-h4-stroke, .fas-h4-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned)) .HyperMD-header-4.cm-active .cm-header-4::before,
+.markdown-source-view.is-live-preview:is(.h4-stroke, .h4-stroke-left-aligned) .HyperMD-header-4.cm-active .cm-header-4::before {
+  right: calc(anchor(left) + 20px + 1.7ch);
+}
+:is(.fas-h4-stroke, .fas-h4-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned)) .HyperMD-header-4 .is-collapsed ~ .cm-header-4::before, :is(.fas-h4-stroke, .fas-h4-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned)) .HyperMD-header-4 .is-collapsed ~ .cm-header-4::after,
+.markdown-source-view.is-live-preview:is(.h4-stroke, .h4-stroke-left-aligned) .HyperMD-header-4 .is-collapsed ~ .cm-header-4::before,
+.markdown-source-view.is-live-preview:is(.h4-stroke, .h4-stroke-left-aligned) .HyperMD-header-4 .is-collapsed ~ .cm-header-4::after {
+  background-color: var(--h4-border-color-collapsed);
+}
+:is(.fas-h4-stroke, .fas-h4-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned)) .HyperMD-header-4 .is-collapsed ~ .cm-header-4::after,
+.markdown-source-view.is-live-preview:is(.h4-stroke, .h4-stroke-left-aligned) .HyperMD-header-4 .is-collapsed ~ .cm-header-4::after {
+  left: calc(anchor(right) + 20px + 1ch);
+}
+
+.fas-h4-stroke .markdown-source-view.is-live-preview:not(:is(.newspaper,
+.movie-script,
+.minimalist,
+.h4-display,
+.h4-display-left-aligned,
+.h4-stroke-left-aligned)) .HyperMD-header-4,
+.markdown-source-view.is-live-preview.h4-stroke .HyperMD-header-4 {
+  text-align: center;
+}
+
+.fas-h4-stroke-left-aligned .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned)) .HyperMD-header-4 .cm-header-4.cm-header-4,
+.markdown-source-view.is-live-preview.h4-stroke-left-aligned .HyperMD-header-4 .cm-header-4.cm-header-4 {
+  padding-left: 30px;
+}
+.fas-h4-stroke-left-aligned .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned)) .HyperMD-header-4 .cm-header-4.cm-header-4::before,
+.markdown-source-view.is-live-preview.h4-stroke-left-aligned .HyperMD-header-4 .cm-header-4.cm-header-4::before {
+  right: calc(anchor(left) - 10px);
+}
+
+:is(.fas-h5-stroke, .fas-h5-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned)) .HyperMD-header-5,
+.markdown-source-view.is-live-preview:is(.h5-stroke, .h5-stroke-left-aligned) .HyperMD-header-5 {
+  --h5-weight: var(--font-extralight);
+}
+:is(.fas-h5-stroke, .fas-h5-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned)) .HyperMD-header-5 .cm-header-5,
+.markdown-source-view.is-live-preview:is(.h5-stroke, .h5-stroke-left-aligned) .HyperMD-header-5 .cm-header-5 {
+  anchor-name: --header-anchor;
+}
+:is(.fas-h5-stroke, .fas-h5-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned)) .HyperMD-header-5 .cm-header-5::before, :is(.fas-h5-stroke, .fas-h5-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned)) .HyperMD-header-5 .cm-header-5::after,
+.markdown-source-view.is-live-preview:is(.h5-stroke, .h5-stroke-left-aligned) .HyperMD-header-5 .cm-header-5::before,
+.markdown-source-view.is-live-preview:is(.h5-stroke, .h5-stroke-left-aligned) .HyperMD-header-5 .cm-header-5::after {
+  content: "";
+  position: absolute;
+  position-anchor: --header-anchor;
+  bottom: 0.5em;
+  display: block;
+  background-color: var(--h5-border-color);
+  height: 1px;
+}
+:is(.fas-h5-stroke, .fas-h5-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned)) .HyperMD-header-5 .cm-header-5::before,
+.markdown-source-view.is-live-preview:is(.h5-stroke, .h5-stroke-left-aligned) .HyperMD-header-5 .cm-header-5::before {
+  left: 0;
+  right: calc(anchor(left) + 20px);
+}
+:is(.fas-h5-stroke, .fas-h5-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned)) .HyperMD-header-5 .cm-header-5::after,
+.markdown-source-view.is-live-preview:is(.h5-stroke, .h5-stroke-left-aligned) .HyperMD-header-5 .cm-header-5::after {
+  right: 0;
+  left: calc(anchor(right) + 20px);
+}
+:is(.fas-h5-stroke, .fas-h5-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned)) .HyperMD-header-5.cm-active .cm-header-5::before,
+.markdown-source-view.is-live-preview:is(.h5-stroke, .h5-stroke-left-aligned) .HyperMD-header-5.cm-active .cm-header-5::before {
+  right: calc(anchor(left) + 20px + 1.7ch);
+}
+:is(.fas-h5-stroke, .fas-h5-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned)) .HyperMD-header-5 .is-collapsed ~ .cm-header-5::before, :is(.fas-h5-stroke, .fas-h5-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned)) .HyperMD-header-5 .is-collapsed ~ .cm-header-5::after,
+.markdown-source-view.is-live-preview:is(.h5-stroke, .h5-stroke-left-aligned) .HyperMD-header-5 .is-collapsed ~ .cm-header-5::before,
+.markdown-source-view.is-live-preview:is(.h5-stroke, .h5-stroke-left-aligned) .HyperMD-header-5 .is-collapsed ~ .cm-header-5::after {
+  background-color: var(--h5-border-color-collapsed);
+}
+:is(.fas-h5-stroke, .fas-h5-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned)) .HyperMD-header-5 .is-collapsed ~ .cm-header-5::after,
+.markdown-source-view.is-live-preview:is(.h5-stroke, .h5-stroke-left-aligned) .HyperMD-header-5 .is-collapsed ~ .cm-header-5::after {
+  left: calc(anchor(right) + 20px + 1ch);
+}
+
+.fas-h5-stroke .markdown-source-view.is-live-preview:not(:is(.newspaper,
+.movie-script,
+.minimalist,
+.h5-display,
+.h5-display-left-aligned,
+.h5-stroke-left-aligned)) .HyperMD-header-5,
+.markdown-source-view.is-live-preview.h5-stroke .HyperMD-header-5 {
+  text-align: center;
+}
+
+.fas-h5-stroke-left-aligned .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned)) .HyperMD-header-5 .cm-header-5.cm-header-5,
+.markdown-source-view.is-live-preview.h5-stroke-left-aligned .HyperMD-header-5 .cm-header-5.cm-header-5 {
+  padding-left: 30px;
+}
+.fas-h5-stroke-left-aligned .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned)) .HyperMD-header-5 .cm-header-5.cm-header-5::before,
+.markdown-source-view.is-live-preview.h5-stroke-left-aligned .HyperMD-header-5 .cm-header-5.cm-header-5::before {
+  right: calc(anchor(left) - 10px);
+}
+
+:is(.fas-h6-stroke, .fas-h6-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned)) .HyperMD-header-6,
+.markdown-source-view.is-live-preview:is(.h6-stroke, .h6-stroke-left-aligned) .HyperMD-header-6 {
+  --h6-weight: var(--font-extralight);
+}
+:is(.fas-h6-stroke, .fas-h6-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned)) .HyperMD-header-6 .cm-header-6,
+.markdown-source-view.is-live-preview:is(.h6-stroke, .h6-stroke-left-aligned) .HyperMD-header-6 .cm-header-6 {
+  anchor-name: --header-anchor;
+}
+:is(.fas-h6-stroke, .fas-h6-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned)) .HyperMD-header-6 .cm-header-6::before, :is(.fas-h6-stroke, .fas-h6-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned)) .HyperMD-header-6 .cm-header-6::after,
+.markdown-source-view.is-live-preview:is(.h6-stroke, .h6-stroke-left-aligned) .HyperMD-header-6 .cm-header-6::before,
+.markdown-source-view.is-live-preview:is(.h6-stroke, .h6-stroke-left-aligned) .HyperMD-header-6 .cm-header-6::after {
+  content: "";
+  position: absolute;
+  position-anchor: --header-anchor;
+  bottom: 0.5em;
+  display: block;
+  background-color: var(--h6-border-color);
+  height: 1px;
+}
+:is(.fas-h6-stroke, .fas-h6-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned)) .HyperMD-header-6 .cm-header-6::before,
+.markdown-source-view.is-live-preview:is(.h6-stroke, .h6-stroke-left-aligned) .HyperMD-header-6 .cm-header-6::before {
+  left: 0;
+  right: calc(anchor(left) + 20px);
+}
+:is(.fas-h6-stroke, .fas-h6-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned)) .HyperMD-header-6 .cm-header-6::after,
+.markdown-source-view.is-live-preview:is(.h6-stroke, .h6-stroke-left-aligned) .HyperMD-header-6 .cm-header-6::after {
+  right: 0;
+  left: calc(anchor(right) + 20px);
+}
+:is(.fas-h6-stroke, .fas-h6-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned)) .HyperMD-header-6.cm-active .cm-header-6::before,
+.markdown-source-view.is-live-preview:is(.h6-stroke, .h6-stroke-left-aligned) .HyperMD-header-6.cm-active .cm-header-6::before {
+  right: calc(anchor(left) + 20px + 1.7ch);
+}
+:is(.fas-h6-stroke, .fas-h6-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned)) .HyperMD-header-6 .is-collapsed ~ .cm-header-6::before, :is(.fas-h6-stroke, .fas-h6-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned)) .HyperMD-header-6 .is-collapsed ~ .cm-header-6::after,
+.markdown-source-view.is-live-preview:is(.h6-stroke, .h6-stroke-left-aligned) .HyperMD-header-6 .is-collapsed ~ .cm-header-6::before,
+.markdown-source-view.is-live-preview:is(.h6-stroke, .h6-stroke-left-aligned) .HyperMD-header-6 .is-collapsed ~ .cm-header-6::after {
+  background-color: var(--h6-border-color-collapsed);
+}
+:is(.fas-h6-stroke, .fas-h6-stroke-left-aligned) .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned)) .HyperMD-header-6 .is-collapsed ~ .cm-header-6::after,
+.markdown-source-view.is-live-preview:is(.h6-stroke, .h6-stroke-left-aligned) .HyperMD-header-6 .is-collapsed ~ .cm-header-6::after {
+  left: calc(anchor(right) + 20px + 1ch);
+}
+
+.fas-h6-stroke .markdown-source-view.is-live-preview:not(:is(.newspaper,
+.movie-script,
+.minimalist,
+.h6-display,
+.h6-display-left-aligned,
+.h6-stroke-left-aligned)) .HyperMD-header-6,
+.markdown-source-view.is-live-preview.h6-stroke .HyperMD-header-6 {
+  text-align: center;
+}
+
+.fas-h6-stroke-left-aligned .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned)) .HyperMD-header-6 .cm-header-6.cm-header-6,
+.markdown-source-view.is-live-preview.h6-stroke-left-aligned .HyperMD-header-6 .cm-header-6.cm-header-6 {
+  padding-left: 30px;
+}
+.fas-h6-stroke-left-aligned .markdown-source-view.is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned)) .HyperMD-header-6 .cm-header-6.cm-header-6::before,
+.markdown-source-view.is-live-preview.h6-stroke-left-aligned .HyperMD-header-6 .cm-header-6.cm-header-6::before {
+  right: calc(anchor(left) - 10px);
 }
 
 .markdown-source-view:not(.minimalist, .sci-fi) hr,

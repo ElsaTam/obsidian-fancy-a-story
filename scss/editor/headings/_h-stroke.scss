@@ -1,5 +1,6 @@
 @forward "../../shared/h1-border";
 
+// Preview
 @for $i from 1 through 6 {
     :is(.fas-h#{$i}-stroke, .fas-h#{$i}-stroke-left-aligned)
         .markdown-preview-view:not(
@@ -16,7 +17,6 @@
         &::before {
             content: "";
             display: block;
-            flex-grow: 1;
             background-color: var(--h#{$i}-border-color);
             height: 1px;
         }
@@ -35,17 +35,117 @@
         }
     }
 
+    // Center
+    .fas-h#{$i}-stroke
+        .markdown-preview-view:not(
+            :is(
+                .newspaper,
+                .movie-script,
+                .minimalist,
+                .h#{$i}-display,
+                .h#{$i}-display-left-aligned,
+                .h#{$i}-stroke-left-aligned
+            )
+        )
+        h#{$i},
+    .markdown-preview-view.h#{$i}-stroke h#{$i} {
+        &::before {
+            flex-grow: 1;
+        }
+    }
+
+    // Left
     .fas-h#{$i}-stroke-left-aligned
         .markdown-preview-view:not(
-            :is(.newspaper, .movie-script, .minimalist, .h#{$i}-display, .h#{$i}-display-left-aligned)
+            :is(.newspaper, .movie-script, .minimalist, .h#{$i}-display, .h#{$i}-display-left-aligned, .h#{$i}-stroke)
         )
         h#{$i},
     .markdown-preview-view.h#{$i}-stroke-left-aligned h#{$i} {
-        align-items: left;
-
         &::before {
             flex-grow: 0;
             flex-basis: 10px;
+        }
+    }
+}
+
+// Live preview
+@for $i from 1 through 6 {
+    :is(.fas-h#{$i}-stroke, .fas-h#{$i}-stroke-left-aligned)
+        .markdown-source-view.is-live-preview:not(
+            :is(.newspaper, .movie-script, .minimalist, .h#{$i}-display, .h#{$i}-display-left-aligned)
+        )
+        .HyperMD-header-#{$i},
+    .markdown-source-view.is-live-preview:is(.h#{$i}-stroke, .h#{$i}-stroke-left-aligned) .HyperMD-header-#{$i} {
+        --h#{$i}-weight: var(--font-extralight);
+
+        .cm-header-#{$i} {
+            anchor-name: --header-anchor;
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                position-anchor: --header-anchor;
+                bottom: 0.5em;
+                display: block;
+                background-color: var(--h#{$i}-border-color);
+                height: 1px;
+            }
+            &::before {
+                left: 0;
+                right: calc(anchor(left) + 20px);
+            }
+
+            &::after {
+                right: 0;
+                left: calc(anchor(right) + 20px);
+            }
+        }
+
+        &.cm-active .cm-header-#{$i}::before {
+            right: calc(anchor(left) + 20px + 1.7ch);
+        }
+
+        .is-collapsed ~ .cm-header-#{$i} {
+            &::before,
+            &::after {
+                background-color: var(--h#{$i}-border-color-collapsed);
+            }
+            &::after {
+                left: calc(anchor(right) + 20px + 1ch);
+            }
+        }
+    }
+
+    // Center
+    .fas-h#{$i}-stroke
+        .markdown-source-view.is-live-preview:not(
+            :is(
+                .newspaper,
+                .movie-script,
+                .minimalist,
+                .h#{$i}-display,
+                .h#{$i}-display-left-aligned,
+                .h#{$i}-stroke-left-aligned
+            )
+        )
+        .HyperMD-header-#{$i},
+    .markdown-source-view.is-live-preview.h#{$i}-stroke .HyperMD-header-#{$i} {
+        text-align: center;
+    }
+
+    // Left
+    .fas-h#{$i}-stroke-left-aligned
+        .markdown-source-view.is-live-preview:not(
+            :is(.newspaper, .movie-script, .minimalist, .h#{$i}-display, .h#{$i}-display-left-aligned)
+        )
+        .HyperMD-header-#{$i},
+    .markdown-source-view.is-live-preview.h#{$i}-stroke-left-aligned .HyperMD-header-#{$i} {
+        .cm-header-#{$i}.cm-header-#{$i} {
+            padding-left: 30px;
+
+            &::before {
+                right: calc(anchor(left) - 10px);
+            }
         }
     }
 }
