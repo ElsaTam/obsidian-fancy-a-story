@@ -1,47 +1,60 @@
-@import 'helper-functions';
-@import 'colors_definitions';
+@use "helper-functions";
+@use "colors_definitions";
+@use "sass:color";
+@use "sass:map";
 
 // Create the block for custom theme (no mixing)
 @each $tone in ("light", "dark") {
     .is-mobile.theme-#{$tone}.fas-custom-#{$tone},
     .theme-#{$tone}.fas-custom-#{$tone} {
-        @each $color in map-keys(map-get($rainbow-colors, $tone)) {
-            $c: map-deep-get($rainbow-colors, $tone, $color);
+        @each $color in map.keys(map.get(colors_definitions.$rainbow-colors, $tone)) {
+            $c: helper-functions.map-deep-get(colors_definitions.$rainbow-colors, $tone, $color);
             --color-#{$color}: #{$c};
-            --color-#{$color}-rgb: #{red($c), green($c), blue($c)};
+            --color-#{$color}-rgb:
+                #{color.channel($c, "red", $space: rgb), color.channel($c, "green", $space: rgb),
+                color.channel($c, "blue", $space: rgb)};
         }
     }
 }
 
-@each $tone, $theme, $primary, $text, $space in $themes {
-
+@each $tone, $theme, $primary, $text, $space in colors_definitions.$themes {
     // Compute middle color between primary and text, used to mix the palette
-    $hue-primary: hue($primary);
-    $hue-text: hue($text);
-    $mix-with: hsl(hue(mix($primary, $text)), 100%, 50%);
-    @if saturation($primary) < 1 and saturation($text) < 1 {
-        $mix-with: hsl(0, 0%, calc((lightness($primary) + lightness($text)) / 2));
+    $hue-primary: color.channel($primary, "hue", $space: hsl);
+    $hue-text: color.channel($text, "hue", $space: hsl);
+    $mix-with: hsl(color.channel(color.mix($primary, $text), "hue", $space: hsl), 100%, 50%);
+    @if color.channel($primary, "saturation", $space: hsl) < 1 and color.channel($text, "saturation", $space: hsl) < 1 {
+        $mix-with: hsl(
+            0,
+            0%,
+            calc(
+                (color.channel($primary, "lightness", $space: hsl) + color.channel($text, "lightness", $space: hsl)) / 2
+            )
+        );
     }
-    
+
     // Create the class CSS block
     .is-mobile.theme-#{$tone}.fas-#{$tone},
     .theme-#{$tone}.fas-#{$theme} {
         // For each rainbow color
-        @each $color in map-keys(map-get($rainbow-colors, $tone)) {
-            $c: map-deep-get($rainbow-colors, $tone, $color);
-            $c: mix($c, $mix-with, $keep); // Keep n% of the color
+        @each $color in map.keys(map.get(colors_definitions.$rainbow-colors, $tone)) {
+            $c: helper-functions.map-deep-get(colors_definitions.$rainbow-colors, $tone, $color);
+            $c: color.mix($c, $mix-with, colors_definitions.$keep); // Keep n% of the color
 
             @if $tone == "light" {
-                $c: darken-till-contrast($c, $primary);
+                $c: helper-functions.darken-till-contrast($c, $primary);
                 --color-#{$color}: #{$c};
 
-                $c: red($c), green($c), blue($c);
+                $c:
+                    color.channel($c, "red", $space: rgb), color.channel($c, "green", $space: rgb),
+                    color.channel($c, "blue", $space: rgb);
                 --color-#{$color}-rgb: #{$c};
             } @else {
-                $c: lighten-till-contrast($c, $primary);
+                $c: helper-functions.lighten-till-contrast($c, $primary);
                 --color-#{$color}: #{$c};
 
-                $c: red($c), green($c), blue($c);
+                $c:
+                    color.channel($c, "red", $space: rgb), color.channel($c, "green", $space: rgb),
+                    color.channel($c, "blue", $space: rgb);
                 --color-#{$color}-rgb: #{$c};
             }
         }

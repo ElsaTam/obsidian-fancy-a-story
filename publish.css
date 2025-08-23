@@ -16,34 +16,44 @@
   --color-base-60: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 60%);
   --color-base-70: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 70%);
   --color-gray: #4d4d4d;
-  --color-gray-rgb: 77, 77, 77;
+  --color-gray-rgb:
+      77, 77, 77;
   --color-gray-hover: color-mix(in srgb, var(--color-gray), rgb(var(--mono-rgb-0)) 20%);
   --color-brown: #632006;
-  --color-brown-rgb: 99, 32, 6;
+  --color-brown-rgb:
+      99, 32, 6;
   --color-brown-hover: color-mix(in srgb, var(--color-brown), rgb(var(--mono-rgb-0)) 20%);
   --color-red: #b13030;
-  --color-red-rgb: 177, 48, 48;
+  --color-red-rgb:
+      177, 48, 48;
   --color-red-hover: color-mix(in srgb, var(--color-red), rgb(var(--mono-rgb-0)) 20%);
   --color-orange: #be6900;
-  --color-orange-rgb: 190, 105, 0;
+  --color-orange-rgb:
+      190, 105, 0;
   --color-orange-hover: color-mix(in srgb, var(--color-orange), rgb(var(--mono-rgb-0)) 20%);
   --color-yellow: #d4b815;
-  --color-yellow-rgb: 212, 184, 21;
+  --color-yellow-rgb:
+      212, 184, 21;
   --color-yellow-hover: color-mix(in srgb, var(--color-yellow), rgb(var(--mono-rgb-0)) 20%);
   --color-green: #0d610d;
-  --color-green-rgb: 13, 97, 13;
+  --color-green-rgb:
+      13, 97, 13;
   --color-green-hover: color-mix(in srgb, var(--color-green), rgb(var(--mono-rgb-0)) 20%);
   --color-cyan: #319191;
-  --color-cyan-rgb: 49, 145, 145;
+  --color-cyan-rgb:
+      49, 145, 145;
   --color-cyan-hover: color-mix(in srgb, var(--color-cyan), rgb(var(--mono-rgb-0)) 20%);
   --color-blue: #323296;
-  --color-blue-rgb: 50, 50, 150;
+  --color-blue-rgb:
+      50, 50, 150;
   --color-blue-hover: color-mix(in srgb, var(--color-blue), rgb(var(--mono-rgb-0)) 20%);
   --color-purple: #641c7a;
-  --color-purple-rgb: 100, 28, 122;
+  --color-purple-rgb:
+      100, 28, 122;
   --color-purple-hover: color-mix(in srgb, var(--color-purple), rgb(var(--mono-rgb-0)) 20%);
   --color-pink: #e43eba;
-  --color-pink-rgb: 228, 62, 186;
+  --color-pink-rgb:
+      228, 62, 186;
   --color-pink-hover: color-mix(in srgb, var(--color-pink), rgb(var(--mono-rgb-0)) 20%);
 }
 
@@ -63,34 +73,44 @@
   --color-base-60: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 60%);
   --color-base-70: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 70%);
   --color-gray: #bdbdbd;
-  --color-gray-rgb: 189, 189, 189;
+  --color-gray-rgb:
+      189, 189, 189;
   --color-gray-hover: color-mix(in srgb, var(--color-gray), rgb(var(--mono-rgb-0)) 20%);
   --color-brown: #8d6540;
-  --color-brown-rgb: 141, 101, 64;
+  --color-brown-rgb:
+      141, 101, 64;
   --color-brown-hover: color-mix(in srgb, var(--color-brown), rgb(var(--mono-rgb-0)) 20%);
   --color-red: #f06565;
-  --color-red-rgb: 240, 101, 101;
+  --color-red-rgb:
+      240, 101, 101;
   --color-red-hover: color-mix(in srgb, var(--color-red), rgb(var(--mono-rgb-0)) 20%);
   --color-orange: #eea444;
-  --color-orange-rgb: 238, 164, 68;
+  --color-orange-rgb:
+      238, 164, 68;
   --color-orange-hover: color-mix(in srgb, var(--color-orange), rgb(var(--mono-rgb-0)) 20%);
   --color-yellow: yellow;
-  --color-yellow-rgb: 255, 255, 0;
+  --color-yellow-rgb:
+      255, 255, 0;
   --color-yellow-hover: color-mix(in srgb, var(--color-yellow), rgb(var(--mono-rgb-0)) 20%);
   --color-green: #60db60;
-  --color-green-rgb: 96, 219, 96;
+  --color-green-rgb:
+      96, 219, 96;
   --color-green-hover: color-mix(in srgb, var(--color-green), rgb(var(--mono-rgb-0)) 20%);
   --color-cyan: #7be2e2;
-  --color-cyan-rgb: 123, 226, 226;
+  --color-cyan-rgb:
+      123, 226, 226;
   --color-cyan-hover: color-mix(in srgb, var(--color-cyan), rgb(var(--mono-rgb-0)) 20%);
   --color-blue: #6795e9;
-  --color-blue-rgb: 103, 149, 233;
+  --color-blue-rgb:
+      103, 149, 233;
   --color-blue-hover: color-mix(in srgb, var(--color-blue), rgb(var(--mono-rgb-0)) 20%);
   --color-purple: #c48bf3;
-  --color-purple-rgb: 196, 139, 243;
+  --color-purple-rgb:
+      196, 139, 243;
   --color-purple-hover: color-mix(in srgb, var(--color-purple), rgb(var(--mono-rgb-0)) 20%);
   --color-pink: #f7bdf8;
-  --color-pink-rgb: 247, 189, 248;
+  --color-pink-rgb:
+      247, 189, 248;
   --color-pink-hover: color-mix(in srgb, var(--color-pink), rgb(var(--mono-rgb-0)) 20%);
 }
 
@@ -259,10 +279,10 @@ body {
 }
 
 [data-callout-metadata~=accent] > .callout-title {
-  background: linear-gradient(to right, hsl(var(--accent-h) var(--accent-s) var(--accent-l)/0.1), transparent);
+  background: linear-gradient(to right, hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1), transparent);
 }
 [data-callout-metadata~=accent] > .callout-content {
-  border-top: var(--callout-border-width) dashed hsl(var(--accent-h) var(--accent-s) var(--accent-l)/var(--callout-border-opacity));
+  border-top: var(--callout-border-width) dashed hsl(var(--accent-h), var(--accent-s), var(--accent-l), var(--callout-border-opacity));
 }
 
 .callout[data-callout=autopsy] {
@@ -2208,7 +2228,7 @@ body {
 }
 :where(.fas-callout-infobox) .callout[data-callout=infobox][data-callout-metadata~=accent] .callout[data-callout=footer]::after,
 .callout[data-callout=fas-infobox][data-callout-metadata~=accent] .callout[data-callout=footer]::after {
-  border-top: 2px dashed hsl(var(--accent-h) var(--accent-s) var(--accent-l)/var(--callout-border-opacity));
+  border-top: 2px dashed hsl(var(--accent-h), var(--accent-s), var(--accent-l), var(--callout-border-opacity));
 }
 :where(.fas-callout-infobox) .callout[data-callout=infobox][data-callout-metadata~=accent][data-callout-metadata~=corners]::before, :where(.fas-callout-infobox) .callout[data-callout=infobox][data-callout-metadata~=accent][data-callout-metadata~=corners]::after,
 .callout[data-callout=fas-infobox][data-callout-metadata~=accent][data-callout-metadata~=corners]::before,
@@ -2596,7 +2616,7 @@ body {
   --callout-color: 255, 255, 255;
 }
 .callout:not([data-callout=page-break])[data-callout-metadata~=accent] > .callout-content > .callout[data-callout=page-break] {
-  border-block-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l)/var(--callout-border-opacity));
+  border-block-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), var(--callout-border-opacity));
 }
 
 @media print {
@@ -3162,10 +3182,10 @@ body {
 }
 
 .callout[data-callout=table-cards][data-callout-metadata~=accent] tr {
-  border-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l)/var(--callout-border-opacity));
+  border-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), var(--callout-border-opacity));
 }
 .callout[data-callout=table-cards][data-callout-metadata~=accent] td:first-child {
-  border-bottom-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l)/var(--callout-border-opacity));
+  border-bottom-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), var(--callout-border-opacity));
 }
 
 .callout[data-callout=timeline] {
@@ -3641,8 +3661,8 @@ body {
 }
 
 [data-callout-metadata~=accent] {
-  border-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l)/var(--callout-border-opacity));
-  background-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l)/0.1);
+  border-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), var(--callout-border-opacity));
+  background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
 }
 [data-callout-metadata~=accent] > .callout-title {
   color: var(--color-accent);

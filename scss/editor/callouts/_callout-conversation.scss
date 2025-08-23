@@ -1,4 +1,5 @@
 @forward "../../shared/workleaves";
+@use "sass:list";
 
 @supports (color: hsl(from white h s l)) {
     .callout[data-callout="conversation-minimalist"],
@@ -12,21 +13,21 @@
 @supports not (color: hsl(from white h s l)) {
     $color_order: ("red", "brown", "orange", "yellow", "green", "cyan", "blue", "purple", "pink");
 
-    @for $i from 1 through length($color_order) {
+    @for $i from 1 through list.length($color_order) {
         $prev: "blue";
         $next: "blue";
         @if $i == 1 {
-            $prev: nth($color_order, length($color_order));
+            $prev: list.nth($color_order, list.length($color_order));
         } @else {
-            $prev: nth($color_order, $i - 1);
+            $prev: list.nth($color_order, $i - 1);
         }
-        @if $i == length($color_order) {
-            $next: nth($color_order, 1);
+        @if $i == list.length($color_order) {
+            $next: list.nth($color_order, 1);
         } @else {
-            $next: nth($color_order, $i + 1);
+            $next: list.nth($color_order, $i + 1);
         }
 
-        $curr: nth($color_order, $i);
+        $curr: list.nth($color_order, $i);
 
         .callout[data-callout="conversation-minimalist"],
         .callout[data-callout="conversation"],
@@ -38,18 +39,18 @@
         }
     }
 
-    $i: index($color_order, "blue");
+    $i: list.index($color_order, "blue");
     $prev: "blue";
     $next: "blue";
     @if $i == 1 {
-        $prev: nth($color_order, length($color_order));
+        $prev: list.nth($color_order, list.length($color_order));
     } @else {
-        $prev: nth($color_order, $i - 1);
+        $prev: list.nth($color_order, $i - 1);
     }
-    @if $i == length($color_order) {
-        $next: nth($color_order, 1);
+    @if $i == list.length($color_order) {
+        $next: list.nth($color_order, 1);
     } @else {
-        $next: nth($color_order, $i + 1);
+        $next: list.nth($color_order, $i + 1);
     }
     .callout[data-callout="conversation-minimalist"],
     .callout[data-callout="conversation"],
@@ -144,7 +145,8 @@
         border-left: 0;
         border-top-right-radius: var(--radius-l);
         border-bottom-right-radius: var(--radius-l);
-        background-image: linear-gradient(to right, var(--line-color-even), var(--line-color-odd)),
+        background-image:
+            linear-gradient(to right, var(--line-color-even), var(--line-color-odd)),
             linear-gradient(to left, var(--line-color-odd), var(--line-color-odd));
     }
 
@@ -153,7 +155,8 @@
         border-right: 0;
         border-top-left-radius: var(--radius-l);
         border-bottom-left-radius: var(--radius-l);
-        background-image: linear-gradient(to left, var(--line-color-odd), var(--line-color-even)),
+        background-image:
+            linear-gradient(to left, var(--line-color-odd), var(--line-color-even)),
             linear-gradient(to right, var(--line-color-even), var(--line-color-even));
     }
 

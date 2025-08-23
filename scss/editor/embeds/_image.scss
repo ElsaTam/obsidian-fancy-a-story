@@ -2,6 +2,7 @@
 @use "../../shared/full-width-image-aliases";
 @use "../../foundations/colors/colors_definitions";
 @use "sass:list";
+@use "sass:map";
 
 body {
     // custom
@@ -29,7 +30,7 @@ body {
         var(--fas-float-inline-margin, 12px) 0;
 }
 
-@each $key, $c in map-get(colors_definitions.$extended-colors, "light") {
+@each $key, $c in map.get(colors_definitions.$extended-colors, "light") {
     .image-embed[alt~="#{$key}"] {
         --image-shadow-color: rgba(var(--color-#{$key}-rgb), 0.2);
     }

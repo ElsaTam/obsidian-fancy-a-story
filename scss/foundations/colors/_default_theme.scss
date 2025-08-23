@@ -1,20 +1,21 @@
-@import 'helper-functions';
-@import 'colors_definitions';
+@use "helper-functions";
+@use "colors_definitions";
+@use "sass:color";
+@use "sass:map";
 
 @each $tone in ("light", "dark") {
     .is-mobile.theme-#{$tone},
     .theme-#{$tone} {
         @if $tone == "light" {
-            --color-base-00: #{$default-primary-light};
-            --color-base-100: #{$default-text-light};
+            --color-base-00: #{colors_definitions.$default-primary-light};
+            --color-base-100: #{colors_definitions.$default-text-light};
+            --color-space: srgb-linear;
+        } @else {
+            --color-base-00: #{colors_definitions.$default-text-dark};
+            --color-base-100: #{colors_definitions.$default-primary-dark};
             --color-space: srgb-linear;
         }
-        @else {
-            --color-base-00: #{$default-text-dark};
-            --color-base-100: #{$default-primary-dark};
-            --color-space: srgb-linear;
-        }
-    
+
         --color-base-05: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 05%);
         --color-base-10: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 10%);
         --color-base-20: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 15%);
@@ -26,11 +27,13 @@
         --color-base-60: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 60%);
         --color-base-70: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 70%);
 
-        @each $color in map-keys(map-get($extended-colors, $tone)) {
-            $c: map-deep-get($extended-colors, $tone, $color);
+        @each $color in map.keys(map.get(colors_definitions.$extended-colors, $tone)) {
+            $c: helper-functions.map-deep-get(colors_definitions.$extended-colors, $tone, $color);
             --color-#{$color}: #{$c};
-            --color-#{$color}-rgb: #{red($c), green($c), blue($c)};
-            --color-#{$color}-hover  : color-mix(in srgb, var(--color-#{$color}),    rgb(var(--mono-rgb-0)) 20%);
+            --color-#{$color}-rgb:
+                #{color.channel($c, "red", $space: rgb), color.channel($c, "green", $space: rgb),
+                color.channel($c, "blue", $space: rgb)};
+            --color-#{$color}-hover: color-mix(in srgb, var(--color-#{$color}), rgb(var(--mono-rgb-0)) 20%);
         }
     }
 }

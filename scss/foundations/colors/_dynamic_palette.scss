@@ -1,31 +1,34 @@
-@import 'helper-functions';
-@import 'colors_definitions';
+@use "helper-functions";
+@use "colors_definitions";
+@use "sass:color";
+@use "sass:map";
 
 @function contrast-checker($color, $primary) {
-    $r: (max(red($color),   red($primary)))   - (min(red($color),   red($primary)));
-    $g: (max(green($color), green($primary))) - (min(green($color), green($primary)));
-    $b: (max(blue($color),  blue($primary)))  - (min(blue($color),  blue($primary)));
+    $r: (max(color.channel($color, "red", $space: rgb), color.channel($primary, "red", $space: rgb))) -
+        (min(color.channel($color, "red", $space: rgb), color.channel($primary, "red", $space: rgb)));
+    $g: (max(color.channel($color, "green", $space: rgb), color.channel($primary, "green", $space: rgb))) -
+        (min(color.channel($color, "green", $space: rgb), color.channel($primary, "green", $space: rgb)));
+    $b: (max(color.channel($color, "blue", $space: rgb), color.channel($primary, "blue", $space: rgb))) -
+        (min(color.channel($color, "blue", $space: rgb), color.channel($primary, "blue", $space: rgb)));
     $sum-rgb: $r + $g + $b;
-    
+
     @if $sum-rgb < 300 {
         @return "false";
-    }
-    @else {
+    } @else {
         @return "true";
     }
 }
 
 // Create the custom block for theme (no mixing)
-@each $tone in ("light", "dark") {    
+@each $tone in ("light", "dark") {
     .fas-custom-#{$tone} {
         @if $tone == "light" {
-            --custom-color-base-00: #{$default-primary-light};
-            --custom-color-base-100: #{$default-text-light};
+            --custom-color-base-00: #{colors_definitions.$default-primary-light};
+            --custom-color-base-100: #{colors_definitions.$default-text-light};
             --custom-color-space: srgb-linear;
-        }
-        @else {
-            --custom-color-base-00: #{$default-text-dark};
-            --custom-color-base-100: #{$default-primary-dark};
+        } @else {
+            --custom-color-base-00: #{colors_definitions.$default-text-dark};
+            --custom-color-base-100: #{colors_definitions.$default-primary-dark};
             --custom-color-space: srgb-linear;
         }
     }
@@ -38,62 +41,75 @@
     }
 }
 
-@each $tone, $theme, $primary, $text, $space in $themes {
-
+@each $tone, $theme, $primary, $text, $space in colors_definitions.$themes {
     // Compute middle color between primary and text, used to mix the palette
-    $hue-primary: hue($primary);
-    $hue-text: hue($text);
-    $mix-with: hsl(hue(mix($primary, $text)), 100%, 50%);
-    @if saturation($primary) < 1 and saturation($text) < 1 {
-        $mix-with: hsl(0, 0%, calc((lightness($primary) + lightness($text)) / 2));
+    $hue-primary: color.channel($primary, "hue", $space: hsl);
+    $hue-text: color.channel($text, "hue", $space: hsl);
+    $mix-with: hsl(color.channel(color.mix($primary, $text), "hue", $space: hsl), 100%, 50%);
+    @if color.channel($primary, "saturation", $space: hsl) < 1 and color.channel($text, "saturation", $space: hsl) < 1 {
+        $mix-with: hsl(
+            0,
+            0%,
+            calc(
+                (color.channel($primary, "lightness", $space: hsl) + color.channel($text, "lightness", $space: hsl)) / 2
+            )
+        );
     }
 
     // Create the class CSS block
     .is-mobile.theme-#{$tone}.fas-#{$tone},
     .theme-#{$tone}.fas-#{$theme} {
-
         // Set the base variables for the gradient
         --color-space: #{$space};
         --color-base-00: #{$primary};
         --color-base-100: #{$text};
 
         // Compute the middle color (for headings)
-        $tone-modif: ("dark": 10, "light": -10);
-        @if saturation($primary) < 1 and saturation($text) < 1 {
+        $tone-modif: (
+            "dark": 10,
+            "light": -10
+        );
+        @if color.channel($primary, "saturation", $space: hsl) <
+            1 and
+            color.channel($text, "saturation", $space: hsl) <
+            1
+        {
             --middle-color: #{$text};
             --middle-color-complement: #{$text};
-        }
-        @else {
+        } @else {
             $middle-color: hsl(
-                hue(mix($primary, $text, 50%)),
+                color.channel(color.mix($primary, $text, 50%), "hue", $space: hsl),
                 70%,
-                50% + map-deep-get($tone-modif, $tone));
+                50% + helper-functions.map-deep-get($tone-modif, $tone)
+            );
             --middle-color: #{$middle-color};
-            --middle-color-complement: #{complement($middle-color)};
+            --middle-color-complement: #{color.complement($middle-color)};
         }
 
         // For each extended color
-        @each $color in map-keys(map-get($extended-colors, $tone)) {
-            $c: map-deep-get($extended-colors, $tone, $color);
-            $is_gray: saturation($c) == 0%;
-            $c: mix($c, $mix-with, $keep); // Keep n% of the color
+        @each $color in map.keys(map.get(colors_definitions.$extended-colors, $tone)) {
+            $c: helper-functions.map-deep-get(colors_definitions.$extended-colors, $tone, $color);
+            $is_gray: color.channel($c, "saturation", $space: hsl) == 0%;
+            $c: color.mix($c, $mix-with, colors_definitions.$keep); // Keep n% of the color
             @if $is_gray {
-                $c: change-color($c, $saturation: 0%);
+                $c: color.change($c, $saturation: 0%);
             }
 
             @if $tone == "light" {
-                $c: darken-till-contrast($c, $primary);
+                $c: helper-functions.darken-till-contrast($c, $primary);
                 --color-#{$color}: #{$c};
 
-                $c: red($c), green($c), blue($c);
+                $c:
+                    color.channel($c, "red", $space: rgb), color.channel($c, "green", $space: rgb),
+                    color.channel($c, "blue", $space: rgb);
                 --color-#{$color}-rgb: #{$c};
-            }
-
-            @else {
-                $c: lighten-till-contrast($c, $primary);
+            } @else {
+                $c: helper-functions.lighten-till-contrast($c, $primary);
                 --color-#{$color}: #{$c};
 
-                $c: red($c), green($c), blue($c);
+                $c:
+                    color.channel($c, "red", $space: rgb), color.channel($c, "green", $space: rgb),
+                    color.channel($c, "blue", $space: rgb);
                 --color-#{$color}-rgb: #{$c};
             }
         }

@@ -1,5 +1,7 @@
-@import "helper-functions";
-@import "colors_definitions";
+@use "helper-functions";
+@use "colors_definitions";
+@use "sass:color";
+@use "sass:map";
 
 body {
     --rainbow-brightness: 1;
@@ -9,10 +11,12 @@ body {
 // Create the block for default theme (no mixing)
 @each $tone in ("light", "dark") {
     .theme-#{$tone} {
-        @each $color in map-keys(map-get($rainbow-colors, $tone)) {
-            $c: map-deep-get($rainbow-colors, $tone, $color);
+        @each $color in map.keys(map.get(colors_definitions.$rainbow-colors, $tone)) {
+            $c: helper-functions.map-deep-get(colors_definitions.$rainbow-colors, $tone, $color);
             --color-#{$color}: #{$c};
-            --color-#{$color}-rgb: #{red($c), green($c), blue($c)};
+            --color-#{$color}-rgb:
+                #{color.channel($c, "red", $space: rgb), color.channel($c, "green", $space: rgb),
+                color.channel($c, "blue", $space: rgb)};
         }
     }
 }

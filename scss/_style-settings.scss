@@ -1,4 +1,4 @@
-@import "foundations/colors/colors_definitions";
+@use "foundations/colors/colors_definitions";
 
 /* @settings
 
@@ -106,8 +106,8 @@ settings:
         type: variable-themed-color
         format: hex
         opacity: false
-        default-light: '#{$default-primary-light}'
-        default-dark: '#{$default-text-dark}'
+        default-light: '#{colors_definitions.$default-primary-light}'
+        default-dark: '#{colors_definitions.$default-text-dark}'
     - 
         id: custom-color-base-100
         title: Custom - Text
@@ -115,8 +115,8 @@ settings:
         type: variable-themed-color
         format: hex
         opacity: false
-        default-light: '#{$default-text-light}'
-        default-dark: '#{$default-primary-dark}'
+        default-light: '#{colors_definitions.$default-text-light}'
+        default-dark: '#{colors_definitions.$default-primary-dark}'
     -
         id: custom-color-space
         title: Custom - Gradient color space
