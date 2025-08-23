@@ -1,0 +1,19 @@
+.fas-adaptive-accent.theme-light {
+    --text-accent: hsl(
+        from var(--color-base-00) calc(var(--accent-h) - 3) calc(var(--accent-s) * 1.02)
+            min(var(--accent-l) * 1.15, l * 1% - 15%)
+    );
+    --tag-background: hsl(
+        from var(--color-base-00) var(--accent-h) var(--accent-s) min(var(--accent-l), l * 1% - 5%) / 0.2
+    );
+}
+
+.fas-adaptive-accent.theme-dark {
+    --text-accent: hsl(
+        from var(--color-base-00) calc(var(--accent-h) - 3) calc(var(--accent-s) * 1.02)
+            max(var(--accent-l) * 1.15, l * 1% + 15%)
+    );
+    --tag-background: hsl(
+        from var(--color-base-00) var(--accent-h) var(--accent-s) max(var(--accent-l), l * 1% + 7%) / 0.2
+    );
+}

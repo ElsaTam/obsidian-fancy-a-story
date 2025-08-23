@@ -11,6 +11,13 @@ settings:
         type: heading
         collapsed: true
         level: 1
+    -
+        id: fas-adaptive-accent
+        title: Adapative accent
+        description: Dynamically adapt the accent color based on the background color. Aims at having a better contrast for dark accent color in dark mode, or light accent color in light mode.
+        type: class-toggle
+        default: false
+
     - 
         id: theme-variant-light
         title: Light color scheme
@@ -2030,7 +2037,7 @@ body.fas-ribbon-horizontal-floating-hover .style-settings-container [data-id="fa
 }
 
 .style-settings-container {
-    --h1-color: var(--color-accent);
+    --h1-color: var(--text-accent);
     --current-h1-color: var(--h1-color);
     --pickr-size: 1.3em;
 
