@@ -95,32 +95,36 @@
         --h#{$i}-weight: var(--font-extralight);
         text-align: var(--h#{$i}-stroke-alignment);
 
+        .cm-fold-indicator ~ span:nth-child(1 of .cm-fold-indicator ~ span) {
+            anchor-name: --header-anchor-left;
+        }
+
+        :nth-last-child(1 of .cm-header-#{$i}) {
+            anchor-name: --header-anchor-right;
+        }
+
         .cm-header-#{$i} {
             padding-left: var(--h#{$i}-stroke-padding-left);
-            anchor-name: --header-anchor;
             &::before,
             &::after {
                 content: "";
                 position: absolute;
-                position-anchor: --header-anchor;
                 bottom: 0.5em;
                 display: block;
                 background-color: var(--h#{$i}-border-color);
                 height: 1px;
             }
             &::before {
+                position-anchor: --header-anchor-left;
                 left: 0;
                 right: calc(anchor(left) + var(--h#{$i}-stroke-left-anchor));
             }
 
             &::after {
+                position-anchor: --header-anchor-right;
                 right: 0;
                 left: calc(anchor(right) + 20px);
             }
-        }
-
-        &.cm-active .cm-header-#{$i}::before {
-            right: calc(anchor(left) + 20px + 1.7ch);
         }
 
         .is-collapsed ~ .cm-header-#{$i} {
