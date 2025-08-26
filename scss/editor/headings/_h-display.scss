@@ -33,7 +33,7 @@
     }
 
     :is(.fas-h#{$i}-display, .fas-h#{$i}-display-left-aligned)
-        :is(.markdown-preview-view, .markdown-source-view.is-live-preview):not(
+        :is(.markdown-preview-view, .is-live-preview):not(
             :is(
                 .newspaper,
                 .movie-script,
@@ -44,10 +44,7 @@
                 .sci-fi
             )
         ),
-    :is(.markdown-preview-view, .markdown-source-view.is-live-preview):is(
-        .h#{$i}-display,
-        .h#{$i}-display-left-aligned
-    ) {
+    :is(.markdown-preview-view, .is-live-preview):is(.h#{$i}-display, .h#{$i}-display-left-aligned) {
         :is(h#{$i}, .HyperMD-header-#{$i}):not(.callout *, ul *, ol *) {
             --h#{$i}-line-height: 1.2em;
             --h#{$i}-size: #{calc(3.2em - 0.2em * $i)};

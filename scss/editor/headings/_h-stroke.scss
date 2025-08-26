@@ -87,11 +87,9 @@
     }
 
     :is(.fas-h#{$i}-stroke, .fas-h#{$i}-stroke-left-aligned)
-        .markdown-source-view.is-live-preview:not(
-            :is(.newspaper, .movie-script, .minimalist, .h#{$i}-display, .h#{$i}-display-left-aligned)
-        )
+        .is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h#{$i}-display, .h#{$i}-display-left-aligned))
         .HyperMD-header-#{$i},
-    .markdown-source-view.is-live-preview:is(.h#{$i}-stroke, .h#{$i}-stroke-left-aligned) .HyperMD-header-#{$i} {
+    .is-live-preview:is(.h#{$i}-stroke, .h#{$i}-stroke-left-aligned) .HyperMD-header-#{$i} {
         --h#{$i}-weight: var(--font-extralight);
         text-align: var(--h#{$i}-stroke-alignment);
 
