@@ -1,17 +1,142 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 6 | @use '../../editor/image';
- *   | ^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   scss\css\editor\image.scss 6:1  root stylesheet */
+/* GPLv3 license
+FAS - Image
+Author: ElsaTam (Kapirklaa in Discord)
+*/
+:where(.markdown-rendered :is(ul, ol)) {
+  display: flow-root;
+}
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
+body {
+  --image-shadow-offset: var(--size-4-2);
+  --image-shadow-stripe-thickness: 2px;
+  --image-shadow-stripe-gap: 4px;
+  --image-shadow-color: var(--background-primary-alt);
+}
+
+.image-embed {
+  font-size: 0;
+}
+
+.markdown-rendered .image-embed:is([alt~=right], [alt~=float-right]) {
+  float: right;
+  clear: right;
+  margin: var(--fas-float-inline-margin, 12px) 0 var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px);
+}
+
+.markdown-rendered .image-embed:is([alt~=left], [alt~=float-left]) {
+  float: left;
+  clear: left;
+  margin: var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px) 0;
+}
+
+.image-embed[alt~=gray] {
+  --image-shadow-color: rgba(var(--color-gray-rgb), 0.2);
+}
+
+.image-embed[alt~=brown] {
+  --image-shadow-color: rgba(var(--color-brown-rgb), 0.2);
+}
+
+.image-embed[alt~=red] {
+  --image-shadow-color: rgba(var(--color-red-rgb), 0.2);
+}
+
+.image-embed[alt~=orange] {
+  --image-shadow-color: rgba(var(--color-orange-rgb), 0.2);
+}
+
+.image-embed[alt~=yellow] {
+  --image-shadow-color: rgba(var(--color-yellow-rgb), 0.2);
+}
+
+.image-embed[alt~=green] {
+  --image-shadow-color: rgba(var(--color-green-rgb), 0.2);
+}
+
+.image-embed[alt~=cyan] {
+  --image-shadow-color: rgba(var(--color-cyan-rgb), 0.2);
+}
+
+.image-embed[alt~=blue] {
+  --image-shadow-color: rgba(var(--color-blue-rgb), 0.2);
+}
+
+.image-embed[alt~=purple] {
+  --image-shadow-color: rgba(var(--color-purple-rgb), 0.2);
+}
+
+.image-embed[alt~=pink] {
+  --image-shadow-color: rgba(var(--color-pink-rgb), 0.2);
+}
+
+img[alt~=black-and-white],
+img[alt~=b-w] {
+  filter: grayscale(100);
+}
+
+.image-embed[alt~=no-shadow] {
+  --image-shadow-offset: 0;
+}
+
+@container not (style(--image-shadow-offset: 0) or style(--image-shadow-offset: 0px)) {
+  .image-embed:not(:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner], [alt~="banner+small"], [alt~="banner+tall"], [alt~=sban])) {
+    z-index: 1;
+    width: fit-content;
+  }
+  .markdown-source-view .image-embed:not(:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner], [alt~="banner+small"], [alt~="banner+tall"], [alt~=sban])), .markdown-source-view.mod-cm6 .cm-line .image-embed:not(:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner], [alt~="banner+small"], [alt~="banner+tall"], [alt~=sban])), .markdown-rendered .image-embed:not(:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner], [alt~="banner+small"], [alt~="banner+tall"], [alt~=sban])) {
+    padding-right: var(--image-shadow-offset, 0px);
+    padding-bottom: var(--image-shadow-offset, 0px);
+    display: inline-block;
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    font-size: 0;
+  }
+  .markdown-source-view .image-embed:not(:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner], [alt~="banner+small"], [alt~="banner+tall"], [alt~=sban]))::before, .markdown-source-view.mod-cm6 .cm-line .image-embed:not(:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner], [alt~="banner+small"], [alt~="banner+tall"], [alt~=sban]))::before, .markdown-rendered .image-embed:not(:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner], [alt~="banner+small"], [alt~="banner+tall"], [alt~=sban]))::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: var(--image-shadow-offset, 0px);
+    left: var(--image-shadow-offset, 0px);
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    background: repeating-linear-gradient(-45deg, var(--image-shadow-color), var(--image-shadow-color) var(--image-shadow-stripe-thickness), transparent var(--image-shadow-stripe-thickness), transparent calc(var(--image-shadow-stripe-thickness) + var(--image-shadow-stripe-gap)));
+  }
+}
+body {
+  --image-centered: disable;
+}
+
+@container style(--image-centered: enable) {
+  .markdown-rendered .image-embed:only-child {
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+  }
+  .markdown-rendered img:not(.image-embed img):not(.emoji):only-child {
+    display: block;
+    margin-inline: auto;
+  }
+}
+@container style(--image-centered: enable) and (style(--image-shadow-offset: 0) or style(--image-shadow-offset: 0px)) {
+  .markdown-source-view .cm-content > .image-embed img {
+    display: block;
+    margin-inline: auto;
+  }
+}
+.markdown-rendered .image-embed[alt~=center]:only-child {
   display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 6 \2502  @use '../../editor/image';\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   scss\\css\\editor\\image.scss 6:1  root stylesheet";
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.markdown-rendered img[alt~=center]:not(.image-embed img):not(.emoji):only-child {
+  display: block;
+  margin-inline: auto;
+}
+
+.markdown-source-view .cm-content > .image-embed[alt~=center] img {
+  display: block;
+  margin-inline: auto;
 }

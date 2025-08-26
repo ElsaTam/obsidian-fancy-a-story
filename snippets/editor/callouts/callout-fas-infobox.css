@@ -9,11 +9,12 @@ Author: ElsaTam (Kapirklaa in Discord)
   display: flow-root;
 }
 
-body {
-  --fas-infobox-padding: var(--size-4-3);
-  --fas-infobox-max-width: 300px;
+@media (width > 600px) {
+  body {
+    --fas-infobox-padding: var(--size-4-3);
+    --fas-infobox-max-width: 300px;
+  }
 }
-
 .callout[data-callout=fas-infobox][data-callout-metadata~=full-width] {
   --fas-infobox-max-width: 100%;
 }
@@ -23,7 +24,7 @@ body {
   --image-shadow-offset: 0;
   --hr-color: rgba(var(--callout-color), var(--callout-border-opacity));
   --heading-spacing: var(--p-spacing);
-  max-width: var(--fas-infobox-max-width);
+  max-width: var(--fas-infobox-max-width, 100%);
 }
 .callout[data-callout=fas-infobox] .callout-title {
   justify-content: center;
@@ -44,7 +45,7 @@ body {
   margin-top: 0;
 }
 .callout[data-callout=fas-infobox] > .callout-content > * {
-  padding-inline: var(--fas-infobox-padding);
+  padding-inline: var(--fas-infobox-padding, 0);
 }
 .callout[data-callout=fas-infobox] .callout-content hr:not(.sci-fi hr) {
   -webkit-mask-image: none;
@@ -100,9 +101,9 @@ body {
   z-index: 1;
 }
 .callout[data-callout=fas-infobox] img[alt*=cover] {
-  max-width: unset;
-  width: calc(100% + 2 * var(--fas-infobox-padding));
-  margin-left: calc(-1 * var(--fas-infobox-padding));
+  max-width: var(--fas-infobox-max-width, 100%);
+  width: calc(100% + 2 * var(--fas-infobox-padding, 0));
+  margin-left: calc(-1 * var(--fas-infobox-padding, 0));
   border-bottom: 4px solid rgb(var(--callout-color));
 }
 .callout[data-callout=fas-infobox] .image-embed[alt~=icon] {
@@ -310,35 +311,19 @@ body {
 }
 
 /* Position */
-.markdown-preview-view .callout[data-callout=fas-infobox]:not([data-callout-metadata~=full-width]),
-.markdown-preview-view .callout[data-callout=fas-infobox]:not([data-callout-metadata~=full-width])[data-callout-metadata~=right] {
-  float: right;
-  margin-left: calc(var(--overflow-width) + var(--fas-float-inline-margin, 12px));
-}
-
-.markdown-preview-view .callout[data-callout=fas-infobox]:not([data-callout-metadata~=full-width])[data-callout-metadata~=left] {
-  float: left;
-  margin-right: calc(var(--overflow-width) + var(--fas-float-inline-margin, 12px));
-}
-
-.markdown-preview-view .callout[data-callout=fas-infobox]:not([data-callout-metadata~=full-width])[data-callout-metadata~=center] {
-  float: unset;
-  margin-inline: auto;
-}
-
-@container markdown-view (width < 500px) {
-  .markdown-preview-view .callout[data-callout=fas-infobox],
-  .markdown-preview-view .callout[data-callout=fas-infobox][data-callout-metadata~=right],
-  .markdown-preview-view .callout[data-callout=fas-infobox][data-callout-metadata~=left] {
+@media (width > 600px) {
+  .markdown-preview-view .callout[data-callout=fas-infobox]:not([data-callout-metadata~=full-width]),
+  .markdown-preview-view .callout[data-callout=fas-infobox]:not([data-callout-metadata~=full-width])[data-callout-metadata~=right] {
+    float: right;
+    margin-left: calc(var(--overflow-width) + var(--fas-float-inline-margin, 12px));
+  }
+  .markdown-preview-view .callout[data-callout=fas-infobox]:not([data-callout-metadata~=full-width])[data-callout-metadata~=left] {
+    float: left;
+    margin-right: calc(var(--overflow-width) + var(--fas-float-inline-margin, 12px));
+  }
+  .markdown-preview-view .callout[data-callout=fas-infobox]:not([data-callout-metadata~=full-width])[data-callout-metadata~=center] {
     float: unset;
-    margin-inline: 0;
-  }
-  .markdown-preview-view .callout[data-callout=fas-infobox],
-  .markdown-preview-view .callout[data-callout=fas-infobox][data-callout-metadata~=right] {
-    margin-left: auto;
-  }
-  .markdown-preview-view .callout[data-callout=fas-infobox][data-callout-metadata~=left] {
-    margin-right: auto;
+    margin-inline: auto;
   }
 }
 .markdown-source-view .callout[data-callout=fas-infobox] {
