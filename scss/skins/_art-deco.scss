@@ -528,12 +528,13 @@ $fwi_sel: "";
 /* Heading display */
 @container style(--art-deco-style-h-display: enable) {
     @for $i from 1 through 6 {
-        .fas-skin-art-deco.fas-h#{$i}-display
-            .markdown-preview-view:not(
+        .fas-skin-art-deco:is(.fas-h#{$i}-display, .fas-h#{$i}-display-left-aligned)
+            :is(.markdown-preview-view, .is-live-preview):not(
                 :is(.newspaper, .movie-script, .minimalist, .h#{$i}-stroke, .h#{$i}-normal, .sci-fi)
             ),
-        .fas-skin-art-deco .markdown-preview-view.h#{$i}-display {
-            h#{$i}:not(.callout h#{$i}, ul h#{$i}, ol h#{$i}) {
+        .fas-skin-art-deco
+            :is(.markdown-preview-view, .is-live-preview):is(.h#{$i}-display, .h#{$i}-display-left-aligned) {
+            :is(h#{$i}, .HyperMD-header-#{$i}):not(.callout *, ul *, ol *) {
                 --h#{$i}-line-height: 1.2em;
                 --h#{$i}-size: 3em;
                 --h#{$i}-font: "ParkLaneNF", "Limelight", "Impact", "Inter";
@@ -542,9 +543,9 @@ $fwi_sel: "";
                 --h#{$i}-background: var(--color-base-100);
 
                 background-color: transparent;
-                text-align: center;
+                text-align: var(--h#{$i}-display-alignment);
                 position: relative;
-                padding-inline: var(--cutout-outline-inset);
+                padding-inline: calc(var(--cutout-outline-inset) + 16px);
                 padding-block: calc(var(--cutout-outline-inset) + 16px);
                 clip-path: none;
 
