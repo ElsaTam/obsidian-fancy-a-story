@@ -33,10 +33,6 @@ body {
     pointer-events: none;
 }
 
-.sci-fi-banner .inline-title:hover::before {
-    opacity: 0.4;
-}
-
 .sci-fi-banner .inline-title::after {
     content: "";
     position: absolute;
@@ -53,11 +49,17 @@ body {
     pointer-events: none;
 }
 
-.sci-fi-banner .inline-title:hover::after {
-    top: -9%;
-    right: -6%;
-    transform: rotate(0deg) scale(0.5);
-    opacity: 0.5;
+@media (hover: hover) {
+    .sci-fi-banner .inline-title:hover::before {
+        opacity: 0.4;
+    }
+
+    .sci-fi-banner .inline-title:hover::after {
+        top: -9%;
+        right: -6%;
+        transform: rotate(0deg) scale(0.5);
+        opacity: 0.5;
+    }
 }
 
 body {

@@ -1,9 +1,8 @@
 .canvas-node:has(.tag[href="#node-title-neon"], .node-title-neon):not(.is-editing) {
-    
     .canvas-node-container {
         border: none;
     }
-    &:not(:is(.is-dragging, :hover)) .canvas-node-container {
+    &:not(:is(.is-dragging, *:hover)) .canvas-node-container {
         box-shadow: none;
     }
     .canvas-node-content {

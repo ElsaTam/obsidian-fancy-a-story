@@ -65,35 +65,40 @@ body {
     .list-collapse-indicator.is-collapsed {
         background: var(--color-accent);
     }
-    .list-collapse-indicator:hover {
-        background: color-mix(in srgb, var(--color-accent), var(--workleaves-background) 70%);
-    }
-    .list-collapse-indicator.is-collapsed:hover {
-        background: color-mix(in srgb, var(--color-accent), var(--workleaves-background) 30%);
-    }
     .list-collapse-indicator svg {
         display: none;
     }
+}
 
-    li:hover {
-        &::after {
-            border-color: var(--color-accent);
+@media (hover: hover) {
+    .tree-view .el-ul > ul {
+        .list-collapse-indicator:hover {
+            background: color-mix(in srgb, var(--color-accent), var(--workleaves-background) 70%);
         }
-        > ul::before {
-            border-color: var(--color-accent);
+        .list-collapse-indicator.is-collapsed:hover {
+            background: color-mix(in srgb, var(--color-accent), var(--workleaves-background) 30%);
         }
-    }
 
-    li:has(> .list-bullet:last-child):hover::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        background: linear-gradient(to right, var(--color-accent), transparent 100%);
-        opacity: 0.2;
-        animation: bg-slide 0.5s ease-in-out;
+        li:hover {
+            &::after {
+                border-color: var(--color-accent);
+            }
+            > ul::before {
+                border-color: var(--color-accent);
+            }
+        }
+
+        li:has(> .list-bullet:last-child):hover::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background: linear-gradient(to right, var(--color-accent), transparent 100%);
+            opacity: 0.2;
+            animation: bg-slide 0.5s ease-in-out;
+        }
     }
 }
 

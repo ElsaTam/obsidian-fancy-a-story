@@ -3,7 +3,7 @@
         box-shadow: none;
         background: none;
     }
-    &:not(:is(.is-dragging, :hover)) .canvas-node-container {
+    &:not(:is(.is-dragging, *:hover)) .canvas-node-container {
         border: none;
     }
     .canvas-node-content {

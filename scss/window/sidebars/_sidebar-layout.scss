@@ -44,10 +44,10 @@ body {
                 transparent
             )
             calc(-1 * var(--cutout-corner-radius)) calc(-1 * var(--cutout-corner-radius)),
-        linear-gradient(90deg, black 2px, transparent 0) -1px 50% / 100% calc(
-                100% - var(--cutout-corner-radius) * 2 + 1px
-            ) repeat-x,
-        linear-gradient(black 2px, transparent 0) 50% -1px / calc(100% - var(--cutout-corner-radius) * 2 + 1px) 100% repeat-y;
+        linear-gradient(90deg, black 2px, transparent 0) -1px 50% / 100%
+            calc(100% - var(--cutout-corner-radius) * 2 + 1px) repeat-x,
+        linear-gradient(black 2px, transparent 0) 50% -1px / calc(100% - var(--cutout-corner-radius) * 2 + 1px) 100%
+            repeat-y;
 }
 
 // Resize the handle to not expand in the cropped circle corners
@@ -69,11 +69,13 @@ body:not(.is-ios) .workspace-drawer:is(.mod-left, .mod-right) {
     mask-composite: intersect;
 }
 body:not(.is-ios) .workspace-drawer.mod-left {
-    -webkit-mask-image: radial-gradient(var(--cutout-corner-radius) at 100% 0, transparent 100%, black),
+    -webkit-mask-image:
+        radial-gradient(var(--cutout-corner-radius) at 100% 0, transparent 100%, black),
         radial-gradient(var(--cutout-corner-radius) at 100% 100%, transparent 100%, black);
 }
 body:not(.is-ios) .workspace-drawer.mod-right {
-    -webkit-mask-image: radial-gradient(var(--cutout-corner-radius) at 0 0, transparent 100%, black),
+    -webkit-mask-image:
+        radial-gradient(var(--cutout-corner-radius) at 0 0, transparent 100%, black),
         radial-gradient(var(--cutout-corner-radius) at 0 100%, transparent 100%, black);
 }
 body:not(.is-ios) .workspace-drawer::before {
@@ -89,10 +91,10 @@ body:not(.is-ios) .workspace-drawer::before {
                 transparent
             )
             calc(-1 * var(--cutout-corner-radius)) calc(-1 * var(--cutout-corner-radius)),
-        linear-gradient(90deg, black 2px, transparent 0) -1px 50% / 100% calc(
-                100% - var(--cutout-corner-radius) * 2 + 1px
-            ) repeat-x,
-        linear-gradient(black 2px, transparent 0) 50% -1px / calc(100% - var(--cutout-corner-radius) * 2 + 1px) 100% repeat-y;
+        linear-gradient(90deg, black 2px, transparent 0) -1px 50% / 100%
+            calc(100% - var(--cutout-corner-radius) * 2 + 1px) repeat-x,
+        linear-gradient(black 2px, transparent 0) 50% -1px / calc(100% - var(--cutout-corner-radius) * 2 + 1px) 100%
+            repeat-y;
 }
 
 .workspace-drawer {
@@ -130,7 +132,12 @@ body:not(.is-ios) .workspace-drawer::before {
 }
 
 // Match the background for the active tab header
-.mod-sidedock .workspace-tab-header.is-active,
-.mod-sidedock .workspace-tab-header.is-active:hover {
+.mod-sidedock .workspace-tab-header.is-active {
     background-color: var(--workleaves-background);
+}
+
+@media (hover: hover) {
+    .mod-sidedock .workspace-tab-header.is-active:hover {
+        background-color: var(--workleaves-background);
+    }
 }

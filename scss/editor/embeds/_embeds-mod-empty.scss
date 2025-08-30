@@ -5,28 +5,38 @@
     --pattern-color: rgba(var(--color-red-rgb), 0.08);
 
     background-image:
-        repeating-linear-gradient(-45deg,
+        repeating-linear-gradient(
+            -45deg,
             var(--pattern-color),
             var(--pattern-color) var(--pattern-thickness),
             transparent var(--pattern-thickness),
-            transparent calc(var(--pattern-thickness) + var(--pattern-gap))),
-        repeating-linear-gradient(-45deg,
+            transparent calc(var(--pattern-thickness) + var(--pattern-gap))
+        ),
+        repeating-linear-gradient(
+            -45deg,
             var(--pattern-color),
             var(--pattern-color) var(--pattern-thickness),
             transparent var(--pattern-thickness),
-            transparent calc(var(--pattern-thickness) + var(--pattern-gap-2))),
-        repeating-linear-gradient(45deg,
+            transparent calc(var(--pattern-thickness) + var(--pattern-gap-2))
+        ),
+        repeating-linear-gradient(
+            45deg,
             var(--pattern-color),
             var(--pattern-color) var(--pattern-thickness),
             transparent var(--pattern-thickness),
-            transparent calc(var(--pattern-thickness) + var(--pattern-gap))),
-        repeating-linear-gradient(45deg,
+            transparent calc(var(--pattern-thickness) + var(--pattern-gap))
+        ),
+        repeating-linear-gradient(
+            45deg,
             var(--pattern-color),
             var(--pattern-color) var(--pattern-thickness),
             transparent var(--pattern-thickness),
-            transparent calc(var(--pattern-thickness) + var(--pattern-gap-2)));
+            transparent calc(var(--pattern-thickness) + var(--pattern-gap-2))
+        );
 }
 
-.file-embed.mod-empty:hover {
-    --pattern-color: rgba(var(--color-red-rgb), 0.04);
+@media (hover: hover) {
+    .file-embed.mod-empty:hover {
+        --pattern-color: rgba(var(--color-red-rgb), 0.04);
+    }
 }

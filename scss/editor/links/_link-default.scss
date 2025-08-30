@@ -1,8 +1,13 @@
 @mixin default-decoration {
     & {
         text-underline-offset: 0.2em;
-        transition: text-underline-offset 0.3s, opacity 0.15s ease-in-out;
+        transition:
+            text-underline-offset 0.3s,
+            opacity 0.15s ease-in-out;
     }
+}
+
+@mixin default-decoration-hover {
     &:hover {
         text-underline-offset: calc(0.4em + var(--link-decoration-thickness) - var(--link-decoration-thickness-hover));
         text-decoration-thickness: var(--link-decoration-thickness-hover);
@@ -19,13 +24,21 @@ body {
     --link-decoration-thickness-hover: 1px;
 }
 
-
-
 @container not style(--link-decoration: doodle) {
     .cm-hmd-internal-link .cm-underline,
     .markdown-rendered .internal-link:not(:is(.metadata-container .internal-link)),
     .internal-link:not(:is(.metadata-container .internal-link)) {
         @include default-decoration;
+    }
+}
+
+@media (hover: hover) {
+    @container not style(--link-decoration: doodle) {
+        .cm-hmd-internal-link .cm-underline,
+        .markdown-rendered .internal-link:not(:is(.metadata-container .internal-link)),
+        .internal-link:not(:is(.metadata-container .internal-link)) {
+            @include default-decoration-hover;
+        }
     }
 }
 
@@ -37,10 +50,28 @@ body {
     }
 }
 
+@media (hover: hover) {
+    @container not style(--link-external-decoration: none) {
+        .cm-url .cm-underline,
+        .cm-link .cm-underline,
+        .external-link:not(:is(.metadata-container .external-link)) {
+            @include default-decoration-hover;
+        }
+    }
+}
+
 .cm-s-obsidian span.cm-url,
 .cm-s-obsidian span.cm-link,
 .cm-s-obsidian span.cm-hmd-internal-link {
-    &, &:hover {
-        text-decoration-line: none;
+    text-decoration-line: none;
+}
+
+@media (hover: hover) {
+    .cm-s-obsidian span.cm-url,
+    .cm-s-obsidian span.cm-link,
+    .cm-s-obsidian span.cm-hmd-internal-link {
+        &:hover {
+            text-decoration-line: none;
+        }
     }
 }

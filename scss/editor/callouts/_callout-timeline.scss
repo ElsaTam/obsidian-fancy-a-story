@@ -59,11 +59,6 @@
             outline-offset: calc(-1 * var(--s));
             background: conic-gradient(from 90deg at 1px 1px, transparent 25%, rgba(var(--callout-color), 0.4) 0);
             padding: var(--card-padding);
-
-            &:hover {
-                outline: 1px dashed rgba(var(--callout-color), 0.4);
-                background: conic-gradient(from 90deg at 1px 1px, transparent 25%, rgba(var(--callout-color), 0.8) 0);
-            }
         }
 
         // Stylise first letter
@@ -98,6 +93,13 @@
         p:last-child {
             margin-bottom: 0;
         }
+    }
+}
+
+@media (hover: hover) {
+    .callout[data-callout="timeline"] > .callout-content > *:hover {
+        outline: 1px dashed rgba(var(--callout-color), 0.4);
+        background: conic-gradient(from 90deg at 1px 1px, transparent 25%, rgba(var(--callout-color), 0.8) 0);
     }
 }
 
@@ -141,7 +143,8 @@
 
     @supports (mask-composite: intersect) {
         &::after {
-            -webkit-mask-image: var(--rope-segment-vertical),
+            -webkit-mask-image:
+                var(--rope-segment-vertical),
                 linear-gradient(
                     to bottom,
                     transparent,
@@ -242,7 +245,8 @@
 
     @supports (mask-composite: intersect) {
         &::after {
-            -webkit-mask-image: var(--rope-segment-horizontal),
+            -webkit-mask-image:
+                var(--rope-segment-horizontal),
                 linear-gradient(
                     to right,
                     transparent,
@@ -335,8 +339,11 @@
     > *::after {
         left: calc(50% - var(--bullet-size) * 0.5 - var(--bullet-border-width));
         --shift-bullet: calc(
-            -1 * (var(--bullet-size) * 0.5 + var(--bullet-border-width) + var(--card-border-width) * 2 + var(--row-gap) +
-                        var(--line-thickness) * 0.5)
+            -1 *
+                (
+                    var(--bullet-size) * 0.5 + var(--bullet-border-width) + var(--card-border-width) * 2 +
+                        var(--row-gap) + var(--line-thickness) * 0.5
+                )
         );
     }
 
@@ -400,8 +407,11 @@
         // bullet
         > *::after {
             --shift-bullet: calc(
-                -1 * (var(--bullet-size) * 0.5 + var(--bullet-border-width) + var(--line-thickness) * 0.5 +
-                            var(--card-border-width) * 2)
+                -1 *
+                    (
+                        var(--bullet-size) * 0.5 + var(--bullet-border-width) + var(--line-thickness) * 0.5 +
+                            var(--card-border-width) * 2
+                    )
             );
         }
 

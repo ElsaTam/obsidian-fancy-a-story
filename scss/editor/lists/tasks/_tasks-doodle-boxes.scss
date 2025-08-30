@@ -1,5 +1,5 @@
-@use 'tasks-definition';
-@forward 'tasks-variables';
+@use "tasks-definition";
+@forward "tasks-variables";
 
 // Define the base styling for default doodle checked boxes
 @container style(--fas-checkbox-style: doodle) {
@@ -7,57 +7,68 @@
         :is(.HyperMD-task-line, .task-list-item) {
             --checkbox-border-color: transparent;
         }
-        :is(.HyperMD-task-line, .task-list-item) input[type=checkbox] {
-            &, &:hover {
-                background: none;
-                border-color: var(--checkbox-border-color);
-            }
+        :is(.HyperMD-task-line, .task-list-item) input[type="checkbox"] {
+            background: none;
+            border-color: var(--checkbox-border-color);
 
             &::after {
                 @include tasks-definition.icon-after;
                 -webkit-mask-image: var(--checkbox-icon);
                 background-color: var(--checkbox-color);
             }
+        }
 
-            &:where(:hover)::after {
-                background-color: var(--checkbox-color-hover);
+        // Define the styling for unchecked boxes
+        :is(.HyperMD-task-line, .task-list-item) [type="checkbox"]:not(:checked) {
+            &::after {
+                content: "";
+                top: -1px;
+                inset-inline-start: -1px;
+                position: absolute;
+                width: var(--checkbox-size);
+                height: var(--checkbox-size);
+                display: block;
+                -webkit-mask-repeat: no-repeat;
             }
         }
 
-// Define the styling for unchecked boxes
-    :is(.HyperMD-task-line, .task-list-item) [type=checkbox]:not(:checked) {
-        &::after {
-            content: "";
-            top: -1px;
-            inset-inline-start: -1px;
-            position: absolute;
-            width: var(--checkbox-size);
-            height: var(--checkbox-size);
-            display: block;
-            -webkit-mask-repeat: no-repeat;
-        }
-    }
-
-// Specify the icon for any boxes, to be overriden by everything else
+        // Specify the icon for any boxes, to be overriden by everything else
         @for $i from 1 through 6 {
             :is(.HyperMD-task-line, .task-list-item):where(:nth-child(6n + #{$i})) {
                 --checkbox-icon: var(--box-doodle-checked-#{$i});
             }
         }
 
-// Specify the colors for default boxes
+        // Specify the colors for default boxes
         @each $label, $icon, $color, $color-hover in tasks-definition.$default-doodle-boxes {
-            :is(.HyperMD-task-line, .task-list-item)[data-task='#{$label}'] {
+            :is(.HyperMD-task-line, .task-list-item)[data-task="#{$label}"] {
                 --checkbox-color-hover: var(--#{$color-hover});
                 --checkbox-color: var(--#{$color});
             }
         }
 
-// Specify the color for default boxes
+        // Specify the color for default boxes
         @each $label, $icon, $color, $color-hover in tasks-definition.$default-doodle-boxes {
             @for $i from 1 through 6 {
-                :is(.HyperMD-task-line, .task-list-item)[data-task='#{$label}']:where(:nth-child(6n + #{$i})) {
+                :is(.HyperMD-task-line, .task-list-item)[data-task="#{$label}"]:where(:nth-child(6n + #{$i})) {
                     --checkbox-icon: var(--#{$icon}-#{$i});
+                }
+            }
+        }
+    }
+}
+
+@media (hover: hover) {
+    @container style(--fas-checkbox-style: doodle) {
+        @scope (body) to (:is(.callout[data-callout="autopsy"], .callout[data-callout="screen"], .callout[data-callout="email"])) {
+            :is(.HyperMD-task-line, .task-list-item) input[type="checkbox"] {
+                &:hover {
+                    background: none;
+                    border-color: var(--checkbox-border-color);
+                }
+
+                &:where(:hover)::after {
+                    background-color: var(--checkbox-color-hover);
                 }
             }
         }

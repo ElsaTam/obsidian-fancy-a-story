@@ -44,7 +44,18 @@ body {
 }
 
 @media screen {
-    [class*="footer-img"] {
+    .footer-img,
+    .footer-img-accent,
+    .footer-img-gray,
+    .footer-img-brown,
+    .footer-img-red,
+    .footer-img-orange,
+    .footer-img-yellow,
+    .footer-img-green,
+    .footer-img-cyan,
+    .footer-img-blue,
+    .footer-img-purple,
+    .footer-img-pink {
         background-color: var(--workleaves-background);
 
         > .markdown-preview-section > div:nth-last-child(1 of div.el-p) {

@@ -39,12 +39,6 @@ body {
     .list-collapse-indicator.is-collapsed {
         background: var(--color-accent);
     }
-    .list-collapse-indicator:hover {
-        background: color-mix(in srgb, var(--color-accent), var(--workleaves-background) 70%);
-    }
-    .list-collapse-indicator.is-collapsed:hover {
-        background: color-mix(in srgb, var(--color-accent), var(--workleaves-background) 30%);
-    }
     .list-collapse-indicator svg {
         display: none;
     }
@@ -99,9 +93,6 @@ body {
         -webkit-mask-image: none;
         background: none;
         box-shadow: none;
-    }
-    li:has(> :is(.tag[href="#wed"], .wed)):has(> .list-bullet:hover) > ul > li:first-child {
-        display: block;
     }
 
     // element with no child, or only a spouse (#wed)
@@ -210,6 +201,21 @@ body {
     ul:not(:is(.tag[href="#wed"], .wed) + ul) > li:only-child::after,
     :is(.tag[href="#wed"], .wed) + ul > li:nth-child(2):last-child::after {
         content: none;
+    }
+}
+
+@media (hover: hover) {
+    .callout[data-callout="family-tree"] > .callout-content > ul,
+    .family-tree .el-ul > ul {
+        .list-collapse-indicator:hover {
+            background: color-mix(in srgb, var(--color-accent), var(--workleaves-background) 70%);
+        }
+        .list-collapse-indicator.is-collapsed:hover {
+            background: color-mix(in srgb, var(--color-accent), var(--workleaves-background) 30%);
+        }
+        li:has(> :is(.tag[href="#wed"], .wed)):has(> .list-bullet:hover) > ul > li:first-child {
+            display: block;
+        }
     }
 }
 

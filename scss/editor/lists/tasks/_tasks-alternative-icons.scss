@@ -1,14 +1,12 @@
-@use 'tasks-definition';
-@forward 'tasks-variables';
+@use "tasks-definition";
+@forward "tasks-variables";
 
 // Define the base styling for alternative icons
 $sel: tasks-definition.getDataList(tasks-definition.$alternative-icons);
 @container not style(--fas-alternative-checkboxes: disable) {
-    :is(.HyperMD-task-line, .task-list-item)#{$sel} input[type=checkbox] {
-        &, &:hover {
-            background: none;
-            border: none;
-        }
+    :is(.HyperMD-task-line, .task-list-item)#{$sel} input[type="checkbox"] {
+        background: none;
+        border: none;
 
         &::after {
             @include tasks-definition.icon-after;
@@ -17,10 +15,19 @@ $sel: tasks-definition.getDataList(tasks-definition.$alternative-icons);
         }
     }
 
-// Specify the color for alternative icons
+    // Specify the color for alternative icons
     @each $label, $icon, $color in tasks-definition.$alternative-icons {
-        :is(.HyperMD-task-line, .task-list-item.task-list-item)[data-task='#{$label}'] {
+        :is(.HyperMD-task-line, .task-list-item.task-list-item)[data-task="#{$label}"] {
             --checkbox-color: var(--color-#{$color});
+        }
+    }
+}
+
+@media (hover: hover) {
+    @container not style(--fas-alternative-checkboxes: disable) {
+        :is(.HyperMD-task-line, .task-list-item)#{$sel} input[type="checkbox"]:hover {
+            background: none;
+            border: none;
         }
     }
 }
@@ -28,7 +35,7 @@ $sel: tasks-definition.getDataList(tasks-definition.$alternative-icons);
 // Specify the mask image for alternative icons, normal style
 @container style(--fas-alternative-checkboxes: normal) {
     @each $label, $icon, $color in tasks-definition.$alternative-icons {
-        :is(.HyperMD-task-line, .task-list-item.task-list-item)[data-task='#{$label}'] {
+        :is(.HyperMD-task-line, .task-list-item.task-list-item)[data-task="#{$label}"] {
             --checkbox-icon: var(--icon-#{$icon});
         }
     }
@@ -37,7 +44,7 @@ $sel: tasks-definition.getDataList(tasks-definition.$alternative-icons);
 // Specify the mask image for alternative icons, doodle style
 @container style(--fas-alternative-checkboxes: doodle) {
     @each $label, $icon, $color in tasks-definition.$alternative-icons {
-        :is(.HyperMD-task-line, .task-list-item.task-list-item)[data-task='#{$label}'] {
+        :is(.HyperMD-task-line, .task-list-item.task-list-item)[data-task="#{$label}"] {
             --checkbox-icon: var(--icon-doodle-#{$icon});
         }
     }

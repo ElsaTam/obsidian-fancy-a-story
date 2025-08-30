@@ -40,9 +40,11 @@ body {
         --paper-fold-corner-angle 0.5s ease-in-out;
 }
 
-.callout[data-callout="paper-fold"]:hover {
-    --paper-fold-corner-diag: var(--paper-fold-corner-diag-hover);
-    --paper-fold-corner-angle: var(--paper-fold-corner-angle-hover);
+@media (hover: hover) {
+    .callout[data-callout="paper-fold"]:hover {
+        --paper-fold-corner-diag: var(--paper-fold-corner-diag-hover);
+        --paper-fold-corner-angle: var(--paper-fold-corner-angle-hover);
+    }
 }
 
 // -------------- SET WIDTH AND HEIGHT (no unit) -------------
@@ -69,9 +71,11 @@ body {
     --paper-fold-corner-angle: calc(asin(var(--paper-fold-corner-diag-n) / var(--corner-width-n)));
     transition: --corner-width-n 0.5s ease-out, --corner-height-n 0.5s ease-out;
 }
-.callout[data-callout="paper-fold"]:hover {
-    --corner-width-n: 80;
-    --corner-height-n: 20;
+@media (hover: hover) {
+    .callout[data-callout="paper-fold"]:hover {
+        --corner-width-n: 80;
+        --corner-height-n: 20;
+    }
 }*/
 
 .theme-light {

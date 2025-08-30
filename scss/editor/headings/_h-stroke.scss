@@ -93,7 +93,7 @@
         --h#{$i}-weight: var(--font-extralight);
         text-align: var(--h#{$i}-stroke-alignment);
 
-        .cm-fold-indicator ~ span:nth-child(1 of .cm-fold-indicator ~ span) {
+        > span:first-of-type {
             anchor-name: --header-anchor-left;
         }
 

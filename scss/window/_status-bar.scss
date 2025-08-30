@@ -1,8 +1,8 @@
 @forward "../shared/shadow-color";
 @forward "../shared/workspace";
 
-@scope (body:not(.is-popout-window):not(.is-mobile)) {
-    :scope.fas-status-bar-top {
+:where(body:not(.is-popout-window, .is-mobile)) {
+    &.fas-status-bar-top {
         .app-container {
             flex-direction: column-reverse;
         }
@@ -16,13 +16,13 @@
             background: none;
         }
 
-        &.is-hidden-frameless:not(.is-fullscreen):not(.mod-macos) .status-bar {
+        &.is-hidden-frameless:not(.is-fullscreen, .mod-macos) .status-bar {
             margin-right: calc(
                 var(--frame-right-space) + var(--size-4-2) + var(--workspace-top-margin) + var(--header-height) - 1px
             );
         }
 
-        &.is-hidden-frameless:not(.is-fullscreen):not(.mod-macos) .status-bar::before {
+        &.is-hidden-frameless:not(.is-fullscreen, .mod-macos) .status-bar::before {
             -webkit-app-region: drag;
             content: "";
             height: 100%;
@@ -49,7 +49,7 @@
         }
     }
 
-    :scope.fas-status-bar-default-hover {
+    &.fas-status-bar-default-hover {
         .status-bar {
             --transition-duration: 0.5s;
             --transition-timing-function: ease;
@@ -75,13 +75,9 @@
             transition-property: left;
             z-index: -1;
         }
-
-        .status-bar:hover::before {
-            left: 0;
-        }
     }
 
-    :scope.fas-status-bar-ribbon {
+    &.fas-status-bar-ribbon {
         --status-bar-radius: 0;
         --status-bar-text-color: var(--workspace-foreground-muted);
         .status-bar {
@@ -105,16 +101,28 @@
             transform: rotate(-180deg);
         }
 
-        .status-bar:hover {
-            border-top: 1px dashed var(--color-base-40);
-            opacity: 1;
-        }
-
         .workspace-ribbon {
             height: calc(50vh - var(--header-height) + 1px);
         }
-        .workspace-ribbon:hover {
-            border-bottom: 1px dashed var(--color-base-40);
+    }
+}
+
+@media (hover: hover) {
+    :where(body:not(.is-popout-window, .is-mobile)) {
+        &.fas-status-bar-default-hover {
+            .status-bar:hover::before {
+                left: 0;
+            }
+        }
+
+        &.fas-status-bar-ribbon {
+            .status-bar:hover {
+                border-top: 1px dashed var(--color-base-40);
+                opacity: 1;
+            }
+            .workspace-ribbon:hover {
+                border-bottom: 1px dashed var(--color-base-40);
+            }
         }
     }
 }

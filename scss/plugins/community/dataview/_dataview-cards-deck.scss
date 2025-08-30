@@ -1,15 +1,14 @@
-@forward '../../../shared/workleaves';
-@use '../../../mixins/cards-deck';
+@forward "../../../shared/workleaves";
+@use "../../../mixins/cards-deck";
+
+.dataview-cards-deck {
+    --card-gap: 50px;
+    --card-width: 150px;
+    --card-height: 300px;
+    --deck-border-width: 0;
+}
 
 @scope (.dataview-cards-deck) to (.markdown-embed .markdown-embed) {
-
-    :scope {
-        --card-gap: 50px;
-        --card-width: 150px;
-        --card-height: 300px;
-        --deck-border-width: 0;
-    }
-    
     ul.dataview-result-list-root-ul {
         --border-color-hover: var(--color-accent);
         --list-indent: 0;
@@ -19,7 +18,7 @@
         --image-shadow-offset: 0;
         list-style-type: none;
         border: var(--deck-border-width) solid var(--background-secondary);
-    
+
         padding-bottom: var(--padding-bottom) !important;
         padding-top: var(--padding-top) !important;
         padding-left: var(--padding-left) !important;
@@ -30,10 +29,6 @@
 
     .dataview-result-list-li {
         @include cards-deck.card;
-    }
-
-    .dataview-result-list-li:hover {
-        @include cards-deck.card-hover;
     }
 
     .markdown-embed {
@@ -55,11 +50,7 @@
         box-shadow: 1px 1px 5px black;
     }
 
-    .dataview-result-list-li:hover .markdown-embed-title {
-        opacity: 0;
-    }
-    
-    :scope .markdown-embed .markdown-preview-view,
+    .markdown-embed.markdown-embed .markdown-preview-view,
     .markdown-embed-content {
         @include cards-deck.card-shadow;
         @include cards-deck.card-radius;
@@ -83,7 +74,7 @@
         width: var(--card-width);
         height: var(--card-height);
         display: block;
-    
+
         > img {
             @include cards-deck.card-radius;
             height: 100%;
@@ -110,7 +101,6 @@
     }
 }
 
-
 @scope (body:not(.is-ios) .dataview-cards-deck) to (.markdown-embed .markdown-embed) {
     .ul.dataview-result-list-root-ul::-webkit-scrollbar {
         width: var(--deck-scrollbar-width);
@@ -118,6 +108,21 @@
     }
 }
 
+@media (hover: hover) {
+    @scope (.dataview-cards-deck) to (.markdown-embed .markdown-embed) {
+        ul.dataview-result-list-root-ul {
+            @include cards-deck.cards-deck-hover;
+        }
+
+        .dataview-result-list-li:hover {
+            @include cards-deck.card-hover;
+        }
+
+        .dataview-result-list-li:hover .markdown-embed-title {
+            opacity: 0;
+        }
+    }
+}
 
 /* Remove code bellow in case of performance issues */
 
@@ -126,8 +131,12 @@
     .dataview-result-list-root-ul .markdown-embed-content:hover {
         outline: none;
     }
+}
 
-    .dataview-result-list-root-ul {
-        @include cards-deck.card-not-hover;
+@media (hover: hover) {
+    @scope (.dataview-cards-deck) to (.markdown-embed .markdown-embed) {
+        .dataview-result-list-root-ul {
+            @include cards-deck.card-not-hover;
+        }
     }
 }

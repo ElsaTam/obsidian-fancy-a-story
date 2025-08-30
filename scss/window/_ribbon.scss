@@ -12,8 +12,10 @@ body {
     --icon-opacity-hover: 1;
 }
 
-.workspace-ribbon:hover {
-    --icon-opacity: var(--icon-opacity-hover);
+@media (hover: hover) {
+    .workspace-ribbon:hover {
+        --icon-opacity: var(--icon-opacity-hover);
+    }
 }
 
 body.fas-ribbon-horizontal-floating-hover {
@@ -61,11 +63,6 @@ body.fas-ribbon-horizontal-floating-hover {
         z-index: -1;
     }
 
-
-    .workspace-ribbon:hover::after {
-        right: 0;
-    }
-
     .workspace-ribbon.mod-left::before {
         position: static;
         width: var(--ribbon-width);
@@ -84,6 +81,11 @@ body.fas-ribbon-horizontal-floating-hover {
     }
 }
 
+@media (hover: hover) {
+    body.fas-ribbon-horizontal-floating-hover .workspace-ribbon:hover::after {
+        right: 0;
+    }
+}
 
 body.fas-ribbon-horizontal-floating {
     --ribbon-background: var(--workspace-background);
@@ -121,7 +123,9 @@ body.fas-ribbon-horizontal-floating {
     }
 }
 
-body.is-hidden-frameless:not(.is-fullscreen):not(.mod-macos).fas-left-toggle-button-in-root:not(.fas-ribbon-horizontal-floating):not(.fas-ribbon-horizontal-floating-hover) {
+body.is-hidden-frameless:not(.is-fullscreen):not(.mod-macos).fas-left-toggle-button-in-root:not(
+        .fas-ribbon-horizontal-floating
+    ):not(.fas-ribbon-horizontal-floating-hover) {
     .mod-root :nth-child(1 of .mod-top) .workspace-tab-header-container {
         anchor-name: --top-tab-header-container;
 
@@ -137,7 +141,6 @@ body.is-hidden-frameless:not(.is-fullscreen):not(.mod-macos).fas-left-toggle-but
         position: static;
         width: var(--ribbon-width);
     }
-
 
     .workspace-ribbon.mod-left .sidebar-toggle-button {
         position-anchor: --top-tab-header-container;

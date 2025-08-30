@@ -110,7 +110,10 @@
             opacity: 0.5;
         }
     }
-    > .callout-title:hover .callout-icon {
+}
+
+@media (hover: hover) {
+    .callout[data-callout="clue"] > .callout-title:hover .callout-icon {
         opacity: 1;
     }
 }

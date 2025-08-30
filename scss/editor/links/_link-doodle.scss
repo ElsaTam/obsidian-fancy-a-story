@@ -1,8 +1,4 @@
-@mixin doodle-decoration {
-    & {
-        position: relative;
-    }
-
+@mixin doodle-decoration-hover {
     &:hover::after {
         content: "";
         position: absolute;
@@ -25,7 +21,7 @@ body {
 @container style(--link-decoration: doodle) {
     .cm-hmd-internal-link,
     .internal-link:not(:is(.metadata-container .internal-link)) {
-        @include doodle-decoration;
+        position: relative;
     }
 }
 
@@ -33,6 +29,23 @@ body {
     .cm-url,
     .cm-link,
     .external-link:not(:is(.metadata-container .external-link)) {
-        @include doodle-decoration;
+        position: relative;
+    }
+}
+
+@media (hover: hover) {
+    @container style(--link-decoration: doodle) {
+        .cm-hmd-internal-link,
+        .internal-link:not(:is(.metadata-container .internal-link)) {
+            @include doodle-decoration-hover;
+        }
+    }
+
+    @container style(--link-external-decoration: doodle) {
+        .cm-url,
+        .cm-link,
+        .external-link:not(:is(.metadata-container .external-link)) {
+            @include doodle-decoration-hover;
+        }
     }
 }

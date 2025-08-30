@@ -24,10 +24,6 @@
         display: none;
     }
 
-    &:hover .callout-title {
-        display: flex;
-    }
-
     .callout-icon {
         display: none;
     }
@@ -46,6 +42,12 @@
 
     &.is-collapsed .callout-title {
         position: static;
+        display: flex;
+    }
+}
+
+@media (hover: hover) {
+    .callout[data-callout="tooltip"]:hover .callout-title {
         display: flex;
     }
 }

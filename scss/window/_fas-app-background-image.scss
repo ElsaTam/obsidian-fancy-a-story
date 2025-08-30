@@ -80,21 +80,25 @@ body {
         transition: background-color 0.2s;
     }
 
-    .workspace-ribbon:hover {
-        background-color: rgba(var(--mono-rgb-0), 0.6);
-    }
-    .workspace-split.mod-left-split
-        .workspace-sidedock-vault-profile:not(:is(.is-mobile .workspace-sidedock-vault-profile)):hover {
-        background-color: rgba(var(--mono-rgb-0), 0.6);
-        --workspace-foreground: rgb(var(--mono-rgb-100));
-        --workspace-foreground-faint: rgba(var(--mono-rgb-100), 0.6);
-        --workspace-foreground-muted: rgba(var(--mono-rgb-100), 0.6);
-        --vault-profile-color: rgba(var(--mono-rgb-100), 0.6);
-        --vault-profile-color-hover: rgb(var(--mono-rgb-100));
-    }
-
     // Remove the titlebar clip-path
     &.mod-windows.is-hidden-frameless:not(.is-fullscreen) .workspace:not(.is-right-sidedock-open) .mod-root::before {
         content: none;
+    }
+}
+
+@media (hover: hover) {
+    .fas-background-image:not(.is-mobile) {
+        .workspace-ribbon:hover {
+            background-color: rgba(var(--mono-rgb-0), 0.6);
+        }
+        .workspace-split.mod-left-split
+            .workspace-sidedock-vault-profile:not(:is(.is-mobile .workspace-sidedock-vault-profile)):hover {
+            background-color: rgba(var(--mono-rgb-0), 0.6);
+            --workspace-foreground: rgb(var(--mono-rgb-100));
+            --workspace-foreground-faint: rgba(var(--mono-rgb-100), 0.6);
+            --workspace-foreground-muted: rgba(var(--mono-rgb-100), 0.6);
+            --vault-profile-color: rgba(var(--mono-rgb-100), 0.6);
+            --vault-profile-color-hover: rgb(var(--mono-rgb-100));
+        }
     }
 }

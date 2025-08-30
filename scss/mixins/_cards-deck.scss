@@ -11,7 +11,10 @@
     --padding-scale-factor: (var(--card-scale-hover) - 1) * var(--card-height);
 
     color: var(--text-muted);
-    height: calc((var(--card-height) + var(--card-shadow-offset-y) * 2 + var(--card-shadow-blur) * 2) * var(--card-scale-hover) + var(--padding-bottom) + 2 * var(--deck-border-width));
+    height: calc(
+        (var(--card-height) + var(--card-shadow-offset-y) * 2 + var(--card-shadow-blur) * 2) * var(--card-scale-hover) +
+            var(--padding-bottom) + 2 * var(--deck-border-width)
+    );
     display: flex;
     align-items: center;
     justify-content: left;
@@ -19,8 +22,12 @@
 
     --padding-bottom: max(0px, var(--card-shadow-blur) + var(--card-shadow-offset-y) + var(--padding-scale-factor));
     --padding-top: max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-y) + var(--padding-scale-factor));
-    --padding-left: calc(-1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-x)));
-    --padding-right: calc(-1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) + var(--card-shadow-offset-x)));
+    --padding-left: calc(
+        -1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-x))
+    );
+    --padding-right: calc(
+        -1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) + var(--card-shadow-offset-x))
+    );
 
     > * {
         width: var(--card-gap);
@@ -28,24 +35,19 @@
         transform: translateX(var(--card-base-translation));
         transform-origin: right;
     }
-
-    > :hover {
-        transform: translateX(var(--card-base-translation)) scale(var(--card-scale-hover));
-    }
-
-    > :hover ~ * {
-        transform: translateX(var(--card-base-translation)) translateX(calc(var(--card-width) - var(--card-gap)));
-    }
 }
 
 @mixin card {
-    transition: transform 0.5s ease-in-out, filter 0.2s linear;
+    transition:
+        transform 0.5s ease-in-out,
+        filter 0.2s linear;
     height: var(--card-height);
     vertical-align: middle;
 }
 
 @mixin card-shadow {
-    box-shadow: var(--card-shadow-offset-x) var(--card-shadow-offset-y) var(--card-shadow-blur) rgba(0, 0, 0, var(--card-shadow-opacity));
+    box-shadow: var(--card-shadow-offset-x) var(--card-shadow-offset-y) var(--card-shadow-blur)
+        rgba(0, 0, 0, var(--card-shadow-opacity));
 }
 
 @mixin card-border {
@@ -60,18 +62,29 @@
     --border-color: var(--border-color-hover);
 }
 
+@mixin cards-deck-hover {
+    > *:hover {
+        transform: translateX(var(--card-base-translation)) scale(var(--card-scale-hover));
+    }
+
+    > *:hover ~ * {
+        transform: translateX(var(--card-base-translation)) translateX(calc(var(--card-width) - var(--card-gap)));
+    }
+}
+
 @mixin card-not-hover {
     &:hover > :not(:hover) {
         filter: saturate(0.2);
-        &, & .markdown-preview-view {
+        &,
+        & .markdown-preview-view {
             color: var(--text-faint);
         }
     }
 
-    > :hover ~ * {
-        z-index: 0
+    > *:hover ~ * {
+        z-index: 0;
     }
-    
+
     &:hover {
         z-index: 1;
     }
