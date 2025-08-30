@@ -1,0 +1,13 @@
+.site-body-center-column {
+    background-color: var(--workleaves-background);
+}
+
+@container style(--font-text-override: '??') {
+    .published-container {
+        --font-weight: var(--font-light);
+        --bold-modifier: 300;
+    }
+    .markdown-preview-view {
+        font-weight: var(--font-weight);
+    }
+}

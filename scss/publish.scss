@@ -1,7 +1,9 @@
 @use "foundations/text/font-import";
+@use "foundations/text/font-family";
+@use "foundations/text/text-wrap";
+
 @use "foundations/colors/default_theme";
 @use "foundations/fas-accessibility";
-@use "foundations/text/text-wrap";
 @use "foundations/shared-css-variables";
 @use "foundations/publish-css-variables";
 
@@ -23,3 +25,6 @@
 @use "window/sidebars/fas-bg-textures";
 @use "window/sidebars/sidebar-layout";
 @use "window/workspace";
+
+@use "publish/variable_overrides";
+@use "publish/sidebar";

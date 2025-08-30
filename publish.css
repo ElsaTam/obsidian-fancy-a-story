@@ -174,7 +174,7 @@ body {
   container: markdown-view/inline-size;
 }
 
-:where(.markdown-rendered :is(ul, ol)) {
+.markdown-rendered :is(ul, ol) {
   display: flow-root;
 }
 
@@ -643,14 +643,6 @@ body {
   right: calc(100cqw - var(--left)); /* must compute from the right because we use row-reverse */
   top: var(--top);
 }
-.callout[data-callout=autopsy] .callout[data-callout=body] .task-list-item:hover {
-  --padding-x: 5px;
-  --padding-y: 5px;
-  font-size: unset; /* Show the label */
-  background: rgba(var(--mono-rgb-0), 1); /* Show the background */
-  border-radius: var(--radius-m);
-  z-index: 1;
-}
 .callout[data-callout=autopsy] .callout[data-callout=footnote] .callout-title {
   justify-content: center;
 }
@@ -658,6 +650,16 @@ body {
   text-align: center;
 }
 
+@media (hover: hover) {
+  .callout[data-callout=autopsy] .callout[data-callout=body] .task-list-item:hover {
+    --padding-x: 5px;
+    --padding-y: 5px;
+    font-size: unset; /* Show the label */
+    background: rgba(var(--mono-rgb-0), 1); /* Show the background */
+    border-radius: var(--radius-m);
+    z-index: 1;
+  }
+}
 /* Because SVG images in black, in case we are in the dark theme, we need to invert it and make it white */
 .theme-dark .callout[data-callout=autopsy] .callout[data-callout=body] ul.contains-task-list::before {
   filter: invert(1);
@@ -790,20 +792,18 @@ body {
   overflow-x: auto;
   --padding-bottom: max(0px, var(--card-shadow-blur) + var(--card-shadow-offset-y) + var(--padding-scale-factor));
   --padding-top: max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-y) + var(--padding-scale-factor));
-  --padding-left: calc(-1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-x)));
-  --padding-right: calc(-1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) + var(--card-shadow-offset-x)));
+  --padding-left: calc(
+      -1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-x))
+  );
+  --padding-right: calc(
+      -1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) + var(--card-shadow-offset-x))
+  );
 }
 .callout[data-callout=cards-deck] .callout-content > p > * {
   width: var(--card-gap);
   transition: transform 0.5s ease-in-out;
   transform: translateX(var(--card-base-translation));
   transform-origin: right;
-}
-.callout[data-callout=cards-deck] .callout-content > p > :hover {
-  transform: translateX(var(--card-base-translation)) scale(var(--card-scale-hover));
-}
-.callout[data-callout=cards-deck] .callout-content > p > :hover ~ * {
-  transform: translateX(var(--card-base-translation)) translateX(calc(var(--card-width) - var(--card-gap)));
 }
 .callout[data-callout=cards-deck] .callout-content > p a {
   font-size: 0;
@@ -824,29 +824,39 @@ body {
   object-position: center center;
 }
 
+@media (hover: hover) {
+  .callout[data-callout=cards-deck] .callout-content > p > *:hover {
+    transform: translateX(var(--card-base-translation)) scale(var(--card-scale-hover));
+  }
+  .callout[data-callout=cards-deck] .callout-content > p > *:hover ~ * {
+    transform: translateX(var(--card-base-translation)) translateX(calc(var(--card-width) - var(--card-gap)));
+  }
+}
 body:not(.is-ios) .callout[data-callout=cards-deck] .callout-content > p::-webkit-scrollbar {
   width: var(--deck-scrollbar-width);
   height: var(--deck-scrollbar-width);
 }
 
 /* Remove code bellow in case of performance issues */
-.callout[data-callout=cards-deck] .callout-content > p > span > img:hover,
-.callout[data-callout=cards-deck] .callout-content > p > a > span > img:hover {
-  --border-color: var(--border-color-hover);
-}
 .callout[data-callout=cards-deck] .callout-content > p:hover > :not(:hover) {
   filter: saturate(0.2);
 }
 .callout[data-callout=cards-deck] .callout-content > p:hover > :not(:hover), .callout[data-callout=cards-deck] .callout-content > p:hover > :not(:hover) .markdown-preview-view {
   color: var(--text-faint);
 }
-.callout[data-callout=cards-deck] .callout-content > p > :hover ~ * {
+.callout[data-callout=cards-deck] .callout-content > p > *:hover ~ * {
   z-index: 0;
 }
 .callout[data-callout=cards-deck] .callout-content > p:hover {
   z-index: 1;
 }
 
+@media (hover: hover) {
+  .callout[data-callout=cards-deck] .callout-content > p > span > img:hover,
+  .callout[data-callout=cards-deck] .callout-content > p > a > span > img:hover {
+    --border-color: var(--border-color-hover);
+  }
+}
 body {
   --cite-decoration-width: 50px;
 }
@@ -1058,10 +1068,12 @@ body {
 .callout[data-callout=clue].is-collapsed > * > .callout-icon {
   opacity: 0.5;
 }
-.callout[data-callout=clue] > .callout-title:hover .callout-icon {
-  opacity: 1;
-}
 
+@media (hover: hover) {
+  .callout[data-callout=clue] > .callout-title:hover .callout-icon {
+    opacity: 1;
+  }
+}
 .callout[data-callout=clue][data-callout-metadata*=ripped] .callout-content {
   -webkit-mask-image: var(--clue-ripped-variant), linear-gradient(to bottom, black, black);
   -webkit-mask-size: 101% auto;
@@ -2659,11 +2671,12 @@ body {
   transition: --paper-fold-corner-diag 0.5s ease-in-out, --paper-fold-corner-angle 0.5s ease-in-out;
 }
 
-.callout[data-callout=paper-fold]:hover {
-  --paper-fold-corner-diag: var(--paper-fold-corner-diag-hover);
-  --paper-fold-corner-angle: var(--paper-fold-corner-angle-hover);
+@media (hover: hover) {
+  .callout[data-callout=paper-fold]:hover {
+    --paper-fold-corner-diag: var(--paper-fold-corner-diag-hover);
+    --paper-fold-corner-angle: var(--paper-fold-corner-angle-hover);
+  }
 }
-
 /*
 @property --corner-width-n {
     syntax: "<number>";
@@ -2684,9 +2697,11 @@ body {
     --paper-fold-corner-angle: calc(asin(var(--paper-fold-corner-diag-n) / var(--corner-width-n)));
     transition: --corner-width-n 0.5s ease-out, --corner-height-n 0.5s ease-out;
 }
-.callout[data-callout="paper-fold"]:hover {
-    --corner-width-n: 80;
-    --corner-height-n: 20;
+@media (hover: hover) {
+    .callout[data-callout="paper-fold"]:hover {
+        --corner-width-n: 80;
+        --corner-height-n: 20;
+    }
 }*/
 .theme-light {
   --paper-fold-color: 255, 247, 64;
@@ -3232,10 +3247,6 @@ body {
   background: conic-gradient(from 90deg at 1px 1px, transparent 25%, rgba(var(--callout-color), 0.4) 0);
   padding: var(--card-padding);
 }
-.callout[data-callout=timeline] > .callout-content > *:hover {
-  outline: 1px dashed rgba(var(--callout-color), 0.4);
-  background: conic-gradient(from 90deg at 1px 1px, transparent 25%, rgba(var(--callout-color), 0.8) 0);
-}
 .callout[data-callout=timeline] > .callout-content > *:not(:is(.callout, code, pre, ul, ol))::first-letter,
 .callout[data-callout=timeline] > .callout-content > *.callout .callout-content > *:not(:is(.callout, code, pre, ul, ol))::first-letter {
   color: color-mix(in srgb, rgb(var(--callout-color)), var(--text-normal) 40%);
@@ -3264,6 +3275,12 @@ body {
   margin-bottom: 0;
 }
 
+@media (hover: hover) {
+  .callout[data-callout=timeline] > .callout-content > *:hover {
+    outline: 1px dashed rgba(var(--callout-color), 0.4);
+    background: conic-gradient(from 90deg at 1px 1px, transparent 25%, rgba(var(--callout-color), 0.8) 0);
+  }
+}
 .callout[data-callout=timeline] > .callout-content > *::after {
   content: "";
   width: var(--bullet-size);
@@ -3444,8 +3461,11 @@ body {
 .callout[data-callout=timeline][data-callout-metadata~=horizontal] > .callout-content > *::after {
   left: calc(50% - var(--bullet-size) * 0.5 - var(--bullet-border-width));
   --shift-bullet: calc(
-      -1 * (var(--bullet-size) * 0.5 + var(--bullet-border-width) + var(--card-border-width) * 2 + var(--row-gap) +
-                  var(--line-thickness) * 0.5)
+      -1 *
+          (
+              var(--bullet-size) * 0.5 + var(--bullet-border-width) + var(--card-border-width) * 2 +
+                  var(--row-gap) + var(--line-thickness) * 0.5
+          )
   );
 }
 .callout[data-callout=timeline][data-callout-metadata~=horizontal] > .callout-content > *::before {
@@ -3496,8 +3516,11 @@ body {
   }
   .callout[data-callout=timeline]:not([data-callout-metadata~=horizontal]) > .callout-content > *::after {
     --shift-bullet: calc(
-        -1 * (var(--bullet-size) * 0.5 + var(--bullet-border-width) + var(--line-thickness) * 0.5 +
-                    var(--card-border-width) * 2)
+        -1 *
+            (
+                var(--bullet-size) * 0.5 + var(--bullet-border-width) + var(--line-thickness) * 0.5 +
+                    var(--card-border-width) * 2
+            )
     );
   }
   .callout[data-callout=timeline]:not([data-callout-metadata~=horizontal]) > .callout-content > *::before {
@@ -3580,9 +3603,6 @@ body {
   z-index: var(--layer-tooltip);
   display: none;
 }
-.callout[data-callout=tooltip]:hover .callout-title {
-  display: flex;
-}
 .callout[data-callout=tooltip] .callout-icon {
   display: none;
 }
@@ -3601,6 +3621,11 @@ body {
   display: flex;
 }
 
+@media (hover: hover) {
+  .callout[data-callout=tooltip]:hover .callout-title {
+    display: flex;
+  }
+}
 body {
   --file-margins-block: var(--size-4-8);
   --file-margins-inline: var(--size-4-8);
@@ -4059,30 +4084,6 @@ body {
   max-width: 100px;
 }
 
-@scope (:is(.markdown-source-view, .markdown-preview-view) .markdown-embed[alt~="faded"]) to (.markdown-embed) {
-  :scope {
-    border-inline-start: none;
-    border-inline-end: none;
-    border-block-start: none;
-    border-block-end: none;
-    padding: 0;
-    --embed-opacity-loss: 0.3;
-  }
-  .embed-title {
-    display: none;
-  }
-  .markdown-embed-link {
-    position: absolute;
-    right: calc(-1 * var(--file-margins-inline));
-    top: 0;
-  }
-  :scope .markdown-embed-content {
-    max-height: unset;
-  }
-  :is(:scope, .markdown-embed):hover {
-    background-color: var(--background-modifier-hover);
-  }
-}
 .image-embed:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol]) {
   --image-shadow-offset: 0;
   display: block;
@@ -4133,10 +4134,11 @@ body {
   background-image: repeating-linear-gradient(-45deg, var(--pattern-color), var(--pattern-color) var(--pattern-thickness), transparent var(--pattern-thickness), transparent calc(var(--pattern-thickness) + var(--pattern-gap))), repeating-linear-gradient(-45deg, var(--pattern-color), var(--pattern-color) var(--pattern-thickness), transparent var(--pattern-thickness), transparent calc(var(--pattern-thickness) + var(--pattern-gap-2))), repeating-linear-gradient(45deg, var(--pattern-color), var(--pattern-color) var(--pattern-thickness), transparent var(--pattern-thickness), transparent calc(var(--pattern-thickness) + var(--pattern-gap))), repeating-linear-gradient(45deg, var(--pattern-color), var(--pattern-color) var(--pattern-thickness), transparent var(--pattern-thickness), transparent calc(var(--pattern-thickness) + var(--pattern-gap-2)));
 }
 
-.file-embed.mod-empty:hover {
-  --pattern-color: rgba(var(--color-red-rgb), 0.04);
+@media (hover: hover) {
+  .file-embed.mod-empty:hover {
+    --pattern-color: rgba(var(--color-red-rgb), 0.04);
+  }
 }
-
 body {
   --image-shadow-offset: var(--size-4-2);
   --image-shadow-stripe-thickness: 2px;
@@ -5122,8 +5124,8 @@ body {
   --h1-weight: var(--font-extralight);
   text-align: var(--h1-stroke-alignment);
 }
-:is(.fas-h1-stroke, .fas-h1-stroke-left-aligned) .is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned)) .HyperMD-header-1 .cm-fold-indicator ~ span:nth-child(1 of .cm-fold-indicator ~ span),
-.is-live-preview:is(.h1-stroke, .h1-stroke-left-aligned) .HyperMD-header-1 .cm-fold-indicator ~ span:nth-child(1 of .cm-fold-indicator ~ span) {
+:is(.fas-h1-stroke, .fas-h1-stroke-left-aligned) .is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned)) .HyperMD-header-1 > span:first-of-type,
+.is-live-preview:is(.h1-stroke, .h1-stroke-left-aligned) .HyperMD-header-1 > span:first-of-type {
   anchor-name: --header-anchor-left;
 }
 :is(.fas-h1-stroke, .fas-h1-stroke-left-aligned) .is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned)) .HyperMD-header-1 :nth-last-child(1 of .cm-header-1),
@@ -5185,8 +5187,8 @@ body {
   --h2-weight: var(--font-extralight);
   text-align: var(--h2-stroke-alignment);
 }
-:is(.fas-h2-stroke, .fas-h2-stroke-left-aligned) .is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned)) .HyperMD-header-2 .cm-fold-indicator ~ span:nth-child(1 of .cm-fold-indicator ~ span),
-.is-live-preview:is(.h2-stroke, .h2-stroke-left-aligned) .HyperMD-header-2 .cm-fold-indicator ~ span:nth-child(1 of .cm-fold-indicator ~ span) {
+:is(.fas-h2-stroke, .fas-h2-stroke-left-aligned) .is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned)) .HyperMD-header-2 > span:first-of-type,
+.is-live-preview:is(.h2-stroke, .h2-stroke-left-aligned) .HyperMD-header-2 > span:first-of-type {
   anchor-name: --header-anchor-left;
 }
 :is(.fas-h2-stroke, .fas-h2-stroke-left-aligned) .is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned)) .HyperMD-header-2 :nth-last-child(1 of .cm-header-2),
@@ -5248,8 +5250,8 @@ body {
   --h3-weight: var(--font-extralight);
   text-align: var(--h3-stroke-alignment);
 }
-:is(.fas-h3-stroke, .fas-h3-stroke-left-aligned) .is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned)) .HyperMD-header-3 .cm-fold-indicator ~ span:nth-child(1 of .cm-fold-indicator ~ span),
-.is-live-preview:is(.h3-stroke, .h3-stroke-left-aligned) .HyperMD-header-3 .cm-fold-indicator ~ span:nth-child(1 of .cm-fold-indicator ~ span) {
+:is(.fas-h3-stroke, .fas-h3-stroke-left-aligned) .is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned)) .HyperMD-header-3 > span:first-of-type,
+.is-live-preview:is(.h3-stroke, .h3-stroke-left-aligned) .HyperMD-header-3 > span:first-of-type {
   anchor-name: --header-anchor-left;
 }
 :is(.fas-h3-stroke, .fas-h3-stroke-left-aligned) .is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned)) .HyperMD-header-3 :nth-last-child(1 of .cm-header-3),
@@ -5311,8 +5313,8 @@ body {
   --h4-weight: var(--font-extralight);
   text-align: var(--h4-stroke-alignment);
 }
-:is(.fas-h4-stroke, .fas-h4-stroke-left-aligned) .is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned)) .HyperMD-header-4 .cm-fold-indicator ~ span:nth-child(1 of .cm-fold-indicator ~ span),
-.is-live-preview:is(.h4-stroke, .h4-stroke-left-aligned) .HyperMD-header-4 .cm-fold-indicator ~ span:nth-child(1 of .cm-fold-indicator ~ span) {
+:is(.fas-h4-stroke, .fas-h4-stroke-left-aligned) .is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned)) .HyperMD-header-4 > span:first-of-type,
+.is-live-preview:is(.h4-stroke, .h4-stroke-left-aligned) .HyperMD-header-4 > span:first-of-type {
   anchor-name: --header-anchor-left;
 }
 :is(.fas-h4-stroke, .fas-h4-stroke-left-aligned) .is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned)) .HyperMD-header-4 :nth-last-child(1 of .cm-header-4),
@@ -5374,8 +5376,8 @@ body {
   --h5-weight: var(--font-extralight);
   text-align: var(--h5-stroke-alignment);
 }
-:is(.fas-h5-stroke, .fas-h5-stroke-left-aligned) .is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned)) .HyperMD-header-5 .cm-fold-indicator ~ span:nth-child(1 of .cm-fold-indicator ~ span),
-.is-live-preview:is(.h5-stroke, .h5-stroke-left-aligned) .HyperMD-header-5 .cm-fold-indicator ~ span:nth-child(1 of .cm-fold-indicator ~ span) {
+:is(.fas-h5-stroke, .fas-h5-stroke-left-aligned) .is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned)) .HyperMD-header-5 > span:first-of-type,
+.is-live-preview:is(.h5-stroke, .h5-stroke-left-aligned) .HyperMD-header-5 > span:first-of-type {
   anchor-name: --header-anchor-left;
 }
 :is(.fas-h5-stroke, .fas-h5-stroke-left-aligned) .is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned)) .HyperMD-header-5 :nth-last-child(1 of .cm-header-5),
@@ -5437,8 +5439,8 @@ body {
   --h6-weight: var(--font-extralight);
   text-align: var(--h6-stroke-alignment);
 }
-:is(.fas-h6-stroke, .fas-h6-stroke-left-aligned) .is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned)) .HyperMD-header-6 .cm-fold-indicator ~ span:nth-child(1 of .cm-fold-indicator ~ span),
-.is-live-preview:is(.h6-stroke, .h6-stroke-left-aligned) .HyperMD-header-6 .cm-fold-indicator ~ span:nth-child(1 of .cm-fold-indicator ~ span) {
+:is(.fas-h6-stroke, .fas-h6-stroke-left-aligned) .is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned)) .HyperMD-header-6 > span:first-of-type,
+.is-live-preview:is(.h6-stroke, .h6-stroke-left-aligned) .HyperMD-header-6 > span:first-of-type {
   anchor-name: --header-anchor-left;
 }
 :is(.fas-h6-stroke, .fas-h6-stroke-left-aligned) .is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned)) .HyperMD-header-6 :nth-last-child(1 of .cm-header-6),
@@ -5517,11 +5519,15 @@ body {
     text-underline-offset: 0.2em;
     transition: text-underline-offset 0.3s, opacity 0.15s ease-in-out;
   }
-  .cm-hmd-internal-link .cm-underline:hover,
-  .markdown-rendered .internal-link:not(:is(.metadata-container .internal-link)):hover,
-  .internal-link:not(:is(.metadata-container .internal-link)):hover {
-    text-underline-offset: calc(0.4em + var(--link-decoration-thickness) - var(--link-decoration-thickness-hover));
-    text-decoration-thickness: var(--link-decoration-thickness-hover);
+}
+@media (hover: hover) {
+  @container not style(--link-decoration: doodle) {
+    .cm-hmd-internal-link .cm-underline:hover,
+    .markdown-rendered .internal-link:not(:is(.metadata-container .internal-link)):hover,
+    .internal-link:not(:is(.metadata-container .internal-link)):hover {
+      text-underline-offset: calc(0.4em + var(--link-decoration-thickness) - var(--link-decoration-thickness-hover));
+      text-decoration-thickness: var(--link-decoration-thickness-hover);
+    }
   }
 }
 @container not style(--link-external-decoration: none) {
@@ -5531,21 +5537,30 @@ body {
     text-underline-offset: 0.2em;
     transition: text-underline-offset 0.3s, opacity 0.15s ease-in-out;
   }
-  .cm-url .cm-underline:hover,
-  .cm-link .cm-underline:hover,
-  .external-link:not(:is(.metadata-container .external-link)):hover {
-    text-underline-offset: calc(0.4em + var(--link-decoration-thickness) - var(--link-decoration-thickness-hover));
-    text-decoration-thickness: var(--link-decoration-thickness-hover);
+}
+@media (hover: hover) {
+  @container not style(--link-external-decoration: none) {
+    .cm-url .cm-underline:hover,
+    .cm-link .cm-underline:hover,
+    .external-link:not(:is(.metadata-container .external-link)):hover {
+      text-underline-offset: calc(0.4em + var(--link-decoration-thickness) - var(--link-decoration-thickness-hover));
+      text-decoration-thickness: var(--link-decoration-thickness-hover);
+    }
   }
 }
-.cm-s-obsidian span.cm-url, .cm-s-obsidian span.cm-url:hover,
+.cm-s-obsidian span.cm-url,
 .cm-s-obsidian span.cm-link,
-.cm-s-obsidian span.cm-link:hover,
-.cm-s-obsidian span.cm-hmd-internal-link,
-.cm-s-obsidian span.cm-hmd-internal-link:hover {
+.cm-s-obsidian span.cm-hmd-internal-link {
   text-decoration-line: none;
 }
 
+@media (hover: hover) {
+  .cm-s-obsidian span.cm-url:hover,
+  .cm-s-obsidian span.cm-link:hover,
+  .cm-s-obsidian span.cm-hmd-internal-link:hover {
+    text-decoration-line: none;
+  }
+}
 .external-link {
   background-position: top right;
   background-size: 10px;
@@ -5846,7 +5861,7 @@ body {
     :is(.HyperMD-task-line, .task-list-item) {
       --checkbox-border-color: transparent;
     }
-    :is(.HyperMD-task-line, .task-list-item) input[type=checkbox], :is(.HyperMD-task-line, .task-list-item) input[type=checkbox]:hover {
+    :is(.HyperMD-task-line, .task-list-item) input[type=checkbox] {
       background: none;
       border-color: var(--checkbox-border-color);
     }
@@ -5855,9 +5870,6 @@ body {
       -webkit-mask-position: center;
       -webkit-mask-image: var(--checkbox-icon);
       background-color: var(--checkbox-color);
-    }
-    :is(.HyperMD-task-line, .task-list-item) input[type=checkbox]:where(:hover)::after {
-      background-color: var(--checkbox-color-hover);
     }
     :is(.HyperMD-task-line, .task-list-item) [type=checkbox]:not(:checked)::after {
       content: "";
@@ -5977,18 +5989,24 @@ body {
     }
   }
 }
+@media (hover: hover) {
+  @container style(--fas-checkbox-style: doodle) {
+    @scope (body) to (:is(.callout[data-callout="autopsy"], .callout[data-callout="screen"], .callout[data-callout="email"])) {
+      :is(.HyperMD-task-line, .task-list-item) input[type=checkbox]:hover {
+        background: none;
+        border-color: var(--checkbox-border-color);
+      }
+      :is(.HyperMD-task-line, .task-list-item) input[type=checkbox]:where(:hover)::after {
+        background-color: var(--checkbox-color-hover);
+      }
+    }
+  }
+}
 @container not style(--fas-alternative-checkboxes: disable) {
   :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox]::after {
     -webkit-mask-size: 100% 100%;
     -webkit-mask-position: center;
     -webkit-mask-image: var(--checkbox-icon);
-    background-color: var(--checkbox-marker-color);
-  }
-  :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox]:hover {
-    background-color: var(--checkbox-color-hover);
-    border-color: var(--checkbox-color-hover);
-  }
-  :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox]:hover::after {
     background-color: var(--checkbox-marker-color);
   }
   :is(.HyperMD-task-line, .task-list-item)[data-task="-"] {
@@ -5998,6 +6016,17 @@ body {
   :is(.HyperMD-task-line, .task-list-item)[data-task="/"] {
     --checkbox-color: var(--interactive-accent);
     --checkbox-color-hover: var(--interactive-accent-hover);
+  }
+}
+@media (hover: hover) {
+  @container not style(--fas-alternative-checkboxes: disable) {
+    :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox]:hover {
+      background-color: var(--checkbox-color-hover);
+      border-color: var(--checkbox-color-hover);
+    }
+    :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox]:hover::after {
+      background-color: var(--checkbox-marker-color);
+    }
   }
 }
 @container style(--fas-alternative-checkboxes: normal) {
@@ -6012,15 +6041,12 @@ body {
   }
 }
 @container style(--fas-alternative-checkboxes: doodle) {
-  :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox], :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox]:hover {
+  :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox] {
     background: none;
     border: none;
   }
   :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox]::after {
     background-color: var(--checkbox-color);
-  }
-  :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox]:hover::after {
-    background-color: var(--checkbox-color-hover);
   }
   :is(.HyperMD-task-line, .task-list-item)[data-task="-"]:where(:nth-child(6n+1)) {
     --checkbox-icon: var(--box-doodle-canceled-1);
@@ -6059,8 +6085,19 @@ body {
     --checkbox-icon: var(--box-doodle-incomplete-6);
   }
 }
+@media (hover: hover) {
+  @container style(--fas-alternative-checkboxes: doodle) {
+    :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox]:hover {
+      background: none;
+      border: none;
+    }
+    :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox]:hover::after {
+      background-color: var(--checkbox-color-hover);
+    }
+  }
+}
 @container not style(--fas-alternative-checkboxes: disable) {
-  :is(.HyperMD-task-line, .task-list-item):is([data-task=">"], [data-task="<"], [data-task="?"], [data-task="!"], [data-task="$"], [data-task="*"], [data-task=a], [data-task=b], [data-task=B], [data-task=c], [data-task=d], [data-task=e], [data-task=f], [data-task=g], [data-task=h], [data-task=H], [data-task=I], [data-task=l], [data-task=L], [data-task=m], [data-task=M], [data-task=n], [data-task=p], [data-task=t], [data-task=T], [data-task=u], [data-task=U], [data-task=w], [data-task=W], [data-task=z]) input[type=checkbox], :is(.HyperMD-task-line, .task-list-item):is([data-task=">"], [data-task="<"], [data-task="?"], [data-task="!"], [data-task="$"], [data-task="*"], [data-task=a], [data-task=b], [data-task=B], [data-task=c], [data-task=d], [data-task=e], [data-task=f], [data-task=g], [data-task=h], [data-task=H], [data-task=I], [data-task=l], [data-task=L], [data-task=m], [data-task=M], [data-task=n], [data-task=p], [data-task=t], [data-task=T], [data-task=u], [data-task=U], [data-task=w], [data-task=W], [data-task=z]) input[type=checkbox]:hover {
+  :is(.HyperMD-task-line, .task-list-item):is([data-task=">"], [data-task="<"], [data-task="?"], [data-task="!"], [data-task="$"], [data-task="*"], [data-task=a], [data-task=b], [data-task=B], [data-task=c], [data-task=d], [data-task=e], [data-task=f], [data-task=g], [data-task=h], [data-task=H], [data-task=I], [data-task=l], [data-task=L], [data-task=m], [data-task=M], [data-task=n], [data-task=p], [data-task=t], [data-task=T], [data-task=u], [data-task=U], [data-task=w], [data-task=W], [data-task=z]) input[type=checkbox] {
     background: none;
     border: none;
   }
@@ -6159,6 +6196,14 @@ body {
   }
   :is(.HyperMD-task-line, .task-list-item.task-list-item)[data-task=z] {
     --checkbox-color: var(--color-yellow);
+  }
+}
+@media (hover: hover) {
+  @container not style(--fas-alternative-checkboxes: disable) {
+    :is(.HyperMD-task-line, .task-list-item):is([data-task=">"], [data-task="<"], [data-task="?"], [data-task="!"], [data-task="$"], [data-task="*"], [data-task=a], [data-task=b], [data-task=B], [data-task=c], [data-task=d], [data-task=e], [data-task=f], [data-task=g], [data-task=h], [data-task=H], [data-task=I], [data-task=l], [data-task=L], [data-task=m], [data-task=M], [data-task=n], [data-task=p], [data-task=t], [data-task=T], [data-task=u], [data-task=U], [data-task=w], [data-task=W], [data-task=z]) input[type=checkbox]:hover {
+      background: none;
+      border: none;
+    }
   }
 }
 @container style(--fas-alternative-checkboxes: normal) {
@@ -6696,11 +6741,15 @@ body:not(.is-ios) .workspace-drawer::before {
   padding-right: calc(12px + var(--size-4-2));
 }
 
-.mod-sidedock .workspace-tab-header.is-active,
-.mod-sidedock .workspace-tab-header.is-active:hover {
+.mod-sidedock .workspace-tab-header.is-active {
   background-color: var(--workleaves-background);
 }
 
+@media (hover: hover) {
+  .mod-sidedock .workspace-tab-header.is-active:hover {
+    background-color: var(--workleaves-background);
+  }
+}
 body.is-hidden-frameless {
   --workspace-top-margin: 6px;
 }
