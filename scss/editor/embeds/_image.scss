@@ -54,14 +54,13 @@ $no_shadow_attributes: list.append($no_shadow_attributes, "banner");
 $no_shadow_attributes: list.append($no_shadow_attributes, "banner+small");
 $no_shadow_attributes: list.append($no_shadow_attributes, "banner+tall");
 $no_shadow_attributes: list.append($no_shadow_attributes, "sban");
-$no_shadow_selector: ":is(";
+$no_shadow_selector: "";
 @each $alias in $no_shadow_attributes {
-    @if ($no_shadow_selector != ":is(") {
+    @if ($no_shadow_selector != "") {
         $no_shadow_selector: $no_shadow_selector + ", ";
     }
     $no_shadow_selector: $no_shadow_selector + "[alt~='#{$alias}']";
 }
-$no_shadow_selector: $no_shadow_selector + ")";
 
 @container not (style(--image-shadow-offset: 0) or style(--image-shadow-offset: 0px)) {
     .image-embed:not(#{$no_shadow_selector}) {

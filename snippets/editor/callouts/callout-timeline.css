@@ -56,11 +56,8 @@ body {
   background: conic-gradient(from 90deg at 1px 1px, transparent 25%, rgba(var(--callout-color), 0.4) 0);
   padding: var(--card-padding);
 }
-.callout[data-callout=timeline] > .callout-content > *:hover {
-  outline: 1px dashed rgba(var(--callout-color), 0.4);
-  background: conic-gradient(from 90deg at 1px 1px, transparent 25%, rgba(var(--callout-color), 0.8) 0);
-}
-.callout[data-callout=timeline] > .callout-content > *:not(:is(.callout, code, pre, ul, ol))::first-letter, .callout[data-callout=timeline] > .callout-content > *.callout .callout-content > *:not(:is(.callout, code, pre, ul, ol))::first-letter {
+.callout[data-callout=timeline] > .callout-content > *:not(.callout, code, pre, ul, ol)::first-letter,
+.callout[data-callout=timeline] > .callout-content > *.callout .callout-content > *:not(.callout, code, pre, ul, ol)::first-letter {
   color: color-mix(in srgb, rgb(var(--callout-color)), var(--text-normal) 40%);
   font-weight: var(--font-bold);
   font-size: 1.5em;
@@ -87,6 +84,12 @@ body {
   margin-bottom: 0;
 }
 
+@media (hover: hover) {
+  .callout[data-callout=timeline] > .callout-content > *:hover {
+    outline: 1px dashed rgba(var(--callout-color), 0.4);
+    background: conic-gradient(from 90deg at 1px 1px, transparent 25%, rgba(var(--callout-color), 0.8) 0);
+  }
+}
 .callout[data-callout=timeline] > .callout-content > *::after {
   content: "";
   width: var(--bullet-size);
@@ -267,8 +270,11 @@ body {
 .callout[data-callout=timeline][data-callout-metadata~=horizontal] > .callout-content > *::after {
   left: calc(50% - var(--bullet-size) * 0.5 - var(--bullet-border-width));
   --shift-bullet: calc(
-      -1 * (var(--bullet-size) * 0.5 + var(--bullet-border-width) + var(--card-border-width) * 2 + var(--row-gap) +
-                  var(--line-thickness) * 0.5)
+      -1 *
+          (
+              var(--bullet-size) * 0.5 + var(--bullet-border-width) + var(--card-border-width) * 2 +
+                  var(--row-gap) + var(--line-thickness) * 0.5
+          )
   );
 }
 .callout[data-callout=timeline][data-callout-metadata~=horizontal] > .callout-content > *::before {
@@ -319,8 +325,11 @@ body {
   }
   .callout[data-callout=timeline]:not([data-callout-metadata~=horizontal]) > .callout-content > *::after {
     --shift-bullet: calc(
-        -1 * (var(--bullet-size) * 0.5 + var(--bullet-border-width) + var(--line-thickness) * 0.5 +
-                    var(--card-border-width) * 2)
+        -1 *
+            (
+                var(--bullet-size) * 0.5 + var(--bullet-border-width) + var(--line-thickness) * 0.5 +
+                    var(--card-border-width) * 2
+            )
     );
   }
   .callout[data-callout=timeline]:not([data-callout-metadata~=horizontal]) > .callout-content > *::before {
@@ -361,7 +370,8 @@ body {
 .callout[data-callout=timeline][data-callout-metadata~=no-fancy] .callout-content > .callout {
   background-color: rgba(var(--callout-color), 0.2);
 }
-.callout[data-callout=timeline][data-callout-metadata~=no-fancy] > .callout-content > *:not(:is(.callout, code, pre, ul, ol))::first-letter, .callout[data-callout=timeline][data-callout-metadata~=no-fancy] > .callout-content > *.callout .callout-content > *:not(:is(.callout, code, pre, ul, ol))::first-letter {
+.callout[data-callout=timeline][data-callout-metadata~=no-fancy] > .callout-content > *:not(.callout, code, pre, ul, ol)::first-letter,
+.callout[data-callout=timeline][data-callout-metadata~=no-fancy] > .callout-content > *.callout .callout-content > *:not(.callout, code, pre, ul, ol)::first-letter {
   color: unset;
   font-weight: unset;
   font-size: unset;

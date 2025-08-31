@@ -26,8 +26,8 @@ body {
 
 @container not style(--link-decoration: doodle) {
     .cm-hmd-internal-link .cm-underline,
-    .markdown-rendered .internal-link:not(:is(.metadata-container .internal-link)),
-    .internal-link:not(:is(.metadata-container .internal-link)) {
+    .markdown-rendered .internal-link:not(.metadata-container .internal-link),
+    .internal-link:not(.metadata-container .internal-link) {
         @include default-decoration;
     }
 }
@@ -35,8 +35,8 @@ body {
 @media (hover: hover) {
     @container not style(--link-decoration: doodle) {
         .cm-hmd-internal-link .cm-underline,
-        .markdown-rendered .internal-link:not(:is(.metadata-container .internal-link)),
-        .internal-link:not(:is(.metadata-container .internal-link)) {
+        .markdown-rendered .internal-link:not(.metadata-container .internal-link),
+        .internal-link:not(.metadata-container .internal-link) {
             @include default-decoration-hover;
         }
     }
@@ -45,7 +45,7 @@ body {
 @container not style(--link-external-decoration: none) {
     .cm-url .cm-underline,
     .cm-link .cm-underline,
-    .external-link:not(:is(.metadata-container .external-link)) {
+    .external-link:not(.metadata-container .external-link) {
         @include default-decoration;
     }
 }
@@ -54,7 +54,7 @@ body {
     @container not style(--link-external-decoration: none) {
         .cm-url .cm-underline,
         .cm-link .cm-underline,
-        .external-link:not(:is(.metadata-container .external-link)) {
+        .external-link:not(.metadata-container .external-link) {
             @include default-decoration-hover;
         }
     }

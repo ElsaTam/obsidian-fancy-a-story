@@ -177,7 +177,7 @@ body {
             [data-callout="example"],
             [data-callout="quote"],
             [data-callout="cite"]
-        ):not(:is([data-callout="email"], [data-callout="timeline"]) .callout),
+        ):not([data-callout="email"] .callout, [data-callout="timeline"] .callout),
     .callout:is(
             [data-callout="cards-deck"],
             [data-callout="email"],
@@ -185,7 +185,7 @@ body {
             [data-callout="autopsy"],
             [data-callout="screen"],
             [data-callout="profile"]
-        ):not(:is([data-callout="email"], [data-callout="timeline"]) .callout) {
+        ):not([data-callout="email"] .callout, [data-callout="timeline"] .callout) {
         clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
         border: none;
 

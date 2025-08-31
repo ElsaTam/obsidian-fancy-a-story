@@ -1,32 +1,40 @@
-module.exports = {
-    plugins: [
-        require('postcss-remove-selectors')({
-            selectors: [/.*\.fas-/]
-        }),
-    ],
- };
+const removeClasses = require('postcss-remove-classes').default;
 
- /*
-var fs = require('fs');
-var postcss = require('postcss')
-var remove = require('postcss-remove-selectors')
+module.exports = (ctx) => {
+    // Get config from command line arguments or environment
+    const configType = process.argv.find(arg => arg.startsWith('--plugins='))?.split('=')[1]
+        || process.env.POSTCSS_CONFIG
+        || 'theme';
 
-const data = fs.readFileSync('css/cssclasses/sci-fi.css', { encoding: 'utf8' });
-const css = data.toString();
+    const pluginConfigs = {
+        theme: [
+            require('postcss-combine-duplicated-selectors'),
+            require('cssnano')({
+                preset: [
+                    'default', { calc: false, discardComments: false }
+                ],
+            }),
+        ],
+        publish: [
+            require('postcss-pseudo-is'),
+            removeClasses(/markdown-source-view|is-live-preview|cm-/),
+            require('postcss-combine-duplicated-selectors'),
+            require('cssnano')({
+                preset: [
+                    'default', { calc: false }
+                ],
+            }),
+        ],
+        snippets: [
+            removeClasses(/fas-/),
+        ]
+    }
 
-//var options = {rulesToRemove: ['.fas-h1-display'], map: false} // css-byebye
-//var options = {'.fas-h1-display': '*'} // postcss-remove-rules
-//var options = ['.fas-h1-display'] // postcss-remove-classes
-var options = { selectors: ['.fas-', 'body.fas-'] } // postcss-remove-selectors
+    const selectedPlugins = pluginConfigs[configType] || pluginConfigs.theme;
 
-console.log(options)
-var result = postcss(remove(options)).process(css).css
-console.log(typeof(result))
-//fs.writeFileSync('postcss/cssclasses/sci-fi.css', result);
+    console.log(`Using PostCSS configuration: ${configType}`);
 
-
-module.exports = {
-    plugins: {
-        remove
-    },
-}*/
+    return {
+        plugins: selectedPlugins
+    };
+};

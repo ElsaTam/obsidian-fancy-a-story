@@ -73,33 +73,35 @@ body {
 .tree-view .el-ul > ul .list-collapse-indicator.is-collapsed {
   background: var(--color-accent);
 }
-.tree-view .el-ul > ul .list-collapse-indicator:hover {
-  background: color-mix(in srgb, var(--color-accent), var(--workleaves-background) 70%);
-}
-.tree-view .el-ul > ul .list-collapse-indicator.is-collapsed:hover {
-  background: color-mix(in srgb, var(--color-accent), var(--workleaves-background) 30%);
-}
 .tree-view .el-ul > ul .list-collapse-indicator svg {
   display: none;
 }
-.tree-view .el-ul > ul li:hover::after {
-  border-color: var(--color-accent);
-}
-.tree-view .el-ul > ul li:hover > ul::before {
-  border-color: var(--color-accent);
-}
-.tree-view .el-ul > ul li:has(> .list-bullet:last-child):hover::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background: linear-gradient(to right, var(--color-accent), transparent 100%);
-  opacity: 0.2;
-  animation: bg-slide 0.5s ease-in-out;
-}
 
+@media (hover: hover) {
+  .tree-view .el-ul > ul .list-collapse-indicator:hover {
+    background: color-mix(in srgb, var(--color-accent), var(--workleaves-background) 70%);
+  }
+  .tree-view .el-ul > ul .list-collapse-indicator.is-collapsed:hover {
+    background: color-mix(in srgb, var(--color-accent), var(--workleaves-background) 30%);
+  }
+  .tree-view .el-ul > ul li:hover::after {
+    border-color: var(--color-accent);
+  }
+  .tree-view .el-ul > ul li:hover > ul::before {
+    border-color: var(--color-accent);
+  }
+  .tree-view .el-ul > ul li:has(> .list-bullet:last-child):hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(to right, var(--color-accent), transparent 100%);
+    opacity: 0.2;
+    animation: bg-slide 0.5s ease-in-out;
+  }
+}
 @media print {
   .tree-view ul {
     list-style-type: none;

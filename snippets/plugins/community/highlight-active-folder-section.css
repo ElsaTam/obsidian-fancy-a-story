@@ -28,9 +28,7 @@ body {
   color: var(--nav-item-color);
   font-weight: var(--nav-item-weight);
 }
-.nav-files-container .highlighted-folder > .nav-folder-title:hover,
 .nav-files-container .highlighted-folder > .nav-folder-title.is-being-dragged,
-.nav-files-container .highlighted-parent-folder > .nav-folder-title:hover,
 .nav-files-container .highlighted-parent-folder > .nav-folder-title.is-being-dragged {
   color: var(--nav-item-color-hover);
 }
@@ -46,9 +44,7 @@ body {
   font-weight: var(--nav-item-weight);
   color: inherit;
 }
-.nav-files-container .highlighted-folder .nav-file-title:hover,
 .nav-files-container .highlighted-folder .nav-file-title.is-being-dragged,
-.nav-files-container .highlighted-parent-folder .nav-file-title:hover,
 .nav-files-container .highlighted-parent-folder .nav-file-title.is-being-dragged {
   color: inherit;
 }
@@ -79,4 +75,15 @@ body {
   height: var(--active-file-bullet-size, 6px);
   border-radius: 50%;
   background-color: currentColor;
+}
+
+@media (hover: hover) {
+  .nav-files-container .highlighted-folder > .nav-folder-title:hover,
+  .nav-files-container .highlighted-parent-folder > .nav-folder-title:hover {
+    color: var(--nav-item-color-hover);
+  }
+  .nav-files-container .highlighted-folder .nav-file-title:hover,
+  .nav-files-container .highlighted-parent-folder .nav-file-title:hover {
+    color: inherit;
+  }
 }

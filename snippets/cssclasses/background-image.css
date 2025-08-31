@@ -23,7 +23,8 @@ body {
   --fas-note-background-image-brightness: var(--fas-note-background-image-brightness-light);
 }
 
-.markdown-source-view:is(.background-img, .bg-img), .markdown-preview-view:is(.background-img, .bg-img) {
+.markdown-source-view:is(.background-img, .bg-img),
+.markdown-preview-view:is(.background-img, .bg-img) {
   background-color: var(--workleaves-background);
   background-image: var(--fas-note-background-image-url);
   background-blend-mode: var(--fas-note-background-image-blend-mode);
@@ -52,13 +53,15 @@ body {
   }
 }
 @container style(--fas-note-background-image-repeat: no) {
-  .markdown-source-view:is(.background-img, .bg-img), .markdown-preview-view:is(.background-img, .bg-img) {
+  .markdown-source-view:is(.background-img, .bg-img),
+  .markdown-preview-view:is(.background-img, .bg-img) {
     background-size: cover;
     background-position: center;
   }
 }
 @container style(--fas-note-background-image-repeat: yes) {
-  .markdown-source-view:is(.background-img, .bg-img), .markdown-preview-view:is(.background-img, .bg-img) {
+  .markdown-source-view:is(.background-img, .bg-img),
+  .markdown-preview-view:is(.background-img, .bg-img) {
     background-repeat: repeat;
   }
 }
@@ -68,4 +71,12 @@ body {
 }
 
 @media print {
+  body .print {
+    --fas-note-background-image-url: url("");
+    --fas-note-background-image-blend-mode: normal;
+    --fas-note-background-image-repeat: no;
+    --fas-note-background-image-blur: 0px;
+    --fas-note-background-image-opacity: 1;
+    --fas-note-background-image-brightness: 1;
+  }
 }

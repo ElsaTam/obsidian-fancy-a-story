@@ -284,13 +284,13 @@ body {
 [data-callout=bug],
 [data-callout=example],
 [data-callout=quote],
-[data-callout=cite]):not(:is([data-callout=email], [data-callout=timeline]) .callout),
+[data-callout=cite]):not([data-callout=email] .callout, [data-callout=timeline] .callout),
 .sci-fi .callout:is([data-callout=cards-deck],
 [data-callout=email],
 [data-callout=profile],
 [data-callout=autopsy],
 [data-callout=screen],
-[data-callout=profile]):not(:is([data-callout=email], [data-callout=timeline]) .callout) {
+[data-callout=profile]):not([data-callout=email] .callout, [data-callout=timeline] .callout) {
   clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
   border: none;
   background-image: linear-gradient(135deg, transparent 30%, rgba(255, 255, 255, 0.05) 100%);
@@ -321,13 +321,13 @@ body {
 [data-callout=bug],
 [data-callout=example],
 [data-callout=quote],
-[data-callout=cite]):not(:is([data-callout=email], [data-callout=timeline]) .callout) .callout-title,
+[data-callout=cite]):not([data-callout=email] .callout, [data-callout=timeline] .callout) .callout-title,
 .sci-fi .callout:is([data-callout=cards-deck],
 [data-callout=email],
 [data-callout=profile],
 [data-callout=autopsy],
 [data-callout=screen],
-[data-callout=profile]):not(:is([data-callout=email], [data-callout=timeline]) .callout) .callout-title {
+[data-callout=profile]):not([data-callout=email] .callout, [data-callout=timeline] .callout) .callout-title {
   background: none;
 }
 .sci-fi .callout:is([data-callout=note],
@@ -356,13 +356,13 @@ body {
 [data-callout=bug],
 [data-callout=example],
 [data-callout=quote],
-[data-callout=cite]):not(:is([data-callout=email], [data-callout=timeline]) .callout) .callout-content,
+[data-callout=cite]):not([data-callout=email] .callout, [data-callout=timeline] .callout) .callout-content,
 .sci-fi .callout:is([data-callout=cards-deck],
 [data-callout=email],
 [data-callout=profile],
 [data-callout=autopsy],
 [data-callout=screen],
-[data-callout=profile]):not(:is([data-callout=email], [data-callout=timeline]) .callout) .callout-content {
+[data-callout=profile]):not([data-callout=email] .callout, [data-callout=timeline] .callout) .callout-content {
   border-top-style: solid;
 }
 .sci-fi .callout:is([data-callout=note],
@@ -391,13 +391,13 @@ body {
 [data-callout=bug],
 [data-callout=example],
 [data-callout=quote],
-[data-callout=cite]):not(:is([data-callout=email], [data-callout=timeline]) .callout)::before,
+[data-callout=cite]):not([data-callout=email] .callout, [data-callout=timeline] .callout)::before,
 .sci-fi .callout:is([data-callout=cards-deck],
 [data-callout=email],
 [data-callout=profile],
 [data-callout=autopsy],
 [data-callout=screen],
-[data-callout=profile]):not(:is([data-callout=email], [data-callout=timeline]) .callout)::before {
+[data-callout=profile]):not([data-callout=email] .callout, [data-callout=timeline] .callout)::before {
   content: "";
   position: absolute;
   background: rgba(var(--callout-color), var(--callout-border-opacity));
@@ -430,14 +430,14 @@ body {
 [data-callout=bug],
 [data-callout=example],
 [data-callout=quote],
-[data-callout=cite]):not(:is([data-callout=email], [data-callout=timeline]) .callout):is([data-callout-metadata~=accent])::before,
+[data-callout=cite]):not([data-callout=email] .callout, [data-callout=timeline] .callout):is([data-callout-metadata~=accent])::before,
 .sci-fi .callout:is([data-callout=cards-deck],
 [data-callout=email],
 [data-callout=profile],
 [data-callout=autopsy],
 [data-callout=screen],
-[data-callout=profile]):not(:is([data-callout=email], [data-callout=timeline]) .callout):is([data-callout-metadata~=accent])::before {
-  background: hsl(var(--accent-h) var(--accent-s) var(--accent-l)/var(--callout-border-opacity));
+[data-callout=profile]):not([data-callout=email] .callout, [data-callout=timeline] .callout):is([data-callout-metadata~=accent])::before {
+  background: hsl(var(--accent-h), var(--accent-s), var(--accent-l), var(--callout-border-opacity));
 }
 
 .sci-fi:is(.markdown-preview-view, .markdown-source-view) hr {

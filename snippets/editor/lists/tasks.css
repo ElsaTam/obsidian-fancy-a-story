@@ -8,7 +8,7 @@ body {
     :is(.HyperMD-task-line, .task-list-item) {
       --checkbox-border-color: transparent;
     }
-    :is(.HyperMD-task-line, .task-list-item) input[type=checkbox], :is(.HyperMD-task-line, .task-list-item) input[type=checkbox]:hover {
+    :is(.HyperMD-task-line, .task-list-item) input[type=checkbox] {
       background: none;
       border-color: var(--checkbox-border-color);
     }
@@ -17,9 +17,6 @@ body {
       -webkit-mask-position: center;
       -webkit-mask-image: var(--checkbox-icon);
       background-color: var(--checkbox-color);
-    }
-    :is(.HyperMD-task-line, .task-list-item) input[type=checkbox]:where(:hover)::after {
-      background-color: var(--checkbox-color-hover);
     }
     :is(.HyperMD-task-line, .task-list-item) [type=checkbox]:not(:checked)::after {
       content: "";
@@ -139,18 +136,24 @@ body {
     }
   }
 }
+@media (hover: hover) {
+  @container style(--fas-checkbox-style: doodle) {
+    @scope (body) to (:is(.callout[data-callout="autopsy"], .callout[data-callout="screen"], .callout[data-callout="email"])) {
+      :is(.HyperMD-task-line, .task-list-item) input[type=checkbox]:hover {
+        background: none;
+        border-color: var(--checkbox-border-color);
+      }
+      :is(.HyperMD-task-line, .task-list-item) input[type=checkbox]:where(:hover)::after {
+        background-color: var(--checkbox-color-hover);
+      }
+    }
+  }
+}
 @container not style(--fas-alternative-checkboxes: disable) {
   :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox]::after {
     -webkit-mask-size: 100% 100%;
     -webkit-mask-position: center;
     -webkit-mask-image: var(--checkbox-icon);
-    background-color: var(--checkbox-marker-color);
-  }
-  :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox]:hover {
-    background-color: var(--checkbox-color-hover);
-    border-color: var(--checkbox-color-hover);
-  }
-  :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox]:hover::after {
     background-color: var(--checkbox-marker-color);
   }
   :is(.HyperMD-task-line, .task-list-item)[data-task="-"] {
@@ -160,6 +163,17 @@ body {
   :is(.HyperMD-task-line, .task-list-item)[data-task="/"] {
     --checkbox-color: var(--interactive-accent);
     --checkbox-color-hover: var(--interactive-accent-hover);
+  }
+}
+@media (hover: hover) {
+  @container not style(--fas-alternative-checkboxes: disable) {
+    :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox]:hover {
+      background-color: var(--checkbox-color-hover);
+      border-color: var(--checkbox-color-hover);
+    }
+    :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox]:hover::after {
+      background-color: var(--checkbox-marker-color);
+    }
   }
 }
 @container style(--fas-alternative-checkboxes: normal) {
@@ -174,15 +188,12 @@ body {
   }
 }
 @container style(--fas-alternative-checkboxes: doodle) {
-  :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox], :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox]:hover {
+  :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox] {
     background: none;
     border: none;
   }
   :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox]::after {
     background-color: var(--checkbox-color);
-  }
-  :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox]:hover::after {
-    background-color: var(--checkbox-color-hover);
   }
   :is(.HyperMD-task-line, .task-list-item)[data-task="-"]:where(:nth-child(6n+1)) {
     --checkbox-icon: var(--box-doodle-canceled-1);
@@ -221,8 +232,19 @@ body {
     --checkbox-icon: var(--box-doodle-incomplete-6);
   }
 }
+@media (hover: hover) {
+  @container style(--fas-alternative-checkboxes: doodle) {
+    :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox]:hover {
+      background: none;
+      border: none;
+    }
+    :is(.HyperMD-task-line, .task-list-item):is([data-task="-"], [data-task="/"]) input[type=checkbox]:hover::after {
+      background-color: var(--checkbox-color-hover);
+    }
+  }
+}
 @container not style(--fas-alternative-checkboxes: disable) {
-  :is(.HyperMD-task-line, .task-list-item):is([data-task=">"], [data-task="<"], [data-task="?"], [data-task="!"], [data-task="$"], [data-task="*"], [data-task=a], [data-task=b], [data-task=B], [data-task=c], [data-task=d], [data-task=e], [data-task=f], [data-task=g], [data-task=h], [data-task=H], [data-task=I], [data-task=l], [data-task=L], [data-task=m], [data-task=M], [data-task=n], [data-task=p], [data-task=t], [data-task=T], [data-task=u], [data-task=U], [data-task=w], [data-task=W], [data-task=z]) input[type=checkbox], :is(.HyperMD-task-line, .task-list-item):is([data-task=">"], [data-task="<"], [data-task="?"], [data-task="!"], [data-task="$"], [data-task="*"], [data-task=a], [data-task=b], [data-task=B], [data-task=c], [data-task=d], [data-task=e], [data-task=f], [data-task=g], [data-task=h], [data-task=H], [data-task=I], [data-task=l], [data-task=L], [data-task=m], [data-task=M], [data-task=n], [data-task=p], [data-task=t], [data-task=T], [data-task=u], [data-task=U], [data-task=w], [data-task=W], [data-task=z]) input[type=checkbox]:hover {
+  :is(.HyperMD-task-line, .task-list-item):is([data-task=">"], [data-task="<"], [data-task="?"], [data-task="!"], [data-task="$"], [data-task="*"], [data-task=a], [data-task=b], [data-task=B], [data-task=c], [data-task=d], [data-task=e], [data-task=f], [data-task=g], [data-task=h], [data-task=H], [data-task=I], [data-task=l], [data-task=L], [data-task=m], [data-task=M], [data-task=n], [data-task=p], [data-task=t], [data-task=T], [data-task=u], [data-task=U], [data-task=w], [data-task=W], [data-task=z]) input[type=checkbox] {
     background: none;
     border: none;
   }
@@ -321,6 +343,14 @@ body {
   }
   :is(.HyperMD-task-line, .task-list-item.task-list-item)[data-task=z] {
     --checkbox-color: var(--color-yellow);
+  }
+}
+@media (hover: hover) {
+  @container not style(--fas-alternative-checkboxes: disable) {
+    :is(.HyperMD-task-line, .task-list-item):is([data-task=">"], [data-task="<"], [data-task="?"], [data-task="!"], [data-task="$"], [data-task="*"], [data-task=a], [data-task=b], [data-task=B], [data-task=c], [data-task=d], [data-task=e], [data-task=f], [data-task=g], [data-task=h], [data-task=H], [data-task=I], [data-task=l], [data-task=L], [data-task=m], [data-task=M], [data-task=n], [data-task=p], [data-task=t], [data-task=T], [data-task=u], [data-task=U], [data-task=w], [data-task=W], [data-task=z]) input[type=checkbox]:hover {
+      background: none;
+      border: none;
+    }
   }
 }
 @container style(--fas-alternative-checkboxes: normal) {

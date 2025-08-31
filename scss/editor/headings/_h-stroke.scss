@@ -4,7 +4,11 @@
 @for $i from 1 through 6 {
     :is(.fas-h#{$i}-stroke, .fas-h#{$i}-stroke-left-aligned)
         .markdown-preview-view:not(
-            :is(.newspaper, .movie-script, .minimalist, .h#{$i}-display, .h#{$i}-display-left-aligned)
+            .newspaper,
+            .movie-script,
+            .minimalist,
+            .h#{$i}-display,
+            .h#{$i}-display-left-aligned
         )
         h#{$i},
     .markdown-preview-view:is(.h#{$i}-stroke, .h#{$i}-stroke-left-aligned) h#{$i} {
@@ -38,14 +42,12 @@
     // Center
     .fas-h#{$i}-stroke
         .markdown-preview-view:not(
-            :is(
-                .newspaper,
-                .movie-script,
-                .minimalist,
-                .h#{$i}-display,
-                .h#{$i}-display-left-aligned,
-                .h#{$i}-stroke-left-aligned
-            )
+            .newspaper,
+            .movie-script,
+            .minimalist,
+            .h#{$i}-display,
+            .h#{$i}-display-left-aligned,
+            .h#{$i}-stroke-left-aligned
         )
         h#{$i},
     .markdown-preview-view.h#{$i}-stroke h#{$i} {
@@ -57,7 +59,12 @@
     // Left
     .fas-h#{$i}-stroke-left-aligned
         .markdown-preview-view:not(
-            :is(.newspaper, .movie-script, .minimalist, .h#{$i}-display, .h#{$i}-display-left-aligned, .h#{$i}-stroke)
+            .newspaper,
+            .movie-script,
+            .minimalist,
+            .h#{$i}-display,
+            .h#{$i}-display-left-aligned,
+            .h#{$i}-stroke
         )
         h#{$i},
     .markdown-preview-view.h#{$i}-stroke-left-aligned h#{$i} {
@@ -87,7 +94,7 @@
     }
 
     :is(.fas-h#{$i}-stroke, .fas-h#{$i}-stroke-left-aligned)
-        .is-live-preview:not(:is(.newspaper, .movie-script, .minimalist, .h#{$i}-display, .h#{$i}-display-left-aligned))
+        .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h#{$i}-display, .h#{$i}-display-left-aligned)
         .HyperMD-header-#{$i},
     .is-live-preview:is(.h#{$i}-stroke, .h#{$i}-stroke-left-aligned) .HyperMD-header-#{$i} {
         --h#{$i}-weight: var(--font-extralight);

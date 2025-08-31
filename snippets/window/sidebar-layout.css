@@ -116,7 +116,12 @@ body:not(.is-ios) .workspace-drawer::before {
   padding-right: calc(12px + var(--size-4-2));
 }
 
-.mod-sidedock .workspace-tab-header.is-active,
-.mod-sidedock .workspace-tab-header.is-active:hover {
+.mod-sidedock .workspace-tab-header.is-active {
   background-color: var(--workleaves-background);
+}
+
+@media (hover: hover) {
+  .mod-sidedock .workspace-tab-header.is-active:hover {
+    background-color: var(--workleaves-background);
+  }
 }

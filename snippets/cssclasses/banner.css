@@ -30,7 +30,10 @@ body {
 body {
   --banner-height: 300px;
   --banner-title-shadow-size: 0.5em;
-  --banner-title-shadow: 0px 0px calc(var(--banner-title-shadow-size) * 0.2) rgb(var(--mono-rgb-0)), 0px 0px calc(var(--banner-title-shadow-size) * 0.5) rgb(var(--mono-rgb-0)), 0px 0px var(--banner-title-shadow-size) rgb(var(--mono-rgb-0));
+  --banner-title-shadow:
+      0px 0px calc(var(--banner-title-shadow-size) * 0.2) rgb(var(--mono-rgb-0)),
+      0px 0px calc(var(--banner-title-shadow-size) * 0.5) rgb(var(--mono-rgb-0)),
+      0px 0px var(--banner-title-shadow-size) rgb(var(--mono-rgb-0));
   --banner-slope-angle: 4deg;
   --banner-slope-border-width: 5px;
   --banner-slope-border-color: var(--color-accent);
@@ -209,16 +212,18 @@ body {
 .markdown-source-view.banner.banner-edit-icon .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) img {
   display: none;
 }
-.markdown-source-view.banner.banner-edit-icon .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed):hover img {
-  position: absolute;
-  display: block;
-}
 .markdown-source-view.banner.banner-edit-icon .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed)::after {
   content: "🖼️ banner";
   font-size: 12px;
   color: var(--text-muted);
 }
 
+@media (hover: hover) {
+  .markdown-source-view.banner.banner-edit-icon .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed):hover img {
+    position: absolute;
+    display: block;
+  }
+}
 .markdown-source-view.banner.banner-edit-small .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) {
   --image-shadow-offset: 0;
 }

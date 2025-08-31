@@ -1,0 +1,33 @@
+@use "foundations/text/font-import";
+@use "foundations/text/font-family";
+@use "foundations/text/text-wrap";
+
+@use "foundations/colors/_rainbow-colors-base";
+@use "foundations/colors/rainbow-colors-variants";
+@use "foundations/colors/default_theme";
+@use "foundations/fas-accessibility";
+@use "foundations/shared-css-variables";
+@use "foundations/publish-css-variables";
+
+@use "editor/aside";
+@use "editor/callouts/callouts";
+@use "editor/code/code";
+@use "editor/embeds/embeds";
+@use "editor/footnotes";
+@use "editor/headings/h-display";
+@use "editor/headings/h-stroke";
+@use "editor/horizontal_rule";
+@use "editor/links/link-default";
+@use "editor/links/link-external";
+@use "editor/lists/lists";
+@use "editor/tables/default-table";
+
+@use "plugins/core/file-explorer-hover";
+@use "publish/file-explorer-rainbow";
+
+@use "window/sidebars/fas-bg-textures";
+@use "window/sidebars/sidebar-layout";
+@use "window/workspace";
+
+@use "publish/variable_overrides";
+@use "publish/sidebar";

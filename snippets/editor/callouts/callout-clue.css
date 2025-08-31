@@ -114,10 +114,12 @@ Author: ElsaTam (Kapirklaa in Discord)
 .callout[data-callout=clue].is-collapsed > * > .callout-icon {
   opacity: 0.5;
 }
-.callout[data-callout=clue] > .callout-title:hover .callout-icon {
-  opacity: 1;
-}
 
+@media (hover: hover) {
+  .callout[data-callout=clue] > .callout-title:hover .callout-icon {
+    opacity: 1;
+  }
+}
 .callout[data-callout=clue][data-callout-metadata*=ripped] .callout-content {
   -webkit-mask-image: var(--clue-ripped-variant), linear-gradient(to bottom, black, black);
   -webkit-mask-size: 101% auto;

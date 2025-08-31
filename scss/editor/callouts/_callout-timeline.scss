@@ -62,8 +62,8 @@
         }
 
         // Stylise first letter
-        > *:not(:is(.callout, code, pre, ul, ol))::first-letter,
-        > *.callout .callout-content > *:not(:is(.callout, code, pre, ul, ol))::first-letter {
+        > *:not(.callout, code, pre, ul, ol)::first-letter,
+        > *.callout .callout-content > *:not(.callout, code, pre, ul, ol)::first-letter {
             color: color-mix(in srgb, rgb(var(--callout-color)), var(--text-normal) 40%);
             font-weight: var(--font-bold);
             font-size: 1.5em;
@@ -461,8 +461,8 @@
         background-color: rgba(var(--callout-color), 0.2);
     }
 
-    > .callout-content > *:not(:is(.callout, code, pre, ul, ol))::first-letter,
-    > .callout-content > *.callout .callout-content > *:not(:is(.callout, code, pre, ul, ol))::first-letter {
+    > .callout-content > *:not(.callout, code, pre, ul, ol)::first-letter,
+    > .callout-content > *.callout .callout-content > *:not(.callout, code, pre, ul, ol)::first-letter {
         color: unset;
         font-weight: unset;
         font-size: unset;

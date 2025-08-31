@@ -1,3 +1,4 @@
-:where(.markdown-rendered :is(ul, ol)) {
+:where(.markdown-rendered ul),
+:where(.markdown-rendered ol) {
     display: flow-root;
 }

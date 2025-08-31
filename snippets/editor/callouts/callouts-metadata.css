@@ -7,7 +7,8 @@ Author: ElsaTam (Kapirklaa in Discord)
   container: markdown-view/inline-size;
 }
 
-:where(.markdown-rendered :is(ul, ol)) {
+:where(.markdown-rendered ul),
+:where(.markdown-rendered ol) {
   display: flow-root;
 }
 
@@ -71,8 +72,8 @@ body {
 }
 
 [data-callout-metadata~=accent] {
-  border-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l)/var(--callout-border-opacity));
-  background-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l)/0.1);
+  border-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), var(--callout-border-opacity));
+  background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
 }
 [data-callout-metadata~=accent] > .callout-title {
   color: var(--color-accent);

@@ -19,18 +19,12 @@ body {
     gap: var(--size-2-3);
     margin-top: var(--workspace-top-margin);
   }
-  .mod-sidedock .workspace-tab-header-container:hover {
-    --icon-opacity: var(--icon-opacity-inactive);
-  }
   .mod-sidedock .workspace-tab-header {
     background-color: var(--workspace-background);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
   }
   .mod-sidedock .workspace-tab-header.is-active {
     background-color: var(--color-accent);
-  }
-  .mod-sidedock .workspace-tab-header.is-active:hover {
-    background-color: var(--color-accent-1);
   }
   .mod-sidedock .workspace-tabs:not(.mod-top) .workspace-tab-header-container-inner {
     margin-top: 0;
@@ -40,6 +34,16 @@ body {
   }
   .mod-sidedock .workspace-leaf {
     padding-top: calc(var(--header-height) - var(--workspace-top-margin));
+  }
+}
+@media (hover: hover) {
+  @container not style(--fas-bookmark-tabs: disable) {
+    .mod-sidedock .workspace-tab-header-container:hover {
+      --icon-opacity: var(--icon-opacity-inactive);
+    }
+    .mod-sidedock .workspace-tab-header.is-active:hover {
+      background-color: var(--color-accent-1);
+    }
   }
 }
 @container style(--fas-bookmark-tabs: volume) {

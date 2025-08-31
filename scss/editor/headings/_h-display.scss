@@ -34,15 +34,13 @@
 
     :is(.fas-h#{$i}-display, .fas-h#{$i}-display-left-aligned)
         :is(.markdown-preview-view, .is-live-preview):not(
-            :is(
-                .newspaper,
-                .movie-script,
-                .minimalist,
-                .h#{$i}-stroke,
-                .h#{$i}-stroke-left-aligned,
-                .h#{$i}-normal,
-                .sci-fi
-            )
+            .newspaper,
+            .movie-script,
+            .minimalist,
+            .h#{$i}-stroke,
+            .h#{$i}-stroke-left-aligned,
+            .h#{$i}-normal,
+            .sci-fi
         ),
     :is(.markdown-preview-view, .is-live-preview):is(.h#{$i}-display, .h#{$i}-display-left-aligned) {
         :is(h#{$i}, .HyperMD-header-#{$i}):not(.callout *, ul *, ol *) {

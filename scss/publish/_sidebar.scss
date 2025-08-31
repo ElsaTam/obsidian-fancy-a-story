@@ -97,6 +97,9 @@ body {
     .search-bar[type="text"]::placeholder {
         color: var(--text-faint);
     }
+    .published-search-icon {
+        z-index: 2;
+    }
 }
 
 @container style(--fas-bookmark-tabs: volume) {
@@ -107,6 +110,5 @@ body {
             rgb(255 255 255 / 0.03) 8px,
             transparent 20px
         );
-        background-size: 100% 100%;
     }
 }

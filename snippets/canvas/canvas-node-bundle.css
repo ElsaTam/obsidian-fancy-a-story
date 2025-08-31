@@ -89,7 +89,8 @@ Author: ElsaTam (Kapirklaa in Discord)
   padding: 0;
   overflow: visible;
 }
-.canvas-node:has(.tag[href="#node-image"], .node-image):not(.is-editing) .markdown-preview-view::before, .canvas-node:has(.tag[href="#node-image"], .node-image):not(.is-editing) .markdown-preview-view::after {
+.canvas-node:has(.tag[href="#node-image"], .node-image):not(.is-editing) .markdown-preview-view::before,
+.canvas-node:has(.tag[href="#node-image"], .node-image):not(.is-editing) .markdown-preview-view::after {
   content: none;
 }
 .canvas-node:has(.tag[href="#node-image"], .node-image):not(.is-editing) br {
@@ -121,7 +122,7 @@ body {
   box-shadow: none;
   background: none;
 }
-.canvas-node:has(.tag[href="#node-only-text"], .node-only-text):not(.is-editing):not(:is(.is-dragging, :hover)) .canvas-node-container {
+.canvas-node:has(.tag[href="#node-only-text"], .node-only-text):not(.is-editing):not(.is-dragging, *:hover) .canvas-node-container {
   border: none;
 }
 .canvas-node:has(.tag[href="#node-only-text"], .node-only-text):not(.is-editing) .canvas-node-content {
@@ -220,7 +221,7 @@ body {
 .canvas-node:has(.tag[href="#node-title-neon"], .node-title-neon):not(.is-editing) .canvas-node-container {
   border: none;
 }
-.canvas-node:has(.tag[href="#node-title-neon"], .node-title-neon):not(.is-editing):not(:is(.is-dragging, :hover)) .canvas-node-container {
+.canvas-node:has(.tag[href="#node-title-neon"], .node-title-neon):not(.is-editing):not(.is-dragging, *:hover) .canvas-node-container {
   box-shadow: none;
 }
 .canvas-node:has(.tag[href="#node-title-neon"], .node-title-neon):not(.is-editing) .canvas-node-content {
@@ -240,7 +241,7 @@ body {
 .canvas-node:has(.tag[href="#node-title-poster"], .node-title-poster):not(.is-editing) .canvas-node-container {
   border: none;
 }
-.canvas-node:has(.tag[href="#node-title-poster"], .node-title-poster):not(.is-editing):not(:is(.is-dragging, :hover)) .canvas-node-container {
+.canvas-node:has(.tag[href="#node-title-poster"], .node-title-poster):not(.is-editing):not(.is-dragging, *:hover) .canvas-node-container {
   box-shadow: none;
 }
 .canvas-node:has(.tag[href="#node-title-poster"], .node-title-poster):not(.is-editing) .canvas-node-content {

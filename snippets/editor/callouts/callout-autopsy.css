@@ -366,14 +366,6 @@ Author: ElsaTam (Kapirklaa in Discord)
   right: calc(100cqw - var(--left)); /* must compute from the right because we use row-reverse */
   top: var(--top);
 }
-.callout[data-callout=autopsy] .callout[data-callout=body] .task-list-item:hover {
-  --padding-x: 5px;
-  --padding-y: 5px;
-  font-size: unset; /* Show the label */
-  background: rgba(var(--mono-rgb-0), 1); /* Show the background */
-  border-radius: var(--radius-m);
-  z-index: 1;
-}
 .callout[data-callout=autopsy] .callout[data-callout=footnote] .callout-title {
   justify-content: center;
 }
@@ -381,6 +373,16 @@ Author: ElsaTam (Kapirklaa in Discord)
   text-align: center;
 }
 
+@media (hover: hover) {
+  .callout[data-callout=autopsy] .callout[data-callout=body] .task-list-item:hover {
+    --padding-x: 5px;
+    --padding-y: 5px;
+    font-size: unset; /* Show the label */
+    background: rgba(var(--mono-rgb-0), 1); /* Show the background */
+    border-radius: var(--radius-m);
+    z-index: 1;
+  }
+}
 /* Because SVG images in black, in case we are in the dark theme, we need to invert it and make it white */
 .theme-dark .callout[data-callout=autopsy] .callout[data-callout=body] ul.contains-task-list::before {
   filter: invert(1);

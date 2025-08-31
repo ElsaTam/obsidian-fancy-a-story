@@ -92,7 +92,7 @@ body {
             background-color: rgba(var(--mono-rgb-0), 0.6);
         }
         .workspace-split.mod-left-split
-            .workspace-sidedock-vault-profile:not(:is(.is-mobile .workspace-sidedock-vault-profile)):hover {
+            .workspace-sidedock-vault-profile:not(.is-mobile .workspace-sidedock-vault-profile):hover {
             background-color: rgba(var(--mono-rgb-0), 0.6);
             --workspace-foreground: rgb(var(--mono-rgb-100));
             --workspace-foreground-faint: rgba(var(--mono-rgb-100), 0.6);

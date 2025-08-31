@@ -26,9 +26,6 @@ Author: ElsaTam (Kapirklaa in Discord)
   z-index: var(--layer-tooltip);
   display: none;
 }
-.callout[data-callout=tooltip]:hover .callout-title {
-  display: flex;
-}
 .callout[data-callout=tooltip] .callout-icon {
   display: none;
 }
@@ -47,6 +44,11 @@ Author: ElsaTam (Kapirklaa in Discord)
   display: flex;
 }
 
+@media (hover: hover) {
+  .callout[data-callout=tooltip]:hover .callout-title {
+    display: flex;
+  }
+}
 .callout[data-callout=tooltip] {
   --callout-padding: 0;
   --callout-radius: 0;

@@ -79,6 +79,7 @@ body {
   margin-right: calc(-1 * var(--size-4-3) - var(--callout-border-width, 0px));
 }
 
+:where .callout[data-callout=infobox] > .callout-content > .callout[data-callout=page-break],
 .callout[data-callout=fas-infobox] > .callout-content > .callout[data-callout=page-break] {
   width: calc(100% + 2 * var(--callout-border-width, 0px));
   margin-left: calc(-1 * var(--callout-border-width, 0px));

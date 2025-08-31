@@ -19,7 +19,8 @@ Author: ElsaTam (Kapirklaa in Discord)
   padding: 0;
   overflow: visible;
 }
-.canvas-node:has(.tag[href="#node-image"], .node-image):not(.is-editing) .markdown-preview-view::before, .canvas-node:has(.tag[href="#node-image"], .node-image):not(.is-editing) .markdown-preview-view::after {
+.canvas-node:has(.tag[href="#node-image"], .node-image):not(.is-editing) .markdown-preview-view::before,
+.canvas-node:has(.tag[href="#node-image"], .node-image):not(.is-editing) .markdown-preview-view::after {
   content: none;
 }
 .canvas-node:has(.tag[href="#node-image"], .node-image):not(.is-editing) br {

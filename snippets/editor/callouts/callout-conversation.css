@@ -76,7 +76,13 @@ body {
     --shift-color-even: var(--color-cyan);
     --shift-color-odd: var(--color-purple);
   }
-  .callout[data-callout=conversation-minimalist][data-callout-metadata~=gray], .callout[data-callout=conversation-minimalist][data-callout-metadata~=black], .callout[data-callout=conversation-minimalist][data-callout-metadata~=white], .callout[data-callout=conversation][data-callout-metadata~=gray], .callout[data-callout=conversation][data-callout-metadata~=black], .callout[data-callout=conversation][data-callout-metadata~=white], .callout[data-callout=conversation-outline][data-callout-metadata~=gray], .callout[data-callout=conversation-outline][data-callout-metadata~=black], .callout[data-callout=conversation-outline][data-callout-metadata~=white] {
+  .callout[data-callout=conversation-minimalist][data-callout-metadata~=gray], .callout[data-callout=conversation-minimalist][data-callout-metadata~=black], .callout[data-callout=conversation-minimalist][data-callout-metadata~=white],
+  .callout[data-callout=conversation][data-callout-metadata~=gray],
+  .callout[data-callout=conversation][data-callout-metadata~=black],
+  .callout[data-callout=conversation][data-callout-metadata~=white],
+  .callout[data-callout=conversation-outline][data-callout-metadata~=gray],
+  .callout[data-callout=conversation-outline][data-callout-metadata~=black],
+  .callout[data-callout=conversation-outline][data-callout-metadata~=white] {
     --shift-color-even: white;
     --shift-color-odd: black;
   }

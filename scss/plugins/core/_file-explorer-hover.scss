@@ -6,6 +6,9 @@ body {
 
 @media (hover: hover) {
     @container style(--file-explorer-hover-animation: enable) {
+        .tree-item-self {
+            position: relative;
+        }
         body:not(.is-grabbing) .tree-item-self.is-clickable:hover {
             background: none;
         }

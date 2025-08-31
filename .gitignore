@@ -25,3 +25,5 @@ node_modules
 _test.scss
 git-filter-repo
 assets/
+theme-raw.css
+publish-raw.css

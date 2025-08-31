@@ -36,6 +36,9 @@ body {
   --workleaves-foreground: var(--text-normal);
 }
 
+:is:is,
+:is :is(.h1-display, .h1-display-left-aligned),
+:is :is(.headings-hue, .headings-complement, .headings-accent),
 :is(.h1-display, .h1-display-left-aligned):is(.headings-hue, .headings-complement, .headings-accent) {
   --h2-color: var(--header-gradient-base-color);
   --h3-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 20%);
@@ -52,6 +55,13 @@ body {
   --h1-display-alignment: left;
 }
 
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h1-stroke,
+.h1-stroke-left-aligned,
+.h1-normal,
+.sci-fi) :is(h1, .HyperMD-header-1):not(.callout *, ul *, ol *),
 :is(.markdown-preview-view, .is-live-preview):is(.h1-display, .h1-display-left-aligned) :is(h1, .HyperMD-header-1):not(.callout *, ul *, ol *) {
   --h1-line-height: 1.2em;
   --h1-size: 3em;
@@ -69,6 +79,13 @@ body {
   /* Only in preview */
   /* Only in preview */
 }
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h1-stroke,
+.h1-stroke-left-aligned,
+.h1-normal,
+.sci-fi) :is(h1, .HyperMD-header-1):not(.callout *, ul *, ol *)::before,
 :is(.markdown-preview-view, .is-live-preview):is(.h1-display, .h1-display-left-aligned) :is(h1, .HyperMD-header-1):not(.callout *, ul *, ol *)::before {
   content: "";
   position: absolute;
@@ -76,9 +93,23 @@ body {
   inset: var(--cutout-outline-inset);
   clip-path: polygon(0 var(--cutout-corner-angle), var(--cutout-corner-angle) 0, calc(100% - var(--cutout-corner-angle)) 0, 100% var(--cutout-corner-angle), 100% calc(100% - var(--cutout-corner-angle)), calc(100% - var(--cutout-corner-angle)) 100%, var(--cutout-corner-angle) 100%, 0 calc(100% - var(--cutout-corner-angle)), 0 var(--cutout-corner-angle), var(--cutout-outline-thickness) calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5), var(--cutout-outline-thickness) calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5), calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5) calc(100% - var(--cutout-outline-thickness)), calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5) calc(100% - var(--cutout-outline-thickness)), calc(100% - var(--cutout-outline-thickness)) calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5), calc(100% - var(--cutout-outline-thickness)) calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5), calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5) var(--cutout-outline-thickness), calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5) var(--cutout-outline-thickness), var(--cutout-outline-thickness) calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5));
 }
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h1-stroke,
+.h1-stroke-left-aligned,
+.h1-normal,
+.sci-fi) :is(h1, .HyperMD-header-1):not(.callout *, ul *, ol *):is(.is-collapsed > h1)::before,
 :is(.markdown-preview-view, .is-live-preview):is(.h1-display, .h1-display-left-aligned) :is(h1, .HyperMD-header-1):not(.callout *, ul *, ol *):is(.is-collapsed > h1)::before {
   background: var(--h1-border-color-collapsed);
 }
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h1-stroke,
+.h1-stroke-left-aligned,
+.h1-normal,
+.sci-fi) :is(h1, .HyperMD-header-1):not(.callout *, ul *, ol *):is(.is-collapsed > h1)::after,
 :is(.markdown-preview-view, .is-live-preview):is(.h1-display, .h1-display-left-aligned) :is(h1, .HyperMD-header-1):not(.callout *, ul *, ol *):is(.is-collapsed > h1)::after {
   content: "";
   position: absolute;
@@ -86,6 +117,13 @@ body {
   background: var(--h1-border-color-collapsed);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0, var(--cutout-outline-inset) calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px), var(--cutout-outline-inset) calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px), calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px) calc(100% - var(--cutout-outline-inset)), calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px) calc(100% - var(--cutout-outline-inset)), calc(100% - var(--cutout-outline-inset)) calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px), calc(100% - var(--cutout-outline-inset)) calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px), calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px) var(--cutout-outline-inset), calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px) var(--cutout-outline-inset), var(--cutout-outline-inset) calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px));
 }
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h1-stroke,
+.h1-stroke-left-aligned,
+.h1-normal,
+.sci-fi) :is(h1, .HyperMD-header-1):not(.callout *, ul *, ol *) .heading-collapse-indicator,
 :is(.markdown-preview-view, .is-live-preview):is(.h1-display, .h1-display-left-aligned) :is(h1, .HyperMD-header-1):not(.callout *, ul *, ol *) .heading-collapse-indicator {
   margin-inline-start: 0;
   left: var(--size-2-1);
@@ -99,6 +137,13 @@ body {
   --h2-display-alignment: left;
 }
 
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h2-stroke,
+.h2-stroke-left-aligned,
+.h2-normal,
+.sci-fi) :is(h2, .HyperMD-header-2):not(.callout *, ul *, ol *),
 :is(.markdown-preview-view, .is-live-preview):is(.h2-display, .h2-display-left-aligned) :is(h2, .HyperMD-header-2):not(.callout *, ul *, ol *) {
   --h2-line-height: 1.2em;
   --h2-size: 2.8em;
@@ -116,6 +161,13 @@ body {
   /* Only in preview */
   /* Only in preview */
 }
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h2-stroke,
+.h2-stroke-left-aligned,
+.h2-normal,
+.sci-fi) :is(h2, .HyperMD-header-2):not(.callout *, ul *, ol *)::before,
 :is(.markdown-preview-view, .is-live-preview):is(.h2-display, .h2-display-left-aligned) :is(h2, .HyperMD-header-2):not(.callout *, ul *, ol *)::before {
   content: "";
   position: absolute;
@@ -123,9 +175,23 @@ body {
   inset: var(--cutout-outline-inset);
   clip-path: polygon(0 var(--cutout-corner-angle), var(--cutout-corner-angle) 0, calc(100% - var(--cutout-corner-angle)) 0, 100% var(--cutout-corner-angle), 100% calc(100% - var(--cutout-corner-angle)), calc(100% - var(--cutout-corner-angle)) 100%, var(--cutout-corner-angle) 100%, 0 calc(100% - var(--cutout-corner-angle)), 0 var(--cutout-corner-angle), var(--cutout-outline-thickness) calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5), var(--cutout-outline-thickness) calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5), calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5) calc(100% - var(--cutout-outline-thickness)), calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5) calc(100% - var(--cutout-outline-thickness)), calc(100% - var(--cutout-outline-thickness)) calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5), calc(100% - var(--cutout-outline-thickness)) calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5), calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5) var(--cutout-outline-thickness), calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5) var(--cutout-outline-thickness), var(--cutout-outline-thickness) calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5));
 }
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h2-stroke,
+.h2-stroke-left-aligned,
+.h2-normal,
+.sci-fi) :is(h2, .HyperMD-header-2):not(.callout *, ul *, ol *):is(.is-collapsed > h2)::before,
 :is(.markdown-preview-view, .is-live-preview):is(.h2-display, .h2-display-left-aligned) :is(h2, .HyperMD-header-2):not(.callout *, ul *, ol *):is(.is-collapsed > h2)::before {
   background: var(--h2-border-color-collapsed);
 }
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h2-stroke,
+.h2-stroke-left-aligned,
+.h2-normal,
+.sci-fi) :is(h2, .HyperMD-header-2):not(.callout *, ul *, ol *):is(.is-collapsed > h2)::after,
 :is(.markdown-preview-view, .is-live-preview):is(.h2-display, .h2-display-left-aligned) :is(h2, .HyperMD-header-2):not(.callout *, ul *, ol *):is(.is-collapsed > h2)::after {
   content: "";
   position: absolute;
@@ -133,6 +199,13 @@ body {
   background: var(--h2-border-color-collapsed);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0, var(--cutout-outline-inset) calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px), var(--cutout-outline-inset) calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px), calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px) calc(100% - var(--cutout-outline-inset)), calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px) calc(100% - var(--cutout-outline-inset)), calc(100% - var(--cutout-outline-inset)) calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px), calc(100% - var(--cutout-outline-inset)) calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px), calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px) var(--cutout-outline-inset), calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px) var(--cutout-outline-inset), var(--cutout-outline-inset) calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px));
 }
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h2-stroke,
+.h2-stroke-left-aligned,
+.h2-normal,
+.sci-fi) :is(h2, .HyperMD-header-2):not(.callout *, ul *, ol *) .heading-collapse-indicator,
 :is(.markdown-preview-view, .is-live-preview):is(.h2-display, .h2-display-left-aligned) :is(h2, .HyperMD-header-2):not(.callout *, ul *, ol *) .heading-collapse-indicator {
   margin-inline-start: 0;
   left: var(--size-2-1);
@@ -146,6 +219,13 @@ body {
   --h3-display-alignment: left;
 }
 
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h3-stroke,
+.h3-stroke-left-aligned,
+.h3-normal,
+.sci-fi) :is(h3, .HyperMD-header-3):not(.callout *, ul *, ol *),
 :is(.markdown-preview-view, .is-live-preview):is(.h3-display, .h3-display-left-aligned) :is(h3, .HyperMD-header-3):not(.callout *, ul *, ol *) {
   --h3-line-height: 1.2em;
   --h3-size: 2.6em;
@@ -163,6 +243,13 @@ body {
   /* Only in preview */
   /* Only in preview */
 }
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h3-stroke,
+.h3-stroke-left-aligned,
+.h3-normal,
+.sci-fi) :is(h3, .HyperMD-header-3):not(.callout *, ul *, ol *)::before,
 :is(.markdown-preview-view, .is-live-preview):is(.h3-display, .h3-display-left-aligned) :is(h3, .HyperMD-header-3):not(.callout *, ul *, ol *)::before {
   content: "";
   position: absolute;
@@ -170,9 +257,23 @@ body {
   inset: var(--cutout-outline-inset);
   clip-path: polygon(0 var(--cutout-corner-angle), var(--cutout-corner-angle) 0, calc(100% - var(--cutout-corner-angle)) 0, 100% var(--cutout-corner-angle), 100% calc(100% - var(--cutout-corner-angle)), calc(100% - var(--cutout-corner-angle)) 100%, var(--cutout-corner-angle) 100%, 0 calc(100% - var(--cutout-corner-angle)), 0 var(--cutout-corner-angle), var(--cutout-outline-thickness) calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5), var(--cutout-outline-thickness) calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5), calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5) calc(100% - var(--cutout-outline-thickness)), calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5) calc(100% - var(--cutout-outline-thickness)), calc(100% - var(--cutout-outline-thickness)) calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5), calc(100% - var(--cutout-outline-thickness)) calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5), calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5) var(--cutout-outline-thickness), calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5) var(--cutout-outline-thickness), var(--cutout-outline-thickness) calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5));
 }
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h3-stroke,
+.h3-stroke-left-aligned,
+.h3-normal,
+.sci-fi) :is(h3, .HyperMD-header-3):not(.callout *, ul *, ol *):is(.is-collapsed > h3)::before,
 :is(.markdown-preview-view, .is-live-preview):is(.h3-display, .h3-display-left-aligned) :is(h3, .HyperMD-header-3):not(.callout *, ul *, ol *):is(.is-collapsed > h3)::before {
   background: var(--h3-border-color-collapsed);
 }
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h3-stroke,
+.h3-stroke-left-aligned,
+.h3-normal,
+.sci-fi) :is(h3, .HyperMD-header-3):not(.callout *, ul *, ol *):is(.is-collapsed > h3)::after,
 :is(.markdown-preview-view, .is-live-preview):is(.h3-display, .h3-display-left-aligned) :is(h3, .HyperMD-header-3):not(.callout *, ul *, ol *):is(.is-collapsed > h3)::after {
   content: "";
   position: absolute;
@@ -180,6 +281,13 @@ body {
   background: var(--h3-border-color-collapsed);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0, var(--cutout-outline-inset) calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px), var(--cutout-outline-inset) calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px), calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px) calc(100% - var(--cutout-outline-inset)), calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px) calc(100% - var(--cutout-outline-inset)), calc(100% - var(--cutout-outline-inset)) calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px), calc(100% - var(--cutout-outline-inset)) calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px), calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px) var(--cutout-outline-inset), calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px) var(--cutout-outline-inset), var(--cutout-outline-inset) calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px));
 }
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h3-stroke,
+.h3-stroke-left-aligned,
+.h3-normal,
+.sci-fi) :is(h3, .HyperMD-header-3):not(.callout *, ul *, ol *) .heading-collapse-indicator,
 :is(.markdown-preview-view, .is-live-preview):is(.h3-display, .h3-display-left-aligned) :is(h3, .HyperMD-header-3):not(.callout *, ul *, ol *) .heading-collapse-indicator {
   margin-inline-start: 0;
   left: var(--size-2-1);
@@ -193,6 +301,13 @@ body {
   --h4-display-alignment: left;
 }
 
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h4-stroke,
+.h4-stroke-left-aligned,
+.h4-normal,
+.sci-fi) :is(h4, .HyperMD-header-4):not(.callout *, ul *, ol *),
 :is(.markdown-preview-view, .is-live-preview):is(.h4-display, .h4-display-left-aligned) :is(h4, .HyperMD-header-4):not(.callout *, ul *, ol *) {
   --h4-line-height: 1.2em;
   --h4-size: 2.4em;
@@ -210,6 +325,13 @@ body {
   /* Only in preview */
   /* Only in preview */
 }
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h4-stroke,
+.h4-stroke-left-aligned,
+.h4-normal,
+.sci-fi) :is(h4, .HyperMD-header-4):not(.callout *, ul *, ol *)::before,
 :is(.markdown-preview-view, .is-live-preview):is(.h4-display, .h4-display-left-aligned) :is(h4, .HyperMD-header-4):not(.callout *, ul *, ol *)::before {
   content: "";
   position: absolute;
@@ -217,9 +339,23 @@ body {
   inset: var(--cutout-outline-inset);
   clip-path: polygon(0 var(--cutout-corner-angle), var(--cutout-corner-angle) 0, calc(100% - var(--cutout-corner-angle)) 0, 100% var(--cutout-corner-angle), 100% calc(100% - var(--cutout-corner-angle)), calc(100% - var(--cutout-corner-angle)) 100%, var(--cutout-corner-angle) 100%, 0 calc(100% - var(--cutout-corner-angle)), 0 var(--cutout-corner-angle), var(--cutout-outline-thickness) calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5), var(--cutout-outline-thickness) calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5), calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5) calc(100% - var(--cutout-outline-thickness)), calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5) calc(100% - var(--cutout-outline-thickness)), calc(100% - var(--cutout-outline-thickness)) calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5), calc(100% - var(--cutout-outline-thickness)) calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5), calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5) var(--cutout-outline-thickness), calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5) var(--cutout-outline-thickness), var(--cutout-outline-thickness) calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5));
 }
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h4-stroke,
+.h4-stroke-left-aligned,
+.h4-normal,
+.sci-fi) :is(h4, .HyperMD-header-4):not(.callout *, ul *, ol *):is(.is-collapsed > h4)::before,
 :is(.markdown-preview-view, .is-live-preview):is(.h4-display, .h4-display-left-aligned) :is(h4, .HyperMD-header-4):not(.callout *, ul *, ol *):is(.is-collapsed > h4)::before {
   background: var(--h4-border-color-collapsed);
 }
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h4-stroke,
+.h4-stroke-left-aligned,
+.h4-normal,
+.sci-fi) :is(h4, .HyperMD-header-4):not(.callout *, ul *, ol *):is(.is-collapsed > h4)::after,
 :is(.markdown-preview-view, .is-live-preview):is(.h4-display, .h4-display-left-aligned) :is(h4, .HyperMD-header-4):not(.callout *, ul *, ol *):is(.is-collapsed > h4)::after {
   content: "";
   position: absolute;
@@ -227,6 +363,13 @@ body {
   background: var(--h4-border-color-collapsed);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0, var(--cutout-outline-inset) calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px), var(--cutout-outline-inset) calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px), calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px) calc(100% - var(--cutout-outline-inset)), calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px) calc(100% - var(--cutout-outline-inset)), calc(100% - var(--cutout-outline-inset)) calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px), calc(100% - var(--cutout-outline-inset)) calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px), calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px) var(--cutout-outline-inset), calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px) var(--cutout-outline-inset), var(--cutout-outline-inset) calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px));
 }
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h4-stroke,
+.h4-stroke-left-aligned,
+.h4-normal,
+.sci-fi) :is(h4, .HyperMD-header-4):not(.callout *, ul *, ol *) .heading-collapse-indicator,
 :is(.markdown-preview-view, .is-live-preview):is(.h4-display, .h4-display-left-aligned) :is(h4, .HyperMD-header-4):not(.callout *, ul *, ol *) .heading-collapse-indicator {
   margin-inline-start: 0;
   left: var(--size-2-1);
@@ -240,6 +383,13 @@ body {
   --h5-display-alignment: left;
 }
 
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h5-stroke,
+.h5-stroke-left-aligned,
+.h5-normal,
+.sci-fi) :is(h5, .HyperMD-header-5):not(.callout *, ul *, ol *),
 :is(.markdown-preview-view, .is-live-preview):is(.h5-display, .h5-display-left-aligned) :is(h5, .HyperMD-header-5):not(.callout *, ul *, ol *) {
   --h5-line-height: 1.2em;
   --h5-size: 2.2em;
@@ -257,6 +407,13 @@ body {
   /* Only in preview */
   /* Only in preview */
 }
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h5-stroke,
+.h5-stroke-left-aligned,
+.h5-normal,
+.sci-fi) :is(h5, .HyperMD-header-5):not(.callout *, ul *, ol *)::before,
 :is(.markdown-preview-view, .is-live-preview):is(.h5-display, .h5-display-left-aligned) :is(h5, .HyperMD-header-5):not(.callout *, ul *, ol *)::before {
   content: "";
   position: absolute;
@@ -264,9 +421,23 @@ body {
   inset: var(--cutout-outline-inset);
   clip-path: polygon(0 var(--cutout-corner-angle), var(--cutout-corner-angle) 0, calc(100% - var(--cutout-corner-angle)) 0, 100% var(--cutout-corner-angle), 100% calc(100% - var(--cutout-corner-angle)), calc(100% - var(--cutout-corner-angle)) 100%, var(--cutout-corner-angle) 100%, 0 calc(100% - var(--cutout-corner-angle)), 0 var(--cutout-corner-angle), var(--cutout-outline-thickness) calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5), var(--cutout-outline-thickness) calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5), calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5) calc(100% - var(--cutout-outline-thickness)), calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5) calc(100% - var(--cutout-outline-thickness)), calc(100% - var(--cutout-outline-thickness)) calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5), calc(100% - var(--cutout-outline-thickness)) calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5), calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5) var(--cutout-outline-thickness), calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5) var(--cutout-outline-thickness), var(--cutout-outline-thickness) calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5));
 }
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h5-stroke,
+.h5-stroke-left-aligned,
+.h5-normal,
+.sci-fi) :is(h5, .HyperMD-header-5):not(.callout *, ul *, ol *):is(.is-collapsed > h5)::before,
 :is(.markdown-preview-view, .is-live-preview):is(.h5-display, .h5-display-left-aligned) :is(h5, .HyperMD-header-5):not(.callout *, ul *, ol *):is(.is-collapsed > h5)::before {
   background: var(--h5-border-color-collapsed);
 }
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h5-stroke,
+.h5-stroke-left-aligned,
+.h5-normal,
+.sci-fi) :is(h5, .HyperMD-header-5):not(.callout *, ul *, ol *):is(.is-collapsed > h5)::after,
 :is(.markdown-preview-view, .is-live-preview):is(.h5-display, .h5-display-left-aligned) :is(h5, .HyperMD-header-5):not(.callout *, ul *, ol *):is(.is-collapsed > h5)::after {
   content: "";
   position: absolute;
@@ -274,6 +445,13 @@ body {
   background: var(--h5-border-color-collapsed);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0, var(--cutout-outline-inset) calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px), var(--cutout-outline-inset) calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px), calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px) calc(100% - var(--cutout-outline-inset)), calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px) calc(100% - var(--cutout-outline-inset)), calc(100% - var(--cutout-outline-inset)) calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px), calc(100% - var(--cutout-outline-inset)) calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px), calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px) var(--cutout-outline-inset), calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px) var(--cutout-outline-inset), var(--cutout-outline-inset) calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px));
 }
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h5-stroke,
+.h5-stroke-left-aligned,
+.h5-normal,
+.sci-fi) :is(h5, .HyperMD-header-5):not(.callout *, ul *, ol *) .heading-collapse-indicator,
 :is(.markdown-preview-view, .is-live-preview):is(.h5-display, .h5-display-left-aligned) :is(h5, .HyperMD-header-5):not(.callout *, ul *, ol *) .heading-collapse-indicator {
   margin-inline-start: 0;
   left: var(--size-2-1);
@@ -287,6 +465,13 @@ body {
   --h6-display-alignment: left;
 }
 
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h6-stroke,
+.h6-stroke-left-aligned,
+.h6-normal,
+.sci-fi) :is(h6, .HyperMD-header-6):not(.callout *, ul *, ol *),
 :is(.markdown-preview-view, .is-live-preview):is(.h6-display, .h6-display-left-aligned) :is(h6, .HyperMD-header-6):not(.callout *, ul *, ol *) {
   --h6-line-height: 1.2em;
   --h6-size: 2em;
@@ -304,6 +489,13 @@ body {
   /* Only in preview */
   /* Only in preview */
 }
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h6-stroke,
+.h6-stroke-left-aligned,
+.h6-normal,
+.sci-fi) :is(h6, .HyperMD-header-6):not(.callout *, ul *, ol *)::before,
 :is(.markdown-preview-view, .is-live-preview):is(.h6-display, .h6-display-left-aligned) :is(h6, .HyperMD-header-6):not(.callout *, ul *, ol *)::before {
   content: "";
   position: absolute;
@@ -311,9 +503,23 @@ body {
   inset: var(--cutout-outline-inset);
   clip-path: polygon(0 var(--cutout-corner-angle), var(--cutout-corner-angle) 0, calc(100% - var(--cutout-corner-angle)) 0, 100% var(--cutout-corner-angle), 100% calc(100% - var(--cutout-corner-angle)), calc(100% - var(--cutout-corner-angle)) 100%, var(--cutout-corner-angle) 100%, 0 calc(100% - var(--cutout-corner-angle)), 0 var(--cutout-corner-angle), var(--cutout-outline-thickness) calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5), var(--cutout-outline-thickness) calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5), calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5) calc(100% - var(--cutout-outline-thickness)), calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5) calc(100% - var(--cutout-outline-thickness)), calc(100% - var(--cutout-outline-thickness)) calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5), calc(100% - var(--cutout-outline-thickness)) calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5), calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5) var(--cutout-outline-thickness), calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5) var(--cutout-outline-thickness), var(--cutout-outline-thickness) calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5));
 }
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h6-stroke,
+.h6-stroke-left-aligned,
+.h6-normal,
+.sci-fi) :is(h6, .HyperMD-header-6):not(.callout *, ul *, ol *):is(.is-collapsed > h6)::before,
 :is(.markdown-preview-view, .is-live-preview):is(.h6-display, .h6-display-left-aligned) :is(h6, .HyperMD-header-6):not(.callout *, ul *, ol *):is(.is-collapsed > h6)::before {
   background: var(--h6-border-color-collapsed);
 }
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h6-stroke,
+.h6-stroke-left-aligned,
+.h6-normal,
+.sci-fi) :is(h6, .HyperMD-header-6):not(.callout *, ul *, ol *):is(.is-collapsed > h6)::after,
 :is(.markdown-preview-view, .is-live-preview):is(.h6-display, .h6-display-left-aligned) :is(h6, .HyperMD-header-6):not(.callout *, ul *, ol *):is(.is-collapsed > h6)::after {
   content: "";
   position: absolute;
@@ -321,6 +527,13 @@ body {
   background: var(--h6-border-color-collapsed);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0, var(--cutout-outline-inset) calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px), var(--cutout-outline-inset) calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px), calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px) calc(100% - var(--cutout-outline-inset)), calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px) calc(100% - var(--cutout-outline-inset)), calc(100% - var(--cutout-outline-inset)) calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px), calc(100% - var(--cutout-outline-inset)) calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px), calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px) var(--cutout-outline-inset), calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px) var(--cutout-outline-inset), var(--cutout-outline-inset) calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px));
 }
+:is :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+.movie-script,
+.minimalist,
+.h6-stroke,
+.h6-stroke-left-aligned,
+.h6-normal,
+.sci-fi) :is(h6, .HyperMD-header-6):not(.callout *, ul *, ol *) .heading-collapse-indicator,
 :is(.markdown-preview-view, .is-live-preview):is(.h6-display, .h6-display-left-aligned) :is(h6, .HyperMD-header-6):not(.callout *, ul *, ol *) .heading-collapse-indicator {
   margin-inline-start: 0;
   left: var(--size-2-1);

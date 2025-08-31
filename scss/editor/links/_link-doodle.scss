@@ -20,7 +20,7 @@ body {
 
 @container style(--link-decoration: doodle) {
     .cm-hmd-internal-link,
-    .internal-link:not(:is(.metadata-container .internal-link)) {
+    .internal-link:not(.metadata-container .internal-link) {
         position: relative;
     }
 }
@@ -28,7 +28,7 @@ body {
 @container style(--link-external-decoration: doodle) {
     .cm-url,
     .cm-link,
-    .external-link:not(:is(.metadata-container .external-link)) {
+    .external-link:not(.metadata-container .external-link) {
         position: relative;
     }
 }
@@ -36,7 +36,7 @@ body {
 @media (hover: hover) {
     @container style(--link-decoration: doodle) {
         .cm-hmd-internal-link,
-        .internal-link:not(:is(.metadata-container .internal-link)) {
+        .internal-link:not(.metadata-container .internal-link) {
             @include doodle-decoration-hover;
         }
     }
@@ -44,7 +44,7 @@ body {
     @container style(--link-external-decoration: doodle) {
         .cm-url,
         .cm-link,
-        .external-link:not(:is(.metadata-container .external-link)) {
+        .external-link:not(.metadata-container .external-link) {
             @include doodle-decoration-hover;
         }
     }

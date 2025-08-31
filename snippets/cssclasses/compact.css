@@ -28,17 +28,20 @@ Author: ElsaTam (Kapirklaa in Discord)
 .compact:is(.markdown-source-view, .markdown-preview-view) .callout[data-callout=grid] > .callout-content {
   gap: 0.3em;
 }
+.compact:is(.markdown-source-view, .markdown-preview-view) :where .callout[data-callout=infobox],
 .compact:is(.markdown-source-view, .markdown-preview-view) .callout[data-callout=fas-infobox] {
   --p-spacing: 0;
   --h1-line-height: 1.4;
 }
+.compact:is(.markdown-source-view, .markdown-preview-view) :where .callout[data-callout=infobox] h1,
 .compact:is(.markdown-source-view, .markdown-preview-view) .callout[data-callout=fas-infobox] h1 {
   --h1-size: 1.5em;
 }
 .compact:is(.markdown-source-view, .markdown-preview-view) audio {
   height: 32px;
 }
-.compact:is(.markdown-source-view, .markdown-preview-view) audio::-webkit-media-controls-current-time-display, .compact:is(.markdown-source-view, .markdown-preview-view) audio::-webkit-media-controls-time-remaining-display {
+.compact:is(.markdown-source-view, .markdown-preview-view) audio::-webkit-media-controls-current-time-display,
+.compact:is(.markdown-source-view, .markdown-preview-view) audio::-webkit-media-controls-time-remaining-display {
   font-size: 12px;
 }
 .compact:is(.markdown-source-view, .markdown-preview-view) table {
@@ -47,6 +50,3 @@ Author: ElsaTam (Kapirklaa in Discord)
 .compact:is(.markdown-source-view, .markdown-preview-view) table :is(td, th):empty {
   height: unset;
 }
-
-/* Live preview */
-/* Preview */

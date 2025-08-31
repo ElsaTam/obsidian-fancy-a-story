@@ -40,20 +40,18 @@ Author: ElsaTam (Kapirklaa in Discord)
   overflow-x: auto;
   --padding-bottom: max(0px, var(--card-shadow-blur) + var(--card-shadow-offset-y) + var(--padding-scale-factor));
   --padding-top: max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-y) + var(--padding-scale-factor));
-  --padding-left: calc(-1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-x)));
-  --padding-right: calc(-1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) + var(--card-shadow-offset-x)));
+  --padding-left: calc(
+      -1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-x))
+  );
+  --padding-right: calc(
+      -1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) + var(--card-shadow-offset-x))
+  );
 }
 .callout[data-callout=cards-deck] .callout-content > p > * {
   width: var(--card-gap);
   transition: transform 0.5s ease-in-out;
   transform: translateX(var(--card-base-translation));
   transform-origin: right;
-}
-.callout[data-callout=cards-deck] .callout-content > p > :hover {
-  transform: translateX(var(--card-base-translation)) scale(var(--card-scale-hover));
-}
-.callout[data-callout=cards-deck] .callout-content > p > :hover ~ * {
-  transform: translateX(var(--card-base-translation)) translateX(calc(var(--card-width) - var(--card-gap)));
 }
 .callout[data-callout=cards-deck] .callout-content > p a {
   font-size: 0;
@@ -74,29 +72,39 @@ Author: ElsaTam (Kapirklaa in Discord)
   object-position: center center;
 }
 
+@media (hover: hover) {
+  .callout[data-callout=cards-deck] .callout-content > p > *:hover {
+    transform: translateX(var(--card-base-translation)) scale(var(--card-scale-hover));
+  }
+  .callout[data-callout=cards-deck] .callout-content > p > *:hover ~ * {
+    transform: translateX(var(--card-base-translation)) translateX(calc(var(--card-width) - var(--card-gap)));
+  }
+}
 body:not(.is-ios) .callout[data-callout=cards-deck] .callout-content > p::-webkit-scrollbar {
   width: var(--deck-scrollbar-width);
   height: var(--deck-scrollbar-width);
 }
 
 /* Remove code bellow in case of performance issues */
-.callout[data-callout=cards-deck] .callout-content > p > span > img:hover,
-.callout[data-callout=cards-deck] .callout-content > p > a > span > img:hover {
-  --border-color: var(--border-color-hover);
-}
 .callout[data-callout=cards-deck] .callout-content > p:hover > :not(:hover) {
   filter: saturate(0.2);
 }
 .callout[data-callout=cards-deck] .callout-content > p:hover > :not(:hover), .callout[data-callout=cards-deck] .callout-content > p:hover > :not(:hover) .markdown-preview-view {
   color: var(--text-faint);
 }
-.callout[data-callout=cards-deck] .callout-content > p > :hover ~ * {
+.callout[data-callout=cards-deck] .callout-content > p > *:hover ~ * {
   z-index: 0;
 }
 .callout[data-callout=cards-deck] .callout-content > p:hover {
   z-index: 1;
 }
 
+@media (hover: hover) {
+  .callout[data-callout=cards-deck] .callout-content > p > span > img:hover,
+  .callout[data-callout=cards-deck] .callout-content > p > a > span > img:hover {
+    --border-color: var(--border-color-hover);
+  }
+}
 /* Fixes for themes */
 /* Minimal */ /*
 .callout[data-callout=cards-deck] {

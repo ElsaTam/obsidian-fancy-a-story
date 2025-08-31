@@ -9,7 +9,8 @@
     --table-row-background-hover: var(--table-background);
     --table-line-height: 1.5;
 
-    :is(.cm-html-embed, .markdown-rendered) :is(th, td) {
+    .cm-html-embed :is(th, td),
+    .markdown-rendered :is(th, td) {
         border-inline-width: var(--table-border-width);
     }
 

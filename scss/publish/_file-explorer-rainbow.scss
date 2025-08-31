@@ -1,0 +1,24 @@
+body {
+    --fas-rainbow-folders: enable;
+}
+
+@container style(--fas-rainbow-folders: enable) {
+    .nav-view .tree-item:nth-child(10n + 1) > * {
+        --folder-color: var(--color-rainbow-10);
+    }
+    @for $i from 2 through 10 {
+        .nav-view .tree-item:nth-child(10n + #{$i}) > * {
+            --folder-color: var(--color-rainbow-#{$i - 1});
+        }
+    }
+
+    .nav-view .mod-root ~ * .tree-item > * > .tree-item > * {
+        --folder-color: inherit;
+    }
+
+    .nav-view .tree-item > * {
+        --nav-item-color: var(--folder-color);
+        --nav-item-background-hover: color-mix(in srgb, var(--folder-color), transparent 80%);
+        filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
+    }
+}

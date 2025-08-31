@@ -3,12 +3,18 @@
 	"version": "1.0.0",
 	"scripts": {
 		"version": "node version-bump.mjs && git add manifest.json versions.json",
-		"postcss:watch": "postcss css/ --dir snippets/ --base css/ --watch"
+		"postcss:snippets": "postcss css/ --dir snippets/ --base css/ --watch --plugins=snippets",
+		"postcss:publish": "postcss publish-raw.css --output publish.css --plugins=publish",
+		"postcss:theme": "postcss theme-raw.css --output theme.css --plugins=theme"
 	},
 	"devDependencies": {
 		"css-byebye": "^4.0.1",
-		"postcss": "^8.4.47",
+		"cssnano": "^7.1.1",
+		"postcss": "^8.5.6",
 		"postcss-cli": "^11.0.0",
+		"postcss-combine-duplicated-selectors": "^10.0.3",
+		"postcss-pseudo-is": "^0.3.0",
+		"postcss-remove-classes": "^2.0.0",
 		"postcss-remove-selectors": "^2.0.1"
 	}
 }

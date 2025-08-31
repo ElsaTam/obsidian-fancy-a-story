@@ -7,13 +7,14 @@ body {
   --workleaves-foreground: var(--text-normal);
 }
 
+.dataview-cards-deck {
+  --card-gap: 50px;
+  --card-width: 150px;
+  --card-height: 300px;
+  --deck-border-width: 0;
+}
+
 @scope (.dataview-cards-deck) to (.markdown-embed .markdown-embed) {
-  :scope {
-    --card-gap: 50px;
-    --card-width: 150px;
-    --card-height: 300px;
-    --deck-border-width: 0;
-  }
   ul.dataview-result-list-root-ul {
     --border-color-hover: var(--color-accent);
     --list-indent: 0;
@@ -45,8 +46,12 @@ body {
     overflow-x: auto;
     --padding-bottom: max(0px, var(--card-shadow-blur) + var(--card-shadow-offset-y) + var(--padding-scale-factor));
     --padding-top: max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-y) + var(--padding-scale-factor));
-    --padding-left: calc(-1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-x)));
-    --padding-right: calc(-1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) + var(--card-shadow-offset-x)));
+    --padding-left: calc(
+        -1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-x))
+    );
+    --padding-right: calc(
+        -1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) + var(--card-shadow-offset-x))
+    );
   }
   ul.dataview-result-list-root-ul > * {
     width: var(--card-gap);
@@ -54,19 +59,10 @@ body {
     transform: translateX(var(--card-base-translation));
     transform-origin: right;
   }
-  ul.dataview-result-list-root-ul > :hover {
-    transform: translateX(var(--card-base-translation)) scale(var(--card-scale-hover));
-  }
-  ul.dataview-result-list-root-ul > :hover ~ * {
-    transform: translateX(var(--card-base-translation)) translateX(calc(var(--card-width) - var(--card-gap)));
-  }
   .dataview-result-list-li {
     transition: transform 0.5s ease-in-out, filter 0.2s linear;
     height: var(--card-height);
     vertical-align: middle;
-  }
-  .dataview-result-list-li:hover {
-    --border-color: var(--border-color-hover);
   }
   .markdown-embed {
     --embed-border-start: 0px;
@@ -85,10 +81,7 @@ body {
     left: 1px;
     box-shadow: 1px 1px 5px black;
   }
-  .dataview-result-list-li:hover .markdown-embed-title {
-    opacity: 0;
-  }
-  :scope .markdown-embed .markdown-preview-view,
+  .markdown-embed.markdown-embed .markdown-preview-view,
   .markdown-embed-content {
     box-shadow: var(--card-shadow-offset-x) var(--card-shadow-offset-y) var(--card-shadow-blur) rgba(0, 0, 0, var(--card-shadow-opacity));
     border-radius: var(--card-radius);
@@ -141,23 +134,43 @@ body {
     height: var(--deck-scrollbar-width);
   }
 }
+@media (hover: hover) {
+  @scope (.dataview-cards-deck) to (.markdown-embed .markdown-embed) {
+    ul.dataview-result-list-root-ul > *:hover {
+      transform: translateX(var(--card-base-translation)) scale(var(--card-scale-hover));
+    }
+    ul.dataview-result-list-root-ul > *:hover ~ * {
+      transform: translateX(var(--card-base-translation)) translateX(calc(var(--card-width) - var(--card-gap)));
+    }
+    .dataview-result-list-li:hover {
+      --border-color: var(--border-color-hover);
+    }
+    .dataview-result-list-li:hover .markdown-embed-title {
+      opacity: 0;
+    }
+  }
+}
 /* Remove code bellow in case of performance issues */
 @scope (.dataview-cards-deck) to (.markdown-embed .markdown-embed) {
   .dataview-result-list-root-ul .markdown-preview-view:hover,
   .dataview-result-list-root-ul .markdown-embed-content:hover {
     outline: none;
   }
-  .dataview-result-list-root-ul:hover > :not(:hover) {
-    filter: saturate(0.2);
-  }
-  .dataview-result-list-root-ul:hover > :not(:hover), .dataview-result-list-root-ul:hover > :not(:hover) .markdown-preview-view {
-    color: var(--text-faint);
-  }
-  .dataview-result-list-root-ul > :hover ~ * {
-    z-index: 0;
-  }
-  .dataview-result-list-root-ul:hover {
-    z-index: 1;
+}
+@media (hover: hover) {
+  @scope (.dataview-cards-deck) to (.markdown-embed .markdown-embed) {
+    .dataview-result-list-root-ul:hover > :not(:hover) {
+      filter: saturate(0.2);
+    }
+    .dataview-result-list-root-ul:hover > :not(:hover), .dataview-result-list-root-ul:hover > :not(:hover) .markdown-preview-view {
+      color: var(--text-faint);
+    }
+    .dataview-result-list-root-ul > *:hover ~ * {
+      z-index: 0;
+    }
+    .dataview-result-list-root-ul:hover {
+      z-index: 1;
+    }
   }
 }
 /* Fixes for themes */
