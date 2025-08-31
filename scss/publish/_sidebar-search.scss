@@ -1,0 +1,30 @@
+body {
+    --fas-search-flag: flat; /* disable, flat, or volume */
+}
+
+@container not style(--fas-search-flag: disable) {
+    .search-view-container {
+        --background-modifier-form-field: var(--color-accent);
+        --text-normal: var(--text-on-accent);
+    }
+    .search-bar {
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px));
+    }
+    .search-bar[type="text"]::placeholder {
+        color: var(--text-faint);
+    }
+    .published-search-icon {
+        z-index: 2;
+    }
+}
+
+@container style(--fas-search-flag: volume) {
+    .search-bar[type="text"] {
+        background-image: linear-gradient(
+            to bottom,
+            rgb(255 255 255 / 0.08) 2px,
+            rgb(255 255 255 / 0.03) 8px,
+            transparent 20px
+        );
+    }
+}

@@ -17,7 +17,7 @@ module.exports = (ctx) => {
         ],
         publish: [
             require('postcss-pseudo-is'),
-            removeClasses(/markdown-source-view|is-live-preview|cm-/),
+            removeClasses(/markdown-source-view|is-live-preview|cm-|fas-/),
             require('postcss-combine-duplicated-selectors'),
             require('cssnano')({
                 preset: [

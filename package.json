@@ -3,9 +3,9 @@
 	"version": "1.0.0",
 	"scripts": {
 		"version": "node version-bump.mjs && git add manifest.json versions.json",
-		"postcss:snippets": "postcss css/ --dir snippets/ --base css/ --watch --plugins=snippets",
+		"postcss:snippets": "postcss css/ --dir snippets/ --base css/ --plugins=snippets",
 		"postcss:publish": "postcss publish-raw.css --output publish.css --plugins=publish",
-		"postcss:theme": "postcss theme-raw.css --output theme.css --plugins=theme"
+		"postcss:theme": "postcss theme-raw.css --output theme.css --watch --plugins=theme"
 	},
 	"devDependencies": {
 		"css-byebye": "^4.0.1",

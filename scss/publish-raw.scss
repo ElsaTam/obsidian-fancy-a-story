@@ -9,25 +9,21 @@
 @use "foundations/shared-css-variables";
 @use "foundations/publish-css-variables";
 
-@use "editor/aside";
-@use "editor/callouts/callouts";
-@use "editor/code/code";
-@use "editor/embeds/embeds";
-@use "editor/footnotes";
-@use "editor/headings/h-display";
-@use "editor/headings/h-stroke";
-@use "editor/horizontal_rule";
-@use "editor/links/link-default";
-@use "editor/links/link-external";
-@use "editor/lists/lists";
-@use "editor/tables/default-table";
+@use "editor/editor";
 
 @use "plugins/core/file-explorer-hover";
-@use "publish/file-explorer-rainbow";
 
-@use "window/sidebars/fas-bg-textures";
-@use "window/sidebars/sidebar-layout";
 @use "window/workspace";
 
+// PUBLISH SPECIFIC
+@use "publish/file-explorer-rainbow";
 @use "publish/variable_overrides";
-@use "publish/sidebar";
+@use "publish/sidebar-layout";
+@use "publish/sidebar-search";
+
+// MIXINS
+@use "window/sidebars/file-explorer-decoration";
+@use "window/sidebars/sidebar-texture";
+
+@include file-explorer-decoration.file-explorer-decoration($publish: true);
+@include sidebar-texture.sidebar-texture($publish: true);

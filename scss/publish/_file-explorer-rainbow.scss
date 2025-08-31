@@ -18,6 +18,7 @@ body {
 
     .nav-view .tree-item > * {
         --nav-item-color: var(--folder-color);
+        --nav-parent-item-color: var(--folder-color);
         --nav-item-background-hover: color-mix(in srgb, var(--folder-color), transparent 80%);
         filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
     }

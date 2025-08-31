@@ -1,0 +1,5 @@
+@forward "../../shared/paper-texture";
+@use "../../mixins/file-explorer-decoration";
+
+@include file-explorer-decoration.file-explorer-decoration($publish: true);
+@include sidebar-texture.sidebar-texture($publish: true);

@@ -1,0 +1,45 @@
+@forward "../../shared/paper-texture";
+
+@mixin sidebar-texture($publish: false) {
+    body {
+        --sidebar-texture: var(--paper-texture);
+        --sidebar-texture-size: 500px;
+        --sidebar-texture-blend: multiply;
+        --sidebar-texture-blend-dark: multiply;
+        --sidebar-texture-position: center center;
+        --sidebar-texture-opacity: 1;
+    }
+    .theme-dark {
+        --sidebar-texture-blend: var(--sidebar-texture-blend-dark);
+    }
+
+    @if not $publish {
+        body {
+            --sidebar-texture-size-custom: 500px;
+            --sidebar-texture-blend-custom: multiply;
+            --sidebar-texture-blend-custom-dark: multiply;
+            --sidebar-texture-position-custom: center center;
+            --sidebar-texture-opacity-custom: 1;
+        }
+        .fas-sidebar-texture-custom {
+            --sidebar-texture: var(--sidebar-texture-custom);
+            --sidebar-texture-size: var(--sidebar-texture-size-custom);
+            --sidebar-texture-blend: var(--sidebar-texture-blend-custom);
+            --sidebar-texture-blend-dark: var(--sidebar-texture-blend-custom-dark);
+            --sidebar-texture-position: var(--sidebar-texture-position-custom);
+            --sidebar-texture-opacity: var(--sidebar-texture-opacity-custom);
+        }
+    }
+
+    $selector: ".fas-bg-textures .mod-sidedock .workspace-leaf";
+    @if $publish {
+        $selector: ".search-view-outer, .nav-view-outer";
+    }
+    #{$selector} {
+        --c: color-mix(in srgb, var(--workleaves-background), transparent calc(100% * var(--sidebar-texture-opacity)));
+        background-image: linear-gradient(to right, var(--c), var(--c) 100%), var(--sidebar-texture);
+        background-size: var(--sidebar-texture-size);
+        background-blend-mode: normal, var(--sidebar-texture-blend);
+        background-position: var(--sidebar-texture-position);
+    }
+}

@@ -1,3 +1,7 @@
-@use 'sidebar-layout';
-@use 'fas-bg-textures';
-@use 'fas-bookmark-tabs';
+@use "sidebar-layout";
+@use "file-explorer-decoration";
+@use "sidebar-texture";
+@use "fas-bookmark-tabs";
+
+@include file-explorer-decoration.file-explorer-decoration;
+@include sidebar-texture.sidebar-texture;
