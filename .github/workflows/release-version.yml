@@ -22,4 +22,4 @@ jobs:
             --title="$tag" \
             --generate-notes \
             --draft \
-            manifest.json theme.css
+            manifest.json theme.css publish.css
