@@ -9,6 +9,7 @@
 @use "foundations/shared-css-variables";
 @use "foundations/publish-css-variables";
 
+@use "cssclasses/cssclasses";
 @use "editor/editor";
 
 @use "plugins/core/file-explorer-hover";
@@ -17,6 +18,8 @@
 
 // PUBLISH SPECIFIC
 @use "publish/file-explorer-rainbow";
+@use "publish/footer-backlinks";
+@use "publish/h-stroke";
 @use "publish/variable_overrides";
 @use "publish/sidebar-layout";
 @use "publish/sidebar-search";

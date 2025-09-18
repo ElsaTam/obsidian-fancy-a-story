@@ -27,3 +27,6 @@ git-filter-repo
 assets/
 theme-raw.css
 publish-raw.css
+scss/publish-hong-kong.scss
+publish-hong-kong.css
+publish-hk.css

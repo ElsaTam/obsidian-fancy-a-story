@@ -3,16 +3,52 @@
 @use "sass:color";
 @use "sass:map";
 
+@mixin customRainbow($tone) {
+    @each $color in map.keys(map.get(colors_definitions.$rainbow-colors, $tone)) {
+        $c: helper-functions.map-deep-get(colors_definitions.$rainbow-colors, $tone, $color);
+        --color-#{$color}: #{$c};
+        --color-#{$color}-rgb:
+            #{color.channel($c, "red", $space: rgb), color.channel($c, "green", $space: rgb),
+            color.channel($c, "blue", $space: rgb)};
+    }
+}
+
 // Create the block for custom theme (no mixing)
 @each $tone in ("light", "dark") {
     .is-mobile.theme-#{$tone}.fas-custom-#{$tone},
     .theme-#{$tone}.fas-custom-#{$tone} {
-        @each $color in map.keys(map.get(colors_definitions.$rainbow-colors, $tone)) {
-            $c: helper-functions.map-deep-get(colors_definitions.$rainbow-colors, $tone, $color);
+        @include customRainbow($tone);
+    }
+
+    @media print {
+        .fas-theme-#{$tone}-print.fas-custom-#{$tone} {
+            @include customRainbow($tone);
+        }
+    }
+}
+
+@mixin predefinedRainbow($tone, $theme, $primary, $text, $space, $mix-with) {
+    // For each rainbow color
+    @each $color in map.keys(map.get(colors_definitions.$rainbow-colors, $tone)) {
+        $c: helper-functions.map-deep-get(colors_definitions.$rainbow-colors, $tone, $color);
+        $c: color.mix($c, $mix-with, colors_definitions.$keep); // Keep n% of the color
+
+        @if $tone == "light" {
+            $c: helper-functions.darken-till-contrast($c, $primary);
             --color-#{$color}: #{$c};
-            --color-#{$color}-rgb:
-                #{color.channel($c, "red", $space: rgb), color.channel($c, "green", $space: rgb),
-                color.channel($c, "blue", $space: rgb)};
+
+            $c:
+                color.channel($c, "red", $space: rgb), color.channel($c, "green", $space: rgb),
+                color.channel($c, "blue", $space: rgb);
+            --color-#{$color}-rgb: #{$c};
+        } @else {
+            $c: helper-functions.lighten-till-contrast($c, $primary);
+            --color-#{$color}: #{$c};
+
+            $c:
+                color.channel($c, "red", $space: rgb), color.channel($c, "green", $space: rgb),
+                color.channel($c, "blue", $space: rgb);
+            --color-#{$color}-rgb: #{$c};
         }
     }
 }
@@ -35,28 +71,12 @@
     // Create the class CSS block
     .is-mobile.theme-#{$tone}.fas-#{$tone},
     .theme-#{$tone}.fas-#{$theme} {
-        // For each rainbow color
-        @each $color in map.keys(map.get(colors_definitions.$rainbow-colors, $tone)) {
-            $c: helper-functions.map-deep-get(colors_definitions.$rainbow-colors, $tone, $color);
-            $c: color.mix($c, $mix-with, colors_definitions.$keep); // Keep n% of the color
+        @include predefinedRainbow($tone, $theme, $primary, $text, $space, $mix-with);
+    }
 
-            @if $tone == "light" {
-                $c: helper-functions.darken-till-contrast($c, $primary);
-                --color-#{$color}: #{$c};
-
-                $c:
-                    color.channel($c, "red", $space: rgb), color.channel($c, "green", $space: rgb),
-                    color.channel($c, "blue", $space: rgb);
-                --color-#{$color}-rgb: #{$c};
-            } @else {
-                $c: helper-functions.lighten-till-contrast($c, $primary);
-                --color-#{$color}: #{$c};
-
-                $c:
-                    color.channel($c, "red", $space: rgb), color.channel($c, "green", $space: rgb),
-                    color.channel($c, "blue", $space: rgb);
-                --color-#{$color}-rgb: #{$c};
-            }
+    @media print {
+        .fas-theme-#{$tone}-print.fas-#{$theme} {
+            @include predefinedRainbow($tone, $theme, $primary, $text, $space, $mix-with);
         }
     }
 }

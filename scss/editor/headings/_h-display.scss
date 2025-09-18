@@ -19,20 +19,43 @@
     --h6-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 80%);
 }
 
+body {
+    --h-display-line-height: 1.2em;
+    --h-display-font: var(--font-typewriter), var(--font-text);
+    --h-display-color: var(--workleaves-background, var(--background-primary));
+    --h-display-background: var(--color-base-100);
+}
+
 @for $i from 1 through 6 {
-    // Center
+    body {
+        --fas-h#{$i}-display: disable;
+        --fas-h#{$i}-display-left-aligned: disable;
+
+        --h#{$i}-display-size: #{calc(3.2em - 0.2em * $i)};
+    }
     .fas-h#{$i}-display,
     .h#{$i}-display {
-        --h#{$i}-display-alignment: center;
+        --fas-h#{$i}-display: enable;
     }
 
-    // Left
     .fas-h#{$i}-display-left-aligned,
     .h#{$i}-display-left-aligned {
-        --h#{$i}-display-alignment: left;
+        --fas-h#{$i}-display-left-aligned: enable;
     }
 
-    :is(.fas-h#{$i}-display, .fas-h#{$i}-display-left-aligned)
+    @container style(--fas-h#{$i}-display: enable) {
+        :is(.markdown-preview-view, .is-live-preview) > * {
+            --h#{$i}-display-alignment: center;
+        }
+    }
+
+    @container style(--fas-h#{$i}-display-left-aligned: enable) {
+        :is(.markdown-preview-view, .is-live-preview) > * {
+            --h#{$i}-display-alignment: left;
+        }
+    }
+
+    @container style(--fas-h#{$i}-display: enable) or style(--fas-h#{$i}-display-left-aligned: enable) {
         :is(.markdown-preview-view, .is-live-preview):not(
             .newspaper,
             .movie-script,
@@ -41,76 +64,80 @@
             .h#{$i}-stroke-left-aligned,
             .h#{$i}-normal,
             .sci-fi
-        ),
-    :is(.markdown-preview-view, .is-live-preview):is(.h#{$i}-display, .h#{$i}-display-left-aligned) {
-        :is(h#{$i}, .HyperMD-header-#{$i}):not(.callout *, ul *, ol *) {
-            --h#{$i}-line-height: 1.2em;
-            --h#{$i}-size: #{calc(3.2em - 0.2em * $i)};
-            --h#{$i}-font: var(--font-typewriter), var(--font-text);
-            --h#{$i}-color: var(--workleaves-background);
-            --h#{$i}-background: var(--color-base-100);
+        ) {
+            :is(.el-h#{$i} > h#{$i}, .markdown-preview-view > * > h#{$i}, .HyperMD-header-#{$i}):not(
+                .callout *,
+                ul *,
+                ol *
+            ) {
+                --h#{$i}-line-height: var(--h-display-line-height);
+                --h#{$i}-size: var(--h#{$i}-display-size);
+                --h#{$i}-font: var(--h-display-font);
+                --h#{$i}-color: var(--h-display-color);
+                --h#{$i}-background: var(--h-display-background);
 
-            background-color: var(--h#{$i}-background);
-            text-align: var(--h#{$i}-display-alignment);
-            position: relative;
-            padding-block: var(--cutout-outline-inset);
-            padding-inline: calc(var(--cutout-outline-inset) + 14px);
-            clip-path: polygon(
-                0 var(--cutout-corner-angle),
-                var(--cutout-corner-angle) 0,
-                calc(100% - var(--cutout-corner-angle)) 0,
-                100% var(--cutout-corner-angle),
-                100% calc(100% - var(--cutout-corner-angle)),
-                calc(100% - var(--cutout-corner-angle)) 100%,
-                var(--cutout-corner-angle) 100%,
-                0 calc(100% - var(--cutout-corner-angle))
-            );
-            overflow: hidden; /* Creates a Block Formatting Context (BFC) to avoid going over the float elements */
-
-            @include cutout_border.outline;
-
-            /* Only in preview */
-            &:is(.is-collapsed > h#{$i})::before {
-                background: var(--h#{$i}-border-color-collapsed);
-            }
-
-            /* Only in preview */
-            &:is(.is-collapsed > h#{$i})::after {
-                content: "";
-                position: absolute;
-                inset: 0;
-                background: var(--h#{$i}-border-color-collapsed);
+                background-color: var(--h#{$i}-background);
+                text-align: var(--h#{$i}-display-alignment);
+                position: relative;
+                padding-block: var(--cutout-outline-inset);
+                padding-inline: calc(var(--cutout-outline-inset) + 14px);
                 clip-path: polygon(
-                    0 0,
-                    100% 0,
-                    100% 100%,
-                    0 100%,
-                    0 0,
-                    var(--cutout-outline-inset)
-                        calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px),
-                    var(--cutout-outline-inset)
-                        calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px),
-                    calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px)
-                        calc(100% - var(--cutout-outline-inset)),
-                    calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px)
-                        calc(100% - var(--cutout-outline-inset)),
-                    calc(100% - var(--cutout-outline-inset))
-                        calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px),
-                    calc(100% - var(--cutout-outline-inset))
-                        calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px),
-                    calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px)
-                        var(--cutout-outline-inset),
-                    calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px)
-                        var(--cutout-outline-inset),
-                    var(--cutout-outline-inset)
-                        calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px)
+                    0 var(--cutout-corner-angle),
+                    var(--cutout-corner-angle) 0,
+                    calc(100% - var(--cutout-corner-angle)) 0,
+                    100% var(--cutout-corner-angle),
+                    100% calc(100% - var(--cutout-corner-angle)),
+                    calc(100% - var(--cutout-corner-angle)) 100%,
+                    var(--cutout-corner-angle) 100%,
+                    0 calc(100% - var(--cutout-corner-angle))
                 );
-            }
+                overflow: hidden; /* Creates a Block Formatting Context (BFC) to avoid going over the float elements */
 
-            /* Only in preview */
-            .heading-collapse-indicator {
-                margin-inline-start: 0;
-                left: var(--size-2-1);
+                @include cutout_border.outline;
+
+                /* Only in preview */
+                &:is(.is-collapsed > h#{$i})::before {
+                    background: var(--h#{$i}-border-color-collapsed);
+                }
+
+                /* Only in preview */
+                &:is(.is-collapsed > h#{$i})::after {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    background: var(--h#{$i}-border-color-collapsed);
+                    clip-path: polygon(
+                        0 0,
+                        100% 0,
+                        100% 100%,
+                        0 100%,
+                        0 0,
+                        var(--cutout-outline-inset)
+                            calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px),
+                        var(--cutout-outline-inset)
+                            calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px),
+                        calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px)
+                            calc(100% - var(--cutout-outline-inset)),
+                        calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px)
+                            calc(100% - var(--cutout-outline-inset)),
+                        calc(100% - var(--cutout-outline-inset))
+                            calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px),
+                        calc(100% - var(--cutout-outline-inset))
+                            calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px),
+                        calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px)
+                            var(--cutout-outline-inset),
+                        calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px)
+                            var(--cutout-outline-inset),
+                        var(--cutout-outline-inset)
+                            calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px)
+                    );
+                }
+
+                /* Only in preview */
+                .heading-collapse-indicator {
+                    margin-inline-start: 0;
+                    left: var(--size-2-1);
+                }
             }
         }
     }

@@ -1,14 +1,11 @@
-@media print {
-    body {
-        background-color: var(--workleaves-background);
-    }
-    .print {
-        --workleaves-background: white;
-        --workleaves-foreground: black;
-    }
+@use "foundations/colors/helper-functions";
+@use "foundations/colors/colors_definitions";
+@use "sass:color";
+@use "sass:map";
 
-    .print .markdown-preview-view {
-        color: black;
+// Create the block for custom theme (no mixing)
+@media print {
+    .print {
         background-color: var(--workleaves-background);
     }
 
@@ -18,5 +15,16 @@
 
     .print :is(h1, h2, h3, h4, h5, h6) {
         break-after: avoid;
+    }
+
+    .print .markdown-preview-view {
+        color: var(--text-normal);
+    }
+    .print .markdown-preview-view mark {
+        color: var(--text-normal);
+    }
+
+    .fas-theme-dark-print {
+        color-scheme: dark;
     }
 }

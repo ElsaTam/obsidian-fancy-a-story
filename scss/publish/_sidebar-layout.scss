@@ -15,7 +15,6 @@ body {
 // Add the cutout effect to the sidebar but only on bottom corners
 .nav-view-outer {
     position: relative;
-    scrollbar-gutter: auto;
     flex-grow: 1;
     background-color: var(--workleaves-background);
     -webkit-mask: radial-gradient(
@@ -25,10 +24,6 @@ body {
     );
     -webkit-mask-position: calc(-1 * var(--cutout-corner-radius)) calc(-1 * var(--cutout-corner-radius));
     -webkit-mask-repeat: repeat-x;
-}
-
-.nav-view {
-    padding: var(--cutout-corner-radius);
 }
 
 .nav-view-outer::before {
@@ -50,6 +45,21 @@ body {
         linear-gradient(black 2px, transparent 0) 50% calc(100% - var(--cutout-corner-radius)) /
             calc(100% - var(--cutout-corner-radius) * 2 + 1px) 1px no-repeat;
     pointer-events: none;
+}
+
+// Change the scroll element
+.nav-view-outer {
+    overflow: hidden;
+    scrollbar-gutter: auto;
+    padding-inline: var(--cutout-outline-inset);
+}
+
+.nav-view {
+    overflow: auto;
+    scrollbar-gutter: stable;
+    height: 100%;
+    padding-bottom: var(--cutout-corner-radius);
+    padding-inline: 4px;
 }
 
 // Add the cutout effect to the search bar but only on top corners

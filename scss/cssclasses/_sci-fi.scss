@@ -2,21 +2,29 @@
 /*@forward '../shared/markdown-anchor';*/
 
 body {
+    --fas-skin-sci-fi: disable;
     --sci-fi-style-fonts: enable;
     --sci-fi-color-rgb: var(--color-cyan-rgb);
 }
 
 .fas-skin-sci-fi,
-.sci-fi {
+.markdown-reading-view:has(> .sci-fi),
+.markdown-source-view.sci-fi {
+    --fas-skin-sci-fi: enable;
     --metadata-border-color: rgb(var(--sci-fi-color-rgb));
     --font-weight: var(--font-normal);
     --callout-border-opacity: 1;
     --hr-color: rgb(var(--sci-fi-color-rgb));
 }
 
-@container style(--sci-fi-style-fonts: enable) {
-    .fas-skin-sci-fi :is(.markdown-source-view, .markdown-preview-view),
-    .sci-fi {
+// Can't be in the container style query because it's not a child of the container
+.sci-fi.markdown-source-view {
+    padding-inline: 3cqh;
+}
+
+@container style(--fas-skin-sci-fi: enable) and style(--sci-fi-style-fonts: enable) {
+    .markdown-source-view,
+    .markdown-preview-view {
         --inline-title-font: "Orbitron", Arial, serif;
         --h1-font: "Orbitron", Arial, serif;
         --h2-font: "Orbitron", Arial, serif;
@@ -29,16 +37,32 @@ body {
     }
 }
 
-// FRAME
+@container style(--fas-skin-sci-fi: enable) {
+    // FRAME
+    .markdown-preview-sizer:not(.markdown-embed .markdown-preview-sizer),
+    .markdown-source-view {
+        padding-inline: 3cqh;
+    }
 
-.fas-skin-sci-fi .markdown-preview-sizer:not(.markdown-embed .markdown-preview-sizer),
-.fas-skin-sci-fi .markdown-source-view,
-.sci-fi .markdown-preview-sizer:not(.markdown-embed .markdown-preview-sizer),
-.sci-fi.markdown-source-view {
-    padding-inline: 3cqh;
-}
+    .markdown-reading-view::before,
+    .markdown-source-view::before {
+        content: "";
+        position: fixed;
+        top: var(--header-height);
+        bottom: 0;
+        left: 0;
+        z-index: 0;
+        background: rgba(var(--sci-fi-color-rgb), 1);
+        -webkit-mask-image: var(--sci-fi-frame-left), var(--sci-fi-frame-right);
+        -webkit-mask-size: auto 100%;
+        -webkit-mask-position:
+            left center,
+            right center;
+        -webkit-mask-repeat: no-repeat;
+        width: 100%;
+    }
 
-/*@supports (position-anchor: --anchor-view-content) {
+    /*@supports (position-anchor: --anchor-view-content) {
     .sci-fi.markdown-preview-view::before,
     .sci-fi.markdown-source-view::before {
         content: "";
@@ -63,92 +87,26 @@ body {
     }
 }*/
 
-.fas-skin-sci-fi .markdown-reading-view::before,
-.fas-skin-sci-fi .markdown-source-view::before,
-.markdown-reading-view:has(> .sci-fi)::before,
-.sci-fi.markdown-source-view::before {
-    content: "";
-    position: fixed;
-    top: var(--header-height);
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-    background: rgba(var(--sci-fi-color-rgb), 1);
-    -webkit-mask-image: var(--sci-fi-frame-left), var(--sci-fi-frame-right);
-    -webkit-mask-size: auto 100%;
-    -webkit-mask-position:
-        left center,
-        right center;
-    -webkit-mask-repeat: no-repeat;
-}
-
-.fas-skin-sci-fi.is-mobile .markdown-reading-view::before,
-.fas-skin-sci-fi.is-mobile .markdown-source-view::before,
-.is-mobile .markdown-reading-view:has(> .sci-fi)::before,
-.is-mobile .sci-fi.markdown-source-view::before {
-    top: var(--view-header-height);
-}
-
-.fas-skin-sci-fi.is-mobile .markdown-reading-view::before,
-.markdown-reading-view:has(> .sci-fi)::before {
-    right: var(--scrollbar-width, 12px);
-}
-
-.fas-skin-sci-fi .markdown-source-view::before,
-.sci-fi.markdown-source-view::before {
-    right: 0;
-}
-
-// Background
-
-.fas-skin-sci-fi .cm-scroller,
-.fas-skin-sci-fi .markdown-preview-view,
-.sci-fi .cm-scroller,
-.sci-fi.markdown-preview-view {
-    background-image: radial-gradient(circle at 1px 1px, rgba(var(--sci-fi-color-rgb), 0.1) 1px, transparent 0);
-    background-size: 40px 40px;
-}
-
-// H1 Display
-@for $i from 1 through 6 {
-    .fas-skin-sci-fi.fas-h#{$i}-display .markdown-preview-view,
-    .fas-skin-sci-fi .markdown-preview-view.h#{$i}-display,
-    .fas-h#{$i}-display .sci-fi.markdown-preview-view,
-    .sci-fi.markdown-preview-view.h#{$i}-display {
-        h#{$i}:not(.callout h#{$i}, ul h#{$i}, ol h#{$i}) {
-            --h#{$i}-color: inherit;
-            --h#{$i}-background: transparent;
-            --h#{$i}-font: "Orbitron", Arial, serif;
-            padding: unset;
-            clip-path: unset;
-            text-align: left;
-        }
-
-        h#{$i}:not(.callout h#{$i}, ul h#{$i}, ol h#{$i})::before {
-            position: unset;
-            background-image: unset;
-            inset: unset;
-            clip-path: unset;
-
-            display: inline-block;
-            height: 1em;
-            width: 6em;
-            transform: translateY(-15%);
-            background-color: rgba(var(--color-cyan-rgb), 1);
-            -webkit-mask-image: var(--sci-fi-h-display);
-            -webkit-mask-size: contain;
-            -webkit-mask-repeat: no-repeat;
-            -webkit-mask-position: left center;
-            mask-mode: luminance;
-            vertical-align: middle;
-            margin-right: 0.2em;
-        }
+    .markdown-source-view::before {
+        right: 0;
     }
-}
 
-// Callouts
-.fas-skin-sci-fi,
-.sci-fi {
+    .is-mobile .markdown-reading-view::before,
+    .is-mobile .markdown-source-view::before {
+        top: var(--view-header-height);
+    }
+    .is-mobile .markdown-reading-view::before {
+        right: var(--scrollbar-width, 12px);
+    }
+
+    // Background
+    .cm-scroller,
+    .markdown-preview-view {
+        background-image: radial-gradient(circle at 1px 1px, rgba(var(--sci-fi-color-rgb), 0.1) 1px, transparent 0);
+        background-size: 40px 40px;
+    }
+
+    // Callouts
     .callout:is(
             [data-callout="note"],
             [data-callout="abstract"],
@@ -227,19 +185,62 @@ body {
             background: hsl(var(--accent-h) var(--accent-s) var(--accent-l) / var(--callout-border-opacity));
         }
     }
+
+    // HR
+    :is(.markdown-preview-view, .markdown-source-view) hr {
+        width: 100%;
+        height: 20px;
+        border: none;
+        background-color: var(--hr-color);
+        -webkit-mask-image: var(--sci-fi-hr);
+        -webkit-mask-size: contain;
+        -webkit-mask-position: center center;
+        -webkit-mask-repeat: no-repeat;
+    }
 }
 
-// HR
-.fas-skin-sci-fi :is(.markdown-preview-view, .markdown-source-view) hr,
-.sci-fi:is(.markdown-preview-view, .markdown-source-view) hr {
-    width: 100%;
-    height: 20px;
-    border: none;
-    background-color: var(--hr-color);
-    -webkit-mask-image: var(--sci-fi-hr);
-    -webkit-mask-size: contain;
-    -webkit-mask-position: center center;
-    -webkit-mask-repeat: no-repeat;
+// H1 Display
+@for $i from 1 through 6 {
+    @container style(--fas-skin-sci-fi: enable) and (style(--fas-h#{$i}-display: enable) or style(--fas-h#{$i}-display-left-aligned: enable)) {
+        :is(.markdown-preview-view, .is-live-preview):not(
+            .newspaper,
+            .movie-script,
+            .minimalist,
+            .h#{$i}-stroke,
+            .h#{$i}-stroke-left-aligned,
+            .h#{$i}-normal,
+            .sci-fi
+        ) {
+            :is(h#{$i}, .HyperMD-header-#{$i}):not(.callout *, ul *, ol *) {
+                --h#{$i}-color: inherit;
+                --h#{$i}-background: transparent;
+                --h#{$i}-font: "Orbitron", Arial, serif;
+                padding: unset;
+                clip-path: unset;
+                text-align: left;
+
+                &::before {
+                    position: unset;
+                    background-image: unset;
+                    inset: unset;
+                    clip-path: unset;
+
+                    display: inline-block;
+                    height: 1em;
+                    width: 6em;
+                    transform: translateY(-15%);
+                    background-color: rgba(var(--color-cyan-rgb), 1);
+                    -webkit-mask-image: var(--sci-fi-h-display);
+                    -webkit-mask-size: contain;
+                    -webkit-mask-repeat: no-repeat;
+                    -webkit-mask-position: left center;
+                    mask-mode: luminance;
+                    vertical-align: middle;
+                    margin-right: 0.2em;
+                }
+            }
+        }
+    }
 }
 
 body {

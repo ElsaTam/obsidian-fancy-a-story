@@ -1,0 +1,21 @@
+// Preview
+@for $i from 1 through 6 {
+    @container style(--fas-h#{$i}-stroke: enable) or style(--fas-h#{$i}-stroke-left-aligned: enable) {
+        .markdown-preview-view:not(
+                .newspaper,
+                .movie-script,
+                .minimalist,
+                .h#{$i}-display,
+                .h#{$i}-display-left-aligned
+            )
+            h#{$i} {
+            position: relative;
+
+            .clickable-icon {
+                position: absolute;
+                right: -18px;
+                margin: 0;
+            }
+        }
+    }
+}

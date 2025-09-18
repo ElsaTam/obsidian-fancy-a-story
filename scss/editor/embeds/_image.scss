@@ -45,6 +45,10 @@ img[alt~="b-w"] {
     --image-shadow-offset: 0;
 }
 
+.image-embed[alt~="blur"] {
+    filter: blur(10px);
+}
+
 // IMAGE SHADOW
 
 $no_shadow_attributes: full-width-image-aliases.$aliases;

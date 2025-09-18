@@ -13,10 +13,24 @@ settings:
         level: 1
     -
         id: fas-adaptive-accent
-        title: Adapative accent
+        title: Adaptive accent
         description: Dynamically adapt the accent color based on the background color. Aims at having a better contrast for dark accent color in dark mode, or light accent color in light mode.
         type: class-toggle
         default: false
+    -
+        id: fas-theme-dark-print
+        title: Print with color scheme
+        description: Export notes to PDF using the current color scheme. This option doesn't synchronize with the current mode being used, you have to manually change it. Custom colors for dark mode won't work.
+        type: class-select
+        allowEmpty: true
+        default: none
+        options:
+            - 
+                label: Dark
+                value: fas-theme-dark-print
+            - 
+                label: Light
+                value: fas-theme-light-print
 
     - 
         id: theme-variant-light

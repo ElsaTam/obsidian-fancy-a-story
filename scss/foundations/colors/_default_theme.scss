@@ -3,37 +3,47 @@
 @use "sass:color";
 @use "sass:map";
 
+@mixin defaultGradient($tone) {
+    @if $tone == "light" {
+        --color-base-00: #{colors_definitions.$default-primary-light};
+        --color-base-100: #{colors_definitions.$default-text-light};
+        --color-space: srgb-linear;
+    } @else {
+        --color-base-00: #{colors_definitions.$default-text-dark};
+        --color-base-100: #{colors_definitions.$default-primary-dark};
+        --color-space: srgb-linear;
+    }
+
+    --color-base-05: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 05%);
+    --color-base-10: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 10%);
+    --color-base-20: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 15%);
+    --color-base-25: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 25%);
+    --color-base-30: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 20%);
+    --color-base-35: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 35%);
+    --color-base-40: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 40%);
+    --color-base-50: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 50%);
+    --color-base-60: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 60%);
+    --color-base-70: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 70%);
+
+    @each $color in map.keys(map.get(colors_definitions.$extended-colors, $tone)) {
+        $c: helper-functions.map-deep-get(colors_definitions.$extended-colors, $tone, $color);
+        --color-#{$color}: #{$c};
+        --color-#{$color}-rgb:
+            #{color.channel($c, "red", $space: rgb), color.channel($c, "green", $space: rgb),
+            color.channel($c, "blue", $space: rgb)};
+        --color-#{$color}-hover: color-mix(in srgb, var(--color-#{$color}), rgb(var(--mono-rgb-0)) 20%);
+    }
+}
+
 @each $tone in ("light", "dark") {
     .is-mobile.theme-#{$tone},
     .theme-#{$tone} {
-        @if $tone == "light" {
-            --color-base-00: #{colors_definitions.$default-primary-light};
-            --color-base-100: #{colors_definitions.$default-text-light};
-            --color-space: srgb-linear;
-        } @else {
-            --color-base-00: #{colors_definitions.$default-text-dark};
-            --color-base-100: #{colors_definitions.$default-primary-dark};
-            --color-space: srgb-linear;
-        }
+        @include defaultGradient($tone);
+    }
 
-        --color-base-05: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 05%);
-        --color-base-10: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 10%);
-        --color-base-20: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 15%);
-        --color-base-25: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 25%);
-        --color-base-30: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 20%);
-        --color-base-35: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 35%);
-        --color-base-40: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 40%);
-        --color-base-50: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 50%);
-        --color-base-60: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 60%);
-        --color-base-70: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 70%);
-
-        @each $color in map.keys(map.get(colors_definitions.$extended-colors, $tone)) {
-            $c: helper-functions.map-deep-get(colors_definitions.$extended-colors, $tone, $color);
-            --color-#{$color}: #{$c};
-            --color-#{$color}-rgb:
-                #{color.channel($c, "red", $space: rgb), color.channel($c, "green", $space: rgb),
-                color.channel($c, "blue", $space: rgb)};
-            --color-#{$color}-hover: color-mix(in srgb, var(--color-#{$color}), rgb(var(--mono-rgb-0)) 20%);
+    @media print {
+        .fas-theme-#{$tone}-print {
+            @include defaultGradient($tone);
         }
     }
 }

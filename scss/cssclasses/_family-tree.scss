@@ -9,7 +9,8 @@ body {
 }
 
 .callout[data-callout="family-tree"] > .callout-content > ul,
-.family-tree .el-ul > ul {
+.family-tree .el-ul > ul,
+.family-tree > * > ul {
     --list-spacing: 0;
     --list-indent: 0;
 
@@ -77,14 +78,14 @@ body {
     }
 
     // Spouse ring icon
-    li:has(> :is(.tag[href="#wed"], .wed)) > .list-bullet {
+    li:has(> .tag[href="#wed"], > .wed) > .list-bullet {
         display: inline-block;
         float: none;
         margin-inline-start: 0;
         margin-inline-end: 0.1em;
         transform: translateY(-0.2em);
     }
-    li:has(> :is(.tag[href="#wed"], .wed)) > .list-bullet::after {
+    li:has(> .tag[href="#wed"], > .wed) > .list-bullet::after {
         content: "💍";
         position: static;
         margin: 0;
@@ -97,7 +98,7 @@ body {
 
     // element with no child, or only a spouse (#wed)
     li:not(:has(ul)),
-    li:has(> :is(.tag[href="#wed"], .wed) + ul > li:only-child) {
+    li:has(> .tag[href="#wed"] + ul > li:only-child, > .wed + ul > li:only-child) {
         text-wrap: nowrap;
         .list-collapse-indicator {
             display: none;
@@ -110,7 +111,7 @@ body {
     }
 
     li:not(:has(ul))::after,
-    li:has(> :is(.tag[href="#wed"], .wed) + ul > li:only-child)::after {
+    li:has(> .tag[href="#wed"] + ul > li:only-child, > .wed + ul > li:only-child)::after {
         height: 20px;
     }
 
@@ -213,7 +214,7 @@ body {
         .list-collapse-indicator.is-collapsed:hover {
             background: color-mix(in srgb, var(--color-accent), var(--workleaves-background) 30%);
         }
-        li:has(> :is(.tag[href="#wed"], .wed)):has(> .list-bullet:hover) > ul > li:first-child {
+        li:has(> .tag[href="#wed"], > .wed):has(> .list-bullet:hover) > ul > li:first-child {
             display: block;
         }
     }

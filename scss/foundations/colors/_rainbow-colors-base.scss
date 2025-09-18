@@ -8,15 +8,25 @@ body {
     --rainbow-saturation: 1;
 }
 
+@mixin defaultRainbow($tone) {
+    @each $color in map.keys(map.get(colors_definitions.$rainbow-colors, $tone)) {
+        $c: helper-functions.map-deep-get(colors_definitions.$rainbow-colors, $tone, $color);
+        --color-#{$color}: #{$c};
+        --color-#{$color}-rgb:
+            #{color.channel($c, "red", $space: rgb), color.channel($c, "green", $space: rgb),
+            color.channel($c, "blue", $space: rgb)};
+    }
+}
+
 // Create the block for default theme (no mixing)
 @each $tone in ("light", "dark") {
     .theme-#{$tone} {
-        @each $color in map.keys(map.get(colors_definitions.$rainbow-colors, $tone)) {
-            $c: helper-functions.map-deep-get(colors_definitions.$rainbow-colors, $tone, $color);
-            --color-#{$color}: #{$c};
-            --color-#{$color}-rgb:
-                #{color.channel($c, "red", $space: rgb), color.channel($c, "green", $space: rgb),
-                color.channel($c, "blue", $space: rgb)};
+        @include defaultRainbow($tone);
+    }
+
+    @media print {
+        .fas-theme-#{$tone}-print {
+            @include defaultRainbow($tone);
         }
     }
 }

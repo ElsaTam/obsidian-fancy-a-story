@@ -39,8 +39,9 @@ body {
         );
         background-size: 100% 5px;
         background-repeat: no-repeat;
-        background-position: center calc(50% + 1px);
+        background-position: center calc(50%);
         padding-inline: var(--heading-padding-inline);
+        z-index: 10;
     }
 }
 

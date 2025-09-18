@@ -1,33 +1,38 @@
 body.image-captions-enabled .image-embed[alt]::after {
     font-size: calc(var(--font-text-size) * 0.875);
 }
+@mixin image-converter-infobox($type) {
+    body.image-captions-enabled .callout[data-callout="#{type}"] {
+        .image-embed[alt~="icon"] {
+            display: block !important;
+            width: var(--infobox-icon-size, 70px);
 
-body.image-captions-enabled :where(.fas-callout-infobox) .callout[data-callout="infobox"],
-body.image-captions-enabled .callout[data-callout="fas-infobox"] {
-    .image-embed[alt~="icon"] {
-        display: block !important;
-        width: var(--infobox-icon-size, 70px);
+            &::after {
+                content: none;
+            }
+        }
 
-        &::after {
-            content: none;
+        img[alt~="icon"] {
+            height: var(--infobox-icon-size, 70px);
+        }
+
+        .image-embed[alt~="cover"] {
+            display: block !important;
+
+            &::after {
+                font-size: 0;
+                width: unset;
+                padding: unset;
+            }
+        }
+
+        img[alt~="cover"] {
+            max-width: unset;
         }
     }
+}
 
-    img[alt~="icon"] {
-        height: var(--infobox-icon-size, 70px);
-    }
-
-    .image-embed[alt~="cover"] {
-        display: block !important;
-
-        &::after {
-            font-size: 0;
-            width: unset;
-            padding: unset;
-        }
-    }
-
-    img[alt~="cover"] {
-        max-width: unset;
-    }
+@include image-converter-infobox("fas-infobox");
+@container style(--fas-callout-infobox: enable) {
+    @include image-converter-infobox("infobox");
 }

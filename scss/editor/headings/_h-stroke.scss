@@ -1,144 +1,135 @@
 @forward "../../shared/h1-border";
 
+// Enabling
+@for $i from 1 through 6 {
+    body {
+        --fas-h#{$i}-stroke: disable;
+        --fas-h#{$i}-stroke-left-aligned: disable;
+    }
+    .fas-h#{$i}-stroke,
+    .h#{$i}-stroke {
+        --fas-h#{$i}-stroke: enable;
+    }
+    .fas-h#{$i}-stroke-left-aligned,
+    .h#{$i}-stroke-left-aligned {
+        --fas-h#{$i}-stroke-left-aligned: enable;
+    }
+
+    @container style(--fas-h#{$i}-stroke: enable) {
+        :is(.markdown-preview-view, .is-live-preview) > * {
+            --h#{$i}-stroke-alignment: center;
+            --h#{$i}-stroke-flex-grow: 1;
+            --h#{$i}-stroke-flex-basis: unset;
+            --h#{$i}-stroke-left-anchor: 20px;
+            --h#{$i}-stroke-padding-left: 0px;
+        }
+    }
+
+    @container style(--fas-h#{$i}-stroke-left-aligned: enable) {
+        :is(.markdown-preview-view, .is-live-preview) > * {
+            --h#{$i}-stroke-alignment: left;
+            --h#{$i}-stroke-flex-grow: 0;
+            --h#{$i}-stroke-flex-basis: 10px;
+            --h#{$i}-stroke-left-anchor: -10px;
+            --h#{$i}-stroke-padding-left: 30px;
+        }
+    }
+}
+
+body {
+    --h-stroke-weight: var(--font-extralight);
+}
+
 // Preview
 @for $i from 1 through 6 {
-    :is(.fas-h#{$i}-stroke, .fas-h#{$i}-stroke-left-aligned)
+    @container style(--fas-h#{$i}-stroke: enable) or style(--fas-h#{$i}-stroke-left-aligned: enable) {
         .markdown-preview-view:not(
-            .newspaper,
-            .movie-script,
-            .minimalist,
-            .h#{$i}-display,
-            .h#{$i}-display-left-aligned
-        )
-        h#{$i},
-    .markdown-preview-view:is(.h#{$i}-stroke, .h#{$i}-stroke-left-aligned) h#{$i} {
-        --h#{$i}-weight: var(--font-extralight);
-        //--h#{$i}-size: #{calc(2.2em - 0.2em * $i)};
-        display: flex;
-        align-items: center;
-        gap: 20px;
+                .newspaper,
+                .movie-script,
+                .minimalist,
+                .h#{$i}-display,
+                .h#{$i}-display-left-aligned
+            )
+            h#{$i} {
+            --h#{$i}-weight: var(--h-stroke-weight);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-bottom: 0;
 
-        &::before {
-            content: "";
-            display: block;
-            background-color: var(--h#{$i}-border-color);
-            height: 1px;
-        }
+            &::before {
+                content: "";
+                display: block;
+                background-color: var(--h#{$i}-border-color);
+                height: 1px;
+                flex-grow: var(--h#{$i}-stroke-flex-grow);
+                flex-basis: var(--h#{$i}-stroke-flex-basis);
+            }
 
-        &::after {
-            content: "";
-            display: block;
-            flex-grow: 1;
-            background-color: var(--h#{$i}-border-color);
-            height: 1px;
-        }
+            &::after {
+                content: "";
+                display: block;
+                flex-grow: 1;
+                background-color: var(--h#{$i}-border-color);
+                height: 1px;
+            }
 
-        &:is(.is-collapsed > h#{$i})::before,
-        &:is(.is-collapsed > h#{$i})::after {
-            background-color: var(--h#{$i}-border-color-collapsed);
-        }
-    }
-
-    // Center
-    .fas-h#{$i}-stroke
-        .markdown-preview-view:not(
-            .newspaper,
-            .movie-script,
-            .minimalist,
-            .h#{$i}-display,
-            .h#{$i}-display-left-aligned,
-            .h#{$i}-stroke-left-aligned
-        )
-        h#{$i},
-    .markdown-preview-view.h#{$i}-stroke h#{$i} {
-        &::before {
-            flex-grow: 1;
-        }
-    }
-
-    // Left
-    .fas-h#{$i}-stroke-left-aligned
-        .markdown-preview-view:not(
-            .newspaper,
-            .movie-script,
-            .minimalist,
-            .h#{$i}-display,
-            .h#{$i}-display-left-aligned,
-            .h#{$i}-stroke
-        )
-        h#{$i},
-    .markdown-preview-view.h#{$i}-stroke-left-aligned h#{$i} {
-        &::before {
-            flex-grow: 0;
-            flex-basis: 10px;
+            &:is(.is-collapsed > h#{$i})::before,
+            &:is(.is-collapsed > h#{$i})::after {
+                background-color: var(--h#{$i}-border-color-collapsed);
+            }
         }
     }
 }
 
 // Live preview
 @for $i from 1 through 6 {
-    // Center
-    .fas-h#{$i}-stroke,
-    .h#{$i}-stroke {
-        --h#{$i}-stroke-alignment: center;
-        --h#{$i}-stroke-left-anchor: 20px;
-        --h#{$i}-stroke-padding-left: 0px;
-    }
-
-    // Left
-    .fas-h#{$i}-stroke-left-aligned,
-    .h#{$i}-stroke-left-aligned {
-        --h#{$i}-stroke-alignment: left;
-        --h#{$i}-stroke-left-anchor: -10px;
-        --h#{$i}-stroke-padding-left: 30px;
-    }
-
-    :is(.fas-h#{$i}-stroke, .fas-h#{$i}-stroke-left-aligned)
+    @container style(--fas-h#{$i}-stroke: enable) or style(--fas-h#{$i}-stroke-left-aligned: enable) {
         .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h#{$i}-display, .h#{$i}-display-left-aligned)
-        .HyperMD-header-#{$i},
-    .is-live-preview:is(.h#{$i}-stroke, .h#{$i}-stroke-left-aligned) .HyperMD-header-#{$i} {
-        --h#{$i}-weight: var(--font-extralight);
-        text-align: var(--h#{$i}-stroke-alignment);
+            .HyperMD-header-#{$i} {
+            --h#{$i}-weight: var(--font-extralight);
+            text-align: var(--h#{$i}-stroke-alignment);
 
-        > span:first-of-type {
-            anchor-name: --header-anchor-left;
-        }
-
-        :nth-last-child(1 of .cm-header-#{$i}) {
-            anchor-name: --header-anchor-right;
-        }
-
-        .cm-header-#{$i} {
-            padding-left: var(--h#{$i}-stroke-padding-left);
-            &::before,
-            &::after {
-                content: "";
-                position: absolute;
-                bottom: 0.5em;
-                display: block;
-                background-color: var(--h#{$i}-border-color);
-                height: 1px;
-            }
-            &::before {
-                position-anchor: --header-anchor-left;
-                left: 0;
-                right: calc(anchor(left) + var(--h#{$i}-stroke-left-anchor));
+            > span:first-of-type {
+                anchor-name: --header-anchor-left;
             }
 
-            &::after {
-                position-anchor: --header-anchor-right;
-                right: 0;
-                left: calc(anchor(right) + 20px);
+            :nth-last-child(1 of .cm-header-#{$i}) {
+                anchor-name: --header-anchor-right;
             }
-        }
 
-        .is-collapsed ~ .cm-header-#{$i} {
-            &::before,
-            &::after {
-                background-color: var(--h#{$i}-border-color-collapsed);
+            .cm-header-#{$i} {
+                padding-left: var(--h#{$i}-stroke-padding-left);
+                &::before,
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0.5em;
+                    display: block;
+                    background-color: var(--h#{$i}-border-color);
+                    height: 1px;
+                }
+                &::before {
+                    position-anchor: --header-anchor-left;
+                    left: 0;
+                    right: calc(anchor(left) + var(--h#{$i}-stroke-left-anchor));
+                }
+
+                &::after {
+                    position-anchor: --header-anchor-right;
+                    right: 0;
+                    left: calc(anchor(right) + 20px);
+                }
             }
-            &::after {
-                left: calc(anchor(right) + 20px + 1ch);
+
+            .is-collapsed ~ .cm-header-#{$i} {
+                &::before,
+                &::after {
+                    background-color: var(--h#{$i}-border-color-collapsed);
+                }
+                &::after {
+                    left: calc(anchor(right) + 20px + 1ch);
+                }
             }
         }
     }

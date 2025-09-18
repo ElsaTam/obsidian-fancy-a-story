@@ -39,6 +39,67 @@
         --color-base-100: var(--custom-color-base-100);
         --color-space: var(--custom-color-space);
     }
+
+    @media print {
+        .fas-theme-#{$tone}-print.fas-custom-#{$tone} {
+            --color-base-00: var(--custom-color-base-00);
+            --color-base-100: var(--custom-color-base-100);
+            --color-space: var(--custom-color-space);
+        }
+    }
+}
+
+@mixin predefinedPalette($tone, $theme, $primary, $text, $space, $mix-with) {
+    // Set the base variables for the gradient
+    --color-space: #{$space};
+    --color-base-00: #{$primary};
+    --color-base-100: #{$text};
+
+    // Compute the middle color (for headings)
+    $tone-modif: (
+        "dark": 10,
+        "light": -10
+    );
+    @if color.channel($primary, "saturation", $space: hsl) < 1 and color.channel($text, "saturation", $space: hsl) < 1 {
+        --middle-color: #{$text};
+        --middle-color-complement: #{$text};
+    } @else {
+        $middle-color: hsl(
+            color.channel(color.mix($primary, $text, 50%), "hue", $space: hsl),
+            70%,
+            50% + helper-functions.map-deep-get($tone-modif, $tone)
+        );
+        --middle-color: #{$middle-color};
+        --middle-color-complement: #{color.complement($middle-color)};
+    }
+
+    // For each extended color
+    @each $color in map.keys(map.get(colors_definitions.$extended-colors, $tone)) {
+        $c: helper-functions.map-deep-get(colors_definitions.$extended-colors, $tone, $color);
+        $is_gray: color.channel($c, "saturation", $space: hsl) == 0%;
+        $c: color.mix($c, $mix-with, colors_definitions.$keep); // Keep n% of the color
+        @if $is_gray {
+            $c: color.change($c, $saturation: 0%);
+        }
+
+        @if $tone == "light" {
+            $c: helper-functions.darken-till-contrast($c, $primary);
+            --color-#{$color}: #{$c};
+
+            $c:
+                color.channel($c, "red", $space: rgb), color.channel($c, "green", $space: rgb),
+                color.channel($c, "blue", $space: rgb);
+            --color-#{$color}-rgb: #{$c};
+        } @else {
+            $c: helper-functions.lighten-till-contrast($c, $primary);
+            --color-#{$color}: #{$c};
+
+            $c:
+                color.channel($c, "red", $space: rgb), color.channel($c, "green", $space: rgb),
+                color.channel($c, "blue", $space: rgb);
+            --color-#{$color}-rgb: #{$c};
+        }
+    }
 }
 
 @each $tone, $theme, $primary, $text, $space in colors_definitions.$themes {
@@ -59,59 +120,12 @@
     // Create the class CSS block
     .is-mobile.theme-#{$tone}.fas-#{$tone},
     .theme-#{$tone}.fas-#{$theme} {
-        // Set the base variables for the gradient
-        --color-space: #{$space};
-        --color-base-00: #{$primary};
-        --color-base-100: #{$text};
+        @include predefinedPalette($tone, $theme, $primary, $text, $space, $mix-with);
+    }
 
-        // Compute the middle color (for headings)
-        $tone-modif: (
-            "dark": 10,
-            "light": -10
-        );
-        @if color.channel($primary, "saturation", $space: hsl) <
-            1 and
-            color.channel($text, "saturation", $space: hsl) <
-            1
-        {
-            --middle-color: #{$text};
-            --middle-color-complement: #{$text};
-        } @else {
-            $middle-color: hsl(
-                color.channel(color.mix($primary, $text, 50%), "hue", $space: hsl),
-                70%,
-                50% + helper-functions.map-deep-get($tone-modif, $tone)
-            );
-            --middle-color: #{$middle-color};
-            --middle-color-complement: #{color.complement($middle-color)};
-        }
-
-        // For each extended color
-        @each $color in map.keys(map.get(colors_definitions.$extended-colors, $tone)) {
-            $c: helper-functions.map-deep-get(colors_definitions.$extended-colors, $tone, $color);
-            $is_gray: color.channel($c, "saturation", $space: hsl) == 0%;
-            $c: color.mix($c, $mix-with, colors_definitions.$keep); // Keep n% of the color
-            @if $is_gray {
-                $c: color.change($c, $saturation: 0%);
-            }
-
-            @if $tone == "light" {
-                $c: helper-functions.darken-till-contrast($c, $primary);
-                --color-#{$color}: #{$c};
-
-                $c:
-                    color.channel($c, "red", $space: rgb), color.channel($c, "green", $space: rgb),
-                    color.channel($c, "blue", $space: rgb);
-                --color-#{$color}-rgb: #{$c};
-            } @else {
-                $c: helper-functions.lighten-till-contrast($c, $primary);
-                --color-#{$color}: #{$c};
-
-                $c:
-                    color.channel($c, "red", $space: rgb), color.channel($c, "green", $space: rgb),
-                    color.channel($c, "blue", $space: rgb);
-                --color-#{$color}-rgb: #{$c};
-            }
+    @media print {
+        .fas-theme-#{$tone}-print.fas-#{$theme} {
+            @include predefinedPalette($tone, $theme, $primary, $text, $space, $mix-with);
         }
     }
 }

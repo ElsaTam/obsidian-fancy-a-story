@@ -9,9 +9,11 @@ body {
 .sci-fi-banner {
     --inline-title-size: 3em;
     --inline-title-font: "Orbitron", Arial, serif;
+    --page-title-size: 3em;
+    --page-title-font: "Orbitron", Arial, serif;
 }
 
-.sci-fi-banner .inline-title {
+.sci-fi-banner :is(.inline-title, .page-header) {
     position: relative;
     width: var(--sci-fi-arc-size);
     height: var(--sci-fi-arc-size);
@@ -19,7 +21,7 @@ body {
     align-items: center;
 }
 
-.sci-fi-banner .inline-title::before {
+.sci-fi-banner :is(.inline-title, .page-header)::before {
     content: "";
     position: absolute;
     right: -25%;
@@ -33,7 +35,7 @@ body {
     pointer-events: none;
 }
 
-.sci-fi-banner .inline-title::after {
+.sci-fi-banner :is(.inline-title, .page-header)::after {
     content: "";
     position: absolute;
     width: calc(var(--sci-fi-arc-size) * 0.5);
@@ -50,11 +52,11 @@ body {
 }
 
 @media (hover: hover) {
-    .sci-fi-banner .inline-title:hover::before {
+    .sci-fi-banner :is(.inline-title, .page-header):hover::before {
         opacity: 0.4;
     }
 
-    .sci-fi-banner .inline-title:hover::after {
+    .sci-fi-banner :is(.inline-title, .page-header):hover::after {
         top: -9%;
         right: -6%;
         transform: rotate(0deg) scale(0.5);

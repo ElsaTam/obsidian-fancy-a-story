@@ -1,77 +1,87 @@
 body {
     --cite-decoration-width: 50px;
+    --fas-callout-cite-alt: disable;
+}
+
+.fas-callout-cite-alt {
+    --fas-callout-cite-alt: enable;
 }
 
 .is-mobile {
     --cite-decoration-width: 30px;
 }
 
-.fas-callout-cite-alt .callout[data-callout~="cite"],
-.fas-callout-cite-alt .callout[data-callout~="quote"],
-.callout[data-callout~="cite-fas"],
-.callout[data-callout~="quote-fas"] {
-    font-style: italic;
-    position: relative;
-    padding-inline-start: calc(var(--cite-decoration-width) + 5px);
-    background: none;
-    border: none;
-    border-inline-start: var(--blockquote-border-thickness) solid rgb(var(--callout-color));
+@mixin cite($type_cite, $type_quote) {
+    .callout[data-callout~="#{$type_cite}"],
+    .callout[data-callout~="#{$type_quote}"] {
+        font-style: italic;
+        position: relative;
+        padding-inline-start: calc(var(--cite-decoration-width) + 5px);
+        background: none;
+        border: none;
+        border-inline-start: var(--blockquote-border-thickness) solid rgb(var(--callout-color));
 
-    &:not(.is-collapsible) .callout-title {
-        display: none;
-    }
-
-    &.is-collapsible {
-        display: flex;
-        flex-direction: column-reverse;
-
-        .callout-title {
-            background: none;
-            justify-content: flex-end;
-        }
-
-        .callout-icon {
+        &:not(.is-collapsible) .callout-title {
             display: none;
         }
 
-        .callout-title-inner::before {
-            content: "~ ";
+        &.is-collapsible {
+            display: flex;
+            flex-direction: column-reverse;
+
+            .callout-title {
+                background: none;
+                justify-content: flex-end;
+            }
+
+            .callout-icon {
+                display: none;
+            }
+
+            .callout-title-inner::before {
+                content: "~ ";
+            }
+        }
+
+        .callout-content {
+            border: none;
+            padding: 0;
+        }
+
+        .callout-content > :first-child {
+            margin-top: 0;
+        }
+        .callout-content > :plast-child {
+            margin-bottom: 0;
+        }
+
+        &::after {
+            content: "\201C";
+            position: absolute;
+            font-style: italic;
+            text-align: left;
+            font-size: calc(var(--cite-decoration-width) * 2);
+            line-height: 1;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: var(--cite-decoration-width);
+            color: rgb(var(--callout-color));
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgba(var(--callout-color), 0.1);
+        }
+
+        cite {
+            display: block;
+            margin-top: 10px;
+            font-style: normal;
+            color: var(--text-muted);
+            text-align: right;
         }
     }
+}
 
-    .callout-content {
-        border: none;
-        padding: 0;
-    }
-
-    .callout-content > :first-child {
-        margin-top: 0;
-    }
-    .callout-content > :plast-child {
-        margin-bottom: 0;
-    }
-
-    &::after {
-        content: "\201C";
-        position: absolute;
-        font-style: italic;
-        text-align: left;
-        font-size: calc(var(--cite-decoration-width) * 2);
-        line-height: 1;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: var(--cite-decoration-width);
-        color: rgb(var(--callout-color));
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: rgba(var(--callout-color), 0.1);
-    }
-
-    cite {
-        display: block;
-        margin-top: 10px;
-        font-style: normal;
-        color: var(--text-muted);
-        text-align: right;
-    }
+@include cite("cite-fas", "quote-fas");
+@container style(--fas-callout-cite-alt: enable) {
+    @include cite("cite", "quote");
 }

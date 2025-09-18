@@ -1,4 +1,4 @@
-.markdown-preview-section {
+.markdown-preview-section:not(.markdown-embed *) {
     anchor-name: --anchor-preview-section;
 }
 

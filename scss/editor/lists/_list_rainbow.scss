@@ -20,3 +20,19 @@ body {
         }
     }
 }
+
+@media print {
+    @container style(--fas-rainbow-lists: enable) {
+        @for $i from 1 through 10 {
+            .markdown-preview-view > * > ul > li:nth-of-type(10n + #{$i}) .list-bullet::after {
+                --list-marker-color: var(--color-rainbow-#{$i});
+                filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
+            }
+            .markdown-preview-view > * > ol > li:nth-of-type(10n + #{$i}) .list-bullet::after,
+            .markdown-preview-view > * > ol > li:nth-of-type(10n + #{$i})::marker,
+            .markdown-preview-view > * > ol > li:nth-of-type(10n + #{$i}) li::marker {
+                --list-marker-color: var(--color-rainbow-#{$i});
+            }
+        }
+    }
+}

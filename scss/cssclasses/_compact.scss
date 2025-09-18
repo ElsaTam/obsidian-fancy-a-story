@@ -32,13 +32,22 @@
         gap: 0.3em;
     }
 
-    :where(.fas-callout-infobox) .callout[data-callout="infobox"],
     .callout[data-callout="fas-infobox"] {
-        --p-spacing: 0;
+        --p-spacing: 0rem;
         --h1-line-height: 1.4;
 
         h1 {
             --h1-size: 1.5em;
+        }
+    }
+    @container style(--fas-callout-infobox: enable) {
+        .callout[data-callout="infobox"] {
+            --p-spacing: 0rem;
+            --h1-line-height: 1.4;
+
+            h1 {
+                --h1-size: 1.5em;
+            }
         }
     }
 

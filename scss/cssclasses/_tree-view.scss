@@ -5,7 +5,8 @@ body {
     --tree-view-guide-color: var(--background-secondary);
 }
 
-.tree-view .el-ul > ul {
+.tree-view .el-ul > ul,
+.tree-view > * > ul {
     --indentation-guide-reading-indent: -0.8em;
     --indentation-guide-width: 2px;
     --indentation-guide-color: var(--tree-view-guide-color);
