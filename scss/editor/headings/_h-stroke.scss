@@ -112,7 +112,10 @@ body {
                 &::before {
                     position-anchor: --header-anchor-left;
                     left: 0;
-                    right: calc(anchor(left) + var(--h#{$i}-stroke-left-anchor));
+                    right: calc(
+                        anchor(--header-anchor-left left, anchor(--header-anchor-right left)) +
+                            var(--h#{$i}-stroke-left-anchor)
+                    );
                 }
 
                 &::after {
