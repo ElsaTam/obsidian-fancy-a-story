@@ -131,6 +131,27 @@ body {
                     left: calc(anchor(right) + 20px + 1ch);
                 }
             }
+
+            // Links
+
+            .cm-header-#{$i}.cm-hmd-internal-link {
+                position: initial;
+                color: inherit;
+
+                > *:not(.is-unresolved) {
+                    color: var(--link-color);
+                }
+
+                @media (hover: hover) {
+                    &:hover > * {
+                        color: var(--link-color-hover);
+                    }
+                }
+
+                &::after {
+                    -webkit-mask-image: none;
+                }
+            }
         }
     }
 }
