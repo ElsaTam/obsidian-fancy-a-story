@@ -14,6 +14,10 @@
     );
 }
 
+body {
+    --fas-skin-art-deco: disable;
+}
+
 .fas-skin-art-deco {
     --art-deco-corner-top-right: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' version='1.1' xml:space='preserve' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'%3E%3Cg transform='translate(-40.612917,-83.589496)'%3E%3Cg transform='matrix(0.30334715,0,0,0.30338915,28.293104,58.413673)' style='fill:none;stroke:%23000000;stroke-width:1.7443;'%3E%3Cpath d='M 171.59602,116.47005 A 32.748245,32.748245 0 0 1 138.84811,83.879621' /%3E%3Cpath d='M 171.61279,121.24895 A 37.527149,37.527149 0 0 1 134.06919,83.8863' /%3E%3Cpath d='m 40.612917,89.673823 125.163343,-10e-7 V 214.83716' /%3E%3Cpath d='M 154.16388,83.854096 V 101.28619 H 128.32241' /%3E%3Cpath d='m 84.85534,89.673823 v 4.818481 h 50.79229' /%3E%3Cpath d='M 171.59598,149.44348 V 83.854099 l -65.58938,-1e-6' /%3E%3Cpath d='m 171.59598,101.2862 h -17.43209 v 25.84147' /%3E%3Cpath d='m 165.77626,170.59474 h -4.81848 v -50.79229' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
     --art-deco-corner-top-left: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' version='1.1' xml:space='preserve' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'%3E%3Cg transform='translate(-40.612917,-83.589496)'%3E%3Cg transform='matrix(-0.30334715,0,0,0.30338915,92.930632,58.413673)' style='fill:none;stroke:%23000000;stroke-width:1.7443;'%3E%3Cpath d='M 171.59602,116.47005 A 32.748245,32.748245 0 0 1 138.84811,83.879621' /%3E%3Cpath d='M 171.61279,121.24895 A 37.527149,37.527149 0 0 1 134.06919,83.8863' /%3E%3Cpath d='m 40.612917,89.673823 125.163343,-10e-7 V 214.83716' /%3E%3Cpath d='M 154.16388,83.854096 V 101.28619 H 128.32241' /%3E%3Cpath d='m 84.85534,89.673823 v 4.818481 h 50.79229' /%3E%3Cpath d='M 171.59598,149.44348 V 83.854099 l -65.58938,-1e-6' /%3E%3Cpath d='m 171.59598,101.2862 h -17.43209 v 25.84147' /%3E%3Cpath d='m 165.77626,170.59474 h -4.81848 v -50.79229' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
@@ -57,6 +61,12 @@
     --h-display-background: transparent;
     --h-display-weight: 500;
 
+    --hr-height: calc(1em * var(--line-height-normal));
+    --hr-ornament-height: calc(1em * var(--line-height-normal));
+    --hr-ornament-width: 30px;
+    --hr-thickness: 1px;
+
+    --fas-skin-art-deco: enable;
     --art-deco-style-hr: enable;
     --art-deco-style-fonts: enable;
     --art-deco-style-file-explorer-icons: enable;
@@ -82,47 +92,41 @@
 }
 
 /* Horizontal rule */
-@container style(--art-deco-style-hr: enable) {
+@container style(--fas-skin-art-deco: enable) and style(--art-deco-style-hr: enable) {
     /* Horizontal line */
-    .fas-skin-art-deco .app-container {
+    .app-container {
         --hr-color: var(--art-deco-color);
     }
 
-    .fas-skin-art-deco {
-        .markdown-source-view:not(.minimalist, .sci-fi) hr,
-        .markdown-preview-view:not(.minimalist, .sci-fi) hr:not(.footnotes hr) {
-            --hr-height: calc(1em * var(--line-height-normal));
-            --ornament-height: calc(1em * var(--line-height-normal));
-            --ornament-width: 30px;
-            --hr-thickness: 1px;
-            border: none;
-            background-color: var(--hr-color);
-            height: calc(var(--hr-height) + var(--hr-thickness));
-            -webkit-mask-image:
-                linear-gradient(
-                    to right,
-                    transparent var(--ornament-width),
-                    black var(--ornament-width),
-                    black calc(100% - var(--ornament-width)),
-                    transparent calc(100% - var(--ornament-width))
-                ),
-                var(--art-deco-hr-decoration-left), var(--art-deco-hr-decoration-right);
-            -webkit-mask-size:
-                100% var(--hr-thickness),
-                var(--ornament-height),
-                var(--ornament-height);
-            -webkit-mask-position:
-                center,
-                left center,
-                right center;
-            -webkit-mask-repeat: no-repeat;
-        }
+    .markdown-source-view:not(.minimalist, .sci-fi) hr,
+    .markdown-preview-view:not(.minimalist, .sci-fi) hr:not(.footnotes hr) {
+        border: none;
+        background-color: var(--hr-color);
+        height: calc(var(--hr-height) + var(--hr-thickness));
+        -webkit-mask-image:
+            linear-gradient(
+                to right,
+                transparent var(--hr-ornament-width),
+                black var(--hr-ornament-width),
+                black calc(100% - var(--hr-ornament-width)),
+                transparent calc(100% - var(--hr-ornament-width))
+            ),
+            var(--art-deco-hr-decoration-left), var(--art-deco-hr-decoration-right);
+        -webkit-mask-size:
+            100% var(--hr-thickness),
+            var(--hr-ornament-height),
+            var(--hr-ornament-height);
+        -webkit-mask-position:
+            center,
+            left center,
+            right center;
+        -webkit-mask-repeat: no-repeat;
     }
 }
 
 /* Fonts and headers */
-@container style(--art-deco-style-fonts: enable) {
-    .fas-skin-art-deco .app-container {
+@container style(--fas-skin-art-deco: enable) and style(--art-deco-style-fonts: enable) {
+    .app-container {
         --font-interface-theme: "Federo", "Poppins";
         --font-text-theme: Semplicita, "Noto";
         --h1-font: "Limelight", "Notable", "Noto", "Inter";
@@ -131,14 +135,14 @@
         --h4-font: "Limelight", "Notable", "Noto", "Inter";
         --h5-font: "Limelight", "Notable", "Noto", "Inter";
         --h6-font: "Limelight", "Notable", "Noto", "Inter";
-        --inline-title-font: "ParkLaneNF";
+        --inline-title-font: "ParkLaneNF", "Limelight", "Notable", "Noto", "Inter";
         --inline-title-weight: 500;
     }
 }
 
 /* Folders and files icons */
-@container style(--art-deco-style-file-explorer-icons: enable) or style(--art-deco-style-file-explorer-icons: folders) {
-    .fas-skin-art-deco [data-type="file-explorer"] .nav-folder-title-content::before {
+@container style(--fas-skin-art-deco: enable) and (style(--art-deco-style-file-explorer-icons: enable) or style(--art-deco-style-file-explorer-icons: folders)) {
+    [data-type="file-explorer"] .nav-folder-title-content::before {
         content: "";
         display: inline-block;
         width: 1.2em;
@@ -151,8 +155,8 @@
         mask-image: var(--art-deco-folder-icon);
     }
 }
-@container style(--art-deco-style-file-explorer-icons: enable) or style(--art-deco-style-file-explorer-icons: files) {
-    .fas-skin-art-deco [data-type="file-explorer"] .nav-file-title-content::before {
+@container style(--fas-skin-art-deco: enable) and (style(--art-deco-style-file-explorer-icons: enable) or style(--art-deco-style-file-explorer-icons: files)) {
+    [data-type="file-explorer"] .nav-file-title-content::before {
         content: "";
         display: inline-block;
         width: 1.2em;
@@ -168,92 +172,88 @@
 }
 
 /* Corners */
-@container style(--art-deco-style-sidebar-corners: enable) {
-    .fas-skin-art-deco {
-        .mod-sidedock .workspace-leaf {
-            -webkit-mask: none;
-        }
+@container style(--fas-skin-art-deco: enable) and style(--art-deco-style-sidebar-corners: enable) {
+    .mod-sidedock .workspace-leaf {
+        -webkit-mask: none;
+    }
 
-        .mod-sidedock .workspace-leaf::before {
-            content: "";
-            position: absolute;
-            display: block;
-            top: 0px;
-            inset: 0;
-            background:
-                var(--art-deco-gradient) top left / 70px 70px no-repeat,
-                var(--art-deco-gradient) top right / 70px 70px no-repeat,
-                var(--art-deco-gradient) bottom right / 70px 70px no-repeat,
-                var(--art-deco-gradient) bottom left / 70px 70px no-repeat var(--sidedock-inset-border-color);
-            mask:
-                linear-gradient(90deg, black 1px, transparent 0) 3px 50% / calc(100% - 7px) calc(100% - 140px) repeat-x,
-                linear-gradient(black 1px, transparent 0) 50% 3px / calc(100% - 140px) calc(100% - 7px) repeat-y,
-                var(--art-deco-corner-top-left) 0px 0px / 70px no-repeat,
-                var(--art-deco-corner-top-right) top right / 70px no-repeat,
-                var(--art-deco-corner-bottom-right) bottom right / 70px no-repeat,
-                var(--art-deco-corner-bottom-left) bottom left / 70px no-repeat;
-        }
+    .mod-sidedock .workspace-leaf::before {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 0px;
+        inset: 0;
+        background:
+            var(--art-deco-gradient) top left / 70px 70px no-repeat,
+            var(--art-deco-gradient) top right / 70px 70px no-repeat,
+            var(--art-deco-gradient) bottom right / 70px 70px no-repeat,
+            var(--art-deco-gradient) bottom left / 70px 70px no-repeat var(--sidedock-inset-border-color);
+        mask:
+            linear-gradient(90deg, black 1px, transparent 0) 3px 50% / calc(100% - 7px) calc(100% - 140px) repeat-x,
+            linear-gradient(black 1px, transparent 0) 50% 3px / calc(100% - 140px) calc(100% - 7px) repeat-y,
+            var(--art-deco-corner-top-left) 0px 0px / 70px no-repeat,
+            var(--art-deco-corner-top-right) top right / 70px no-repeat,
+            var(--art-deco-corner-bottom-right) bottom right / 70px no-repeat,
+            var(--art-deco-corner-bottom-left) bottom left / 70px no-repeat;
     }
 }
 
 /* Flags */
-@container style(--art-deco-style-tab-flags: enable) {
-    .fas-skin-art-deco {
-        @container not style(--fas-bookmark-tabs: disable) {
-            .mod-sidedock .workspace-tab-header {
-                clip-path: none;
-                padding-bottom: 7px;
+@container style(--fas-skin-art-deco: enable) and style(--art-deco-style-tab-flags: enable) {
+    @container not style(--fas-bookmark-tabs: disable) {
+        .mod-sidedock .workspace-tab-header {
+            clip-path: none;
+            padding-bottom: 7px;
+            background-color: transparent;
+        }
+
+        .mod-sidedock .workspace-tab-header.is-active {
+            background-color: transparent;
+        }
+
+        .mod-sidedock .workspace-tab-header-inner {
+            background-color: var(--workleaves-background);
+        }
+
+        .mod-sidedock .workspace-tab-header::after {
+            content: "";
+            display: block;
+            background-color: var(--sidedock-inset-border-color);
+            position: absolute;
+            right: 0px;
+            left: 0px;
+            top: 0px;
+            bottom: 0px;
+            border-radius: 0;
+            mask-image: var(--art-deco-flag);
+            mask-size: 100% 100%;
+            mask-repeat: no-repeat;
+            mask-position: bottom center;
+        }
+
+        .mod-sidedock .workspace-tab-header.is-active::after {
+            background-image: var(--art-deco-gradient);
+        }
+
+        @media (hover: hover) {
+            .mod-sidedock .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
+                background-color: color-mix(in srgb, var(--workleaves-background), rgb(var(--mono-rgb-100)) 7.5%);
+            }
+
+            .mod-sidedock .workspace-tab-header.is-active:hover .workspace-tab-header-inner {
+                background-color: color-mix(in srgb, var(--workleaves-background), rgb(var(--mono-rgb-100)) 7.5%);
+            }
+
+            .mod-sidedock .workspace-tab-header.is-active:hover {
                 background-color: transparent;
-            }
-
-            .mod-sidedock .workspace-tab-header.is-active {
-                background-color: transparent;
-            }
-
-            .mod-sidedock .workspace-tab-header-inner {
-                background-color: var(--workleaves-background);
-            }
-
-            .mod-sidedock .workspace-tab-header::after {
-                content: "";
-                display: block;
-                background-color: var(--sidedock-inset-border-color);
-                position: absolute;
-                right: 0px;
-                left: 0px;
-                top: 0px;
-                bottom: 0px;
-                border-radius: 0;
-                mask-image: var(--art-deco-flag);
-                mask-size: 100% 100%;
-                mask-repeat: no-repeat;
-                mask-position: bottom center;
-            }
-
-            .mod-sidedock .workspace-tab-header.is-active::after {
-                background-image: var(--art-deco-gradient);
-            }
-
-            @media (hover: hover) {
-                .mod-sidedock .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
-                    background-color: color-mix(in srgb, var(--workleaves-background), rgb(var(--mono-rgb-100)) 7.5%);
-                }
-
-                .mod-sidedock .workspace-tab-header.is-active:hover .workspace-tab-header-inner {
-                    background-color: color-mix(in srgb, var(--workleaves-background), rgb(var(--mono-rgb-100)) 7.5%);
-                }
-
-                .mod-sidedock .workspace-tab-header.is-active:hover {
-                    background-color: transparent;
-                }
             }
         }
     }
 }
 
 /* File header border */
-@container style(--art-deco-style-file-header: enable) {
-    .fas-skin-art-deco .mod-root .workspace-leaf-content .view-header {
+@container style(--fas-skin-art-deco: enable) and style(--art-deco-style-file-header: enable) {
+    .mod-root .workspace-leaf-content .view-header {
         --file-header-border: 1px solid var(--art-deco-color);
 
         &::after {
@@ -277,8 +277,8 @@
 }
 
 /* Ribbon */
-@container style(--art-deco-style-ribbon-deco: enable) {
-    .fas-skin-art-deco .side-dock-ribbon.mod-left::after {
+@container style(--fas-skin-art-deco: enable) and style(--art-deco-style-ribbon-deco: enable) {
+    .side-dock-ribbon.mod-left::after {
         content: "";
         display: block;
         position: absolute;
@@ -306,9 +306,8 @@ $fwi_sel: "";
     $fwi_sel: $fwi_sel + "[data-callout='#{$alias}']";
 }
 
-@container style(--art-deco-style-callouts: enable) {
-    .fas-skin-art-deco
-        .callout:not(
+@container style(--fas-skin-art-deco: enable) and style(--art-deco-style-callouts: enable) {
+    .callout:not(
             :where(
                 [data-callout-metadata~="blank"],
                 [data-callout-metadata~="no-deco"],
@@ -456,11 +455,11 @@ $fwi_sel: "";
 }
 
 /* Sidebar backgrounds */
-@container style(--art-deco-style-sidebar-textures: enable) {
-    .fas-skin-art-deco.fas-bg-textures:not(.fas-file-explorer-decoration-custom) .app-container {
+@container style(--fas-skin-art-deco: enable) and style(--art-deco-style-sidebar-textures: enable) {
+    .fas-bg-textures:not(.fas-file-explorer-decoration-custom) .app-container {
         --file-explorer-decoration: ;
     }
-    .fas-skin-art-deco.fas-bg-textures:not(.fas-sidebar-texture-custom) .app-container {
+    .fas-bg-textures:not(.fas-sidebar-texture-custom) .app-container {
         --sidebar-texture: var(--art-deco-background);
         --sidebar-texture-size: auto 100%;
         --sidebar-texture-blend: soft-light;
@@ -469,7 +468,7 @@ $fwi_sel: "";
         --sidebar-texture-opacity: 0.2;
     }
 
-    .fas-skin-art-deco.fas-bg-textures:not(.fas-sidebar-texture-custom) .mod-sidedock .workspace-leaf {
+    .fas-bg-textures:not(.fas-sidebar-texture-custom) .mod-sidedock .workspace-leaf {
         background-repeat: no-repeat;
     }
 
@@ -479,7 +478,7 @@ $fwi_sel: "";
             container-type: size;
         }
         @container sidedock (aspect-ratio < 0.4) {
-            .workspace-leaf:is(.fas-skin-art-deco.fas-bg-textures:not(.fas-sidebar-texture-custom) *) {
+            .workspace-leaf:is(.fas-bg-textures:not(.fas-sidebar-texture-custom) *) {
                 --sidebar-texture-size: contain; /* default is: auto 100% */
             }
         }
@@ -487,8 +486,8 @@ $fwi_sel: "";
 }
 
 /* Properties */
-@container style(--art-deco-style-properties: enable) {
-    .fas-skin-art-deco .metadata-container::before {
+@container style(--fas-skin-art-deco: enable) and style(--art-deco-style-properties: enable) {
+    .metadata-container::before {
         content: "";
         position: absolute;
         inset: 0;
@@ -502,11 +501,11 @@ $fwi_sel: "";
 }
 
 /* lists items */
-@container style(--art-deco-style-lists: enable) {
-    .fas-skin-art-deco .app-container {
+@container style(--fas-skin-art-deco: enable) and style(--art-deco-style-lists: enable) {
+    .app-container {
         --fas-bullet-style: normal;
     }
-    .fas-skin-art-deco .list-bullet::after {
+    .list-bullet::after {
         --list-bullet-size: 0.8em;
         --list-marker-color: var(--art-deco-color);
         --background-modifier-hover: rgba(var(--mono-rgb-100), 0.7);
@@ -518,12 +517,12 @@ $fwi_sel: "";
     }
 
     @media (hover: hover) {
-        .fas-skin-art-deco .list-collapse-indicator:hover ~ .list-bullet:after,
-        .fas-skin-art-deco .cm-fold-indicator:hover ~ .list-bullet:after,
-        .fas-skin-art-deco .list-collapse-indicator:hover ~ .cm-formatting-list .list-bullet:after,
-        .fas-skin-art-deco .cm-fold-indicator:hover ~ .cm-formatting-list .list-bullet:after,
-        .fas-skin-art-deco li.is-collapsed .list-bullet:after,
-        .fas-skin-art-deco .is-collapsed ~ .cm-formatting-list .list-bullet:after {
+        .list-collapse-indicator:hover ~ .list-bullet:after,
+        .cm-fold-indicator:hover ~ .list-bullet:after,
+        .list-collapse-indicator:hover ~ .cm-formatting-list .list-bullet:after,
+        .cm-fold-indicator:hover ~ .cm-formatting-list .list-bullet:after,
+        li.is-collapsed .list-bullet:after,
+        .is-collapsed ~ .cm-formatting-list .list-bullet:after {
             background: none;
             box-shadow: none;
             text-shadow: 0px 0px 2px var(--background-modifier-hover);
@@ -533,7 +532,7 @@ $fwi_sel: "";
 
 /* Heading display */
 @for $i from 1 through 6 {
-    @container style(--art-deco-style-h-display: enable) and (style(--fas-h#{$i}-display: enable) or style(--fas-h#{$i}-display-left-aligned: enable)) {
+    @container style(--fas-skin-art-deco: enable) and style(--art-deco-style-h-display: enable) and (style(--fas-h#{$i}-display: enable) or style(--fas-h#{$i}-display-left-aligned: enable)) {
         :is(.markdown-preview-view, .is-live-preview):not(
             .newspaper,
             .movie-script,
@@ -591,19 +590,19 @@ $fwi_sel: "";
 }
 
 /* Status bar */
-@container style(--art-deco-style-status-bar: enable) {
-    .fas-skin-art-deco .app-container {
+@container style(--fas-skin-art-deco: enable) and style(--art-deco-style-status-bar: enable) {
+    .app-container {
         --status-bar-border-color: var(--art-deco-color);
         --status-bar-radius: 0;
     }
 }
 
 /* Empty state */
-@container style(--art-deco-style-empty-note: enable) {
-    .fas-skin-art-deco .workspace-leaf-content[data-type="empty"] .view-content {
+@container style(--fas-skin-art-deco: enable) and style(--art-deco-style-empty-note: enable) {
+    .workspace-leaf-content[data-type="empty"] .view-content {
         background-color: var(--workleaves-background);
     }
-    .fas-skin-art-deco .workspace-leaf-content[data-type="empty"] .view-content::before {
+    .workspace-leaf-content[data-type="empty"] .view-content::before {
         --number-of-rays: 150;
         --ray-thickness: 0.2deg;
         --ray-fade: 0.2deg;
@@ -628,12 +627,12 @@ $fwi_sel: "";
 }
 
 /* Workspace tabs */
-@container style(--art-deco-style-root-tabs: enable) {
-    .fas-skin-art-deco .mod-root .workspace-tab-header-container {
+@container style(--fas-skin-art-deco: enable) and style(--art-deco-style-root-tabs: enable) {
+    .mod-root .workspace-tab-header-container {
         --tab-text-color-focused-active-current: var(--art-deco-color);
     }
 
-    @scope (.fas-skin-art-deco .mod-root .workspace-tabs:not(.mod-stacked)) {
+    @scope (.mod-root .workspace-tabs:not(.mod-stacked)) {
         .is-active .workspace-tab-header-inner {
             border-bottom: 1px solid var(--art-deco-color);
             background-image:
