@@ -152,6 +152,23 @@ settings:
             - hwb
 
     - 
+        id: rainbow-settings
+        title: Rainbow settings
+        type: heading
+        collapsed: true
+        level: 2
+    - 
+        id: rainbow-brightness
+        title: Rainbow text brightness
+        type: variable-number
+        default: 1
+    - 
+        id: rainbow-saturation
+        title: Rainbow text saturation
+        type: variable-number
+        default: 1
+
+    - 
         id: note-accent
         title: Note accent colors
         type: heading
@@ -329,6 +346,37 @@ settings:
                 label: No
                 value: disable
 
+
+    -
+        id: app-background-image
+        title: App background image
+        type: heading
+        collapsed: true
+        level: 2
+    -
+        id: fas-background-image
+        title: Enable app background image
+        type: class-toggle
+        default: false
+    -
+        id: fas-background-image-url
+        title: Image url
+        type: variable-text
+        default: url("")
+    -
+        id: fas-background-image-blur
+        title: Blur
+        type: variable-number
+        default: 0
+        format: px
+    -
+        id: fas-background-image-opacity
+        title: Opacity
+        type: variable-number-slider
+        default: 1
+        min: 0
+        max: 1
+        step: 0.05
         
     - 
         id: file-explorer
@@ -336,6 +384,18 @@ settings:
         type: heading
         collapsed: true
         level: 2
+    - 
+        id: fas-rainbow-folders
+        title: Rainbow folders
+        type: variable-select
+        default: enable
+        options:
+            - 
+                value: enable
+                label: Enable
+            - 
+                value: disable
+                label: Disable
     -
         id: nav-item-children-margin-start
         title: Indentation for files and folders
@@ -565,6 +625,187 @@ settings:
         description: Enable to use a more compact layout in the editor, reducing multiple spacingg
         markdown: true
         type: class-toggle
+    - 
+        id: fas-floating-mode-button
+        title: Floating button to switch note modes
+        type: variable-select
+        default: disable
+        options:
+            - 
+                value: enable
+                label: Enable
+            - 
+                value: disable
+                label: Disable
+    - 
+        id: fas-floating-mode-button-position
+        title: Floating button position
+        type: variable-select
+        default: right
+        options:
+            - 
+                value: left
+                label: Left
+            - 
+                value: right
+                label: Right
+    - 
+        id: fas-highlight-active-note
+        title: Highlight active note
+        description: Inspired by the plugin Limelight, code adapted by @tif
+        type: class-toggle
+        default: false
+
+    -
+        id: note-background-image
+        title: Background image
+        type: heading
+        collapsed: true
+        level: 2
+    -
+        id: fas-note-background-image
+        title: Enable note background image for all notes
+        description: Use the cssclass "no-background" to disable in specific notes. If this option feature is disabled globally, you can use the cssclass "background-img" to enable it in specific notes.
+        type: class-toggle
+        default: false
+    -
+        id: fas-note-background-image-url
+        title: Image url
+        type: variable-text
+        default: url("")
+    -
+        id: fas-note-background-image-blend-mode-light
+        title: Blend mode, light mode
+        type: variable-select
+        default: normal
+        options:
+            - normal
+            - multiply
+            - screen
+            - overlay
+            - darken
+            - lighten
+            - color-dodge
+            - color-burn
+            - hard-light
+            - soft-light
+            - difference
+            - exclusion
+            - hue
+            - saturation
+            - color
+            - luminosity
+            - plus-darker
+            - plus-lighter
+    -
+        id: fas-note-background-image-blend-mode-dark
+        title: Blend mode, dark mode
+        type: variable-select
+        default: normal
+        options:
+            - normal
+            - multiply
+            - screen
+            - overlay
+            - darken
+            - lighten
+            - color-dodge
+            - color-burn
+            - hard-light
+            - soft-light
+            - difference
+            - exclusion
+            - hue
+            - saturation
+            - color
+            - luminosity
+            - plus-darker
+            - plus-lighter
+    -
+        id: fas-note-background-image-repeat
+        title: Repeat background image
+        type: variable-select
+        default: no
+        options:
+            - yes
+            - no
+    -
+        id: fas-note-background-image-blur
+        title: Blur
+        type: variable-number
+        default: 0
+        format: px
+    -
+        id: fas-note-background-image-opacity
+        title: Opacity
+        type: variable-number-slider
+        default: 1
+        min: 0
+        max: 1
+        step: 0.05
+    -
+        id: fas-note-background-image-brightness-light
+        title: Brightness (light mode)
+        type: variable-number
+        default: 1
+    -
+        id: fas-note-background-image-brightness-dark
+        title: Brightness (dark mode)
+        type: variable-number
+        default: 1
+    -
+        id: fas-print-note-background
+        title: Export to PDF
+        description: Use the note's background when exporting the note to PDF.
+        type: class-toggle
+        default: false
+
+    -
+        id: banners
+        title: Banners
+        type: heading
+        collapsed: true
+        level: 2
+    - 
+        id: banner-height
+        title: Banner height
+        type: variable-number
+        default: 300
+        format: px
+    - 
+        id: banner-slope-angle
+        title: Banner slope angle
+        type: variable-number
+        default: 4
+        format: deg
+    - 
+        id: banner-print-width
+        title: Banner width in print mode
+        type: variable-select
+        default: full-bleed
+        options:
+            - 
+                value: full-bleed
+                label: Full bleed
+            - 
+                value: margins
+                label: Inside margins
+    - 
+        id: fas-banner-edit-mode
+        title: Banner style in edit mode
+        type: class-select
+        allowEmpty: true
+        default: none
+        options:
+            - 
+                value: fas-banner-edit-hide
+                label: Hidden
+            - 
+                value: fas-banner-edit-small
+                label: Small (100px)
+            - 
+                value: fas-banner-edit-icon
+                label: Icon
 
     - 
         id: callouts
@@ -1207,6 +1448,33 @@ settings:
         options:
             - normal
             - doodle
+    - 
+        id: fas-alternative-checkboxes
+        title: Alternative checkboxes
+        type: variable-select
+        default: doodle
+        options:
+            - 
+                value: doodle
+                label: Enable - doodle
+            - 
+                value: normal
+                label: Enable - normal
+            - 
+                value: disable
+                label: Disable
+    - 
+        id: fas-rainbow-lists
+        title: Rainbow lists markers
+        type: variable-select
+        default: disable
+        options:
+            - 
+                value: enable
+                label: Enable
+            - 
+                value: disable
+                label: Disable
             
     - 
         id: pdfs
@@ -1396,278 +1664,6 @@ settings:
             - 
                 value: disable
                 label: Disable
-
-
-
-    - 
-        id: features
-        title: Features
-        type: heading
-        collapsed: true
-        level: 1
-    - 
-        id: fas-alternative-checkboxes
-        title: Alternative checkboxes
-        type: variable-select
-        default: doodle
-        options:
-            - 
-                value: doodle
-                label: Enable - doodle
-            - 
-                value: normal
-                label: Enable - normal
-            - 
-                value: disable
-                label: Disable
-    - 
-        id: fas-floating-mode-button
-        title: Floating button to switch note modes
-        type: variable-select
-        default: disable
-        options:
-            - 
-                value: enable
-                label: Enable
-            - 
-                value: disable
-                label: Disable
-    - 
-        id: fas-floating-mode-button-position
-        title: Floating button position
-        type: variable-select
-        default: right
-        options:
-            - 
-                value: left
-                label: Left
-            - 
-                value: right
-                label: Right
-    - 
-        id: fas-highlight-active-note
-        title: Highlight active note
-        description: Inspired by the plugin Limelight, code adapted by @tif
-        type: class-toggle
-        default: false
-    - 
-        id: fas-rainbow-folders
-        title: Rainbow folders
-        type: variable-select
-        default: enable
-        options:
-            - 
-                value: enable
-                label: Enable
-            - 
-                value: disable
-                label: Disable
-    - 
-        id: fas-rainbow-lists
-        title: Rainbow lists markers
-        type: variable-select
-        default: disable
-        options:
-            - 
-                value: enable
-                label: Enable
-            - 
-                value: disable
-                label: Disable
-    - 
-        id: rainbow-brightness
-        title: Rainbow text brightness
-        type: variable-number
-        default: 1
-    - 
-        id: rainbow-saturation
-        title: Rainbow text saturation
-        type: variable-number
-        default: 1
-
-    -
-        id: app-background-image
-        title: App background image
-        type: heading
-        collapsed: true
-        level: 2
-    -
-        id: fas-background-image
-        title: Enable app background image
-        type: class-toggle
-        default: false
-    -
-        id: fas-background-image-url
-        title: Image url
-        type: variable-text
-        default: url("")
-    -
-        id: fas-background-image-blur
-        title: Blur
-        type: variable-number
-        default: 0
-        format: px
-    -
-        id: fas-background-image-opacity
-        title: Opacity
-        type: variable-number-slider
-        default: 1
-        min: 0
-        max: 1
-        step: 0.05
-
-    -
-        id: note-background-image
-        title: Notes background image
-        type: heading
-        collapsed: true
-        level: 2
-    -
-        id: fas-note-background-image
-        title: Enable note background image for all notes
-        description: Use the cssclass "no-background" to disable in specific notes. If this option feature is disabled globally, you can use the cssclass "background-img" to enable it in specific notes.
-        type: class-toggle
-        default: false
-    -
-        id: fas-note-background-image-url
-        title: Image url
-        type: variable-text
-        default: url("")
-    -
-        id: fas-note-background-image-blend-mode-light
-        title: Blend mode, light mode
-        type: variable-select
-        default: normal
-        options:
-            - normal
-            - multiply
-            - screen
-            - overlay
-            - darken
-            - lighten
-            - color-dodge
-            - color-burn
-            - hard-light
-            - soft-light
-            - difference
-            - exclusion
-            - hue
-            - saturation
-            - color
-            - luminosity
-            - plus-darker
-            - plus-lighter
-    -
-        id: fas-note-background-image-blend-mode-dark
-        title: Blend mode, dark mode
-        type: variable-select
-        default: normal
-        options:
-            - normal
-            - multiply
-            - screen
-            - overlay
-            - darken
-            - lighten
-            - color-dodge
-            - color-burn
-            - hard-light
-            - soft-light
-            - difference
-            - exclusion
-            - hue
-            - saturation
-            - color
-            - luminosity
-            - plus-darker
-            - plus-lighter
-    -
-        id: fas-note-background-image-repeat
-        title: Repeat background image
-        type: variable-select
-        default: no
-        options:
-            - yes
-            - no
-    -
-        id: fas-note-background-image-blur
-        title: Blur
-        type: variable-number
-        default: 0
-        format: px
-    -
-        id: fas-note-background-image-opacity
-        title: Opacity
-        type: variable-number-slider
-        default: 1
-        min: 0
-        max: 1
-        step: 0.05
-    -
-        id: fas-note-background-image-brightness-light
-        title: Brightness (light mode)
-        type: variable-number
-        default: 1
-    -
-        id: fas-note-background-image-brightness-dark
-        title: Brightness (dark mode)
-        type: variable-number
-        default: 1
-    -
-        id: fas-print-note-background
-        title: Export to PDF
-        description: Use the note's background when exporting the note to PDF.
-        type: class-toggle
-        default: false
-
-
-    -
-        id: banners
-        title: Banners
-        type: heading
-        collapsed: true
-        level: 2
-    - 
-        id: banner-height
-        title: Banner height
-        type: variable-number
-        default: 300
-        format: px
-    - 
-        id: banner-slope-angle
-        title: Banner slope angle
-        type: variable-number
-        default: 4
-        format: deg
-    - 
-        id: banner-print-width
-        title: Banner width in print mode
-        type: variable-select
-        default: full-bleed
-        options:
-            - 
-                value: full-bleed
-                label: Full bleed
-            - 
-                value: margins
-                label: Inside margins
-    - 
-        id: fas-banner-edit-mode
-        title: Banner style in edit mode
-        type: class-select
-        allowEmpty: true
-        default: none
-        options:
-            - 
-                value: fas-banner-edit-hide
-                label: Hidden
-            - 
-                value: fas-banner-edit-small
-                label: Small (100px)
-            - 
-                value: fas-banner-edit-icon
-                label: Icon
-
 
 
     - 
