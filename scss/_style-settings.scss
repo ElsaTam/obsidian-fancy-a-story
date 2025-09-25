@@ -1353,6 +1353,61 @@ settings:
             - normal
             - italic
             - oblique
+
+    - 
+        id: hr
+        title: Horizontal rules (HR)
+        type: heading
+        collapsed: true
+        level: 2
+    -
+        id: fas-hr
+        title: Enable custom HR
+        type: class-toggle
+        default: true
+    - 
+        id: hr-color
+        title: Color
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-dark: '#505050'
+        default-light: '#c5c5c5'
+    -
+        id: hr-ornament
+        title: Ornament shape url
+        description: This image is used as a mask based on its alpha channel
+        type: variable-text
+        default: url("")
+    - 
+        id: hr-ornament-size
+        title: Ornament size (em)
+        description: Size of the ornament
+        type: variable-number
+        default: 1.5
+        format: em
+    - 
+        id: hr-ornament-right
+        title: Ornament right position (px)
+        description: Space left at the right of the ornament
+        type: variable-number
+        default: 40
+        format: px
+    - 
+        id: hr-ornament-padding
+        title: Ornament padding (px)
+        description: Space between the ornament and the line, on its left and right
+        type: variable-number
+        default: 5
+        format: px
+    - 
+        id: hr-ornament-shadow-size
+        title: Ornament shadow size (px)
+        description: Size of the fading gradient of the line when going behind the ornament
+        type: variable-number
+        default: 10
+        format: px
+
             
     - 
         id: images

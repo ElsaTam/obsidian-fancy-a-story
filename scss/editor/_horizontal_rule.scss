@@ -1,41 +1,51 @@
 body {
-    --hr-height: calc(1em * var(--line-height-normal));
     --hr-thickness: 1px;
     --hr-ornament-size: calc(1em * var(--line-height-normal));
-    --hr-ornament-right: 60px;
+    --hr-height: var(--hr-ornament-size);
+    --hr-ornament-right: 40px;
     --hr-ornament-padding: 5px;
     --hr-ornament-shadow-size: 10px;
+    --hr-ornament: var(--fleuron);
+    --fas-hr: enable;
 }
 
-.markdown-source-view:not(.minimalist, .sci-fi) hr,
-.markdown-preview-view:not(.minimalist, .sci-fi) hr:not(.footnotes hr) {
-    border: none;
-    background-color: var(--hr-color);
-    height: calc(var(--hr-height) + var(--hr-thickness));
+.css-settings-manager:not(.fas-hr) {
+    --fas-hr: disable;
+}
 
-    -webkit-mask-image:
-        linear-gradient(
-            to right,
-            transparent,
-            black 100px,
-            black calc(100% - var(--hr-ornament-right) - var(--hr-ornament-padding) - var(--hr-ornament-shadow-size)),
-            transparent calc(100% - var(--hr-ornament-right) - var(--hr-ornament-padding)),
-            transparent calc(100% - var(--hr-ornament-right) + var(--hr-ornament-size) + var(--hr-ornament-padding)),
-            black
-                calc(
-                    100% - var(--hr-ornament-right) + var(--hr-ornament-size) + var(--hr-ornament-padding) +
-                        var(--hr-ornament-shadow-size)
-                ),
-            black
-        ),
-        var(--fleuron);
-    -webkit-mask-size:
-        100% var(--hr-thickness),
-        var(--hr-ornament-size);
-    -webkit-mask-position:
-        center,
-        calc(100% - var(--hr-ornament-right) + var(--hr-ornament-size)) center;
-    -webkit-mask-repeat: no-repeat;
+@container style(--fas-hr: enable) {
+    .markdown-source-view:not(.minimalist, .sci-fi) hr,
+    .markdown-preview-view:not(.minimalist, .sci-fi) hr:not(.footnotes hr) {
+        border: none;
+        background-color: var(--hr-color);
+        height: calc(var(--hr-height) + var(--hr-thickness));
+
+        -webkit-mask-image:
+            linear-gradient(
+                to right,
+                transparent,
+                black 100px,
+                black
+                    calc(
+                        100% - var(--hr-ornament-right) - var(--hr-ornament-padding) - var(--hr-ornament-size) - var(
+                                --hr-ornament-shadow-size
+                            )
+                    ),
+                transparent calc(100% - var(--hr-ornament-right) - var(--hr-ornament-size) - var(--hr-ornament-padding)),
+                transparent calc(100% - var(--hr-ornament-right) + var(--hr-ornament-padding)),
+                black
+                    calc(100% - var(--hr-ornament-right) + var(--hr-ornament-padding) + var(--hr-ornament-shadow-size)),
+                black
+            ),
+            var(--hr-ornament);
+        -webkit-mask-size:
+            100% var(--hr-thickness),
+            var(--hr-ornament-size);
+        -webkit-mask-position:
+            center,
+            calc(100% - var(--hr-ornament-right)) center;
+        -webkit-mask-repeat: no-repeat;
+    }
 }
 
 body {
