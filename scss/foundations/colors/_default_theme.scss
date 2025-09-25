@@ -4,26 +4,29 @@
 @use "sass:map";
 
 @mixin defaultGradient($tone) {
+    $default-primary: colors_definitions.$default-primary-dark;
+    $default-text: colors_definitions.$default-text-dark;
+    $space: "lab";
     @if $tone == "light" {
-        --color-base-00: #{colors_definitions.$default-primary-light};
-        --color-base-100: #{colors_definitions.$default-text-light};
-        --color-space: srgb-linear;
-    } @else {
-        --color-base-00: #{colors_definitions.$default-text-dark};
-        --color-base-100: #{colors_definitions.$default-primary-dark};
-        --color-space: srgb-linear;
+        $default-primary: colors_definitions.$default-primary-light;
+        $default-text: colors_definitions.$default-text-light;
+        $space: "srgb-linear";
     }
 
-    --color-base-05: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 05%);
-    --color-base-10: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 10%);
-    --color-base-20: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 15%);
-    --color-base-25: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 25%);
-    --color-base-30: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 20%);
-    --color-base-35: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 35%);
-    --color-base-40: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 40%);
-    --color-base-50: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 50%);
-    --color-base-60: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 60%);
-    --color-base-70: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 70%);
+    --color-base-00: #{$default-primary};
+    --color-base-100: #{$default-text};
+    --color-space: #{$space};
+
+    --color-base-05: #{color.mix($default-text, $default-primary, $weight: 5%, $method: #{$space})};
+    --color-base-10: #{color.mix($default-text, $default-primary, $weight: 10%, $method: #{$space})};
+    --color-base-20: #{color.mix($default-text, $default-primary, $weight: 15%, $method: #{$space})};
+    --color-base-25: #{color.mix($default-text, $default-primary, $weight: 25%, $method: #{$space})};
+    --color-base-30: #{color.mix($default-text, $default-primary, $weight: 30%, $method: #{$space})};
+    --color-base-35: #{color.mix($default-text, $default-primary, $weight: 35%, $method: #{$space})};
+    --color-base-40: #{color.mix($default-text, $default-primary, $weight: 40%, $method: #{$space})};
+    --color-base-50: #{color.mix($default-text, $default-primary, $weight: 50%, $method: #{$space})};
+    --color-base-60: #{color.mix($default-text, $default-primary, $weight: 60%, $method: #{$space})};
+    --color-base-70: #{color.mix($default-text, $default-primary, $weight: 70%, $method: #{$space})};
 
     @each $color in map.keys(map.get(colors_definitions.$extended-colors, $tone)) {
         $c: helper-functions.map-deep-get(colors_definitions.$extended-colors, $tone, $color);

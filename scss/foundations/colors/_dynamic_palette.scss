@@ -31,6 +31,17 @@
             --custom-color-base-100: #{colors_definitions.$default-primary-dark};
             --custom-color-space: srgb-linear;
         }
+
+        --color-base-05: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 05%);
+        --color-base-10: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 10%);
+        --color-base-20: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 15%);
+        --color-base-25: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 25%);
+        --color-base-30: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 20%);
+        --color-base-35: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 35%);
+        --color-base-40: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 40%);
+        --color-base-50: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 50%);
+        --color-base-60: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 60%);
+        --color-base-70: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 70%);
     }
 
     .is-mobile.theme-#{$tone}.fas-custom-#{$tone},
@@ -54,6 +65,17 @@
     --color-space: #{$space};
     --color-base-00: #{$primary};
     --color-base-100: #{$text};
+
+    --color-base-05: #{color.mix($text, $primary, $weight: 5%, $method: #{$space})};
+    --color-base-10: #{color.mix($text, $primary, $weight: 10%, $method: #{$space})};
+    --color-base-20: #{color.mix($text, $primary, $weight: 15%, $method: #{$space})};
+    --color-base-25: #{color.mix($text, $primary, $weight: 25%, $method: #{$space})};
+    --color-base-30: #{color.mix($text, $primary, $weight: 30%, $method: #{$space})};
+    --color-base-35: #{color.mix($text, $primary, $weight: 35%, $method: #{$space})};
+    --color-base-40: #{color.mix($text, $primary, $weight: 40%, $method: #{$space})};
+    --color-base-50: #{color.mix($text, $primary, $weight: 50%, $method: #{$space})};
+    --color-base-60: #{color.mix($text, $primary, $weight: 60%, $method: #{$space})};
+    --color-base-70: #{color.mix($text, $primary, $weight: 70%, $method: #{$space})};
 
     // Compute the middle color (for headings)
     $tone-modif: (
