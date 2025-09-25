@@ -94,7 +94,7 @@ body {
 /* Horizontal rule */
 @container style(--fas-skin-art-deco: enable) and style(--art-deco-style-hr: enable) {
     /* Horizontal line */
-    .app-container {
+    body > * {
         --hr-color: var(--art-deco-color);
     }
 
@@ -126,7 +126,7 @@ body {
 
 /* Fonts and headers */
 @container style(--fas-skin-art-deco: enable) and style(--art-deco-style-fonts: enable) {
-    .app-container {
+    body > * {
         --font-interface-theme: "Federo", "Poppins";
         --font-text-theme: Semplicita, "Noto";
         --h1-font: "Limelight", "Notable", "Noto", "Inter";
@@ -456,10 +456,10 @@ $fwi_sel: "";
 
 /* Sidebar backgrounds */
 @container style(--fas-skin-art-deco: enable) and style(--art-deco-style-sidebar-textures: enable) {
-    .fas-bg-textures:not(.fas-file-explorer-decoration-custom) .app-container {
+    .fas-bg-textures:not(.fas-file-explorer-decoration-custom) > * {
         --file-explorer-decoration: ;
     }
-    .fas-bg-textures:not(.fas-sidebar-texture-custom) .app-container {
+    .fas-bg-textures:not(.fas-sidebar-texture-custom) > * {
         --sidebar-texture: var(--art-deco-background);
         --sidebar-texture-size: auto 100%;
         --sidebar-texture-blend: soft-light;
@@ -502,7 +502,7 @@ $fwi_sel: "";
 
 /* lists items */
 @container style(--fas-skin-art-deco: enable) and style(--art-deco-style-lists: enable) {
-    .app-container {
+    body > * {
         --fas-bullet-style: normal;
     }
     .list-bullet::after {

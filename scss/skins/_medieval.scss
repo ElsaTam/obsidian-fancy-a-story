@@ -5,11 +5,11 @@
 
 /* Sidebar backgrounds */
 @container style(--medieval-style-sidebar-textures: enable) {
-    .fas-skin-medieval.fas-bg-textures:not(.fas-sidebar-texture-custom).theme-dark .app-container {
+    .fas-skin-medieval.fas-bg-textures:not(.fas-sidebar-texture-custom).theme-dark > * {
         --sidebar-texture-blend: var(--sidebar-texture-blend-dark);
     }
 
-    .fas-skin-medieval.fas-bg-textures:not(.fas-sidebar-texture-custom) .app-container {
+    .fas-skin-medieval.fas-bg-textures:not(.fas-sidebar-texture-custom) > * {
         --sidebar-texture: var(--medieval-paper);
         --sidebar-texture-size: 100% 100%;
         --sidebar-texture-blend: normal;
@@ -61,11 +61,11 @@
         }
     }
 
-    .fas-skin-medieval.fas-bg-textures:not(.fas-file-explorer-decoration-custom).theme-dark .app-container {
+    .fas-skin-medieval.fas-bg-textures:not(.fas-file-explorer-decoration-custom).theme-dark > * {
         --file-explorer-decoration-blend: var(--file-explorer-decoration-blend-dark);
     }
 
-    .fas-skin-medieval.fas-bg-textures:not(.fas-file-explorer-decoration-custom) .app-container {
+    .fas-skin-medieval.fas-bg-textures:not(.fas-file-explorer-decoration-custom) > * {
         --file-explorer-decoration: var(--medieval-crystal);
         --file-explorer-decoration-size: 200px;
         --file-explorer-decoration-position: calc(100% + 50px) calc(100% + 15px);

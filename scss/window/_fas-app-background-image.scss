@@ -58,7 +58,7 @@ body {
     }
 
     // Add the background image
-    .app-container {
+    body > * {
         background-image: var(--fas-background-image-url);
         background-size: cover;
     }

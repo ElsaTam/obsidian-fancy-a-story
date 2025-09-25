@@ -1,5 +1,5 @@
 @container style(--font-text-override: '??') {
-    .app-container {
+    body > * {
         --font-weight: var(--font-light);
         --bold-modifier: 300;
     }
