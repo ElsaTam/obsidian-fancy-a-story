@@ -51,6 +51,12 @@
     --art-deco-color: var(--art-deco-color-custom);
     @include art-deco-gradient();
 
+    --h-display-line-height: 1.2em;
+    --h-display-font: "ParkLaneNF", "Limelight", "Impact", "Inter";
+    --h-display-color: var(--art-deco-color);
+    --h-display-background: transparent;
+    --h-display-weight: 500;
+
     --art-deco-style-hr: enable;
     --art-deco-style-fonts: enable;
     --art-deco-style-file-explorer-icons: enable;
@@ -526,25 +532,23 @@ $fwi_sel: "";
 }
 
 /* Heading display */
-@container style(--art-deco-style-h-display: enable) {
-    @for $i from 1 through 6 {
-        .fas-skin-art-deco:is(.fas-h#{$i}-display, .fas-h#{$i}-display-left-aligned)
-            :is(.markdown-preview-view, .is-live-preview):not(
-                :is(.newspaper, .movie-script, .minimalist, .h#{$i}-stroke, .h#{$i}-normal, .sci-fi)
-            ),
-        .fas-skin-art-deco
-            :is(.markdown-preview-view, .is-live-preview):is(.h#{$i}-display, .h#{$i}-display-left-aligned) {
-            :is(h#{$i}, .HyperMD-header-#{$i}):not(.callout *, ul *, ol *) {
-                --h#{$i}-line-height: 1.2em;
-                --h#{$i}-size: 3em;
-                --h#{$i}-font: "ParkLaneNF", "Limelight", "Impact", "Inter";
-                --h#{$i}-color: var(--art-deco-color);
-                --h#{$i}-weight: 500;
-                --h#{$i}-background: var(--color-base-100);
-
-                background-color: transparent;
-                text-align: var(--h#{$i}-display-alignment);
-                position: relative;
+@for $i from 1 through 6 {
+    @container style(--art-deco-style-h-display: enable) and (style(--fas-h#{$i}-display: enable) or style(--fas-h#{$i}-display-left-aligned: enable)) {
+        :is(.markdown-preview-view, .is-live-preview):not(
+            .newspaper,
+            .movie-script,
+            .minimalist,
+            .h#{$i}-stroke,
+            .h#{$i}-stroke-left-aligned,
+            .h#{$i}-normal,
+            .sci-fi
+        ) {
+            :is(.el-h#{$i} > h#{$i}, .markdown-preview-view > * > h#{$i}, .HyperMD-header-#{$i}):not(
+                .callout *,
+                ul *,
+                ol *
+            ) {
+                --h#{$i}-weight: var(--h-display-weight);
                 padding-inline: calc(var(--cutout-outline-inset) + 16px);
                 padding-block: calc(var(--cutout-outline-inset) + 16px);
                 clip-path: none;
@@ -561,29 +565,14 @@ $fwi_sel: "";
                         var(--art-deco-h-top-right) right top / var(--corner-size) var(--corner-size) no-repeat,
                         var(--art-deco-h-bottom-right) right bottom / var(--corner-size) var(--corner-size) no-repeat,
                         var(--art-deco-h-bottom-left) left bottom / var(--corner-size) var(--corner-size) no-repeat,
-                        var(--art-deco-h-hline)
-                            var(--corner-size)
-                            top /
-                            calc(100% - 2 * var(--corner-size))
-                            calc(3.9537 / 15.723796 * var(--corner-size))
-                            no-repeat,
-                        var(--art-deco-h-hline)
-                            var(--corner-size)
-                            bottom /
-                            calc(100% - 2 * var(--corner-size))
-                            calc(3.9537 / 15.723796 * var(--corner-size))
-                            no-repeat,
-                        var(--art-deco-h-vline)
-                            left
-                            var(--corner-size) /
-                            calc(3.9537 / 15.769766 * var(--corner-size))
-                            calc(100% - 2 * var(--corner-size))
-                            no-repeat,
-                        var(--art-deco-h-vline)
-                            right
-                            var(--corner-size) /
-                            calc(3.9537 / 15.723796 * var(--corner-size) - 0.5px)
-                            calc(100% - 2 * var(--corner-size))
+                        var(--art-deco-h-hline) var(--corner-size) top / calc(100% - 2 * var(--corner-size))
+                            calc(3.9537 / 15.723796 * var(--corner-size)) no-repeat,
+                        var(--art-deco-h-hline) var(--corner-size) bottom / calc(100% - 2 * var(--corner-size))
+                            calc(3.9537 / 15.723796 * var(--corner-size)) no-repeat,
+                        var(--art-deco-h-vline) left var(--corner-size) / calc(3.9537 / 15.769766 * var(--corner-size))
+                            calc(100% - 2 * var(--corner-size)) no-repeat,
+                        var(--art-deco-h-vline) right var(--corner-size) /
+                            calc(3.9537 / 15.723796 * var(--corner-size) - 0.5px) calc(100% - 2 * var(--corner-size))
                             no-repeat;
                     // top left: 15.769766 x 15.723796
                     // hline : 32.085396 x 3.9537

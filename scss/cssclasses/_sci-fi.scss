@@ -8,13 +8,21 @@ body {
 }
 
 .fas-skin-sci-fi,
-.markdown-reading-view:has(> .sci-fi),
-.markdown-source-view.sci-fi {
-    --fas-skin-sci-fi: enable;
+.sci-fi {
     --metadata-border-color: rgb(var(--sci-fi-color-rgb));
     --font-weight: var(--font-normal);
     --callout-border-opacity: 1;
     --hr-color: rgb(var(--sci-fi-color-rgb));
+
+    --h-display-color: inherit;
+    --h-display-font: "Orbitron", Arial, serif;
+    --h-display-background: transparent;
+}
+
+.fas-skin-sci-fi,
+.markdown-reading-view:has(> .sci-fi),
+.markdown-source-view.sci-fi {
+    --fas-skin-sci-fi: enable;
 }
 
 // Can't be in the container style query because it's not a child of the container
@@ -199,7 +207,7 @@ body {
     }
 }
 
-// H1 Display
+// H Display
 @for $i from 1 through 6 {
     @container style(--fas-skin-sci-fi: enable) and (style(--fas-h#{$i}-display: enable) or style(--fas-h#{$i}-display-left-aligned: enable)) {
         :is(.markdown-preview-view, .is-live-preview):not(
@@ -211,10 +219,11 @@ body {
             .h#{$i}-normal,
             .sci-fi
         ) {
-            :is(h#{$i}, .HyperMD-header-#{$i}):not(.callout *, ul *, ol *) {
-                --h#{$i}-color: inherit;
-                --h#{$i}-background: transparent;
-                --h#{$i}-font: "Orbitron", Arial, serif;
+            :is(.el-h#{$i} > h#{$i}, .markdown-preview-view > * > h#{$i}, .HyperMD-header-#{$i}):not(
+                .callout *,
+                ul *,
+                ol *
+            ) {
                 padding: unset;
                 clip-path: unset;
                 text-align: left;
