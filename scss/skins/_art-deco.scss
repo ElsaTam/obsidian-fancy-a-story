@@ -195,54 +195,52 @@ body {
 }
 
 /* Flags */
-@container style(--fas-skin-art-deco: enable) and style(--art-deco-style-tab-flags: enable) {
-    @container not style(--fas-bookmark-tabs: disable) {
-        .mod-sidedock .workspace-tab-header {
-            clip-path: none;
-            padding-bottom: 7px;
+@container style(--fas-skin-art-deco: enable) and style(--art-deco-style-tab-flags: enable) and (not style(--fas-bookmark-tabs: disable)) {
+    .mod-sidedock .workspace-tab-header {
+        clip-path: none;
+        padding-bottom: 7px;
+        background-color: transparent;
+    }
+
+    .mod-sidedock .workspace-tab-header.is-active {
+        background-color: transparent;
+    }
+
+    .mod-sidedock .workspace-tab-header-inner {
+        background-color: var(--workleaves-background);
+    }
+
+    .mod-sidedock .workspace-tab-header::after {
+        content: "";
+        display: block;
+        background-color: var(--sidedock-inset-border-color);
+        position: absolute;
+        right: 0px;
+        left: 0px;
+        top: 0px;
+        bottom: 0px;
+        border-radius: 0;
+        mask-image: var(--art-deco-flag);
+        mask-size: 100% 100%;
+        mask-repeat: no-repeat;
+        mask-position: bottom center;
+    }
+
+    .mod-sidedock .workspace-tab-header.is-active::after {
+        background-image: var(--art-deco-gradient);
+    }
+
+    @media (hover: hover) {
+        .mod-sidedock .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
+            background-color: color-mix(in srgb, var(--workleaves-background), rgb(var(--mono-rgb-100)) 7.5%);
+        }
+
+        .mod-sidedock .workspace-tab-header.is-active:hover .workspace-tab-header-inner {
+            background-color: color-mix(in srgb, var(--workleaves-background), rgb(var(--mono-rgb-100)) 7.5%);
+        }
+
+        .mod-sidedock .workspace-tab-header.is-active:hover {
             background-color: transparent;
-        }
-
-        .mod-sidedock .workspace-tab-header.is-active {
-            background-color: transparent;
-        }
-
-        .mod-sidedock .workspace-tab-header-inner {
-            background-color: var(--workleaves-background);
-        }
-
-        .mod-sidedock .workspace-tab-header::after {
-            content: "";
-            display: block;
-            background-color: var(--sidedock-inset-border-color);
-            position: absolute;
-            right: 0px;
-            left: 0px;
-            top: 0px;
-            bottom: 0px;
-            border-radius: 0;
-            mask-image: var(--art-deco-flag);
-            mask-size: 100% 100%;
-            mask-repeat: no-repeat;
-            mask-position: bottom center;
-        }
-
-        .mod-sidedock .workspace-tab-header.is-active::after {
-            background-image: var(--art-deco-gradient);
-        }
-
-        @media (hover: hover) {
-            .mod-sidedock .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
-                background-color: color-mix(in srgb, var(--workleaves-background), rgb(var(--mono-rgb-100)) 7.5%);
-            }
-
-            .mod-sidedock .workspace-tab-header.is-active:hover .workspace-tab-header-inner {
-                background-color: color-mix(in srgb, var(--workleaves-background), rgb(var(--mono-rgb-100)) 7.5%);
-            }
-
-            .mod-sidedock .workspace-tab-header.is-active:hover {
-                background-color: transparent;
-            }
         }
     }
 }
@@ -637,8 +635,10 @@ $fwi_sel: "";
     .mod-root .workspace-tab-header-container {
         --tab-text-color-focused-active-current: var(--art-deco-color);
     }
+}
 
-    @scope (.mod-root .workspace-tabs:not(.mod-stacked)) {
+@scope (.mod-root .workspace-tabs:not(.mod-stacked)) {
+    @container style(--fas-skin-art-deco: enable) and style(--art-deco-style-root-tabs: enable) {
         .is-active .workspace-tab-header-inner {
             border-bottom: 1px solid var(--art-deco-color);
             background-image:
