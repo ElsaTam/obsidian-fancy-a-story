@@ -525,17 +525,20 @@ $fwi_sel: "";
 }
 
 /* Heading display */
-@for $i from 1 through 6 {
-    @container style(--fas-skin-art-deco: enable) {
-        body > * {
-            --h-display-line-height: 1.2em;
-            --h-display-font: "ParkLaneNF", "Limelight", "Impact", "Inter";
-            --h-display-color: var(--art-deco-color);
-            --h-display-background: transparent;
-            --h-display-weight: 500;
-        }
+body {
+    --h-display-art-deco-font: "ParkLaneNF", "Limelight", "Impact", "Inter";
+    --h-display-art-deco-color: var(--art-deco-color);
+    --h-display-art-deco-weight: 500;
+}
+@container style(--fas-skin-art-deco: enable) {
+    body > * {
+        --h-display-font: var(--h-display-art-deco-font);
+        --h-display-color: var(--h-display-art-deco-color);
+        --h-display-background: transparent;
     }
+}
 
+@for $i from 1 through 6 {
     @container style(--fas-skin-art-deco: enable) and style(--art-deco-style-h-display: enable) and (style(--fas-h#{$i}-display: enable) or style(--fas-h#{$i}-display-left-aligned: enable)) {
         :is(.markdown-preview-view, .is-live-preview):not(
             .newspaper,
@@ -551,7 +554,7 @@ $fwi_sel: "";
                 ul *,
                 ol *
             ) {
-                --h#{$i}-weight: var(--h-display-weight);
+                --h#{$i}-weight: var(--h-display-art-deco-weight);
                 padding-inline: calc(var(--cutout-outline-inset) + 16px);
                 padding-block: calc(var(--cutout-outline-inset) + 16px);
                 clip-path: none;
