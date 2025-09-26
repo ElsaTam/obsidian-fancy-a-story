@@ -1,14 +1,29 @@
-/* Both */
-.fas-compact :is(.markdown-source-view, .markdown-preview-view),
-.compact:is(.markdown-source-view, .markdown-preview-view) {
-    --callout-title-padding: 5px 12px;
-    --callout-content-padding: var(--size-2-3) var(--size-2-3) var(--size-2-3) var(--size-4-3);
-    --table-cell-vertical-alignment: middle;
-    --p-spacing: 0.6rem;
-    --heading-spacing: calc(var(--p-spacing) * 1.5);
-    --line-height-normal: 1.25;
-    --line-height-tight: 1;
-    --metadata-padding: var(--size-4-3) var(--size-4-1) var(--size-4-1) var(--size-4-1);
+body {
+    --fas-compact: disable;
+}
+
+.fas-compact,
+.compact {
+    --fas-compact: enable;
+}
+
+@container style(--fas-compact: enable) {
+    :is(.markdown-source-view, .markdown-preview-view),
+    .compact:is(.markdown-source-view, .markdown-preview-view) > * {
+        --callout-title-padding: 5px 12px;
+        --callout-content-padding: var(--size-2-3) var(--size-2-3) var(--size-2-3) var(--size-4-3);
+        --table-cell-vertical-alignment: middle;
+        --table-line-height: 1;
+        --p-spacing: 0.6rem;
+        --heading-spacing: calc(var(--p-spacing) * 1.5);
+        --line-height-normal: 1.25;
+        --line-height-tight: 1;
+        --metadata-padding: var(--size-4-3) var(--size-4-1) var(--size-4-1) var(--size-4-1);
+    }
+
+    .compact:is(.markdown-source-view, .markdown-preview-view) > * {
+        line-height: var(--line-height-normal);
+    }
 
     // ========== CALLOUTS
 
@@ -40,16 +55,6 @@
             --h1-size: 1.5em;
         }
     }
-    @container style(--fas-callout-infobox: enable) {
-        .callout[data-callout="infobox"] {
-            --p-spacing: 0rem;
-            --h1-line-height: 1.4;
-
-            h1 {
-                --h1-size: 1.5em;
-            }
-        }
-    }
 
     // ========== AUDIO
 
@@ -64,13 +69,21 @@
 
     // ========= TABLE
 
-    table {
-        line-height: 1;
-    }
-
     table :is(td, th):empty {
         height: unset;
     }
 
     // ======== METADATA
+}
+
+// Infobox
+@container style(--fas-compact: enable) and style(--fas-callout-infobox: enable) {
+    .callout[data-callout="infobox"] {
+        --p-spacing: 0rem;
+        --h1-line-height: 1.4;
+
+        h1 {
+            --h1-size: 1.5em;
+        }
+    }
 }
