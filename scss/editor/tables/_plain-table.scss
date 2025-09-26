@@ -1,13 +1,20 @@
 .fas-plain-tables {
-    --table-background: color-mix(in hwb, var(--background-primary), rgb(var(--mono-rgb-100)) 3%);
-    --table-border-color: transparent;
-    --table-column-alt-background: none;
-    --table-header-background: color-mix(in hwb, var(--background-primary), rgb(var(--mono-rgb-0)) 30%);
-    --table-header-border-width: 1px;
-    --table-row-alt-background: var(--background-primary-alt);
-    --table-row-alt-background-hover: var(--table-row-alt-background);
-    --table-row-background-hover: var(--table-background);
-    --table-line-height: 1.5;
+    --fas-table-style: plain;
+}
+
+@container style(--fas-table-style: plain) {
+    body > * {
+        --table-background: color-mix(in hwb, var(--background-primary), rgb(var(--mono-rgb-100)) 3%);
+        --table-border-color: transparent;
+        --table-header-border-color: var(--table-border-color);
+        --table-column-alt-background: none;
+        --table-header-background: color-mix(in hwb, var(--background-primary), rgb(var(--mono-rgb-0)) 30%);
+        --table-header-border-width: 1px;
+        --table-row-alt-background: var(--background-primary-alt);
+        --table-row-alt-background-hover: var(--table-row-alt-background);
+        --table-row-background-hover: var(--table-background);
+        --table-line-height: 1.5;
+    }
 
     .cm-html-embed :is(th, td),
     .markdown-rendered :is(th, td) {

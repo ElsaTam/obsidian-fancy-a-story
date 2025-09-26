@@ -123,14 +123,22 @@ body {
     border-left: var(--bases-table-column-border-width) solid var(--table-border-color);
 }
 
-.fas-plain-tables {
-    --bases-table-column-border-width: var(--table-border-width);
+@container style(--fas-table-style: plain) {
+    body > * {
+        --bases-table-column-border-width: var(--table-border-width);
+        --bases-table-header-background: var(--table-header-background);
+        --bases-table-row-background-hover: var(--table-row-background-hover);
 
-    .bases-table-container {
-        --table-border-color: var(--workleaves-background);
+        .bases-table-container {
+            --table-border-color: var(--workleaves-background);
+        }
     }
 }
 
-.fas-border-tables {
-    --bases-table-column-border-width: var(--table-border-width);
+@container style(--fas-table-style: border) {
+    body > * {
+        --bases-table-column-border-width: var(--table-border-width);
+        --bases-table-column-first-border-width: var(--table-column-first-border-width);
+        --bases-table-column-last-border-width: var(--table-column-last-border-width);
+    }
 }
