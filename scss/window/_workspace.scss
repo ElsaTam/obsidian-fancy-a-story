@@ -59,57 +59,48 @@ body {
     --crop-root-corners: disable;
 }
 
-@container style(--crop-root-corners: enable) {
-    body:not(.fas-background-image) {
-        // Only left
-        .workspace.is-left-sidedock-open:not(.is-right-sidedock-open)
-            .mod-root
-            .mod-top:nth-child(1 of .mod-top)
-            .workspace-tab-header-container,
-        .workspace.is-left-sidedock-open.is-right-sidedock-open
-            .mod-root
-            .mod-top:nth-child(1 of .mod-top):not(.mod-top:nth-last-child(1 of .mod-top))
-            .workspace-tab-header-container {
-            -webkit-mask-image: radial-gradient(
-                var(--cutout-corner-radius) at 0 var(--workspace-top-margin),
-                transparent 100%,
-                black
-            );
-        }
+@container style(--crop-root-corners: enable) and (not style(--fas-background-image: enable)) {
+    // Only left
+    .workspace.is-left-sidedock-open:not(.is-right-sidedock-open)
+        .mod-root
+        .mod-top:nth-child(1 of .mod-top)
+        .workspace-tab-header-container,
+    .workspace.is-left-sidedock-open.is-right-sidedock-open
+        .mod-root
+        .mod-top:nth-child(1 of .mod-top):not(.mod-top:nth-last-child(1 of .mod-top))
+        .workspace-tab-header-container {
+        -webkit-mask-image: radial-gradient(
+            var(--cutout-corner-radius) at 0 var(--workspace-top-margin),
+            transparent 100%,
+            black
+        );
+    }
 
-        // Only right
-        .workspace.is-right-sidedock-open:not(.is-left-sidedock-open)
-            .mod-root
-            .mod-top:nth-last-child(1 of .mod-top)
-            .workspace-tab-header-container,
-        .workspace.is-left-sidedock-open.is-right-sidedock-open
-            .mod-root
-            .mod-top:nth-last-child(1 of .mod-top):not(.mod-top:nth-child(1 of .mod-top))
-            .workspace-tab-header-container {
-            -webkit-mask-image: radial-gradient(
-                var(--cutout-corner-radius) at 100% var(--workspace-top-margin),
-                transparent 100%,
-                black
-            );
-        }
+    // Only right
+    .workspace.is-right-sidedock-open:not(.is-left-sidedock-open)
+        .mod-root
+        .mod-top:nth-last-child(1 of .mod-top)
+        .workspace-tab-header-container,
+    .workspace.is-left-sidedock-open.is-right-sidedock-open
+        .mod-root
+        .mod-top:nth-last-child(1 of .mod-top):not(.mod-top:nth-child(1 of .mod-top))
+        .workspace-tab-header-container {
+        -webkit-mask-image: radial-gradient(
+            var(--cutout-corner-radius) at 100% var(--workspace-top-margin),
+            transparent 100%,
+            black
+        );
+    }
 
-        // Both
-        .workspace.is-left-sidedock-open.is-right-sidedock-open
-            .mod-root
-            .mod-top:nth-child(1 of .mod-top):nth-last-child(1 of .mod-top)
-            .workspace-tab-header-container {
-            -webkit-mask-image: radial-gradient(
-                    var(--cutout-corner-radius) at 0 var(--workspace-top-margin),
-                    transparent 100%,
-                    black
-                ),
-                radial-gradient(
-                    var(--cutout-corner-radius) at 100% var(--workspace-top-margin),
-                    transparent 100%,
-                    black
-                );
-            -webkit-mask-composite: source-in;
-            mask-composite: intersect;
-        }
+    // Both
+    .workspace.is-left-sidedock-open.is-right-sidedock-open
+        .mod-root
+        .mod-top:nth-child(1 of .mod-top):nth-last-child(1 of .mod-top)
+        .workspace-tab-header-container {
+        -webkit-mask-image:
+            radial-gradient(var(--cutout-corner-radius) at 0 var(--workspace-top-margin), transparent 100%, black),
+            radial-gradient(var(--cutout-corner-radius) at 100% var(--workspace-top-margin), transparent 100%, black);
+        -webkit-mask-composite: source-in;
+        mask-composite: intersect;
     }
 }

@@ -81,7 +81,7 @@ body {
 
 /* Horizontal rule */
 @container style(--fas-skin-art-deco: enable) {
-    body > * {
+    body > *:not(.titlebar) {
         --hr-height: calc(1em * var(--line-height-normal));
         --hr-ornament-height: calc(1em * var(--line-height-normal));
         --hr-ornament-width: 30px;
