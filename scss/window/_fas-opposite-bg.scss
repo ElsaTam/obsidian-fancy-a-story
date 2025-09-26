@@ -1,21 +1,31 @@
+body {
+    --fas-opposite-bg: disable;
+}
+
 .fas-opposite-bg {
-    --workspace-foreground: var(--color-base-00);
-    --workspace-foreground-muted: var(--color-base-30);
-    --workspace-foreground-faint: var(--color-base-50);
-    --workspace-background: var(--color-base-100);
+    --fas-opposite-bg: enable;
 }
 
-.fas-opposite-bg .titlebar {
-    --background-modifier-hover: rgba(var(--mono-rgb-0), 0.075);
-}
+@container style(--fas-opposite-bg: enable) {
+    body > * {
+        --workspace-foreground: var(--color-base-00);
+        --workspace-foreground-muted: var(--color-base-30);
+        --workspace-foreground-faint: var(--color-base-50);
+        --workspace-background: var(--color-base-100);
+    }
 
-.fas-opposite-bg .workspace-ribbon,
-.fas-opposite-bg .workspace-tab-header-container,
-.fas-opposite-bg .workspace-sidedock-vault-profile {
-    --background-modifier-hover: rgba(var(--mono-rgb-0), 0.075);
-}
+    .titlebar {
+        --background-modifier-hover: rgba(var(--mono-rgb-0), 0.075);
+    }
 
-.fas-opposite-bg .workspace-tab-header.is-active {
-    --icon-color: var(--workleaves-foreground);
-    --icon-color-focused: var(--workleaves-foreground);
+    .workspace-ribbon,
+    .workspace-tab-header-container,
+    .workspace-sidedock-vault-profile {
+        --background-modifier-hover: rgba(var(--mono-rgb-0), 0.075);
+    }
+
+    .workspace-tab-header.is-active {
+        --icon-color: var(--workleaves-foreground);
+        --icon-color-focused: var(--workleaves-foreground);
+    }
 }
