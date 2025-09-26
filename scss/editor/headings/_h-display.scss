@@ -5,20 +5,6 @@
 @forward "../../shared/workleaves";
 @use "../../mixins/cutout_border";
 
-:is(.fas-headings-hue, .fas-headings-complement, .fas-headings-accent):is(
-    .fas-h1-display,
-    .fas-h1-display-left-aligned
-),
-:is(.fas-headings-hue, .fas-headings-complement, .fas-headings-accent) :is(.h1-display, .h1-display-left-aligned),
-:is(.fas-h1-display, .fas-h1-display-left-aligned) :is(.headings-hue, .headings-complement, .headings-accent),
-:is(.h1-display, .h1-display-left-aligned):is(.headings-hue, .headings-complement, .headings-accent) {
-    --h2-color: var(--header-gradient-base-color);
-    --h3-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 20%);
-    --h4-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 40%);
-    --h5-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 60%);
-    --h6-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 80%);
-}
-
 body {
     --h-display-line-height: 1.2em;
     --h-display-font: var(--font-typewriter), var(--font-text);

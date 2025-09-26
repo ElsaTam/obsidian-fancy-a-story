@@ -1,38 +1,65 @@
 @forward "../../shared/middle-color";
 
-.fas-headings-hue,
-.headings-hue {
-    --header-gradient-base-color: var(--middle-color);
-}
-.fas-headings-complement,
-.headings-complement {
-    --header-gradient-base-color: var(--middle-color-complement);
-}
-.fas-headings-accent,
-.headings-accent {
-    --header-gradient-base-color: var(--text-accent);
+body {
+    --heading-color: none;
 }
 
 .fas-headings-hue,
-.headings-hue,
+.headings-hue {
+    --heading-color: hue;
+}
+
 .fas-headings-complement,
-.headings-complement,
+.headings-complement {
+    --heading-color: complement;
+}
+
 .fas-headings-accent,
 .headings-accent {
-    --h1-color: var(--header-gradient-base-color);
-    --h2-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 10%);
-    --h3-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 20%);
-    --h4-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 40%);
-    --h5-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 60%);
-    --h6-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 80%);
+    --heading-color: accent;
 }
 
 .fas-headings-rainbow,
 .headings-rainbow {
-    --h1-color: var(--color-rainbow-1);
-    --h2-color: var(--color-rainbow-2);
-    --h3-color: var(--color-rainbow-3);
-    --h4-color: var(--color-rainbow-4);
-    --h5-color: var(--color-rainbow-5);
-    --h6-color: var(--color-rainbow-6);
+    --heading-color: rainbow;
+}
+
+@container style(--heading-color: hue) {
+    :is(.markdown-source-view, .markdown-preview-view) > * {
+        --header-gradient-base-color: var(--middle-color);
+    }
+}
+
+@container style(--heading-color: complement) {
+    :is(.markdown-source-view, .markdown-preview-view) > * {
+        --header-gradient-base-color: var(--middle-color-complement);
+    }
+}
+
+@container style(--heading-color: accent) {
+    :is(.markdown-source-view, .markdown-preview-view) > * {
+        --header-gradient-base-color: var(--text-accent);
+    }
+}
+
+@container style(--heading-color: hue) or style(--heading-color: complement) or style(--heading-color: accent) {
+    :is(.markdown-source-view, .markdown-preview-view) > * {
+        --h1-color: var(--header-gradient-base-color);
+        --h2-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 10%);
+        --h3-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 20%);
+        --h4-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 40%);
+        --h5-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 60%);
+        --h6-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 80%);
+    }
+}
+
+@container style(--heading-color: rainbow) {
+    :is(.markdown-source-view, .markdown-preview-view) > * {
+        --h1-color: var(--color-rainbow-1);
+        --h2-color: var(--color-rainbow-2);
+        --h3-color: var(--color-rainbow-3);
+        --h4-color: var(--color-rainbow-4);
+        --h5-color: var(--color-rainbow-5);
+        --h6-color: var(--color-rainbow-6);
+    }
 }
