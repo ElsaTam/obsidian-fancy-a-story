@@ -449,11 +449,11 @@ $fwi_sel: "";
 }
 
 /* Sidebar backgrounds */
-@container style(--fas-skin-art-deco: enable) and style(--art-deco-style-sidebar-textures: enable) {
-    .fas-bg-textures:not(.fas-file-explorer-decoration-custom) > * {
+@container style(--fas-bg-textures: enable) and style(--fas-skin-art-deco: enable) and style(--art-deco-style-sidebar-textures: enable) {
+    body:not(.fas-file-explorer-decoration-custom) > * {
         --file-explorer-decoration: ;
     }
-    .fas-bg-textures:not(.fas-sidebar-texture-custom) > * {
+    body:not(.fas-sidebar-texture-custom) > * {
         --sidebar-texture: var(--art-deco-background);
         --sidebar-texture-size: auto 100%;
         --sidebar-texture-blend: soft-light;
@@ -462,7 +462,7 @@ $fwi_sel: "";
         --sidebar-texture-opacity: 0.2;
     }
 
-    .fas-bg-textures:not(.fas-sidebar-texture-custom) .mod-sidedock .workspace-leaf {
+    body:not(.fas-sidebar-texture-custom) .mod-sidedock .workspace-leaf {
         background-repeat: no-repeat;
     }
 
@@ -472,7 +472,7 @@ $fwi_sel: "";
             container-type: size;
         }
         @container sidedock (aspect-ratio < 0.4) {
-            .workspace-leaf:is(.fas-bg-textures:not(.fas-sidebar-texture-custom) *) {
+            body:not(.fas-sidebar-texture-custom) .workspace-leaf {
                 --sidebar-texture-size: contain; /* default is: auto 100% */
             }
         }

@@ -70,11 +70,13 @@ body {
             0 0 20px rgba(0, 0, 0, 0.5) inset,
             0 0 7px rgba(0, 0, 0, 0.5) inset;
     }
-    :is(.fas-bg-textures .callout-content) {
-        background-color: color-mix(in srgb, rgb(var(--callout-color)), var(--workleaves-background) 92%);
-        background-image: var(--paper-texture);
-        background-size: 500px;
-        background-blend-mode: multiply;
+    @container style(--fas-bg-textures: enable) {
+        .callout-content {
+            background-color: color-mix(in srgb, rgb(var(--callout-color)), var(--workleaves-background) 92%);
+            background-image: var(--paper-texture);
+            background-size: 500px;
+            background-blend-mode: multiply;
+        }
     }
 
     p {

@@ -1,5 +1,13 @@
 @forward "../../shared/paper-texture";
 
+body {
+    --fas-bg-textures: enable;
+}
+
+.css-settings-manager:not(.fas-bg-textures) {
+    --fas-bg-textures: disable;
+}
+
 @mixin sidebar-texture($publish: false) {
     body {
         --sidebar-texture: var(--paper-texture);
@@ -31,15 +39,21 @@
         }
     }
 
-    $selector: ".fas-bg-textures .mod-sidedock .workspace-leaf";
+    $selector: ".mod-sidedock .workspace-leaf";
     @if $publish {
         $selector: ".search-view-outer, .nav-view-outer";
     }
-    #{$selector} {
-        --c: color-mix(in srgb, var(--workleaves-background), transparent calc(100% * var(--sidebar-texture-opacity)));
-        background-image: linear-gradient(to right, var(--c), var(--c) 100%), var(--sidebar-texture);
-        background-size: var(--sidebar-texture-size);
-        background-blend-mode: normal, var(--sidebar-texture-blend);
-        background-position: var(--sidebar-texture-position);
+    @container style(--fas-bg-textures: enable) {
+        #{$selector} {
+            --c: color-mix(
+                in srgb,
+                var(--workleaves-background),
+                transparent calc(100% * var(--sidebar-texture-opacity))
+            );
+            background-image: linear-gradient(to right, var(--c), var(--c) 100%), var(--sidebar-texture);
+            background-size: var(--sidebar-texture-size);
+            background-blend-mode: normal, var(--sidebar-texture-blend);
+            background-position: var(--sidebar-texture-position);
+        }
     }
 }

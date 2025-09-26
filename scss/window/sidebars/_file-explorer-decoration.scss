@@ -27,44 +27,46 @@
             --file-explorer-decoration-position: var(--file-explorer-decoration-position-custom);
             --file-explorer-decoration-opacity: var(--file-explorer-decoration-opacity-custom);
         }
-        .fas-bg-textures
-            .fas-bg-textures:not(.fas-file-explorer-decoration-custom)
-            .workspace-leaf-content[data-type="file-explorer"]::before {
-            filter: sepia(1);
-        }
-        .is-mobile.fas-bg-textures .workspace-leaf-content[data-type="file-explorer"] {
-            background-color: var(--mobile-sidebar-background);
-        }
-        .is-mobile.fas-bg-textures .workspace-leaf-content[data-type="file-explorer"]::before {
-            bottom: calc(
-                max(var(--size-4-2), var(--safe-area-inset-bottom)) +
-                    var(--icon-size) +
-                    var(--size-2-2) +
-                    var(--size-2-3)
-            );
-            z-index: unset;
-        }
     }
 
-    $selector: ".fas-bg-textures .workspace-leaf-content[data-type='file-explorer']::before";
-    @if $publish {
-        $selector: ".nav-view-outer::after";
-    }
-    #{$selector} {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-image: var(--file-explorer-decoration);
-        background-size: var(--file-explorer-decoration-size);
-        background-position: var(--file-explorer-decoration-position);
-        mix-blend-mode: var(--file-explorer-decoration-blend);
-        opacity: var(--file-explorer-decoration-opacity);
-        background-repeat: no-repeat;
-        z-index: -1;
-        pointer-events: none;
+    @container style(--fas-bg-textures: enable) {
+        @if not $publish {
+            body:not(.fas-file-explorer-decoration-custom) .workspace-leaf-content[data-type="file-explorer"]::before {
+                filter: sepia(1);
+            }
+            .is-mobile .workspace-leaf-content[data-type="file-explorer"] {
+                background-color: var(--mobile-sidebar-background);
+            }
+            .is-mobile .workspace-leaf-content[data-type="file-explorer"]::before {
+                bottom: calc(
+                    max(var(--size-4-2), var(--safe-area-inset-bottom)) +
+                        var(--icon-size) +
+                        var(--size-2-2) +
+                        var(--size-2-3)
+                );
+                z-index: unset;
+            }
+        }
+        $selector: ".workspace-leaf-content[data-type='file-explorer']::before";
+        @if $publish {
+            $selector: ".nav-view-outer::after";
+        }
+        #{$selector} {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-image: var(--file-explorer-decoration);
+            background-size: var(--file-explorer-decoration-size);
+            background-position: var(--file-explorer-decoration-position);
+            mix-blend-mode: var(--file-explorer-decoration-blend);
+            opacity: var(--file-explorer-decoration-opacity);
+            background-repeat: no-repeat;
+            z-index: -1;
+            pointer-events: none;
+        }
     }
 
     body {
