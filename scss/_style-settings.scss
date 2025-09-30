@@ -1363,6 +1363,76 @@ settings:
             - oblique
 
     - 
+        id: h-display-settings
+        title: Headings Display settings
+        type: heading
+        collapsed: true
+        level: 3
+    - 
+        id: h-display-line-height
+        title: Line height (em)
+        type: variable-number
+        default: 1.2
+        format: em
+    -
+        id: h-display-font
+        title: Font family
+        type: variable-text
+        default: TT2020StyleE, Courier, monospace
+    - 
+        id: h-display-color
+        title: Text color
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-dark: '#1f1f1f'
+        default-light: '#e7e7e7'
+    - 
+        id: h-display-background
+        title: Background color
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-dark: '#d9d9d9'
+        default-light: '#000'
+    - 
+        id: h1-display-size
+        title: H1 size (em)
+        type: variable-number
+        default: 3
+        format: em
+    - 
+        id: h2-display-size
+        title: H2 size (em)
+        type: variable-number
+        default: 2.8
+        format: em
+    - 
+        id: h3-display-size
+        title: H3 size (em)
+        type: variable-number
+        default: 2.6
+        format: em
+    - 
+        id: h4-display-size
+        title: H4 size (em)
+        type: variable-number
+        default: 2.4
+        format: em
+    - 
+        id: h5-display-size
+        title: H5 size (em)
+        type: variable-number
+        default: 2.2
+        format: em
+    - 
+        id: h6-display-size
+        title: H6 size (em)
+        type: variable-number
+        default: 2
+        format: em
+
+    - 
         id: hr
         title: Horizontal rules (HR)
         type: heading
@@ -1973,6 +2043,31 @@ settings:
             - 
                 value: disable
                 label: No
+
+    - 
+        id: art-deco-h-display-settings
+        title: Headings Display settings
+        type: heading
+        collapsed: true
+        level: 3
+    -
+        id: h-display-art-deco-font
+        title: Font family
+        type: variable-text
+        default: ParkLaneNF, Limelight, Impact, Inter
+    - 
+        id: h-display-art-deco-color
+        title: Text color
+        type: variable-themed-color
+        format: hex
+        opacity: false
+        default-dark: '#e3c24a'
+        default-light: '#161547'
+    - 
+        id: h-display-art-deco-weight
+        title: Weight
+        type: variable-number
+        default: 500
 
     - 
         id: sci-fi
