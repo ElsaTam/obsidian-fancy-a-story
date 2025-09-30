@@ -1800,6 +1800,41 @@ settings:
 
 
     - 
+        id: community-plugins
+        title: Community plugins
+        type: heading
+        collapsed: true
+        level: 1
+    - 
+        id: fantasy-statblocks
+        title: Fantasy Statblocks
+        type: heading
+        collapsed: false
+        level: 2
+    -
+        id: fas-statblocks-custom
+        title: Change the style of Fantasy Statblocks
+        type: class-toggle
+        default: false
+    - 
+        id: fas-statblocks-accent-class
+        title: Accent color
+        type: class-select
+        allowEmpty: true
+        default: none
+        options:
+            - 
+                value: fas-statblocks-accent
+                label: Accent
+            - 
+                value: fas-statblocks-hue
+                label: Hue
+            - 
+                value: fas-statblocks-complement
+                label: Complementary hue
+
+
+    - 
         id: skins
         title: Skins
         type: heading

@@ -1,0 +1,113 @@
+.fas-statblocks-accent {
+    --fas-statblock-accent-color: var(--color-accent);
+}
+.fas-statblocks-hue {
+    --fas-statblock-accent-color: var(--middle-color);
+}
+.fas-statblocks-complement {
+    --fas-statblock-accent-color: var(--middle-color-complement);
+}
+
+.fas-statblocks-custom {
+    --statblock-primary-color: var(--color-base-00);
+    --statblock-rule-color: var(--fas-statblock-accent-color, #922610);
+    --statblock-background-color: var(--color-base-100);
+    --statblock-bar-color: var(--fas-statblock-accent-color, #e69a28);
+    --statblock-bar-border-color: #000;
+    --statblock-border-color: var(--color-base-50);
+    --statblock-box-shadow-color: var(--color-base-50);
+
+    // We need to recompute these because they were defined at the :root level
+    --statblock-image-border-color: var(--statblock-primary-color);
+    --statblock-font-color: var(--statblock-primary-color);
+    --statblock-heading-font-color: var(--statblock-font-color);
+    --statblock-property-font-color: var(--statblock-font-color);
+    --statblock-property-name-font-color: var(--statblock-font-color);
+    --statblock-section-heading-border-color: var(--statblock-primary-color);
+    --statblock-section-heading-font-color: var(--statblock-font-color);
+}
+
+.fas-statblocks-custom.fas-statblocks-accent
+    :is(.note-accent-1, .note-accent-2, .note-accent-3, .note-accent-4, .note-accent-5, .note-accent-6) {
+    --fas-statblock-accent-color: var(--accent-color);
+    --statblock-rule-color: var(--fas-statblock-accent-color, #922610);
+    --statblock-bar-color: var(--fas-statblock-accent-color, #e69a28);
+}
+
+// ------------------------------- BACKGROUND ------------------------------- //
+
+.fas-bg-textures.fas-statblocks-custom:not(.fas-skin-art-deco) {
+    &.theme-light .statblock-content {
+        background-blend-mode: multiply;
+    }
+    &.theme-dark .statblock-content {
+        background-blend-mode: color-burn;
+    }
+    .statblock-content {
+        background-image: var(--paper-texture);
+        background-size: 500px;
+        background-position: center center;
+    }
+}
+
+// ------------------------------ ART DECO SKIN ----------------------------- //
+
+.fas-skin-art-deco.fas-statblocks-custom {
+    // CORNERS
+    .statblock {
+        //--active-border-color: var(--active-rule-color);
+
+        .bar {
+            display: none;
+        }
+
+        .statblock-content {
+            padding: 15px;
+            border: none;
+            margin-inline: 0;
+        }
+
+        .statblock-content::before {
+            content: "";
+            position: absolute;
+            display: block;
+            top: 0px;
+            inset: 0;
+            background-color: var(--active-border-color);
+            mask:
+                linear-gradient(90deg, black 1px, transparent 0) 3px 50% / calc(100% - 7px) calc(100% - 140px) repeat-x,
+                linear-gradient(black 1px, transparent 0) 50% 3px / calc(100% - 140px) calc(100% - 7px) repeat-y,
+                var(--art-deco-corner-top-left) 0px 0px / 70px no-repeat,
+                var(--art-deco-corner-top-right) top right / 70px no-repeat,
+                var(--art-deco-corner-bottom-right) bottom right / 70px no-repeat,
+                var(--art-deco-corner-bottom-left) bottom left / 70px no-repeat;
+        }
+    }
+
+    // HR
+    .statblock-item-container.rule-container .tapered-rule {
+        border: none;
+        background-color: var(--active-rule-color);
+        background-image: none;
+        -webkit-clip-path: none;
+        height: calc(var(--hr-height) + var(--hr-thickness));
+        -webkit-mask-image:
+            linear-gradient(
+                to right,
+                transparent var(--hr-ornament-width),
+                black var(--hr-ornament-width),
+                black calc(100% - var(--hr-ornament-width)),
+                transparent calc(100% - var(--hr-ornament-width))
+            ),
+            var(--art-deco-hr-decoration-left), var(--art-deco-hr-decoration-right);
+        -webkit-mask-size:
+            100% var(--hr-thickness),
+            var(--hr-ornament-height),
+            var(--hr-ornament-height);
+        -webkit-mask-position:
+            center,
+            left center,
+            right center;
+        -webkit-mask-repeat: no-repeat;
+    }
+}
