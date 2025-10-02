@@ -19,6 +19,9 @@ body,
 .workspace.is-right-sidedock-open {
     padding-right: var(--size-2-2);
 }
+body:not(.show-ribbon) .workspace.is-left-sidedock-open {
+    padding-left: var(--size-2-2);
+}
 
 // ----------- Gap between panes -----------
 body {
