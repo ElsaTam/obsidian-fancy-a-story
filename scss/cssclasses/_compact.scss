@@ -69,7 +69,7 @@ body {
 
     // ========= TABLE
 
-    table :is(td, th):empty {
+    .markdown-rendered table :is(td, th):empty {
         height: unset;
     }
 
