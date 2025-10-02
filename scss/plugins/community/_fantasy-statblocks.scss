@@ -36,7 +36,7 @@
 
 // ------------------------------- BACKGROUND ------------------------------- //
 
-.fas-bg-textures.fas-statblocks-custom:not(.fas-skin-art-deco) {
+.fas-bg-textures.fas-statblocks-custom {
     &.theme-light .statblock-content {
         background-blend-mode: multiply;
     }
@@ -47,6 +47,24 @@
         background-image: var(--paper-texture);
         background-size: 500px;
         background-position: center center;
+    }
+}
+
+// --------------------------------- LAYOUT --------------------------------- //
+
+.fas-statblocks-custom:not(.fas-skin-art-deco, .fas-skin-sci-fi) {
+    .statblock {
+        box-shadow: var(--active-box-shadow-x-offset) var(--active-box-shadow-y-offset) var(--active-box-shadow-blur)
+            var(--active-box-shadow-color);
+    }
+    .statblock-content {
+        box-shadow: none;
+        -webkit-mask: radial-gradient(
+                var(--cutout-corner-radius) at var(--cutout-corner-radius) var(--cutout-corner-radius),
+                transparent 100%,
+                black
+            )
+            calc(-1 * var(--cutout-corner-radius)) calc(-1 * var(--cutout-corner-radius));
     }
 }
 
@@ -65,6 +83,7 @@
             padding: 15px;
             border: none;
             margin-inline: 0;
+            background-image: none;
         }
 
         .statblock-content::before {
@@ -109,5 +128,42 @@
             left center,
             right center;
         -webkit-mask-repeat: no-repeat;
+    }
+}
+
+// ------------------------------ SCI-FI SKIN ------------------------------- //
+
+.fas-skin-sci-fi.fas-statblocks-custom {
+    --statblock-background-color: var(--workleaves-background, transparent);
+    --statblock-bar-color: transparent;
+    --statblock-bar-border-color: rgb(var(--sci-fi-color-rgb));
+    --statblock-border-color: rgb(var(--sci-fi-color-rgb));
+    --statblock-property-name-font-color: rgb(var(--sci-fi-color-rgb));
+    --statblock-heading-font-color: rgb(var(--sci-fi-color-rgb));
+    --statblock-section-heading-font-color: rgb(var(--sci-fi-color-rgb));
+    --statblock-traits-name-font-color: rgb(var(--sci-fi-color-rgb));
+    --statblock-font-color: var(--text-normal);
+    --statblock-rule-color: rgb(var(--sci-fi-color-rgb));
+    --statblock-box-shadow-color: rgba(var(--sci-fi-color-rgb), 0.3);
+
+    .statblock-content.statblock-content {
+        background-image: linear-gradient(135deg, transparent 30%, rgba(var(--sci-fi-color-rgb), 0.05) 100%);
+        background-blend-mode: normal;
+    }
+
+    .line .property-name + .statblock-markdown {
+        font-family: var(--statblock-content-font);
+    }
+}
+
+@container style(--fas-skin-sci-fi: enable) and style(--sci-fi-style-fonts: enable) {
+    .statblock.statblock.statblock {
+        --active-heading-font: "Orbitron", Arial, serif;
+        --active-content-font: "Chakra Petch", ProFont, Arial, serif;
+        --active-property-font: "Orbitron", Arial, serif;
+
+        .line .property-name + .statblock-markdown {
+            font-family: var(--statblock-content-font);
+        }
     }
 }
