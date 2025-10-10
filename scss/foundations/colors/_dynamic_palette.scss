@@ -42,6 +42,8 @@
         --color-base-50: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 50%);
         --color-base-60: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 60%);
         --color-base-70: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 70%);
+        --color-base-80: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 80%);
+        --color-base-90: color-mix(in var(--color-space), var(--color-base-00), var(--color-base-100) 90%);
     }
 
     .is-mobile.theme-#{$tone}.fas-custom-#{$tone},
@@ -76,6 +78,8 @@
     --color-base-50: #{color.mix($text, $primary, $weight: 50%, $method: #{$space})};
     --color-base-60: #{color.mix($text, $primary, $weight: 60%, $method: #{$space})};
     --color-base-70: #{color.mix($text, $primary, $weight: 70%, $method: #{$space})};
+    --color-base-80: #{color.mix($text, $primary, $weight: 80%, $method: #{$space})};
+    --color-base-90: #{color.mix($text, $primary, $weight: 90%, $method: #{$space})};
 
     // Compute the middle color (for headings)
     $tone-modif: (

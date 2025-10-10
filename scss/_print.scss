@@ -5,8 +5,9 @@
 
 // Create the block for custom theme (no mixing)
 @media print {
-    .print {
+    .print > .markdown-preview-view {
         background-color: var(--workleaves-background);
+        color: var(--text-normal);
     }
 
     .print .callout {
@@ -17,9 +18,6 @@
         break-after: avoid;
     }
 
-    .print .markdown-preview-view {
-        color: var(--text-normal);
-    }
     .print .markdown-preview-view mark {
         color: var(--text-normal);
     }

@@ -27,6 +27,8 @@
     --color-base-50: #{color.mix($default-text, $default-primary, $weight: 50%, $method: #{$space})};
     --color-base-60: #{color.mix($default-text, $default-primary, $weight: 60%, $method: #{$space})};
     --color-base-70: #{color.mix($default-text, $default-primary, $weight: 70%, $method: #{$space})};
+    --color-base-80: #{color.mix($default-text, $default-primary, $weight: 80%, $method: #{$space})};
+    --color-base-90: #{color.mix($default-text, $default-primary, $weight: 90%, $method: #{$space})};
 
     @each $color in map.keys(map.get(colors_definitions.$extended-colors, $tone)) {
         $c: helper-functions.map-deep-get(colors_definitions.$extended-colors, $tone, $color);

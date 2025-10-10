@@ -4,6 +4,10 @@ body {
     --nav-item-children-margin-start: 12px;
 }
 
+.theme-light {
+    --nav-item-color: var(--color-base-80);
+}
+
 .nav-file-title {
     padding-block: var(--nav-item-padding-block);
 }
