@@ -412,7 +412,10 @@ settings:
         options:
             - 
                 value: enable
-                label: Enable
+                label: Top level
+            - 
+                value: nested
+                label: Nested levels
             - 
                 value: disable
                 label: Disable

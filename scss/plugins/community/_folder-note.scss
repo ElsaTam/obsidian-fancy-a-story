@@ -1,4 +1,4 @@
-@container style(--fas-rainbow-folders: enable) {
+@container style(--fas-rainbow-folders: enable) or style(--fas-rainbow-folders: nested) {
 	.has-folder-note {
 		color: var(--nav-item-color);
 	}

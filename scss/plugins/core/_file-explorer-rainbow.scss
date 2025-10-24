@@ -28,3 +28,24 @@ body {
 		filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
 	}
 }
+
+@container style(--fas-rainbow-folders: nested) {
+	.nav-folder,
+	[data-type="bookmarks"] .tree-item {
+		&:nth-child(10n + 1) {
+			--folder-color: var(--color-rainbow-10);
+		}
+		@for $i from 2 through 10 {
+			&:nth-child(10n + #{$i}) {
+				--folder-color: var(--color-rainbow-#{$i - 1});
+			}
+		}
+	}
+
+	.nav-folder .nav-folder-title,
+	[data-type="bookmarks"] .tree-item .mod-collapsible {
+		--nav-item-color: var(--folder-color);
+		--nav-item-background-hover: color-mix(in srgb, var(--folder-color), transparent 80%);
+		filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
+	}
+}
