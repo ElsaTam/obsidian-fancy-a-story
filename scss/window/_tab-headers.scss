@@ -23,6 +23,10 @@ body {
     --icon-opacity-hover: 1;
 }
 
+.fas-workspace-foreground-no-fading .mod-root .mod-top .workspace-tab-header-container {
+    --icon-opacity: 1;
+}
+
 @media (hover: hover) {
     // Full opacity when the header container is hovered
     .workspace-tab-header-container:hover {

@@ -4,3 +4,8 @@ body {
     --workspace-foreground-faint: var(--text-faint);
     --workspace-background: var(--background-secondary);
 }
+
+body.fas-workspace-foreground-contrast {
+    --workspace-foreground-muted: var(--text-normal);
+    --workspace-foreground-faint: var(--text-muted);
+}

@@ -40,10 +40,10 @@ body {
         }
     }
 
-	.mod-macos .mod-sidedock .sidebar-toggle-button {
+    .mod-macos .mod-sidedock .sidebar-toggle-button {
         margin-top: var(--workspace-top-margin);
         padding: 0;
-        height: calc(var(--header-height) + 0.5 * var(--cutout-corner-radius, 0))
+        height: calc(var(--header-height) + 0.5 * var(--cutout-corner-radius, 0));
     }
 }
 

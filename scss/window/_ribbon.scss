@@ -12,6 +12,10 @@ body {
     --icon-opacity-hover: 1;
 }
 
+.fas-workspace-foreground-no-fading .workspace-ribbon {
+    --icon-opacity: 1;
+}
+
 @media (hover: hover) {
     .workspace-ribbon:hover {
         --icon-opacity: var(--icon-opacity-hover);

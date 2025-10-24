@@ -62,6 +62,10 @@ body {
     --icon-color-hover: var(--workspace-foreground);
 }
 
+.fas-workspace-foreground-no-fading .mod-sidedock .workspace-tab-header-container {
+    --icon-color: var(--workspace-foreground);
+}
+
 // Mobile
 body:not(.is-ios) .workspace-drawer:is(.mod-left, .mod-right) {
     padding-inline: var(--cutout-outline-inset);

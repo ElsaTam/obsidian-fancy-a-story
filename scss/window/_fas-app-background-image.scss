@@ -115,6 +115,10 @@ body {
                 --vault-profile-color: rgba(var(--mono-rgb-100), 0.6);
                 --vault-profile-color-hover: rgb(var(--mono-rgb-100));
             }
+
+            &.fas-workspace-foreground-no-fading {
+                --vault-profile-color: rgb(var(--mono-rgb-100));
+            }
         }
     }
 }

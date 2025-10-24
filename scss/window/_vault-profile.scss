@@ -5,6 +5,15 @@ body {
     --vault-profile-color-hover: var(--workspace-foreground-muted);
 }
 
+.fas-workspace-foreground-no-fading {
+    --vault-profile-color: var(--workspace-foreground-muted);
+    --vault-profile-color-hover: var(--workspace-foreground-muted);
+
+    .workspace-sidedock-vault-profile {
+        --icon-opacity: 1;
+    }
+}
+
 .workspace-sidedock-vault-profile {
     --icon-color: var(--workspace-foreground-muted);
     --icon-color-hover: var(--workspace-foreground);

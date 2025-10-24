@@ -345,6 +345,18 @@ settings:
             - 
                 label: No
                 value: disable
+    -
+        id: fas-workspace-foreground-contrast
+        title: Use a higher contrast for elements on the workspace background
+        description: Affects vault name, ribbon, tab names, etc.
+        type: class-toggle
+        default: false
+    -
+        id: fas-workspace-foreground-no-fading
+        title: Never fade out elements on the workspace background
+        description: Affects vault name, ribbon, tab names, etc.
+        type: class-toggle
+        default: false
 
 
     -
