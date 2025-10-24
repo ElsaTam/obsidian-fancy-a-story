@@ -357,6 +357,12 @@ settings:
         description: Affects vault name, ribbon, tab names, etc.
         type: class-toggle
         default: false
+    -
+        id: fas-tab-header-inverted
+        title: Invert tab header colors
+        description: Use the primary background for the tabs, and the secondary background for the container
+        type: class-toggle
+        default: false
 
 
     -
