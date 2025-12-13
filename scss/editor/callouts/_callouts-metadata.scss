@@ -78,23 +78,6 @@
     border: none;
 }
 
-.callout[data-callout-metadata~="blank"] {
-    margin: 0;
-    mix-blend-mode: none;
-    border-radius: 0;
-
-    &,
-    > .callout-content {
-        border: none;
-        background: none;
-        padding: 0;
-    }
-
-    > .callout-title {
-        display: none;
-    }
-}
-
 .markdown-preview-view .callout[data-callout-metadata~="wide"] {
     @include wide.wide(0.95);
 
