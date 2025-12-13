@@ -34,7 +34,7 @@ nav_order: 4
 
 | Name | Description | Source |
 |:-----|:------------|:-------|
-| `blank` | Zero styling, no title, no spacing, no border, etc. | [`callout-blank.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-blank.css) |
+| `blank` | Zero styling, no title, no spacing, no border, etc. Also works as a metadata. | [`callout-blank.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-blank.css) |
 | [`full-width-image`]({% link docs/callouts/full-width-image.md %}) | Full width image | [`callout-full-width-image.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-full-width-image.css) |
 | [`grid`]({% link docs/callouts/grid.md %}) | Grid layout | [`callout-grid.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-grid.css) |
 | [`masonry`]({% link docs/callouts/masonry.md %}) | For images, masonry-like layout | [`callout-masonry.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-masonry.css) |

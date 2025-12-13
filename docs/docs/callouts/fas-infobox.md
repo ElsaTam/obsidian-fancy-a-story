@@ -16,6 +16,7 @@ Callout option (`> [!fas-infobox|option1 option2]`)
 - `corners`: add two triangle in the corners
 - `no-thead` or `no-th`: remove table headers
 - `h1-title`: use the ribbon styling for the title (needs to be a heading `# title`)
+- `lp-mini`: reduce the size of the callout in live preview mode when not hovering it. You can also use the cssclass `infobox-lp-mini` to affect all the infobox callouts in a note. Or you have an option in Style Settings to make this the default behavior.
 
 Specific elements inside an infobox
 - `# Header 1`: creates a divider ribbon accross the callout. Can be used in the title.
