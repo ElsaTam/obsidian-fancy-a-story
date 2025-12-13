@@ -303,6 +303,7 @@ $fwi_sel: "";
 @container style(--fas-skin-art-deco: enable) and style(--art-deco-style-callouts: enable) {
     .callout:not(
             :where(
+                [data-callout~="blank"],
                 [data-callout-metadata~="blank"],
                 [data-callout-metadata~="no-deco"],
                 [data-callout="autopsy"],

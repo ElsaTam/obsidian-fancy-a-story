@@ -1,8 +1,11 @@
+.callout[data-callout-metadata~="blank"],
 .callout[data-callout="blank"] {
     margin: 0;
     padding: 0;
+    mix-blend-mode: none;
     border: none;
     background: none;
+    border-radius: 0;
 
     > .callout-content {
         padding: 0;
@@ -10,5 +13,7 @@
         border: none;
     }
 
-    > .callout-title { display: none; }
+    > .callout-title {
+        display: none;
+    }
 }
