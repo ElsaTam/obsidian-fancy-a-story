@@ -854,6 +854,12 @@ settings:
         description: Enable the usage of `infobox` as an alias for `fas-infobox`
         markdown: true
         type: class-toggle
+    - 
+        id: fas-infobox-lp-mini
+        title: Minimize infobox in live preview
+        description: Enable to reduce the size of the `fas-infobox` callout in live preview mode when not hovering it.
+        markdown: false
+        type: class-toggle
     -
         id: callout-default
         title: Default color for callouts

@@ -372,10 +372,19 @@ body {
             float: unset;
             margin-inline: auto;
         }
-    }
 
-    .markdown-source-view .callout[data-callout="#{$type}"] {
-        margin-inline: auto;
+        /* position in live preview */
+        .markdown-source-view .callout[data-callout="#{$type}"][data-callout-metadata~="center"] {
+            margin-inline: auto;
+        }
+        .markdown-source-view .callout[data-callout="#{$type}"][data-callout-metadata~="left"] {
+            margin-right: auto;
+            margin-left: 0;
+        }
+        .markdown-source-view .callout[data-callout="#{$type}"] {
+            margin-left: auto;
+            margin-right: 0;
+        }
     }
 
     /* Color accent */
@@ -418,6 +427,72 @@ body {
             &::before,
             &::after {
                 background-color: color-mix(in srgb, var(--color-accent), rgb(var(--mono-rgb-0)) 20%);
+            }
+        }
+    }
+
+    /* WIP, reduce in live preview (add metadata or CSS class or option) */
+    .fas-infobox-lp-mini .is-live-preview .callout[data-callout="#{$type}"],
+    .infobox-lp-mini.is-live-preview .callout[data-callout="#{$type}"],
+    .is-live-preview .callout[data-callout="#{$type}"][data-callout-metadata~="lp-mini"] {
+        &:not(:hover) {
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            gap: var(--size-2-2);
+            padding: var(--size-2-2);
+
+            &::after {
+                content: none;
+            }
+
+            &::before {
+                content: "🛈";
+                color: rgb(var(--callout-color));
+                position: initial;
+                width: unset;
+                height: unset;
+                background: none;
+                clip-path: none;
+            }
+            > .callout-title {
+                display: contents;
+                background: none;
+                padding: 0;
+                font-size: 12px;
+
+                h1 {
+                    background: none;
+                    color: rgb(var(--callout-color));
+                    width: unset;
+                    margin-inline: unset;
+                    padding-inline: unset;
+
+                    &::before,
+                    &::after {
+                        content: none;
+                    }
+                }
+
+                .callout-title-inner {
+                    flex-grow: unset;
+                    font-weight: unset;
+                }
+
+                .callout-fold {
+                    position: initial;
+                    transform: none;
+                }
+            }
+            > .callout-content {
+                display: none;
+            }
+        }
+        &:hover {
+            > .callout-content {
+                min-height: 200px;
+                height: 20cqh;
+                overflow-y: auto;
             }
         }
     }
