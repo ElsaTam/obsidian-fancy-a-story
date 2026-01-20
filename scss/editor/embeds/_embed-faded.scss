@@ -1,31 +1,14 @@
-@forward '../../shared/file-margins';
-
-@scope (:is(.markdown-source-view, .markdown-preview-view) .markdown-embed[alt~="faded"]) to (.markdown-embed) {
-    :scope {
-        border-inline-start: none;
-        border-inline-end: none;
-        border-block-start: none;
-        border-block-end: none;
-        padding: 0;
-        --embed-opacity-loss: 0.3;
-    }
+.markdown-embed[alt~="faded"] {
+    border-inline-start: none;
+    border-inline-end: none;
+    border-block-start: none;
+    border-block-end: none;
 
     .embed-title {
         display: none;
     }
-    
-    // block embeds
-    .markdown-embed-link {
-        position: absolute;
-        right: calc(-1 * var(--file-margins-inline));
-        top: 0;
-    }
 
-    :scope .markdown-embed-content {
-        max-height: unset;
-    }
-
-    :is(:scope, .markdown-embed):hover {
-        background-color: var(--background-modifier-hover);
+    & > .markdown-embed-content > .markdown-preview-view {
+        padding: 0;
     }
 }
