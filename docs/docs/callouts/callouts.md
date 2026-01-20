@@ -16,6 +16,7 @@ nav_order: 4
 | [`clue`]({% link docs/callouts/clue.md %}) | That good ol' clue you pin on the wall with a tape | [`callout-clue.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-clue.css) |
 | [`comic`]({% link docs/callouts/comic.md %}) | Comic strip | [`callout-comic.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-comic.css) |
 | [`conversation` and variants]({% link docs/callouts/conversation.md %}) | Conversation between two people | [`callout-conversation.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-conversation.css) |
+| [`data-header`]({% link docs/callouts/data-header.md %}) | Add data in callout's header | [`callout-data-header.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-data-header.css) |
 | [`email`]({% link docs/callouts/email.md %}) | Email look | [`callout-email.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-email.css) |
 | [`fas-infobox`]({% link docs/callouts/fas-infobox.md %}) | Infobox | Source: [`callout-fas-infobox.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-fas-infobox.css) |
 | [`film-strip`]({% link docs/callouts/film-strip.md %}) | Create a film strip from several images | [`callout-film-strip.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callout-film-strip.css) |
