@@ -26,7 +26,7 @@ For the icon, add an embed image with the `icon` alt text *inside* the callout. 
 > A single slurk, the former guardian and only ...
 ```
 
-[![]({% link images/callouts/data-header-1.webp %}){: width="250" }]({% link images/callouts/data-header-1.webp %})
+[![]({% link images/callouts/data-header-1.webp %})]({% link images/callouts/data-header-1.webp %})
 
 ---
 
@@ -50,5 +50,5 @@ Use a nested callout `header` with an image and a table inside its content. This
 > A single slurk, the former guardian and only ...
 ```
 
-[![]({% link images/callouts/data-header-2.webp %}){: width="250" }]({% link images/callouts/data-header-2.webp %})
+[![]({% link images/callouts/data-header-2.webp %})]({% link images/callouts/data-header-2.webp %})
 
