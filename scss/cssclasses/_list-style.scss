@@ -1,0 +1,9 @@
+@use "bullet-threading";
+@use "family-tree";
+@use "list-reversed";
+@use "tree-view";
+
+body,
+.normal-list {
+    --fas-list-style: normal;
+}

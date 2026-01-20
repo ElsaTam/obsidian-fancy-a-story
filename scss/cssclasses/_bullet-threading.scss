@@ -1,0 +1,58 @@
+// Inspiration taken from:
+// - https://gist.github.com/itsonlyjames/6d149fa636ac0bc9e278e2eab0826257
+// - https://github.com/pengx17/logseq-dev-theme (MIT License)
+// - https://discord.com/channels/686053708261228577/702656734631821413/1255006024801456271
+
+body {
+    --bullet-threading-color: var(--color-accent);
+    --fas-list-style: normal;
+}
+
+.bullet-threading {
+    --fas-list-style: bullet-threading;
+}
+
+@container style(--fas-rainbow-lists: enable) {
+    li {
+        --bullet-threading-color: var(--list-marker-color);
+    }
+}
+
+@container style(--fas-list-style: bullet-threading) {
+    .markdown-rendered {
+        li {
+            position: relative;
+        }
+
+        /* In-between items */
+        li:hover > * > li:not(li:hover ~ li):not(:hover)::before {
+            content: "\200B";
+            position: absolute;
+            display: block;
+            top: calc(-0.5em * var(--line-height-normal) - var(--tree-view-guide-width) * 0.5);
+            bottom: 0;
+
+            pointer-events: none;
+            width: 0px;
+            border-inline-end: var(--tree-view-guide-width) solid var(--bullet-threading-color);
+
+            left: calc(-1 * var(--list-indent) + var(--indentation-guide-reading-indent));
+            z-index: -1;
+        }
+
+        li li:hover::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: calc(-0.5em * var(--line-height-normal) - var(--tree-view-guide-width) * 0.5);
+            left: calc(-1 * var(--list-indent) + var(--indentation-guide-reading-indent));
+            width: calc(var(--list-indent) + 2px);
+            height: calc(1em * var(--line-height-normal));
+            border: solid var(--bullet-threading-color);
+            border-width: 0 0 var(--tree-view-guide-width) var(--tree-view-guide-width);
+            border-bottom-left-radius: var(--radius-m);
+            pointer-events: none;
+            z-index: -1;
+        }
+    }
+}

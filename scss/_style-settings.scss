@@ -1635,6 +1635,28 @@ settings:
             - 
                 value: disable
                 label: Disable
+    - 
+        id: fas-list-style
+        title: List styling
+        type: variable-select
+        description: Change the way bullet lists are displayed in reading mode.
+        default: normal
+        options:
+            - 
+                value: normal
+                label: Normal
+            - 
+                value: bullet-threading
+                label: Bullet threading
+            - 
+                value: tree-view
+                label: Tree view
+    -
+        id: tree-view-guide-width
+        title: Tree view/Bullet threading guide width
+        type: variable-number
+        default: 2
+        format: px
             
     - 
         id: pdfs
