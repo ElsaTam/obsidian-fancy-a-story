@@ -19,13 +19,16 @@ Author: ElsaTam (Kapirklaa in Discord)
   --image-shadow-offset: 0px;
   --p-spacing: 0;
   --tag-background: hsla(var(--interactive-accent-hsl), 0.4);
-  --tag-color: color-mix(var(--text-accent), var(--mono-rgb-0) 30%);
-  margin-block: 0;
-  margin-left: -24px;
-  margin-right: -12px;
+  --tag-color: color-mix(
+      in srgb,
+      var(--text-accent),
+      rgb(var(--mono-rgb-0)) 60%
+  );
+  margin-bottom: 0;
+  margin-top: calc(0px - var(--callout-border-width));
+  margin-left: calc(-24px - var(--callout-border-width));
+  margin-right: calc(-12px - var(--callout-border-width));
   overflow: visible;
-  border-top: none;
-  border-inline: none;
   color: var(--color-base-00);
   background: linear-gradient(to right, rgb(var(--callout-color)), rgba(var(--callout-color), 0.8));
 }
@@ -60,7 +63,11 @@ Author: ElsaTam (Kapirklaa in Discord)
 
 .callout[data-callout=data-header][data-callout-metadata~=pf2] .callout-title {
   --tag-background: hsla(var(--interactive-accent-hsl), 0.4);
-  --tag-color: color-mix(var(--text-accent), var(--mono-rgb-0) 30%);
+  --tag-color: color-mix(
+      in srgb,
+      var(--text-accent),
+      rgb(var(--mono-rgb-0)) 60%
+  );
   display: block;
   background: linear-gradient(to right, rgb(var(--callout-color)), rgba(var(--callout-color), 0.8));
   color: var(--color-base-00);
@@ -123,3 +130,25 @@ Author: ElsaTam (Kapirklaa in Discord)
 .callout[data-callout=data-header][data-callout-metadata~=pf2][data-callout-metadata~=accent] img[alt~=icon] {
   border-color: var(--color-accent);
 }
+
+/* Fixes for themes */
+/* ITS */ /*
+.callout[data-callout=data-header] .callout[data-callout=header] {
+    --table-header-background: transparent;
+    --table-column-alt-background: transparent;
+    --table-row-background: transparent;
+    --table-row-alt-background: transparent;
+
+    margin-inline: -16px;
+    margin-top: -12px;
+}
+
+.callout[data-callout=data-header][data-callout-metadata~=pf2] {
+    --callout-title-padding: 12px 16px;
+    --callout-content-padding: 12px 16px;
+    padding: 0;
+
+    > .callout-content {
+        padding: var(--callout-content-padding);
+    }
+}/**/
