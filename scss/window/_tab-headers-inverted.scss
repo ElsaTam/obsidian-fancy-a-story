@@ -1,8 +1,22 @@
+.fas-tab-header-inverted {
+    --titlebar-text-color-focused: var(--color-base-50);
+}
 .fas-tab-header-inverted .mod-root .workspace-tab-header-container {
     --tab-container-background: var(--workspace-background);
+    --tab-text-color-focused-active-current: var(--text-normal);
 }
 .fas-tab-header-inverted .workspace .mod-root .workspace-tab-header {
     padding-bottom: 0;
+}
+.fas-tab-header-inverted.is-hidden-frameless:not(.is-fullscreen)
+    .mod-root
+    .workspace-tab-header:not(.is-active)
+    .workspace-tab-header-inner,
+.fas-tab-header-inverted:not(.is-frameless)
+    .mod-root
+    .workspace-tab-header:not(.is-active)
+    .workspace-tab-header-inner {
+    padding-top: 0;
 }
 @scope (.fas-tab-header-inverted .mod-root .workspace-tabs:not(.mod-stacked)) {
     .is-active .workspace-tab-header-inner {
@@ -29,4 +43,7 @@
     .workspace:not(.is-right-sidedock-open)
     > .mod-root::before {
     background-color: var(--workspace-background);
+}
+.fas-tab-header-inverted.is-frameless.is-hidden-frameless .titlebar {
+    height: calc(var(--header-height) + var(--workspace-top-margin));
 }

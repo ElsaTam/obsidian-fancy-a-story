@@ -54,7 +54,7 @@ body {
                 --icon-opacity: var(--icon-opacity-inactive);
             }
 
-            .workspace-tab-header.is-active:hover {
+            .workspace-tab-header-container .workspace-tab-header:is(.has-active-menu, .is-active):hover {
                 background-color: var(--color-accent-1);
             }
         }

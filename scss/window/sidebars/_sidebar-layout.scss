@@ -60,6 +60,7 @@ body {
 .mod-sidedock .workspace-tab-header-container {
     --icon-color: var(--workspace-foreground-muted);
     --icon-color-hover: var(--workspace-foreground);
+    --icon-color-focused: var(--workspace-foreground-muted);
 }
 
 .fas-workspace-foreground-no-fading .mod-sidedock .workspace-tab-header-container {
@@ -136,12 +137,12 @@ body:not(.is-ios) .workspace-drawer::before {
 }
 
 // Match the background for the active tab header
-.mod-sidedock .workspace-tab-header.is-active {
+.mod-sidedock .workspace-tab-header-container .workspace-tab-header:is(.has-active-menu, .is-active) {
     background-color: var(--workleaves-background);
 }
 
 @media (hover: hover) {
-    .mod-sidedock .workspace-tab-header.is-active:hover {
+    .mod-sidedock .workspace-tab-header-container .workspace-tab-header:is(.has-active-menu, .is-active):hover {
         background-color: var(--workleaves-background);
     }
 }
