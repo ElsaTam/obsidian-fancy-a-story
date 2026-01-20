@@ -40,6 +40,8 @@ body {
       163.2, 40.8, 77.52;
 }
 
+@media print {
+}
 .theme-dark {
   --color-rainbow-1: hsl(0, 100%, 84%);
   --color-rainbow-1-rgb:
@@ -73,6 +75,8 @@ body {
       255, 168.3, 220.32;
 }
 
+@media print {
+}
 body {
   --fas-rainbow-folders: enable;
 }
@@ -133,6 +137,54 @@ body {
     --folder-color: inherit;
   }
   .nav-files-container > div > .nav-folder .nav-folder-title,
+  [data-type=bookmarks] .tree-item .mod-collapsible {
+    --nav-item-color: var(--folder-color);
+    --nav-item-background-hover: color-mix(in srgb, var(--folder-color), transparent 80%);
+    filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
+  }
+}
+@container style(--fas-rainbow-folders: nested) {
+  .nav-folder:nth-child(10n+1),
+  [data-type=bookmarks] .tree-item:nth-child(10n+1) {
+    --folder-color: var(--color-rainbow-10);
+  }
+  .nav-folder:nth-child(10n+2),
+  [data-type=bookmarks] .tree-item:nth-child(10n+2) {
+    --folder-color: var(--color-rainbow-1);
+  }
+  .nav-folder:nth-child(10n+3),
+  [data-type=bookmarks] .tree-item:nth-child(10n+3) {
+    --folder-color: var(--color-rainbow-2);
+  }
+  .nav-folder:nth-child(10n+4),
+  [data-type=bookmarks] .tree-item:nth-child(10n+4) {
+    --folder-color: var(--color-rainbow-3);
+  }
+  .nav-folder:nth-child(10n+5),
+  [data-type=bookmarks] .tree-item:nth-child(10n+5) {
+    --folder-color: var(--color-rainbow-4);
+  }
+  .nav-folder:nth-child(10n+6),
+  [data-type=bookmarks] .tree-item:nth-child(10n+6) {
+    --folder-color: var(--color-rainbow-5);
+  }
+  .nav-folder:nth-child(10n+7),
+  [data-type=bookmarks] .tree-item:nth-child(10n+7) {
+    --folder-color: var(--color-rainbow-6);
+  }
+  .nav-folder:nth-child(10n+8),
+  [data-type=bookmarks] .tree-item:nth-child(10n+8) {
+    --folder-color: var(--color-rainbow-7);
+  }
+  .nav-folder:nth-child(10n+9),
+  [data-type=bookmarks] .tree-item:nth-child(10n+9) {
+    --folder-color: var(--color-rainbow-8);
+  }
+  .nav-folder:nth-child(10n+10),
+  [data-type=bookmarks] .tree-item:nth-child(10n+10) {
+    --folder-color: var(--color-rainbow-9);
+  }
+  .nav-folder .nav-folder-title,
   [data-type=bookmarks] .tree-item .mod-collapsible {
     --nav-item-color: var(--folder-color);
     --nav-item-background-hover: color-mix(in srgb, var(--folder-color), transparent 80%);

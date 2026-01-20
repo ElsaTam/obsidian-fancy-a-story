@@ -65,6 +65,7 @@ body {
 .mod-sidedock .workspace-tab-header-container {
   --icon-color: var(--workspace-foreground-muted);
   --icon-color-hover: var(--workspace-foreground);
+  --icon-color-focused: var(--workspace-foreground-muted);
 }
 
 body:not(.is-ios) .workspace-drawer:is(.mod-left, .mod-right) {
@@ -116,12 +117,12 @@ body:not(.is-ios) .workspace-drawer::before {
   padding-right: calc(12px + var(--size-4-2));
 }
 
-.mod-sidedock .workspace-tab-header.is-active {
+.mod-sidedock .workspace-tab-header-container .workspace-tab-header:is(.has-active-menu, .is-active) {
   background-color: var(--workleaves-background);
 }
 
 @media (hover: hover) {
-  .mod-sidedock .workspace-tab-header.is-active:hover {
+  .mod-sidedock .workspace-tab-header-container .workspace-tab-header:is(.has-active-menu, .is-active):hover {
     background-color: var(--workleaves-background);
   }
 }

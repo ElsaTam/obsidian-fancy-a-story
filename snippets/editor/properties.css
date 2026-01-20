@@ -37,8 +37,9 @@ body {
   background: linear-gradient(to right, transparent, var(--workleaves-background) var(--heading-padding-inline), var(--workleaves-background) calc(100% - var(--heading-padding-inline)), transparent 100%);
   background-size: 100% 5px;
   background-repeat: no-repeat;
-  background-position: center calc(50% + 1px);
+  background-position: center 50%;
   padding-inline: var(--heading-padding-inline);
+  z-index: 10;
 }
 
 .workspace > .workspace-split:not(.mod-root) [data-type=markdown] .metadata-container {

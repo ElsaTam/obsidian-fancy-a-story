@@ -72,6 +72,7 @@ body {
   position: absolute;
   background: var(--cutout-border-background);
   inset: var(--cutout-outline-inset);
+  pointer-events: none;
   clip-path: polygon(0 var(--cutout-corner-angle), var(--cutout-corner-angle) 0, calc(100% - var(--cutout-corner-angle)) 0, 100% var(--cutout-corner-angle), 100% calc(100% - var(--cutout-corner-angle)), calc(100% - var(--cutout-corner-angle)) 100%, var(--cutout-corner-angle) 100%, 0 calc(100% - var(--cutout-corner-angle)), 0 var(--cutout-corner-angle), var(--cutout-outline-thickness) calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5), var(--cutout-outline-thickness) calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5), calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5) calc(100% - var(--cutout-outline-thickness)), calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5) calc(100% - var(--cutout-outline-thickness)), calc(100% - var(--cutout-outline-thickness)) calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5), calc(100% - var(--cutout-outline-thickness)) calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5), calc(100% - var(--cutout-corner-angle) - var(--cutout-outline-thickness) * 0.5) var(--cutout-outline-thickness), calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5) var(--cutout-outline-thickness), var(--cutout-outline-thickness) calc(var(--cutout-corner-angle) + var(--cutout-outline-thickness) * 0.5));
 }
 

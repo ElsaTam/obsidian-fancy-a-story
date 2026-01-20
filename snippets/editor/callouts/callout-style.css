@@ -24,9 +24,12 @@ body {
   border-top: var(--callout-border-width) dashed rgba(var(--callout-color), var(--callout-border-opacity));
 }
 
+[data-callout-metadata~=accent] {
+  border-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), var(--callout-border-opacity));
+}
 [data-callout-metadata~=accent] > .callout-title {
-  background: linear-gradient(to right, hsl(var(--accent-h) var(--accent-s) var(--accent-l)/0.1), transparent);
+  background: linear-gradient(to right, hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1), transparent);
 }
 [data-callout-metadata~=accent] > .callout-content {
-  border-top: var(--callout-border-width) dashed hsl(var(--accent-h) var(--accent-s) var(--accent-l)/var(--callout-border-opacity));
+  border-top: var(--callout-border-width) dashed hsl(var(--accent-h), var(--accent-s), var(--accent-l), var(--callout-border-opacity));
 }

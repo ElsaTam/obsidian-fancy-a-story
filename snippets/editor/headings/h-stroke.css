@@ -17,710 +17,799 @@ body {
   --h6-border-color-collapsed: var(--collapse-icon-color-collapsed);
 }
 
-:is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h1-display,
-.h1-display-left-aligned) h1,
-.markdown-preview-view:is(.h1-stroke, .h1-stroke-left-aligned) h1 {
-  --h1-weight: var(--font-extralight);
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-:is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h1-display,
-.h1-display-left-aligned) h1::before,
-.markdown-preview-view:is(.h1-stroke, .h1-stroke-left-aligned) h1::before {
-  content: "";
-  display: block;
-  background-color: var(--h1-border-color);
-  height: 1px;
-}
-:is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h1-display,
-.h1-display-left-aligned) h1::after,
-.markdown-preview-view:is(.h1-stroke, .h1-stroke-left-aligned) h1::after {
-  content: "";
-  display: block;
-  flex-grow: 1;
-  background-color: var(--h1-border-color);
-  height: 1px;
-}
-:is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h1-display,
-.h1-display-left-aligned) h1:is(.is-collapsed > h1)::before, :is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h1-display,
-.h1-display-left-aligned) h1:is(.is-collapsed > h1)::after,
-.markdown-preview-view:is(.h1-stroke, .h1-stroke-left-aligned) h1:is(.is-collapsed > h1)::before,
-.markdown-preview-view:is(.h1-stroke, .h1-stroke-left-aligned) h1:is(.is-collapsed > h1)::after {
-  background-color: var(--h1-border-color-collapsed);
-}
-
-.markdown-preview-view.h1-stroke h1::before {
-  flex-grow: 1;
-}
-
-.markdown-preview-view.h1-stroke-left-aligned h1::before {
-  flex-grow: 0;
-  flex-basis: 10px;
-}
-
-:is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h2-display,
-.h2-display-left-aligned) h2,
-.markdown-preview-view:is(.h2-stroke, .h2-stroke-left-aligned) h2 {
-  --h2-weight: var(--font-extralight);
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-:is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h2-display,
-.h2-display-left-aligned) h2::before,
-.markdown-preview-view:is(.h2-stroke, .h2-stroke-left-aligned) h2::before {
-  content: "";
-  display: block;
-  background-color: var(--h2-border-color);
-  height: 1px;
-}
-:is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h2-display,
-.h2-display-left-aligned) h2::after,
-.markdown-preview-view:is(.h2-stroke, .h2-stroke-left-aligned) h2::after {
-  content: "";
-  display: block;
-  flex-grow: 1;
-  background-color: var(--h2-border-color);
-  height: 1px;
-}
-:is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h2-display,
-.h2-display-left-aligned) h2:is(.is-collapsed > h2)::before, :is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h2-display,
-.h2-display-left-aligned) h2:is(.is-collapsed > h2)::after,
-.markdown-preview-view:is(.h2-stroke, .h2-stroke-left-aligned) h2:is(.is-collapsed > h2)::before,
-.markdown-preview-view:is(.h2-stroke, .h2-stroke-left-aligned) h2:is(.is-collapsed > h2)::after {
-  background-color: var(--h2-border-color-collapsed);
-}
-
-.markdown-preview-view.h2-stroke h2::before {
-  flex-grow: 1;
-}
-
-.markdown-preview-view.h2-stroke-left-aligned h2::before {
-  flex-grow: 0;
-  flex-basis: 10px;
-}
-
-:is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h3-display,
-.h3-display-left-aligned) h3,
-.markdown-preview-view:is(.h3-stroke, .h3-stroke-left-aligned) h3 {
-  --h3-weight: var(--font-extralight);
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-:is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h3-display,
-.h3-display-left-aligned) h3::before,
-.markdown-preview-view:is(.h3-stroke, .h3-stroke-left-aligned) h3::before {
-  content: "";
-  display: block;
-  background-color: var(--h3-border-color);
-  height: 1px;
-}
-:is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h3-display,
-.h3-display-left-aligned) h3::after,
-.markdown-preview-view:is(.h3-stroke, .h3-stroke-left-aligned) h3::after {
-  content: "";
-  display: block;
-  flex-grow: 1;
-  background-color: var(--h3-border-color);
-  height: 1px;
-}
-:is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h3-display,
-.h3-display-left-aligned) h3:is(.is-collapsed > h3)::before, :is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h3-display,
-.h3-display-left-aligned) h3:is(.is-collapsed > h3)::after,
-.markdown-preview-view:is(.h3-stroke, .h3-stroke-left-aligned) h3:is(.is-collapsed > h3)::before,
-.markdown-preview-view:is(.h3-stroke, .h3-stroke-left-aligned) h3:is(.is-collapsed > h3)::after {
-  background-color: var(--h3-border-color-collapsed);
-}
-
-.markdown-preview-view.h3-stroke h3::before {
-  flex-grow: 1;
-}
-
-.markdown-preview-view.h3-stroke-left-aligned h3::before {
-  flex-grow: 0;
-  flex-basis: 10px;
-}
-
-:is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h4-display,
-.h4-display-left-aligned) h4,
-.markdown-preview-view:is(.h4-stroke, .h4-stroke-left-aligned) h4 {
-  --h4-weight: var(--font-extralight);
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-:is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h4-display,
-.h4-display-left-aligned) h4::before,
-.markdown-preview-view:is(.h4-stroke, .h4-stroke-left-aligned) h4::before {
-  content: "";
-  display: block;
-  background-color: var(--h4-border-color);
-  height: 1px;
-}
-:is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h4-display,
-.h4-display-left-aligned) h4::after,
-.markdown-preview-view:is(.h4-stroke, .h4-stroke-left-aligned) h4::after {
-  content: "";
-  display: block;
-  flex-grow: 1;
-  background-color: var(--h4-border-color);
-  height: 1px;
-}
-:is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h4-display,
-.h4-display-left-aligned) h4:is(.is-collapsed > h4)::before, :is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h4-display,
-.h4-display-left-aligned) h4:is(.is-collapsed > h4)::after,
-.markdown-preview-view:is(.h4-stroke, .h4-stroke-left-aligned) h4:is(.is-collapsed > h4)::before,
-.markdown-preview-view:is(.h4-stroke, .h4-stroke-left-aligned) h4:is(.is-collapsed > h4)::after {
-  background-color: var(--h4-border-color-collapsed);
-}
-
-.markdown-preview-view.h4-stroke h4::before {
-  flex-grow: 1;
-}
-
-.markdown-preview-view.h4-stroke-left-aligned h4::before {
-  flex-grow: 0;
-  flex-basis: 10px;
-}
-
-:is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h5-display,
-.h5-display-left-aligned) h5,
-.markdown-preview-view:is(.h5-stroke, .h5-stroke-left-aligned) h5 {
-  --h5-weight: var(--font-extralight);
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-:is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h5-display,
-.h5-display-left-aligned) h5::before,
-.markdown-preview-view:is(.h5-stroke, .h5-stroke-left-aligned) h5::before {
-  content: "";
-  display: block;
-  background-color: var(--h5-border-color);
-  height: 1px;
-}
-:is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h5-display,
-.h5-display-left-aligned) h5::after,
-.markdown-preview-view:is(.h5-stroke, .h5-stroke-left-aligned) h5::after {
-  content: "";
-  display: block;
-  flex-grow: 1;
-  background-color: var(--h5-border-color);
-  height: 1px;
-}
-:is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h5-display,
-.h5-display-left-aligned) h5:is(.is-collapsed > h5)::before, :is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h5-display,
-.h5-display-left-aligned) h5:is(.is-collapsed > h5)::after,
-.markdown-preview-view:is(.h5-stroke, .h5-stroke-left-aligned) h5:is(.is-collapsed > h5)::before,
-.markdown-preview-view:is(.h5-stroke, .h5-stroke-left-aligned) h5:is(.is-collapsed > h5)::after {
-  background-color: var(--h5-border-color-collapsed);
-}
-
-.markdown-preview-view.h5-stroke h5::before {
-  flex-grow: 1;
-}
-
-.markdown-preview-view.h5-stroke-left-aligned h5::before {
-  flex-grow: 0;
-  flex-basis: 10px;
-}
-
-:is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h6-display,
-.h6-display-left-aligned) h6,
-.markdown-preview-view:is(.h6-stroke, .h6-stroke-left-aligned) h6 {
-  --h6-weight: var(--font-extralight);
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-:is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h6-display,
-.h6-display-left-aligned) h6::before,
-.markdown-preview-view:is(.h6-stroke, .h6-stroke-left-aligned) h6::before {
-  content: "";
-  display: block;
-  background-color: var(--h6-border-color);
-  height: 1px;
-}
-:is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h6-display,
-.h6-display-left-aligned) h6::after,
-.markdown-preview-view:is(.h6-stroke, .h6-stroke-left-aligned) h6::after {
-  content: "";
-  display: block;
-  flex-grow: 1;
-  background-color: var(--h6-border-color);
-  height: 1px;
-}
-:is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h6-display,
-.h6-display-left-aligned) h6:is(.is-collapsed > h6)::before, :is .markdown-preview-view:not(.newspaper,
-.movie-script,
-.minimalist,
-.h6-display,
-.h6-display-left-aligned) h6:is(.is-collapsed > h6)::after,
-.markdown-preview-view:is(.h6-stroke, .h6-stroke-left-aligned) h6:is(.is-collapsed > h6)::before,
-.markdown-preview-view:is(.h6-stroke, .h6-stroke-left-aligned) h6:is(.is-collapsed > h6)::after {
-  background-color: var(--h6-border-color-collapsed);
-}
-
-.markdown-preview-view.h6-stroke h6::before {
-  flex-grow: 1;
-}
-
-.markdown-preview-view.h6-stroke-left-aligned h6::before {
-  flex-grow: 0;
-  flex-basis: 10px;
+body {
+  --fas-h1-stroke: disable;
+  --fas-h1-stroke-left-aligned: disable;
 }
 
 .h1-stroke {
-  --h1-stroke-alignment: center;
-  --h1-stroke-left-anchor: 20px;
-  --h1-stroke-padding-left: 0px;
+  --fas-h1-stroke: enable;
 }
 
 .h1-stroke-left-aligned {
-  --h1-stroke-alignment: left;
-  --h1-stroke-left-anchor: -10px;
-  --h1-stroke-padding-left: 30px;
+  --fas-h1-stroke-left-aligned: enable;
 }
 
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned) .HyperMD-header-1,
-.is-live-preview:is(.h1-stroke, .h1-stroke-left-aligned) .HyperMD-header-1 {
-  --h1-weight: var(--font-extralight);
-  text-align: var(--h1-stroke-alignment);
+@container style(--fas-h1-stroke: enable) {
+  :is(.markdown-preview-view, .is-live-preview) > * {
+    --h1-stroke-alignment: center;
+    --h1-stroke-flex-grow: 1;
+    --h1-stroke-flex-basis: unset;
+    --h1-stroke-left-anchor: 20px;
+    --h1-stroke-padding-left: 0px;
+  }
 }
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned) .HyperMD-header-1 > span:first-of-type,
-.is-live-preview:is(.h1-stroke, .h1-stroke-left-aligned) .HyperMD-header-1 > span:first-of-type {
-  anchor-name: --header-anchor-left;
+@container style(--fas-h1-stroke-left-aligned: enable) {
+  :is(.markdown-preview-view, .is-live-preview) > * {
+    --h1-stroke-alignment: left;
+    --h1-stroke-flex-grow: 0;
+    --h1-stroke-flex-basis: 10px;
+    --h1-stroke-left-anchor: -10px;
+    --h1-stroke-padding-left: 30px;
+  }
 }
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned) .HyperMD-header-1 :nth-last-child(1 of .cm-header-1),
-.is-live-preview:is(.h1-stroke, .h1-stroke-left-aligned) .HyperMD-header-1 :nth-last-child(1 of .cm-header-1) {
-  anchor-name: --header-anchor-right;
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned) .HyperMD-header-1 .cm-header-1,
-.is-live-preview:is(.h1-stroke, .h1-stroke-left-aligned) .HyperMD-header-1 .cm-header-1 {
-  padding-left: var(--h1-stroke-padding-left);
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned) .HyperMD-header-1 .cm-header-1::before, :is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned) .HyperMD-header-1 .cm-header-1::after,
-.is-live-preview:is(.h1-stroke, .h1-stroke-left-aligned) .HyperMD-header-1 .cm-header-1::before,
-.is-live-preview:is(.h1-stroke, .h1-stroke-left-aligned) .HyperMD-header-1 .cm-header-1::after {
-  content: "";
-  position: absolute;
-  bottom: 0.5em;
-  display: block;
-  background-color: var(--h1-border-color);
-  height: 1px;
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned) .HyperMD-header-1 .cm-header-1::before,
-.is-live-preview:is(.h1-stroke, .h1-stroke-left-aligned) .HyperMD-header-1 .cm-header-1::before {
-  position-anchor: --header-anchor-left;
-  left: 0;
-  right: calc(anchor(left) + var(--h1-stroke-left-anchor));
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned) .HyperMD-header-1 .cm-header-1::after,
-.is-live-preview:is(.h1-stroke, .h1-stroke-left-aligned) .HyperMD-header-1 .cm-header-1::after {
-  position-anchor: --header-anchor-right;
-  right: 0;
-  left: calc(anchor(right) + 20px);
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned) .HyperMD-header-1 .is-collapsed ~ .cm-header-1::before, :is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned) .HyperMD-header-1 .is-collapsed ~ .cm-header-1::after,
-.is-live-preview:is(.h1-stroke, .h1-stroke-left-aligned) .HyperMD-header-1 .is-collapsed ~ .cm-header-1::before,
-.is-live-preview:is(.h1-stroke, .h1-stroke-left-aligned) .HyperMD-header-1 .is-collapsed ~ .cm-header-1::after {
-  background-color: var(--h1-border-color-collapsed);
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned) .HyperMD-header-1 .is-collapsed ~ .cm-header-1::after,
-.is-live-preview:is(.h1-stroke, .h1-stroke-left-aligned) .HyperMD-header-1 .is-collapsed ~ .cm-header-1::after {
-  left: calc(anchor(right) + 20px + 1ch);
+body {
+  --fas-h2-stroke: disable;
+  --fas-h2-stroke-left-aligned: disable;
 }
 
 .h2-stroke {
-  --h2-stroke-alignment: center;
-  --h2-stroke-left-anchor: 20px;
-  --h2-stroke-padding-left: 0px;
+  --fas-h2-stroke: enable;
 }
 
 .h2-stroke-left-aligned {
-  --h2-stroke-alignment: left;
-  --h2-stroke-left-anchor: -10px;
-  --h2-stroke-padding-left: 30px;
+  --fas-h2-stroke-left-aligned: enable;
 }
 
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned) .HyperMD-header-2,
-.is-live-preview:is(.h2-stroke, .h2-stroke-left-aligned) .HyperMD-header-2 {
-  --h2-weight: var(--font-extralight);
-  text-align: var(--h2-stroke-alignment);
+@container style(--fas-h2-stroke: enable) {
+  :is(.markdown-preview-view, .is-live-preview) > * {
+    --h2-stroke-alignment: center;
+    --h2-stroke-flex-grow: 1;
+    --h2-stroke-flex-basis: unset;
+    --h2-stroke-left-anchor: 20px;
+    --h2-stroke-padding-left: 0px;
+  }
 }
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned) .HyperMD-header-2 > span:first-of-type,
-.is-live-preview:is(.h2-stroke, .h2-stroke-left-aligned) .HyperMD-header-2 > span:first-of-type {
-  anchor-name: --header-anchor-left;
+@container style(--fas-h2-stroke-left-aligned: enable) {
+  :is(.markdown-preview-view, .is-live-preview) > * {
+    --h2-stroke-alignment: left;
+    --h2-stroke-flex-grow: 0;
+    --h2-stroke-flex-basis: 10px;
+    --h2-stroke-left-anchor: -10px;
+    --h2-stroke-padding-left: 30px;
+  }
 }
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned) .HyperMD-header-2 :nth-last-child(1 of .cm-header-2),
-.is-live-preview:is(.h2-stroke, .h2-stroke-left-aligned) .HyperMD-header-2 :nth-last-child(1 of .cm-header-2) {
-  anchor-name: --header-anchor-right;
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned) .HyperMD-header-2 .cm-header-2,
-.is-live-preview:is(.h2-stroke, .h2-stroke-left-aligned) .HyperMD-header-2 .cm-header-2 {
-  padding-left: var(--h2-stroke-padding-left);
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned) .HyperMD-header-2 .cm-header-2::before, :is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned) .HyperMD-header-2 .cm-header-2::after,
-.is-live-preview:is(.h2-stroke, .h2-stroke-left-aligned) .HyperMD-header-2 .cm-header-2::before,
-.is-live-preview:is(.h2-stroke, .h2-stroke-left-aligned) .HyperMD-header-2 .cm-header-2::after {
-  content: "";
-  position: absolute;
-  bottom: 0.5em;
-  display: block;
-  background-color: var(--h2-border-color);
-  height: 1px;
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned) .HyperMD-header-2 .cm-header-2::before,
-.is-live-preview:is(.h2-stroke, .h2-stroke-left-aligned) .HyperMD-header-2 .cm-header-2::before {
-  position-anchor: --header-anchor-left;
-  left: 0;
-  right: calc(anchor(left) + var(--h2-stroke-left-anchor));
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned) .HyperMD-header-2 .cm-header-2::after,
-.is-live-preview:is(.h2-stroke, .h2-stroke-left-aligned) .HyperMD-header-2 .cm-header-2::after {
-  position-anchor: --header-anchor-right;
-  right: 0;
-  left: calc(anchor(right) + 20px);
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned) .HyperMD-header-2 .is-collapsed ~ .cm-header-2::before, :is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned) .HyperMD-header-2 .is-collapsed ~ .cm-header-2::after,
-.is-live-preview:is(.h2-stroke, .h2-stroke-left-aligned) .HyperMD-header-2 .is-collapsed ~ .cm-header-2::before,
-.is-live-preview:is(.h2-stroke, .h2-stroke-left-aligned) .HyperMD-header-2 .is-collapsed ~ .cm-header-2::after {
-  background-color: var(--h2-border-color-collapsed);
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned) .HyperMD-header-2 .is-collapsed ~ .cm-header-2::after,
-.is-live-preview:is(.h2-stroke, .h2-stroke-left-aligned) .HyperMD-header-2 .is-collapsed ~ .cm-header-2::after {
-  left: calc(anchor(right) + 20px + 1ch);
+body {
+  --fas-h3-stroke: disable;
+  --fas-h3-stroke-left-aligned: disable;
 }
 
 .h3-stroke {
-  --h3-stroke-alignment: center;
-  --h3-stroke-left-anchor: 20px;
-  --h3-stroke-padding-left: 0px;
+  --fas-h3-stroke: enable;
 }
 
 .h3-stroke-left-aligned {
-  --h3-stroke-alignment: left;
-  --h3-stroke-left-anchor: -10px;
-  --h3-stroke-padding-left: 30px;
+  --fas-h3-stroke-left-aligned: enable;
 }
 
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned) .HyperMD-header-3,
-.is-live-preview:is(.h3-stroke, .h3-stroke-left-aligned) .HyperMD-header-3 {
-  --h3-weight: var(--font-extralight);
-  text-align: var(--h3-stroke-alignment);
+@container style(--fas-h3-stroke: enable) {
+  :is(.markdown-preview-view, .is-live-preview) > * {
+    --h3-stroke-alignment: center;
+    --h3-stroke-flex-grow: 1;
+    --h3-stroke-flex-basis: unset;
+    --h3-stroke-left-anchor: 20px;
+    --h3-stroke-padding-left: 0px;
+  }
 }
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned) .HyperMD-header-3 > span:first-of-type,
-.is-live-preview:is(.h3-stroke, .h3-stroke-left-aligned) .HyperMD-header-3 > span:first-of-type {
-  anchor-name: --header-anchor-left;
+@container style(--fas-h3-stroke-left-aligned: enable) {
+  :is(.markdown-preview-view, .is-live-preview) > * {
+    --h3-stroke-alignment: left;
+    --h3-stroke-flex-grow: 0;
+    --h3-stroke-flex-basis: 10px;
+    --h3-stroke-left-anchor: -10px;
+    --h3-stroke-padding-left: 30px;
+  }
 }
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned) .HyperMD-header-3 :nth-last-child(1 of .cm-header-3),
-.is-live-preview:is(.h3-stroke, .h3-stroke-left-aligned) .HyperMD-header-3 :nth-last-child(1 of .cm-header-3) {
-  anchor-name: --header-anchor-right;
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned) .HyperMD-header-3 .cm-header-3,
-.is-live-preview:is(.h3-stroke, .h3-stroke-left-aligned) .HyperMD-header-3 .cm-header-3 {
-  padding-left: var(--h3-stroke-padding-left);
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned) .HyperMD-header-3 .cm-header-3::before, :is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned) .HyperMD-header-3 .cm-header-3::after,
-.is-live-preview:is(.h3-stroke, .h3-stroke-left-aligned) .HyperMD-header-3 .cm-header-3::before,
-.is-live-preview:is(.h3-stroke, .h3-stroke-left-aligned) .HyperMD-header-3 .cm-header-3::after {
-  content: "";
-  position: absolute;
-  bottom: 0.5em;
-  display: block;
-  background-color: var(--h3-border-color);
-  height: 1px;
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned) .HyperMD-header-3 .cm-header-3::before,
-.is-live-preview:is(.h3-stroke, .h3-stroke-left-aligned) .HyperMD-header-3 .cm-header-3::before {
-  position-anchor: --header-anchor-left;
-  left: 0;
-  right: calc(anchor(left) + var(--h3-stroke-left-anchor));
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned) .HyperMD-header-3 .cm-header-3::after,
-.is-live-preview:is(.h3-stroke, .h3-stroke-left-aligned) .HyperMD-header-3 .cm-header-3::after {
-  position-anchor: --header-anchor-right;
-  right: 0;
-  left: calc(anchor(right) + 20px);
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned) .HyperMD-header-3 .is-collapsed ~ .cm-header-3::before, :is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned) .HyperMD-header-3 .is-collapsed ~ .cm-header-3::after,
-.is-live-preview:is(.h3-stroke, .h3-stroke-left-aligned) .HyperMD-header-3 .is-collapsed ~ .cm-header-3::before,
-.is-live-preview:is(.h3-stroke, .h3-stroke-left-aligned) .HyperMD-header-3 .is-collapsed ~ .cm-header-3::after {
-  background-color: var(--h3-border-color-collapsed);
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned) .HyperMD-header-3 .is-collapsed ~ .cm-header-3::after,
-.is-live-preview:is(.h3-stroke, .h3-stroke-left-aligned) .HyperMD-header-3 .is-collapsed ~ .cm-header-3::after {
-  left: calc(anchor(right) + 20px + 1ch);
+body {
+  --fas-h4-stroke: disable;
+  --fas-h4-stroke-left-aligned: disable;
 }
 
 .h4-stroke {
-  --h4-stroke-alignment: center;
-  --h4-stroke-left-anchor: 20px;
-  --h4-stroke-padding-left: 0px;
+  --fas-h4-stroke: enable;
 }
 
 .h4-stroke-left-aligned {
-  --h4-stroke-alignment: left;
-  --h4-stroke-left-anchor: -10px;
-  --h4-stroke-padding-left: 30px;
+  --fas-h4-stroke-left-aligned: enable;
 }
 
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned) .HyperMD-header-4,
-.is-live-preview:is(.h4-stroke, .h4-stroke-left-aligned) .HyperMD-header-4 {
-  --h4-weight: var(--font-extralight);
-  text-align: var(--h4-stroke-alignment);
+@container style(--fas-h4-stroke: enable) {
+  :is(.markdown-preview-view, .is-live-preview) > * {
+    --h4-stroke-alignment: center;
+    --h4-stroke-flex-grow: 1;
+    --h4-stroke-flex-basis: unset;
+    --h4-stroke-left-anchor: 20px;
+    --h4-stroke-padding-left: 0px;
+  }
 }
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned) .HyperMD-header-4 > span:first-of-type,
-.is-live-preview:is(.h4-stroke, .h4-stroke-left-aligned) .HyperMD-header-4 > span:first-of-type {
-  anchor-name: --header-anchor-left;
+@container style(--fas-h4-stroke-left-aligned: enable) {
+  :is(.markdown-preview-view, .is-live-preview) > * {
+    --h4-stroke-alignment: left;
+    --h4-stroke-flex-grow: 0;
+    --h4-stroke-flex-basis: 10px;
+    --h4-stroke-left-anchor: -10px;
+    --h4-stroke-padding-left: 30px;
+  }
 }
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned) .HyperMD-header-4 :nth-last-child(1 of .cm-header-4),
-.is-live-preview:is(.h4-stroke, .h4-stroke-left-aligned) .HyperMD-header-4 :nth-last-child(1 of .cm-header-4) {
-  anchor-name: --header-anchor-right;
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned) .HyperMD-header-4 .cm-header-4,
-.is-live-preview:is(.h4-stroke, .h4-stroke-left-aligned) .HyperMD-header-4 .cm-header-4 {
-  padding-left: var(--h4-stroke-padding-left);
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned) .HyperMD-header-4 .cm-header-4::before, :is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned) .HyperMD-header-4 .cm-header-4::after,
-.is-live-preview:is(.h4-stroke, .h4-stroke-left-aligned) .HyperMD-header-4 .cm-header-4::before,
-.is-live-preview:is(.h4-stroke, .h4-stroke-left-aligned) .HyperMD-header-4 .cm-header-4::after {
-  content: "";
-  position: absolute;
-  bottom: 0.5em;
-  display: block;
-  background-color: var(--h4-border-color);
-  height: 1px;
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned) .HyperMD-header-4 .cm-header-4::before,
-.is-live-preview:is(.h4-stroke, .h4-stroke-left-aligned) .HyperMD-header-4 .cm-header-4::before {
-  position-anchor: --header-anchor-left;
-  left: 0;
-  right: calc(anchor(left) + var(--h4-stroke-left-anchor));
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned) .HyperMD-header-4 .cm-header-4::after,
-.is-live-preview:is(.h4-stroke, .h4-stroke-left-aligned) .HyperMD-header-4 .cm-header-4::after {
-  position-anchor: --header-anchor-right;
-  right: 0;
-  left: calc(anchor(right) + 20px);
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned) .HyperMD-header-4 .is-collapsed ~ .cm-header-4::before, :is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned) .HyperMD-header-4 .is-collapsed ~ .cm-header-4::after,
-.is-live-preview:is(.h4-stroke, .h4-stroke-left-aligned) .HyperMD-header-4 .is-collapsed ~ .cm-header-4::before,
-.is-live-preview:is(.h4-stroke, .h4-stroke-left-aligned) .HyperMD-header-4 .is-collapsed ~ .cm-header-4::after {
-  background-color: var(--h4-border-color-collapsed);
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned) .HyperMD-header-4 .is-collapsed ~ .cm-header-4::after,
-.is-live-preview:is(.h4-stroke, .h4-stroke-left-aligned) .HyperMD-header-4 .is-collapsed ~ .cm-header-4::after {
-  left: calc(anchor(right) + 20px + 1ch);
+body {
+  --fas-h5-stroke: disable;
+  --fas-h5-stroke-left-aligned: disable;
 }
 
 .h5-stroke {
-  --h5-stroke-alignment: center;
-  --h5-stroke-left-anchor: 20px;
-  --h5-stroke-padding-left: 0px;
+  --fas-h5-stroke: enable;
 }
 
 .h5-stroke-left-aligned {
-  --h5-stroke-alignment: left;
-  --h5-stroke-left-anchor: -10px;
-  --h5-stroke-padding-left: 30px;
+  --fas-h5-stroke-left-aligned: enable;
 }
 
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned) .HyperMD-header-5,
-.is-live-preview:is(.h5-stroke, .h5-stroke-left-aligned) .HyperMD-header-5 {
-  --h5-weight: var(--font-extralight);
-  text-align: var(--h5-stroke-alignment);
+@container style(--fas-h5-stroke: enable) {
+  :is(.markdown-preview-view, .is-live-preview) > * {
+    --h5-stroke-alignment: center;
+    --h5-stroke-flex-grow: 1;
+    --h5-stroke-flex-basis: unset;
+    --h5-stroke-left-anchor: 20px;
+    --h5-stroke-padding-left: 0px;
+  }
 }
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned) .HyperMD-header-5 > span:first-of-type,
-.is-live-preview:is(.h5-stroke, .h5-stroke-left-aligned) .HyperMD-header-5 > span:first-of-type {
-  anchor-name: --header-anchor-left;
+@container style(--fas-h5-stroke-left-aligned: enable) {
+  :is(.markdown-preview-view, .is-live-preview) > * {
+    --h5-stroke-alignment: left;
+    --h5-stroke-flex-grow: 0;
+    --h5-stroke-flex-basis: 10px;
+    --h5-stroke-left-anchor: -10px;
+    --h5-stroke-padding-left: 30px;
+  }
 }
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned) .HyperMD-header-5 :nth-last-child(1 of .cm-header-5),
-.is-live-preview:is(.h5-stroke, .h5-stroke-left-aligned) .HyperMD-header-5 :nth-last-child(1 of .cm-header-5) {
-  anchor-name: --header-anchor-right;
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned) .HyperMD-header-5 .cm-header-5,
-.is-live-preview:is(.h5-stroke, .h5-stroke-left-aligned) .HyperMD-header-5 .cm-header-5 {
-  padding-left: var(--h5-stroke-padding-left);
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned) .HyperMD-header-5 .cm-header-5::before, :is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned) .HyperMD-header-5 .cm-header-5::after,
-.is-live-preview:is(.h5-stroke, .h5-stroke-left-aligned) .HyperMD-header-5 .cm-header-5::before,
-.is-live-preview:is(.h5-stroke, .h5-stroke-left-aligned) .HyperMD-header-5 .cm-header-5::after {
-  content: "";
-  position: absolute;
-  bottom: 0.5em;
-  display: block;
-  background-color: var(--h5-border-color);
-  height: 1px;
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned) .HyperMD-header-5 .cm-header-5::before,
-.is-live-preview:is(.h5-stroke, .h5-stroke-left-aligned) .HyperMD-header-5 .cm-header-5::before {
-  position-anchor: --header-anchor-left;
-  left: 0;
-  right: calc(anchor(left) + var(--h5-stroke-left-anchor));
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned) .HyperMD-header-5 .cm-header-5::after,
-.is-live-preview:is(.h5-stroke, .h5-stroke-left-aligned) .HyperMD-header-5 .cm-header-5::after {
-  position-anchor: --header-anchor-right;
-  right: 0;
-  left: calc(anchor(right) + 20px);
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned) .HyperMD-header-5 .is-collapsed ~ .cm-header-5::before, :is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned) .HyperMD-header-5 .is-collapsed ~ .cm-header-5::after,
-.is-live-preview:is(.h5-stroke, .h5-stroke-left-aligned) .HyperMD-header-5 .is-collapsed ~ .cm-header-5::before,
-.is-live-preview:is(.h5-stroke, .h5-stroke-left-aligned) .HyperMD-header-5 .is-collapsed ~ .cm-header-5::after {
-  background-color: var(--h5-border-color-collapsed);
-}
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned) .HyperMD-header-5 .is-collapsed ~ .cm-header-5::after,
-.is-live-preview:is(.h5-stroke, .h5-stroke-left-aligned) .HyperMD-header-5 .is-collapsed ~ .cm-header-5::after {
-  left: calc(anchor(right) + 20px + 1ch);
+body {
+  --fas-h6-stroke: disable;
+  --fas-h6-stroke-left-aligned: disable;
 }
 
 .h6-stroke {
-  --h6-stroke-alignment: center;
-  --h6-stroke-left-anchor: 20px;
-  --h6-stroke-padding-left: 0px;
+  --fas-h6-stroke: enable;
 }
 
 .h6-stroke-left-aligned {
-  --h6-stroke-alignment: left;
-  --h6-stroke-left-anchor: -10px;
-  --h6-stroke-padding-left: 30px;
+  --fas-h6-stroke-left-aligned: enable;
 }
 
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned) .HyperMD-header-6,
-.is-live-preview:is(.h6-stroke, .h6-stroke-left-aligned) .HyperMD-header-6 {
-  --h6-weight: var(--font-extralight);
-  text-align: var(--h6-stroke-alignment);
+@container style(--fas-h6-stroke: enable) {
+  :is(.markdown-preview-view, .is-live-preview) > * {
+    --h6-stroke-alignment: center;
+    --h6-stroke-flex-grow: 1;
+    --h6-stroke-flex-basis: unset;
+    --h6-stroke-left-anchor: 20px;
+    --h6-stroke-padding-left: 0px;
+  }
 }
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned) .HyperMD-header-6 > span:first-of-type,
-.is-live-preview:is(.h6-stroke, .h6-stroke-left-aligned) .HyperMD-header-6 > span:first-of-type {
-  anchor-name: --header-anchor-left;
+@container style(--fas-h6-stroke-left-aligned: enable) {
+  :is(.markdown-preview-view, .is-live-preview) > * {
+    --h6-stroke-alignment: left;
+    --h6-stroke-flex-grow: 0;
+    --h6-stroke-flex-basis: 10px;
+    --h6-stroke-left-anchor: -10px;
+    --h6-stroke-padding-left: 30px;
+  }
 }
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned) .HyperMD-header-6 :nth-last-child(1 of .cm-header-6),
-.is-live-preview:is(.h6-stroke, .h6-stroke-left-aligned) .HyperMD-header-6 :nth-last-child(1 of .cm-header-6) {
-  anchor-name: --header-anchor-right;
+body {
+  --h-stroke-weight: var(--font-extralight);
 }
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned) .HyperMD-header-6 .cm-header-6,
-.is-live-preview:is(.h6-stroke, .h6-stroke-left-aligned) .HyperMD-header-6 .cm-header-6 {
-  padding-left: var(--h6-stroke-padding-left);
+
+@container style(--fas-h1-stroke: enable) or style(--fas-h1-stroke-left-aligned: enable) {
+  .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h1-display,
+  .h1-display-left-aligned) h1 {
+    --h1-weight: var(--h-stroke-weight);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 0;
+  }
+  .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h1-display,
+  .h1-display-left-aligned) h1::before {
+    content: "";
+    display: block;
+    background-color: var(--h1-border-color);
+    height: 1px;
+    flex-grow: var(--h1-stroke-flex-grow);
+    flex-basis: var(--h1-stroke-flex-basis);
+  }
+  .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h1-display,
+  .h1-display-left-aligned) h1::after {
+    content: "";
+    display: block;
+    flex-grow: 1;
+    background-color: var(--h1-border-color);
+    height: 1px;
+  }
+  .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h1-display,
+  .h1-display-left-aligned) h1:is(.is-collapsed > h1)::before, .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h1-display,
+  .h1-display-left-aligned) h1:is(.is-collapsed > h1)::after {
+    background-color: var(--h1-border-color-collapsed);
+  }
 }
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned) .HyperMD-header-6 .cm-header-6::before, :is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned) .HyperMD-header-6 .cm-header-6::after,
-.is-live-preview:is(.h6-stroke, .h6-stroke-left-aligned) .HyperMD-header-6 .cm-header-6::before,
-.is-live-preview:is(.h6-stroke, .h6-stroke-left-aligned) .HyperMD-header-6 .cm-header-6::after {
-  content: "";
-  position: absolute;
-  bottom: 0.5em;
-  display: block;
-  background-color: var(--h6-border-color);
-  height: 1px;
+@container style(--fas-h2-stroke: enable) or style(--fas-h2-stroke-left-aligned: enable) {
+  .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h2-display,
+  .h2-display-left-aligned) h2 {
+    --h2-weight: var(--h-stroke-weight);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 0;
+  }
+  .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h2-display,
+  .h2-display-left-aligned) h2::before {
+    content: "";
+    display: block;
+    background-color: var(--h2-border-color);
+    height: 1px;
+    flex-grow: var(--h2-stroke-flex-grow);
+    flex-basis: var(--h2-stroke-flex-basis);
+  }
+  .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h2-display,
+  .h2-display-left-aligned) h2::after {
+    content: "";
+    display: block;
+    flex-grow: 1;
+    background-color: var(--h2-border-color);
+    height: 1px;
+  }
+  .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h2-display,
+  .h2-display-left-aligned) h2:is(.is-collapsed > h2)::before, .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h2-display,
+  .h2-display-left-aligned) h2:is(.is-collapsed > h2)::after {
+    background-color: var(--h2-border-color-collapsed);
+  }
 }
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned) .HyperMD-header-6 .cm-header-6::before,
-.is-live-preview:is(.h6-stroke, .h6-stroke-left-aligned) .HyperMD-header-6 .cm-header-6::before {
-  position-anchor: --header-anchor-left;
-  left: 0;
-  right: calc(anchor(left) + var(--h6-stroke-left-anchor));
+@container style(--fas-h3-stroke: enable) or style(--fas-h3-stroke-left-aligned: enable) {
+  .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h3-display,
+  .h3-display-left-aligned) h3 {
+    --h3-weight: var(--h-stroke-weight);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 0;
+  }
+  .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h3-display,
+  .h3-display-left-aligned) h3::before {
+    content: "";
+    display: block;
+    background-color: var(--h3-border-color);
+    height: 1px;
+    flex-grow: var(--h3-stroke-flex-grow);
+    flex-basis: var(--h3-stroke-flex-basis);
+  }
+  .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h3-display,
+  .h3-display-left-aligned) h3::after {
+    content: "";
+    display: block;
+    flex-grow: 1;
+    background-color: var(--h3-border-color);
+    height: 1px;
+  }
+  .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h3-display,
+  .h3-display-left-aligned) h3:is(.is-collapsed > h3)::before, .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h3-display,
+  .h3-display-left-aligned) h3:is(.is-collapsed > h3)::after {
+    background-color: var(--h3-border-color-collapsed);
+  }
 }
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned) .HyperMD-header-6 .cm-header-6::after,
-.is-live-preview:is(.h6-stroke, .h6-stroke-left-aligned) .HyperMD-header-6 .cm-header-6::after {
-  position-anchor: --header-anchor-right;
-  right: 0;
-  left: calc(anchor(right) + 20px);
+@container style(--fas-h4-stroke: enable) or style(--fas-h4-stroke-left-aligned: enable) {
+  .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h4-display,
+  .h4-display-left-aligned) h4 {
+    --h4-weight: var(--h-stroke-weight);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 0;
+  }
+  .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h4-display,
+  .h4-display-left-aligned) h4::before {
+    content: "";
+    display: block;
+    background-color: var(--h4-border-color);
+    height: 1px;
+    flex-grow: var(--h4-stroke-flex-grow);
+    flex-basis: var(--h4-stroke-flex-basis);
+  }
+  .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h4-display,
+  .h4-display-left-aligned) h4::after {
+    content: "";
+    display: block;
+    flex-grow: 1;
+    background-color: var(--h4-border-color);
+    height: 1px;
+  }
+  .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h4-display,
+  .h4-display-left-aligned) h4:is(.is-collapsed > h4)::before, .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h4-display,
+  .h4-display-left-aligned) h4:is(.is-collapsed > h4)::after {
+    background-color: var(--h4-border-color-collapsed);
+  }
 }
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned) .HyperMD-header-6 .is-collapsed ~ .cm-header-6::before, :is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned) .HyperMD-header-6 .is-collapsed ~ .cm-header-6::after,
-.is-live-preview:is(.h6-stroke, .h6-stroke-left-aligned) .HyperMD-header-6 .is-collapsed ~ .cm-header-6::before,
-.is-live-preview:is(.h6-stroke, .h6-stroke-left-aligned) .HyperMD-header-6 .is-collapsed ~ .cm-header-6::after {
-  background-color: var(--h6-border-color-collapsed);
+@container style(--fas-h5-stroke: enable) or style(--fas-h5-stroke-left-aligned: enable) {
+  .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h5-display,
+  .h5-display-left-aligned) h5 {
+    --h5-weight: var(--h-stroke-weight);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 0;
+  }
+  .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h5-display,
+  .h5-display-left-aligned) h5::before {
+    content: "";
+    display: block;
+    background-color: var(--h5-border-color);
+    height: 1px;
+    flex-grow: var(--h5-stroke-flex-grow);
+    flex-basis: var(--h5-stroke-flex-basis);
+  }
+  .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h5-display,
+  .h5-display-left-aligned) h5::after {
+    content: "";
+    display: block;
+    flex-grow: 1;
+    background-color: var(--h5-border-color);
+    height: 1px;
+  }
+  .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h5-display,
+  .h5-display-left-aligned) h5:is(.is-collapsed > h5)::before, .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h5-display,
+  .h5-display-left-aligned) h5:is(.is-collapsed > h5)::after {
+    background-color: var(--h5-border-color-collapsed);
+  }
 }
-:is .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned) .HyperMD-header-6 .is-collapsed ~ .cm-header-6::after,
-.is-live-preview:is(.h6-stroke, .h6-stroke-left-aligned) .HyperMD-header-6 .is-collapsed ~ .cm-header-6::after {
-  left: calc(anchor(right) + 20px + 1ch);
+@container style(--fas-h6-stroke: enable) or style(--fas-h6-stroke-left-aligned: enable) {
+  .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h6-display,
+  .h6-display-left-aligned) h6 {
+    --h6-weight: var(--h-stroke-weight);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 0;
+  }
+  .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h6-display,
+  .h6-display-left-aligned) h6::before {
+    content: "";
+    display: block;
+    background-color: var(--h6-border-color);
+    height: 1px;
+    flex-grow: var(--h6-stroke-flex-grow);
+    flex-basis: var(--h6-stroke-flex-basis);
+  }
+  .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h6-display,
+  .h6-display-left-aligned) h6::after {
+    content: "";
+    display: block;
+    flex-grow: 1;
+    background-color: var(--h6-border-color);
+    height: 1px;
+  }
+  .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h6-display,
+  .h6-display-left-aligned) h6:is(.is-collapsed > h6)::before, .markdown-preview-view:not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h6-display,
+  .h6-display-left-aligned) h6:is(.is-collapsed > h6)::after {
+    background-color: var(--h6-border-color-collapsed);
+  }
+}
+@container style(--fas-h1-stroke: enable) or style(--fas-h1-stroke-left-aligned: enable) {
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned) .HyperMD-header-1 {
+    --h1-weight: var(--font-extralight);
+    text-align: var(--h1-stroke-alignment);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned) .HyperMD-header-1 > span:first-of-type {
+    anchor-name: --header-anchor-left;
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned) .HyperMD-header-1 :nth-last-child(1 of .cm-header-1) {
+    anchor-name: --header-anchor-right;
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned) .HyperMD-header-1 .cm-header-1 {
+    padding-left: var(--h1-stroke-padding-left);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned) .HyperMD-header-1 .cm-header-1::before, .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned) .HyperMD-header-1 .cm-header-1::after {
+    content: "";
+    position: absolute;
+    bottom: 0.5em;
+    display: block;
+    background-color: var(--h1-border-color);
+    height: 1px;
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned) .HyperMD-header-1 .cm-header-1::before {
+    position-anchor: --header-anchor-left;
+    left: 0;
+    right: calc(anchor(--header-anchor-left left, anchor(--header-anchor-right left)) + var(--h1-stroke-left-anchor));
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned) .HyperMD-header-1 .cm-header-1::after {
+    position-anchor: --header-anchor-right;
+    right: 0;
+    left: calc(anchor(right) + 20px);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned) .HyperMD-header-1 .is-collapsed ~ .cm-header-1::before, .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned) .HyperMD-header-1 .is-collapsed ~ .cm-header-1::after {
+    background-color: var(--h1-border-color-collapsed);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned) .HyperMD-header-1 .is-collapsed ~ .cm-header-1::after {
+    left: calc(anchor(right) + 20px + 1ch);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned) .HyperMD-header-1 .cm-header-1.cm-hmd-internal-link {
+    position: initial;
+    color: inherit;
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned) .HyperMD-header-1 .cm-header-1.cm-hmd-internal-link > *:not(.is-unresolved) {
+    color: var(--link-color);
+  }
+  @media (hover: hover) {
+    .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned) .HyperMD-header-1 .cm-header-1.cm-hmd-internal-link:hover > * {
+      color: var(--link-color-hover);
+    }
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h1-display, .h1-display-left-aligned) .HyperMD-header-1 .cm-header-1.cm-hmd-internal-link::after {
+    -webkit-mask-image: none;
+  }
+}
+@container style(--fas-h2-stroke: enable) or style(--fas-h2-stroke-left-aligned: enable) {
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned) .HyperMD-header-2 {
+    --h2-weight: var(--font-extralight);
+    text-align: var(--h2-stroke-alignment);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned) .HyperMD-header-2 > span:first-of-type {
+    anchor-name: --header-anchor-left;
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned) .HyperMD-header-2 :nth-last-child(1 of .cm-header-2) {
+    anchor-name: --header-anchor-right;
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned) .HyperMD-header-2 .cm-header-2 {
+    padding-left: var(--h2-stroke-padding-left);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned) .HyperMD-header-2 .cm-header-2::before, .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned) .HyperMD-header-2 .cm-header-2::after {
+    content: "";
+    position: absolute;
+    bottom: 0.5em;
+    display: block;
+    background-color: var(--h2-border-color);
+    height: 1px;
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned) .HyperMD-header-2 .cm-header-2::before {
+    position-anchor: --header-anchor-left;
+    left: 0;
+    right: calc(anchor(--header-anchor-left left, anchor(--header-anchor-right left)) + var(--h2-stroke-left-anchor));
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned) .HyperMD-header-2 .cm-header-2::after {
+    position-anchor: --header-anchor-right;
+    right: 0;
+    left: calc(anchor(right) + 20px);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned) .HyperMD-header-2 .is-collapsed ~ .cm-header-2::before, .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned) .HyperMD-header-2 .is-collapsed ~ .cm-header-2::after {
+    background-color: var(--h2-border-color-collapsed);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned) .HyperMD-header-2 .is-collapsed ~ .cm-header-2::after {
+    left: calc(anchor(right) + 20px + 1ch);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned) .HyperMD-header-2 .cm-header-2.cm-hmd-internal-link {
+    position: initial;
+    color: inherit;
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned) .HyperMD-header-2 .cm-header-2.cm-hmd-internal-link > *:not(.is-unresolved) {
+    color: var(--link-color);
+  }
+  @media (hover: hover) {
+    .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned) .HyperMD-header-2 .cm-header-2.cm-hmd-internal-link:hover > * {
+      color: var(--link-color-hover);
+    }
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h2-display, .h2-display-left-aligned) .HyperMD-header-2 .cm-header-2.cm-hmd-internal-link::after {
+    -webkit-mask-image: none;
+  }
+}
+@container style(--fas-h3-stroke: enable) or style(--fas-h3-stroke-left-aligned: enable) {
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned) .HyperMD-header-3 {
+    --h3-weight: var(--font-extralight);
+    text-align: var(--h3-stroke-alignment);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned) .HyperMD-header-3 > span:first-of-type {
+    anchor-name: --header-anchor-left;
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned) .HyperMD-header-3 :nth-last-child(1 of .cm-header-3) {
+    anchor-name: --header-anchor-right;
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned) .HyperMD-header-3 .cm-header-3 {
+    padding-left: var(--h3-stroke-padding-left);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned) .HyperMD-header-3 .cm-header-3::before, .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned) .HyperMD-header-3 .cm-header-3::after {
+    content: "";
+    position: absolute;
+    bottom: 0.5em;
+    display: block;
+    background-color: var(--h3-border-color);
+    height: 1px;
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned) .HyperMD-header-3 .cm-header-3::before {
+    position-anchor: --header-anchor-left;
+    left: 0;
+    right: calc(anchor(--header-anchor-left left, anchor(--header-anchor-right left)) + var(--h3-stroke-left-anchor));
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned) .HyperMD-header-3 .cm-header-3::after {
+    position-anchor: --header-anchor-right;
+    right: 0;
+    left: calc(anchor(right) + 20px);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned) .HyperMD-header-3 .is-collapsed ~ .cm-header-3::before, .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned) .HyperMD-header-3 .is-collapsed ~ .cm-header-3::after {
+    background-color: var(--h3-border-color-collapsed);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned) .HyperMD-header-3 .is-collapsed ~ .cm-header-3::after {
+    left: calc(anchor(right) + 20px + 1ch);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned) .HyperMD-header-3 .cm-header-3.cm-hmd-internal-link {
+    position: initial;
+    color: inherit;
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned) .HyperMD-header-3 .cm-header-3.cm-hmd-internal-link > *:not(.is-unresolved) {
+    color: var(--link-color);
+  }
+  @media (hover: hover) {
+    .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned) .HyperMD-header-3 .cm-header-3.cm-hmd-internal-link:hover > * {
+      color: var(--link-color-hover);
+    }
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h3-display, .h3-display-left-aligned) .HyperMD-header-3 .cm-header-3.cm-hmd-internal-link::after {
+    -webkit-mask-image: none;
+  }
+}
+@container style(--fas-h4-stroke: enable) or style(--fas-h4-stroke-left-aligned: enable) {
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned) .HyperMD-header-4 {
+    --h4-weight: var(--font-extralight);
+    text-align: var(--h4-stroke-alignment);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned) .HyperMD-header-4 > span:first-of-type {
+    anchor-name: --header-anchor-left;
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned) .HyperMD-header-4 :nth-last-child(1 of .cm-header-4) {
+    anchor-name: --header-anchor-right;
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned) .HyperMD-header-4 .cm-header-4 {
+    padding-left: var(--h4-stroke-padding-left);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned) .HyperMD-header-4 .cm-header-4::before, .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned) .HyperMD-header-4 .cm-header-4::after {
+    content: "";
+    position: absolute;
+    bottom: 0.5em;
+    display: block;
+    background-color: var(--h4-border-color);
+    height: 1px;
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned) .HyperMD-header-4 .cm-header-4::before {
+    position-anchor: --header-anchor-left;
+    left: 0;
+    right: calc(anchor(--header-anchor-left left, anchor(--header-anchor-right left)) + var(--h4-stroke-left-anchor));
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned) .HyperMD-header-4 .cm-header-4::after {
+    position-anchor: --header-anchor-right;
+    right: 0;
+    left: calc(anchor(right) + 20px);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned) .HyperMD-header-4 .is-collapsed ~ .cm-header-4::before, .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned) .HyperMD-header-4 .is-collapsed ~ .cm-header-4::after {
+    background-color: var(--h4-border-color-collapsed);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned) .HyperMD-header-4 .is-collapsed ~ .cm-header-4::after {
+    left: calc(anchor(right) + 20px + 1ch);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned) .HyperMD-header-4 .cm-header-4.cm-hmd-internal-link {
+    position: initial;
+    color: inherit;
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned) .HyperMD-header-4 .cm-header-4.cm-hmd-internal-link > *:not(.is-unresolved) {
+    color: var(--link-color);
+  }
+  @media (hover: hover) {
+    .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned) .HyperMD-header-4 .cm-header-4.cm-hmd-internal-link:hover > * {
+      color: var(--link-color-hover);
+    }
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h4-display, .h4-display-left-aligned) .HyperMD-header-4 .cm-header-4.cm-hmd-internal-link::after {
+    -webkit-mask-image: none;
+  }
+}
+@container style(--fas-h5-stroke: enable) or style(--fas-h5-stroke-left-aligned: enable) {
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned) .HyperMD-header-5 {
+    --h5-weight: var(--font-extralight);
+    text-align: var(--h5-stroke-alignment);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned) .HyperMD-header-5 > span:first-of-type {
+    anchor-name: --header-anchor-left;
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned) .HyperMD-header-5 :nth-last-child(1 of .cm-header-5) {
+    anchor-name: --header-anchor-right;
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned) .HyperMD-header-5 .cm-header-5 {
+    padding-left: var(--h5-stroke-padding-left);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned) .HyperMD-header-5 .cm-header-5::before, .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned) .HyperMD-header-5 .cm-header-5::after {
+    content: "";
+    position: absolute;
+    bottom: 0.5em;
+    display: block;
+    background-color: var(--h5-border-color);
+    height: 1px;
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned) .HyperMD-header-5 .cm-header-5::before {
+    position-anchor: --header-anchor-left;
+    left: 0;
+    right: calc(anchor(--header-anchor-left left, anchor(--header-anchor-right left)) + var(--h5-stroke-left-anchor));
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned) .HyperMD-header-5 .cm-header-5::after {
+    position-anchor: --header-anchor-right;
+    right: 0;
+    left: calc(anchor(right) + 20px);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned) .HyperMD-header-5 .is-collapsed ~ .cm-header-5::before, .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned) .HyperMD-header-5 .is-collapsed ~ .cm-header-5::after {
+    background-color: var(--h5-border-color-collapsed);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned) .HyperMD-header-5 .is-collapsed ~ .cm-header-5::after {
+    left: calc(anchor(right) + 20px + 1ch);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned) .HyperMD-header-5 .cm-header-5.cm-hmd-internal-link {
+    position: initial;
+    color: inherit;
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned) .HyperMD-header-5 .cm-header-5.cm-hmd-internal-link > *:not(.is-unresolved) {
+    color: var(--link-color);
+  }
+  @media (hover: hover) {
+    .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned) .HyperMD-header-5 .cm-header-5.cm-hmd-internal-link:hover > * {
+      color: var(--link-color-hover);
+    }
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h5-display, .h5-display-left-aligned) .HyperMD-header-5 .cm-header-5.cm-hmd-internal-link::after {
+    -webkit-mask-image: none;
+  }
+}
+@container style(--fas-h6-stroke: enable) or style(--fas-h6-stroke-left-aligned: enable) {
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned) .HyperMD-header-6 {
+    --h6-weight: var(--font-extralight);
+    text-align: var(--h6-stroke-alignment);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned) .HyperMD-header-6 > span:first-of-type {
+    anchor-name: --header-anchor-left;
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned) .HyperMD-header-6 :nth-last-child(1 of .cm-header-6) {
+    anchor-name: --header-anchor-right;
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned) .HyperMD-header-6 .cm-header-6 {
+    padding-left: var(--h6-stroke-padding-left);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned) .HyperMD-header-6 .cm-header-6::before, .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned) .HyperMD-header-6 .cm-header-6::after {
+    content: "";
+    position: absolute;
+    bottom: 0.5em;
+    display: block;
+    background-color: var(--h6-border-color);
+    height: 1px;
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned) .HyperMD-header-6 .cm-header-6::before {
+    position-anchor: --header-anchor-left;
+    left: 0;
+    right: calc(anchor(--header-anchor-left left, anchor(--header-anchor-right left)) + var(--h6-stroke-left-anchor));
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned) .HyperMD-header-6 .cm-header-6::after {
+    position-anchor: --header-anchor-right;
+    right: 0;
+    left: calc(anchor(right) + 20px);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned) .HyperMD-header-6 .is-collapsed ~ .cm-header-6::before, .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned) .HyperMD-header-6 .is-collapsed ~ .cm-header-6::after {
+    background-color: var(--h6-border-color-collapsed);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned) .HyperMD-header-6 .is-collapsed ~ .cm-header-6::after {
+    left: calc(anchor(right) + 20px + 1ch);
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned) .HyperMD-header-6 .cm-header-6.cm-hmd-internal-link {
+    position: initial;
+    color: inherit;
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned) .HyperMD-header-6 .cm-header-6.cm-hmd-internal-link > *:not(.is-unresolved) {
+    color: var(--link-color);
+  }
+  @media (hover: hover) {
+    .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned) .HyperMD-header-6 .cm-header-6.cm-hmd-internal-link:hover > * {
+      color: var(--link-color-hover);
+    }
+  }
+  .is-live-preview:not(.newspaper, .movie-script, .minimalist, .h6-display, .h6-display-left-aligned) .HyperMD-header-6 .cm-header-6.cm-hmd-internal-link::after {
+    -webkit-mask-image: none;
+  }
 }

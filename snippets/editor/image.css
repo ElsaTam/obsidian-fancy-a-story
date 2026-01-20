@@ -79,6 +79,10 @@ img[alt~=b-w] {
   --image-shadow-offset: 0;
 }
 
+.image-embed[alt~=blur] {
+  filter: blur(10px);
+}
+
 @container not (style(--image-shadow-offset: 0) or style(--image-shadow-offset: 0px)) {
   .image-embed:not([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner], [alt~="banner+small"], [alt~="banner+tall"], [alt~=sban]) {
     z-index: 1;

@@ -79,13 +79,19 @@ body {
   margin-right: calc(-1 * var(--size-4-3) - var(--callout-border-width, 0px));
 }
 
-:where .callout[data-callout=infobox] > .callout-content > .callout[data-callout=page-break],
 .callout[data-callout=fas-infobox] > .callout-content > .callout[data-callout=page-break] {
   width: calc(100% + 2 * var(--callout-border-width, 0px));
   margin-left: calc(-1 * var(--callout-border-width, 0px));
   margin-right: calc(-1 * var(--callout-border-width, 0px));
 }
 
+@container style(--fas-callout-infobox) {
+  .callout[data-callout=infobox] > .callout-content > .callout[data-callout=page-break] {
+    width: calc(100% + 2 * var(--callout-border-width, 0px));
+    margin-left: calc(-1 * var(--callout-border-width, 0px));
+    margin-right: calc(-1 * var(--callout-border-width, 0px));
+  }
+}
 .callout.callout[data-callout=pinned] > .callout-content > .callout[data-callout=page-break] {
   border-radius: 0;
   width: calc(100% + var(--size-4-6) + 3 * var(--size-4-3));
@@ -156,7 +162,7 @@ body {
   --callout-color: 255, 255, 255;
 }
 .callout:not([data-callout=page-break])[data-callout-metadata~=accent] > .callout-content > .callout[data-callout=page-break] {
-  border-block-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l)/var(--callout-border-opacity));
+  border-block-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), var(--callout-border-opacity));
 }
 
 @media print {

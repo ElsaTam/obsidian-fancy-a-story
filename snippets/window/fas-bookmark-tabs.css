@@ -19,11 +19,11 @@ body {
     gap: var(--size-2-3);
     margin-top: var(--workspace-top-margin);
   }
-  .mod-sidedock .workspace-tab-header {
+  .mod-sidedock .workspace-tab-header-container .workspace-tab-header {
     background-color: var(--workspace-background);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
   }
-  .mod-sidedock .workspace-tab-header.is-active {
+  .mod-sidedock .workspace-tab-header-container .workspace-tab-header.is-active {
     background-color: var(--color-accent);
   }
   .mod-sidedock .workspace-tabs:not(.mod-top) .workspace-tab-header-container-inner {
@@ -35,19 +35,24 @@ body {
   .mod-sidedock .workspace-leaf {
     padding-top: calc(var(--header-height) - var(--workspace-top-margin));
   }
+  .mod-macos .mod-sidedock .sidebar-toggle-button {
+    margin-top: var(--workspace-top-margin);
+    padding: 0;
+    height: calc(var(--header-height) + 0.5 * var(--cutout-corner-radius, 0));
+  }
 }
 @media (hover: hover) {
   @container not style(--fas-bookmark-tabs: disable) {
     .mod-sidedock .workspace-tab-header-container:hover {
       --icon-opacity: var(--icon-opacity-inactive);
     }
-    .mod-sidedock .workspace-tab-header.is-active:hover {
+    .mod-sidedock .workspace-tab-header-container .workspace-tab-header:is(.has-active-menu, .is-active):hover {
       background-color: var(--color-accent-1);
     }
   }
 }
 @container style(--fas-bookmark-tabs: volume) {
-  .mod-sidedock .workspace-tab-header {
+  .mod-sidedock .workspace-tab-header-container .workspace-tab-header {
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 2px, rgba(255, 255, 255, 0.03) 8px, transparent 20px);
     background-size: 100% 100%;
   }

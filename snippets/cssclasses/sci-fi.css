@@ -9,6 +9,7 @@ Author: ElsaTam (Kapirklaa in Discord)
 
 /*@forward '../shared/markdown-anchor';*/
 body {
+  --fas-skin-sci-fi: disable;
   --sci-fi-style-fonts: enable;
   --sci-fi-color-rgb: var(--color-cyan-rgb);
 }
@@ -18,10 +19,23 @@ body {
   --font-weight: var(--font-normal);
   --callout-border-opacity: 1;
   --hr-color: rgb(var(--sci-fi-color-rgb));
+  --h-display-color: inherit;
+  --h-display-font: "Orbitron", Arial, serif;
+  --h-display-background: transparent;
 }
 
-@container style(--sci-fi-style-fonts: enable) {
-  .sci-fi {
+.markdown-reading-view:has(> .sci-fi),
+.markdown-source-view.sci-fi {
+  --fas-skin-sci-fi: enable;
+}
+
+.sci-fi.markdown-source-view {
+  padding-inline: 3cqh;
+}
+
+@container style(--fas-skin-sci-fi: enable) and style(--sci-fi-style-fonts: enable) {
+  .markdown-source-view,
+  .markdown-preview-view {
     --inline-title-font: "Orbitron", Arial, serif;
     --h1-font: "Orbitron", Arial, serif;
     --h2-font: "Orbitron", Arial, serif;
@@ -33,424 +47,503 @@ body {
     font-family: var(--font-text);
   }
 }
-.sci-fi .markdown-preview-sizer:not(.markdown-embed .markdown-preview-sizer),
-.sci-fi.markdown-source-view {
-  padding-inline: 3cqh;
-}
+@container style(--fas-skin-sci-fi: enable) {
+  .markdown-preview-sizer:not(.markdown-embed .markdown-preview-sizer),
+  .markdown-source-view {
+    padding-inline: 3cqh;
+  }
+  .markdown-reading-view::before,
+  .markdown-source-view::before {
+    content: "";
+    position: fixed;
+    top: var(--header-height);
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    background: rgba(var(--sci-fi-color-rgb), 1);
+    -webkit-mask-image: var(--sci-fi-frame-left), var(--sci-fi-frame-right);
+    -webkit-mask-size: auto 100%;
+    -webkit-mask-position: left center, right center;
+    -webkit-mask-repeat: no-repeat;
+    width: 100%;
+  }
+  /*@supports (position-anchor: --anchor-view-content) {
+      .sci-fi.markdown-preview-view::before,
+      .sci-fi.markdown-source-view::before {
+          content: "";
+          position: fixed;
+          position-anchor: --anchor-view-content;
+          top: anchor(top); bottom: anchor(bottom);
+          left: anchor(left); right: anchor(right);
+          z-index: 0;
+          background: rgba(var(--sci-fi-color-rgb), 1);
+          -webkit-mask-image: var(--sci-fi-frame-left), var(--sci-fi-frame-right);
+          -webkit-mask-size: auto 100%;
+          -webkit-mask-position: left center, right center;
+          -webkit-mask-repeat: no-repeat;
+      }
 
-/*@supports (position-anchor: --anchor-view-content) {
-    .sci-fi.markdown-preview-view::before,
-    .sci-fi.markdown-source-view::before {
-        content: "";
-        position: fixed;
-        position-anchor: --anchor-view-content;
-        top: anchor(top); bottom: anchor(bottom);
-        left: anchor(left); right: anchor(right);
-        z-index: 0;
-        background: rgba(var(--sci-fi-color-rgb), 1);
-        -webkit-mask-image: var(--sci-fi-frame-left), var(--sci-fi-frame-right);
-        -webkit-mask-size: auto 100%;
-        -webkit-mask-position: left center, right center;
-        -webkit-mask-repeat: no-repeat;
-    }
+      .sci-fi.markdown-preview-view::before {
+          right: calc(anchor(right) + var(--scrollbar-width, 12px));
+      }
 
-    .sci-fi.markdown-preview-view::before {
-        right: calc(anchor(right) + var(--scrollbar-width, 12px));
-    }
-
-    .sci-fi.markdown-source-view::before {
-        right: 0;
-    }
-}*/
-.markdown-reading-view:has(> .sci-fi)::before,
-.sci-fi.markdown-source-view::before {
-  content: "";
-  position: fixed;
-  top: var(--header-height);
-  bottom: 0;
-  left: 0;
-  z-index: 0;
-  background: rgba(var(--sci-fi-color-rgb), 1);
-  -webkit-mask-image: var(--sci-fi-frame-left), var(--sci-fi-frame-right);
-  -webkit-mask-size: auto 100%;
-  -webkit-mask-position: left center, right center;
-  -webkit-mask-repeat: no-repeat;
+      .sci-fi.markdown-source-view::before {
+          right: 0;
+      }
+  }*/
+  .markdown-source-view::before {
+    right: 0;
+  }
+  .is-mobile .markdown-reading-view::before,
+  .is-mobile .markdown-source-view::before {
+    top: var(--view-header-height);
+  }
+  .is-mobile .markdown-reading-view::before {
+    right: var(--scrollbar-width, 12px);
+  }
+  .cm-scroller,
+  .markdown-preview-view {
+    background-image: radial-gradient(circle at 1px 1px, rgba(var(--sci-fi-color-rgb), 0.1) 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+  .callout:is([data-callout=note],
+  [data-callout=abstract],
+  [data-callout=summary],
+  [data-callout=tldr],
+  [data-callout=info],
+  [data-callout=todo],
+  [data-callout=tip],
+  [data-callout=hint],
+  [data-callout=important],
+  [data-callout=success],
+  [data-callout=check],
+  [data-callout=done],
+  [data-callout=question],
+  [data-callout=help],
+  [data-callout=faq],
+  [data-callout=warning],
+  [data-callout=caution],
+  [data-callout=attention],
+  [data-callout=failure],
+  [data-callout=fail],
+  [data-callout=missing],
+  [data-callout=danger],
+  [data-callout=error],
+  [data-callout=bug],
+  [data-callout=example],
+  [data-callout=quote],
+  [data-callout=cite]):not([data-callout=email] .callout, [data-callout=timeline] .callout),
+  .callout:is([data-callout=cards-deck],
+  [data-callout=email],
+  [data-callout=profile],
+  [data-callout=autopsy],
+  [data-callout=screen],
+  [data-callout=profile]):not([data-callout=email] .callout, [data-callout=timeline] .callout) {
+    clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+    border: none;
+    background-image: linear-gradient(135deg, transparent 30%, rgba(255, 255, 255, 0.05) 100%);
+  }
+  .callout:is([data-callout=note],
+  [data-callout=abstract],
+  [data-callout=summary],
+  [data-callout=tldr],
+  [data-callout=info],
+  [data-callout=todo],
+  [data-callout=tip],
+  [data-callout=hint],
+  [data-callout=important],
+  [data-callout=success],
+  [data-callout=check],
+  [data-callout=done],
+  [data-callout=question],
+  [data-callout=help],
+  [data-callout=faq],
+  [data-callout=warning],
+  [data-callout=caution],
+  [data-callout=attention],
+  [data-callout=failure],
+  [data-callout=fail],
+  [data-callout=missing],
+  [data-callout=danger],
+  [data-callout=error],
+  [data-callout=bug],
+  [data-callout=example],
+  [data-callout=quote],
+  [data-callout=cite]):not([data-callout=email] .callout, [data-callout=timeline] .callout) .callout-title,
+  .callout:is([data-callout=cards-deck],
+  [data-callout=email],
+  [data-callout=profile],
+  [data-callout=autopsy],
+  [data-callout=screen],
+  [data-callout=profile]):not([data-callout=email] .callout, [data-callout=timeline] .callout) .callout-title {
+    background: none;
+  }
+  .callout:is([data-callout=note],
+  [data-callout=abstract],
+  [data-callout=summary],
+  [data-callout=tldr],
+  [data-callout=info],
+  [data-callout=todo],
+  [data-callout=tip],
+  [data-callout=hint],
+  [data-callout=important],
+  [data-callout=success],
+  [data-callout=check],
+  [data-callout=done],
+  [data-callout=question],
+  [data-callout=help],
+  [data-callout=faq],
+  [data-callout=warning],
+  [data-callout=caution],
+  [data-callout=attention],
+  [data-callout=failure],
+  [data-callout=fail],
+  [data-callout=missing],
+  [data-callout=danger],
+  [data-callout=error],
+  [data-callout=bug],
+  [data-callout=example],
+  [data-callout=quote],
+  [data-callout=cite]):not([data-callout=email] .callout, [data-callout=timeline] .callout) .callout-content,
+  .callout:is([data-callout=cards-deck],
+  [data-callout=email],
+  [data-callout=profile],
+  [data-callout=autopsy],
+  [data-callout=screen],
+  [data-callout=profile]):not([data-callout=email] .callout, [data-callout=timeline] .callout) .callout-content {
+    border-top-style: solid;
+  }
+  .callout:is([data-callout=note],
+  [data-callout=abstract],
+  [data-callout=summary],
+  [data-callout=tldr],
+  [data-callout=info],
+  [data-callout=todo],
+  [data-callout=tip],
+  [data-callout=hint],
+  [data-callout=important],
+  [data-callout=success],
+  [data-callout=check],
+  [data-callout=done],
+  [data-callout=question],
+  [data-callout=help],
+  [data-callout=faq],
+  [data-callout=warning],
+  [data-callout=caution],
+  [data-callout=attention],
+  [data-callout=failure],
+  [data-callout=fail],
+  [data-callout=missing],
+  [data-callout=danger],
+  [data-callout=error],
+  [data-callout=bug],
+  [data-callout=example],
+  [data-callout=quote],
+  [data-callout=cite]):not([data-callout=email] .callout, [data-callout=timeline] .callout)::before,
+  .callout:is([data-callout=cards-deck],
+  [data-callout=email],
+  [data-callout=profile],
+  [data-callout=autopsy],
+  [data-callout=screen],
+  [data-callout=profile]):not([data-callout=email] .callout, [data-callout=timeline] .callout)::before {
+    content: "";
+    position: absolute;
+    background: rgba(var(--callout-color), var(--callout-border-opacity));
+    inset: 0;
+    clip-path: polygon(0 20px, 20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px, var(--callout-border-width) calc(20px + var(--callout-border-width) * 0.5), var(--callout-border-width) calc(100% - var(--callout-border-width)), calc(100% - 20px - var(--callout-border-width) * 0.5) calc(100% - var(--callout-border-width)), calc(100% - var(--callout-border-width)) calc(100% - 20px - var(--callout-border-width) * 0.5), calc(100% - var(--callout-border-width)) var(--callout-border-width), calc(20px + var(--callout-border-width) * 0.5) var(--callout-border-width), var(--callout-border-width) calc(20px + var(--callout-border-width) * 0.5));
+  }
+  .callout:is([data-callout=note],
+  [data-callout=abstract],
+  [data-callout=summary],
+  [data-callout=tldr],
+  [data-callout=info],
+  [data-callout=todo],
+  [data-callout=tip],
+  [data-callout=hint],
+  [data-callout=important],
+  [data-callout=success],
+  [data-callout=check],
+  [data-callout=done],
+  [data-callout=question],
+  [data-callout=help],
+  [data-callout=faq],
+  [data-callout=warning],
+  [data-callout=caution],
+  [data-callout=attention],
+  [data-callout=failure],
+  [data-callout=fail],
+  [data-callout=missing],
+  [data-callout=danger],
+  [data-callout=error],
+  [data-callout=bug],
+  [data-callout=example],
+  [data-callout=quote],
+  [data-callout=cite]):not([data-callout=email] .callout, [data-callout=timeline] .callout):is([data-callout-metadata~=accent])::before,
+  .callout:is([data-callout=cards-deck],
+  [data-callout=email],
+  [data-callout=profile],
+  [data-callout=autopsy],
+  [data-callout=screen],
+  [data-callout=profile]):not([data-callout=email] .callout, [data-callout=timeline] .callout):is([data-callout-metadata~=accent])::before {
+    background: hsl(var(--accent-h), var(--accent-s), var(--accent-l), var(--callout-border-opacity));
+  }
+  :is(.markdown-preview-view, .markdown-source-view) hr {
+    width: 100%;
+    height: 20px;
+    border: none;
+    background-color: var(--hr-color);
+    -webkit-mask-image: var(--sci-fi-hr);
+    -webkit-mask-size: contain;
+    -webkit-mask-position: center center;
+    -webkit-mask-repeat: no-repeat;
+  }
 }
-
-.is-mobile .markdown-reading-view:has(> .sci-fi)::before,
-.is-mobile .sci-fi.markdown-source-view::before {
-  top: var(--view-header-height);
+@container style(--fas-skin-sci-fi: enable) and (style(--fas-h1-display: enable) or style(--fas-h1-display-left-aligned: enable)) {
+  :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h1-stroke,
+  .h1-stroke-left-aligned,
+  .h1-normal,
+  .sci-fi) :is(.el-h1 > h1, .markdown-preview-view > * > h1, .HyperMD-header-1):not(.callout *,
+  ul *,
+  ol *) {
+    padding: unset;
+    clip-path: unset;
+    text-align: left;
+  }
+  :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h1-stroke,
+  .h1-stroke-left-aligned,
+  .h1-normal,
+  .sci-fi) :is(.el-h1 > h1, .markdown-preview-view > * > h1, .HyperMD-header-1):not(.callout *,
+  ul *,
+  ol *)::before {
+    position: unset;
+    background-image: unset;
+    inset: unset;
+    clip-path: unset;
+    display: inline-block;
+    height: 1em;
+    width: 6em;
+    transform: translateY(-15%);
+    background-color: rgba(var(--color-cyan-rgb), 1);
+    -webkit-mask-image: var(--sci-fi-h-display);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: left center;
+    mask-mode: luminance;
+    vertical-align: middle;
+    margin-right: 0.2em;
+  }
 }
-
-.markdown-reading-view:has(> .sci-fi)::before {
-  right: var(--scrollbar-width, 12px);
+@container style(--fas-skin-sci-fi: enable) and (style(--fas-h2-display: enable) or style(--fas-h2-display-left-aligned: enable)) {
+  :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h2-stroke,
+  .h2-stroke-left-aligned,
+  .h2-normal,
+  .sci-fi) :is(.el-h2 > h2, .markdown-preview-view > * > h2, .HyperMD-header-2):not(.callout *,
+  ul *,
+  ol *) {
+    padding: unset;
+    clip-path: unset;
+    text-align: left;
+  }
+  :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h2-stroke,
+  .h2-stroke-left-aligned,
+  .h2-normal,
+  .sci-fi) :is(.el-h2 > h2, .markdown-preview-view > * > h2, .HyperMD-header-2):not(.callout *,
+  ul *,
+  ol *)::before {
+    position: unset;
+    background-image: unset;
+    inset: unset;
+    clip-path: unset;
+    display: inline-block;
+    height: 1em;
+    width: 6em;
+    transform: translateY(-15%);
+    background-color: rgba(var(--color-cyan-rgb), 1);
+    -webkit-mask-image: var(--sci-fi-h-display);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: left center;
+    mask-mode: luminance;
+    vertical-align: middle;
+    margin-right: 0.2em;
+  }
 }
-
-.sci-fi.markdown-source-view::before {
-  right: 0;
+@container style(--fas-skin-sci-fi: enable) and (style(--fas-h3-display: enable) or style(--fas-h3-display-left-aligned: enable)) {
+  :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h3-stroke,
+  .h3-stroke-left-aligned,
+  .h3-normal,
+  .sci-fi) :is(.el-h3 > h3, .markdown-preview-view > * > h3, .HyperMD-header-3):not(.callout *,
+  ul *,
+  ol *) {
+    padding: unset;
+    clip-path: unset;
+    text-align: left;
+  }
+  :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h3-stroke,
+  .h3-stroke-left-aligned,
+  .h3-normal,
+  .sci-fi) :is(.el-h3 > h3, .markdown-preview-view > * > h3, .HyperMD-header-3):not(.callout *,
+  ul *,
+  ol *)::before {
+    position: unset;
+    background-image: unset;
+    inset: unset;
+    clip-path: unset;
+    display: inline-block;
+    height: 1em;
+    width: 6em;
+    transform: translateY(-15%);
+    background-color: rgba(var(--color-cyan-rgb), 1);
+    -webkit-mask-image: var(--sci-fi-h-display);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: left center;
+    mask-mode: luminance;
+    vertical-align: middle;
+    margin-right: 0.2em;
+  }
 }
-
-.sci-fi .cm-scroller,
-.sci-fi.markdown-preview-view {
-  background-image: radial-gradient(circle at 1px 1px, rgba(var(--sci-fi-color-rgb), 0.1) 1px, transparent 0);
-  background-size: 40px 40px;
+@container style(--fas-skin-sci-fi: enable) and (style(--fas-h4-display: enable) or style(--fas-h4-display-left-aligned: enable)) {
+  :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h4-stroke,
+  .h4-stroke-left-aligned,
+  .h4-normal,
+  .sci-fi) :is(.el-h4 > h4, .markdown-preview-view > * > h4, .HyperMD-header-4):not(.callout *,
+  ul *,
+  ol *) {
+    padding: unset;
+    clip-path: unset;
+    text-align: left;
+  }
+  :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h4-stroke,
+  .h4-stroke-left-aligned,
+  .h4-normal,
+  .sci-fi) :is(.el-h4 > h4, .markdown-preview-view > * > h4, .HyperMD-header-4):not(.callout *,
+  ul *,
+  ol *)::before {
+    position: unset;
+    background-image: unset;
+    inset: unset;
+    clip-path: unset;
+    display: inline-block;
+    height: 1em;
+    width: 6em;
+    transform: translateY(-15%);
+    background-color: rgba(var(--color-cyan-rgb), 1);
+    -webkit-mask-image: var(--sci-fi-h-display);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: left center;
+    mask-mode: luminance;
+    vertical-align: middle;
+    margin-right: 0.2em;
+  }
 }
-
-.sci-fi.markdown-preview-view.h1-display h1:not(.callout h1, ul h1, ol h1) {
-  --h1-color: inherit;
-  --h1-background: transparent;
-  --h1-font: "Orbitron", Arial, serif;
-  padding: unset;
-  clip-path: unset;
-  text-align: left;
+@container style(--fas-skin-sci-fi: enable) and (style(--fas-h5-display: enable) or style(--fas-h5-display-left-aligned: enable)) {
+  :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h5-stroke,
+  .h5-stroke-left-aligned,
+  .h5-normal,
+  .sci-fi) :is(.el-h5 > h5, .markdown-preview-view > * > h5, .HyperMD-header-5):not(.callout *,
+  ul *,
+  ol *) {
+    padding: unset;
+    clip-path: unset;
+    text-align: left;
+  }
+  :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h5-stroke,
+  .h5-stroke-left-aligned,
+  .h5-normal,
+  .sci-fi) :is(.el-h5 > h5, .markdown-preview-view > * > h5, .HyperMD-header-5):not(.callout *,
+  ul *,
+  ol *)::before {
+    position: unset;
+    background-image: unset;
+    inset: unset;
+    clip-path: unset;
+    display: inline-block;
+    height: 1em;
+    width: 6em;
+    transform: translateY(-15%);
+    background-color: rgba(var(--color-cyan-rgb), 1);
+    -webkit-mask-image: var(--sci-fi-h-display);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: left center;
+    mask-mode: luminance;
+    vertical-align: middle;
+    margin-right: 0.2em;
+  }
 }
-.sci-fi.markdown-preview-view.h1-display h1:not(.callout h1, ul h1, ol h1)::before {
-  position: unset;
-  background-image: unset;
-  inset: unset;
-  clip-path: unset;
-  display: inline-block;
-  height: 1em;
-  width: 6em;
-  transform: translateY(-15%);
-  background-color: rgba(var(--color-cyan-rgb), 1);
-  -webkit-mask-image: var(--sci-fi-h-display);
-  -webkit-mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: left center;
-  mask-mode: luminance;
-  vertical-align: middle;
-  margin-right: 0.2em;
+@container style(--fas-skin-sci-fi: enable) and (style(--fas-h6-display: enable) or style(--fas-h6-display-left-aligned: enable)) {
+  :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h6-stroke,
+  .h6-stroke-left-aligned,
+  .h6-normal,
+  .sci-fi) :is(.el-h6 > h6, .markdown-preview-view > * > h6, .HyperMD-header-6):not(.callout *,
+  ul *,
+  ol *) {
+    padding: unset;
+    clip-path: unset;
+    text-align: left;
+  }
+  :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h6-stroke,
+  .h6-stroke-left-aligned,
+  .h6-normal,
+  .sci-fi) :is(.el-h6 > h6, .markdown-preview-view > * > h6, .HyperMD-header-6):not(.callout *,
+  ul *,
+  ol *)::before {
+    position: unset;
+    background-image: unset;
+    inset: unset;
+    clip-path: unset;
+    display: inline-block;
+    height: 1em;
+    width: 6em;
+    transform: translateY(-15%);
+    background-color: rgba(var(--color-cyan-rgb), 1);
+    -webkit-mask-image: var(--sci-fi-h-display);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: left center;
+    mask-mode: luminance;
+    vertical-align: middle;
+    margin-right: 0.2em;
+  }
 }
-
-.sci-fi.markdown-preview-view.h2-display h2:not(.callout h2, ul h2, ol h2) {
-  --h2-color: inherit;
-  --h2-background: transparent;
-  --h2-font: "Orbitron", Arial, serif;
-  padding: unset;
-  clip-path: unset;
-  text-align: left;
-}
-.sci-fi.markdown-preview-view.h2-display h2:not(.callout h2, ul h2, ol h2)::before {
-  position: unset;
-  background-image: unset;
-  inset: unset;
-  clip-path: unset;
-  display: inline-block;
-  height: 1em;
-  width: 6em;
-  transform: translateY(-15%);
-  background-color: rgba(var(--color-cyan-rgb), 1);
-  -webkit-mask-image: var(--sci-fi-h-display);
-  -webkit-mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: left center;
-  mask-mode: luminance;
-  vertical-align: middle;
-  margin-right: 0.2em;
-}
-
-.sci-fi.markdown-preview-view.h3-display h3:not(.callout h3, ul h3, ol h3) {
-  --h3-color: inherit;
-  --h3-background: transparent;
-  --h3-font: "Orbitron", Arial, serif;
-  padding: unset;
-  clip-path: unset;
-  text-align: left;
-}
-.sci-fi.markdown-preview-view.h3-display h3:not(.callout h3, ul h3, ol h3)::before {
-  position: unset;
-  background-image: unset;
-  inset: unset;
-  clip-path: unset;
-  display: inline-block;
-  height: 1em;
-  width: 6em;
-  transform: translateY(-15%);
-  background-color: rgba(var(--color-cyan-rgb), 1);
-  -webkit-mask-image: var(--sci-fi-h-display);
-  -webkit-mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: left center;
-  mask-mode: luminance;
-  vertical-align: middle;
-  margin-right: 0.2em;
-}
-
-.sci-fi.markdown-preview-view.h4-display h4:not(.callout h4, ul h4, ol h4) {
-  --h4-color: inherit;
-  --h4-background: transparent;
-  --h4-font: "Orbitron", Arial, serif;
-  padding: unset;
-  clip-path: unset;
-  text-align: left;
-}
-.sci-fi.markdown-preview-view.h4-display h4:not(.callout h4, ul h4, ol h4)::before {
-  position: unset;
-  background-image: unset;
-  inset: unset;
-  clip-path: unset;
-  display: inline-block;
-  height: 1em;
-  width: 6em;
-  transform: translateY(-15%);
-  background-color: rgba(var(--color-cyan-rgb), 1);
-  -webkit-mask-image: var(--sci-fi-h-display);
-  -webkit-mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: left center;
-  mask-mode: luminance;
-  vertical-align: middle;
-  margin-right: 0.2em;
-}
-
-.sci-fi.markdown-preview-view.h5-display h5:not(.callout h5, ul h5, ol h5) {
-  --h5-color: inherit;
-  --h5-background: transparent;
-  --h5-font: "Orbitron", Arial, serif;
-  padding: unset;
-  clip-path: unset;
-  text-align: left;
-}
-.sci-fi.markdown-preview-view.h5-display h5:not(.callout h5, ul h5, ol h5)::before {
-  position: unset;
-  background-image: unset;
-  inset: unset;
-  clip-path: unset;
-  display: inline-block;
-  height: 1em;
-  width: 6em;
-  transform: translateY(-15%);
-  background-color: rgba(var(--color-cyan-rgb), 1);
-  -webkit-mask-image: var(--sci-fi-h-display);
-  -webkit-mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: left center;
-  mask-mode: luminance;
-  vertical-align: middle;
-  margin-right: 0.2em;
-}
-
-.sci-fi.markdown-preview-view.h6-display h6:not(.callout h6, ul h6, ol h6) {
-  --h6-color: inherit;
-  --h6-background: transparent;
-  --h6-font: "Orbitron", Arial, serif;
-  padding: unset;
-  clip-path: unset;
-  text-align: left;
-}
-.sci-fi.markdown-preview-view.h6-display h6:not(.callout h6, ul h6, ol h6)::before {
-  position: unset;
-  background-image: unset;
-  inset: unset;
-  clip-path: unset;
-  display: inline-block;
-  height: 1em;
-  width: 6em;
-  transform: translateY(-15%);
-  background-color: rgba(var(--color-cyan-rgb), 1);
-  -webkit-mask-image: var(--sci-fi-h-display);
-  -webkit-mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: left center;
-  mask-mode: luminance;
-  vertical-align: middle;
-  margin-right: 0.2em;
-}
-
-.sci-fi .callout:is([data-callout=note],
-[data-callout=abstract],
-[data-callout=summary],
-[data-callout=tldr],
-[data-callout=info],
-[data-callout=todo],
-[data-callout=tip],
-[data-callout=hint],
-[data-callout=important],
-[data-callout=success],
-[data-callout=check],
-[data-callout=done],
-[data-callout=question],
-[data-callout=help],
-[data-callout=faq],
-[data-callout=warning],
-[data-callout=caution],
-[data-callout=attention],
-[data-callout=failure],
-[data-callout=fail],
-[data-callout=missing],
-[data-callout=danger],
-[data-callout=error],
-[data-callout=bug],
-[data-callout=example],
-[data-callout=quote],
-[data-callout=cite]):not([data-callout=email] .callout, [data-callout=timeline] .callout),
-.sci-fi .callout:is([data-callout=cards-deck],
-[data-callout=email],
-[data-callout=profile],
-[data-callout=autopsy],
-[data-callout=screen],
-[data-callout=profile]):not([data-callout=email] .callout, [data-callout=timeline] .callout) {
-  clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
-  border: none;
-  background-image: linear-gradient(135deg, transparent 30%, rgba(255, 255, 255, 0.05) 100%);
-}
-.sci-fi .callout:is([data-callout=note],
-[data-callout=abstract],
-[data-callout=summary],
-[data-callout=tldr],
-[data-callout=info],
-[data-callout=todo],
-[data-callout=tip],
-[data-callout=hint],
-[data-callout=important],
-[data-callout=success],
-[data-callout=check],
-[data-callout=done],
-[data-callout=question],
-[data-callout=help],
-[data-callout=faq],
-[data-callout=warning],
-[data-callout=caution],
-[data-callout=attention],
-[data-callout=failure],
-[data-callout=fail],
-[data-callout=missing],
-[data-callout=danger],
-[data-callout=error],
-[data-callout=bug],
-[data-callout=example],
-[data-callout=quote],
-[data-callout=cite]):not([data-callout=email] .callout, [data-callout=timeline] .callout) .callout-title,
-.sci-fi .callout:is([data-callout=cards-deck],
-[data-callout=email],
-[data-callout=profile],
-[data-callout=autopsy],
-[data-callout=screen],
-[data-callout=profile]):not([data-callout=email] .callout, [data-callout=timeline] .callout) .callout-title {
-  background: none;
-}
-.sci-fi .callout:is([data-callout=note],
-[data-callout=abstract],
-[data-callout=summary],
-[data-callout=tldr],
-[data-callout=info],
-[data-callout=todo],
-[data-callout=tip],
-[data-callout=hint],
-[data-callout=important],
-[data-callout=success],
-[data-callout=check],
-[data-callout=done],
-[data-callout=question],
-[data-callout=help],
-[data-callout=faq],
-[data-callout=warning],
-[data-callout=caution],
-[data-callout=attention],
-[data-callout=failure],
-[data-callout=fail],
-[data-callout=missing],
-[data-callout=danger],
-[data-callout=error],
-[data-callout=bug],
-[data-callout=example],
-[data-callout=quote],
-[data-callout=cite]):not([data-callout=email] .callout, [data-callout=timeline] .callout) .callout-content,
-.sci-fi .callout:is([data-callout=cards-deck],
-[data-callout=email],
-[data-callout=profile],
-[data-callout=autopsy],
-[data-callout=screen],
-[data-callout=profile]):not([data-callout=email] .callout, [data-callout=timeline] .callout) .callout-content {
-  border-top-style: solid;
-}
-.sci-fi .callout:is([data-callout=note],
-[data-callout=abstract],
-[data-callout=summary],
-[data-callout=tldr],
-[data-callout=info],
-[data-callout=todo],
-[data-callout=tip],
-[data-callout=hint],
-[data-callout=important],
-[data-callout=success],
-[data-callout=check],
-[data-callout=done],
-[data-callout=question],
-[data-callout=help],
-[data-callout=faq],
-[data-callout=warning],
-[data-callout=caution],
-[data-callout=attention],
-[data-callout=failure],
-[data-callout=fail],
-[data-callout=missing],
-[data-callout=danger],
-[data-callout=error],
-[data-callout=bug],
-[data-callout=example],
-[data-callout=quote],
-[data-callout=cite]):not([data-callout=email] .callout, [data-callout=timeline] .callout)::before,
-.sci-fi .callout:is([data-callout=cards-deck],
-[data-callout=email],
-[data-callout=profile],
-[data-callout=autopsy],
-[data-callout=screen],
-[data-callout=profile]):not([data-callout=email] .callout, [data-callout=timeline] .callout)::before {
-  content: "";
-  position: absolute;
-  background: rgba(var(--callout-color), var(--callout-border-opacity));
-  inset: 0;
-  clip-path: polygon(0 20px, 20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px, var(--callout-border-width) calc(20px + var(--callout-border-width) * 0.5), var(--callout-border-width) calc(100% - var(--callout-border-width)), calc(100% - 20px - var(--callout-border-width) * 0.5) calc(100% - var(--callout-border-width)), calc(100% - var(--callout-border-width)) calc(100% - 20px - var(--callout-border-width) * 0.5), calc(100% - var(--callout-border-width)) var(--callout-border-width), calc(20px + var(--callout-border-width) * 0.5) var(--callout-border-width), var(--callout-border-width) calc(20px + var(--callout-border-width) * 0.5));
-}
-.sci-fi .callout:is([data-callout=note],
-[data-callout=abstract],
-[data-callout=summary],
-[data-callout=tldr],
-[data-callout=info],
-[data-callout=todo],
-[data-callout=tip],
-[data-callout=hint],
-[data-callout=important],
-[data-callout=success],
-[data-callout=check],
-[data-callout=done],
-[data-callout=question],
-[data-callout=help],
-[data-callout=faq],
-[data-callout=warning],
-[data-callout=caution],
-[data-callout=attention],
-[data-callout=failure],
-[data-callout=fail],
-[data-callout=missing],
-[data-callout=danger],
-[data-callout=error],
-[data-callout=bug],
-[data-callout=example],
-[data-callout=quote],
-[data-callout=cite]):not([data-callout=email] .callout, [data-callout=timeline] .callout):is([data-callout-metadata~=accent])::before,
-.sci-fi .callout:is([data-callout=cards-deck],
-[data-callout=email],
-[data-callout=profile],
-[data-callout=autopsy],
-[data-callout=screen],
-[data-callout=profile]):not([data-callout=email] .callout, [data-callout=timeline] .callout):is([data-callout-metadata~=accent])::before {
-  background: hsl(var(--accent-h), var(--accent-s), var(--accent-l), var(--callout-border-opacity));
-}
-
-.sci-fi:is(.markdown-preview-view, .markdown-source-view) hr {
-  width: 100%;
-  height: 20px;
-  border: none;
-  background-color: var(--hr-color);
-  -webkit-mask-image: var(--sci-fi-hr);
-  -webkit-mask-size: contain;
-  -webkit-mask-position: center center;
-  -webkit-mask-repeat: no-repeat;
-}
-
 body {
   --sci-fi-frame-left: url("data:image/svg+xml,%0A%3Csvg width='10.515015mm' height='109.70932mm' viewBox='0 0 10.515015 109.70932' preserveAspectRatio='none' xml:space='preserve' version='1.1' id='svg1' sodipodi:docname='sci-fi-frame-left.svg' inkscape:version='1.3.2 (091e20e, 2023-11-25, custom)' xmlns:inkscape='http://www.inkscape.org/namespaces/inkscape' xmlns:sodipodi='http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'%3E%3Csodipodi:namedview id='namedview1' pagecolor='%23ffffff' bordercolor='%23666666' borderopacity='1.0' inkscape:showpageshadow='2' inkscape:pageopacity='0.0' inkscape:pagecheckerboard='0' inkscape:deskcolor='%23d1d1d1' inkscape:document-units='mm' showguides='true' inkscape:zoom='1.8792098' inkscape:cx='-69.710151' inkscape:cy='208.33224' inkscape:window-width='1920' inkscape:window-height='1017' inkscape:window-x='1912' inkscape:window-y='-8' inkscape:window-maximized='1' inkscape:current-layer='g14'%3E%3Csodipodi:guide position='4.9509223,69.960105' orientation='1,0' id='guide1' inkscape:locked='false' /%3E%3Csodipodi:guide position='-1.0795903e-08,115.70205' orientation='1,0' id='guide2' inkscape:locked='false' /%3E%3C/sodipodi:namedview%3E%3Cdefs id='defs1'%3E%3Cfilter style='color-interpolation-filters:sRGB' id='filter25' x='-0.89515816' y='-0.057466647' width='2.7903163' height='1.1149333'%3E%3CfeGaussianBlur stdDeviation='0.39202238' id='feGaussianBlur25' /%3E%3C/filter%3E%3Cfilter style='color-interpolation-filters:sRGB' id='filter26' x='-0.39784808' y='-0.025540733' width='1.7956962' height='1.0510815'%3E%3CfeGaussianBlur stdDeviation='0.17423217' id='feGaussianBlur26' /%3E%3C/filter%3E%3Cfilter style='color-interpolation-filters:sRGB' id='filter27' x='-2.4865506' y='-0.15962959' width='5.9731012' height='1.3192592'%3E%3CfeGaussianBlur stdDeviation='1.0889511' id='feGaussianBlur27' /%3E%3C/filter%3E%3C/defs%3E%3Cg id='g30' transform='matrix(0.99805568,0,0,1.0380776,-160.58288,76.466493)' style='opacity:0.4'%3E%3Crect style='fill:%2300ffff;fill-opacity:1;stroke:none;stroke-width:1.176;stroke-dasharray:none;paint-order:markers fill stroke;filter:url(%23filter27)' id='rect28' width='1.0510474' height='16.372169' x='165.94876' y='-43.878311' transform='matrix(1,0,0,2.8168805,0,79.721647)' /%3E%3Crect style='fill:%2333ffff;fill-opacity:0.5;stroke:none;stroke-width:1.176;stroke-dasharray:none;paint-order:markers fill stroke;filter:url(%23filter25)' id='rect29' width='1.0510474' height='16.372169' x='165.94876' y='-43.878311' transform='matrix(1,0,0,2.8168805,0,79.721647)' /%3E%3Crect style='fill:%2399ffff;fill-opacity:0.1;stroke:none;stroke-width:1.176;stroke-dasharray:none;paint-order:markers fill stroke;filter:url(%23filter26)' id='rect30' width='1.0510474' height='16.372169' x='165.94876' y='-43.878311' transform='matrix(1,0,0,2.8168805,0,79.721647)' /%3E%3C/g%3E%3Cg id='g14' transform='matrix(-0.99805568,0,0,0.97586519,41.827087,74.478291)'%3E%3Cpath id='path2' style='fill:none;stroke:%2300ffff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' d='m 31.373072,35.97006 h 4.960567 L 41.77628,30.403657 V 9.3410835 L 36.333639,3.8984425 V -44.116357 l 5.442641,-5.442641 v -21.062574 l -5.442641,-5.566403 h -4.960567' sodipodi:nodetypes='cccccccc' /%3E%3Cpath id='path7' style='fill:%2300ffff;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' d='m 40.648631,-55.538949 1.127649,1.127648 v -10.857223 l -1.127649,1.127648 z' /%3E%3Cpath id='path8' style='fill:%2300ffff;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' d='m 40.648631,21.77425 1.127649,1.127648 V 12.044674 l -1.127649,1.127648 z' /%3E%3Cpath id='path9' style='fill:%2300ffff;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' d='m 37.461288,-41.90913 -1.127649,1.127648 v -3.334875 l 1.127649,-1.127649 z' /%3E%3Cpath id='path14' style='fill:%2300ffff;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' d='m 37.461288,5.0260915 -1.127649,-1.127649 v -3.334875 l 1.127649,1.127648 z' /%3E%3C/g%3E%3C/svg%3E%0A");
   --sci-fi-frame-right: url("data:image/svg+xml,%0A%3Csvg width='10.515015mm' height='109.70932mm' viewBox='0 0 10.515015 109.70932' preserveAspectRatio='none' xml:space='preserve' version='1.1' id='svg1' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'%3E%3Cdefs id='defs1'%3E%3Cfilter style='color-interpolation-filters:sRGB' id='filter25' x='-0.89515816' y='-0.057466647' width='2.7903163' height='1.1149333'%3E%3CfeGaussianBlur stdDeviation='0.39202238' id='feGaussianBlur25' /%3E%3C/filter%3E%3Cfilter style='color-interpolation-filters:sRGB' id='filter26' x='-0.39784808' y='-0.025540733' width='1.7956962' height='1.0510815'%3E%3CfeGaussianBlur stdDeviation='0.17423217' id='feGaussianBlur26' /%3E%3C/filter%3E%3Cfilter style='color-interpolation-filters:sRGB' id='filter27' x='-2.4865506' y='-0.15962959' width='5.9731012' height='1.3192592'%3E%3CfeGaussianBlur stdDeviation='1.0889511' id='feGaussianBlur27' /%3E%3C/filter%3E%3C/defs%3E%3Cg id='g30' transform='matrix(-0.99805568,0,0,1.0380776,171.09789,76.466493)' style='opacity:0.4'%3E%3Crect style='fill:%2300ffff;fill-opacity:1;stroke:none;stroke-width:1.176;stroke-dasharray:none;paint-order:markers fill stroke;filter:url(%23filter27)' id='rect28' width='1.0510474' height='16.372169' x='165.94876' y='-43.878311' transform='matrix(1,0,0,2.8168805,0,79.721647)' /%3E%3Crect style='fill:%2333ffff;fill-opacity:0.5;stroke:none;stroke-width:1.176;stroke-dasharray:none;paint-order:markers fill stroke;filter:url(%23filter25)' id='rect29' width='1.0510474' height='16.372169' x='165.94876' y='-43.878311' transform='matrix(1,0,0,2.8168805,0,79.721647)' /%3E%3Crect style='fill:%2399ffff;fill-opacity:0.1;stroke:none;stroke-width:1.176;stroke-dasharray:none;paint-order:markers fill stroke;filter:url(%23filter26)' id='rect30' width='1.0510474' height='16.372169' x='165.94876' y='-43.878311' transform='matrix(1,0,0,2.8168805,0,79.721647)' /%3E%3C/g%3E%3Cg id='g14' transform='matrix(-0.99805568,0,0,0.97586519,41.827087,74.478291)'%3E%3Cpath id='path2' style='fill:none;stroke:%2300ffff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' d='M 41.908571,35.97006 H 36.948004 L 31.505363,30.403657 V 9.3410835 l 5.442641,-5.442641 V -44.116357 l -5.442641,-5.442641 v -21.062574 l 5.442641,-5.566403 h 4.960567' /%3E%3Cpath id='path7' style='fill:%2300ffff;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' d='m 32.633012,-55.538949 -1.127649,1.127648 v -10.857223 l 1.127649,1.127648 z' /%3E%3Cpath id='path8' style='fill:%2300ffff;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' d='m 32.633012,21.77425 -1.127649,1.127648 V 12.044674 l 1.127649,1.127648 z' /%3E%3Cpath id='path9' style='fill:%2300ffff;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' d='m 35.820355,-41.90913 1.127649,1.127648 v -3.334875 l -1.127649,-1.127649 z' /%3E%3Cpath id='path14' style='fill:%2300ffff;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' d='m 35.820355,5.0260915 1.127649,-1.127649 v -3.334875 l -1.127649,1.127648 z' /%3E%3C/g%3E%3C/svg%3E%0A");

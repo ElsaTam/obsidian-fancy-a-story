@@ -1,0 +1,125 @@
+/* GPLv3 license
+FAS - Callout Data Header
+Author: ElsaTam (Kapirklaa in Discord)
+*/
+.callout[data-callout=data-header] {
+  overflow: visible;
+}
+.callout[data-callout=data-header] > .callout-title {
+  display: none;
+}
+.callout[data-callout=data-header] > .callout-content {
+  border-top: none;
+  padding-top: 0;
+  overflow: visible;
+}
+.callout[data-callout=data-header] .callout[data-callout=header] {
+  --img-size: 150px;
+  --callout-blend-mode: normal;
+  --image-shadow-offset: 0px;
+  --p-spacing: 0;
+  --tag-background: hsla(var(--interactive-accent-hsl), 0.4);
+  --tag-color: color-mix(var(--text-accent), var(--mono-rgb-0) 30%);
+  margin-block: 0;
+  margin-left: -24px;
+  margin-right: -12px;
+  overflow: visible;
+  border-top: none;
+  border-inline: none;
+  color: var(--color-base-00);
+  background: linear-gradient(to right, rgb(var(--callout-color)), rgba(var(--callout-color), 0.8));
+}
+.callout[data-callout=data-header] .callout[data-callout=header] > .callout-title {
+  display: none;
+}
+.callout[data-callout=data-header] .callout[data-callout=header] > .callout-content {
+  border-top: none;
+  padding: 0 0 0 5rem;
+  overflow: visible;
+}
+.callout[data-callout=data-header] .callout[data-callout=header] img {
+  position: absolute;
+  left: -1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  width: 5.7rem;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: rgb(var(--callout-color)) solid 2px;
+}
+.callout[data-callout=data-header] .callout[data-callout=header] table {
+  margin: 0;
+  width: 100%;
+}
+.callout[data-callout=data-header] .callout[data-callout=header] td,
+.callout[data-callout=data-header] .callout[data-callout=header] th {
+  border: none;
+  color: var(--color-base-00);
+}
+
+.callout[data-callout=data-header][data-callout-metadata~=pf2] .callout-title {
+  --tag-background: hsla(var(--interactive-accent-hsl), 0.4);
+  --tag-color: color-mix(var(--text-accent), var(--mono-rgb-0) 30%);
+  display: block;
+  background: linear-gradient(to right, rgb(var(--callout-color)), rgba(var(--callout-color), 0.8));
+  color: var(--color-base-00);
+  padding-left: 5.1rem;
+  anchor-name: --data-header-pf2;
+}
+.callout[data-callout=data-header][data-callout-metadata~=pf2] .image-embed[alt~=icon] {
+  --image-shadow-offset: 0px;
+  position: initial;
+}
+.callout[data-callout=data-header][data-callout-metadata~=pf2] img[alt~=icon] {
+  position: absolute;
+  left: -1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  width: 5.7rem;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: rgb(var(--callout-color)) solid 2px;
+  max-width: unset;
+  position-anchor: --data-header-pf2;
+  top: anchor(center);
+}
+.callout[data-callout=data-header][data-callout-metadata~=pf2] .callout-icon {
+  display: none;
+}
+.callout[data-callout=data-header][data-callout-metadata~=pf2] .callout-title-inner {
+  --font-weight: var(--font-normal);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--size-4-4);
+}
+.callout[data-callout=data-header][data-callout-metadata~=pf2] .callout-title-inner :nth-child(odd) {
+  justify-self: start;
+  text-align: left;
+}
+.callout[data-callout=data-header][data-callout-metadata~=pf2] .callout-title-inner :nth-child(even) {
+  justify-self: end;
+  text-align: right;
+}
+.callout[data-callout=data-header][data-callout-metadata~=pf2] > .callout-content > p:first-child {
+  margin-block: 0;
+}
+.callout[data-callout=data-header][data-callout-metadata~=pf2] > .callout-content > p:first-child + p {
+  margin-top: 0;
+}
+
+.callout[data-callout=data-header] .callout[data-callout=header][data-callout-metadata~=accent] {
+  border-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), var(--callout-border-opacity));
+  background: linear-gradient(to right, var(--color-accent), hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.8));
+}
+.callout[data-callout=data-header] .callout[data-callout=header][data-callout-metadata~=accent] img {
+  border-color: var(--color-accent);
+}
+
+.callout[data-callout=data-header][data-callout-metadata~=pf2][data-callout-metadata~=accent] .callout-title {
+  background: linear-gradient(to right, var(--color-accent), hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.8));
+}
+.callout[data-callout=data-header][data-callout-metadata~=pf2][data-callout-metadata~=accent] img[alt~=icon] {
+  border-color: var(--color-accent);
+}

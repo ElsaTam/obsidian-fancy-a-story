@@ -7,7 +7,7 @@ Author: ElsaTam (Kapirklaa in Discord)
   container: markdown-view/inline-size;
 }
 
-.markdown-preview-section {
+.markdown-preview-section:not(.markdown-embed *) {
   anchor-name: --anchor-preview-section;
 }
 
