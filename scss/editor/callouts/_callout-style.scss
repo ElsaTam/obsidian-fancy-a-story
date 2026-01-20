@@ -21,6 +21,7 @@ body {
 }
 
 [data-callout-metadata~="accent"] {
+    border-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l) / var(--callout-border-opacity));
     > .callout-title {
         background: linear-gradient(to right, hsl(var(--accent-h) var(--accent-s) var(--accent-l) / 0.1), transparent);
     }
