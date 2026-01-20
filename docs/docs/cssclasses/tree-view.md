@@ -67,3 +67,6 @@ cssclasses:
 | Variable | Description | Default value |
 |:---------|:------------|:--------------|
 | `--tree-view-guide-color` | Color of the connectors | `var(--background-secondary)` |
+| `--tree-view-guide-width` | Width of the connectors | `2px` |
+
+They are the same variables as for the [`bullet-threading`]({% link docs/cssclasses/bullet-threading.md %}), so modifying them will also alter the styling of the `bullet-threading`.

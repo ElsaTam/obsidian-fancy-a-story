@@ -47,6 +47,7 @@ Source: [`headings.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/
 
 | Tag                                                    | Description                           | Source                                                           |
 |:-------------------------------------------------------|:--------------------------------------|:-----------------------------------------------------------------|
+| [`bullet-threading`]({% link docs/cssclasses/bullet-threading.md %}) | Use a bullet threading style for lists             | [`bullet-threading.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/bullet-threading.css) |
 | [`family-tree`]({% link docs/cssclasses/family-tree.md %}) | Transform lists into family trees | [`family-tree.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/family-tree.css) |
 | [`tree-view`]({% link docs/cssclasses/tree-view.md %})     | Transform lists into tree views   | [`tree-view.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/cssclasses/tree-view.css) |
 
