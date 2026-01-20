@@ -9,7 +9,7 @@ Use the cssclass `bullet-threading` to add a thread between bullet points in you
 
 Hovering an item with a sublist will add a vertical thread next to all of its sublist.
 
-[![]({% link images/lists/tree-view-hover.webp %})]({% link images/lists/tree-view-hover.webp %})
+[![]({% link images/lists/bullet-threading.webp %})]({% link images/lists/bullet-threading.webp %})
 
 
 ```md
@@ -30,8 +30,6 @@ cssclasses:
         - Meteoroid
             - Micrometeoroid
 ```
-
-[![]({% link images/lists/bullet-threading.webp %})]({% link images/lists/bullet-threading.webp %})
 
 
 ## CSS Variables
