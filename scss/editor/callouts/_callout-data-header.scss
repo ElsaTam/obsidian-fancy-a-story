@@ -11,10 +11,12 @@
 }
 
 .theme-light .callout[data-callout="data-header"] {
-    --darken-lighten-qty: 40%;
+    --darken-lighten-qty-left: 20%;
+    --darken-lighten-qty-right: 40%;
 }
 .theme-dark .callout[data-callout="data-header"] {
-    --darken-lighten-qty: 50%;
+    --darken-lighten-qty-left: 50%;
+    --darken-lighten-qty-right: 30%;
 }
 
 .callout[data-callout="data-header"] {
@@ -27,11 +29,15 @@
     // --header-right-color: hsl(from rgb(var(--callout-color)) h calc(s - 20) l / 0.8);
 
     // darken/lighten variant
-    --header-left-color: color-mix(in hsl, rgb(var(--callout-color)), rgb(var(--mono-rgb-0)) var(--darken-lighten-qty));
+    --header-left-color: color-mix(
+        in hsl,
+        rgb(var(--callout-color)),
+        rgb(var(--mono-rgb-0)) var(--darken-lighten-qty-left)
+    );
     --header-right-color: color-mix(
         in hsl,
-        rgba(var(--callout-color), 0.8),
-        rgba(var(--mono-rgb-0), 0.8) var(--darken-lighten-qty)
+        rgb(var(--callout-color)),
+        rgb(var(--mono-rgb-0)) var(--darken-lighten-qty-right)
     );
 
     &[data-callout-metadata~="accent"] {
@@ -44,11 +50,15 @@
         // --header-right-color: hsl(from var(--color-accent) h calc(s - 20) l / 0.8);
 
         // darken/lighten variant
-        --header-left-color: color-mix(in hsl, var(--color-accent), rgb(var(--mono-rgb-0)) var(--darken-lighten-qty));
+        --header-left-color: color-mix(
+            in hsl,
+            var(--color-accent),
+            rgb(var(--mono-rgb-0)) var(--darken-lighten-qty-left)
+        );
         --header-right-color: color-mix(
             in hsl,
-            hsl(var(--accent-h) var(--accent-s) var(--accent-l) / 0.8),
-            rgba(var(--mono-rgb-0), 0.8) var(--darken-lighten-qty)
+            var(--color-accent),
+            rgb(var(--mono-rgb-0)) var(--darken-lighten-qty-right)
         );
     }
 }
