@@ -7,24 +7,65 @@
     width: 5.7rem;
     aspect-ratio: 1;
     object-fit: cover;
-    border: rgb(var(--callout-color)) solid 2px;
+    border: var(--header-left-color) solid 2px;
 }
 
-@mixin gradient {
-    background: linear-gradient(to right, rgb(var(--callout-color)), rgba(var(--callout-color), 0.8));
+.theme-light .callout[data-callout="data-header"] {
+    --darken-lighten-qty: 40%;
+}
+.theme-dark .callout[data-callout="data-header"] {
+    --darken-lighten-qty: 50%;
 }
 
-@mixin gradient-accent {
-    background: linear-gradient(
-        to right,
-        var(--color-accent),
-        hsl(var(--accent-h) var(--accent-s) var(--accent-l) / 0.8)
+.callout[data-callout="data-header"] {
+    // normal variant
+    // --header-left-color: rgb(var(--callout-color));
+    // --header-right-color: rgba(var(--callout-color), 0.8);
+
+    // saturation variant
+    // --header-left-color: hsl(from rgb(var(--callout-color)) h calc(s - 20) l);
+    // --header-right-color: hsl(from rgb(var(--callout-color)) h calc(s - 20) l / 0.8);
+
+    // darken/lighten variant
+    --header-left-color: color-mix(in hsl, rgb(var(--callout-color)), rgb(var(--mono-rgb-0)) var(--darken-lighten-qty));
+    --header-right-color: color-mix(
+        in hsl,
+        rgba(var(--callout-color), 0.8),
+        rgba(var(--mono-rgb-0), 0.8) var(--darken-lighten-qty)
     );
+
+    &[data-callout-metadata~="accent"] {
+        // normal variant
+        // --header-left-color: var(--color-accent);
+        // --header-right-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l) / 0.8);
+
+        // saturation variant
+        // --header-left-color: hsl(from var(--color-accent) h calc(s - 20) l);
+        // --header-right-color: hsl(from var(--color-accent) h calc(s - 20) l / 0.8);
+
+        // darken/lighten variant
+        --header-left-color: color-mix(in hsl, var(--color-accent), rgb(var(--mono-rgb-0)) var(--darken-lighten-qty));
+        --header-right-color: color-mix(
+            in hsl,
+            hsl(var(--accent-h) var(--accent-s) var(--accent-l) / 0.8),
+            rgba(var(--mono-rgb-0), 0.8) var(--darken-lighten-qty)
+        );
+    }
+}
+
+// normal variant
+@mixin gradient {
+    background: linear-gradient(to right, var(--header-left-color), var(--header-right-color));
 }
 
 @mixin tag {
     --tag-background: hsla(var(--interactive-accent-hsl), 0.4);
-    --tag-color: color-mix(var(--text-accent), var(--mono-rgb-0) 30%);
+    /**--tag-color: color-mix(
+        in srgb,
+        var(--text-accent),
+        rgb(var(--mono-rgb-0)) 60%
+    );*/ // remove with darken/lighten variant
+    --tag-color: color-mix(in srgb, var(--text-accent), rgb(var(--mono-rgb-100)) 60%); // for darken/lighten variant
 }
 
 .callout[data-callout="data-header"] {
@@ -46,13 +87,12 @@
         --p-spacing: 0;
         @include tag;
 
-        margin-block: 0;
-        margin-left: -24px;
-        margin-right: -12px;
+        margin-bottom: 0;
+        margin-top: calc(0px - var(--callout-border-width));
+        margin-left: calc(-24px - var(--callout-border-width));
+        margin-right: calc(-12px - var(--callout-border-width));
         overflow: visible;
-        border-top: none;
-        border-inline: none;
-        color: var(--color-base-00);
+        //color: var(--color-base-00); // remove with darken/lighten variant
 
         @include gradient;
 
@@ -77,7 +117,7 @@
         th {
             border: none;
 
-            color: var(--color-base-00);
+            //color: var(--color-base-00); // remove with darken/lighten variant
         }
     }
 }
@@ -87,7 +127,8 @@
         @include tag;
         display: block;
         @include gradient;
-        color: var(--color-base-00);
+        //color: var(--color-base-00); // remove with darken/lighten variant
+        color: var(--text-normal); // for darken/lighten variant
         padding-left: 5.1rem;
         anchor-name: --data-header-pf2;
     }
@@ -135,18 +176,4 @@
 
 .callout[data-callout="data-header"] .callout[data-callout="header"][data-callout-metadata~="accent"] {
     border-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l) / var(--callout-border-opacity));
-    @include gradient-accent;
-    img {
-        border-color: var(--color-accent);
-    }
-}
-
-.callout[data-callout="data-header"][data-callout-metadata~="pf2"][data-callout-metadata~="accent"] {
-    .callout-title {
-        @include gradient-accent;
-    }
-
-    img[alt~="icon"] {
-        border-color: var(--color-accent);
-    }
 }
