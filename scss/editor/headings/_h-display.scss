@@ -67,56 +67,72 @@ body {
                 position: relative;
                 padding-block: var(--cutout-outline-inset);
                 padding-inline: calc(var(--cutout-outline-inset) + 14px);
-                clip-path: polygon(
-                    0 var(--cutout-corner-angle),
-                    var(--cutout-corner-angle) 0,
-                    calc(100% - var(--cutout-corner-angle)) 0,
-                    100% var(--cutout-corner-angle),
-                    100% calc(100% - var(--cutout-corner-angle)),
-                    calc(100% - var(--cutout-corner-angle)) 100%,
-                    var(--cutout-corner-angle) 100%,
-                    0 calc(100% - var(--cutout-corner-angle))
-                );
+
+                @supports (corner-shape: bevel) {
+                    corner-shape: bevel;
+                    border-radius: var(--cutout-corner-angle);
+                }
+                @supports not (corner-shape: bevel) {
+                    clip-path: polygon(
+                        0 var(--cutout-corner-angle),
+                        var(--cutout-corner-angle) 0,
+                        calc(100% - var(--cutout-corner-angle)) 0,
+                        100% var(--cutout-corner-angle),
+                        100% calc(100% - var(--cutout-corner-angle)),
+                        calc(100% - var(--cutout-corner-angle)) 100%,
+                        var(--cutout-corner-angle) 100%,
+                        0 calc(100% - var(--cutout-corner-angle))
+                    );
+                }
                 overflow: hidden; /* Creates a Block Formatting Context (BFC) to avoid going over the float elements */
 
                 @include cutout_border.outline;
 
-                /* Only in preview */
-                &:is(.is-collapsed > h#{$i})::before {
-                    background: var(--h#{$i}-border-color-collapsed);
+                @supports (corner-shape: bevel) {
+                    /* Only in preview */
+                    &:is(.is-collapsed > h#{$i}) {
+                        outline-width: var(--cutout-outline-inset);
+                        outline-color: var(--h#{$i}-border-color-collapsed);
+                    }
                 }
+                @supports not (corner-shape: bevel) {
+                    /* Only in preview */
+                    &:is(.is-collapsed > h#{$i})::before {
+                        background: var(--h#{$i}-border-color-collapsed);
+                    }
 
-                /* Only in preview */
-                &:is(.is-collapsed > h#{$i})::after {
-                    content: "";
-                    position: absolute;
-                    inset: 0;
-                    background: var(--h#{$i}-border-color-collapsed);
-                    clip-path: polygon(
-                        0 0,
-                        100% 0,
-                        100% 100%,
-                        0 100%,
-                        0 0,
-                        var(--cutout-outline-inset)
-                            calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px),
-                        var(--cutout-outline-inset)
-                            calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px),
-                        calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px)
-                            calc(100% - var(--cutout-outline-inset)),
-                        calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px)
-                            calc(100% - var(--cutout-outline-inset)),
-                        calc(100% - var(--cutout-outline-inset))
-                            calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px),
-                        calc(100% - var(--cutout-outline-inset))
-                            calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px),
-                        calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px)
-                            var(--cutout-outline-inset),
-                        calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px)
-                            var(--cutout-outline-inset),
-                        var(--cutout-outline-inset)
+                    /* Only in preview */
+                    &:is(.is-collapsed > h#{$i})::after {
+                        content: "";
+                        position: absolute;
+                        inset: 0;
+                        background: var(--h#{$i}-border-color-collapsed);
+                        clip-path: polygon(
+                            0 0,
+                            100% 0,
+                            100% 100%,
+                            0 100%,
+                            0 0,
+                            var(--cutout-outline-inset)
+                                calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px),
+                            var(--cutout-outline-inset)
+                                calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px),
                             calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px)
-                    );
+                                calc(100% - var(--cutout-outline-inset)),
+                            calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px)
+                                calc(100% - var(--cutout-outline-inset)),
+                            calc(100% - var(--cutout-outline-inset))
+                                calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px),
+                            calc(100% - var(--cutout-outline-inset))
+                                calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px),
+                            calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px)
+                                var(--cutout-outline-inset),
+                            calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px)
+                                var(--cutout-outline-inset),
+                            var(--cutout-outline-inset)
+                                calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px)
+                        );
+                    }
                 }
 
                 /* Only in preview */
