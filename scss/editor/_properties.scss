@@ -53,3 +53,7 @@ body {
 .workspace > .workspace-split:not(.mod-root) [data-type="markdown"] .metadata-properties-heading {
     transform: translateY(-50%);
 }
+
+.is-mobile .metadata-content {
+    background-color: transparent;
+}
