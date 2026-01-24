@@ -67,7 +67,7 @@ body {
     }
 }
 
-.is-mobile .markdown-preview-view.banner {
+.is-phone .markdown-preview-view.banner {
     .inline-title {
         top: calc(var(--safe-area-inset-top) + var(--view-header-height) + var(--file-margins-block));
     }
@@ -160,10 +160,9 @@ body {
 }
 .is-mobile .markdown-preview-view.banner.banner-title {
     --inline-title-line-height: 2;
-
-    .inline-title {
-        top: calc(var(--safe-area-inset-top) + var(--view-header-height) + var(--banner-height) * 0.5);
-    }
+}
+.is-phone .markdown-preview-view.banner.banner-title .inline-title {
+    top: calc(var(--safe-area-inset-top) + var(--view-header-height) + var(--banner-height) * 0.5);
 }
 
 // banner-slope
