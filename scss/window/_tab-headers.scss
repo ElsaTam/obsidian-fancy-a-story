@@ -141,7 +141,12 @@ body:not(.is-frameless) .mod-root .workspace-tab-header:not(.is-active) .workspa
 .nav-header {
     border-bottom: var(--file-header-border);
 }
-.is-mobile .nav-header {
-    border-top: var(--file-header-border);
-    border-bottom: 0;
+.is-mobile {
+    .nav-header {
+        border-top: 0;
+        border-bottom: var(--file-header-border);
+    }
+    .workspace-drawer .nav-buttons-container:after {
+        content: none;
+    }
 }
