@@ -30,6 +30,7 @@ body {
     padding-inline: 3cqh;
 }
 
+// FONTS
 @container style(--fas-skin-sci-fi: enable) and style(--sci-fi-style-fonts: enable) {
     .markdown-source-view,
     .markdown-preview-view {
@@ -156,8 +157,37 @@ body {
             [data-callout="screen"],
             [data-callout="profile"]
         ):not([data-callout="email"] .callout, [data-callout="timeline"] .callout) {
-        clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
-        border: none;
+        @supports (corner-shape: bevel) {
+            corner-shape: bevel square bevel square;
+            border-radius: 20px;
+        }
+        @supports not (corner-shape: bevel) {
+            clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+            border: none;
+            &::before {
+                content: "";
+                position: absolute;
+                background: rgba(var(--callout-color), var(--callout-border-opacity));
+                inset: 0;
+                clip-path: polygon(
+                    0 20px,
+                    20px 0,
+                    100% 0,
+                    100% calc(100% - 20px),
+                    calc(100% - 20px) 100%,
+                    0 100%,
+                    0 20px,
+
+                    var(--callout-border-width) calc(20px + var(--callout-border-width) * 0.5),
+                    var(--callout-border-width) calc(100% - var(--callout-border-width)),
+                    calc(100% - 20px - var(--callout-border-width) * 0.5) calc(100% - var(--callout-border-width)),
+                    calc(100% - var(--callout-border-width)) calc(100% - 20px - var(--callout-border-width) * 0.5),
+                    calc(100% - var(--callout-border-width)) var(--callout-border-width),
+                    calc(20px + var(--callout-border-width) * 0.5) var(--callout-border-width),
+                    var(--callout-border-width) calc(20px + var(--callout-border-width) * 0.5)
+                );
+            }
+        }
 
         background-image: linear-gradient(135deg, transparent 30%, rgba(255, 255, 255, 0.05) 100%);
 
@@ -167,30 +197,6 @@ body {
 
         .callout-content {
             border-top-style: solid;
-        }
-
-        &::before {
-            content: "";
-            position: absolute;
-            background: rgba(var(--callout-color), var(--callout-border-opacity));
-            inset: 0;
-            clip-path: polygon(
-                0 20px,
-                20px 0,
-                100% 0,
-                100% calc(100% - 20px),
-                calc(100% - 20px) 100%,
-                0 100%,
-                0 20px,
-
-                var(--callout-border-width) calc(20px + var(--callout-border-width) * 0.5),
-                var(--callout-border-width) calc(100% - var(--callout-border-width)),
-                calc(100% - 20px - var(--callout-border-width) * 0.5) calc(100% - var(--callout-border-width)),
-                calc(100% - var(--callout-border-width)) calc(100% - 20px - var(--callout-border-width) * 0.5),
-                calc(100% - var(--callout-border-width)) var(--callout-border-width),
-                calc(20px + var(--callout-border-width) * 0.5) var(--callout-border-width),
-                var(--callout-border-width) calc(20px + var(--callout-border-width) * 0.5)
-            );
         }
 
         &:is([data-callout-metadata~="accent"])::before {
@@ -208,6 +214,13 @@ body {
         -webkit-mask-size: contain;
         -webkit-mask-position: center center;
         -webkit-mask-repeat: no-repeat;
+    }
+
+    // Aside
+    .markdown-preview-view .aside-left,
+    .markdown-preview-view .aside-right,
+    .markdown-preview-view aside {
+        border-radius: 0;
     }
 }
 
