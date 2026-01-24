@@ -233,8 +233,7 @@ body {
             .minimalist,
             .h#{$i}-stroke,
             .h#{$i}-stroke-left-aligned,
-            .h#{$i}-normal,
-            .sci-fi
+            .h#{$i}-normal
         ) {
             :is(.el-h#{$i} > h#{$i}, .markdown-preview-view > * > h#{$i}, .HyperMD-header-#{$i}):not(
                 .callout *,
@@ -246,6 +245,7 @@ body {
                 text-align: left;
 
                 &::before {
+                    content: "";
                     position: unset;
                     background-image: unset;
                     inset: unset;
