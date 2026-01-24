@@ -655,30 +655,6 @@ settings:
         markdown: true
         type: class-toggle
     - 
-        id: fas-floating-mode-button
-        title: Floating button to switch note modes
-        type: variable-select
-        default: disable
-        options:
-            - 
-                value: enable
-                label: Enable
-            - 
-                value: disable
-                label: Disable
-    - 
-        id: fas-floating-mode-button-position
-        title: Floating button position
-        type: variable-select
-        default: right
-        options:
-            - 
-                value: left
-                label: Left
-            - 
-                value: right
-                label: Right
-    - 
         id: fas-highlight-active-note
         title: Highlight active note
         description: Inspired by the plugin Limelight, code adapted by @tif

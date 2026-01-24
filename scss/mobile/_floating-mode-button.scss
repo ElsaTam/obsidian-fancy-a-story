@@ -26,6 +26,14 @@ body {
         color: var(--fas-floating-mode-button-icon-color);
         box-shadow: var(--shadow-s);
     }
+    .is-phone.is-hidden-nav .mod-root .view-action[aria-label*="edit"] {
+        transform: translateY(calc(var(--hidden-nav-offset)));
+        visibility: visible;
+    }
+    .is-phone.is-hidden-nav .view-header {
+        opacity: 1;
+        visibility: hidden;
+    }
 }
 
 @container style(--fas-floating-mode-button-position: left) {
