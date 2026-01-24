@@ -17,7 +17,9 @@ Note that in both cases, the icon will be cropped in edit mode. You will need to
 
 Add multiple elements inside the callout's header. They will fill a two columns layout, first column being left aligned and second column being right align.
 
-For the icon, add an embed image with the `icon` alt text *inside* the callout. It should be the first image, before the text.
+For the icon, add an embed image with the `icon` alt text *inside* the callout. It should be the first image, before the text, with an empty line.
+
+You can also add the alt test `no-border` to remove the border around the image.
 
 ```markdown
 > [!data-header|pf2 red] **ENCOUNTER** **LOW 1** #Slurk *60 XP*
@@ -37,6 +39,8 @@ Use a nested callout `header` with an image and a table inside its content. This
 - You can have as many column as you want
 - It's easier to create an empty cell
 - The header can have a different color than the content
+
+To remove the border around the icon, add the metadata `no-border` to the `header` callout.
 
 ```markdown
 > [!data-header]
