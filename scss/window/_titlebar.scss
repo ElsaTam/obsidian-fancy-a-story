@@ -16,6 +16,12 @@ body {
     width: calc(var(--workspace-top-margin) + var(--frame-right-space));
     height: var(--workspace-top-margin);
     background-color: var(--workleaves-background);
-    clip-path: polygon(var(--workspace-top-margin) 0, 100% 0, 100% 100%, 0 100%);
+    @supports (corner-shape: bevel) {
+        corner-shape: bevel square square square;
+        border-radius: var(--workspace-top-margin);
+    }
+    @supports not (corner-shape: bevel) {
+        clip-path: polygon(var(--workspace-top-margin) 0, 100% 0, 100% 100%, 0 100%);
+    }
     z-index: calc(var(--layer-popover) - 1);
 }

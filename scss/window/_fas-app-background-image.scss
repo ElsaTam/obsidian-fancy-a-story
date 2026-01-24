@@ -36,7 +36,7 @@ body {
             border: 1px solid var(--sidedock-inset-border-color);
         }
 
-        // Use the a background for individual tab headers
+        // Modify the background for individual tab headers
         &.is-hidden-frameless:not(.is-fullscreen)
             .mod-root
             .workspace-tab-header:not(.is-active)
@@ -44,8 +44,8 @@ body {
         &:not(.is-frameless) .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
             background-color: color-mix(in srgb, var(--workspace-background), transparent 20%);
         }
-        .workspace-tab-header:not(.is-active) .workspace-tab-header-inner {
-            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px));
+        .workspace-tab-header-container .workspace-tab-header.is-active {
+            background: none;
         }
         .workspace-tab-header .workspace-tab-header-inner::before,
         .workspace-tab-header .workspace-tab-header-inner::after,
@@ -53,19 +53,8 @@ body {
             display: none;
         }
 
-        // Remove cutout corner for first and last tabs
-        .workspace-tab-header:not(.is-active):first-child .workspace-tab-header-inner {
-            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
-        }
-        .workspace-tab-header:not(.is-active):last-child .workspace-tab-header-inner {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 8px 100%, 0 calc(100% - 8px));
-        }
-        .workspace-tab-header:not(.is-active):first-child:last-child .workspace-tab-header-inner {
-            clip-path: none;
-        }
-
         // Add the background image
-        > :not(.titlebar, .modal-container) {
+        > .app-container {
             background-image: var(--fas-background-image-url);
             background-size: cover;
 

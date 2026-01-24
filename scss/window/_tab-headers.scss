@@ -62,6 +62,43 @@ body:not(.is-frameless) .mod-root .workspace-tab-header:not(.is-active) .workspa
     padding-top: var(--workspace-top-margin);
 }
 
+// Bevel style for tab headers in non-stack mode
+
+.workspace-tab-header-container .workspace-tab-header.is-active {
+    background: none;
+}
+
+@scope (.mod-root .workspace-tabs:not(.mod-stacked)) {
+    @supports (corner-shape: bevel) {
+        .workspace-tab-header-inner {
+            corner-shape: square square bevel bevel;
+            border-radius: 8px;
+        }
+
+        .workspace-tab-header:first-child .workspace-tab-header-inner {
+            corner-bottom-left-shape: square;
+        }
+
+        .workspace-tab-header:last-child .workspace-tab-header-inner {
+            corner-bottom-right-shape: square;
+        }
+    }
+    @supports not (corner-shape: bevel) {
+        .workspace-tab-header-inner {
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px));
+        }
+        .workspace-tab-header:first-child .workspace-tab-header-inner {
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+        }
+        .workspace-tab-header:last-child .workspace-tab-header-inner {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+        }
+        .workspace-tab-header:first-child:last-child .workspace-tab-header-inner {
+            clip-path: none;
+        }
+    }
+}
+
 // Style active tab in non-stack mode
 
 @scope (.mod-root .workspace-tabs:not(.mod-stacked)) {
@@ -72,18 +109,6 @@ body:not(.is-frameless) .mod-root .workspace-tab-header:not(.is-active) .workspa
 
     .is-active .workspace-tab-header-inner {
         background-color: var(--workspace-background);
-        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px));
-    }
-
-    // Remove cutout corner for first and last tabs
-    .is-active:first-child .workspace-tab-header-inner {
-        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
-    }
-    .is-active:last-child .workspace-tab-header-inner {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 8px 100%, 0 calc(100% - 8px));
-    }
-    .is-active:first-child:last-child .workspace-tab-header-inner {
-        clip-path: none;
     }
 
     // Remove separator before and after active file
