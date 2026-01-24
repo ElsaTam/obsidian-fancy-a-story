@@ -67,6 +67,16 @@ body {
     }
 }
 
+.is-mobile .markdown-preview-view.banner {
+    .inline-title {
+        top: calc(var(--safe-area-inset-top) + var(--view-header-height) + var(--file-margins-block));
+    }
+
+    #{$img-embed-sel} {
+        top: calc(var(--safe-area-inset-top) + var(--view-header-height));
+    }
+}
+
 @media print {
     .print .markdown-preview-view.banner #{$img-embed-sel-print} {
         @include image-banner;
@@ -108,6 +118,7 @@ body {
     }
 }
 
+// banner-gradient
 @mixin image-banner-gradient {
     -webkit-mask-image: linear-gradient(to bottom, black var(--file-margins-block), transparent);
 }
@@ -124,29 +135,38 @@ body {
     }
 }
 
+// banner-title
 .markdown-preview-view.banner.banner-title {
     --inline-title-line-height: 3;
 
     .inline-title,
     .page-header {
+        border: 1px solid var(--color-base-50);
+        background-color: rgba(var(--mono-rgb-0), 0.4);
+        backdrop-filter: blur(5px);
+        text-shadow: none;
+        text-align: center;
+    }
+
+    &:not(.banner-slope, .banner-slant) .inline-title {
         position: absolute;
         top: calc(var(--banner-height) * 0.5);
         right: 50%;
         left: unset;
         transform: translate(50%, -50%);
         display: block;
-        border: 1px solid var(--color-base-50);
         min-width: 50%;
-        background-color: rgba(var(--mono-rgb-0), 0.4);
-        backdrop-filter: blur(5px);
-        text-shadow: none;
-        text-align: center;
     }
 }
 .is-mobile .markdown-preview-view.banner.banner-title {
     --inline-title-line-height: 2;
+
+    .inline-title {
+        top: calc(var(--safe-area-inset-top) + var(--view-header-height) + var(--banner-height) * 0.5);
+    }
 }
 
+// banner-slope
 @mixin image-banner-slope {
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--banner-angle-height)), 0 100%);
     background-color: var(--banner-slope-border-color);
@@ -180,7 +200,6 @@ body {
         transform-origin: bottom left;
         top: calc(var(--banner-height) - 1em - var(--banner-title-shadow-size));
         right: var(--file-margins-inline);
-        left: 0;
         text-align: right;
     }
 }
@@ -201,6 +220,7 @@ body {
     }
 }
 
+// Edit mode
 .markdown-source-view.banner.banner-edit-hide,
 .fas-banner-edit-hide .markdown-source-view.banner {
     .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) {
