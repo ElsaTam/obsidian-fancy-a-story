@@ -103,6 +103,10 @@ body {
     .is-mobile .markdown-source-view::before {
         top: var(--view-header-height);
     }
+    .is-phone .markdown-reading-view::before,
+    .is-phone .markdown-source-view::before {
+        top: 0;
+    }
     .is-mobile .markdown-reading-view::before {
         right: var(--scrollbar-width, 12px);
     }
