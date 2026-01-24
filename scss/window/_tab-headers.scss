@@ -149,4 +149,7 @@ body:not(.is-frameless) .mod-root .workspace-tab-header:not(.is-active) .workspa
     .workspace-drawer .nav-buttons-container:after {
         content: none;
     }
+    .mod-root .view-header {
+        border-bottom: none;
+    }
 }
