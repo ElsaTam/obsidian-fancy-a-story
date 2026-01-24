@@ -59,12 +59,18 @@
     }
     .statblock-content {
         box-shadow: none;
-        -webkit-mask: radial-gradient(
-                var(--cutout-corner-radius) at var(--cutout-corner-radius) var(--cutout-corner-radius),
-                transparent 100%,
-                black
-            )
-            calc(-1 * var(--cutout-corner-radius)) calc(-1 * var(--cutout-corner-radius));
+        @supports (corner-shape: scoop) {
+            corner-shape: scoop;
+            border-radius: var(--cutout-corner-radius);
+        }
+        @supports not (corner-shape: scoop) {
+            -webkit-mask: radial-gradient(
+                    var(--cutout-corner-radius) at var(--cutout-corner-radius) var(--cutout-corner-radius),
+                    transparent 100%,
+                    black
+                )
+                calc(-1 * var(--cutout-corner-radius)) calc(-1 * var(--cutout-corner-radius));
+        }
     }
 }
 
