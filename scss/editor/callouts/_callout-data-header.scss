@@ -7,7 +7,6 @@
     width: 5.7rem;
     aspect-ratio: 1;
     object-fit: cover;
-    border: var(--header-left-color) solid 2px;
 }
 
 .theme-light .callout[data-callout="data-header"] {
@@ -119,6 +118,10 @@
             @include img;
         }
 
+        &:not([data-callout-metadata~="no-border"]) img {
+            border: var(--header-left-color) solid 2px;
+        }
+
         table {
             margin: 0;
             width: 100%;
@@ -153,6 +156,10 @@
         max-width: unset;
         position-anchor: --data-header-pf2;
         top: anchor(center);
+
+        &:not([alt~="no-border"]) {
+            border: var(--header-left-color) solid 2px;
+        }
     }
 
     .callout-icon {
@@ -186,4 +193,9 @@
 
 .callout[data-callout="data-header"] .callout[data-callout="header"][data-callout-metadata~="accent"] {
     border-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l) / var(--callout-border-opacity));
+}
+
+// Fix for admonition
+.callout[data-callout="data-header"][data-callout-metadata~="pf2"] > .callout-content {
+    position: initial;
 }
