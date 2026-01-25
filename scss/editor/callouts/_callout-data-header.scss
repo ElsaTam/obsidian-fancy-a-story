@@ -94,6 +94,9 @@
         --callout-blend-mode: normal;
         --image-shadow-offset: 0px;
         --p-spacing: 0;
+        --table-header-background: transparent;
+        --table-row-alt-background: transparent;
+        --table-row-alt-background-hover: transparent;
         @include tag;
 
         margin-bottom: 0;
