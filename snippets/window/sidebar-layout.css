@@ -41,21 +41,31 @@ body {
 .mod-sidedock .workspace-leaf {
   background-color: var(--workleaves-background);
   box-shadow: inset 0 0 20px 3px var(--shadow-color);
-  -webkit-mask: radial-gradient(var(--cutout-corner-radius) at var(--cutout-corner-radius) var(--cutout-corner-radius), transparent 100%, black) calc(-1 * var(--cutout-corner-radius)) calc(-1 * var(--cutout-corner-radius));
 }
 
-.mod-sidedock .workspace-leaf-content {
-  padding: var(--cutout-corner-radius);
+@supports (corner-shape: scoop) {
+  .mod-sidedock .workspace-leaf {
+    corner-shape: scoop;
+    border-radius: var(--cutout-corner-radius);
+    outline: 1px solid var(--background-secondary);
+    outline-offset: calc(-1 * var(--cutout-outline-inset));
+  }
 }
-
-.mod-sidedock .workspace-leaf::before {
-  content: "";
-  position: absolute;
-  inset: var(--cutout-outline-inset);
-  background: var(--sidedock-inset-border-color);
-  -webkit-mask: radial-gradient(var(--cutout-corner-radius) at var(--cutout-corner-radius) var(--cutout-corner-radius), transparent calc(100% - 1px), black calc(100% - 1px) 100%, transparent) calc(-1 * var(--cutout-corner-radius)) calc(-1 * var(--cutout-corner-radius)), linear-gradient(90deg, black 2px, transparent 0) -1px 50%/100% calc(100% - var(--cutout-corner-radius) * 2 + 1px) repeat-x, linear-gradient(black 2px, transparent 0) 50% -1px/calc(100% - var(--cutout-corner-radius) * 2 + 1px) 100% repeat-y;
+@supports not (corner-shape: scoop) {
+  .mod-sidedock .workspace-leaf {
+    -webkit-mask: radial-gradient(var(--cutout-corner-radius) at var(--cutout-corner-radius) var(--cutout-corner-radius), transparent 100%, black) calc(-1 * var(--cutout-corner-radius)) calc(-1 * var(--cutout-corner-radius));
+  }
+  .mod-sidedock .workspace-leaf-content {
+    padding: var(--cutout-corner-radius);
+  }
+  .mod-sidedock .workspace-leaf::before {
+    content: "";
+    position: absolute;
+    inset: var(--cutout-outline-inset);
+    background: var(--sidedock-inset-border-color);
+    -webkit-mask: radial-gradient(var(--cutout-corner-radius) at var(--cutout-corner-radius) var(--cutout-corner-radius), transparent calc(100% - 1px), black calc(100% - 1px) 100%, transparent) calc(-1 * var(--cutout-corner-radius)) calc(-1 * var(--cutout-corner-radius)), linear-gradient(90deg, black 2px, transparent 0) -1px 50%/100% calc(100% - var(--cutout-corner-radius) * 2 + 1px) repeat-x, linear-gradient(black 2px, transparent 0) 50% -1px/calc(100% - var(--cutout-corner-radius) * 2 + 1px) 100% repeat-y;
+  }
 }
-
 .workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle {
   width: calc(100% - (var(--cutout-corner-radius) + var(--cutout-outline-inset)) * 2);
   align-self: center;
@@ -68,30 +78,51 @@ body {
   --icon-color-focused: var(--workspace-foreground-muted);
 }
 
-body:not(.is-ios) .workspace-drawer:is(.mod-left, .mod-right) {
-  padding-inline: var(--cutout-outline-inset);
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
+@supports (corner-shape: scoop) {
+  .is-mobile .workspace-drawer.mod-left {
+    corner-shape: square scoop scoop square;
+  }
+  .is-mobile .workspace-drawer.mod-right {
+    corner-shape: scoop square square scoop;
+  }
+  .is-mobile .workspace-drawer:is(.mod-right, .mod-left) {
+    padding-inline: var(--cutout-outline-inset);
+    border-radius: var(--cutout-corner-radius);
+    outline: 1px solid var(--background-secondary);
+    outline-offset: calc(-1 * var(--cutout-outline-inset));
+  }
 }
-
-body:not(.is-ios) .workspace-drawer.mod-left {
-  -webkit-mask-image: radial-gradient(var(--cutout-corner-radius) at 100% 0, transparent 100%, black), radial-gradient(var(--cutout-corner-radius) at 100% 100%, transparent 100%, black);
+@supports not (corner-shape: scoop) {
+  .is-mobile .workspace-drawer:is(.mod-left, .mod-right) {
+    padding-inline: var(--cutout-outline-inset);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+  }
+  .is-mobile .workspace-drawer.mod-left {
+    -webkit-mask-image: radial-gradient(var(--cutout-corner-radius) at 100% 0, transparent 100%, black), radial-gradient(var(--cutout-corner-radius) at 100% 100%, transparent 100%, black);
+  }
+  .is-mobile .workspace-drawer.mod-right {
+    -webkit-mask-image: radial-gradient(var(--cutout-corner-radius) at 0 0, transparent 100%, black), radial-gradient(var(--cutout-corner-radius) at 0 100%, transparent 100%, black);
+    corner-shape: scoop;
+    border-radius: var(--cutout-corner-radius);
+  }
+  .is-mobile .workspace-drawer::before {
+    content: "";
+    position: absolute;
+    inset: var(--cutout-outline-inset);
+    background: var(--background-secondary);
+    -webkit-mask: radial-gradient(var(--cutout-corner-radius) at var(--cutout-corner-radius) var(--cutout-corner-radius), transparent calc(100% - 1px), black calc(100% - 1px) 100%, transparent) calc(-1 * var(--cutout-corner-radius)) calc(-1 * var(--cutout-corner-radius)), linear-gradient(90deg, black 2px, transparent 0) -1px 50%/100% calc(100% - var(--cutout-corner-radius) * 2 + 1px) repeat-x, linear-gradient(black 2px, transparent 0) 50% -1px/calc(100% - var(--cutout-corner-radius) * 2 + 1px) 100% repeat-y;
+  }
 }
-
-body:not(.is-ios) .workspace-drawer.mod-right {
-  -webkit-mask-image: radial-gradient(var(--cutout-corner-radius) at 0 0, transparent 100%, black), radial-gradient(var(--cutout-corner-radius) at 0 100%, transparent 100%, black);
-}
-
-body:not(.is-ios) .workspace-drawer::before {
-  content: "";
-  position: absolute;
-  inset: var(--cutout-outline-inset);
-  background: var(--background-secondary);
-  -webkit-mask: radial-gradient(var(--cutout-corner-radius) at var(--cutout-corner-radius) var(--cutout-corner-radius), transparent calc(100% - 1px), black calc(100% - 1px) 100%, transparent) calc(-1 * var(--cutout-corner-radius)) calc(-1 * var(--cutout-corner-radius)), linear-gradient(90deg, black 2px, transparent 0) -1px 50%/100% calc(100% - var(--cutout-corner-radius) * 2 + 1px) repeat-x, linear-gradient(black 2px, transparent 0) 50% -1px/calc(100% - var(--cutout-corner-radius) * 2 + 1px) 100% repeat-y;
-}
-
 .workspace-drawer {
   --mobile-sidebar-background: var(--workleaves-background);
+}
+
+.workspace-drawer-ribbon {
+  border-right-color: var(--background-secondary);
+  top: var(--cutout-outline-inset);
+  bottom: var(--cutout-outline-inset);
+  height: unset;
 }
 
 .workspace-drawer-inner,

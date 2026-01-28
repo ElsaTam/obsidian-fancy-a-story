@@ -2,38 +2,15 @@
 FAS - Embed Inline
 Author: ElsaTam (Kapirklaa in Discord)
 */
-body {
-  --file-margins-block: var(--size-4-8);
-  --file-margins-inline: var(--size-4-8);
-  --file-margins: var(--file-margins-block) var(--file-margins-inline);
+.markdown-embed[alt~=faded] {
+  border-inline-start: none;
+  border-inline-end: none;
+  border-block-start: none;
+  border-block-end: none;
 }
-
-.is-mobile {
-  --file-margins-block: var(--size-4-2);
-  --file-margins-inline: var(--size-4-6);
+.markdown-embed[alt~=faded] .embed-title {
+  display: none;
 }
-
-@scope (:is(.markdown-source-view, .markdown-preview-view) .markdown-embed[alt~="faded"]) to (.markdown-embed) {
-  :scope {
-    border-inline-start: none;
-    border-inline-end: none;
-    border-block-start: none;
-    border-block-end: none;
-    padding: 0;
-    --embed-opacity-loss: 0.3;
-  }
-  .embed-title {
-    display: none;
-  }
-  .markdown-embed-link {
-    position: absolute;
-    right: calc(-1 * var(--file-margins-inline));
-    top: 0;
-  }
-  :scope .markdown-embed-content {
-    max-height: unset;
-  }
-  :is(:scope, .markdown-embed):hover {
-    background-color: var(--background-modifier-hover);
-  }
+.markdown-embed[alt~=faded] > .markdown-embed-content > .markdown-preview-view {
+  padding: 0;
 }

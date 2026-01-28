@@ -81,7 +81,6 @@ body {
     left: 1px;
     box-shadow: 1px 1px 5px black;
   }
-  .markdown-embed.markdown-embed .markdown-preview-view,
   .markdown-embed-content {
     box-shadow: var(--card-shadow-offset-x) var(--card-shadow-offset-y) var(--card-shadow-blur) rgba(0, 0, 0, var(--card-shadow-opacity));
     border-radius: var(--card-radius);
@@ -92,9 +91,11 @@ body {
     background: var(--workleaves-background);
     contain: strict;
     content-visibility: auto;
-    overflow: hidden;
     padding: var(--size-2-2);
+  }
+  .markdown-embed-content.markdown-embed-content {
     height: var(--embed-max-height);
+    overflow: hidden;
   }
   .dataview-result-list-li > span > a > .image-embed,
   .dataview-result-list-li > span > .image-embed {

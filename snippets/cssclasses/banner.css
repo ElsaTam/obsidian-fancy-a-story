@@ -78,6 +78,13 @@ body {
   text-shadow: var(--banner-title-shadow);
 }
 
+.is-phone .markdown-preview-view.banner .inline-title {
+  top: calc(var(--safe-area-inset-top) + var(--view-header-height) + var(--file-margins-block));
+}
+.is-phone .markdown-preview-view.banner .mod-header + div + div > p > .image-embed:nth-child(1 of .image-embed) {
+  top: calc(var(--safe-area-inset-top) + var(--view-header-height));
+}
+
 @media print {
   .print .markdown-preview-view.banner .mod-frontmatter + div > p > .image-embed:nth-child(1 of .image-embed) {
     --image-shadow-offset: 0;
@@ -142,22 +149,28 @@ body {
 }
 .markdown-preview-view.banner.banner-title .inline-title,
 .markdown-preview-view.banner.banner-title .page-header {
+  border: 1px solid var(--color-base-50);
+  background-color: rgba(var(--mono-rgb-0), 0.4);
+  backdrop-filter: blur(5px);
+  text-shadow: none;
+  text-align: center;
+}
+.markdown-preview-view.banner.banner-title:not(.banner-slope, .banner-slant) .inline-title {
   position: absolute;
   top: calc(var(--banner-height) * 0.5);
   right: 50%;
   left: unset;
   transform: translate(50%, -50%);
   display: block;
-  border: 1px solid var(--color-base-50);
   min-width: 50%;
-  background-color: rgba(var(--mono-rgb-0), 0.4);
-  backdrop-filter: blur(5px);
-  text-shadow: none;
-  text-align: center;
 }
 
 .is-mobile .markdown-preview-view.banner.banner-title {
   --inline-title-line-height: 2;
+}
+
+.is-phone .markdown-preview-view.banner.banner-title .inline-title {
+  top: calc(var(--safe-area-inset-top) + var(--view-header-height) + var(--banner-height) * 0.5);
 }
 
 .markdown-preview-view.banner.banner-slant,
@@ -185,7 +198,6 @@ body {
   transform-origin: bottom left;
   top: calc(var(--banner-height) - 1em - var(--banner-title-shadow-size));
   right: var(--file-margins-inline);
-  left: 0;
   text-align: right;
 }
 

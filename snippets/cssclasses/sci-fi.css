@@ -98,6 +98,10 @@ body {
   .is-mobile .markdown-source-view::before {
     top: var(--view-header-height);
   }
+  .is-phone .markdown-reading-view::before,
+  .is-phone .markdown-source-view::before {
+    top: 0;
+  }
   .is-mobile .markdown-reading-view::before {
     right: var(--scrollbar-width, 12px);
   }
@@ -105,6 +109,121 @@ body {
   .markdown-preview-view {
     background-image: radial-gradient(circle at 1px 1px, rgba(var(--sci-fi-color-rgb), 0.1) 1px, transparent 0);
     background-size: 40px 40px;
+  }
+  @supports (corner-shape: bevel) {
+    .callout:is([data-callout=note],
+    [data-callout=abstract],
+    [data-callout=summary],
+    [data-callout=tldr],
+    [data-callout=info],
+    [data-callout=todo],
+    [data-callout=tip],
+    [data-callout=hint],
+    [data-callout=important],
+    [data-callout=success],
+    [data-callout=check],
+    [data-callout=done],
+    [data-callout=question],
+    [data-callout=help],
+    [data-callout=faq],
+    [data-callout=warning],
+    [data-callout=caution],
+    [data-callout=attention],
+    [data-callout=failure],
+    [data-callout=fail],
+    [data-callout=missing],
+    [data-callout=danger],
+    [data-callout=error],
+    [data-callout=bug],
+    [data-callout=example],
+    [data-callout=quote],
+    [data-callout=cite]):not([data-callout=email] .callout, [data-callout=timeline] .callout),
+    .callout:is([data-callout=cards-deck],
+    [data-callout=email],
+    [data-callout=profile],
+    [data-callout=autopsy],
+    [data-callout=screen],
+    [data-callout=profile]):not([data-callout=email] .callout, [data-callout=timeline] .callout) {
+      corner-shape: bevel square bevel square;
+      border-radius: 20px;
+    }
+  }
+  @supports not (corner-shape: bevel) {
+    .callout:is([data-callout=note],
+    [data-callout=abstract],
+    [data-callout=summary],
+    [data-callout=tldr],
+    [data-callout=info],
+    [data-callout=todo],
+    [data-callout=tip],
+    [data-callout=hint],
+    [data-callout=important],
+    [data-callout=success],
+    [data-callout=check],
+    [data-callout=done],
+    [data-callout=question],
+    [data-callout=help],
+    [data-callout=faq],
+    [data-callout=warning],
+    [data-callout=caution],
+    [data-callout=attention],
+    [data-callout=failure],
+    [data-callout=fail],
+    [data-callout=missing],
+    [data-callout=danger],
+    [data-callout=error],
+    [data-callout=bug],
+    [data-callout=example],
+    [data-callout=quote],
+    [data-callout=cite]):not([data-callout=email] .callout, [data-callout=timeline] .callout),
+    .callout:is([data-callout=cards-deck],
+    [data-callout=email],
+    [data-callout=profile],
+    [data-callout=autopsy],
+    [data-callout=screen],
+    [data-callout=profile]):not([data-callout=email] .callout, [data-callout=timeline] .callout) {
+      clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+      border: none;
+    }
+    .callout:is([data-callout=note],
+    [data-callout=abstract],
+    [data-callout=summary],
+    [data-callout=tldr],
+    [data-callout=info],
+    [data-callout=todo],
+    [data-callout=tip],
+    [data-callout=hint],
+    [data-callout=important],
+    [data-callout=success],
+    [data-callout=check],
+    [data-callout=done],
+    [data-callout=question],
+    [data-callout=help],
+    [data-callout=faq],
+    [data-callout=warning],
+    [data-callout=caution],
+    [data-callout=attention],
+    [data-callout=failure],
+    [data-callout=fail],
+    [data-callout=missing],
+    [data-callout=danger],
+    [data-callout=error],
+    [data-callout=bug],
+    [data-callout=example],
+    [data-callout=quote],
+    [data-callout=cite]):not([data-callout=email] .callout, [data-callout=timeline] .callout)::before,
+    .callout:is([data-callout=cards-deck],
+    [data-callout=email],
+    [data-callout=profile],
+    [data-callout=autopsy],
+    [data-callout=screen],
+    [data-callout=profile]):not([data-callout=email] .callout, [data-callout=timeline] .callout)::before {
+      content: "";
+      position: absolute;
+      background: rgba(var(--callout-color), var(--callout-border-opacity));
+      inset: 0;
+      clip-path: polygon(0 20px, 20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px, var(--callout-border-width) calc(20px + var(--callout-border-width) * 0.5), var(--callout-border-width) calc(100% - var(--callout-border-width)), calc(100% - 20px - var(--callout-border-width) * 0.5) calc(100% - var(--callout-border-width)), calc(100% - var(--callout-border-width)) calc(100% - 20px - var(--callout-border-width) * 0.5), calc(100% - var(--callout-border-width)) var(--callout-border-width), calc(20px + var(--callout-border-width) * 0.5) var(--callout-border-width), var(--callout-border-width) calc(20px + var(--callout-border-width) * 0.5));
+    }
   }
   .callout:is([data-callout=note],
   [data-callout=abstract],
@@ -139,8 +258,6 @@ body {
   [data-callout=autopsy],
   [data-callout=screen],
   [data-callout=profile]):not([data-callout=email] .callout, [data-callout=timeline] .callout) {
-    clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
-    border: none;
     background-image: linear-gradient(135deg, transparent 30%, rgba(255, 255, 255, 0.05) 100%);
   }
   .callout:is([data-callout=note],
@@ -239,45 +356,6 @@ body {
   [data-callout=bug],
   [data-callout=example],
   [data-callout=quote],
-  [data-callout=cite]):not([data-callout=email] .callout, [data-callout=timeline] .callout)::before,
-  .callout:is([data-callout=cards-deck],
-  [data-callout=email],
-  [data-callout=profile],
-  [data-callout=autopsy],
-  [data-callout=screen],
-  [data-callout=profile]):not([data-callout=email] .callout, [data-callout=timeline] .callout)::before {
-    content: "";
-    position: absolute;
-    background: rgba(var(--callout-color), var(--callout-border-opacity));
-    inset: 0;
-    clip-path: polygon(0 20px, 20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px, var(--callout-border-width) calc(20px + var(--callout-border-width) * 0.5), var(--callout-border-width) calc(100% - var(--callout-border-width)), calc(100% - 20px - var(--callout-border-width) * 0.5) calc(100% - var(--callout-border-width)), calc(100% - var(--callout-border-width)) calc(100% - 20px - var(--callout-border-width) * 0.5), calc(100% - var(--callout-border-width)) var(--callout-border-width), calc(20px + var(--callout-border-width) * 0.5) var(--callout-border-width), var(--callout-border-width) calc(20px + var(--callout-border-width) * 0.5));
-  }
-  .callout:is([data-callout=note],
-  [data-callout=abstract],
-  [data-callout=summary],
-  [data-callout=tldr],
-  [data-callout=info],
-  [data-callout=todo],
-  [data-callout=tip],
-  [data-callout=hint],
-  [data-callout=important],
-  [data-callout=success],
-  [data-callout=check],
-  [data-callout=done],
-  [data-callout=question],
-  [data-callout=help],
-  [data-callout=faq],
-  [data-callout=warning],
-  [data-callout=caution],
-  [data-callout=attention],
-  [data-callout=failure],
-  [data-callout=fail],
-  [data-callout=missing],
-  [data-callout=danger],
-  [data-callout=error],
-  [data-callout=bug],
-  [data-callout=example],
-  [data-callout=quote],
   [data-callout=cite]):not([data-callout=email] .callout, [data-callout=timeline] .callout):is([data-callout-metadata~=accent])::before,
   .callout:is([data-callout=cards-deck],
   [data-callout=email],
@@ -297,6 +375,11 @@ body {
     -webkit-mask-position: center center;
     -webkit-mask-repeat: no-repeat;
   }
+  .markdown-preview-view .aside-left,
+  .markdown-preview-view .aside-right,
+  .markdown-preview-view aside {
+    border-radius: 0;
+  }
 }
 @container style(--fas-skin-sci-fi: enable) and (style(--fas-h1-display: enable) or style(--fas-h1-display-left-aligned: enable)) {
   :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
@@ -304,8 +387,7 @@ body {
   .minimalist,
   .h1-stroke,
   .h1-stroke-left-aligned,
-  .h1-normal,
-  .sci-fi) :is(.el-h1 > h1, .markdown-preview-view > * > h1, .HyperMD-header-1):not(.callout *,
+  .h1-normal) :is(.el-h1 > h1, .markdown-preview-view > * > h1, .HyperMD-header-1):not(.callout *,
   ul *,
   ol *) {
     padding: unset;
@@ -317,10 +399,10 @@ body {
   .minimalist,
   .h1-stroke,
   .h1-stroke-left-aligned,
-  .h1-normal,
-  .sci-fi) :is(.el-h1 > h1, .markdown-preview-view > * > h1, .HyperMD-header-1):not(.callout *,
+  .h1-normal) :is(.el-h1 > h1, .markdown-preview-view > * > h1, .HyperMD-header-1):not(.callout *,
   ul *,
   ol *)::before {
+    content: "";
     position: unset;
     background-image: unset;
     inset: unset;
@@ -345,8 +427,7 @@ body {
   .minimalist,
   .h2-stroke,
   .h2-stroke-left-aligned,
-  .h2-normal,
-  .sci-fi) :is(.el-h2 > h2, .markdown-preview-view > * > h2, .HyperMD-header-2):not(.callout *,
+  .h2-normal) :is(.el-h2 > h2, .markdown-preview-view > * > h2, .HyperMD-header-2):not(.callout *,
   ul *,
   ol *) {
     padding: unset;
@@ -358,10 +439,10 @@ body {
   .minimalist,
   .h2-stroke,
   .h2-stroke-left-aligned,
-  .h2-normal,
-  .sci-fi) :is(.el-h2 > h2, .markdown-preview-view > * > h2, .HyperMD-header-2):not(.callout *,
+  .h2-normal) :is(.el-h2 > h2, .markdown-preview-view > * > h2, .HyperMD-header-2):not(.callout *,
   ul *,
   ol *)::before {
+    content: "";
     position: unset;
     background-image: unset;
     inset: unset;
@@ -386,8 +467,7 @@ body {
   .minimalist,
   .h3-stroke,
   .h3-stroke-left-aligned,
-  .h3-normal,
-  .sci-fi) :is(.el-h3 > h3, .markdown-preview-view > * > h3, .HyperMD-header-3):not(.callout *,
+  .h3-normal) :is(.el-h3 > h3, .markdown-preview-view > * > h3, .HyperMD-header-3):not(.callout *,
   ul *,
   ol *) {
     padding: unset;
@@ -399,10 +479,10 @@ body {
   .minimalist,
   .h3-stroke,
   .h3-stroke-left-aligned,
-  .h3-normal,
-  .sci-fi) :is(.el-h3 > h3, .markdown-preview-view > * > h3, .HyperMD-header-3):not(.callout *,
+  .h3-normal) :is(.el-h3 > h3, .markdown-preview-view > * > h3, .HyperMD-header-3):not(.callout *,
   ul *,
   ol *)::before {
+    content: "";
     position: unset;
     background-image: unset;
     inset: unset;
@@ -427,8 +507,7 @@ body {
   .minimalist,
   .h4-stroke,
   .h4-stroke-left-aligned,
-  .h4-normal,
-  .sci-fi) :is(.el-h4 > h4, .markdown-preview-view > * > h4, .HyperMD-header-4):not(.callout *,
+  .h4-normal) :is(.el-h4 > h4, .markdown-preview-view > * > h4, .HyperMD-header-4):not(.callout *,
   ul *,
   ol *) {
     padding: unset;
@@ -440,10 +519,10 @@ body {
   .minimalist,
   .h4-stroke,
   .h4-stroke-left-aligned,
-  .h4-normal,
-  .sci-fi) :is(.el-h4 > h4, .markdown-preview-view > * > h4, .HyperMD-header-4):not(.callout *,
+  .h4-normal) :is(.el-h4 > h4, .markdown-preview-view > * > h4, .HyperMD-header-4):not(.callout *,
   ul *,
   ol *)::before {
+    content: "";
     position: unset;
     background-image: unset;
     inset: unset;
@@ -468,8 +547,7 @@ body {
   .minimalist,
   .h5-stroke,
   .h5-stroke-left-aligned,
-  .h5-normal,
-  .sci-fi) :is(.el-h5 > h5, .markdown-preview-view > * > h5, .HyperMD-header-5):not(.callout *,
+  .h5-normal) :is(.el-h5 > h5, .markdown-preview-view > * > h5, .HyperMD-header-5):not(.callout *,
   ul *,
   ol *) {
     padding: unset;
@@ -481,10 +559,10 @@ body {
   .minimalist,
   .h5-stroke,
   .h5-stroke-left-aligned,
-  .h5-normal,
-  .sci-fi) :is(.el-h5 > h5, .markdown-preview-view > * > h5, .HyperMD-header-5):not(.callout *,
+  .h5-normal) :is(.el-h5 > h5, .markdown-preview-view > * > h5, .HyperMD-header-5):not(.callout *,
   ul *,
   ol *)::before {
+    content: "";
     position: unset;
     background-image: unset;
     inset: unset;
@@ -509,8 +587,7 @@ body {
   .minimalist,
   .h6-stroke,
   .h6-stroke-left-aligned,
-  .h6-normal,
-  .sci-fi) :is(.el-h6 > h6, .markdown-preview-view > * > h6, .HyperMD-header-6):not(.callout *,
+  .h6-normal) :is(.el-h6 > h6, .markdown-preview-view > * > h6, .HyperMD-header-6):not(.callout *,
   ul *,
   ol *) {
     padding: unset;
@@ -522,10 +599,10 @@ body {
   .minimalist,
   .h6-stroke,
   .h6-stroke-left-aligned,
-  .h6-normal,
-  .sci-fi) :is(.el-h6 > h6, .markdown-preview-view > * > h6, .HyperMD-header-6):not(.callout *,
+  .h6-normal) :is(.el-h6 > h6, .markdown-preview-view > * > h6, .HyperMD-header-6):not(.callout *,
   ul *,
   ol *)::before {
+    content: "";
     position: unset;
     background-image: unset;
     inset: unset;
