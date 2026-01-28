@@ -50,7 +50,6 @@
         box-shadow: 1px 1px 5px black;
     }
 
-    .markdown-embed.markdown-embed .markdown-preview-view,
     .markdown-embed-content {
         @include cards-deck.card-shadow;
         @include cards-deck.card-radius;
@@ -61,9 +60,11 @@
         background: var(--workleaves-background);
         contain: strict;
         content-visibility: auto;
-        overflow: hidden;
         padding: var(--size-2-2);
+    }
+    .markdown-embed-content.markdown-embed-content {
         height: var(--embed-max-height);
+        overflow: hidden;
     }
     .dataview-result-list-li > span > a > .image-embed,
     .dataview-result-list-li > span > .image-embed {
