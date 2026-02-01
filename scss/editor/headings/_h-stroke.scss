@@ -54,7 +54,7 @@ body {
             --h#{$i}-weight: var(--h-stroke-weight);
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 0.5ch;
             border-bottom: 0;
 
             &::before {
@@ -64,6 +64,7 @@ body {
                 height: 1px;
                 flex-grow: var(--h#{$i}-stroke-flex-grow);
                 flex-basis: var(--h#{$i}-stroke-flex-basis);
+                margin-right: 20px;
             }
 
             &::after {
@@ -72,6 +73,7 @@ body {
                 flex-grow: 1;
                 background-color: var(--h#{$i}-border-color);
                 height: 1px;
+                margin-left: 20px;
             }
 
             &:is(.is-collapsed > h#{$i})::before,
