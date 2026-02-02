@@ -10,3 +10,13 @@ You can choose between a 2 (`columns-2`), 3 (`columns-3`) or 4 (`columns-4`) col
 [![]({% link images/cssclasses/columns.webp %})]({% link images/cssclasses/columns.webp %})
 
 Any H1 heading will stop the column flow and let it start again after it. Same thing goes for images embed with an alt text containing the word "span": `![[image.png|span]]`
+
+You can force a column break with the following code (what comes after will start in a new column):
+```html
+<span class="column-break"></span>
+```
+
+And a page break with the following code (what comes after will start first column, spaced by a small horizontal gap):
+```html
+<span class="page-break"></span>
+```

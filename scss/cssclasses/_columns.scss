@@ -1,24 +1,35 @@
-@forward '../shared/markdown-container';
-
+@forward "../shared/markdown-container";
 
 $stop1: 500px;
 $stop2: 600px;
 $stop3: 900px;
 
-.columns-2.markdown-preview-view .markdown-preview-section { column-count: 2; }
-.columns-3.markdown-preview-view .markdown-preview-section { column-count: 3; }
-.columns-4.markdown-preview-view .markdown-preview-section { column-count: 4; }
+.columns-2.markdown-preview-view .markdown-preview-section {
+    column-count: 2;
+}
+.columns-3.markdown-preview-view .markdown-preview-section {
+    column-count: 3;
+}
+.columns-4.markdown-preview-view .markdown-preview-section {
+    column-count: 4;
+}
 
 @container markdown-view (#{$stop2} < width < #{$stop3}) {
-    .columns-4.markdown-preview-view .markdown-preview-section { column-count: 3; }
+    .columns-4.markdown-preview-view .markdown-preview-section {
+        column-count: 3;
+    }
 }
 
 @container markdown-view (#{$stop1} < width < #{$stop2}) {
-    :is(.columns-3, .columns-4).markdown-preview-view .markdown-preview-section { column-count: 2; }
+    :is(.columns-3, .columns-4).markdown-preview-view .markdown-preview-section {
+        column-count: 2;
+    }
 }
 
 @container markdown-view (width < #{$stop1}) {
-    :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section { column-count: 1; }
+    :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section {
+        column-count: 1;
+    }
 }
 
 :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section {
@@ -26,18 +37,27 @@ $stop3: 900px;
     column-gap: 50px;
 }
 
-
 @media print {
-    .print .columns-2.markdown-preview-view { column-count: 2; }
-    .print .columns-3.markdown-preview-view { column-count: 3; }
-    .print .columns-4.markdown-preview-view { column-count: 4; }
+    .print .columns-2.markdown-preview-view {
+        column-count: 2;
+    }
+    .print .columns-3.markdown-preview-view {
+        column-count: 3;
+    }
+    .print .columns-4.markdown-preview-view {
+        column-count: 4;
+    }
 
     @media (#{$stop2} < width < #{$stop3}) {
-        .print .columns-4.markdown-preview-view { column-count: 3; }
+        .print .columns-4.markdown-preview-view {
+            column-count: 3;
+        }
     }
 
     @media (width < #{$stop2}) {
-        .print :is(.columns-3, .columns-4).markdown-preview-view { column-count: 2; }
+        .print :is(.columns-3, .columns-4).markdown-preview-view {
+            column-count: 2;
+        }
     }
 
     .print :is(.columns-2, .columns-3, .columns-4).markdown-preview-view {
@@ -46,12 +66,23 @@ $stop3: 900px;
     }
 }
 
-
 :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-pusher,
 :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .mod-header,
 :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .mod-frontmatter,
-:is(.columns-2, .columns-3, .columns-4).markdown-preview-view :is(h1),
+:is(.columns-2, .columns-3, .columns-4).markdown-preview-view h1,
 :is(.columns-2, .columns-3, .columns-4).markdown-preview-view [alt~="span"] {
+    column-span: all;
+}
+
+:is(.columns-2, .columns-3, .columns-4).markdown-preview-view .column-break {
+    break-after: column;
+    display: block;
+}
+
+:is(.columns-2, .columns-3, .columns-4).markdown-preview-view .page-break {
+    display: block;
+    width: 100%;
+    height: 1em;
     column-span: all;
 }
 
