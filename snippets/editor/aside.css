@@ -35,14 +35,14 @@ body {
   width: var(--aside-width);
 }
 
-.is-readable-line-width.markdown-preview-view .aside-left {
+.markdown-preview-view .aside-left {
   float: left;
   clear: left;
   margin-right: var(--fas-float-inline-margin, 12px);
 }
 
-.is-readable-line-width.markdown-preview-view aside,
-.is-readable-line-width.markdown-preview-view .aside-right {
+.markdown-preview-view aside,
+.markdown-preview-view .aside-right {
   float: right;
   clear: right;
   margin-left: var(--fas-float-inline-margin, 12px);
@@ -50,7 +50,7 @@ body {
 
 @media screen {
   @container markdown-view (width > 1100px) {
-    .markdown-preview-view aside,
+    .is-readable-line-width.markdown-preview-view aside,
     .is-readable-line-width.markdown-preview-view .aside-right,
     .is-readable-line-width.markdown-preview-view .aside-left {
       --aside-width: calc(50cqw - var(--file-line-width) * 0.5 - var(--aside-gap) * 2);
@@ -64,7 +64,7 @@ body {
       padding-inline: 0 15px;
       text-align: right;
     }
-    .markdown-preview-view aside,
+    .is-readable-line-width.markdown-preview-view aside,
     .is-readable-line-width.markdown-preview-view .aside-right {
       margin-right: calc(-1 * var(--aside-width) - var(--aside-gap));
       border-right: none;

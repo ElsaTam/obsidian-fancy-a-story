@@ -69,8 +69,20 @@ Author: ElsaTam (Kapirklaa in Discord)
 :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-pusher,
 :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .mod-header,
 :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .mod-frontmatter,
-:is(.columns-2, .columns-3, .columns-4).markdown-preview-view :is(h1),
+:is(.columns-2, .columns-3, .columns-4).markdown-preview-view h1,
 :is(.columns-2, .columns-3, .columns-4).markdown-preview-view [alt~=span] {
+  column-span: all;
+}
+
+:is(.columns-2, .columns-3, .columns-4).markdown-preview-view .column-break {
+  break-after: column;
+  display: block;
+}
+
+:is(.columns-2, .columns-3, .columns-4).markdown-preview-view .page-break {
+  display: block;
+  width: 100%;
+  height: 1em;
   column-span: all;
 }
 
