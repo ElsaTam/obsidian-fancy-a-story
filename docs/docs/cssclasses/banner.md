@@ -28,6 +28,8 @@ Donec aliquam metus quis pellentesque semper. Sed non auctor nisi. Proin congue 
 
 ---
 
+## Available styles
+
 ```markdown
 ---
 cssclasses:
@@ -93,6 +95,37 @@ cssclasses:
 
 [![]({% link images/cssclasses/banner-no-title.webp %})]({% link images/cssclasses/banner-no-title.webp %})
 
+---
+
+## Positionning
+
+You can use the following classes to position the image inside the banner `banner-{axis}-{decile}` where:
+- `{axis}` is either `x` (horizontal) or `y` (vertical)
+- `{decile}` is an integer between `0` and `10` and matches the given decile in percentage ($0 = 0%$, $1 = 10%$, $20 = 20%$, ..., $10 = 100%$).
+
+By default, both X and Y axis are centered at `50%`.
+
+Here are a few examples for the following banner image varying along Y axis:
+[![]({% link images/cssclasses/banner-pattern.webp %}){: width="400" }]({% link images/cssclasses/banner-pattern.webp %})
+
+`banner-y-10`:
+
+[![]({% link images/cssclasses/banner-y-10.webp %}){: width="400" }]({% link images/cssclasses/banner-y-10.webp %})
+
+`banner-y-8`:
+
+[![]({% link images/cssclasses/banner-y-8.webp %}){: width="400" }]({% link images/cssclasses/banner-y-8.webp %})
+
+`banner-y-3`:
+
+[![]({% link images/cssclasses/banner-y-3.webp %}){: width="400" }]({% link images/cssclasses/banner-y-3.webp %})
+
+`banner-y-0`:
+
+[![]({% link images/cssclasses/banner-y-0.webp %}){: width="400" }]({% link images/cssclasses/banner-y-0.webp %})
+
+---
+
 ## CSS Variables
 
 | Variable | Description | Default value |
@@ -103,3 +136,5 @@ cssclasses:
 | `--banner-slope-border-width` | Thickness of the bottom border for the slope banner | `5px` |
 | `--banner-slope-border-color` | Color of the bottom border for the slope banner | `var(--color-accent)` |
 | `--banner-print-width` | Define if the banner should cover the margins (full bleed) or not when printing to PDF | `full-bleed` |
+| `--banner-x-position`  | Horizontal positioning of the image inside the banner | `50%` |
+| `--banner-y-position`  | Vertical positioning of the image inside the banner | `50%` |

@@ -17,11 +17,24 @@ body {
     --banner-slope-border-color: var(--color-accent);
     --banner-width: calc(100cqw + 2 * var(--file-margins-inline));
     --banner-print-width: full-bleed;
+    --banner-y-position: 50%;
+    --banner-x-position: 50%;
 }
 
 .is-mobile {
     --banner-height: 180px;
     --banner-slope-border-width: 4px;
+}
+
+.markdown-preview-view.banner {
+    @for $i from 0 through 10 {
+        &.banner-y-#{$i} {
+            --banner-y-position: #{100 - $i * 10}%;
+        }
+        &.banner-x-#{$i} {
+            --banner-x-position: #{$i * 10}%;
+        }
+    }
 }
 
 @mixin image-banner {
@@ -38,6 +51,7 @@ body {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: var(--banner-x-position, 50%) var(--banner-y-position, 50%);
     }
 
     + br {
