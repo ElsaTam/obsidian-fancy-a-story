@@ -100,12 +100,16 @@ body {
   display: none;
 }
 
+.callout[data-callout-metadata~=only-icon] > .callout-title > .callout-title-inner {
+  display: none;
+}
+
 .callout[data-callout-metadata~=no-title] > .callout-title {
   display: none;
 }
 
 .callout[data-callout-metadata~=no-title] > .callout-content {
-  border: none;
+  border-width: 0;
 }
 
 .markdown-preview-view .callout[data-callout-metadata~=wide] {
