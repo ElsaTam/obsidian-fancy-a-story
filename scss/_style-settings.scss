@@ -837,6 +837,19 @@ settings:
         markdown: false
         type: class-toggle
     -
+        id: fas-list-callout
+        title: Enable list callouts
+        description: Automatically inline any callout directly inside a list item
+        type: variable-select
+        default: disable
+        options:
+            - 
+                value: enable
+                label: Enable
+            - 
+                value: disable
+                label: Disable
+    -
         id: callout-default
         title: Default color for callouts
         type: variable-select

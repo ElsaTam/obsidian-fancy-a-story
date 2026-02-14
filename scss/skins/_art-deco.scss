@@ -323,7 +323,8 @@ $fwi_sel: "";
                 [data-callout="poem"],
                 [data-callout="polaroid"],
                 [data-callout="table-cards"],
-                [data-callout="tooltip"]
+                [data-callout="tooltip"],
+                [data-callout-metadata~="inline"]
             )
         ):not(
             :where(
@@ -335,7 +336,7 @@ $fwi_sel: "";
                     [data-callout="timeline"]
                 )
                 *
-        ) {
+        ):not(li *) {
         clear: both;
         overflow: visible;
         margin-bottom: calc(1em + 23px);

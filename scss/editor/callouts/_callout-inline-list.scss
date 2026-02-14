@@ -1,0 +1,82 @@
+body {
+    --fas-list-callout: disable;
+    --list-callout-title-offset: 1px;
+}
+
+.list-callout {
+    --fas-list-callout: enable;
+}
+
+@mixin inline-callout {
+    --p-spacing: 0;
+    --callout-padding: 0;
+    --callout-title-padding: calc(var(--size-2-2) + var(--list-callout-title-offset, 1px)) var(--size-2-2)
+        var(--size-2-2) var(--size-2-2);
+    --callout-content-padding: var(--size-2-2) var(--size-2-2) var(--size-2-2) var(--size-4-2);
+
+    display: flex;
+    margin-block: 0.2em;
+
+    > .callout-title {
+        background: none;
+    }
+
+    > .callout-content {
+        border-top-width: 0;
+    }
+
+    &:not([data-callout-metadata~="only-icon"], [data-callout-metadata~="no-title"]) > .callout-content {
+        border-left: var(--callout-border-width) dashed rgba(var(--callout-color), var(--callout-border-opacity));
+
+        @container style(--fas-skin-sci-fi: enable) {
+            border-left-style: solid;
+        }
+    }
+
+    &[data-callout-metadata~="only-icon"] {
+        --callout-title-padding: calc(var(--size-2-2) + var(--list-callout-title-offset, 1px)) 0 var(--size-2-2)
+            var(--size-2-2);
+    }
+
+    @container style(--fas-skin-sci-fi: enable) {
+        @supports (corner-shape: bevel) {
+            &.callout.callout.callout {
+                border-top-left-radius: 0;
+            }
+        }
+    }
+}
+
+.callout[data-callout-metadata~="inline"] {
+    @include inline-callout;
+}
+@container style(--fas-list-callout: enable) {
+    li > .callout {
+        @include inline-callout;
+    }
+}
+
+.callout[data-callout="N" i] {
+    --callout-icon: user;
+    --callout-color: 255, 214, 0;
+}
+.callout[data-callout="L" i] {
+    --callout-icon: user;
+    --callout-color: 255, 23, 68;
+}
+.callout[data-callout="H" i] {
+    --callout-icon: user;
+    --callout-color: 124, 77, 255;
+}
+.callout[data-callout="E" i] {
+    --callout-icon: user;
+    --callout-color: 0, 184, 212;
+}
+.callout[data-callout="C" i] {
+    --callout-icon: user;
+    --callout-color: 0, 200, 83;
+}
+.callout[data-callout="G" i] {
+    --callout-icon: users;
+    --callout-color: 158, 158, 158;
+}
