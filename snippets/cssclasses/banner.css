@@ -1,10 +1,12 @@
 @charset "UTF-8";
+
 /* GPLv3 license
 FAS - Banner
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 /* Compatibility with ITS theme/snippets */
-.markdown-source-view > div, .markdown-preview-view {
+.markdown-source-view>div,
+.markdown-preview-view {
   container: markdown-view/inline-size;
 }
 
@@ -31,9 +33,9 @@ body {
   --banner-height: 300px;
   --banner-title-shadow-size: 0.5em;
   --banner-title-shadow:
-      0px 0px calc(var(--banner-title-shadow-size) * 0.2) rgb(var(--mono-rgb-0)),
-      0px 0px calc(var(--banner-title-shadow-size) * 0.5) rgb(var(--mono-rgb-0)),
-      0px 0px var(--banner-title-shadow-size) rgb(var(--mono-rgb-0));
+    0px 0px calc(var(--banner-title-shadow-size) * 0.2) rgb(var(--mono-rgb-0)),
+    0px 0px calc(var(--banner-title-shadow-size) * 0.5) rgb(var(--mono-rgb-0)),
+    0px 0px var(--banner-title-shadow-size) rgb(var(--mono-rgb-0));
   --banner-slope-angle: 4deg;
   --banner-slope-border-width: 5px;
   --banner-slope-border-color: var(--color-accent);
@@ -51,66 +53,87 @@ body {
 .markdown-preview-view.banner.banner-y-0 {
   --banner-y-position: 100%;
 }
+
 .markdown-preview-view.banner.banner-x-0 {
   --banner-x-position: 0%;
 }
+
 .markdown-preview-view.banner.banner-y-1 {
   --banner-y-position: 90%;
 }
+
 .markdown-preview-view.banner.banner-x-1 {
   --banner-x-position: 10%;
 }
+
 .markdown-preview-view.banner.banner-y-2 {
   --banner-y-position: 80%;
 }
+
 .markdown-preview-view.banner.banner-x-2 {
   --banner-x-position: 20%;
 }
+
 .markdown-preview-view.banner.banner-y-3 {
   --banner-y-position: 70%;
 }
+
 .markdown-preview-view.banner.banner-x-3 {
   --banner-x-position: 30%;
 }
+
 .markdown-preview-view.banner.banner-y-4 {
   --banner-y-position: 60%;
 }
+
 .markdown-preview-view.banner.banner-x-4 {
   --banner-x-position: 40%;
 }
+
 .markdown-preview-view.banner.banner-y-5 {
   --banner-y-position: 50%;
 }
+
 .markdown-preview-view.banner.banner-x-5 {
   --banner-x-position: 50%;
 }
+
 .markdown-preview-view.banner.banner-y-6 {
   --banner-y-position: 40%;
 }
+
 .markdown-preview-view.banner.banner-x-6 {
   --banner-x-position: 60%;
 }
+
 .markdown-preview-view.banner.banner-y-7 {
   --banner-y-position: 30%;
 }
+
 .markdown-preview-view.banner.banner-x-7 {
   --banner-x-position: 70%;
 }
+
 .markdown-preview-view.banner.banner-y-8 {
   --banner-y-position: 20%;
 }
+
 .markdown-preview-view.banner.banner-x-8 {
   --banner-x-position: 80%;
 }
+
 .markdown-preview-view.banner.banner-y-9 {
   --banner-y-position: 10%;
 }
+
 .markdown-preview-view.banner.banner-x-9 {
   --banner-x-position: 90%;
 }
+
 .markdown-preview-view.banner.banner-y-10 {
   --banner-y-position: 0%;
 }
+
 .markdown-preview-view.banner.banner-x-10 {
   --banner-x-position: 100%;
 }
@@ -120,7 +143,8 @@ body {
   --page-title-color: var(--text-normal);
   isolation: isolate;
 }
-.markdown-preview-view.banner .mod-header + div + div > p > .image-embed:nth-child(1 of .image-embed) {
+
+.markdown-preview-view.banner .mod-header+div+div>p>.image-embed:nth-child(1 of .image-embed) {
   top: 0;
   left: 0;
   --image-shadow-offset: 0;
@@ -130,15 +154,18 @@ body {
   width: var(--banner-width);
   height: var(--banner-height);
 }
-.markdown-preview-view.banner .mod-header + div + div > p > .image-embed:nth-child(1 of .image-embed) img {
+
+.markdown-preview-view.banner .mod-header+div+div>p>.image-embed:nth-child(1 of .image-embed) img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: var(--banner-x-position, 50%) var(--banner-y-position, 50%);
 }
-.markdown-preview-view.banner .mod-header + div + div > p > .image-embed:nth-child(1 of .image-embed) + br {
+
+.markdown-preview-view.banner .mod-header+div+div>p>.image-embed:nth-child(1 of .image-embed)+br {
   display: none;
 }
+
 .markdown-preview-view.banner .inline-title,
 .markdown-preview-view.banner .page-header {
   position: absolute;
@@ -151,12 +178,13 @@ body {
 .is-phone .markdown-preview-view.banner .inline-title {
   top: calc(var(--safe-area-inset-top) + var(--view-header-height) + var(--file-margins-block));
 }
-.is-phone .markdown-preview-view.banner .mod-header + div + div > p > .image-embed:nth-child(1 of .image-embed) {
+
+.is-phone .markdown-preview-view.banner .mod-header+div+div>p>.image-embed:nth-child(1 of .image-embed) {
   top: calc(var(--safe-area-inset-top) + var(--view-header-height));
 }
 
 @media print {
-  .print .markdown-preview-view.banner .mod-frontmatter + div > p > .image-embed:nth-child(1 of .image-embed) {
+  .print .markdown-preview-view.banner .mod-frontmatter+div>p>.image-embed:nth-child(1 of .image-embed) {
     --image-shadow-offset: 0;
     display: block;
     position: absolute;
@@ -164,39 +192,47 @@ body {
     width: var(--banner-width);
     height: var(--banner-height);
   }
-  .print .markdown-preview-view.banner .mod-frontmatter + div > p > .image-embed:nth-child(1 of .image-embed) img {
+
+  .print .markdown-preview-view.banner .mod-frontmatter+div>p>.image-embed:nth-child(1 of .image-embed) img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: var(--banner-x-position, 50%) var(--banner-y-position, 50%);
   }
-  .print .markdown-preview-view.banner .mod-frontmatter + div > p > .image-embed:nth-child(1 of .image-embed) + br {
+
+  .print .markdown-preview-view.banner .mod-frontmatter+div>p>.image-embed:nth-child(1 of .image-embed)+br {
     display: none;
   }
+
   @container not style(--banner-print-width: full-bleed) {
     .print {
       --banner-width: calc(100cqw);
     }
-    .print .markdown-preview-view.banner .mod-frontmatter + div > p > .image-embed:nth-child(1 of .image-embed) {
+
+    .print .markdown-preview-view.banner .mod-frontmatter+div>p>.image-embed:nth-child(1 of .image-embed) {
       top: var(--file-margins-block);
       left: var(--file-margins-inline);
     }
+
     .print .markdown-preview-view.banner {
       padding-top: calc(var(--banner-height) + var(--file-margins-block));
     }
   }
+
   @container style(--banner-print-width: full-bleed) {
-    .print .markdown-preview-view.banner .mod-frontmatter + div > p > .image-embed:nth-child(1 of .image-embed) {
+    .print .markdown-preview-view.banner .mod-frontmatter+div>p>.image-embed:nth-child(1 of .image-embed) {
       top: 0;
       left: 0;
     }
+
     .print .markdown-preview-view.banner {
       padding-top: var(--banner-height);
     }
   }
 }
-.markdown-preview-view:not(.show-properties).banner > * > .mod-header,
-.markdown-preview-view.hide-properties.banner > * > .mod-header {
+
+.markdown-preview-view:not(.show-properties).banner>*>.mod-header,
+.markdown-preview-view.hide-properties.banner>*>.mod-header {
   height: calc(var(--banner-height) - var(--file-margins-block));
   padding-bottom: var(--file-margins-block);
 }
@@ -206,18 +242,21 @@ body {
     margin-top: calc(var(--banner-height) - var(--file-margins-block) + 4px + 0.8em);
   }
 }
-.markdown-preview-view.banner.banner-gradient .mod-header + div + div > p > .image-embed:nth-child(1 of .image-embed) {
+
+.markdown-preview-view.banner.banner-gradient .mod-header+div+div>p>.image-embed:nth-child(1 of .image-embed) {
   -webkit-mask-image: linear-gradient(to bottom, black var(--file-margins-block), transparent);
 }
 
 @media print {
-  .print .markdown-preview-view.banner.banner-gradient .mod-frontmatter + div > p > .image-embed:nth-child(1 of .image-embed) {
+  .print .markdown-preview-view.banner.banner-gradient .mod-frontmatter+div>p>.image-embed:nth-child(1 of .image-embed) {
     -webkit-mask-image: linear-gradient(to bottom, black var(--file-margins-block), transparent);
   }
 }
+
 .markdown-preview-view.banner.banner-title {
   --inline-title-line-height: 3;
 }
+
 .markdown-preview-view.banner.banner-title .inline-title,
 .markdown-preview-view.banner.banner-title .page-header {
   border: 1px solid var(--color-base-50);
@@ -226,6 +265,7 @@ body {
   text-shadow: none;
   text-align: center;
 }
+
 .markdown-preview-view.banner.banner-title:not(.banner-slope, .banner-slant) .inline-title {
   position: absolute;
   top: calc(var(--banner-height) * 0.5);
@@ -251,15 +291,18 @@ body {
   --banner-angle-diag: calc(var(--banner-width) * sin(var(--banner-slope-angle)));
   --banner-angle-height: calc(var(--banner-angle-diag) / sin(90deg - var(--banner-slope-angle)));
 }
-.markdown-preview-view.banner.banner-slant .mod-header + div + div > p > .image-embed:nth-child(1 of .image-embed),
-.markdown-preview-view.banner.banner-slope .mod-header + div + div > p > .image-embed:nth-child(1 of .image-embed) {
+
+.markdown-preview-view.banner.banner-slant .mod-header+div+div>p>.image-embed:nth-child(1 of .image-embed),
+.markdown-preview-view.banner.banner-slope .mod-header+div+div>p>.image-embed:nth-child(1 of .image-embed) {
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--banner-angle-height)), 0 100%);
   background-color: var(--banner-slope-border-color);
 }
-.markdown-preview-view.banner.banner-slant .mod-header + div + div > p > .image-embed:nth-child(1 of .image-embed) img,
-.markdown-preview-view.banner.banner-slope .mod-header + div + div > p > .image-embed:nth-child(1 of .image-embed) img {
+
+.markdown-preview-view.banner.banner-slant .mod-header+div+div>p>.image-embed:nth-child(1 of .image-embed) img,
+.markdown-preview-view.banner.banner-slope .mod-header+div+div>p>.image-embed:nth-child(1 of .image-embed) img {
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--banner-angle-height) - var(--banner-slope-border-width)), 0 calc(100% - var(--banner-slope-border-width)));
 }
+
 .markdown-preview-view.banner.banner-slant .inline-title,
 .markdown-preview-view.banner.banner-slant .page-header,
 .markdown-preview-view.banner.banner-slope .inline-title,
@@ -278,43 +321,51 @@ body {
     right: anchor(--anchor-preview-section right, var(--file-margins-inline));
   }
 }
+
 @media print {
-  .print .markdown-preview-view.banner:is(.banner-slant, .banner-slope) .mod-frontmatter + div > p > .image-embed:nth-child(1 of .image-embed) {
+  .print .markdown-preview-view.banner:is(.banner-slant, .banner-slope) .mod-frontmatter+div>p>.image-embed:nth-child(1 of .image-embed) {
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--banner-angle-height)), 0 100%);
     background-color: var(--banner-slope-border-color);
   }
-  .print .markdown-preview-view.banner:is(.banner-slant, .banner-slope) .mod-frontmatter + div > p > .image-embed:nth-child(1 of .image-embed) img {
+
+  .print .markdown-preview-view.banner:is(.banner-slant, .banner-slope) .mod-frontmatter+div>p>.image-embed:nth-child(1 of .image-embed) img {
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--banner-angle-height) - var(--banner-slope-border-width)), 0 calc(100% - var(--banner-slope-border-width)));
   }
 }
-.markdown-source-view.banner.banner-edit-hide .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) {
+
+.markdown-source-view.banner.banner-edit-hide .cm-contentContainer>div>.image-embed:nth-child(1 of div.image-embed) {
   --image-shadow-offset: 0;
 }
-.markdown-source-view.banner.banner-edit-hide .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) img {
+
+.markdown-source-view.banner.banner-edit-hide .cm-contentContainer>div>.image-embed:nth-child(1 of div.image-embed) img {
   display: none;
 }
 
-.markdown-source-view.banner.banner-edit-icon .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) {
+.markdown-source-view.banner.banner-edit-icon .cm-contentContainer>div>.image-embed:nth-child(1 of div.image-embed) {
   --image-shadow-offset: 0;
 }
-.markdown-source-view.banner.banner-edit-icon .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) img {
+
+.markdown-source-view.banner.banner-edit-icon .cm-contentContainer>div>.image-embed:nth-child(1 of div.image-embed) img {
   display: none;
 }
-.markdown-source-view.banner.banner-edit-icon .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed)::after {
+
+.markdown-source-view.banner.banner-edit-icon .cm-contentContainer>div>.image-embed:nth-child(1 of div.image-embed)::after {
   content: "🖼️ banner";
   font-size: 12px;
   color: var(--text-muted);
 }
 
 @media (hover: hover) {
-  .markdown-source-view.banner.banner-edit-icon .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed):hover img {
+  .markdown-source-view.banner.banner-edit-icon .cm-contentContainer>div>.image-embed:nth-child(1 of div.image-embed):hover img {
     position: absolute;
     display: block;
   }
 }
-.markdown-source-view.banner.banner-edit-small .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) {
+
+.markdown-source-view.banner.banner-edit-small .cm-contentContainer>div>.image-embed:nth-child(1 of div.image-embed) {
   --image-shadow-offset: 0;
 }
-.markdown-source-view.banner.banner-edit-small .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) img {
+
+.markdown-source-view.banner.banner-edit-small .cm-contentContainer>div>.image-embed:nth-child(1 of div.image-embed) img {
   max-width: 100px;
 }

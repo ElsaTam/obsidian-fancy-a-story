@@ -1,6 +1,6 @@
 /* GPLv3 license
 FAS - Callout Tooltip
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 .callout[data-callout=tooltip] {
   border: none;
@@ -8,6 +8,7 @@ Author: ElsaTam (Kapirklaa in Discord)
   width: fit-content;
   height: fit-content;
 }
+
 .callout[data-callout=tooltip] .callout-title {
   position: absolute;
   right: calc(var(--size-4-2) + var(--image-shadow-offset, 0px));
@@ -26,19 +27,24 @@ Author: ElsaTam (Kapirklaa in Discord)
   z-index: var(--layer-tooltip);
   display: none;
 }
+
 .callout[data-callout=tooltip] .callout-icon {
   display: none;
 }
+
 .callout[data-callout=tooltip] .callout-content {
   padding: 0;
   border: none;
 }
-.callout[data-callout=tooltip] .callout-content > :first-child {
+
+.callout[data-callout=tooltip] .callout-content> :first-child {
   margin-top: 0;
 }
-.callout[data-callout=tooltip] .callout-content > :plast-child {
+
+.callout[data-callout=tooltip] .callout-content> :plast-child {
   margin-bottom: 0;
 }
+
 .callout[data-callout=tooltip].is-collapsed .callout-title {
   position: static;
   display: flex;
@@ -49,6 +55,7 @@ Author: ElsaTam (Kapirklaa in Discord)
     display: flex;
   }
 }
+
 .callout[data-callout=tooltip] {
   --callout-padding: 0;
   --callout-radius: 0;

@@ -1,6 +1,6 @@
 /* GPLv3 license
 FAS - Callout Conversation
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 body {
   --workleaves-background: var(--background-primary);
@@ -8,6 +8,7 @@ body {
 }
 
 @supports (color: hsl(from white h s l)) {
+
   .callout[data-callout=conversation-minimalist],
   .callout[data-callout=conversation],
   .callout[data-callout=conversation-outline] {
@@ -15,68 +16,82 @@ body {
     --line-color-even: hsl(from rgb(var(--conversation-color)) calc(h - 15) s l);
   }
 }
+
 @supports not (color: hsl(from white h s l)) {
+
   .callout[data-callout=conversation-minimalist][data-callout-metadata~=red],
   .callout[data-callout=conversation][data-callout-metadata~=red],
   .callout[data-callout=conversation-outline][data-callout-metadata~=red] {
     --shift-color-even: var(--color-pink);
     --shift-color-odd: var(--color-brown);
   }
+
   .callout[data-callout=conversation-minimalist][data-callout-metadata~=brown],
   .callout[data-callout=conversation][data-callout-metadata~=brown],
   .callout[data-callout=conversation-outline][data-callout-metadata~=brown] {
     --shift-color-even: var(--color-red);
     --shift-color-odd: var(--color-orange);
   }
+
   .callout[data-callout=conversation-minimalist][data-callout-metadata~=orange],
   .callout[data-callout=conversation][data-callout-metadata~=orange],
   .callout[data-callout=conversation-outline][data-callout-metadata~=orange] {
     --shift-color-even: var(--color-brown);
     --shift-color-odd: var(--color-yellow);
   }
+
   .callout[data-callout=conversation-minimalist][data-callout-metadata~=yellow],
   .callout[data-callout=conversation][data-callout-metadata~=yellow],
   .callout[data-callout=conversation-outline][data-callout-metadata~=yellow] {
     --shift-color-even: var(--color-orange);
     --shift-color-odd: var(--color-green);
   }
+
   .callout[data-callout=conversation-minimalist][data-callout-metadata~=green],
   .callout[data-callout=conversation][data-callout-metadata~=green],
   .callout[data-callout=conversation-outline][data-callout-metadata~=green] {
     --shift-color-even: var(--color-yellow);
     --shift-color-odd: var(--color-cyan);
   }
+
   .callout[data-callout=conversation-minimalist][data-callout-metadata~=cyan],
   .callout[data-callout=conversation][data-callout-metadata~=cyan],
   .callout[data-callout=conversation-outline][data-callout-metadata~=cyan] {
     --shift-color-even: var(--color-green);
     --shift-color-odd: var(--color-blue);
   }
+
   .callout[data-callout=conversation-minimalist][data-callout-metadata~=blue],
   .callout[data-callout=conversation][data-callout-metadata~=blue],
   .callout[data-callout=conversation-outline][data-callout-metadata~=blue] {
     --shift-color-even: var(--color-cyan);
     --shift-color-odd: var(--color-purple);
   }
+
   .callout[data-callout=conversation-minimalist][data-callout-metadata~=purple],
   .callout[data-callout=conversation][data-callout-metadata~=purple],
   .callout[data-callout=conversation-outline][data-callout-metadata~=purple] {
     --shift-color-even: var(--color-blue);
     --shift-color-odd: var(--color-pink);
   }
+
   .callout[data-callout=conversation-minimalist][data-callout-metadata~=pink],
   .callout[data-callout=conversation][data-callout-metadata~=pink],
   .callout[data-callout=conversation-outline][data-callout-metadata~=pink] {
     --shift-color-even: var(--color-purple);
     --shift-color-odd: var(--color-red);
   }
+
   .callout[data-callout=conversation-minimalist],
   .callout[data-callout=conversation],
   .callout[data-callout=conversation-outline] {
     --shift-color-even: var(--color-cyan);
     --shift-color-odd: var(--color-purple);
   }
-  .callout[data-callout=conversation-minimalist][data-callout-metadata~=gray], .callout[data-callout=conversation-minimalist][data-callout-metadata~=black], .callout[data-callout=conversation-minimalist][data-callout-metadata~=white],
+
+  .callout[data-callout=conversation-minimalist][data-callout-metadata~=gray],
+  .callout[data-callout=conversation-minimalist][data-callout-metadata~=black],
+  .callout[data-callout=conversation-minimalist][data-callout-metadata~=white],
   .callout[data-callout=conversation][data-callout-metadata~=gray],
   .callout[data-callout=conversation][data-callout-metadata~=black],
   .callout[data-callout=conversation][data-callout-metadata~=white],
@@ -86,6 +101,7 @@ body {
     --shift-color-even: white;
     --shift-color-odd: black;
   }
+
   .callout[data-callout=conversation-minimalist],
   .callout[data-callout=conversation],
   .callout[data-callout=conversation-outline] {
@@ -93,6 +109,7 @@ body {
     --line-color-even: color-mix(in srgb, rgb(var(--conversation-color)), var(--shift-color-even) 25%);
   }
 }
+
 .callout[data-callout=conversation-minimalist],
 .callout[data-callout=conversation],
 .callout[data-callout=conversation-outline] {
@@ -102,26 +119,29 @@ body {
   --callout-content-padding: var(--size-4-3);
   background: none;
 }
-.callout[data-callout=conversation-minimalist] > .callout-content > *:nth-child(odd),
-.callout[data-callout=conversation] > .callout-content > *:nth-child(odd),
-.callout[data-callout=conversation-outline] > .callout-content > *:nth-child(odd) {
+
+.callout[data-callout=conversation-minimalist]>.callout-content>*:nth-child(odd),
+.callout[data-callout=conversation]>.callout-content>*:nth-child(odd),
+.callout[data-callout=conversation-outline]>.callout-content>*:nth-child(odd) {
   margin-right: auto;
   --line-color: var(--line-color-odd);
 }
-.callout[data-callout=conversation-minimalist] > .callout-content > *:nth-child(even),
-.callout[data-callout=conversation] > .callout-content > *:nth-child(even),
-.callout[data-callout=conversation-outline] > .callout-content > *:nth-child(even) {
+
+.callout[data-callout=conversation-minimalist]>.callout-content>*:nth-child(even),
+.callout[data-callout=conversation]>.callout-content>*:nth-child(even),
+.callout[data-callout=conversation-outline]>.callout-content>*:nth-child(even) {
   margin-left: auto;
   --line-color: var(--line-color-even);
 }
-.callout[data-callout=conversation-minimalist] > .callout-content > *,
-.callout[data-callout=conversation] > .callout-content > *,
-.callout[data-callout=conversation-outline] > .callout-content > * {
+
+.callout[data-callout=conversation-minimalist]>.callout-content>*,
+.callout[data-callout=conversation]>.callout-content>*,
+.callout[data-callout=conversation-outline]>.callout-content>* {
   --bold-color: var(--line-color);
   padding: 12px;
 }
 
-.callout[data-callout=conversation] > .callout-content > * {
+.callout[data-callout=conversation]>.callout-content>* {
   width: fit-content;
   max-width: 80%;
   background: color-mix(in srgb, var(--line-color), transparent 80%);
@@ -129,7 +149,7 @@ body {
   margin-block: var(--size-4-3);
 }
 
-.callout[data-callout=conversation-outline] > .callout-content > * {
+.callout[data-callout=conversation-outline]>.callout-content>* {
   position: relative;
   width: 80%;
   margin-bottom: 2px;
@@ -137,7 +157,8 @@ body {
   background: var(--workleaves-background);
   border-radius: calc(var(--radius-l) - 1px);
 }
-.callout[data-callout=conversation-outline] > .callout-content > *::before {
+
+.callout[data-callout=conversation-outline]>.callout-content>*::before {
   content: "";
   position: absolute;
   top: -1px;
@@ -149,50 +170,59 @@ body {
   background-repeat: no-repeat;
   opacity: 0.5;
 }
-.callout[data-callout=conversation-outline] > .callout-content > *:nth-child(odd)::before {
+
+.callout[data-callout=conversation-outline]>.callout-content>*:nth-child(odd)::before {
   right: -1px;
   border-left: 0;
   border-top-right-radius: var(--radius-l);
   border-bottom-right-radius: var(--radius-l);
   background-image: linear-gradient(to right, var(--line-color-even), var(--line-color-odd)), linear-gradient(to left, var(--line-color-odd), var(--line-color-odd));
 }
-.callout[data-callout=conversation-outline] > .callout-content > *:nth-child(even)::before {
+
+.callout[data-callout=conversation-outline]>.callout-content>*:nth-child(even)::before {
   left: -1px;
   border-right: 0;
   border-top-left-radius: var(--radius-l);
   border-bottom-left-radius: var(--radius-l);
   background-image: linear-gradient(to left, var(--line-color-odd), var(--line-color-even)), linear-gradient(to right, var(--line-color-even), var(--line-color-even));
 }
-.callout[data-callout=conversation-outline] > .callout-content > *:first-child,
-.callout[data-callout=conversation-outline] > .callout-content > *:first-child::before {
+
+.callout[data-callout=conversation-outline]>.callout-content>*:first-child,
+.callout[data-callout=conversation-outline]>.callout-content>*:first-child::before {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-.callout[data-callout=conversation-outline] > .callout-content > *:first-child::before {
+
+.callout[data-callout=conversation-outline]>.callout-content>*:first-child::before {
   background-position: center 1px, center bottom;
 }
-.callout[data-callout=conversation-outline] > .callout-content > *:last-child,
-.callout[data-callout=conversation-outline] > .callout-content > *:last-child::before {
+
+.callout[data-callout=conversation-outline]>.callout-content>*:last-child,
+.callout[data-callout=conversation-outline]>.callout-content>*:last-child::before {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
-.callout[data-callout=conversation-outline] > .callout-content > *:last-child::before {
+
+.callout[data-callout=conversation-outline]>.callout-content>*:last-child::before {
   background-position: center top, center calc(100% - 1px);
 }
 
 @media print {
-  .print .callout[data-callout=conversation-outline] > .callout-content > *::before {
+  .print .callout[data-callout=conversation-outline]>.callout-content>*::before {
     width: calc(40% - var(--callout-content-padding));
   }
 }
+
 .callout[data-callout=conversation-minimalist] {
   --callout-border-width: 0;
   --callout-content-padding: 0;
 }
-.callout[data-callout=conversation-minimalist] > .callout-title {
+
+.callout[data-callout=conversation-minimalist]>.callout-title {
   display: none;
 }
-.callout[data-callout=conversation-minimalist] > .callout-content > * {
+
+.callout[data-callout=conversation-minimalist]>.callout-content>* {
   width: fit-content;
   max-width: 50%;
   border-radius: var(--radius-l);

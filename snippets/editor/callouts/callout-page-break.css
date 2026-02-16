@@ -1,6 +1,6 @@
 /* GPLv3 license
 FAS - Callout Page Break
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 body {
   --page-break-height-thin: 1.5em;
@@ -32,25 +32,29 @@ body {
   border-inline: none;
   display: flex;
 }
-.callout[data-callout=page-break] > .callout-title {
+
+.callout[data-callout=page-break]>.callout-title {
   background: none;
   border: none;
   align-items: center;
 }
-.callout[data-callout=page-break] > .callout-content {
+
+.callout[data-callout=page-break]>.callout-content {
   border: none;
   flex-grow: 1;
 }
-.callout[data-callout=page-break] > .callout-content h1,
-.callout[data-callout=page-break] > .callout-content h2,
-.callout[data-callout=page-break] > .callout-content h3,
-.callout[data-callout=page-break] > .callout-content h4,
-.callout[data-callout=page-break] > .callout-content h5,
-.callout[data-callout=page-break] > .callout-content h6 {
+
+.callout[data-callout=page-break]>.callout-content h1,
+.callout[data-callout=page-break]>.callout-content h2,
+.callout[data-callout=page-break]>.callout-content h3,
+.callout[data-callout=page-break]>.callout-content h4,
+.callout[data-callout=page-break]>.callout-content h5,
+.callout[data-callout=page-break]>.callout-content h6 {
   text-align: center;
 }
-.callout[data-callout=page-break] > * > .callout-icon,
-.callout[data-callout=page-break] > * > .callout-title-inner {
+
+.callout[data-callout=page-break]>*>.callout-icon,
+.callout[data-callout=page-break]>*>.callout-title-inner {
   display: none;
 }
 
@@ -65,103 +69,127 @@ body {
   left: calc(50% - var(--w) * 0.5);
 }
 
-.callout:not([data-callout=page-break]) > .callout-content > .callout[data-callout=page-break] {
+.callout:not([data-callout=page-break])>.callout-content>.callout[data-callout=page-break] {
   width: calc(100% + var(--size-4-6) + var(--size-4-3));
   margin-left: calc(-1 * var(--size-4-6));
   margin-right: calc(-1 * var(--size-4-3));
   background-color: var(--workleaves-background);
   border-block-color: rgba(var(--callout-color), var(--callout-border-opacity));
 }
-.callout:not([data-callout=page-break]) > .callout-content > .callout[data-callout=page-break]:is([data-callout-metadata~=overflow] > * > *) {
+
+.callout:not([data-callout=page-break])>.callout-content>.callout[data-callout=page-break]:is([data-callout-metadata~=overflow] > * > *) {
   border-inline: var(--callout-border-width, 0px) solid var(--workleaves-background);
   box-sizing: content-box;
   margin-left: calc(-1 * var(--size-4-6) - var(--callout-border-width, 0px));
   margin-right: calc(-1 * var(--size-4-3) - var(--callout-border-width, 0px));
 }
 
-.callout[data-callout=fas-infobox] > .callout-content > .callout[data-callout=page-break] {
+.callout[data-callout=fas-infobox]>.callout-content>.callout[data-callout=page-break] {
   width: calc(100% + 2 * var(--callout-border-width, 0px));
   margin-left: calc(-1 * var(--callout-border-width, 0px));
   margin-right: calc(-1 * var(--callout-border-width, 0px));
 }
 
 @container style(--fas-callout-infobox) {
-  .callout[data-callout=infobox] > .callout-content > .callout[data-callout=page-break] {
+  .callout[data-callout=infobox]>.callout-content>.callout[data-callout=page-break] {
     width: calc(100% + 2 * var(--callout-border-width, 0px));
     margin-left: calc(-1 * var(--callout-border-width, 0px));
     margin-right: calc(-1 * var(--callout-border-width, 0px));
   }
 }
-.callout.callout[data-callout=pinned] > .callout-content > .callout[data-callout=page-break] {
+
+.callout.callout[data-callout=pinned]>.callout-content>.callout[data-callout=page-break] {
   border-radius: 0;
   width: calc(100% + var(--size-4-6) + 3 * var(--size-4-3));
   margin-left: calc(-1 * var(--size-4-6) - var(--size-4-3));
   margin-right: calc(-2 * var(--size-4-3));
 }
 
-.callout.callout[data-callout=autopsy] > .callout-content > .callout[data-callout=page-break] {
+.callout.callout[data-callout=autopsy]>.callout-content>.callout[data-callout=page-break] {
   --callout-padding: 0;
   grid-column: 1/-1;
 }
 
-.callout:not([data-callout=page-break])[data-callout=letter] > .callout-content > .callout[data-callout=page-break] {
+.callout:not([data-callout=page-break])[data-callout=letter]>.callout-content>.callout[data-callout=page-break] {
   --callout-color: var(--color-yellow-rgb);
 }
-.callout:not([data-callout=page-break])[data-callout=autopsy] > .callout-content > .callout[data-callout=page-break] {
+
+.callout:not([data-callout=page-break])[data-callout=autopsy]>.callout-content>.callout[data-callout=page-break] {
   --callout-color: var(--mono-rgb-0);
 }
-.callout:not([data-callout=page-break])[data-callout=quote] > .callout-content > .callout[data-callout=page-break], .callout:not([data-callout=page-break])[data-callout=cite] > .callout-content > .callout[data-callout=page-break], .callout:not([data-callout=page-break])[data-callout=fas-quote] > .callout-content > .callout[data-callout=page-break], .callout:not([data-callout=page-break])[data-callout=fas-cite] > .callout-content > .callout[data-callout=page-break] {
+
+.callout:not([data-callout=page-break])[data-callout=quote]>.callout-content>.callout[data-callout=page-break],
+.callout:not([data-callout=page-break])[data-callout=cite]>.callout-content>.callout[data-callout=page-break],
+.callout:not([data-callout=page-break])[data-callout=fas-quote]>.callout-content>.callout[data-callout=page-break],
+.callout:not([data-callout=page-break])[data-callout=fas-cite]>.callout-content>.callout[data-callout=page-break] {
   --callout-color: var(--callout-quote);
 }
-.callout:not([data-callout=page-break])[data-callout=profile] > .callout-content > .callout[data-callout=page-break] {
+
+.callout:not([data-callout=page-break])[data-callout=profile]>.callout-content>.callout[data-callout=page-break] {
   --callout-color: var(--color-gray-rgb);
 }
-.callout:not([data-callout=page-break])[data-callout=screen] > .callout-content > .callout[data-callout=page-break]:is(.theme-light *) {
+
+.callout:not([data-callout=page-break])[data-callout=screen]>.callout-content>.callout[data-callout=page-break]:is(.theme-light *) {
   --callout-color: var(--callout-screen-color-light-rgb);
 }
-.callout:not([data-callout=page-break])[data-callout=screen] > .callout-content > .callout[data-callout=page-break]:is(.theme-dark *) {
+
+.callout:not([data-callout=page-break])[data-callout=screen]>.callout-content>.callout[data-callout=page-break]:is(.theme-dark *) {
   --callout-color: var(--callout-screen-color-dark-rgb);
 }
-.callout:not([data-callout=page-break])[data-callout-metadata~=gray] > .callout-content > .callout[data-callout=page-break] {
+
+.callout:not([data-callout=page-break])[data-callout-metadata~=gray]>.callout-content>.callout[data-callout=page-break] {
   --callout-color: var(--color-gray-rgb);
 }
-.callout:not([data-callout=page-break])[data-callout-metadata~=brown] > .callout-content > .callout[data-callout=page-break] {
+
+.callout:not([data-callout=page-break])[data-callout-metadata~=brown]>.callout-content>.callout[data-callout=page-break] {
   --callout-color: var(--color-brown-rgb);
 }
-.callout:not([data-callout=page-break])[data-callout-metadata~=red] > .callout-content > .callout[data-callout=page-break] {
+
+.callout:not([data-callout=page-break])[data-callout-metadata~=red]>.callout-content>.callout[data-callout=page-break] {
   --callout-color: var(--color-red-rgb);
 }
-.callout:not([data-callout=page-break])[data-callout-metadata~=orange] > .callout-content > .callout[data-callout=page-break] {
+
+.callout:not([data-callout=page-break])[data-callout-metadata~=orange]>.callout-content>.callout[data-callout=page-break] {
   --callout-color: var(--color-orange-rgb);
 }
-.callout:not([data-callout=page-break])[data-callout-metadata~=yellow] > .callout-content > .callout[data-callout=page-break] {
+
+.callout:not([data-callout=page-break])[data-callout-metadata~=yellow]>.callout-content>.callout[data-callout=page-break] {
   --callout-color: var(--color-yellow-rgb);
 }
-.callout:not([data-callout=page-break])[data-callout-metadata~=green] > .callout-content > .callout[data-callout=page-break] {
+
+.callout:not([data-callout=page-break])[data-callout-metadata~=green]>.callout-content>.callout[data-callout=page-break] {
   --callout-color: var(--color-green-rgb);
 }
-.callout:not([data-callout=page-break])[data-callout-metadata~=cyan] > .callout-content > .callout[data-callout=page-break] {
+
+.callout:not([data-callout=page-break])[data-callout-metadata~=cyan]>.callout-content>.callout[data-callout=page-break] {
   --callout-color: var(--color-cyan-rgb);
 }
-.callout:not([data-callout=page-break])[data-callout-metadata~=blue] > .callout-content > .callout[data-callout=page-break] {
+
+.callout:not([data-callout=page-break])[data-callout-metadata~=blue]>.callout-content>.callout[data-callout=page-break] {
   --callout-color: var(--color-blue-rgb);
 }
-.callout:not([data-callout=page-break])[data-callout-metadata~=cyan] > .callout-content > .callout[data-callout=page-break] {
+
+.callout:not([data-callout=page-break])[data-callout-metadata~=cyan]>.callout-content>.callout[data-callout=page-break] {
   --callout-color: var(--color-cyan-rgb);
 }
-.callout:not([data-callout=page-break])[data-callout-metadata~=purple] > .callout-content > .callout[data-callout=page-break] {
+
+.callout:not([data-callout=page-break])[data-callout-metadata~=purple]>.callout-content>.callout[data-callout=page-break] {
   --callout-color: var(--color-purple-rgb);
 }
-.callout:not([data-callout=page-break])[data-callout-metadata~=pink] > .callout-content > .callout[data-callout=page-break] {
+
+.callout:not([data-callout=page-break])[data-callout-metadata~=pink]>.callout-content>.callout[data-callout=page-break] {
   --callout-color: var(--color-pink-rgb);
 }
-.callout:not([data-callout=page-break])[data-callout-metadata~=black] > .callout-content > .callout[data-callout=page-break] {
+
+.callout:not([data-callout=page-break])[data-callout-metadata~=black]>.callout-content>.callout[data-callout=page-break] {
   --callout-color: 0, 0, 0;
 }
-.callout:not([data-callout=page-break])[data-callout-metadata~=white] > .callout-content > .callout[data-callout=page-break] {
+
+.callout:not([data-callout=page-break])[data-callout-metadata~=white]>.callout-content>.callout[data-callout=page-break] {
   --callout-color: 255, 255, 255;
 }
-.callout:not([data-callout=page-break])[data-callout-metadata~=accent] > .callout-content > .callout[data-callout=page-break] {
+
+.callout:not([data-callout=page-break])[data-callout-metadata~=accent]>.callout-content>.callout[data-callout=page-break] {
   border-block-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), var(--callout-border-opacity));
 }
 

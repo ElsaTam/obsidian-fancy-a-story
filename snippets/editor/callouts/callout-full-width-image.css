@@ -1,6 +1,6 @@
 /* GPLv3 license
 FAS - Callout Film strip
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 body {
   --callout-fwi-height: 70px;
@@ -20,17 +20,21 @@ body {
   --p-spacing: 0;
   position: relative;
 }
+
 .callout:is([data-callout=full-width-image], [data-callout=full-w-img], [data-callout=fwi], [data-callout="full-width-panoramic-image-:jack_o_lantern:"], [data-callout=fwpi-jol]) .callout-content {
   font-size: 0;
 }
+
 .callout:is([data-callout=full-width-image], [data-callout=full-w-img], [data-callout=fwi], [data-callout="full-width-panoramic-image-:jack_o_lantern:"], [data-callout=fwpi-jol]) img {
   height: var(--fwi-height);
   width: 100%;
   object-fit: cover;
 }
+
 .callout:is([data-callout=full-width-image], [data-callout=full-w-img], [data-callout=fwi], [data-callout="full-width-panoramic-image-:jack_o_lantern:"], [data-callout=fwpi-jol]) .callout-icon {
   display: none;
 }
+
 .callout:is([data-callout=full-width-image], [data-callout=full-w-img], [data-callout=fwi], [data-callout="full-width-panoramic-image-:jack_o_lantern:"], [data-callout=fwpi-jol]) .callout-title {
   background: none;
   position: absolute;
@@ -42,9 +46,11 @@ body {
   text-shadow: var(--fwi-title-shadow);
   z-index: 1;
 }
+
 .callout:is([data-callout=full-width-image], [data-callout=full-w-img], [data-callout=fwi], [data-callout="full-width-panoramic-image-:jack_o_lantern:"], [data-callout=fwpi-jol])[data-callout-metadata~=blur] .callout-content {
   filter: blur(var(--fwi-title-blur));
 }
+
 .callout:is([data-callout=full-width-image], [data-callout=full-w-img], [data-callout=fwi], [data-callout="full-width-panoramic-image-:jack_o_lantern:"], [data-callout=fwpi-jol])[data-callout-metadata~=grayscale] img {
   filter: grayscale(1);
 }

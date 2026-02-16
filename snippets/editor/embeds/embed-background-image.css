@@ -1,7 +1,8 @@
 @charset "UTF-8";
+
 /* GPLv3 license
 FAS - Image background
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 .view-content {
   z-index: 0;
@@ -22,6 +23,7 @@ Author: ElsaTam (Kapirklaa in Discord)
   opacity: var(--fas-note-background-image-opacity);
   filter: blur(var(--fas-note-background-image-blur)) brightness(var(--fas-note-background-image-brightness));
 }
+
 .markdown-preview-view.markdown-preview-view img[alt~=background] {
   height: 100%;
   width: 100%;
@@ -40,26 +42,32 @@ Author: ElsaTam (Kapirklaa in Discord)
   width: unset;
   position: unset;
 }
+
 .markdown-source-view.markdown-source-view .image-embed[alt~=edit-hide] img,
 .markdown-source-view.markdown-source-view img[alt~=edit-hide]:not(.image-embed *) img {
   height: 100%;
 }
+
 .markdown-source-view.markdown-source-view .image-embed[alt~=edit-icon] {
   --image-shadow-offset: 0;
   font-size: inherit;
 }
+
 .markdown-source-view.markdown-source-view .image-embed[alt~=edit-icon] img {
   display: none;
 }
+
 .markdown-source-view.markdown-source-view .image-embed[alt~=edit-icon]:hover img {
   position: absolute;
   display: block;
 }
+
 .markdown-source-view.markdown-source-view .image-embed[alt~=edit-icon]::after {
   content: "🖼️ background";
   font-size: 12px;
   color: var(--text-muted);
 }
+
 .markdown-source-view.markdown-source-view .image-embed[alt~=edit-small],
 .markdown-source-view.markdown-source-view img[alt~=edit-small]:not(.image-embed *) {
   --image-shadow-offset: 0;

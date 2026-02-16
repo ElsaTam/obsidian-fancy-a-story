@@ -1,6 +1,6 @@
 /* GPLv3 license
 FAS - Callout Profile
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 body {
   --font-typewriter: "TT2020StyleE", "Courier", monospace;
@@ -14,20 +14,25 @@ body {
   --line-height-tight: 1;
   --icon-stroke: 3px;
 }
+
 .callout[data-callout=profile]:not([data-callout-metadata~=default-font]) .callout-title {
   font-family: var(--font-typewriter);
 }
+
 .callout[data-callout=profile] .callout-icon {
   align-items: flex-start;
 }
-.callout[data-callout=profile] .callout-content > p:first-child .image-embed {
+
+.callout[data-callout=profile] .callout-content>p:first-child .image-embed {
   float: right;
   margin-left: var(--size-4-3);
 }
+
 .callout[data-callout=profile] :is(ul, ol) {
   display: flow-root;
 }
-.callout[data-callout=profile] .callout-content > p:first-child img {
+
+.callout[data-callout=profile] .callout-content>p:first-child img {
   max-width: 150px;
   position: relative;
   border: var(--callout-border-width) solid rgba(var(--callout-color), 0.5);

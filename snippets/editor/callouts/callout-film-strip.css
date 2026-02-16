@@ -1,7 +1,8 @@
 @charset "UTF-8";
+
 /* GPLv3 license
 FAS - Callout Film strip
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 .callout[data-callout=film-strip] {
   --callout-icon: lucide-film;
@@ -21,17 +22,20 @@ Author: ElsaTam (Kapirklaa in Discord)
   --padding-x: calc(var(--gap) * 0.5);
   background: none;
 }
-.callout[data-callout=film-strip] .callout-content > p {
+
+.callout[data-callout=film-strip] .callout-content>p {
   counter-reset: frames;
   display: flex;
   flex-wrap: nowrap;
   font-size: 0;
   margin: 0;
 }
-.callout[data-callout=film-strip] .callout-content > p > br {
+
+.callout[data-callout=film-strip] .callout-content>p>br {
   display: none;
 }
-.callout[data-callout=film-strip] .callout-content > p > span {
+
+.callout[data-callout=film-strip] .callout-content>p>span {
   margin-inline: -0.5px;
   position: relative;
   height: calc(var(--frame-height) + var(--padding-y) * 2);
@@ -45,6 +49,7 @@ Author: ElsaTam (Kapirklaa in Discord)
   -webkit-mask-position: left, center;
   -webkit-mask-repeat: repeat-x, no-repeat;
 }
+
 .callout[data-callout=film-strip] img {
   width: 1000%;
   height: 100%;
@@ -56,7 +61,8 @@ Author: ElsaTam (Kapirklaa in Discord)
   mask-composite: intersect;
   -webkit-mask-composite: source-in;
 }
-.callout[data-callout=film-strip] .callout-content > p > span::after {
+
+.callout[data-callout=film-strip] .callout-content>p>span::after {
   content: "← " counter(frames) " →";
   font-size: calc(var(--gap) * 2 - 2px);
   line-height: 1;
@@ -69,15 +75,17 @@ Author: ElsaTam (Kapirklaa in Discord)
   text-align: center;
   z-index: 1;
 }
-.callout[data-callout=film-strip] .callout-content > p > span:first-of-type::after {
+
+.callout[data-callout=film-strip] .callout-content>p>span:first-of-type::after {
   content: counter(frames) " →";
 }
-.callout[data-callout=film-strip] .callout-content > p > span:last-of-type::after {
+
+.callout[data-callout=film-strip] .callout-content>p>span:last-of-type::after {
   content: "← " counter(frames);
 }
 
 /* Fix for Minimal theme and img-grid cssclass */
-.callout[data-callout=film-strip] .callout-content > p {
+.callout[data-callout=film-strip] .callout-content>p {
   display: flex !important;
   gap: 0;
 }

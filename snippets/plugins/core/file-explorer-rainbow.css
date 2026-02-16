@@ -1,6 +1,6 @@
 /* GPLv3 license
 FAS - File Explorer Rainbow
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 body {
   --rainbow-brightness: 1;
@@ -10,180 +10,204 @@ body {
 .theme-light {
   --color-rainbow-1: hsl(18, 60%, 40%);
   --color-rainbow-1-rgb:
-      163.2, 77.52, 40.8;
+    163.2, 77.52, 40.8;
   --color-rainbow-2: hsl(54, 60%, 40%);
   --color-rainbow-2-rgb:
-      163.2, 150.96, 40.8;
+    163.2, 150.96, 40.8;
   --color-rainbow-3: hsl(90, 60%, 40%);
   --color-rainbow-3-rgb:
-      102, 163.2, 40.8;
+    102, 163.2, 40.8;
   --color-rainbow-4: hsl(126, 60%, 40%);
   --color-rainbow-4-rgb:
-      40.8, 163.2, 53.04;
+    40.8, 163.2, 53.04;
   --color-rainbow-5: hsl(162, 60%, 40%);
   --color-rainbow-5-rgb:
-      40.8, 163.2, 126.48;
+    40.8, 163.2, 126.48;
   --color-rainbow-6: hsl(198, 60%, 40%);
   --color-rainbow-6-rgb:
-      40.8, 126.48, 163.2;
+    40.8, 126.48, 163.2;
   --color-rainbow-7: hsl(234, 60%, 40%);
   --color-rainbow-7-rgb:
-      40.8, 53.04, 163.2;
+    40.8, 53.04, 163.2;
   --color-rainbow-8: hsl(270, 60%, 40%);
   --color-rainbow-8-rgb:
-      102, 40.8, 163.2;
+    102, 40.8, 163.2;
   --color-rainbow-9: hsl(306, 60%, 40%);
   --color-rainbow-9-rgb:
-      163.2, 40.8, 150.96;
+    163.2, 40.8, 150.96;
   --color-rainbow-10: hsl(342, 60%, 40%);
   --color-rainbow-10-rgb:
-      163.2, 40.8, 77.52;
+    163.2, 40.8, 77.52;
 }
 
-@media print {
-}
+@media print {}
+
 .theme-dark {
   --color-rainbow-1: hsl(0, 100%, 84%);
   --color-rainbow-1-rgb:
-      255, 173.4, 173.4;
+    255, 173.4, 173.4;
   --color-rainbow-2: hsl(33, 100%, 82%);
   --color-rainbow-2-rgb:
-      255, 213.69, 163.2;
+    255, 213.69, 163.2;
   --color-rainbow-3: hsl(62, 100%, 86%);
   --color-rainbow-3-rgb:
-      252.62, 255, 183.6;
+    252.62, 255, 183.6;
   --color-rainbow-4: hsl(110, 100%, 87%);
   --color-rainbow-4-rgb:
-      199.75, 255, 188.7;
+    199.75, 255, 188.7;
   --color-rainbow-5: hsl(193, 100%, 79%);
   --color-rainbow-5-rgb:
-      147.9, 231.795, 255;
+    147.9, 231.795, 255;
   --color-rainbow-6: hsl(217, 100%, 81%);
   --color-rainbow-6-rgb:
-      158.1, 195.245, 255;
+    158.1, 195.245, 255;
   --color-rainbow-7: hsl(249, 100%, 85%);
   --color-rainbow-7-rgb:
-      189.975, 178.5, 255;
+    189.975, 178.5, 255;
   --color-rainbow-8: hsl(270, 100%, 87%);
   --color-rainbow-8-rgb:
-      221.85, 188.7, 255;
+    221.85, 188.7, 255;
   --color-rainbow-9: hsl(300, 100%, 89%);
   --color-rainbow-9-rgb:
-      255, 198.9, 255;
+    255, 198.9, 255;
   --color-rainbow-10: hsl(324, 100%, 83%);
   --color-rainbow-10-rgb:
-      255, 168.3, 220.32;
+    255, 168.3, 220.32;
 }
 
-@media print {
-}
+@media print {}
+
 body {
   --fas-rainbow-folders: enable;
 }
 
 @container style(--fas-rainbow-folders: enable) {
-  .nav-folder-children > .nav-folder:nth-child(10n+1),
-  .nav-files-container > div > .nav-folder:nth-child(10n+1),
+
+  .nav-folder-children>.nav-folder:nth-child(10n+1),
+  .nav-files-container>div>.nav-folder:nth-child(10n+1),
   [data-type=bookmarks] .tree-item:nth-child(10n+1) {
     --folder-color: var(--color-rainbow-10);
   }
-  .nav-folder-children > .nav-folder:nth-child(10n+2),
-  .nav-files-container > div > .nav-folder:nth-child(10n+2),
+
+  .nav-folder-children>.nav-folder:nth-child(10n+2),
+  .nav-files-container>div>.nav-folder:nth-child(10n+2),
   [data-type=bookmarks] .tree-item:nth-child(10n+2) {
     --folder-color: var(--color-rainbow-1);
   }
-  .nav-folder-children > .nav-folder:nth-child(10n+3),
-  .nav-files-container > div > .nav-folder:nth-child(10n+3),
+
+  .nav-folder-children>.nav-folder:nth-child(10n+3),
+  .nav-files-container>div>.nav-folder:nth-child(10n+3),
   [data-type=bookmarks] .tree-item:nth-child(10n+3) {
     --folder-color: var(--color-rainbow-2);
   }
-  .nav-folder-children > .nav-folder:nth-child(10n+4),
-  .nav-files-container > div > .nav-folder:nth-child(10n+4),
+
+  .nav-folder-children>.nav-folder:nth-child(10n+4),
+  .nav-files-container>div>.nav-folder:nth-child(10n+4),
   [data-type=bookmarks] .tree-item:nth-child(10n+4) {
     --folder-color: var(--color-rainbow-3);
   }
-  .nav-folder-children > .nav-folder:nth-child(10n+5),
-  .nav-files-container > div > .nav-folder:nth-child(10n+5),
+
+  .nav-folder-children>.nav-folder:nth-child(10n+5),
+  .nav-files-container>div>.nav-folder:nth-child(10n+5),
   [data-type=bookmarks] .tree-item:nth-child(10n+5) {
     --folder-color: var(--color-rainbow-4);
   }
-  .nav-folder-children > .nav-folder:nth-child(10n+6),
-  .nav-files-container > div > .nav-folder:nth-child(10n+6),
+
+  .nav-folder-children>.nav-folder:nth-child(10n+6),
+  .nav-files-container>div>.nav-folder:nth-child(10n+6),
   [data-type=bookmarks] .tree-item:nth-child(10n+6) {
     --folder-color: var(--color-rainbow-5);
   }
-  .nav-folder-children > .nav-folder:nth-child(10n+7),
-  .nav-files-container > div > .nav-folder:nth-child(10n+7),
+
+  .nav-folder-children>.nav-folder:nth-child(10n+7),
+  .nav-files-container>div>.nav-folder:nth-child(10n+7),
   [data-type=bookmarks] .tree-item:nth-child(10n+7) {
     --folder-color: var(--color-rainbow-6);
   }
-  .nav-folder-children > .nav-folder:nth-child(10n+8),
-  .nav-files-container > div > .nav-folder:nth-child(10n+8),
+
+  .nav-folder-children>.nav-folder:nth-child(10n+8),
+  .nav-files-container>div>.nav-folder:nth-child(10n+8),
   [data-type=bookmarks] .tree-item:nth-child(10n+8) {
     --folder-color: var(--color-rainbow-7);
   }
-  .nav-folder-children > .nav-folder:nth-child(10n+9),
-  .nav-files-container > div > .nav-folder:nth-child(10n+9),
+
+  .nav-folder-children>.nav-folder:nth-child(10n+9),
+  .nav-files-container>div>.nav-folder:nth-child(10n+9),
   [data-type=bookmarks] .tree-item:nth-child(10n+9) {
     --folder-color: var(--color-rainbow-8);
   }
-  .nav-folder-children > .nav-folder:nth-child(10n+10),
-  .nav-files-container > div > .nav-folder:nth-child(10n+10),
+
+  .nav-folder-children>.nav-folder:nth-child(10n+10),
+  .nav-files-container>div>.nav-folder:nth-child(10n+10),
   [data-type=bookmarks] .tree-item:nth-child(10n+10) {
     --folder-color: var(--color-rainbow-9);
   }
+
   .nav-files-container .nav-folder.nav-folder .nav-folder,
   [data-type=bookmarks] .tree-item .tree-item {
     --folder-color: inherit;
   }
-  .nav-files-container > div > .nav-folder .nav-folder-title,
+
+  .nav-files-container>div>.nav-folder .nav-folder-title,
   [data-type=bookmarks] .tree-item .mod-collapsible {
     --nav-item-color: var(--folder-color);
     --nav-item-background-hover: color-mix(in srgb, var(--folder-color), transparent 80%);
     filter: saturate(var(--rainbow-saturation)) brightness(var(--rainbow-brightness));
   }
 }
+
 @container style(--fas-rainbow-folders: nested) {
+
   .nav-folder:nth-child(10n+1),
   [data-type=bookmarks] .tree-item:nth-child(10n+1) {
     --folder-color: var(--color-rainbow-10);
   }
+
   .nav-folder:nth-child(10n+2),
   [data-type=bookmarks] .tree-item:nth-child(10n+2) {
     --folder-color: var(--color-rainbow-1);
   }
+
   .nav-folder:nth-child(10n+3),
   [data-type=bookmarks] .tree-item:nth-child(10n+3) {
     --folder-color: var(--color-rainbow-2);
   }
+
   .nav-folder:nth-child(10n+4),
   [data-type=bookmarks] .tree-item:nth-child(10n+4) {
     --folder-color: var(--color-rainbow-3);
   }
+
   .nav-folder:nth-child(10n+5),
   [data-type=bookmarks] .tree-item:nth-child(10n+5) {
     --folder-color: var(--color-rainbow-4);
   }
+
   .nav-folder:nth-child(10n+6),
   [data-type=bookmarks] .tree-item:nth-child(10n+6) {
     --folder-color: var(--color-rainbow-5);
   }
+
   .nav-folder:nth-child(10n+7),
   [data-type=bookmarks] .tree-item:nth-child(10n+7) {
     --folder-color: var(--color-rainbow-6);
   }
+
   .nav-folder:nth-child(10n+8),
   [data-type=bookmarks] .tree-item:nth-child(10n+8) {
     --folder-color: var(--color-rainbow-7);
   }
+
   .nav-folder:nth-child(10n+9),
   [data-type=bookmarks] .tree-item:nth-child(10n+9) {
     --folder-color: var(--color-rainbow-8);
   }
+
   .nav-folder:nth-child(10n+10),
   [data-type=bookmarks] .tree-item:nth-child(10n+10) {
     --folder-color: var(--color-rainbow-9);
   }
+
   .nav-folder .nav-folder-title,
   [data-type=bookmarks] .tree-item .mod-collapsible {
     --nav-item-color: var(--folder-color);

@@ -1,6 +1,6 @@
 /* GPLv3 license
 FAS - Callout Blank
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 .callout[data-callout-metadata~=blank],
 .callout[data-callout=blank] {
@@ -11,13 +11,15 @@ Author: ElsaTam (Kapirklaa in Discord)
   background: none;
   border-radius: 0;
 }
-.callout[data-callout-metadata~=blank] > .callout-content,
-.callout[data-callout=blank] > .callout-content {
+
+.callout[data-callout-metadata~=blank]>.callout-content,
+.callout[data-callout=blank]>.callout-content {
   padding: 0;
   background: none;
   border: none;
 }
-.callout[data-callout-metadata~=blank] > .callout-title,
-.callout[data-callout=blank] > .callout-title {
+
+.callout[data-callout-metadata~=blank]>.callout-title,
+.callout[data-callout=blank]>.callout-title {
   display: none;
 }

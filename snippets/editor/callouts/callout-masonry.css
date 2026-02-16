@@ -1,6 +1,6 @@
 /* GPLv3 license
 FAS - Callout Masonry
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 body {
   --masonry-column-count: 4;
@@ -19,16 +19,20 @@ body {
   --link-unresolved-filter: saturate(30%);
   background: none;
 }
-.callout[data-callout=masonry] > .callout-content > p {
+
+.callout[data-callout=masonry]>.callout-content>p {
   column-count: var(--masonry-column-count);
   column-gap: var(--masonry-gap);
 }
-.callout[data-callout=masonry] > .callout-title {
+
+.callout[data-callout=masonry]>.callout-title {
   display: none;
 }
+
 .callout[data-callout=masonry] img {
   border-radius: var(--radius-m);
 }
+
 .callout[data-callout=masonry] a {
   font-size: 0;
 }
@@ -65,30 +69,34 @@ body {
   --masonry-column-count: 9;
 }
 
-.callout[data-callout=masonry][data-callout-metadata=horizontal] > .callout-content > p {
+.callout[data-callout=masonry][data-callout-metadata=horizontal]>.callout-content>p {
   column-count: unset;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: var(--masonry-gap);
 }
-.callout[data-callout=masonry][data-callout-metadata=horizontal] > .callout-content > p > * {
+
+.callout[data-callout=masonry][data-callout-metadata=horizontal]>.callout-content>p>* {
   flex-grow: 1;
 }
+
 .callout[data-callout=masonry][data-callout-metadata=horizontal] img {
   height: var(--masonry-row-height);
   width: 100%;
   object-fit: cover;
 }
-.callout[data-callout=masonry][data-callout-metadata=horizontal] > .callout-content > p > *:last-child {
+
+.callout[data-callout=masonry][data-callout-metadata=horizontal]>.callout-content>p>*:last-child {
   flex-grow: unset;
 }
+
 .callout[data-callout=masonry][data-callout-metadata=horizontal] br {
   display: none;
 }
 
 /* Fix for Minimal theme and img-grid cssclass */
-.callout[data-callout=masonry]:not([data-callout-metadata=horizontal]) > .callout-content > p {
+.callout[data-callout=masonry]:not([data-callout-metadata=horizontal])>.callout-content>p {
   display: block !important;
   column-gap: 0.5rem;
 }

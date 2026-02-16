@@ -1,6 +1,6 @@
 /* GPLv3 license
 FAS - Audio Cassette
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 .theme-light {
   --shadow-color: rgba(0, 0, 0, 0.2);
@@ -11,7 +11,8 @@ Author: ElsaTam (Kapirklaa in Discord)
 }
 
 /* Compatibility with ITS theme/snippets */
-.markdown-source-view > div, .markdown-preview-view {
+.markdown-source-view>div,
+.markdown-preview-view {
   container: markdown-view/inline-size;
 }
 
@@ -30,7 +31,7 @@ body {
   --cassette-width: 0.8;
 }
 
-.media-embed[alt*=cassette] > audio {
+.media-embed[alt*=cassette]>audio {
   --cassette-color-1: #ffcc00;
   --cassette-color-2: #c83737;
   display: block;
@@ -38,7 +39,8 @@ body {
   margin-inline: auto;
   border-radius: var(--radius-l);
 }
-.media-embed[alt*=cassette] > audio::-webkit-media-controls-panel {
+
+.media-embed[alt*=cassette]>audio::-webkit-media-controls-panel {
   border: none;
   background: linear-gradient(to right, color-mix(in srgb, var(--cassette-color-1), transparent 50%), color-mix(in srgb, var(--cassette-color-2), transparent 50%));
 }

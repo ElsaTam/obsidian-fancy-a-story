@@ -1,6 +1,6 @@
 /* GPLv3 license
 FAS - Dataview Cards Deck
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 body {
   --workleaves-background: var(--background-primary);
@@ -46,30 +46,30 @@ body {
     overflow-x: auto;
     --padding-bottom: max(0px, var(--card-shadow-blur) + var(--card-shadow-offset-y) + var(--padding-scale-factor));
     --padding-top: max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-y) + var(--padding-scale-factor));
-    --padding-left: calc(
-        -1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-x))
-    );
-    --padding-right: calc(
-        -1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) + var(--card-shadow-offset-x))
-    );
+    --padding-left: calc(-1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-x)));
+    --padding-right: calc(-1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) + var(--card-shadow-offset-x)));
   }
-  ul.dataview-result-list-root-ul > * {
+
+  ul.dataview-result-list-root-ul>* {
     width: var(--card-gap);
     transition: transform 0.5s ease-in-out;
     transform: translateX(var(--card-base-translation));
     transform-origin: right;
   }
+
   .dataview-result-list-li {
     transition: transform 0.5s ease-in-out, filter 0.2s linear;
     height: var(--card-height);
     vertical-align: middle;
   }
+
   .markdown-embed {
     --embed-border-start: 0px;
     --embed-border-end: 0px;
     --embed-max-height: var(--card-height);
     --embed-padding: 0px;
   }
+
   .markdown-embed-title {
     border-top-left-radius: var(--card-radius);
     position: absolute;
@@ -81,6 +81,7 @@ body {
     left: 1px;
     box-shadow: 1px 1px 5px black;
   }
+
   .markdown-embed-content {
     box-shadow: var(--card-shadow-offset-x) var(--card-shadow-offset-y) var(--card-shadow-blur) rgba(0, 0, 0, var(--card-shadow-opacity));
     border-radius: var(--card-radius);
@@ -93,12 +94,14 @@ body {
     content-visibility: auto;
     padding: var(--size-2-2);
   }
+
   .markdown-embed-content.markdown-embed-content {
     height: var(--embed-max-height);
     overflow: hidden;
   }
-  .dataview-result-list-li > span > a > .image-embed,
-  .dataview-result-list-li > span > .image-embed {
+
+  .dataview-result-list-li>span>a>.image-embed,
+  .dataview-result-list-li>span>.image-embed {
     box-shadow: var(--card-shadow-offset-x) var(--card-shadow-offset-y) var(--card-shadow-blur) rgba(0, 0, 0, var(--card-shadow-opacity));
     border-radius: var(--card-radius);
     border: 1px solid var(--border-color);
@@ -107,21 +110,25 @@ body {
     height: var(--card-height);
     display: block;
   }
-  .dataview-result-list-li > span > a > .image-embed > img,
-  .dataview-result-list-li > span > .image-embed > img {
+
+  .dataview-result-list-li>span>a>.image-embed>img,
+  .dataview-result-list-li>span>.image-embed>img {
     border-radius: var(--card-radius);
     height: 100%;
     width: 100%;
     object-fit: cover;
     object-position: center;
   }
-  .markdown-embed-content > .markdown-preview-view {
+
+  .markdown-embed-content>.markdown-preview-view {
     overflow: hidden;
   }
+
   .markdown-embed-link {
     right: calc(var(--card-gap) - var(--card-width) + 4px);
     width: fit-content;
   }
+
   .markdown-embed img {
     max-height: 150px;
     max-width: 100%;
@@ -129,53 +136,67 @@ body {
     object-position: center;
   }
 }
+
 @scope (body:not(.is-ios) .dataview-cards-deck) to (.markdown-embed .markdown-embed) {
   .ul.dataview-result-list-root-ul::-webkit-scrollbar {
     width: var(--deck-scrollbar-width);
     height: var(--deck-scrollbar-width);
   }
 }
+
 @media (hover: hover) {
   @scope (.dataview-cards-deck) to (.markdown-embed .markdown-embed) {
-    ul.dataview-result-list-root-ul > *:hover {
+    ul.dataview-result-list-root-ul>*:hover {
       transform: translateX(var(--card-base-translation)) scale(var(--card-scale-hover));
     }
-    ul.dataview-result-list-root-ul > *:hover ~ * {
+
+    ul.dataview-result-list-root-ul>*:hover~* {
       transform: translateX(var(--card-base-translation)) translateX(calc(var(--card-width) - var(--card-gap)));
     }
+
     .dataview-result-list-li:hover {
       --border-color: var(--border-color-hover);
     }
+
     .dataview-result-list-li:hover .markdown-embed-title {
       opacity: 0;
     }
   }
 }
+
 /* Remove code bellow in case of performance issues */
 @scope (.dataview-cards-deck) to (.markdown-embed .markdown-embed) {
+
   .dataview-result-list-root-ul .markdown-preview-view:hover,
   .dataview-result-list-root-ul .markdown-embed-content:hover {
     outline: none;
   }
 }
+
 @media (hover: hover) {
   @scope (.dataview-cards-deck) to (.markdown-embed .markdown-embed) {
-    .dataview-result-list-root-ul:hover > :not(:hover) {
+    .dataview-result-list-root-ul:hover> :not(:hover) {
       filter: saturate(0.2);
     }
-    .dataview-result-list-root-ul:hover > :not(:hover), .dataview-result-list-root-ul:hover > :not(:hover) .markdown-preview-view {
+
+    .dataview-result-list-root-ul:hover> :not(:hover),
+    .dataview-result-list-root-ul:hover> :not(:hover) .markdown-preview-view {
       color: var(--text-faint);
     }
-    .dataview-result-list-root-ul > *:hover ~ * {
+
+    .dataview-result-list-root-ul>*:hover~* {
       z-index: 0;
     }
+
     .dataview-result-list-root-ul:hover {
       z-index: 1;
     }
   }
 }
+
 /* Fixes for themes */
-/* Minimal */ /*
+/* Minimal */
+/*
 @scope (.dataview-cards-deck) to (.markdown-embed .markdown-embed) {
     ul.dataview-result-list-root-ul .markdown-embed {
         padding: 0;

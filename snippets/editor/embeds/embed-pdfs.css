@@ -1,6 +1,6 @@
 /* GPLv3 license
 FAS - Embed PDFs
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 body {
   --pdf-blend-mode-light: normal;
@@ -9,11 +9,13 @@ body {
 }
 
 @container style(--pdf-invert-dark: enable) {
+
   .theme-dark .workspace-leaf-content[data-type=pdf] .page,
   .theme-dark .pdf-embed .page {
     filter: invert(1);
   }
 }
+
 .theme-light .workspace-leaf-content[data-type=pdf] .page,
 .theme-light .pdf-embed .page {
   mix-blend-mode: var(--pdf-blend-mode-light);

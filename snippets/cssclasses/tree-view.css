@@ -1,16 +1,19 @@
 @charset "UTF-8";
+
 /* GPLv3 license
 FAS - Tree View
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 @keyframes bg-slide {
   from {
     right: 100%;
   }
+
   to {
     right: 0;
   }
 }
+
 body {
   --workleaves-background: var(--background-primary);
   --workleaves-foreground: var(--text-normal);
@@ -26,8 +29,9 @@ body {
 }
 
 @container style(--fas-list-style: tree-view) {
-  .markdown-rendered .el-ul > ul,
-  .markdown-rendered > * > ul {
+
+  .markdown-rendered .el-ul>ul,
+  .markdown-rendered>*>ul {
     --indentation-guide-reading-indent: -0.8em;
     --indentation-guide-width: var(--tree-view-guide-width);
     --indentation-guide-color: var(--tree-view-guide-color);
@@ -35,8 +39,9 @@ body {
     position: relative;
     padding-inline-start: calc(var(--list-indent) - 3ch);
   }
-  .markdown-rendered .el-ul > ul li::after,
-  .markdown-rendered > * > ul li::after {
+
+  .markdown-rendered .el-ul>ul li::after,
+  .markdown-rendered>*>ul li::after {
     content: "";
     display: block;
     position: absolute;
@@ -49,10 +54,11 @@ body {
     border-bottom-left-radius: var(--radius-m);
     pointer-events: none;
   }
-  .markdown-rendered .el-ul > ul::before,
-  .markdown-rendered .el-ul > ul ul::before,
-  .markdown-rendered > * > ul::before,
-  .markdown-rendered > * > ul ul::before {
+
+  .markdown-rendered .el-ul>ul::before,
+  .markdown-rendered .el-ul>ul ul::before,
+  .markdown-rendered>*>ul::before,
+  .markdown-rendered>*>ul ul::before {
     content: "​";
     position: absolute;
     display: block;
@@ -62,12 +68,14 @@ body {
     top: calc(-0.5em * var(--line-height-normal) - var(--indentation-guide-width) * 0.5);
     z-index: 1;
   }
-  .markdown-rendered .el-ul > ul .list-bullet,
-  .markdown-rendered > * > ul .list-bullet {
+
+  .markdown-rendered .el-ul>ul .list-bullet,
+  .markdown-rendered>*>ul .list-bullet {
     display: none;
   }
-  .markdown-rendered .el-ul > ul .list-collapse-indicator,
-  .markdown-rendered > * > ul .list-collapse-indicator {
+
+  .markdown-rendered .el-ul>ul .list-collapse-indicator,
+  .markdown-rendered>*>ul .list-collapse-indicator {
     position: absolute;
     opacity: 1;
     top: calc(0.5em * var(--line-height-normal) - var(--list-bullet-size) * 0.5 + var(--list-spacing));
@@ -82,28 +90,35 @@ body {
     border: 1px solid var(--color-accent);
     z-index: 2;
   }
-  .markdown-rendered .el-ul > ul .list-collapse-indicator.is-collapsed,
-  .markdown-rendered > * > ul .list-collapse-indicator.is-collapsed {
+
+  .markdown-rendered .el-ul>ul .list-collapse-indicator.is-collapsed,
+  .markdown-rendered>*>ul .list-collapse-indicator.is-collapsed {
     background: var(--color-accent);
   }
-  .markdown-rendered .el-ul > ul .list-collapse-indicator svg,
-  .markdown-rendered > * > ul .list-collapse-indicator svg {
+
+  .markdown-rendered .el-ul>ul .list-collapse-indicator svg,
+  .markdown-rendered>*>ul .list-collapse-indicator svg {
     display: none;
   }
+
   @media (hover: hover) {
-    .markdown-rendered .el-ul > ul .list-collapse-indicator:hover {
+    .markdown-rendered .el-ul>ul .list-collapse-indicator:hover {
       background: color-mix(in srgb, var(--color-accent), var(--workleaves-background) 70%);
     }
-    .markdown-rendered .el-ul > ul .list-collapse-indicator.is-collapsed:hover {
+
+    .markdown-rendered .el-ul>ul .list-collapse-indicator.is-collapsed:hover {
       background: color-mix(in srgb, var(--color-accent), var(--workleaves-background) 30%);
     }
-    .markdown-rendered .el-ul > ul li:hover::after {
+
+    .markdown-rendered .el-ul>ul li:hover::after {
       border-color: var(--color-accent);
     }
-    .markdown-rendered .el-ul > ul li:hover > ul::before {
+
+    .markdown-rendered .el-ul>ul li:hover>ul::before {
       border-color: var(--color-accent);
     }
-    .markdown-rendered .el-ul > ul li:has(> .list-bullet:last-child):hover::before {
+
+    .markdown-rendered .el-ul>ul li:has(> .list-bullet:last-child):hover::before {
       content: "";
       position: absolute;
       top: 0;
@@ -115,13 +130,16 @@ body {
       animation: bg-slide 0.5s ease-in-out;
     }
   }
+
   @media print {
     .markdown-rendered ul {
       list-style-type: none;
     }
+
     .markdown-rendered ul ul {
       position: relative;
     }
+
     .markdown-rendered ul li::after {
       width: var(--list-indent);
     }

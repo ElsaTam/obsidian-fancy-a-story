@@ -1,6 +1,6 @@
 /* GPLv3 license
 FAS - Canvas Node Background
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 .canvas-node:has(.tag[href="#node-background"], .node-background):not(.is-focused) {
   z-index: -1 !important;

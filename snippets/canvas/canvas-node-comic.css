@@ -1,11 +1,12 @@
 /* GPLv3 license
 FAS - Canvas Node Comic
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 .canvas-node:has(.tag[href="#node-comic"], .node-comic):not(.is-editing) .canvas-node-container {
   box-shadow: none;
   border-radius: 255px 15px 255px 15px/15px 255px 15px 255px;
 }
+
 .canvas-node:has(.tag[href="#node-comic"], .node-comic):not(.is-editing) .markdown-preview-view {
   font-family: "VTC Letterer Pro", "Comic Sans", "Arial", sans-serif;
 }

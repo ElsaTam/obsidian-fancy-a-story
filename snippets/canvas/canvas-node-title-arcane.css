@@ -1,6 +1,6 @@
 /* GPLv3 license
 FAS - Canvas Node Arcane
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 body {
   --noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
@@ -8,71 +8,81 @@ body {
 
 @supports (color: hsl(from white h s l)) {
   .canvas-node:has(.tag[href="#node-title-arcane"], .node-title-arcane):not(.is-editing) {
-    --cutout-border-background-gradient: linear-gradient(
-        to top,
+    --cutout-border-background-gradient: linear-gradient(to top,
         rgba(var(--canvas-color), 0.9),
-        hsl(from rgb(var(--canvas-color)) calc(h - 10) calc(s * 0.7) calc(l * 0.9) / 0.9)
-    );
+        hsl(from rgb(var(--canvas-color)) calc(h - 10) calc(s * 0.7) calc(l * 0.9) / 0.9));
   }
+
   .canvas-node:has(.tag[href="#node-title-arcane"], .node-title-arcane):not(.is-editing) .markdown-preview-view {
     --relief-color: hsl(from rgb(var(--canvas-color)) h calc(s * 0.5) calc(l * 0.5));
   }
+
   .canvas-node:has(.tag[href="#node-title-arcane"], .node-title-arcane):not(.is-editing) p {
-    --p-background-gradient: linear-gradient(
-        to top,
+    --p-background-gradient: linear-gradient(to top,
         rgba(var(--canvas-color), 0.9),
-        hsl(from rgb(var(--canvas-color)) calc(h - 20) calc(s * 0.5) calc(l * 0.7) / 0.6)
-    );
+        hsl(from rgb(var(--canvas-color)) calc(h - 20) calc(s * 0.5) calc(l * 0.7) / 0.6));
   }
 }
+
 @supports not (color: hsl(from white h s l)) {
   .canvas-node:has(.tag[href="#node-title-arcane"], .node-title-arcane):not(.is-editing) {
     --cutout-border-background-gradient: color-mix(in hsl, rgba(var(--canvas-color), 0.9), rgba(0, 0, 0, 0.9) 30%);
   }
+
   .canvas-node:has(.tag[href="#node-title-arcane"], .node-title-arcane):not(.is-editing) .markdown-preview-view {
     --relief-color: color-mix(in hsl, rgb(var(--canvas-color)), black 50%);
   }
+
   .canvas-node:has(.tag[href="#node-title-arcane"], .node-title-arcane):not(.is-editing) p {
     --p-background-gradient: color-mix(in hsl, rgba(var(--canvas-color), 0.9), rgba(100, 54, 0, 0.6) 40%);
   }
 }
+
 .canvas-node:has(.tag[href="#node-title-arcane"], .node-title-arcane):not(.is-editing) {
   --cutout-corner-angle: 1.5em;
   --cutout-outline-inset: 0;
   --cutout-outline-thickness: 5px;
   --cutout-border-background: var(--cutout-border-background-gradient), var(--noise);
 }
+
 .canvas-node:has(.tag[href="#node-title-arcane"], .node-title-arcane):not(.is-editing) .canvas-node-container {
   border: none;
 }
+
 .canvas-node:has(.tag[href="#node-title-arcane"], .node-title-arcane):not(.is-editing) .canvas-node-container {
   box-shadow: none;
 }
+
 .canvas-node:has(.tag[href="#node-title-arcane"], .node-title-arcane):not(.is-editing) .canvas-node-content {
   background: none;
 }
+
 .canvas-node:has(.tag[href="#node-title-arcane"], .node-title-arcane):not(.is-editing) .markdown-preview-view {
   font-family: "Arcane Nine", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: var(--font-extrabold);
   text-align: center;
   line-height: 1;
 }
+
 .canvas-node:has(.tag[href="#node-title-arcane"], .node-title-arcane):not(.is-editing) .markdown-preview-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .canvas-node:has(.tag[href="#node-title-arcane"], .node-title-arcane):not(.is-editing) p {
   background-clip: text;
   background-image: var(--p-background-gradient), var(--noise);
   color: transparent;
 }
+
 @supports (corner-shape: bevel) {
   .canvas-node:has(.tag[href="#node-title-arcane"], .node-title-arcane):not(.is-editing) .canvas-node-container {
     outline: 1px solid var(--cutout-border-background);
     outline-offset: calc(-1 * var(--cutout-outline-inset));
   }
 }
+
 @supports not (corner-shape: bevel) {
   .canvas-node:has(.tag[href="#node-title-arcane"], .node-title-arcane):not(.is-editing) .canvas-node-container::before {
     content: "";

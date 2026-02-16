@@ -1,14 +1,16 @@
 /* GPLv3 license
 FAS - Canvas Node Only Text
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 .canvas-node:has(.tag[href="#node-only-text"], .node-only-text):not(.is-editing) .canvas-node-container {
   box-shadow: none;
   background: none;
 }
+
 .canvas-node:has(.tag[href="#node-only-text"], .node-only-text):not(.is-editing):not(.is-dragging, *:hover) .canvas-node-container {
   border: none;
 }
+
 .canvas-node:has(.tag[href="#node-only-text"], .node-only-text):not(.is-editing) .canvas-node-content {
   background: none;
 }

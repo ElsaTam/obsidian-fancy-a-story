@@ -1,6 +1,6 @@
 /* GPLv3 license
 FAS - Callout Cards deck
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 .callout[data-callout=cards-deck] {
   --callout-icon: lucide-layers;
@@ -17,7 +17,7 @@ Author: ElsaTam (Kapirklaa in Discord)
   overflow: visible;
 }
 
-.callout[data-callout=cards-deck] .callout-content > p {
+.callout[data-callout=cards-deck] .callout-content>p {
   padding-bottom: var(--padding-bottom);
   padding-top: var(--padding-top);
   padding-left: var(--padding-left);
@@ -40,29 +40,29 @@ Author: ElsaTam (Kapirklaa in Discord)
   overflow-x: auto;
   --padding-bottom: max(0px, var(--card-shadow-blur) + var(--card-shadow-offset-y) + var(--padding-scale-factor));
   --padding-top: max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-y) + var(--padding-scale-factor));
-  --padding-left: calc(
-      -1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-x))
-  );
-  --padding-right: calc(
-      -1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) + var(--card-shadow-offset-x))
-  );
+  --padding-left: calc(-1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) - var(--card-shadow-offset-x)));
+  --padding-right: calc(-1 * var(--card-base-translation) + max(0px, var(--card-shadow-blur) + var(--card-shadow-offset-x)));
 }
-.callout[data-callout=cards-deck] .callout-content > p > * {
+
+.callout[data-callout=cards-deck] .callout-content>p>* {
   width: var(--card-gap);
   transition: transform 0.5s ease-in-out;
   transform: translateX(var(--card-base-translation));
   transform-origin: right;
 }
-.callout[data-callout=cards-deck] .callout-content > p a {
+
+.callout[data-callout=cards-deck] .callout-content>p a {
   font-size: 0;
 }
-.callout[data-callout=cards-deck] .callout-content > p > span,
-.callout[data-callout=cards-deck] .callout-content > p > a > span {
+
+.callout[data-callout=cards-deck] .callout-content>p>span,
+.callout[data-callout=cards-deck] .callout-content>p>a>span {
   transition: transform 0.5s ease-in-out, filter 0.2s linear;
   height: var(--card-height);
   vertical-align: middle;
 }
-.callout[data-callout=cards-deck] .callout-content > p img {
+
+.callout[data-callout=cards-deck] .callout-content>p img {
   border-radius: var(--card-radius);
   border: 1px solid var(--border-color);
   box-shadow: var(--card-shadow-offset-x) var(--card-shadow-offset-y) var(--card-shadow-blur) rgba(0, 0, 0, var(--card-shadow-opacity));
@@ -73,40 +73,49 @@ Author: ElsaTam (Kapirklaa in Discord)
 }
 
 @media (hover: hover) {
-  .callout[data-callout=cards-deck] .callout-content > p > *:hover {
+  .callout[data-callout=cards-deck] .callout-content>p>*:hover {
     transform: translateX(var(--card-base-translation)) scale(var(--card-scale-hover));
   }
-  .callout[data-callout=cards-deck] .callout-content > p > *:hover ~ * {
+
+  .callout[data-callout=cards-deck] .callout-content>p>*:hover~* {
     transform: translateX(var(--card-base-translation)) translateX(calc(var(--card-width) - var(--card-gap)));
   }
 }
-body:not(.is-ios) .callout[data-callout=cards-deck] .callout-content > p::-webkit-scrollbar {
+
+body:not(.is-ios) .callout[data-callout=cards-deck] .callout-content>p::-webkit-scrollbar {
   width: var(--deck-scrollbar-width);
   height: var(--deck-scrollbar-width);
 }
 
 /* Remove code bellow in case of performance issues */
-.callout[data-callout=cards-deck] .callout-content > p:hover > :not(:hover) {
+.callout[data-callout=cards-deck] .callout-content>p:hover> :not(:hover) {
   filter: saturate(0.2);
 }
-.callout[data-callout=cards-deck] .callout-content > p:hover > :not(:hover), .callout[data-callout=cards-deck] .callout-content > p:hover > :not(:hover) .markdown-preview-view {
+
+.callout[data-callout=cards-deck] .callout-content>p:hover> :not(:hover),
+.callout[data-callout=cards-deck] .callout-content>p:hover> :not(:hover) .markdown-preview-view {
   color: var(--text-faint);
 }
-.callout[data-callout=cards-deck] .callout-content > p > *:hover ~ * {
+
+.callout[data-callout=cards-deck] .callout-content>p>*:hover~* {
   z-index: 0;
 }
-.callout[data-callout=cards-deck] .callout-content > p:hover {
+
+.callout[data-callout=cards-deck] .callout-content>p:hover {
   z-index: 1;
 }
 
 @media (hover: hover) {
-  .callout[data-callout=cards-deck] .callout-content > p > span > img:hover,
-  .callout[data-callout=cards-deck] .callout-content > p > a > span > img:hover {
+
+  .callout[data-callout=cards-deck] .callout-content>p>span>img:hover,
+  .callout[data-callout=cards-deck] .callout-content>p>a>span>img:hover {
     --border-color: var(--border-color-hover);
   }
 }
+
 /* Fixes for themes */
-/* Minimal */ /*
+/* Minimal */
+/*
 .callout[data-callout=cards-deck] {
     --image-muted: 1;
 }

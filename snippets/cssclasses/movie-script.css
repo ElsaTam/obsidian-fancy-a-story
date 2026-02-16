@@ -1,6 +1,6 @@
 /* GPLv3 license
 FAS - Movie Script
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 .markdown-source-view.movie-script,
 .markdown-preview-view.movie-script {
@@ -19,12 +19,14 @@ Author: ElsaTam (Kapirklaa in Discord)
   --h6-weight: var(--font-weight);
   --font-text: "Courier New", Courier, monospace;
 }
+
 .markdown-source-view.movie-script .HyperMD-header-1,
 .markdown-source-view.movie-script h1,
 .markdown-preview-view.movie-script .HyperMD-header-1,
 .markdown-preview-view.movie-script h1 {
   text-transform: uppercase;
 }
+
 .markdown-source-view.movie-script .callout,
 .markdown-preview-view.movie-script .callout {
   --callout-padding: 0;
@@ -34,44 +36,53 @@ Author: ElsaTam (Kapirklaa in Discord)
   --p-spacing: 0;
   background: none;
 }
+
 .markdown-source-view.movie-script .callout .callout-title,
 .markdown-preview-view.movie-script .callout .callout-title {
   background: none;
   color: var(--text-normal);
 }
+
 .markdown-source-view.movie-script .callout[data-callout=transition] .callout-icon,
 .markdown-preview-view.movie-script .callout[data-callout=transition] .callout-icon {
   display: none;
 }
-.markdown-source-view.movie-script .callout[data-callout=transition] > .callout-title,
-.markdown-preview-view.movie-script .callout[data-callout=transition] > .callout-title {
+
+.markdown-source-view.movie-script .callout[data-callout=transition]>.callout-title,
+.markdown-preview-view.movie-script .callout[data-callout=transition]>.callout-title {
   justify-content: flex-end;
   text-transform: uppercase;
 }
+
 .markdown-source-view.movie-script .callout[data-callout=transition] .callout-title-inner::after,
 .markdown-preview-view.movie-script .callout[data-callout=transition] .callout-title-inner::after {
   content: ":";
 }
+
 .markdown-source-view.movie-script .callout[data-callout=character],
 .markdown-preview-view.movie-script .callout[data-callout=character] {
   max-width: 300px;
   margin-inline: auto;
 }
+
 .markdown-source-view.movie-script .callout[data-callout=character] .callout-icon,
 .markdown-preview-view.movie-script .callout[data-callout=character] .callout-icon {
   display: none;
 }
-.markdown-source-view.movie-script .callout[data-callout=character] > .callout-title,
-.markdown-preview-view.movie-script .callout[data-callout=character] > .callout-title {
+
+.markdown-source-view.movie-script .callout[data-callout=character]>.callout-title,
+.markdown-preview-view.movie-script .callout[data-callout=character]>.callout-title {
   padding-left: 40%;
   text-transform: uppercase;
 }
+
 .markdown-source-view.movie-script .callout[data-callout=character] .callout,
 .markdown-preview-view.movie-script .callout[data-callout=character] .callout {
   margin: 0;
 }
-.markdown-source-view.movie-script .callout[data-callout=parenthetical] > .callout-title,
-.markdown-preview-view.movie-script .callout[data-callout=parenthetical] > .callout-title {
+
+.markdown-source-view.movie-script .callout[data-callout=parenthetical]>.callout-title,
+.markdown-preview-view.movie-script .callout[data-callout=parenthetical]>.callout-title {
   justify-content: center;
 }
 

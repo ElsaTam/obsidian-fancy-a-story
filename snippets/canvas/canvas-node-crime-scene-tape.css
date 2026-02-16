@@ -1,17 +1,19 @@
 /* GPLv3 license
 FAS - Canvas Node Crime Scene Tape
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 @supports (color: hsl(from white h s l)) {
   .canvas-node:has(.tag[href="#node-crime-scene-tape"], .node-crime-scene-tape):not(.is-editing) .canvas-node-container {
     background-color: hsl(from rgb(var(--canvas-color)) h 100% 50%);
   }
 }
+
 @supports not (color: hsl(from white h s l)) {
   .canvas-node:has(.tag[href="#node-crime-scene-tape"], .node-crime-scene-tape):not(.is-editing) .canvas-node-container {
     background-color: rgb(var(--canvas-color));
   }
 }
+
 .canvas-node:has(.tag[href="#node-crime-scene-tape"], .node-crime-scene-tape):not(.is-editing) .canvas-node-container {
   border: none;
   box-shadow: none;
@@ -22,9 +24,11 @@ Author: ElsaTam (Kapirklaa in Discord)
   background-repeat: repeat-x;
   background-position: left center;
 }
+
 .canvas-node:has(.tag[href="#node-crime-scene-tape"], .node-crime-scene-tape):not(.is-editing).mod-canvas-color-custom .canvas-node-container {
   background-color: rgb(var(--canvas-color));
 }
+
 .canvas-node:has(.tag[href="#node-crime-scene-tape"], .node-crime-scene-tape):not(.is-editing) .canvas-node-content {
   background: none;
 }

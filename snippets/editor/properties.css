@@ -1,6 +1,6 @@
 /* GPLv3 license
 FAS - Properties
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 body {
   --workleaves-background: var(--background-primary);
@@ -18,17 +18,21 @@ body {
     column-rule: 1px dashed var(--metadata-border-color);
   }
 }
+
 [data-type=markdown] {
   --metadata-border-width: 1px;
   --metadata-padding: var(--size-4-6) var(--size-4-2) var(--size-4-2) var(--size-4-2);
 }
+
 [data-type=markdown] .metadata-container {
   outline: 1px solid color-mix(in srgb, var(--metadata-border-color), transparent 50%);
   outline-offset: -5px;
 }
+
 [data-type=markdown] .metadata-properties-heading .collapse-indicator {
   inset-inline-start: 0;
 }
+
 [data-type=markdown] .metadata-properties-heading {
   --heading-padding-inline: var(--size-4-6);
   position: absolute;
@@ -42,12 +46,12 @@ body {
   z-index: 10;
 }
 
-.workspace > .workspace-split:not(.mod-root) [data-type=markdown] .metadata-container {
+.workspace>.workspace-split:not(.mod-root) [data-type=markdown] .metadata-container {
   --metadata-padding: 0.5em 0 0 0;
   outline: none;
 }
 
-.workspace > .workspace-split:not(.mod-root) [data-type=markdown] .metadata-properties-heading {
+.workspace>.workspace-split:not(.mod-root) [data-type=markdown] .metadata-properties-heading {
   transform: translateY(-50%);
 }
 

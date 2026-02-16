@@ -1,6 +1,6 @@
 /* GPLv3 license
 FAS - Callout Caption
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 body {
   --workleaves-background: var(--background-primary);
@@ -14,6 +14,7 @@ body {
   display: flex;
   flex-direction: column-reverse;
 }
+
 .callout[data-callout=caption] .callout-title {
   font-size: 0.8em;
   width: fit-content;
@@ -30,13 +31,16 @@ body {
   z-index: 2;
   border-left: 1px solid rgb(var(--callout-color));
 }
+
 .callout[data-callout=caption] .callout-icon {
   display: none;
 }
+
 .callout[data-callout=caption] .callout-fold {
   order: -1;
   padding-inline-end: 0;
 }
+
 .callout[data-callout=caption] .callout-content {
   padding: 0;
   border: none;
@@ -53,6 +57,7 @@ body {
   background-color: color-mix(in srgb, var(--workleaves-background), var(--color-accent) 20%);
   border-left: 1px solid var(--color-accent);
 }
+
 .callout[data-callout=caption][data-callout-metadata~=accent] .callout-content {
   border-left: 1px solid var(--color-accent);
 }

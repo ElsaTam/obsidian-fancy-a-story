@@ -1,6 +1,6 @@
 /* GPLv3 license
 FAS - Image
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 :where(.markdown-rendered ul),
 :where(.markdown-rendered ol) {
@@ -88,6 +88,7 @@ img[alt~=b-w] {
     z-index: 1;
     width: fit-content;
   }
+
   .markdown-source-view .image-embed:not([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner], [alt~="banner+small"], [alt~="banner+tall"], [alt~=sban]),
   .markdown-source-view.mod-cm6 .cm-line .image-embed:not([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner], [alt~="banner+small"], [alt~="banner+tall"], [alt~=sban]),
   .markdown-rendered .image-embed:not([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner], [alt~="banner+small"], [alt~="banner+tall"], [alt~=sban]) {
@@ -99,6 +100,7 @@ img[alt~=b-w] {
     position: relative;
     font-size: 0;
   }
+
   .markdown-source-view .image-embed:not([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner], [alt~="banner+small"], [alt~="banner+tall"], [alt~=sban])::before,
   .markdown-source-view.mod-cm6 .cm-line .image-embed:not([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner], [alt~="banner+small"], [alt~="banner+tall"], [alt~=sban])::before,
   .markdown-rendered .image-embed:not([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol], [alt~=no-shadow], [alt~=banner], [alt~="banner+small"], [alt~="banner+tall"], [alt~=sban])::before {
@@ -113,6 +115,7 @@ img[alt~=b-w] {
     background: repeating-linear-gradient(-45deg, var(--image-shadow-color), var(--image-shadow-color) var(--image-shadow-stripe-thickness), transparent var(--image-shadow-stripe-thickness), transparent calc(var(--image-shadow-stripe-thickness) + var(--image-shadow-stripe-gap)));
   }
 }
+
 body {
   --image-centered: disable;
 }
@@ -123,17 +126,20 @@ body {
     width: fit-content;
     margin-inline: auto;
   }
+
   .markdown-rendered img:not(.image-embed img):not(.emoji):only-child {
     display: block;
     margin-inline: auto;
   }
 }
+
 @container style(--image-centered: enable) and (style(--image-shadow-offset: 0) or style(--image-shadow-offset: 0px)) {
-  .markdown-source-view .cm-content > .image-embed img {
+  .markdown-source-view .cm-content>.image-embed img {
     display: block;
     margin-inline: auto;
   }
 }
+
 .markdown-rendered .image-embed[alt~=center]:only-child {
   display: block;
   width: fit-content;
@@ -145,7 +151,7 @@ body {
   margin-inline: auto;
 }
 
-.markdown-source-view .cm-content > .image-embed[alt~=center] img {
+.markdown-source-view .cm-content>.image-embed[alt~=center] img {
   display: block;
   margin-inline: auto;
 }

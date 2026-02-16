@@ -1,15 +1,17 @@
 /* GPLv3 license
 FAS - File Explorer Hover
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 @keyframes bg-slide {
   from {
     right: 100%;
   }
+
   to {
     right: 0;
   }
 }
+
 body {
   --file-explorer-hover-animation: enable;
 }
@@ -19,9 +21,11 @@ body {
     .tree-item-self {
       position: relative;
     }
+
     body:not(.is-grabbing) .tree-item-self.is-clickable:hover {
       background: none;
     }
+
     body:not(.is-grabbing) .tree-item-self.is-clickable:not(.is-being-renamed):hover::before {
       content: "";
       position: absolute;
@@ -32,6 +36,7 @@ body {
       background-color: var(--nav-item-background-hover);
       z-index: -1;
     }
+
     body:not(.is-grabbing) .tree-item-self.is-clickable:not(.is-active):not(.is-being-renamed):hover::before {
       animation: bg-slide 0.5s ease-in-out;
     }

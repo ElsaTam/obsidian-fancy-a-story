@@ -1,9 +1,10 @@
 /* GPLv3 license
 FAS - Banner
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 /* Compatibility with ITS theme/snippets */
-.markdown-source-view > div, .markdown-preview-view {
+.markdown-source-view>div,
+.markdown-preview-view {
   container: markdown-view/inline-size;
 }
 
@@ -82,6 +83,7 @@ body {
 }
 
 @media screen {
+
   .footer-img,
   .footer-img-accent,
   .footer-img-gray,
@@ -96,18 +98,19 @@ body {
   .footer-img-pink {
     background-color: var(--workleaves-background);
   }
-  .footer-img > .markdown-preview-section > div:nth-last-child(1 of div.el-p),
-  .footer-img-accent > .markdown-preview-section > div:nth-last-child(1 of div.el-p),
-  .footer-img-gray > .markdown-preview-section > div:nth-last-child(1 of div.el-p),
-  .footer-img-brown > .markdown-preview-section > div:nth-last-child(1 of div.el-p),
-  .footer-img-red > .markdown-preview-section > div:nth-last-child(1 of div.el-p),
-  .footer-img-orange > .markdown-preview-section > div:nth-last-child(1 of div.el-p),
-  .footer-img-yellow > .markdown-preview-section > div:nth-last-child(1 of div.el-p),
-  .footer-img-green > .markdown-preview-section > div:nth-last-child(1 of div.el-p),
-  .footer-img-cyan > .markdown-preview-section > div:nth-last-child(1 of div.el-p),
-  .footer-img-blue > .markdown-preview-section > div:nth-last-child(1 of div.el-p),
-  .footer-img-purple > .markdown-preview-section > div:nth-last-child(1 of div.el-p),
-  .footer-img-pink > .markdown-preview-section > div:nth-last-child(1 of div.el-p) {
+
+  .footer-img>.markdown-preview-section>div:nth-last-child(1 of div.el-p),
+  .footer-img-accent>.markdown-preview-section>div:nth-last-child(1 of div.el-p),
+  .footer-img-gray>.markdown-preview-section>div:nth-last-child(1 of div.el-p),
+  .footer-img-brown>.markdown-preview-section>div:nth-last-child(1 of div.el-p),
+  .footer-img-red>.markdown-preview-section>div:nth-last-child(1 of div.el-p),
+  .footer-img-orange>.markdown-preview-section>div:nth-last-child(1 of div.el-p),
+  .footer-img-yellow>.markdown-preview-section>div:nth-last-child(1 of div.el-p),
+  .footer-img-green>.markdown-preview-section>div:nth-last-child(1 of div.el-p),
+  .footer-img-cyan>.markdown-preview-section>div:nth-last-child(1 of div.el-p),
+  .footer-img-blue>.markdown-preview-section>div:nth-last-child(1 of div.el-p),
+  .footer-img-purple>.markdown-preview-section>div:nth-last-child(1 of div.el-p),
+  .footer-img-pink>.markdown-preview-section>div:nth-last-child(1 of div.el-p) {
     --image-shadow-offset: 0;
     position: sticky;
     bottom: -6px;
@@ -119,35 +122,37 @@ body {
     opacity: var(--footer-img-opacity);
     pointer-events: none;
   }
-  .footer-img > .markdown-preview-section > div:nth-last-child(1 of div.el-p) p,
-  .footer-img-accent > .markdown-preview-section > div:nth-last-child(1 of div.el-p) p,
-  .footer-img-gray > .markdown-preview-section > div:nth-last-child(1 of div.el-p) p,
-  .footer-img-brown > .markdown-preview-section > div:nth-last-child(1 of div.el-p) p,
-  .footer-img-red > .markdown-preview-section > div:nth-last-child(1 of div.el-p) p,
-  .footer-img-orange > .markdown-preview-section > div:nth-last-child(1 of div.el-p) p,
-  .footer-img-yellow > .markdown-preview-section > div:nth-last-child(1 of div.el-p) p,
-  .footer-img-green > .markdown-preview-section > div:nth-last-child(1 of div.el-p) p,
-  .footer-img-cyan > .markdown-preview-section > div:nth-last-child(1 of div.el-p) p,
-  .footer-img-blue > .markdown-preview-section > div:nth-last-child(1 of div.el-p) p,
-  .footer-img-purple > .markdown-preview-section > div:nth-last-child(1 of div.el-p) p,
-  .footer-img-pink > .markdown-preview-section > div:nth-last-child(1 of div.el-p) p {
+
+  .footer-img>.markdown-preview-section>div:nth-last-child(1 of div.el-p) p,
+  .footer-img-accent>.markdown-preview-section>div:nth-last-child(1 of div.el-p) p,
+  .footer-img-gray>.markdown-preview-section>div:nth-last-child(1 of div.el-p) p,
+  .footer-img-brown>.markdown-preview-section>div:nth-last-child(1 of div.el-p) p,
+  .footer-img-red>.markdown-preview-section>div:nth-last-child(1 of div.el-p) p,
+  .footer-img-orange>.markdown-preview-section>div:nth-last-child(1 of div.el-p) p,
+  .footer-img-yellow>.markdown-preview-section>div:nth-last-child(1 of div.el-p) p,
+  .footer-img-green>.markdown-preview-section>div:nth-last-child(1 of div.el-p) p,
+  .footer-img-cyan>.markdown-preview-section>div:nth-last-child(1 of div.el-p) p,
+  .footer-img-blue>.markdown-preview-section>div:nth-last-child(1 of div.el-p) p,
+  .footer-img-purple>.markdown-preview-section>div:nth-last-child(1 of div.el-p) p,
+  .footer-img-pink>.markdown-preview-section>div:nth-last-child(1 of div.el-p) p {
     margin: 0;
     background-color: var(--footer-img-color);
     mix-blend-mode: exclusion;
     color: white;
   }
-  .footer-img > .markdown-preview-section > div:nth-last-child(1 of div.el-p) img,
-  .footer-img-accent > .markdown-preview-section > div:nth-last-child(1 of div.el-p) img,
-  .footer-img-gray > .markdown-preview-section > div:nth-last-child(1 of div.el-p) img,
-  .footer-img-brown > .markdown-preview-section > div:nth-last-child(1 of div.el-p) img,
-  .footer-img-red > .markdown-preview-section > div:nth-last-child(1 of div.el-p) img,
-  .footer-img-orange > .markdown-preview-section > div:nth-last-child(1 of div.el-p) img,
-  .footer-img-yellow > .markdown-preview-section > div:nth-last-child(1 of div.el-p) img,
-  .footer-img-green > .markdown-preview-section > div:nth-last-child(1 of div.el-p) img,
-  .footer-img-cyan > .markdown-preview-section > div:nth-last-child(1 of div.el-p) img,
-  .footer-img-blue > .markdown-preview-section > div:nth-last-child(1 of div.el-p) img,
-  .footer-img-purple > .markdown-preview-section > div:nth-last-child(1 of div.el-p) img,
-  .footer-img-pink > .markdown-preview-section > div:nth-last-child(1 of div.el-p) img {
+
+  .footer-img>.markdown-preview-section>div:nth-last-child(1 of div.el-p) img,
+  .footer-img-accent>.markdown-preview-section>div:nth-last-child(1 of div.el-p) img,
+  .footer-img-gray>.markdown-preview-section>div:nth-last-child(1 of div.el-p) img,
+  .footer-img-brown>.markdown-preview-section>div:nth-last-child(1 of div.el-p) img,
+  .footer-img-red>.markdown-preview-section>div:nth-last-child(1 of div.el-p) img,
+  .footer-img-orange>.markdown-preview-section>div:nth-last-child(1 of div.el-p) img,
+  .footer-img-yellow>.markdown-preview-section>div:nth-last-child(1 of div.el-p) img,
+  .footer-img-green>.markdown-preview-section>div:nth-last-child(1 of div.el-p) img,
+  .footer-img-cyan>.markdown-preview-section>div:nth-last-child(1 of div.el-p) img,
+  .footer-img-blue>.markdown-preview-section>div:nth-last-child(1 of div.el-p) img,
+  .footer-img-purple>.markdown-preview-section>div:nth-last-child(1 of div.el-p) img,
+  .footer-img-pink>.markdown-preview-section>div:nth-last-child(1 of div.el-p) img {
     height: var(--footer-img-height);
     width: 100%;
     object-fit: cover;
@@ -155,30 +160,34 @@ body {
     filter: saturate(0);
     mix-blend-mode: luminosity;
   }
-  .footer-img > .markdown-preview-sizer,
-  .footer-img-accent > .markdown-preview-sizer,
-  .footer-img-gray > .markdown-preview-sizer,
-  .footer-img-brown > .markdown-preview-sizer,
-  .footer-img-red > .markdown-preview-sizer,
-  .footer-img-orange > .markdown-preview-sizer,
-  .footer-img-yellow > .markdown-preview-sizer,
-  .footer-img-green > .markdown-preview-sizer,
-  .footer-img-cyan > .markdown-preview-sizer,
-  .footer-img-blue > .markdown-preview-sizer,
-  .footer-img-purple > .markdown-preview-sizer,
-  .footer-img-pink > .markdown-preview-sizer {
+
+  .footer-img>.markdown-preview-sizer,
+  .footer-img-accent>.markdown-preview-sizer,
+  .footer-img-gray>.markdown-preview-sizer,
+  .footer-img-brown>.markdown-preview-sizer,
+  .footer-img-red>.markdown-preview-sizer,
+  .footer-img-orange>.markdown-preview-sizer,
+  .footer-img-yellow>.markdown-preview-sizer,
+  .footer-img-green>.markdown-preview-sizer,
+  .footer-img-cyan>.markdown-preview-sizer,
+  .footer-img-blue>.markdown-preview-sizer,
+  .footer-img-purple>.markdown-preview-sizer,
+  .footer-img-pink>.markdown-preview-sizer {
     padding-bottom: 0 !important;
   }
-  .theme-dark [class*=footer-img] > .markdown-preview-section > div:nth-last-child(1 of div.el-p) {
+
+  .theme-dark [class*=footer-img]>.markdown-preview-section>div:nth-last-child(1 of div.el-p) {
     background-color: white;
     mix-blend-mode: screen;
   }
-  .theme-dark [class*=footer-img] > .markdown-preview-section > div:nth-last-child(1 of div.el-p) p {
+
+  .theme-dark [class*=footer-img]>.markdown-preview-section>div:nth-last-child(1 of div.el-p) p {
     background-color: rgb(from var(--footer-img-color) calc(255 - r) calc(255 - g) calc(255 - b));
   }
 }
+
 @media print {
-  .print [class*=footer-img] > div:last-child img {
+  .print [class*=footer-img]>div:last-child img {
     display: none;
   }
 }

@@ -1,6 +1,6 @@
 /* GPLv3 license
 FAS - Embed full width image
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 body {
   --callout-fwi-height: 70px;
@@ -17,6 +17,7 @@ body {
   font-size: 0;
   width: 100%;
 }
+
 .image-embed:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol]) img {
   height: var(--fwi-height);
   width: 100%;

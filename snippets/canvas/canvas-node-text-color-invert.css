@@ -1,6 +1,6 @@
 /* GPLv3 license
 FAS - Canvas Node Text Color Invert
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 .canvas-node:has(.tag[href="#node-text-color-invert"], .node-text-color-invert):not(.is-editing) .markdown-preview-view {
   color: rgb(var(--mono-rgb-0));

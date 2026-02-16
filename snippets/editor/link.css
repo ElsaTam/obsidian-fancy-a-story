@@ -1,26 +1,31 @@
 /* GPLv3 license
 FAS - Link
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 body {
   --link-decoration: doodle;
 }
 
 @container style(--link-decoration: doodle) {
+
   .cm-hmd-internal-link,
   .internal-link:not(.metadata-container .internal-link) {
     position: relative;
   }
 }
+
 @container style(--link-external-decoration: doodle) {
+
   .cm-url,
   .cm-link,
   .external-link:not(.metadata-container .external-link) {
     position: relative;
   }
 }
+
 @media (hover: hover) {
   @container style(--link-decoration: doodle) {
+
     .cm-hmd-internal-link:hover::after,
     .internal-link:not(.metadata-container .internal-link):hover::after {
       content: "";
@@ -36,7 +41,9 @@ body {
       -webkit-mask-repeat: repeat no-repeat;
     }
   }
+
   @container style(--link-external-decoration: doodle) {
+
     .cm-url:hover::after,
     .cm-link:hover::after,
     .external-link:not(.metadata-container .external-link):hover::after {
@@ -54,6 +61,7 @@ body {
     }
   }
 }
+
 body {
   --link-decoration-hover: var(--link-decoration);
   --link-external-decoration: underline;
@@ -63,6 +71,7 @@ body {
 }
 
 @container not style(--link-decoration: doodle) {
+
   .cm-hmd-internal-link .cm-underline,
   .markdown-rendered .internal-link:not(.metadata-container .internal-link),
   .internal-link:not(.metadata-container .internal-link) {
@@ -70,8 +79,10 @@ body {
     transition: text-underline-offset 0.3s, opacity 0.15s ease-in-out;
   }
 }
+
 @media (hover: hover) {
   @container not style(--link-decoration: doodle) {
+
     .cm-hmd-internal-link .cm-underline:hover,
     .markdown-rendered .internal-link:not(.metadata-container .internal-link):hover,
     .internal-link:not(.metadata-container .internal-link):hover {
@@ -80,7 +91,9 @@ body {
     }
   }
 }
+
 @container not style(--link-external-decoration: none) {
+
   .cm-url .cm-underline,
   .cm-link .cm-underline,
   .external-link:not(.metadata-container .external-link) {
@@ -88,8 +101,10 @@ body {
     transition: text-underline-offset 0.3s, opacity 0.15s ease-in-out;
   }
 }
+
 @media (hover: hover) {
   @container not style(--link-external-decoration: none) {
+
     .cm-url .cm-underline:hover,
     .cm-link .cm-underline:hover,
     .external-link:not(.metadata-container .external-link):hover {
@@ -98,6 +113,7 @@ body {
     }
   }
 }
+
 .cm-s-obsidian span.cm-url,
 .cm-s-obsidian span.cm-link,
 .cm-s-obsidian span.cm-hmd-internal-link {
@@ -105,12 +121,14 @@ body {
 }
 
 @media (hover: hover) {
+
   .cm-s-obsidian span.cm-url:hover,
   .cm-s-obsidian span.cm-link:hover,
   .cm-s-obsidian span.cm-hmd-internal-link:hover {
     text-decoration-line: none;
   }
 }
+
 .external-link {
   background-position: top right;
   background-size: 10px;

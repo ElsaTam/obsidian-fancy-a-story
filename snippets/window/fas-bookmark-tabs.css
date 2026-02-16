@@ -1,9 +1,10 @@
 /* GPLv3 license
 FAS - Bookmark tabs
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 body {
-  --fas-bookmark-tabs: flat; /* disable, flat, or volume */
+  --fas-bookmark-tabs: flat;
+  /* disable, flat, or volume */
 }
 
 @container not style(--fas-bookmark-tabs: disable) {
@@ -13,44 +14,54 @@ body {
     top: -2px;
     width: 100%;
   }
+
   .mod-sidedock .workspace-tab-header-container-inner {
     height: calc(var(--header-height) + 0.5 * var(--cutout-corner-radius, 0));
     filter: drop-shadow(2px 2px 2px var(--shadow-color));
     gap: var(--size-2-3);
     margin-top: var(--workspace-top-margin);
   }
+
   .mod-sidedock .workspace-tab-header-container .workspace-tab-header {
     background-color: var(--workspace-background);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
   }
+
   .mod-sidedock .workspace-tab-header-container .workspace-tab-header.is-active {
     background-color: var(--color-accent);
   }
+
   .mod-sidedock .workspace-tabs:not(.mod-top) .workspace-tab-header-container-inner {
     margin-top: 0;
   }
+
   .mod-sidedock .mod-top .workspace-tab-container {
     margin-top: var(--workspace-top-margin);
   }
+
   .mod-sidedock .workspace-leaf {
     padding-top: calc(var(--header-height) - var(--workspace-top-margin));
   }
+
   .mod-macos .mod-sidedock .sidebar-toggle-button {
     margin-top: var(--workspace-top-margin);
     padding: 0;
     height: calc(var(--header-height) + 0.5 * var(--cutout-corner-radius, 0));
   }
 }
+
 @media (hover: hover) {
   @container not style(--fas-bookmark-tabs: disable) {
     .mod-sidedock .workspace-tab-header-container:hover {
       --icon-opacity: var(--icon-opacity-inactive);
     }
+
     .mod-sidedock .workspace-tab-header-container .workspace-tab-header:is(.has-active-menu, .is-active):hover {
       background-color: var(--color-accent-1);
     }
   }
 }
+
 @container style(--fas-bookmark-tabs: volume) {
   .mod-sidedock .workspace-tab-header-container .workspace-tab-header {
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 2px, rgba(255, 255, 255, 0.03) 8px, transparent 20px);

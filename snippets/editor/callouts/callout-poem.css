@@ -1,6 +1,6 @@
 /* GPLv3 license
 FAS - Callout Poem
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 body {
   --workleaves-background: var(--background-primary);
@@ -22,7 +22,9 @@ body {
   border: none;
   background: none;
 }
-.callout[data-callout=poem]::before, .callout[data-callout=poem]::after {
+
+.callout[data-callout=poem]::before,
+.callout[data-callout=poem]::after {
   content: "";
   position: absolute;
   left: 0;
@@ -30,19 +32,24 @@ body {
   height: var(--poem-border-width);
   background: linear-gradient(to right, transparent, rgb(var(--poem-color-rgb)) 20%, rgb(var(--poem-color-rgb)) 80%, transparent);
 }
+
 .callout[data-callout=poem]::before {
   top: 0;
 }
+
 .callout[data-callout=poem]::after {
   bottom: 0;
 }
+
 .callout[data-callout=poem] .callout-title {
   justify-content: center;
   background: none;
 }
+
 .callout[data-callout=poem] .callout-content {
   border: none;
 }
+
 .callout[data-callout=poem] cite {
   display: block;
   text-align: right;
@@ -54,12 +61,15 @@ body {
   padding-inline: 22%;
   container: poem/inline-size;
 }
-.callout[data-callout=poem][data-callout-metadata~=frame] > .callout-title {
+
+.callout[data-callout=poem][data-callout-metadata~=frame]>.callout-title {
   margin-top: 17cqw;
 }
-.callout[data-callout=poem][data-callout-metadata~=frame] > .callout-content {
+
+.callout[data-callout=poem][data-callout-metadata~=frame]>.callout-content {
   margin-bottom: 5cqw;
 }
+
 .callout[data-callout=poem][data-callout-metadata~=frame]::before {
   content: "";
   position: absolute;
@@ -75,6 +85,7 @@ body {
   -webkit-mask-position: top center;
   z-index: -1;
 }
+
 .callout[data-callout=poem][data-callout-metadata~=frame]:not(.is-collapsed)::after {
   content: "";
   position: absolute;
@@ -94,19 +105,23 @@ body {
 .callout[data-callout=poem][data-callout-metadata~=floral] {
   --floral-width: 18%;
 }
-.callout[data-callout=poem][data-callout-metadata~=floral] > .callout-title {
+
+.callout[data-callout=poem][data-callout-metadata~=floral]>.callout-title {
   margin-inline: var(--floral-width);
   border-left: var(--poem-border-width) solid rgba(var(--poem-color-rgb), 1);
   background-color: var(--workleaves-background);
 }
-.callout[data-callout=poem][data-callout-metadata~=floral] > .callout-content {
+
+.callout[data-callout=poem][data-callout-metadata~=floral]>.callout-content {
   margin-inline: var(--floral-width);
   border-left: var(--poem-border-width) solid rgba(var(--poem-color-rgb), 1);
   border-bottom: var(--poem-border-width) solid rgba(var(--poem-color-rgb), 1);
   background-color: var(--workleaves-background);
   padding: var(--size-4-3);
 }
-.callout[data-callout=poem][data-callout-metadata~=floral]:not(.is-collapsed)::before, .callout[data-callout=poem][data-callout-metadata~=floral]:not(.is-collapsed)::after {
+
+.callout[data-callout=poem][data-callout-metadata~=floral]:not(.is-collapsed)::before,
+.callout[data-callout=poem][data-callout-metadata~=floral]:not(.is-collapsed)::after {
   content: "";
   position: absolute;
   top: 0;
@@ -120,11 +135,13 @@ body {
   mask-composite: intersect;
   z-index: -1;
 }
+
 .callout[data-callout=poem][data-callout-metadata~=floral]:not(.is-collapsed)::before {
   left: 0;
   width: var(--floral-width);
   -webkit-mask-position: left bottom;
 }
+
 .callout[data-callout=poem][data-callout-metadata~=floral]:not(.is-collapsed)::after {
   right: 0;
   width: var(--floral-width);
@@ -133,32 +150,44 @@ body {
   -webkit-mask-position: right bottom;
   transform: scaleX(-1) scaleY(-1);
 }
-.callout[data-callout=poem][data-callout-metadata~=floral].is-collapsed::before, .callout[data-callout=poem][data-callout-metadata~=floral].is-collapsed::after {
+
+.callout[data-callout=poem][data-callout-metadata~=floral].is-collapsed::before,
+.callout[data-callout=poem][data-callout-metadata~=floral].is-collapsed::after {
   content: none;
 }
 
 @media print {
-  .print .callout[data-callout=poem][data-callout-metadata~=floral]:not(.is-collapsed)::before, .print .callout[data-callout=poem][data-callout-metadata~=floral]:not(.is-collapsed)::after {
+
+  .print .callout[data-callout=poem][data-callout-metadata~=floral]:not(.is-collapsed)::before,
+  .print .callout[data-callout=poem][data-callout-metadata~=floral]:not(.is-collapsed)::after {
     -webkit-mask-image: var(--left-ornament-flourish);
   }
 }
-.callout[data-callout=poem][data-callout-metadata~=accent]::before, .callout[data-callout=poem][data-callout-metadata~=accent]::after {
+
+.callout[data-callout=poem][data-callout-metadata~=accent]::before,
+.callout[data-callout=poem][data-callout-metadata~=accent]::after {
   background: linear-gradient(to right, transparent, var(--color-accent) 20%, var(--color-accent) 80%, transparent);
 }
+
 .callout[data-callout=poem][data-callout-metadata~=accent][data-callout-metadata~=frame]::before {
   background-color: var(--color-accent);
 }
+
 .callout[data-callout=poem][data-callout-metadata~=accent][data-callout-metadata~=frame]:not(.is-collapsed)::after {
   background-color: var(--color-accent);
 }
-.callout[data-callout=poem][data-callout-metadata~=accent][data-callout-metadata~=floral] > .callout-title {
+
+.callout[data-callout=poem][data-callout-metadata~=accent][data-callout-metadata~=floral]>.callout-title {
   border-left-color: var(--color-accent);
 }
-.callout[data-callout=poem][data-callout-metadata~=accent][data-callout-metadata~=floral] > .callout-content {
+
+.callout[data-callout=poem][data-callout-metadata~=accent][data-callout-metadata~=floral]>.callout-content {
   border-left-color: var(--color-accent);
   border-bottom-color: var(--color-accent);
 }
-.callout[data-callout=poem][data-callout-metadata~=accent][data-callout-metadata~=floral]:not(.is-collapsed)::before, .callout[data-callout=poem][data-callout-metadata~=accent][data-callout-metadata~=floral]:not(.is-collapsed)::after {
+
+.callout[data-callout=poem][data-callout-metadata~=accent][data-callout-metadata~=floral]:not(.is-collapsed)::before,
+.callout[data-callout=poem][data-callout-metadata~=accent][data-callout-metadata~=floral]:not(.is-collapsed)::after {
   background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.6);
 }
 

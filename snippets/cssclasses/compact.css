@@ -1,6 +1,6 @@
 /* GPLv3 license
 FAS - Compact
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 body {
   --fas-compact: disable;
@@ -11,8 +11,9 @@ body {
 }
 
 @container style(--fas-compact: enable) {
+
   :is(.markdown-source-view, .markdown-preview-view),
-  .compact:is(.markdown-source-view, .markdown-preview-view) > * {
+  .compact:is(.markdown-source-view, .markdown-preview-view)>* {
     --callout-title-padding: 5px 12px;
     --callout-content-padding: var(--size-2-3) var(--size-2-3) var(--size-2-3) var(--size-4-3);
     --table-cell-vertical-alignment: middle;
@@ -23,47 +24,60 @@ body {
     --line-height-tight: 1;
     --metadata-padding: var(--size-4-3) var(--size-4-1) var(--size-4-1) var(--size-4-1);
   }
-  .compact:is(.markdown-source-view, .markdown-preview-view) > * {
+
+  .compact:is(.markdown-source-view, .markdown-preview-view)>* {
     line-height: var(--line-height-normal);
   }
+
   .callout {
     margin-block: 0.3em;
   }
+
   .callout-icon {
     --icon-size: 14px;
   }
-  .callout-content > *:first-child {
+
+  .callout-content>*:first-child {
     margin-block-start: 0px;
   }
-  .callout-content > *:last-child {
+
+  .callout-content>*:last-child {
     margin-block-end: 0px;
   }
-  .callout[data-callout=grid] > .callout-content {
+
+  .callout[data-callout=grid]>.callout-content {
     gap: 0.3em;
   }
+
   .callout[data-callout=fas-infobox] {
     --p-spacing: 0rem;
     --h1-line-height: 1.4;
   }
+
   .callout[data-callout=fas-infobox] h1 {
     --h1-size: 1.5em;
   }
+
   audio {
     height: 32px;
   }
+
   audio::-webkit-media-controls-current-time-display,
   audio::-webkit-media-controls-time-remaining-display {
     font-size: 12px;
   }
+
   .markdown-rendered table :is(td, th):empty {
     height: unset;
   }
 }
+
 @container style(--fas-compact: enable) and style(--fas-callout-infobox: enable) {
   .callout[data-callout=infobox] {
     --p-spacing: 0rem;
     --h1-line-height: 1.4;
   }
+
   .callout[data-callout=infobox] h1 {
     --h1-size: 1.5em;
   }

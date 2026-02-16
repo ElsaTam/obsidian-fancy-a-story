@@ -1,9 +1,10 @@
 /* GPLv3 license
 FAS - Columns
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 /* Compatibility with ITS theme/snippets */
-.markdown-source-view > div, .markdown-preview-view {
+.markdown-source-view>div,
+.markdown-preview-view {
   container: markdown-view/inline-size;
 }
 
@@ -24,16 +25,19 @@ Author: ElsaTam (Kapirklaa in Discord)
     column-count: 3;
   }
 }
+
 @container markdown-view (500px < width < 600px) {
   :is(.columns-3, .columns-4).markdown-preview-view .markdown-preview-section {
     column-count: 2;
   }
 }
+
 @container markdown-view (width < 500px) {
   :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section {
     column-count: 1;
   }
 }
+
 :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-section {
   column-rule: 1px solid var(--color-base-50);
   column-gap: 50px;
@@ -43,29 +47,35 @@ Author: ElsaTam (Kapirklaa in Discord)
   .print .columns-2.markdown-preview-view {
     column-count: 2;
   }
+
   .print .columns-3.markdown-preview-view {
     column-count: 3;
   }
+
   .print .columns-4.markdown-preview-view {
     column-count: 4;
   }
 }
+
 @media print and (600px < width < 900px) {
   .print .columns-4.markdown-preview-view {
     column-count: 3;
   }
 }
+
 @media print and (width < 600px) {
   .print :is(.columns-3, .columns-4).markdown-preview-view {
     column-count: 2;
   }
 }
+
 @media print {
   .print :is(.columns-2, .columns-3, .columns-4).markdown-preview-view {
     column-rule: 1px solid var(--color-base-50);
     column-gap: 50px;
   }
 }
+
 :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .markdown-preview-pusher,
 :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .mod-header,
 :is(.columns-2, .columns-3, .columns-4).markdown-preview-view .mod-frontmatter,

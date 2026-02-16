@@ -1,9 +1,10 @@
 /* GPLv3 license
 FAS - Callouts Metadata
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 /* Compatibility with ITS theme/snippets */
-.markdown-source-view > div, .markdown-preview-view {
+.markdown-source-view>div,
+.markdown-preview-view {
   container: markdown-view/inline-size;
 }
 
@@ -75,19 +76,21 @@ body {
   border-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), var(--callout-border-opacity));
   background-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.1);
 }
-[data-callout-metadata~=accent] > .callout-title {
+
+[data-callout-metadata~=accent]>.callout-title {
   color: var(--color-accent);
 }
-[data-callout-metadata~=accent] > .callout-title .svg-icon {
+
+[data-callout-metadata~=accent]>.callout-title .svg-icon {
   color: var(--color-accent);
 }
 
 .callout[data-callout-metadata~=no-bg],
-.callout[data-callout-metadata~=no-bg] > .callout-content,
-.callout[data-callout-metadata~=no-bg] > .callout-title,
+.callout[data-callout-metadata~=no-bg]>.callout-content,
+.callout[data-callout-metadata~=no-bg]>.callout-title,
 .callout[data-callout-metadata~=no-background],
-.callout[data-callout-metadata~=no-background] > .callout-content,
-.callout[data-callout-metadata~=no-background] > .callout-title {
+.callout[data-callout-metadata~=no-background]>.callout-content,
+.callout[data-callout-metadata~=no-background]>.callout-title {
   background: none;
 }
 
@@ -96,19 +99,19 @@ body {
   filter: grayscale(100);
 }
 
-.callout[data-callout-metadata~=no-icon] > .callout-title > .callout-icon {
+.callout[data-callout-metadata~=no-icon]>.callout-title>.callout-icon {
   display: none;
 }
 
-.callout[data-callout-metadata~=only-icon] > .callout-title > .callout-title-inner {
+.callout[data-callout-metadata~=only-icon]>.callout-title>.callout-title-inner {
   display: none;
 }
 
-.callout[data-callout-metadata~=no-title] > .callout-title {
+.callout[data-callout-metadata~=no-title]>.callout-title {
   display: none;
 }
 
-.callout[data-callout-metadata~=no-title] > .callout-content {
+.callout[data-callout-metadata~=no-title]>.callout-content {
   border-width: 0;
 }
 
@@ -118,6 +121,7 @@ body {
   width: var(--w);
   left: calc(50% - var(--w) * 0.5);
 }
+
 .markdown-preview-view .callout[data-callout-metadata~=wide] .callout-title {
   justify-content: center;
 }
@@ -129,23 +133,27 @@ body {
     margin: var(--fas-float-inline-margin, 12px) 0 var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px);
     max-width: 300px;
   }
+
   @container not (style(--image-shadow-offset: 0) or style(--image-shadow-offset: 0px)) {
     .markdown-preview-view .callout:is([data-callout-metadata~=right], [data-callout-metadata~=float-right]) img {
       max-width: min(100%, 299px - var(--image-shadow-offset));
     }
   }
+
   .markdown-preview-view .callout:is([data-callout-metadata~=left], [data-callout-metadata~=float-left]) {
     float: left;
     clear: left;
     margin: var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px) var(--fas-float-inline-margin, 12px) 0;
     max-width: 300px;
   }
+
   @container not (style(--image-shadow-offset: 0) or style(--image-shadow-offset: 0px)) {
     .markdown-preview-view .callout:is([data-callout-metadata~=left], [data-callout-metadata~=float-left]) img {
       max-width: min(100%, 299px - var(--image-shadow-offset));
     }
   }
 }
+
 .callout[data-callout-metadata~=clear] {
   clear: both;
 }

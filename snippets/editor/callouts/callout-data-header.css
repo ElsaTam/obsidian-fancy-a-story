@@ -1,6 +1,6 @@
 /* GPLv3 license
 FAS - Callout Data Header
-Author: ElsaTam (Kapirklaa in Discord)
+Author: ElsaTam (Kapirklaa on Discord)
 */
 .theme-light .callout[data-callout=data-header] {
   --darken-lighten-qty-left: 20%;
@@ -13,41 +13,37 @@ Author: ElsaTam (Kapirklaa in Discord)
 }
 
 .callout[data-callout=data-header] {
-  --header-left-color: color-mix(
-      in hsl,
+  --header-left-color: color-mix(in hsl,
       rgb(var(--callout-color)),
-      rgb(var(--mono-rgb-0)) var(--darken-lighten-qty-left)
-  );
-  --header-right-color: color-mix(
-      in hsl,
+      rgb(var(--mono-rgb-0)) var(--darken-lighten-qty-left));
+  --header-right-color: color-mix(in hsl,
       rgb(var(--callout-color)),
-      rgb(var(--mono-rgb-0)) var(--darken-lighten-qty-right)
-  );
+      rgb(var(--mono-rgb-0)) var(--darken-lighten-qty-right));
 }
+
 .callout[data-callout=data-header][data-callout-metadata~=accent] {
-  --header-left-color: color-mix(
-      in hsl,
+  --header-left-color: color-mix(in hsl,
       var(--color-accent),
-      rgb(var(--mono-rgb-0)) var(--darken-lighten-qty-left)
-  );
-  --header-right-color: color-mix(
-      in hsl,
+      rgb(var(--mono-rgb-0)) var(--darken-lighten-qty-left));
+  --header-right-color: color-mix(in hsl,
       var(--color-accent),
-      rgb(var(--mono-rgb-0)) var(--darken-lighten-qty-right)
-  );
+      rgb(var(--mono-rgb-0)) var(--darken-lighten-qty-right));
 }
 
 .callout[data-callout=data-header] {
   overflow: visible;
 }
-.callout[data-callout=data-header] > .callout-title {
+
+.callout[data-callout=data-header]>.callout-title {
   display: none;
 }
-.callout[data-callout=data-header] > .callout-content {
+
+.callout[data-callout=data-header]>.callout-content {
   border-top: none;
   padding-top: 0;
   overflow: visible;
 }
+
 .callout[data-callout=data-header] .callout[data-callout=header] {
   --img-size: 150px;
   --callout-blend-mode: normal;
@@ -70,14 +66,17 @@ Author: ElsaTam (Kapirklaa in Discord)
   overflow: visible;
   background: linear-gradient(to right, var(--header-left-color), var(--header-right-color));
 }
-.callout[data-callout=data-header] .callout[data-callout=header] > .callout-title {
+
+.callout[data-callout=data-header] .callout[data-callout=header]>.callout-title {
   display: none;
 }
-.callout[data-callout=data-header] .callout[data-callout=header] > .callout-content {
+
+.callout[data-callout=data-header] .callout[data-callout=header]>.callout-content {
   border-top: none;
   padding: 0 0 0 5rem;
   overflow: visible;
 }
+
 .callout[data-callout=data-header] .callout[data-callout=header] img {
   position: absolute;
   left: -1rem;
@@ -88,13 +87,16 @@ Author: ElsaTam (Kapirklaa in Discord)
   aspect-ratio: 1;
   object-fit: cover;
 }
+
 .callout[data-callout=data-header] .callout[data-callout=header]:not([data-callout-metadata~=no-border]) img {
   border: var(--header-left-color) solid 2px;
 }
+
 .callout[data-callout=data-header] .callout[data-callout=header] table {
   margin: 0;
   width: 100%;
 }
+
 .callout[data-callout=data-header] .callout[data-callout=header] td,
 .callout[data-callout=data-header] .callout[data-callout=header] th {
   border: none;
@@ -114,10 +116,12 @@ Author: ElsaTam (Kapirklaa in Discord)
   padding-left: 5.1rem;
   anchor-name: --data-header-pf2;
 }
+
 .callout[data-callout=data-header][data-callout-metadata~=pf2] .image-embed[alt~=icon] {
   --image-shadow-offset: 0px;
   position: initial;
 }
+
 .callout[data-callout=data-header][data-callout-metadata~=pf2] img[alt~=icon] {
   position: absolute;
   left: -1rem;
@@ -131,30 +135,37 @@ Author: ElsaTam (Kapirklaa in Discord)
   position-anchor: --data-header-pf2;
   top: anchor(center);
 }
+
 .callout[data-callout=data-header][data-callout-metadata~=pf2] img[alt~=icon]:not([alt~=no-border]) {
   border: var(--header-left-color) solid 2px;
 }
+
 .callout[data-callout=data-header][data-callout-metadata~=pf2] .callout-icon {
   display: none;
 }
+
 .callout[data-callout=data-header][data-callout-metadata~=pf2] .callout-title-inner {
   --font-weight: var(--font-normal);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--size-4-4);
 }
+
 .callout[data-callout=data-header][data-callout-metadata~=pf2] .callout-title-inner :nth-child(odd) {
   justify-self: start;
   text-align: left;
 }
+
 .callout[data-callout=data-header][data-callout-metadata~=pf2] .callout-title-inner :nth-child(even) {
   justify-self: end;
   text-align: right;
 }
-.callout[data-callout=data-header][data-callout-metadata~=pf2] > .callout-content > p:first-child {
+
+.callout[data-callout=data-header][data-callout-metadata~=pf2]>.callout-content>p:first-child {
   margin-block: 0;
 }
-.callout[data-callout=data-header][data-callout-metadata~=pf2] > .callout-content > p:first-child + p {
+
+.callout[data-callout=data-header][data-callout-metadata~=pf2]>.callout-content>p:first-child+p {
   margin-top: 0;
 }
 
@@ -162,12 +173,13 @@ Author: ElsaTam (Kapirklaa in Discord)
   border-color: hsl(var(--accent-h), var(--accent-s), var(--accent-l), var(--callout-border-opacity));
 }
 
-.callout[data-callout=data-header][data-callout-metadata~=pf2] > .callout-content {
+.callout[data-callout=data-header][data-callout-metadata~=pf2]>.callout-content {
   position: initial;
 }
 
 /* Fixes for themes */
-/* ITS */ /*
+/* ITS */
+/*
 .callout[data-callout=data-header] .callout[data-callout=header] {
     --table-header-background: transparent;
     --table-column-alt-background: transparent;
