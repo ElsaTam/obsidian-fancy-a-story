@@ -55,28 +55,3 @@ body {
         @include inline-callout;
     }
 }
-
-.callout[data-callout="N" i] {
-    --callout-icon: user;
-    --callout-color: 255, 214, 0;
-}
-.callout[data-callout="L" i] {
-    --callout-icon: user;
-    --callout-color: 255, 23, 68;
-}
-.callout[data-callout="H" i] {
-    --callout-icon: user;
-    --callout-color: 124, 77, 255;
-}
-.callout[data-callout="E" i] {
-    --callout-icon: user;
-    --callout-color: 0, 184, 212;
-}
-.callout[data-callout="C" i] {
-    --callout-icon: user;
-    --callout-color: 0, 200, 83;
-}
-.callout[data-callout="G" i] {
-    --callout-icon: users;
-    --callout-color: 158, 158, 158;
-}
