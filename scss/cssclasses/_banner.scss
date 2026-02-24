@@ -82,7 +82,8 @@ body {
 }
 
 .is-phone .markdown-preview-view.banner {
-    .inline-title {
+    .inline-title,
+    .page-header {
         top: calc(var(--safe-area-inset-top) + var(--view-header-height) + var(--file-margins-block));
     }
 
@@ -162,7 +163,7 @@ body {
         text-align: center;
     }
 
-    &:not(.banner-slope, .banner-slant) .inline-title {
+    &:not(.banner-slope, .banner-slant) :is(.inline-title, .page-header) {
         position: absolute;
         top: calc(var(--banner-height) * 0.5);
         right: 50%;
@@ -175,7 +176,7 @@ body {
 .is-mobile .markdown-preview-view.banner.banner-title {
     --inline-title-line-height: 2;
 }
-.is-phone .markdown-preview-view.banner.banner-title .inline-title {
+.is-phone .markdown-preview-view.banner.banner-title :is(.inline-title, .page-header) {
     top: calc(var(--safe-area-inset-top) + var(--view-header-height) + var(--banner-height) * 0.5);
 }
 
