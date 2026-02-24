@@ -102,6 +102,8 @@ body {
         .image-embed[alt~="cover"] {
             position: relative;
             display: block;
+            padding-bottom: 0;
+            padding-inline-end: 0;
         }
         .image-embed[alt~="cover"]::after {
             --triangle-size: 16px;
