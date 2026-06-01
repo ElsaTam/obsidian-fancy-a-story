@@ -2116,6 +2116,18 @@ settings:
             - 
                 value: disable
                 label: No
+    - 
+        id: art-deco-footnotes
+        title: Style the footnotes
+        type: variable-select
+        default: enable
+        options:
+            - 
+                value: enable
+                label: Yes
+            - 
+                value: disable
+                label: No
 
     - 
         id: art-deco-h-display-settings
