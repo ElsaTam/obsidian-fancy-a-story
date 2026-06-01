@@ -197,13 +197,13 @@ body {
 
 /* Flags */
 @container style(--fas-skin-art-deco: enable) and style(--art-deco-style-tab-flags: enable) and (not style(--fas-bookmark-tabs: disable)) {
-    .mod-sidedock .workspace-tab-header {
+    .mod-sidedock .workspace-tab-header.workspace-tab-header {
         clip-path: none;
         padding-bottom: 7px;
         background-color: transparent;
     }
 
-    .mod-sidedock .workspace-tab-header.is-active {
+    .mod-sidedock .workspace-tab-header.workspace-tab-header.is-active {
         background-color: transparent;
     }
 
@@ -211,7 +211,7 @@ body {
         background-color: var(--workleaves-background);
     }
 
-    .mod-sidedock .workspace-tab-header::after {
+    .mod-sidedock .workspace-tab-header.workspace-tab-header::after {
         content: "";
         display: block;
         background-color: var(--sidedock-inset-border-color);
