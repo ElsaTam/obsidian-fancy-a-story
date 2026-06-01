@@ -320,10 +320,18 @@ settings:
         type: class-toggle
         default: false
     -
-        id: fas-vault-menu-top
-        title: Vault menu at the top
-        type: class-toggle
-        default: false
+        id: vault-menu
+        title: Vault menu position
+        type: class-select
+        allowEmpty: true
+        default: none
+        options:
+            - 
+                label: At the top
+                value: fas-vault-menu-top 
+            - 
+                label: On hover
+                value: fas-vault-menu-hover
     -
         id: show-note-header-on-hover
         title: Show note header on hover

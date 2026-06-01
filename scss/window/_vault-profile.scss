@@ -51,3 +51,25 @@ body:not(.is-mobile).fas-vault-menu-top {
         padding-bottom: 6px;
     }
 }
+
+body:not(.is-mobile).fas-vault-menu-hover {
+    .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 0;
+        transition: 0.5s height, 0.5s opacity, 0.5s bottom;
+        padding-top: 10px;
+        padding-bottom: 0;
+        z-index: 10;
+        opacity: 0;
+    }
+
+    @media (hover: hover) {
+        .workspace-split.mod-left-split .workspace-sidedock-vault-profile:hover {
+            height: var(--header-height);
+            opacity: 1;
+        }
+    }
+}

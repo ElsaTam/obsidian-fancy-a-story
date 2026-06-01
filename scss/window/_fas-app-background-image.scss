@@ -97,7 +97,6 @@ body {
             }
             .workspace-split.mod-left-split
                 .workspace-sidedock-vault-profile:not(.is-mobile .workspace-sidedock-vault-profile):hover {
-                background-color: rgba(var(--mono-rgb-0), 0.6);
                 --workspace-foreground: rgb(var(--mono-rgb-100));
                 --workspace-foreground-faint: rgba(var(--mono-rgb-100), 0.6);
                 --workspace-foreground-muted: rgba(var(--mono-rgb-100), 0.6);
@@ -108,6 +107,9 @@ body {
             &.fas-workspace-foreground-no-fading {
                 --vault-profile-color: rgb(var(--mono-rgb-100));
             }
+        }
+        body:not(.is-mobile):not(.fas-vault-menu-hover) .workspace-split.mod-left-split .workspace-sidedock-vault-profile:not(.is-mobile .workspace-sidedock-vault-profile):hover {
+            background-color: rgba(var(--mono-rgb-0), 0.6);
         }
     }
 }
