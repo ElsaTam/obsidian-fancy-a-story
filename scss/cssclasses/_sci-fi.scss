@@ -167,7 +167,7 @@ body {
             &::before {
                 content: "";
                 position: absolute;
-                background: rgba(var(--callout-color), var(--callout-border-opacity));
+                background: color-mix(in oklch, var(--callout-color) calc(var(--callout-border-opacity) * 100%), transparent);
                 inset: 0;
                 clip-path: polygon(
                     0 20px,

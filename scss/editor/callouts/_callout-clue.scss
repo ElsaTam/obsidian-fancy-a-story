@@ -41,7 +41,7 @@
 }
 
 .callout[data-callout="clue"] {
-    --callout-color: 0, 0, 0; // Border and text color
+    --callout-color: rgb(0, 0, 0); // Border and text color
     --callout-border-width: 0px;
     --callout-header-height: 50px;
     --callout-icon: lucide-search;
@@ -95,9 +95,9 @@
 
     > .callout-content {
         padding: var(--callout-padding);
-        color: rgb(var(--callout-color));
+        color: var(--callout-color);
         text-align: center;
-        border: var(--callout-border-width) rgb(var(--callout-color)) solid;
+        border: var(--callout-border-width) var(--callout-color) solid;
         padding-top: calc(var(--callout-header-height) / 2);
         background-image: var(--clue-paper-variant);
         background-size: 300px 300px;

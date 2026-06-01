@@ -26,7 +26,7 @@ body {
     }
 
     &:not([data-callout-metadata~="only-icon"], [data-callout-metadata~="no-title"]) > .callout-content {
-        border-left: var(--callout-border-width) dashed rgba(var(--callout-color), var(--callout-border-opacity));
+        border-left: var(--callout-border-width) dashed color-mix(in oklch, var(--callout-color) calc(var(--callout-border-opacity) * 100%), transparent);
 
         @container style(--fas-skin-sci-fi: enable) {
             border-left-style: solid;

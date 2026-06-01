@@ -20,22 +20,22 @@
 
 .callout[data-callout="data-header"] {
     // normal variant
-    // --header-left-color: rgb(var(--callout-color));
-    // --header-right-color: rgba(var(--callout-color), 0.8);
+    // --header-left-color: var(--callout-color);
+    // --header-right-color: color-mix(in oklch, var(--callout-color) 80%, transparent);
 
     // saturation variant
-    // --header-left-color: hsl(from rgb(var(--callout-color)) h calc(s - 20) l);
-    // --header-right-color: hsl(from rgb(var(--callout-color)) h calc(s - 20) l / 0.8);
+    // --header-left-color: hsl(from var(--callout-color) h calc(s - 20) l);
+    // --header-right-color: hsl(from var(--callout-color) h calc(s - 20) l / 0.8);
 
     // darken/lighten variant
     --header-left-color: color-mix(
         in hsl,
-        rgb(var(--callout-color)),
+        var(--callout-color),
         rgb(var(--mono-rgb-0)) var(--darken-lighten-qty-left)
     );
     --header-right-color: color-mix(
         in hsl,
-        rgb(var(--callout-color)),
+        var(--callout-color),
         rgb(var(--mono-rgb-0)) var(--darken-lighten-qty-right)
     );
 

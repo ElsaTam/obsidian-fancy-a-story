@@ -71,7 +71,7 @@ body {
     margin-left: calc(-1 * var(--size-4-6));
     margin-right: calc(-1 * var(--size-4-3));
     background-color: var(--workleaves-background);
-    border-block-color: rgba(var(--callout-color), var(--callout-border-opacity));
+    border-block-color: color-mix(in oklch, var(--callout-color) calc(var(--callout-border-opacity) * 100%), transparent);
 
     &:is([data-callout-metadata~="overflow"] > * > *) {
         border-inline: var(--callout-border-width, 0px) solid var(--workleaves-background);
@@ -110,11 +110,11 @@ body {
 
 .callout:not([data-callout="page-break"]) {
     &[data-callout="letter"] > .callout-content > .callout[data-callout="page-break"] {
-        --callout-color: var(--color-yellow-rgb);
+        --callout-color: var(--color-yellow);
     }
 
     &[data-callout="autopsy"] > .callout-content > .callout[data-callout="page-break"] {
-        --callout-color: var(--mono-rgb-0);
+        --callout-color: rgb(var(--mono-rgb-0));
     }
 
     &[data-callout="quote"] > .callout-content > .callout[data-callout="page-break"],
@@ -125,69 +125,69 @@ body {
     }
 
     &[data-callout="profile"] > .callout-content > .callout[data-callout="page-break"] {
-        --callout-color: var(--color-gray-rgb);
+        --callout-color: var(--color-gray);
     }
 
     &[data-callout="screen"] > .callout-content > .callout[data-callout="page-break"] {
         &:is(.theme-light *) {
-            --callout-color: var(--callout-screen-color-light-rgb);
+            --callout-color: rgb(var(--callout-screen-color-light-rgb));
         }
 
         &:is(.theme-dark *) {
-            --callout-color: var(--callout-screen-color-dark-rgb);
+            --callout-color: rgb(var(--callout-screen-color-dark-rgb));
         }
     }
 
     &[data-callout-metadata~="gray"] > .callout-content > .callout[data-callout="page-break"] {
-        --callout-color: var(--color-gray-rgb);
+        --callout-color: var(--color-gray);
     }
 
     &[data-callout-metadata~="brown"] > .callout-content > .callout[data-callout="page-break"] {
-        --callout-color: var(--color-brown-rgb);
+        --callout-color: var(--color-brown);
     }
 
     &[data-callout-metadata~="red"] > .callout-content > .callout[data-callout="page-break"] {
-        --callout-color: var(--color-red-rgb);
+        --callout-color: var(--color-red);
     }
 
     &[data-callout-metadata~="orange"] > .callout-content > .callout[data-callout="page-break"] {
-        --callout-color: var(--color-orange-rgb);
+        --callout-color: var(--color-orange);
     }
 
     &[data-callout-metadata~="yellow"] > .callout-content > .callout[data-callout="page-break"] {
-        --callout-color: var(--color-yellow-rgb);
+        --callout-color: var(--color-yellow);
     }
 
     &[data-callout-metadata~="green"] > .callout-content > .callout[data-callout="page-break"] {
-        --callout-color: var(--color-green-rgb);
+        --callout-color: var(--color-green);
     }
 
     &[data-callout-metadata~="cyan"] > .callout-content > .callout[data-callout="page-break"] {
-        --callout-color: var(--color-cyan-rgb);
+        --callout-color: var(--color-cyan);
     }
 
     &[data-callout-metadata~="blue"] > .callout-content > .callout[data-callout="page-break"] {
-        --callout-color: var(--color-blue-rgb);
+        --callout-color: var(--color-blue);
     }
 
     &[data-callout-metadata~="cyan"] > .callout-content > .callout[data-callout="page-break"] {
-        --callout-color: var(--color-cyan-rgb);
+        --callout-color: var(--color-cyan);
     }
 
     &[data-callout-metadata~="purple"] > .callout-content > .callout[data-callout="page-break"] {
-        --callout-color: var(--color-purple-rgb);
+        --callout-color: var(--color-purple);
     }
 
     &[data-callout-metadata~="pink"] > .callout-content > .callout[data-callout="page-break"] {
-        --callout-color: var(--color-pink-rgb);
+        --callout-color: var(--color-pink);
     }
 
     &[data-callout-metadata~="black"] > .callout-content > .callout[data-callout="page-break"] {
-        --callout-color: 0, 0, 0;
+        --callout-color: rgb(0, 0, 0);
     }
 
     &[data-callout-metadata~="white"] > .callout-content > .callout[data-callout="page-break"] {
-        --callout-color: 255, 255, 255;
+        --callout-color: rgb(255, 255, 255);
     }
 
     &[data-callout-metadata~="accent"] > .callout-content > .callout[data-callout="page-break"] {

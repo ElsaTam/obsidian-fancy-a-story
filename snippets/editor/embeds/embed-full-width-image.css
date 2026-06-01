@@ -17,7 +17,9 @@ body {
   font-size: 0;
   width: 100%;
 }
-
+.image-embed:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol]) .image-wrapper {
+  width: 100%;
+}
 .image-embed:is([alt~=full-width-image], [alt~=full-w-img], [alt~=fwi], [alt~="full-width-panoramic-image-:jack_o_lantern:"], [alt~=fwpi-jol]) img {
   height: var(--fwi-height);
   width: 100%;

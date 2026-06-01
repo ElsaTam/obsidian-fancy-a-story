@@ -2,8 +2,8 @@
 
 .callout[data-callout="autopsy"] {
     --callout-icon: lucide-skull;
-    --callout-color: var(--mono-rgb-0);
-    --callout-color-nested: var(--color-blue-rgb);
+    --callout-color: rgb(var(--mono-rgb-0));
+    --callout-color-nested: var(--color-blue);
     --callout-title-color: rgb(var(--mono-rgb-100));
     --callout-border-width: 1px;
     --callout-blend-mode: normal;
@@ -98,7 +98,7 @@
         --callout-padding: var(--size-4-5) var(--size-4-3);
         --callout-title-padding: 0 0 var(--size-4-6);
         --callout-blend-mode: normal;
-        --checkbox-color: rgb(var(--callout-color));
+        --checkbox-color: var(--callout-color);
         background: none;
         margin: 0;
     }
@@ -157,7 +157,7 @@
     table {
         // Tables
         --table-header-color: var(--text-normal);
-        --table-header-background: rgb(var(--callout-color), 0.03);
+        --table-header-background: color-mix(in oklch, var(--callout-color) 3%, transparent);
         --table-header-background-hover: var(--table-header-background);
         --table-row-background: transparent;
         --table-row-alt-background: transparent;
@@ -189,7 +189,7 @@
 
             background-image: radial-gradient(
                 circle at var(--dot-size) var(--line-start),
-                rgba(var(--callout-color), 0.2) var(--dot-size),
+                color-mix(in oklch, var(--callout-color) 20%, transparent) var(--dot-size),
                 transparent 0
             );
             background-size: calc(var(--dot-size) + var(--dot-gap)) calc(var(--calc-line-height));
@@ -201,7 +201,7 @@
 
     /* Add an horitonzal rule (optional) */
     .callout[data-callout-metadata~="hr"] {
-        border-bottom: rgb(var(--callout-color)) 5px double;
+        border-bottom: var(--callout-color) 5px double;
         .callout-content *:last-child {
             flex-grow: 0;
         }
@@ -213,7 +213,7 @@
         --checkbox-radius: 50%;
         --checkbox-color: var(--color-red);
         --checkbox-color-hover: color-mix(in srgb, var(--checkbox-color), rgb(var(--mono-rgb-100)) 40%);
-        --checkbox-color-unchecked: rgb(var(--callout-color-nested));
+        --checkbox-color-unchecked: var(--callout-color-nested);
         --checkbox-opacity-unchecked: 0.2;
         --checkbox-border-color: var(--checkbox-color-unchecked);
         --checkbox-border-color-hover: color-mix(

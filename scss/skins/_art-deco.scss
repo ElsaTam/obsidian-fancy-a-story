@@ -348,7 +348,7 @@ $fwi_sel: "";
         }
 
         &:not(:where([data-callout="page-break"]))::after {
-            --art-deco-color: rgb(var(--callout-color));
+            --art-deco-color: var(--callout-color);
         }
 
         &:not(:where([data-callout-metadata~="no-deco"]))::after {
@@ -407,8 +407,8 @@ $fwi_sel: "";
             [data-callout-metadata~="black"],
             [data-callout-metadata~="white"]
         ) {
-            --art-deco-color: rgb(var(--callout-color));
-            --page-break-color: rgb(var(--callout-color));
+            --art-deco-color: var(--callout-color);
+            --page-break-color: var(--callout-color);
         }
     }
 

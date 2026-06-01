@@ -5,10 +5,10 @@ body {
 }
 
 .theme-light .callout[data-callout="screen"] {
-    --callout-color: var(--callout-screen-color-light-rgb);
+    --callout-color: rgb(var(--callout-screen-color-light-rgb));
 }
 .theme-dark .callout[data-callout="screen"] {
-    --callout-color: var(--callout-screen-color-dark-rgb);
+    --callout-color: rgb(var(--callout-screen-color-dark-rgb));
 }
 
 .callout[data-callout="screen"] {
@@ -16,15 +16,15 @@ body {
     --callout-title-size: 1.3em;
     --callout-border-width: 1px;
 
-    --list-marker-color: rgb(var(--callout-color));
-    --list-marker-color-collapsed: color-mix(in srgb, rgb(var(--callout-color)), rgb(var(--mono-rgb-0)) 40%);
-    --collapse-icon-color: rgb(var(--callout-color));
+    --list-marker-color: var(--callout-color);
+    --list-marker-color-collapsed: color-mix(in srgb, var(--callout-color), rgb(var(--mono-rgb-0)) 40%);
+    --collapse-icon-color: var(--callout-color);
     --collapse-icon-color-collapsed: var(--list-marker-color-collapsed);
     --background-modifier-active-hover: color-mix(in srgb, var(--list-marker-color-collapsed), transparent 95%);
-    --indentation-guide-color: rgba(var(--callout-color), 0.2);
+    --indentation-guide-color: color-mix(in oklch, var(--callout-color) 20%, transparent);
     --image-shadow-offset: 0;
 
-    color: rgb(var(--callout-color));
+    color: var(--callout-color);
 
     &:not([data-callout-metadata~="default-font"]) {
         font-family: var(--callout-screen-font);
@@ -46,11 +46,11 @@ body {
     }
 
     &:not(.is-collapsed) {
-        text-shadow: 0 0 3px rgba(var(--callout-color), 0.5);
+        text-shadow: 0 0 3px color-mix(in oklch, var(--callout-color) 50%, transparent);
     }
 
     .image-embed {
         display: inline-block;
-        border: var(--callout-border-width) solid rgb(var(--callout-color));
+        border: var(--callout-border-width) solid var(--callout-color);
     }
 }

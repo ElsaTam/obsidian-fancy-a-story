@@ -29,7 +29,7 @@ body {
     .callout[data-callout="#{$type}"] {
         --callout-content-padding: 0;
         --image-shadow-offset: 0;
-        --hr-color: rgba(var(--callout-color), var(--callout-border-opacity));
+        --hr-color: color-mix(in oklch, var(--callout-color) calc(var(--callout-border-opacity) * 100%), transparent);
         --heading-spacing: var(--p-spacing);
 
         max-width: var(--fas-infobox-max-width, 100%);
@@ -72,11 +72,11 @@ body {
     .callout[data-callout="#{$type}"] {
         --table-row-alt-background: color-mix(
             in srgb,
-            rgba(var(--callout-color), 0.2),
+            color-mix(in oklch, var(--callout-color) 20%, transparent),
             rgba(var(--mono-rgb-0), 0.2) 50%
         );
-        --table-border-color: rgba(var(--callout-color), var(--callout-border-opacity));
-        --table-header-border-color: rgba(var(--callout-color), var(--callout-border-opacity));
+        --table-border-color: color-mix(in oklch, var(--callout-color) calc(var(--callout-border-opacity) * 100%), transparent);
+        --table-header-border-color: color-mix(in oklch, var(--callout-color) calc(var(--callout-border-opacity) * 100%), transparent);
 
         table {
             width: 100%;
@@ -114,14 +114,14 @@ body {
             left: calc(50% - 0.5 * var(--triangle-size));
             border-right: calc(0.5 * var(--triangle-size)) solid transparent;
             border-left: calc(0.5 * var(--triangle-size)) solid transparent;
-            border-top: calc(0.5 * var(--triangle-size)) solid rgb(var(--callout-color));
+            border-top: calc(0.5 * var(--triangle-size)) solid var(--callout-color);
             z-index: 1;
         }
         img[alt*="cover"] {
             max-width: var(--fas-infobox-max-width, 100%);
             width: calc(100% + 2 * var(--fas-infobox-padding, 0));
             margin-left: calc(-1 * var(--fas-infobox-padding, 0));
-            border-bottom: 4px solid rgb(var(--callout-color));
+            border-bottom: 4px solid var(--callout-color);
         }
 
         /* icon */
@@ -150,7 +150,7 @@ body {
         img[alt*="icon"] {
             height: var(--infobox-icon-size, 70px);
             width: var(--infobox-icon-size, 70px);
-            border: 2px solid rgb(var(--callout-color));
+            border: 2px solid var(--callout-color);
             object-fit: cover;
             z-index: 2;
             border-radius: 20%;
@@ -204,7 +204,7 @@ body {
             margin-inline: calc(-1 * var(--overflow-width));
             z-index: 1;
             position: relative;
-            background: color-mix(in srgb, rgb(var(--callout-color)), rgb(var(--mono-rgb-0)) 20%);
+            background: color-mix(in srgb, var(--callout-color), rgb(var(--mono-rgb-0)) 20%);
             overflow: visible;
         }
 
@@ -218,7 +218,7 @@ body {
             position: absolute;
             bottom: calc(-1 * var(--overflow-width) + 1px);
             border-top: calc(var(--overflow-width) - 1px) solid
-                color-mix(in srgb, rgb(var(--callout-color)), rgb(0 0 0) 60%);
+                color-mix(in srgb, var(--callout-color), rgb(0 0 0) 60%);
         }
 
         h1::before {
@@ -273,7 +273,7 @@ body {
     /* footer */
     .callout[data-callout="#{$type}"] .callout[data-callout="footer"] {
         --callout-blend-mode: normal;
-        background: color-mix(in srgb, rgb(var(--callout-color)), rgb(var(--mono-rgb-0)) 80%);
+        background: color-mix(in srgb, var(--callout-color), rgb(var(--mono-rgb-0)) 80%);
         border: none;
         margin-bottom: 0;
         overflow: visible;
@@ -293,38 +293,38 @@ body {
             left: 0;
             right: 0;
             top: 7px;
-            border-top: 2px dashed rgba(var(--callout-color), var(--callout-border-opacity));
+            border-top: 2px dashed color-mix(in oklch, var(--callout-color) calc(var(--callout-border-opacity) * 100%), transparent);
         }
     }
     .callout[data-callout="#{$type}"][data-callout-metadata~="gray"] [data-callout="footer"] {
-        --callout-color: var(--color-gray-rgb);
+        --callout-color: var(--color-gray);
     }
     .callout[data-callout="#{$type}"][data-callout-metadata~="brown"] [data-callout="footer"] {
-        --callout-color: var(--color-brown-rgb);
+        --callout-color: var(--color-brown);
     }
     .callout[data-callout="#{$type}"][data-callout-metadata~="red"] [data-callout="footer"] {
-        --callout-color: var(--color-red-rgb);
+        --callout-color: var(--color-red);
     }
     .callout[data-callout="#{$type}"][data-callout-metadata~="orange"] [data-callout="footer"] {
-        --callout-color: var(--color-orange-rgb);
+        --callout-color: var(--color-orange);
     }
     .callout[data-callout="#{$type}"][data-callout-metadata~="yellow"] [data-callout="footer"] {
-        --callout-color: var(--color-yellow-rgb);
+        --callout-color: var(--color-yellow);
     }
     .callout[data-callout="#{$type}"][data-callout-metadata~="green"] [data-callout="footer"] {
-        --callout-color: var(--color-green-rgb);
+        --callout-color: var(--color-green);
     }
     .callout[data-callout="#{$type}"][data-callout-metadata~="cyan"] [data-callout="footer"] {
-        --callout-color: var(--color-cyan-rgb);
+        --callout-color: var(--color-cyan);
     }
     .callout[data-callout="#{$type}"][data-callout-metadata~="blue"] [data-callout="footer"] {
-        --callout-color: var(--color-blue-rgb);
+        --callout-color: var(--color-blue);
     }
     .callout[data-callout="#{$type}"][data-callout-metadata~="purple"] [data-callout="footer"] {
-        --callout-color: var(--color-purple-rgb);
+        --callout-color: var(--color-purple);
     }
     .callout[data-callout="#{$type}"][data-callout-metadata~="pink"] [data-callout="footer"] {
-        --callout-color: var(--color-pink-rgb);
+        --callout-color: var(--color-pink);
     }
 
     /* corners */
@@ -335,7 +335,7 @@ body {
             position: absolute;
             width: 30px;
             height: 30px;
-            background-color: color-mix(in srgb, rgb(var(--callout-color)), rgb(var(--mono-rgb-0)) 20%);
+            background-color: color-mix(in srgb, var(--callout-color), rgb(var(--mono-rgb-0)) 20%);
             z-index: 3;
         }
         &::before {
@@ -450,7 +450,7 @@ body {
 
             &::before {
                 content: "🛈";
-                color: rgb(var(--callout-color));
+                color: var(--callout-color);
                 position: initial;
                 width: unset;
                 height: unset;
@@ -465,7 +465,7 @@ body {
 
                 h1 {
                     background: none;
-                    color: rgb(var(--callout-color));
+                    color: var(--callout-color);
                     width: unset;
                     margin-inline: unset;
                     padding-inline: unset;

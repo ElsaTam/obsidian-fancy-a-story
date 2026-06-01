@@ -9,7 +9,7 @@ body {
 
 body {
   --poem-border-width: 1px;
-  --poem-color-rgb: var(--color-blue-rgb);
+  --poem-color: var(--color-blue);
 }
 
 pre.language-poem,
@@ -21,20 +21,17 @@ pre.language-poem-floral {
   position: relative;
 }
 
-pre.language-poem::before,
-pre.language-poem::after {
+pre.language-poem::before, pre.language-poem::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
   height: var(--poem-border-width);
-  background: linear-gradient(to right, transparent, rgb(var(--poem-color-rgb)) 20%, rgb(var(--poem-color-rgb)) 80%, transparent);
+  background: linear-gradient(to right, transparent, var(--poem-color) 20%, var(--poem-color) 80%, transparent);
 }
-
 pre.language-poem::before {
   top: 0;
 }
-
 pre.language-poem::after {
   bottom: 0;
 }
@@ -43,12 +40,10 @@ pre.language-poem-frame {
   padding-inline: 22%;
   container: poem/inline-size;
 }
-
-pre.language-poem-frame>code {
+pre.language-poem-frame > code {
   margin-top: 17cqw;
   margin-bottom: 5cqw;
 }
-
 pre.language-poem-frame::before {
   content: "";
   position: absolute;
@@ -57,14 +52,13 @@ pre.language-poem-frame::before {
   left: 0;
   right: 0;
   height: unset;
-  background-color: rgb(var(--poem-color-rgb));
+  background-color: var(--poem-color);
   -webkit-mask-image: var(--top-divider-art);
   -webkit-mask-size: 100% auto;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: top center;
   z-index: -1;
 }
-
 pre.language-poem-frame:not(.is-collapsed)::after {
   content: "";
   position: absolute;
@@ -73,14 +67,13 @@ pre.language-poem-frame:not(.is-collapsed)::after {
   left: 0;
   right: 0;
   height: unset;
-  background-color: rgb(var(--poem-color-rgb));
+  background-color: var(--poem-color);
   -webkit-mask-image: var(--bottom-divider-art);
   -webkit-mask-size: 60% auto;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: bottom center;
   z-index: -1;
 }
-
 pre.language-poem-frame .copy-code-button {
   top: 5cqw;
   right: 50%;
@@ -91,26 +84,23 @@ pre.language-poem-floral {
   padding: 0;
   --floral-width: 18%;
 }
-
-pre.language-poem-floral>code {
+pre.language-poem-floral > code {
   margin-inline: var(--floral-width);
-  border-left: var(--poem-border-width) solid rgba(var(--poem-color-rgb), 1);
+  border-left: var(--poem-border-width) solid var(--poem-color);
   background-color: var(--workleaves-background);
   margin-inline: var(--floral-width);
-  border-left: var(--poem-border-width) solid rgba(var(--poem-color-rgb), 1);
-  border-bottom: var(--poem-border-width) solid rgba(var(--poem-color-rgb), 1);
+  border-left: var(--poem-border-width) solid var(--poem-color);
+  border-bottom: var(--poem-border-width) solid var(--poem-color);
   background-color: var(--workleaves-background);
   padding: var(--size-4-3);
 }
-
-pre.language-poem-floral:not(.is-collapsed)::before,
-pre.language-poem-floral:not(.is-collapsed)::after {
+pre.language-poem-floral:not(.is-collapsed)::before, pre.language-poem-floral:not(.is-collapsed)::after {
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
   height: unset;
-  background-color: rgba(var(--poem-color-rgb), 0.6);
+  background-color: color-mix(in oklch, var(--poem-color) 60%, transparent);
   -webkit-mask-image: var(--left-ornament-flourish), linear-gradient(to left, transparent, black 40%);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 100% auto;
@@ -118,13 +108,11 @@ pre.language-poem-floral:not(.is-collapsed)::after {
   mask-composite: intersect;
   z-index: -1;
 }
-
 pre.language-poem-floral:not(.is-collapsed)::before {
   left: 0;
   width: var(--floral-width);
   -webkit-mask-position: left bottom;
 }
-
 pre.language-poem-floral:not(.is-collapsed)::after {
   right: 0;
   width: var(--floral-width);
@@ -133,12 +121,9 @@ pre.language-poem-floral:not(.is-collapsed)::after {
   -webkit-mask-position: right bottom;
   transform: scaleX(-1) scaleY(-1);
 }
-
-pre.language-poem-floral.is-collapsed::before,
-pre.language-poem-floral.is-collapsed::after {
+pre.language-poem-floral.is-collapsed::before, pre.language-poem-floral.is-collapsed::after {
   content: none;
 }
-
 pre.language-poem-floral .copy-code-button {
   right: var(--floral-width);
 }
@@ -147,9 +132,7 @@ pre.language-poem-floral .copy-code-button {
   .print pre.language-poem-floral {
     break-inside: avoid;
   }
-
-  .print pre.language-poem-floral:not(.is-collapsed)::before,
-  .print pre.language-poem-floral:not(.is-collapsed)::after {
+  .print pre.language-poem-floral:not(.is-collapsed)::before, .print pre.language-poem-floral:not(.is-collapsed)::after {
     -webkit-mask-image: var(--left-ornament-flourish);
   }
 }

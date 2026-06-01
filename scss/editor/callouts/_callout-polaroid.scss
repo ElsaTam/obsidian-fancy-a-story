@@ -7,7 +7,7 @@ body {
 }
 
 .callout[data-callout="polaroid"] {
-    --callout-color: 255, 255, 255;
+    --callout-color: rgb(255, 255, 255);
     --callout-blend-mode: normal;
     --callout-border-width: 0;
     --image-shadow-offset: 0;
@@ -22,7 +22,7 @@ body {
     display: flex;
     flex-direction: column-reverse;
     width: fit-content;
-    background: rgb(var(--callout-color));
+    background: var(--callout-color);
     box-shadow: 5px 7px 4px var(--shadow-color);
     margin-inline: auto;
 

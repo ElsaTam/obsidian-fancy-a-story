@@ -2,12 +2,12 @@
     --callout-title-size: 3em;
     --callout-border-width: 5px;
     --callout-blend-mode: normal;
-    --callout-color: var(--color-red-rgb);
+    --callout-color: var(--color-red);
     --callout-title-padding: 0 var(--size-4-3);
 
     background: none;
     border: none;
-    border-left: var(--callout-border-width) solid rgba(var(--callout-color), var(--callout-border-opacity));
+    border-left: var(--callout-border-width) solid color-mix(in oklch, var(--callout-color) calc(var(--callout-border-opacity) * 100%), transparent);
 
     .callout-title {
         background: none;

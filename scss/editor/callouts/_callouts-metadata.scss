@@ -4,40 +4,40 @@
 @use "../../mixins/wide";
 
 .callout[data-callout-metadata~="gray"] {
-    --callout-color: var(--color-gray-rgb);
+    --callout-color: var(--color-gray);
 }
 .callout[data-callout-metadata~="brown"] {
-    --callout-color: var(--color-brown-rgb);
+    --callout-color: var(--color-brown);
 }
 .callout[data-callout-metadata~="red"] {
-    --callout-color: var(--color-red-rgb);
+    --callout-color: var(--color-red);
 }
 .callout[data-callout-metadata~="orange"] {
-    --callout-color: var(--color-orange-rgb);
+    --callout-color: var(--color-orange);
 }
 .callout[data-callout-metadata~="yellow"] {
-    --callout-color: var(--color-yellow-rgb);
+    --callout-color: var(--color-yellow);
 }
 .callout[data-callout-metadata~="green"] {
-    --callout-color: var(--color-green-rgb);
+    --callout-color: var(--color-green);
 }
 .callout[data-callout-metadata~="cyan"] {
-    --callout-color: var(--color-cyan-rgb);
+    --callout-color: var(--color-cyan);
 }
 .callout[data-callout-metadata~="blue"] {
-    --callout-color: var(--color-blue-rgb);
+    --callout-color: var(--color-blue);
 }
 .callout[data-callout-metadata~="purple"] {
-    --callout-color: var(--color-purple-rgb);
+    --callout-color: var(--color-purple);
 }
 .callout[data-callout-metadata~="pink"] {
-    --callout-color: var(--color-pink-rgb);
+    --callout-color: var(--color-pink);
 }
 .callout[data-callout-metadata~="black"] {
-    --callout-color: 0, 0, 0;
+    --callout-color: rgb(0, 0, 0);
 }
 .callout[data-callout-metadata~="white"] {
-    --callout-color: 255, 255, 255;
+    --callout-color: rgb(255, 255, 255);
 }
 
 [data-callout-metadata~="accent"] {

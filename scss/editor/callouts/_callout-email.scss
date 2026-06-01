@@ -4,7 +4,7 @@
     --callout-icon: lucide-send-horizontal;
     --callout-blend-mode: normal;
     --callout-border-width: 1px;
-    --callout-email-color: var(--mono-rgb-100);
+    --callout-email-color: rgb(var(--mono-rgb-100));
     --callout-color: var(--callout-email-color);
 
     &:not([data-callout-metadata~="default-font"]) {
@@ -47,7 +47,7 @@
 
         > .callout-content {
             flex-grow: 1;
-            border: var(--callout-border-width) solid rgba(var(--callout-color), var(--callout-border-opacity));
+            border: var(--callout-border-width) solid color-mix(in oklch, var(--callout-color) calc(var(--callout-border-opacity) * 100%), transparent);
             background-color: var(--workleaves-background);
             color: var(--text-normal);
         }
@@ -61,6 +61,6 @@
 
     .callout[data-callout-metadata~="sep"] {
         padding-bottom: var(--size-4-6);
-        border-bottom: var(--callout-border-width) solid rgba(var(--callout-color), var(--callout-border-opacity));
+        border-bottom: var(--callout-border-width) solid color-mix(in oklch, var(--callout-color) calc(var(--callout-border-opacity) * 100%), transparent);
     }
 }

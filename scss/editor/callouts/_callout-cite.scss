@@ -66,9 +66,9 @@ body {
             bottom: 0;
             left: 0;
             width: var(--cite-decoration-width);
-            color: rgb(var(--callout-color));
+            color: var(--callout-color);
             font-family: Arial, Helvetica, sans-serif;
-            background-color: rgba(var(--callout-color), 0.1);
+            background-color: color-mix(in oklch, var(--callout-color) 10%, transparent);
         }
 
         cite {

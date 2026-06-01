@@ -7,7 +7,7 @@ body {
 }
 
 .callout[data-callout="letter"] {
-    --callout-color: var(--color-yellow-rgb);
+    --callout-color: var(--color-yellow);
     --callout-title-size: 2em;
     --line-height-normal: 2.5;
     --font-text-size: 1.2em;
@@ -37,7 +37,7 @@ body {
         content: "";
         width: 1em;
         height: 1em;
-        background-color: rgb(var(--callout-color));
+        background-color: var(--callout-color);
         -webkit-mask-position: 50% 50%;
         -webkit-mask-size: 100% 100%;
         -webkit-mask-repeat: no-repeat;
@@ -53,7 +53,7 @@ body {
         content: "";
         width: 1em;
         height: 1em;
-        background-color: rgb(var(--callout-color));
+        background-color: var(--callout-color);
         -webkit-mask-position: 50% 50%;
         -webkit-mask-size: 100% 100%;
         -webkit-mask-repeat: no-repeat;
@@ -72,7 +72,7 @@ body {
     }
     @container style(--fas-bg-textures: enable) {
         .callout-content {
-            background-color: color-mix(in srgb, rgb(var(--callout-color)), var(--workleaves-background) 92%);
+            background-color: color-mix(in srgb, var(--callout-color), var(--workleaves-background) 92%);
             background-image: var(--paper-texture);
             background-size: 500px;
             background-blend-mode: multiply;
@@ -88,8 +88,8 @@ body {
             to bottom,
             transparent,
             transparent var(--line-start),
-            rgba(var(--callout-color), 0.5) var(--line-start),
-            rgba(var(--callout-color), 0.5) var(--line-end),
+            color-mix(in oklch, var(--callout-color) 50%, transparent) var(--line-start),
+            color-mix(in oklch, var(--callout-color) 50%, transparent) var(--line-end),
             transparent var(--line-end),
             transparent
         );

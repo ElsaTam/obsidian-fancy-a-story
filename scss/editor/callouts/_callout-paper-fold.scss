@@ -86,12 +86,12 @@ body {
 }
 
 .callout[data-callout="paper-fold"] {
-    --callout-color: var(--paper-fold-color);
+    --callout-color: rgb(var(--paper-fold-color));
     --metadata-property-radius: 0;
     --metadata-padding: 0 0 8px 0;
 
-    --postit-color-transparent: color-mix(in srgb, rgb(var(--callout-color)), transparent 30%);
-    --postit-color-opaque: rgb(var(--callout-color));
+    --postit-color-transparent: color-mix(in srgb, var(--callout-color), transparent 30%);
+    --postit-color-opaque: var(--callout-color);
     --postit-border-color: var(--text-faint);
 
     color: black;
@@ -141,10 +141,10 @@ body {
     );
     background: linear-gradient(
         calc(180deg - var(--paper-fold-corner-angle)),
-        color-mix(in hsl, rgb(var(--callout-color)), black 10%) var(--paper-fold-corner-diag),
-        color-mix(in hsl, rgb(var(--callout-color)), white 30%)
+        color-mix(in hsl, var(--callout-color), black 10%) var(--paper-fold-corner-diag),
+        color-mix(in hsl, var(--callout-color), white 30%)
             calc(var(--paper-fold-corner-diag) + 0.3 * min(var(--corner-height), var(--corner-width))),
-        color-mix(in hsl, rgb(var(--callout-color)), black 50%)
+        color-mix(in hsl, var(--callout-color), black 50%)
     );
     box-shadow: 0 0 calc(min(var(--corner-width), var(--corner-height)) / 5)
         calc(min(var(--corner-width), var(--corner-height)) / 25)
