@@ -562,6 +562,8 @@ body {
                 padding-inline: calc(var(--cutout-outline-inset) + 16px);
                 padding-block: calc(var(--cutout-outline-inset) + 16px);
                 clip-path: none;
+                corner-shape: square;
+                outline: none;
 
                 &::before {
                     --corner-size: 0.5em;
