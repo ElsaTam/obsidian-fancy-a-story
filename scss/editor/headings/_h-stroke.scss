@@ -1,7 +1,9 @@
 @forward "../../shared/h1-border";
 
-// Enabling
-@for $i from 1 through 6 {
+
+$indices: 1, 2, 3, 4, 5, 6, '-inline', '-embed';
+
+@each $i in $indices {
     body {
         --fas-h#{$i}-stroke: disable;
         --fas-h#{$i}-stroke-left-aligned: disable;
@@ -40,17 +42,20 @@ body {
     --h-stroke-weight: var(--font-extralight);
 }
 
-// Preview
-@for $i from 1 through 6 {
+// Preview and inline/embed titles
+@each $i in $indices {
+    $is-inline: $i == '-inline';
+    $is-embed: $i == '-embed';
+    $selector: if($is-inline,
+        ".inline-title",
+        if($is-embed,
+            ".embed-title:not(:empty)",
+            ".markdown-preview-view:not(.newspaper, .movie-script, .minimalist, .h#{$i}-display, .h#{$i}-display-left-aligned) h#{$i}"
+        )
+    );
+
     @container style(--fas-h#{$i}-stroke: enable) or style(--fas-h#{$i}-stroke-left-aligned: enable) {
-        .markdown-preview-view:not(
-                .newspaper,
-                .movie-script,
-                .minimalist,
-                .h#{$i}-display,
-                .h#{$i}-display-left-aligned
-            )
-            h#{$i} {
+        #{$selector} {
             --h#{$i}-weight: var(--h-stroke-weight);
             display: flex;
             align-items: center;

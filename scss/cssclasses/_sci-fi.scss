@@ -225,7 +225,12 @@ body {
 }
 
 // H Display
-@for $i from 1 through 6 {
+$indices: 1, 2, 3, 4, 5, 6, '-inline', '-embed';
+@each $i in $indices {
+    $is-inline: $i == '-inline';
+    $is-embed: $i == '-embed';
+    $selector: if($is-inline, ".inline-title", if($is-embed, ".embed-title:not(:empty)", ":is(.el-h#{$i} > h#{$i}, .markdown-preview-view > * > h#{$i}, .HyperMD-header-#{$i}):not(.callout *, ul *, ol *)"));
+
     @container style(--fas-skin-sci-fi: enable) and (style(--fas-h#{$i}-display: enable) or style(--fas-h#{$i}-display-left-aligned: enable)) {
         :is(.markdown-preview-view, .is-live-preview):not(
             .newspaper,
@@ -235,14 +240,12 @@ body {
             .h#{$i}-stroke-left-aligned,
             .h#{$i}-normal
         ) {
-            :is(.el-h#{$i} > h#{$i}, .markdown-preview-view > * > h#{$i}, .HyperMD-header-#{$i}):not(
-                .callout *,
-                ul *,
-                ol *
-            ) {
+             #{$selector} {
                 padding: unset;
                 clip-path: unset;
                 text-align: left;
+                corner-shape: unset;
+                outline: none;
 
                 &::before {
                     content: "";
@@ -255,7 +258,7 @@ body {
                     height: 1em;
                     width: 6em;
                     transform: translateY(-15%);
-                    background-color: rgba(var(--color-cyan-rgb), 1);
+                    background-color: var(--color-cyan);
                     -webkit-mask-image: var(--sci-fi-h-display);
                     -webkit-mask-size: contain;
                     -webkit-mask-repeat: no-repeat;

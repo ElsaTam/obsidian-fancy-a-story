@@ -933,6 +933,62 @@ settings:
                 label: Rainbow
                 value: fas-headings-rainbow
     - 
+        id: heading-color-apply-to-inline-title
+        title: Apply the color to the inline title
+        type: variable-select
+        default: disable
+        options:
+            - 
+                label: Yes
+                value: enable
+            - 
+                label: No
+                value: disable
+    - 
+        id: h-inline
+        title: Inline headings
+        type: heading
+        collapsed: true
+        level: 3
+    - 
+        id: header-style-h-inline
+        title: Appearance
+        type: class-select
+        allowEmpty: true
+        default: none
+        options:
+            - 
+                label: Display
+                value: fas-h-inline-display
+            - 
+                label: Display - left aligned
+                value: fas-h-inline-display-left-aligned
+            - 
+                label: Stroke
+                value: fas-h-inline-stroke
+            - 
+                label: Stroke - left aligned
+                value: fas-h-inline-stroke-left-aligned
+    - 
+        id: header-style-h-embed
+        title: Appearance (embedded headings)
+        type: class-select
+        allowEmpty: true
+        default: none
+        options:
+            - 
+                label: Display
+                value: fas-h-embed-display
+            - 
+                label: Display - left aligned
+                value: fas-h-embed-display-left-aligned
+            - 
+                label: Stroke
+                value: fas-h-embed-stroke
+            - 
+                label: Stroke - left aligned
+                value: fas-h-embed-stroke-left-aligned
+    - 
         id: h1
         title: First level headings (H1)
         type: heading

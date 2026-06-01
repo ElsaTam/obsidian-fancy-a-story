@@ -2,6 +2,7 @@
 
 body {
     --heading-color: none;
+    --heading-color-apply-to-inline-title: disable;
 }
 
 .fas-headings-hue,
@@ -61,5 +62,24 @@ body {
         --h4-color: var(--color-rainbow-4);
         --h5-color: var(--color-rainbow-5);
         --h6-color: var(--color-rainbow-6);
+    }
+}
+
+@container (style(--heading-color: hue) or style(--heading-color: complement) or style(--heading-color: accent)) and style(--heading-color-apply-to-inline-title: enable) {
+    :is(.markdown-source-view, .markdown-preview-view) > * {
+        --inline-title-color: var(--header-gradient-base-color);
+        --embed-title-color: var(--header-gradient-base-color);
+    }
+}
+@container style(--heading-color: rainbow) and style(--heading-color-apply-to-inline-title: enable) {
+    :is(.markdown-source-view, .markdown-preview-view) > * {
+        --inline-title-color: var(--color-rainbow-10);
+        --embed-title-color: var(--color-rainbow-10);
+    }
+}
+
+@container style(--heading-color-apply-to-inline-title: enable) {
+    .embed-title {
+        color: var(--embed-title-color, var(--text-normal));
     }
 }

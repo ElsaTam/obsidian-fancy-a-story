@@ -1,6 +1,10 @@
 body {
-    @for $i from 1 through 6 {
+    $indices: 1, 2, 3, 4, 5, 6, '-inline', '-embed';
+    @each $i in $indices {
         --h#{$i}-border-color: currentColor;
-        --h#{$i}-border-color-collapsed: var(--collapse-icon-color-collapsed);
+        
+        @if $i != '-inline' and $i != '-embed' {
+            --h#{$i}-border-color-collapsed: var(--collapse-icon-color-collapsed);
+        }
     }
 }

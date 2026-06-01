@@ -4,6 +4,7 @@
 @forward "../../shared/cutouts";
 @forward "../../shared/workleaves";
 @use "../../mixins/cutout_border";
+@use "sass:meta";
 
 body {
     --h-display-line-height: 1.2em;
@@ -12,12 +13,19 @@ body {
     --h-display-background: var(--color-base-100);
 }
 
-@for $i from 1 through 6 {
+$indices: 1, 2, 3, 4, 5, 6, '-inline', '-embed';
+
+@each $i in $indices {
+    $is-inline: $i == '-inline';
+    $is-embed: $i == '-embed';
+    $size-factor: if($is-inline, 3.2, if($is-embed, 2.8, 3.2 - 0.2 * $i));
+    $selector: if($is-inline, ".inline-title", if($is-embed, ".embed-title:not(:empty)", ":is(.el-h#{$i} > h#{$i}, .markdown-preview-view > * > h#{$i}, .HyperMD-header-#{$i}):not(.callout *, ul *, ol *)"));
+
     body {
         --fas-h#{$i}-display: disable;
         --fas-h#{$i}-display-left-aligned: disable;
 
-        --h#{$i}-display-size: #{calc(3.2em - 0.2em * $i)};
+        --h#{$i}-display-size: #{calc($size-factor * 1em)};
     }
     .fas-h#{$i}-display,
     .h#{$i}-display {
@@ -51,15 +59,26 @@ body {
             .h#{$i}-normal,
             .sci-fi
         ) {
-            :is(.el-h#{$i} > h#{$i}, .markdown-preview-view > * > h#{$i}, .HyperMD-header-#{$i}):not(
-                .callout *,
-                ul *,
-                ol *
-            ) {
-                --h#{$i}-line-height: var(--h-display-line-height);
-                --h#{$i}-size: var(--h#{$i}-display-size);
-                --h#{$i}-font: var(--h-display-font);
-                --h#{$i}-color: var(--h-display-color);
+            #{$selector} {
+                @if $is-inline {
+                    --inline-title-line-height: var(--h-display-line-height);
+                    --inline-title-size: var(--h#{$i}-display-size);
+                    --inline-title-font: var(--h-display-font);
+                    --inline-title-color: var(--h-display-color);
+                }
+                @else if $is-embed {
+                    line-height: var(--h-display-line-height);
+                    font-size: var(--h#{$i}-display-size);
+                    font-family: var(--h-display-font);
+                    color: var(--h-display-color);
+                    justify-content: var(--h#{$i}-display-alignment);
+                }
+                @else {
+                    --h#{$i}-line-height: var(--h-display-line-height);
+                    --h#{$i}-size: var(--h#{$i}-display-size);
+                    --h#{$i}-font: var(--h-display-font);
+                    --h#{$i}-color: var(--h-display-color);
+                }
                 --h#{$i}-background: var(--h-display-background);
 
                 background-color: var(--h#{$i}-background);
@@ -88,57 +107,59 @@ body {
 
                 @include cutout_border.outline;
 
-                @supports (corner-shape: bevel) {
+                @if not $is-inline {
+                    @supports (corner-shape: bevel) {
                     /* Only in preview */
-                    &:is(.is-collapsed > h#{$i}) {
-                        outline-width: var(--cutout-outline-inset);
-                        outline-color: var(--h#{$i}-border-color-collapsed);
+                        &:is(.is-collapsed > h#{$i}) {
+                            outline-width: var(--cutout-outline-inset);
+                            outline-color: var(--h#{$i}-border-color-collapsed);
+                        }
                     }
-                }
-                @supports not (corner-shape: bevel) {
-                    /* Only in preview */
-                    &:is(.is-collapsed > h#{$i})::before {
-                        background: var(--h#{$i}-border-color-collapsed);
-                    }
+                    @supports not (corner-shape: bevel) {
+                        /* Only in preview */
+                        &:is(.is-collapsed > h#{$i})::before {
+                            background: var(--h#{$i}-border-color-collapsed);
+                        }
 
-                    /* Only in preview */
-                    &:is(.is-collapsed > h#{$i})::after {
-                        content: "";
-                        position: absolute;
-                        inset: 0;
-                        background: var(--h#{$i}-border-color-collapsed);
-                        clip-path: polygon(
-                            0 0,
-                            100% 0,
-                            100% 100%,
-                            0 100%,
-                            0 0,
-                            var(--cutout-outline-inset)
-                                calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px),
-                            var(--cutout-outline-inset)
-                                calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px),
-                            calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px)
-                                calc(100% - var(--cutout-outline-inset)),
-                            calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px)
-                                calc(100% - var(--cutout-outline-inset)),
-                            calc(100% - var(--cutout-outline-inset))
-                                calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px),
-                            calc(100% - var(--cutout-outline-inset))
-                                calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px),
-                            calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px)
-                                var(--cutout-outline-inset),
-                            calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px)
-                                var(--cutout-outline-inset),
-                            var(--cutout-outline-inset)
+                        /* Only in preview */
+                        &:is(.is-collapsed > h#{$i})::after {
+                            content: "";
+                            position: absolute;
+                            inset: 0;
+                            background: var(--h#{$i}-border-color-collapsed);
+                            clip-path: polygon(
+                                0 0,
+                                100% 0,
+                                100% 100%,
+                                0 100%,
+                                0 0,
+                                var(--cutout-outline-inset)
+                                    calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px),
+                                var(--cutout-outline-inset)
+                                    calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px),
                                 calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px)
-                        );
+                                    calc(100% - var(--cutout-outline-inset)),
+                                calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px)
+                                    calc(100% - var(--cutout-outline-inset)),
+                                calc(100% - var(--cutout-outline-inset))
+                                    calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px),
+                                calc(100% - var(--cutout-outline-inset))
+                                    calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px),
+                                calc(100% - var(--cutout-corner-angle) - 0.5 * var(--cutout-outline-inset) - 2px)
+                                    var(--cutout-outline-inset),
+                                calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px)
+                                    var(--cutout-outline-inset),
+                                var(--cutout-outline-inset)
+                                    calc(var(--cutout-corner-angle) + 0.5 * var(--cutout-outline-inset) + 2px)
+                                );
+                        }
                     }
-                }
 
-                /* Only in preview */
-                .heading-collapse-indicator {
-                    margin-inline-start: 0;
-                    left: var(--size-2-1);
+                    /* Only in preview */
+                    .heading-collapse-indicator {
+                        margin-inline-start: 0;
+                        left: var(--size-2-1);
+                    }
                 }
             }
         }
