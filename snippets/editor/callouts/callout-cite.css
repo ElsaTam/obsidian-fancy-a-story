@@ -19,7 +19,7 @@ body {
   padding-inline-start: calc(var(--cite-decoration-width) + 5px);
   background: none;
   border: none;
-  border-inline-start: var(--blockquote-border-thickness) solid rgb(var(--callout-color));
+  border-inline-start: var(--blockquote-border-thickness) solid var(--callout-color);
 }
 .callout[data-callout~=cite-fas]:not(.is-collapsible) .callout-title,
 .callout[data-callout~=quote-fas]:not(.is-collapsible) .callout-title {
@@ -89,7 +89,7 @@ body {
     padding-inline-start: calc(var(--cite-decoration-width) + 5px);
     background: none;
     border: none;
-    border-inline-start: var(--blockquote-border-thickness) solid rgb(var(--callout-color));
+    border-inline-start: var(--blockquote-border-thickness) solid var(--callout-color);
   }
   .callout[data-callout~=cite]:not(.is-collapsible) .callout-title,
   .callout[data-callout~=quote]:not(.is-collapsible) .callout-title {
