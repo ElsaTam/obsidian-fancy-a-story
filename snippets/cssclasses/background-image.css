@@ -31,49 +31,74 @@ body {
 }
 
 @container (not (style(--fas-note-background-image-blur: 0) or style(--fas-note-background-image-blur: 0px))) or (not style(--fas-note-background-image-opacity: 1)) or (not style(--fas-note-background-image-brightness: 1)) {
-
   /* Source */
   .markdown-source-view:is(.background-img, .bg-img) .cm-editor {
     background-color: color-mix(in srgb, var(--workleaves-background), transparent calc(100% * var(--fas-note-background-image-opacity)));
     backdrop-filter: blur(var(--fas-note-background-image-blur)) brightness(var(--fas-note-background-image-brightness));
   }
-
-  /* Preview scrollbar */
-  body:not(.native-scrollbars) .markdown-preview-view:is(.background-img, .bg-img)::-webkit-scrollbar-track {
+  /* Preview background compositor
+   *
+   * Obsidian 1.13 reserves the scrollbar gutter outside the preview's
+   * scrollport. Render the image and its effects on the fixed reading-view
+   * wrapper so a transparent scrollbar track still has a masked backdrop.
+   */
+  .markdown-reading-view:has(> .markdown-preview-view:is(.background-img, .bg-img)) {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  }
+  .markdown-reading-view:has(> .markdown-preview-view:is(.background-img, .bg-img))::before,
+  .markdown-reading-view:has(> .markdown-preview-view:is(.background-img, .bg-img))::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+  }
+  .markdown-reading-view:has(> .markdown-preview-view:is(.background-img, .bg-img))::before {
+    inset: calc(-1 * var(--fas-note-background-image-blur));
+    background-color: var(--workleaves-background);
+    background-image: var(--fas-note-background-image-url);
+    background-blend-mode: var(--fas-note-background-image-blend-mode);
+    filter: blur(var(--fas-note-background-image-blur)) brightness(var(--fas-note-background-image-brightness));
+  }
+  .markdown-reading-view:has(> .markdown-preview-view:is(.background-img, .bg-img))::after {
+    inset: 0;
     background-color: color-mix(in srgb, var(--workleaves-background), transparent calc(100% * var(--fas-note-background-image-opacity)));
   }
-
-  /* Preview, needs resizing so it covers the whole image */
+  /* Preview scrollbar */
+  body:not(.native-scrollbars) .markdown-preview-view:is(.background-img, .bg-img) {
+    scrollbar-color: var(--scrollbar-thumb-bg) transparent !important;
+  }
+  body:not(.native-scrollbars) .markdown-preview-view:is(.background-img, .bg-img)::-webkit-scrollbar,
+  body:not(.native-scrollbars) .markdown-preview-view:is(.background-img, .bg-img)::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  /* Preview layout */
   .markdown-preview-view:is(.background-img, .bg-img) {
     padding: 0;
+    background: transparent;
   }
-
-  .markdown-preview-view:is(.background-img, .bg-img)> :first-child {
+  .markdown-preview-view:is(.background-img, .bg-img) > :first-child {
     padding-block: var(--file-margins-block);
     padding-inline: max(var(--file-margins-inline), 0.5 * (100% - var(--file-margins-inline) - var(--file-line-width)) + var(--scrollbar-width));
     max-width: 100%;
-    background-color: color-mix(in srgb, var(--workleaves-background), transparent calc(100% * var(--fas-note-background-image-opacity)));
-    backdrop-filter: blur(var(--fas-note-background-image-blur)) brightness(var(--fas-note-background-image-brightness));
   }
 }
-
 @container style(--fas-note-background-image-repeat: no) {
-
   .markdown-source-view:is(.background-img, .bg-img),
-  .markdown-preview-view:is(.background-img, .bg-img) {
+  .markdown-preview-view:is(.background-img, .bg-img),
+  .markdown-reading-view:has(> .markdown-preview-view:is(.background-img, .bg-img))::before {
     background-size: cover;
     background-position: center;
   }
 }
-
 @container style(--fas-note-background-image-repeat: yes) {
-
   .markdown-source-view:is(.background-img, .bg-img),
-  .markdown-preview-view:is(.background-img, .bg-img) {
+  .markdown-preview-view:is(.background-img, .bg-img),
+  .markdown-reading-view:has(> .markdown-preview-view:is(.background-img, .bg-img))::before {
     background-repeat: repeat;
   }
 }
-
 :is(.background-img, .bg-img) .metadata-container {
   background-color: color-mix(in srgb, var(--workleaves-background), transparent 30%);
   backdrop-filter: blur(5px);

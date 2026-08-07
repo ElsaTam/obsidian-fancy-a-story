@@ -41,21 +41,64 @@ body {
             brightness(var(--fas-note-background-image-brightness));
     }
 
-    /* Preview scrollbar */
-    body:not(.native-scrollbars).fas-note-background-image
-        .markdown-preview-view:not(.no-background, .no-bg)::-webkit-scrollbar-track,
-    body:not(.native-scrollbars) .markdown-preview-view:is(.background-img, .bg-img)::-webkit-scrollbar-track {
-        background-color: color-mix(
-            in srgb,
-            var(--workleaves-background),
-            transparent calc(100% * var(--fas-note-background-image-opacity))
-        );
+    /* Preview background compositor
+     *
+     * Obsidian 1.13 reserves the scrollbar gutter outside the preview's
+     * scrollport. Render the image and its effects on the fixed reading-view
+     * wrapper so a transparent scrollbar track still has a masked backdrop.
+     */
+    .fas-note-background-image
+        .markdown-reading-view:has(> .markdown-preview-view:not(.no-background, .no-bg)),
+    .markdown-reading-view:has(> .markdown-preview-view:is(.background-img, .bg-img)) {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        &::before {
+            inset: calc(-1 * var(--fas-note-background-image-blur));
+            background-color: var(--workleaves-background);
+            background-image: var(--fas-note-background-image-url);
+            background-blend-mode: var(--fas-note-background-image-blend-mode);
+            filter: blur(var(--fas-note-background-image-blur))
+                brightness(var(--fas-note-background-image-brightness));
+        }
+
+        &::after {
+            inset: 0;
+            background-color: color-mix(
+                in srgb,
+                var(--workleaves-background),
+                transparent calc(100% * var(--fas-note-background-image-opacity))
+            );
+        }
     }
 
-    /* Preview, needs resizing so it covers the whole image */
+    /* Preview scrollbar */
+    body:not(.native-scrollbars).fas-note-background-image
+        .markdown-preview-view:not(.no-background, .no-bg),
+    body:not(.native-scrollbars) .markdown-preview-view:is(.background-img, .bg-img) {
+        // Keep the thumb visible while letting the track blend into the note.
+        scrollbar-color: var(--scrollbar-thumb-bg) transparent !important;
+
+        &::-webkit-scrollbar,
+        &::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+    }
+
+    /* Preview layout */
     .fas-note-background-image .markdown-preview-view:not(.no-background, .no-bg),
     .markdown-preview-view:is(.background-img, .bg-img) {
         padding: 0;
+        background: transparent;
 
         > :first-child {
             padding-block: var(--file-margins-block);
@@ -64,13 +107,6 @@ body {
                 0.5 * (100% - var(--file-margins-inline) - var(--file-line-width)) + var(--scrollbar-width)
             );
             max-width: 100%;
-            background-color: color-mix(
-                in srgb,
-                var(--workleaves-background),
-                transparent calc(100% * var(--fas-note-background-image-opacity))
-            );
-            backdrop-filter: blur(var(--fas-note-background-image-blur))
-                brightness(var(--fas-note-background-image-brightness));
         }
     }
 }
@@ -79,7 +115,10 @@ body {
     .fas-note-background-image .markdown-source-view:not(.no-background, .no-bg),
     .fas-note-background-image .markdown-preview-view:not(.no-background, .no-bg),
     .markdown-source-view:is(.background-img, .bg-img),
-    .markdown-preview-view:is(.background-img, .bg-img) {
+    .markdown-preview-view:is(.background-img, .bg-img),
+    .fas-note-background-image
+        .markdown-reading-view:has(> .markdown-preview-view:not(.no-background, .no-bg))::before,
+    .markdown-reading-view:has(> .markdown-preview-view:is(.background-img, .bg-img))::before {
         background-size: cover;
         background-position: center;
     }
@@ -89,7 +128,10 @@ body {
     .fas-note-background-image .markdown-source-view:not(.no-background, .no-bg),
     .fas-note-background-image .markdown-preview-view:not(.no-background, .no-bg),
     .markdown-source-view:is(.background-img, .bg-img),
-    .markdown-preview-view:is(.background-img, .bg-img) {
+    .markdown-preview-view:is(.background-img, .bg-img),
+    .fas-note-background-image
+        .markdown-reading-view:has(> .markdown-preview-view:not(.no-background, .no-bg))::before,
+    .markdown-reading-view:has(> .markdown-preview-view:is(.background-img, .bg-img))::before {
         background-repeat: repeat;
     }
 }
