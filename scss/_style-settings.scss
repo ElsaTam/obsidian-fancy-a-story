@@ -864,37 +864,37 @@ settings:
         id: callout-default
         title: Default color for callouts
         type: variable-select
-        default: var(--color-blue-rgb)
+        default: var(--color-blue)
         options:
             -
-                value: var(--color-gray-rgb)
+                value: var(--color-gray)
                 label: Gray
             -
-                value: var(--color-brown-rgb)
+                value: var(--color-brown)
                 label: Brown
             -
-                value: var(--color-red-rgb)
+                value: var(--color-red)
                 label: Red
             -
-                value: var(--color-orange-rgb)
+                value: var(--color-orange)
                 label: Orange
             -
-                value: var(--color-yellow-rgb)
+                value: var(--color-yellow)
                 label: Yellow
             -
-                value: var(--color-green-rgb)
+                value: var(--color-green)
                 label: Green
             -
-                value: var(--color-cyan-rgb)
+                value: var(--color-cyan)
                 label: Cyan
             -
-                value: var(--color-blue-rgb)
+                value: var(--color-blue)
                 label: Blue
             -
-                value: var(--color-purple-rgb)
+                value: var(--color-purple)
                 label: Purple
             -
-                value: var(--color-pink-rgb)
+                value: var(--color-pink)
                 label: Pink
 
     - 
