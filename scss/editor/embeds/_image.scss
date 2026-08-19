@@ -49,6 +49,21 @@ img[alt~="b-w"] {
     filter: blur(10px);
 }
 
+img[alt~="square"] {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+img[alt~="circle"] {
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+img[alt~="oval"] {
+    border-radius: 50%;
+}
+
 // IMAGE SHADOW
 
 $no_shadow_attributes: full-width-image-aliases.$aliases;
@@ -99,6 +114,11 @@ $no_shadow_selector: "";
                 transparent var(--image-shadow-stripe-thickness),
                 transparent calc(var(--image-shadow-stripe-thickness) + var(--image-shadow-stripe-gap))
             );
+        }
+
+        &[alt~="oval"]::before,
+        &[alt~="circle"]::before {
+            border-radius: 50%;
         }
     }
 }
