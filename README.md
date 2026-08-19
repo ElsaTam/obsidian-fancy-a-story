@@ -1,13 +1,12 @@
-FANCY A STORY
-=============
+# Fancy-a-Story
 
 ![](screenshots/overview.webp)
 
 [Read the **documentation**](https://elsatam.github.io/obsidian-fancy-a-story/) to see how to use all the features and settings of the theme!
 
 
-Installation
-------------
+## Installation
+
 > [!WARNING]
 > **Minimum Installer version**: 1.6.5
 > 
@@ -43,8 +42,7 @@ It is recommended to us the Style Settings plugin to adjust the theme to your li
 I tried as much as I can do atomized the code in multiple snippets. You can find them in the [snippets/](snippets/) folder.
 I could not test them all. So if you stumble in any bug, please do open an [issue](https://github.com/ElsaTam/obsidian-fancy-a-story/issues) on GitHub and I will fix it as soon as possible.
 
-Features
---------
+## Features
 
 - Dark and Light mode
 - Style settings options
@@ -61,8 +59,7 @@ Features
 - Cassette visual for embed audio
 - Rainbow folder
 
-Screenshots
------------
+## Screenshots
 
 ![](screenshots/screenshot-timeline.webp)
 
@@ -84,8 +81,7 @@ Within the Style Settings plugin, you can also choose your own sidebar textures 
 
 ![](screenshots/screenshot-textures.webp)
 
-Credits and Thanks
-------------------
+## Credits and Thanks
 
 I would love to thanks all those people for their feedbacks, encouragements, and propositions during the development of the theme. Thank you also to some of you for your patience with the multiple times I broke the theme and the snippets while you were using them!
 - Aanu
@@ -115,7 +111,7 @@ Credit to these projects for some inspiration!
 - [Limelight](https://github.com/smikula/obsidian-limelight/tree/master) by smikula, modified code by tif, for the Highlight active note feature
 - [Rainbow folder titles](https://github.com/r-u-s-h-i-k-e-s-h/Obsidian-CSS-Snippets/blob/Collection/Snippets/File%20explorer%20styling%20-%20Rainbow%20folder%20titles.md) by sailKite
 
-# Contact
+## Contact
 
 If you find any issue with the theme, or want a new addition to it, please open an [issue](https://github.com/ElsaTam/obsidian-fancy-a-story/issues) on GitHub :)
 
@@ -123,7 +119,7 @@ I can also be pinged on the Obsidian Discord server under the tag @Kapirklaa.
 
 <a href="https://discord.gg/veuWUTm"><img alt="Discord" src="https://img.shields.io/discord/686053708261228577?color=%235865F2&label=Obsidian%20Members%20Group%20%28OMG%29&labelColor=%23252525&logo=discord&style=for-the-badge"></a>
 
-# Licenses
+## Licenses
 
 As of 2024-10-24, the code is available as open source under the [GNU General Public License version 3 (GPLv3) License](LICENSE). It was previously released under the MIT License.
 
