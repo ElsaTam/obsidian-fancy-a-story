@@ -598,8 +598,15 @@ $indices: 1, 2, 3, 4, 5, 6, '-inline', '-embed';
                     // hline : 32.085396 x 3.9537
                 }
 
-                &:is(.is-collapsed > h#{$i})::after {
-                    content: none;
+                @if $is-inline or $is-embed {
+                    &:is(.is-collapsed > .h#{$i})::after {
+                        content: none;
+                    }
+                }
+                @else {
+                    &:is(.is-collapsed > h#{$i})::after {
+                        content: none;
+                    }
                 }
 
                 .heading-collapse-indicator {

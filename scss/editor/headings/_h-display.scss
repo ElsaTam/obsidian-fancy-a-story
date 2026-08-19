@@ -108,21 +108,25 @@ $indices: 1, 2, 3, 4, 5, 6, '-inline', '-embed';
                 @include cutout_border.outline;
 
                 @if not $is-inline {
+                    $collapsed-selector: "&:is(.is-collapsed > h#{$i})";
+                    @if $is-embed {
+                        $collapsed-selector: "&:is(.is-collapsed > .h#{$i})";
+                    }
                     @supports (corner-shape: bevel) {
-                    /* Only in preview */
-                        &:is(.is-collapsed > h#{$i}) {
+                        /* Only in preview */
+                        #{$collapsed-selector} {
                             outline-width: var(--cutout-outline-inset);
                             outline-color: var(--h#{$i}-border-color-collapsed);
                         }
                     }
                     @supports not (corner-shape: bevel) {
                         /* Only in preview */
-                        &:is(.is-collapsed > h#{$i})::before {
+                        #{$collapsed-selector}::before {
                             background: var(--h#{$i}-border-color-collapsed);
                         }
 
                         /* Only in preview */
-                        &:is(.is-collapsed > h#{$i})::after {
+                        #{$collapsed-selector}::after {
                             content: "";
                             position: absolute;
                             inset: 0;

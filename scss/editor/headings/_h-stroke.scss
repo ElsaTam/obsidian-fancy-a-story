@@ -79,9 +79,17 @@ body {
                 margin-left: 20px;
             }
 
-            &:is(.is-collapsed > h#{$i})::before,
-            &:is(.is-collapsed > h#{$i})::after {
-                background-color: var(--h#{$i}-border-color-collapsed);
+            @if $is-inline or $is-embed {
+                &:is(.is-collapsed > .h#{$i})::before,
+                &:is(.is-collapsed > .h#{$i})::after {
+                    background-color: var(--h#{$i}-border-color-collapsed);
+                }
+            }
+            @else {
+                &:is(.is-collapsed > h#{$i})::before,
+                &:is(.is-collapsed > h#{$i})::after {
+                    background-color: var(--h#{$i}-border-color-collapsed);
+                }
             }
         }
     }
