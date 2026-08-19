@@ -26,6 +26,7 @@ Write `> [!callout-name|option-1 option-2 option-3]` to customize your callout.
 | `no-title`               | No title                                            |
 | `only-icon`              | No title text but keep icon                         |
 | `sans-serif`             | Sans-serif font                                     |
+| `scroll-table`           | Make tables horizontally scrollable (might break narrow tables) |
 | `wide`                   | Make the element full wide                          |
 
 Source: [`callouts-metadata.css`](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/editor/callouts/callouts-metadata.css)
