@@ -229,7 +229,7 @@ $indices: 1, 2, 3, 4, 5, 6, '-inline', '-embed';
 @each $i in $indices {
     $is-inline: $i == '-inline';
     $is-embed: $i == '-embed';
-    $selector: if($is-inline, ".inline-title", if($is-embed, ".embed-title:not(:empty)", ":is(.el-h#{$i} > h#{$i}, .markdown-preview-view > * > h#{$i}, .HyperMD-header-#{$i}):not(.callout *, ul *, ol *)"));
+    $selector: if(sass($is-inline): ".inline-title"; else: if(sass($is-embed): ".embed-title:not(:empty)"; else: ":is(.el-h#{$i} > h#{$i}, .markdown-preview-view > * > h#{$i}, .HyperMD-header-#{$i}):not(.callout *, ul *, ol *)"));
 
     @container style(--fas-skin-sci-fi: enable) and (style(--fas-h#{$i}-display: enable) or style(--fas-h#{$i}-display-left-aligned: enable)) {
         :is(.markdown-preview-view, .is-live-preview):not(

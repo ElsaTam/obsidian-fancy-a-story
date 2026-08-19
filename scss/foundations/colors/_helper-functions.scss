@@ -32,7 +32,7 @@
         $result: map-merge(
             list.nth($map-list, $i),
             (
-                list.nth($keys, $i): if($i ==list.length($map-list), list.nth($keys, -1), $result)
+                list.nth($keys, $i): if(sass($i == list.length($map-list)): list.nth($keys, -1); else: $result)
             )
         );
     }

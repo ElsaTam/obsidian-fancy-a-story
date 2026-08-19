@@ -46,11 +46,9 @@ body {
 @each $i in $indices {
     $is-inline: $i == '-inline';
     $is-embed: $i == '-embed';
-    $selector: if($is-inline,
-        ".inline-title",
-        if($is-embed,
-            ".embed-title:not(:empty)",
-            ".markdown-preview-view:not(.newspaper, .movie-script, .minimalist, .h#{$i}-display, .h#{$i}-display-left-aligned) h#{$i}"
+    $selector: if(sass($is-inline): ".inline-title";
+        else: if(sass($is-embed): ".embed-title:not(:empty)";
+           else: ".markdown-preview-view:not(.newspaper, .movie-script, .minimalist, .h#{$i}-display, .h#{$i}-display-left-aligned) h#{$i}"
         )
     );
 

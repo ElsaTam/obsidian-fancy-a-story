@@ -18,8 +18,8 @@ $indices: 1, 2, 3, 4, 5, 6, '-inline', '-embed';
 @each $i in $indices {
     $is-inline: $i == '-inline';
     $is-embed: $i == '-embed';
-    $size-factor: if($is-inline, 3.2, if($is-embed, 2.8, 3.2 - 0.2 * $i));
-    $selector: if($is-inline, ".inline-title", if($is-embed, ".embed-title:not(:empty)", ":is(.el-h#{$i} > h#{$i}, .markdown-preview-view > * > h#{$i}, .HyperMD-header-#{$i}):not(.callout *, ul *, ol *)"));
+    $size-factor: if(sass($is-inline): 3.2; else: if(sass($is-embed): 2.8; else: 3.2 - 0.2 * $i));
+    $selector: if(sass($is-inline): ".inline-title"; else: if(sass($is-embed): ".embed-title:not(:empty)"; else: ":is(.el-h#{$i} > h#{$i}, .markdown-preview-view > * > h#{$i}, .HyperMD-header-#{$i}):not(.callout *, ul *, ol *)"));
 
     body {
         --fas-h#{$i}-display: disable;
