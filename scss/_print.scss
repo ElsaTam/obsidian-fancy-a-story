@@ -5,7 +5,7 @@
 
 // Create the block for custom theme (no mixing)
 @media print {
-    .print > .markdown-preview-view {
+    :is(.fas-theme-dark-print, .fas-theme-light-print) .print > .markdown-preview-view {
         background-color: var(--workleaves-background);
         color: var(--text-normal);
     }
