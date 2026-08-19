@@ -237,7 +237,7 @@ body {
 // Edit mode
 .markdown-source-view.banner.banner-edit-hide,
 .fas-banner-edit-hide .markdown-source-view.banner {
-    .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) {
+    .cm-contentContainer > div > .cm-line > .image-embed:nth-child(1 of div.image-embed) {
         --image-shadow-offset: 0;
         img {
             display: none;
@@ -247,7 +247,7 @@ body {
 
 .markdown-source-view.banner.banner-edit-icon,
 .fas-banner-edit-icon .markdown-source-view.banner {
-    .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) {
+    .cm-contentContainer > div > .cm-line > .image-embed:nth-child(1 of div.image-embed) {
         --image-shadow-offset: 0;
         img {
             display: none;
@@ -263,7 +263,7 @@ body {
 @media (hover: hover) {
     .markdown-source-view.banner.banner-edit-icon,
     .fas-banner-edit-icon .markdown-source-view.banner {
-        .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed):hover img {
+        .cm-contentContainer > div > .cm-line > .image-embed:nth-child(1 of div.image-embed):hover img {
             position: absolute;
             display: block;
         }
@@ -272,7 +272,7 @@ body {
 
 .markdown-source-view.banner.banner-edit-small,
 .fas-banner-edit-small .markdown-source-view.banner {
-    .cm-contentContainer > div > .image-embed:nth-child(1 of div.image-embed) {
+    .cm-contentContainer > div > .cm-line > .image-embed:nth-child(1 of div.image-embed) {
         --image-shadow-offset: 0;
         img {
             max-width: 100px;
