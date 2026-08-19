@@ -4,24 +4,30 @@ Author: ElsaTam (Kapirklaa on Discord)
 */
 @supports (color: hsl(from white h s l)) {
   .theme-dark {
-    --middle-color: color-mix(in srgb-linear,
+    --middle-color: color-mix(
+        in srgb-linear,
         hsl(from var(--color-base-00) h 100% 55%),
-        hsl(from var(--color-base-100) h 100% 55%) 50%);
-    --middle-color-complement: color-mix(in srgb-linear,
+        hsl(from var(--color-base-100) h 100% 55%) 50%
+    );
+    --middle-color-complement: color-mix(
+        in srgb-linear,
         hsl(from var(--color-base-00) calc(h - 90) 100% 55%),
-        hsl(from var(--color-base-100) calc(h + 90) 100% 55%) 50%);
+        hsl(from var(--color-base-100) calc(h + 90) 100% 55%) 50%
+    );
   }
-
   .theme-light {
-    --middle-color: color-mix(in srgb-linear,
+    --middle-color: color-mix(
+        in srgb-linear,
         hsl(from var(--color-base-00) h 100% 40%),
-        hsl(from var(--color-base-100) h 100% 40%) 50%);
-    --middle-color-complement: color-mix(in srgb-linear,
+        hsl(from var(--color-base-100) h 100% 40%) 50%
+    );
+    --middle-color-complement: color-mix(
+        in srgb-linear,
         hsl(from var(--color-base-00) calc(h - 90) 100% 40%),
-        hsl(from var(--color-base-100) calc(h + 90) 100% 40%) 50%);
+        hsl(from var(--color-base-100) calc(h + 90) 100% 40%) 50%
+    );
   }
 }
-
 @supports not (color: hsl(from white h s l)) {
   .style-settings-container .setting-item[data-id=header-color] .setting-item-info::after {
     content: '"Hue" and "Complementary hue" not supported on your device.';
@@ -31,9 +37,9 @@ Author: ElsaTam (Kapirklaa on Discord)
     line-height: var(--line-height-tight);
   }
 }
-
 body {
   --heading-color: none;
+  --heading-color-apply-to-inline-title: disable;
 }
 
 .headings-hue {
@@ -53,25 +59,22 @@ body {
 }
 
 @container style(--heading-color: hue) {
-  :is(.markdown-source-view, .markdown-preview-view)>* {
+  :is(.markdown-source-view, .markdown-preview-view) > * {
     --header-gradient-base-color: var(--middle-color);
   }
 }
-
 @container style(--heading-color: complement) {
-  :is(.markdown-source-view, .markdown-preview-view)>* {
+  :is(.markdown-source-view, .markdown-preview-view) > * {
     --header-gradient-base-color: var(--middle-color-complement);
   }
 }
-
 @container style(--heading-color: accent) {
-  :is(.markdown-source-view, .markdown-preview-view)>* {
+  :is(.markdown-source-view, .markdown-preview-view) > * {
     --header-gradient-base-color: var(--text-accent);
   }
 }
-
 @container style(--heading-color: hue) or style(--heading-color: complement) or style(--heading-color: accent) {
-  :is(.markdown-source-view, .markdown-preview-view)>* {
+  :is(.markdown-source-view, .markdown-preview-view) > * {
     --h1-color: var(--header-gradient-base-color);
     --h2-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 10%);
     --h3-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 20%);
@@ -80,14 +83,30 @@ body {
     --h6-color: color-mix(in srgb, var(--header-gradient-base-color), var(--text-normal) 80%);
   }
 }
-
 @container style(--heading-color: rainbow) {
-  :is(.markdown-source-view, .markdown-preview-view)>* {
+  :is(.markdown-source-view, .markdown-preview-view) > * {
     --h1-color: var(--color-rainbow-1);
     --h2-color: var(--color-rainbow-2);
     --h3-color: var(--color-rainbow-3);
     --h4-color: var(--color-rainbow-4);
     --h5-color: var(--color-rainbow-5);
     --h6-color: var(--color-rainbow-6);
+  }
+}
+@container (style(--heading-color: hue) or style(--heading-color: complement) or style(--heading-color: accent)) and style(--heading-color-apply-to-inline-title: enable) {
+  :is(.markdown-source-view, .markdown-preview-view) > * {
+    --inline-title-color: var(--header-gradient-base-color);
+    --embed-title-color: var(--header-gradient-base-color);
+  }
+}
+@container style(--heading-color: rainbow) and style(--heading-color-apply-to-inline-title: enable) {
+  :is(.markdown-source-view, .markdown-preview-view) > * {
+    --inline-title-color: var(--color-rainbow-10);
+    --embed-title-color: var(--color-rainbow-10);
+  }
+}
+@container style(--heading-color-apply-to-inline-title: enable) {
+  .embed-title {
+    color: var(--embed-title-color, var(--text-normal));
   }
 }

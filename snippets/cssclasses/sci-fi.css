@@ -387,21 +387,19 @@ body {
   .minimalist,
   .h1-stroke,
   .h1-stroke-left-aligned,
-  .h1-normal) :is(.el-h1 > h1, .markdown-preview-view > * > h1, .HyperMD-header-1):not(.callout *,
-  ul *,
-  ol *) {
+  .h1-normal) :is(.el-h1 > h1, .markdown-preview-view > * > h1, .HyperMD-header-1):not(.callout *, ul *, ol *) {
     padding: unset;
     clip-path: unset;
     text-align: left;
+    corner-shape: unset;
+    outline: none;
   }
   :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
   .movie-script,
   .minimalist,
   .h1-stroke,
   .h1-stroke-left-aligned,
-  .h1-normal) :is(.el-h1 > h1, .markdown-preview-view > * > h1, .HyperMD-header-1):not(.callout *,
-  ul *,
-  ol *)::before {
+  .h1-normal) :is(.el-h1 > h1, .markdown-preview-view > * > h1, .HyperMD-header-1):not(.callout *, ul *, ol *)::before {
     content: "";
     position: unset;
     background-image: unset;
@@ -411,7 +409,7 @@ body {
     height: 1em;
     width: 6em;
     transform: translateY(-15%);
-    background-color: rgba(var(--color-cyan-rgb), 1);
+    background-color: var(--color-cyan);
     -webkit-mask-image: var(--sci-fi-h-display);
     -webkit-mask-size: contain;
     -webkit-mask-repeat: no-repeat;
@@ -427,21 +425,19 @@ body {
   .minimalist,
   .h2-stroke,
   .h2-stroke-left-aligned,
-  .h2-normal) :is(.el-h2 > h2, .markdown-preview-view > * > h2, .HyperMD-header-2):not(.callout *,
-  ul *,
-  ol *) {
+  .h2-normal) :is(.el-h2 > h2, .markdown-preview-view > * > h2, .HyperMD-header-2):not(.callout *, ul *, ol *) {
     padding: unset;
     clip-path: unset;
     text-align: left;
+    corner-shape: unset;
+    outline: none;
   }
   :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
   .movie-script,
   .minimalist,
   .h2-stroke,
   .h2-stroke-left-aligned,
-  .h2-normal) :is(.el-h2 > h2, .markdown-preview-view > * > h2, .HyperMD-header-2):not(.callout *,
-  ul *,
-  ol *)::before {
+  .h2-normal) :is(.el-h2 > h2, .markdown-preview-view > * > h2, .HyperMD-header-2):not(.callout *, ul *, ol *)::before {
     content: "";
     position: unset;
     background-image: unset;
@@ -451,7 +447,7 @@ body {
     height: 1em;
     width: 6em;
     transform: translateY(-15%);
-    background-color: rgba(var(--color-cyan-rgb), 1);
+    background-color: var(--color-cyan);
     -webkit-mask-image: var(--sci-fi-h-display);
     -webkit-mask-size: contain;
     -webkit-mask-repeat: no-repeat;
@@ -467,21 +463,19 @@ body {
   .minimalist,
   .h3-stroke,
   .h3-stroke-left-aligned,
-  .h3-normal) :is(.el-h3 > h3, .markdown-preview-view > * > h3, .HyperMD-header-3):not(.callout *,
-  ul *,
-  ol *) {
+  .h3-normal) :is(.el-h3 > h3, .markdown-preview-view > * > h3, .HyperMD-header-3):not(.callout *, ul *, ol *) {
     padding: unset;
     clip-path: unset;
     text-align: left;
+    corner-shape: unset;
+    outline: none;
   }
   :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
   .movie-script,
   .minimalist,
   .h3-stroke,
   .h3-stroke-left-aligned,
-  .h3-normal) :is(.el-h3 > h3, .markdown-preview-view > * > h3, .HyperMD-header-3):not(.callout *,
-  ul *,
-  ol *)::before {
+  .h3-normal) :is(.el-h3 > h3, .markdown-preview-view > * > h3, .HyperMD-header-3):not(.callout *, ul *, ol *)::before {
     content: "";
     position: unset;
     background-image: unset;
@@ -491,7 +485,7 @@ body {
     height: 1em;
     width: 6em;
     transform: translateY(-15%);
-    background-color: rgba(var(--color-cyan-rgb), 1);
+    background-color: var(--color-cyan);
     -webkit-mask-image: var(--sci-fi-h-display);
     -webkit-mask-size: contain;
     -webkit-mask-repeat: no-repeat;
@@ -507,21 +501,19 @@ body {
   .minimalist,
   .h4-stroke,
   .h4-stroke-left-aligned,
-  .h4-normal) :is(.el-h4 > h4, .markdown-preview-view > * > h4, .HyperMD-header-4):not(.callout *,
-  ul *,
-  ol *) {
+  .h4-normal) :is(.el-h4 > h4, .markdown-preview-view > * > h4, .HyperMD-header-4):not(.callout *, ul *, ol *) {
     padding: unset;
     clip-path: unset;
     text-align: left;
+    corner-shape: unset;
+    outline: none;
   }
   :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
   .movie-script,
   .minimalist,
   .h4-stroke,
   .h4-stroke-left-aligned,
-  .h4-normal) :is(.el-h4 > h4, .markdown-preview-view > * > h4, .HyperMD-header-4):not(.callout *,
-  ul *,
-  ol *)::before {
+  .h4-normal) :is(.el-h4 > h4, .markdown-preview-view > * > h4, .HyperMD-header-4):not(.callout *, ul *, ol *)::before {
     content: "";
     position: unset;
     background-image: unset;
@@ -531,7 +523,7 @@ body {
     height: 1em;
     width: 6em;
     transform: translateY(-15%);
-    background-color: rgba(var(--color-cyan-rgb), 1);
+    background-color: var(--color-cyan);
     -webkit-mask-image: var(--sci-fi-h-display);
     -webkit-mask-size: contain;
     -webkit-mask-repeat: no-repeat;
@@ -547,21 +539,19 @@ body {
   .minimalist,
   .h5-stroke,
   .h5-stroke-left-aligned,
-  .h5-normal) :is(.el-h5 > h5, .markdown-preview-view > * > h5, .HyperMD-header-5):not(.callout *,
-  ul *,
-  ol *) {
+  .h5-normal) :is(.el-h5 > h5, .markdown-preview-view > * > h5, .HyperMD-header-5):not(.callout *, ul *, ol *) {
     padding: unset;
     clip-path: unset;
     text-align: left;
+    corner-shape: unset;
+    outline: none;
   }
   :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
   .movie-script,
   .minimalist,
   .h5-stroke,
   .h5-stroke-left-aligned,
-  .h5-normal) :is(.el-h5 > h5, .markdown-preview-view > * > h5, .HyperMD-header-5):not(.callout *,
-  ul *,
-  ol *)::before {
+  .h5-normal) :is(.el-h5 > h5, .markdown-preview-view > * > h5, .HyperMD-header-5):not(.callout *, ul *, ol *)::before {
     content: "";
     position: unset;
     background-image: unset;
@@ -571,7 +561,7 @@ body {
     height: 1em;
     width: 6em;
     transform: translateY(-15%);
-    background-color: rgba(var(--color-cyan-rgb), 1);
+    background-color: var(--color-cyan);
     -webkit-mask-image: var(--sci-fi-h-display);
     -webkit-mask-size: contain;
     -webkit-mask-repeat: no-repeat;
@@ -587,21 +577,19 @@ body {
   .minimalist,
   .h6-stroke,
   .h6-stroke-left-aligned,
-  .h6-normal) :is(.el-h6 > h6, .markdown-preview-view > * > h6, .HyperMD-header-6):not(.callout *,
-  ul *,
-  ol *) {
+  .h6-normal) :is(.el-h6 > h6, .markdown-preview-view > * > h6, .HyperMD-header-6):not(.callout *, ul *, ol *) {
     padding: unset;
     clip-path: unset;
     text-align: left;
+    corner-shape: unset;
+    outline: none;
   }
   :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
   .movie-script,
   .minimalist,
   .h6-stroke,
   .h6-stroke-left-aligned,
-  .h6-normal) :is(.el-h6 > h6, .markdown-preview-view > * > h6, .HyperMD-header-6):not(.callout *,
-  ul *,
-  ol *)::before {
+  .h6-normal) :is(.el-h6 > h6, .markdown-preview-view > * > h6, .HyperMD-header-6):not(.callout *, ul *, ol *)::before {
     content: "";
     position: unset;
     background-image: unset;
@@ -611,7 +599,83 @@ body {
     height: 1em;
     width: 6em;
     transform: translateY(-15%);
-    background-color: rgba(var(--color-cyan-rgb), 1);
+    background-color: var(--color-cyan);
+    -webkit-mask-image: var(--sci-fi-h-display);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: left center;
+    mask-mode: luminance;
+    vertical-align: middle;
+    margin-right: 0.2em;
+  }
+}
+@container style(--fas-skin-sci-fi: enable) and (style(--fas-h-inline-display: enable) or style(--fas-h-inline-display-left-aligned: enable)) {
+  :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h-inline-stroke,
+  .h-inline-stroke-left-aligned,
+  .h-inline-normal) .inline-title {
+    padding: unset;
+    clip-path: unset;
+    text-align: left;
+    corner-shape: unset;
+    outline: none;
+  }
+  :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h-inline-stroke,
+  .h-inline-stroke-left-aligned,
+  .h-inline-normal) .inline-title::before {
+    content: "";
+    position: unset;
+    background-image: unset;
+    inset: unset;
+    clip-path: unset;
+    display: inline-block;
+    height: 1em;
+    width: 6em;
+    transform: translateY(-15%);
+    background-color: var(--color-cyan);
+    -webkit-mask-image: var(--sci-fi-h-display);
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: left center;
+    mask-mode: luminance;
+    vertical-align: middle;
+    margin-right: 0.2em;
+  }
+}
+@container style(--fas-skin-sci-fi: enable) and (style(--fas-h-embed-display: enable) or style(--fas-h-embed-display-left-aligned: enable)) {
+  :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h-embed-stroke,
+  .h-embed-stroke-left-aligned,
+  .h-embed-normal) .embed-title:not(:empty) {
+    padding: unset;
+    clip-path: unset;
+    text-align: left;
+    corner-shape: unset;
+    outline: none;
+  }
+  :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
+  .movie-script,
+  .minimalist,
+  .h-embed-stroke,
+  .h-embed-stroke-left-aligned,
+  .h-embed-normal) .embed-title:not(:empty)::before {
+    content: "";
+    position: unset;
+    background-image: unset;
+    inset: unset;
+    clip-path: unset;
+    display: inline-block;
+    height: 1em;
+    width: 6em;
+    transform: translateY(-15%);
+    background-color: var(--color-cyan);
     -webkit-mask-image: var(--sci-fi-h-display);
     -webkit-mask-size: contain;
     -webkit-mask-repeat: no-repeat;

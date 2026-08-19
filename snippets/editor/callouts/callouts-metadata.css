@@ -169,6 +169,14 @@ body {
   overflow: visible;
 }
 
+.callout.callout[data-callout-metadata~=scroll-table] table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 0;
+  width: fit-content;
+}
+
 body {
   --callout-handwritten-font: "Lucida Handwriting", "Comic Sans MS", "Brush Script MT", cursive;
   --callout-monospace-font: var(--font-monospace);
