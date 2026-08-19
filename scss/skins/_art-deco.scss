@@ -338,7 +338,7 @@ $fwi_sel: "";
                 )
                 *
         ):not(li *) {
-        clear: both;
+        display: flow-root;
         overflow: visible;
         margin-bottom: calc(1em + 23px);
         border-bottom-width: 0;
