@@ -470,7 +470,7 @@ body {
     height: 1px;
     margin-left: 20px;
   }
-  .inline-title:is(.is-collapsed > h-inline)::before, .inline-title:is(.is-collapsed > h-inline)::after {
+  .inline-title:is(.is-collapsed > .h-inline)::before, .inline-title:is(.is-collapsed > .h-inline)::after {
     background-color: var(--h-inline-border-color-collapsed);
   }
 }
@@ -499,7 +499,7 @@ body {
     height: 1px;
     margin-left: 20px;
   }
-  .embed-title:not(:empty):is(.is-collapsed > h-embed)::before, .embed-title:not(:empty):is(.is-collapsed > h-embed)::after {
+  .embed-title:not(:empty):is(.is-collapsed > .h-embed)::before, .embed-title:not(:empty):is(.is-collapsed > .h-embed)::after {
     background-color: var(--h-embed-border-color-collapsed);
   }
 }

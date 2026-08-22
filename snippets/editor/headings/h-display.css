@@ -1385,7 +1385,7 @@ body {
     .h-embed-stroke,
     .h-embed-stroke-left-aligned,
     .h-embed-normal,
-    .sci-fi) .embed-title:not(:empty):is(.is-collapsed > h-embed) {
+    .sci-fi) .embed-title:not(:empty):is(.is-collapsed > .h-embed) {
       outline-width: var(--cutout-outline-inset);
       outline-color: var(--h-embed-border-color-collapsed);
     }
@@ -1406,7 +1406,7 @@ body {
     .h-embed-stroke,
     .h-embed-stroke-left-aligned,
     .h-embed-normal,
-    .sci-fi) .embed-title:not(:empty):is(.is-collapsed > h-embed)::before {
+    .sci-fi) .embed-title:not(:empty):is(.is-collapsed > .h-embed)::before {
       background: var(--h-embed-border-color-collapsed);
     }
     :is(.markdown-preview-view, .is-live-preview):not(.newspaper,
@@ -1424,7 +1424,7 @@ body {
     .h-embed-stroke,
     .h-embed-stroke-left-aligned,
     .h-embed-normal,
-    .sci-fi) .embed-title:not(:empty):is(.is-collapsed > h-embed)::after {
+    .sci-fi) .embed-title:not(:empty):is(.is-collapsed > .h-embed)::after {
       content: "";
       position: absolute;
       inset: 0;

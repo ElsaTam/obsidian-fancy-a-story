@@ -52,8 +52,8 @@ body {
 .callout[data-callout~=quote-fas] .callout-content > :first-child {
   margin-top: 0;
 }
-.callout[data-callout~=cite-fas] .callout-content > :plast-child,
-.callout[data-callout~=quote-fas] .callout-content > :plast-child {
+.callout[data-callout~=cite-fas] .callout-content > :last-child,
+.callout[data-callout~=quote-fas] .callout-content > :last-child {
   margin-bottom: 0;
 }
 .callout[data-callout~=cite-fas]::after,
@@ -122,8 +122,8 @@ body {
   .callout[data-callout~=quote] .callout-content > :first-child {
     margin-top: 0;
   }
-  .callout[data-callout~=cite] .callout-content > :plast-child,
-  .callout[data-callout~=quote] .callout-content > :plast-child {
+  .callout[data-callout~=cite] .callout-content > :last-child,
+  .callout[data-callout~=quote] .callout-content > :last-child {
     margin-bottom: 0;
   }
   .callout[data-callout~=cite]::after,
