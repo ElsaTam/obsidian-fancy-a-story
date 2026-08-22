@@ -6,6 +6,8 @@
 
 body {
     --sidedock-inset-border-color: var(--background-secondary);
+    --sidedock-tab-header-padding-bottom: 0px;
+    --sidedock-tabs-background-color: var(--workspace-background);
 }
 
 // Minimum padding with window bottom border
@@ -171,6 +173,11 @@ body {
 .mod-sidedock .workspace-tab-header-container {
     padding-left: calc(12px + var(--size-4-2));
     padding-right: calc(12px + var(--size-4-2));
+}
+
+// Color inactive tab headers
+.mod-sidedock .workspace-tab-header-container .workspace-tab-header {
+    background-color: var(--sidedock-tabs-background-color);
 }
 
 // Match the background for the active tab header

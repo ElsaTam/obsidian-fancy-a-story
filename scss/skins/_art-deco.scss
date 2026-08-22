@@ -78,6 +78,11 @@ body {
     --art-deco-style-empty-note: enable;
     --art-deco-style-root-tabs: enable;
     --art-deco-footnotes: enable;
+
+    --sidedock-tabs-background-color-ad: if(
+        style(--sidedock-tabs-background-color: var(--workspace-background)): var(--workleaves-background);
+        else: var(--sidedock-tabs-background-color);
+    );
 }
 
 /* Horizontal rule */
@@ -208,13 +213,16 @@ body {
     }
 
     .mod-sidedock .workspace-tab-header-inner {
-        background-color: var(--workleaves-background);
+        background-color: var(--sidedock-tabs-background-color-ad);
     }
 
     .mod-sidedock .workspace-tab-header.workspace-tab-header::after {
         content: "";
         display: block;
-        background-color: var(--sidedock-inset-border-color);
+        background-color: color-mix(
+            in srgb,
+            var(--sidedock-tabs-background-color-ad),
+            rgb(var(--mono-rgb-100)) 15%);
         position: absolute;
         right: 0px;
         left: 0px;

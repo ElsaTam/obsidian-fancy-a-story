@@ -480,6 +480,14 @@ settings:
             - 
                 label: Volume
                 value: volume
+    -
+        id: sidedock-tabs-background-color
+        title: Background color for the tabs
+        type: variable-themed-color
+        opacity: false
+        format: hex
+        default-light: '#{colors_definitions.$default-primary-light}'
+        default-dark: '#{colors_definitions.$default-text-dark}'
     - 
         id: sidedock-tab-header-padding-bottom
         title: Gap between the selected tab and the content in the sidebars
@@ -2256,7 +2264,7 @@ settings:
         type: info-text
         markdown: true
         title: Additional fonts
-        description: "Multiple elements of this theme can use specific fonts if they are available. To download the required fonts, you can add the file [additional_fonts.css](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/additional_fonts.css) to your [snippets folder](https://help.obsidian.md/Extending+Obsidian/CSS+snippets). This file can be very heavy. If you don't plan on using all of them, I would recommend deleting the unecessary @font-face from the snippet. You can see how which font is used [in the doc](https://elsatam.github.io/obsidian-fancy-a-story/docs/stylesettings/stylesettings.html#additional-fonts)"
+        description: "Multiple elements of this theme can use specific fonts if they are available. To download the required fonts, you can add the files [main_fonts.css](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/main_fonts.css) (or directly download the fonts [Poppins](https://fonts.google.com/specimen/Poppins) for the interface, [Noto Serif](https://fonts.google.com/noto/specimen/Noto+Serif) for the notes) and [additional_fonts.css](https://github.com/ElsaTam/obsidian-fancy-a-story/blob/main/snippets/additional_fonts.css) to your [snippets folder](https://help.obsidian.md/Extending+Obsidian/CSS+snippets). These files can be very heavy. If you don't plan on using all of the fonts, I would recommend deleting the unecessary @font-face from the snippets. You can see how which font is used [in the doc](https://elsatam.github.io/obsidian-fancy-a-story/docs/stylesettings/stylesettings.html#additional-fonts)"
     -
         id: canvas-node-bundle
         type: info-text

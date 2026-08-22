@@ -19,7 +19,7 @@ body {
         }
 
         .workspace-tab-header-container .workspace-tab-header {
-            background-color: var(--workspace-background);
+            background-color: var(--sidedock-tabs-background-color);
             clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
         }
 
